@@ -1,0 +1,115 @@
+name: Repull semanal — Cámara de Diputados
+
+# Mechanical-only data refresh (see dr-laws-site-notes.md L7-8 for the
+# mechanical/judgment split, and politica-sencilla-rd/ecosystem-plan-2026-07-09.md
+# Phase 1 for the full spec). Zero AI tokens: this is a plain script hitting
+# the Chamber's public SIL API. Kid-Spanish summaries, scanned actas, and any
+# new-bill write-ups stay a manual/AI step for Kelvin — this workflow never
+# generates prose, only re-pulls numbers/lists already understood by the
+# renderer (comisiones, iniciativas_propuestas, asistencia).
+#
+# ONE-TIME REPO SETTING NEEDED (cannot be set from this file): Settings →
+# Actions → General → Workflow permissions → check "Allow GitHub Actions to
+# create and approve pull requests". Without it, the PR-open step below is
+# silently blocked by GitHub even though this workflow requests the
+# `pull-requests: write` permission.
+#
+# Design note on WHERE commits land (flagged for reviewer / Kelvin):
+#   - docs/data/ultima-revision.json (the heartbeat) is committed DIRECTLY to
+#     main by this workflow, every successful run. It carries zero facts
+#     about government/bills — just an ISO date and a static description of
+#     the mechanical pull — so it needs no per-item human review. It is
+#     pushed straight to main (not PR-gated) because GitHub's docs/community
+#     reports agree only commits that land on a tracked ref reliably reset
+#     the 60-day scheduled-workflow auto-disable clock; an unmerged PR's
+#     activity-counting behavior is not clearly documented, so relying on it
+#     alone would risk the exact failure this heartbeat exists to prevent.
+#     If this repo's branch protection blocks direct pushes to main even for
+#     the Actions bot, this step fails loudly (job fails → GitHub's native
+#     failure email fires) rather than silently losing the schedule.
+#   - Real data (docs/data/provincias.json, scripts/diputados_stats.json) is
+#     NEVER pushed to main directly. It only ever reaches main via a pull
+#     request that Kelvin merges — his merge is his per-item approval
+#     (reviewer fix #1).
+
+on:
+  schedule:
+    # Every Monday 09:00 UTC (05:00 ET). Cron time is always UTC regardless
+    # of Kelvin's ET timezone.
+    - cron: "0 9 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: camara-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run mechanical refresh (Cámara SIL API)
+        id: refresh
+        run: python3 scripts/refresh_camara.py
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit heartbeat directly to main
+        run: |
+          git add docs/data/ultima-revision.json
+          if git diff --cached --quiet; then
+            echo "heartbeat unchanged, nothing to commit"
+          else
+            git commit -m "chore: heartbeat $(date -u +%F) — repull automático Cámara SIL"
+            git push origin HEAD:main
+          fi
+
+      - name: Open PR if deputy data changed
+        # No "if:" here on purpose — GitHub Actions already skips this step
+        # when an earlier step (the refresh script or the heartbeat push)
+        # fails, which is what we want: a failed sanity guard must produce
+        # no commit and no PR, only a failed job (→ GitHub's failure email).
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          add-paths: |
+            docs/data/provincias.json
+            scripts/diputados_stats.json
+          commit-message: "data: repull semanal de comisiones/iniciativas/asistencia (Cámara SIL)"
+          branch: actions/camara-refresh
+          delete-branch: true
+          base: main
+          title: "Repull semanal — datos de diputados (Cámara SIL API)"
+          body: |
+            Repull automático y mecánico de la Cámara de Diputados: comisiones,
+            iniciativas propuestas (-CD) y asistencia al pleno para los 178
+            diputados. Fuente: API pública SIL Ciudadano (diputadosrd.gob.do),
+            sin autenticación.
+
+            Este PR NO añade ni cambia ningún resumen en español fácil — esa
+            parte sigue siendo un paso humano/IA aparte. Solo trae números y
+            listas ya entendidas por el sitio (comisiones, iniciativas
+            propuestas, asistencia).
+
+            El guardia de cordura (sanity guard) ya confirmó que ningún
+            conteo cayó por debajo del 80% del repull anterior antes de que
+            este PR se abriera — ver el log del job "refresh" para las cifras
+            exactas.
+
+            Fusionar este PR = tu aprobación de estos datos (revisor fix #1).

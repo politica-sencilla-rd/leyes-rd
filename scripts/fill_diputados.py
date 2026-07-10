@@ -77,7 +77,11 @@ def main() -> None:
                 }
                 n_asist += 1
 
-    PROV.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n")
+    # indent=2 matches the file's actual committed style (verified against
+    # the file on disk 2026-07-09) — indent=1 here previously reformatted
+    # the WHOLE file on every run, turning a ~500-value update into a
+    # 50k+ line diff that nobody could realistically review.
+    PROV.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
     print(f"comisiones written for {n_com}/178 deputies")
     print(f"iniciativas_propuestas written for {n_ini}/178 deputies")
     print(f"asistencia written for {n_asist}/178 deputies")
