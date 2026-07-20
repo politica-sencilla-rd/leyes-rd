@@ -1,5 +1,5 @@
 {
- "fecha": "2026-07-13",
+ "fecha": "2026-07-20",
  "fuente": "Repull automático semanal del API SIL de la Cámara de Diputados (diputadosrd.gob.do)",
  "detalle": "Comisiones, iniciativas propuestas y asistencia al pleno de los 178 diputados. No incluye resúmenes en español fácil de proyectos de ley nuevos: esa parte la revisa una persona, nunca se genera sola."
 }
