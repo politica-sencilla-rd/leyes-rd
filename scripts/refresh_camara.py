@@ -56,7 +56,7 @@ STATS_OUT = HERE / "diputados_stats.json"
 HEARTBEAT = ROOT / "docs" / "data" / "ultima-revision.json"
 
 BASE = "https://www.diputadosrd.gob.do/sil/api/legislador/"
-UA = "Mozilla/5.0 (compatible; PoliticaSencillaRD-refresh/1.0; +https://github.com/Kevthetech143/leyes-rd)"
+UA = "Mozilla/5.0 (compatible; PoliticaSencillaRD-refresh/1.0; +https://github.com/politica-sencilla-rd/leyes-rd)"
 TIMEOUT = 30
 RETRIES = 3
 SLEEP_BETWEEN = 0.15  # be polite to the government server

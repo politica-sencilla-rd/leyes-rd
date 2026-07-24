@@ -1019,7 +1019,7 @@ function renderProvincias(data) {
             // Honest note when this province's mayors aren't loaded yet.
             if (!grupos["alcalde"]) {
                 perfil.append(el("p", "nota-fuente", "Alcaldes: aún por añadir. Estamos completando esta provincia con datos oficiales. " +
-                    "¿Conoces a tu alcalde? <a href=\"https://github.com/Kevthetech143/leyes-rd/issues/new/choose\" target=\"_blank\" rel=\"noopener\">Ayúdanos a completarlo</a>."));
+                    "¿Conoces a tu alcalde? <a href=\"https://github.com/politica-sencilla-rd/leyes-rd/issues/new/choose\" target=\"_blank\" rel=\"noopener\">Ayúdanos a completarlo</a>."));
             }
             // Always explain the town council (regidores) — feedback de un usuario real.
             perfil.append(renderRegidoresCard(prov));
@@ -1790,7 +1790,7 @@ function copiarEnlace(url, btn) {
         ok();
 }
 function setupCompartir() {
-    const url = "https://kevthetech143.github.io/leyes-rd/";
+    const url = "https://politica-sencilla-rd.github.io/leyes-rd/";
     const titulo = "Política Sencilla RD";
     const texto = "Entiende la política dominicana fácil: leyes, provincias, el Senado y el dinero público.";
     const wa = document.getElementById("waShare");

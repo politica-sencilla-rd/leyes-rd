@@ -1,6 +1,6 @@
 # Distribución — Política Sencilla RD
 
-Sitio: https://kevthetech143.github.io/leyes-rd/
+Sitio: https://politica-sencilla-rd.github.io/leyes-rd/
 
 ## Aprobación
 - 2026-06-08 — Kelvin auto-aprobó publicación/distribución automática.
@@ -32,13 +32,13 @@ ACCIÓN PENDIENTE DE KELVIN: decir desde qué cuenta(s) publicamos, o iniciar se
 
 Política Sencilla RD: las leyes, tu provincia, quién manda y cómo se mueve el dinero público. Explicado fácil, gratis, sin registro.
 
-👉 https://kevthetech143.github.io/leyes-rd/
+👉 https://politica-sencilla-rd.github.io/leyes-rd/
 
 ### WhatsApp / familiar
 Mira esto: una página gratis que explica la política de RD bien fácil.
 Puedes ver las leyes, quién está a cargo en tu provincia, el Senado y cómo se gasta el dinero público.
 Sin cuenta, sin login. Pásalo. 🇩🇴
-https://kevthetech143.github.io/leyes-rd/
+https://politica-sencilla-rd.github.io/leyes-rd/
 
 ### Largo (Facebook / descripción)
 Política Sencilla RD nació para una idea simple: cualquier dominicano debería poder entender su gobierno sin ser experto.
@@ -50,19 +50,19 @@ En la página encuentras:
 • El dinero público: cómo se mueve y dónde se puede romper.
 
 Gratis. Sin registro. Para compartir.
-https://kevthetech143.github.io/leyes-rd/
+https://politica-sencilla-rd.github.io/leyes-rd/
 
 ## Posts del caso SENASA (con imagen lista: docs/share-senasa.png — 1080×1080)
 
 ### WhatsApp / corto
 🔎 Caso real: el desfalco del SENASA — más de RD$15,000 millones del dinero de la salud.
 ¿Dónde se rompió la cadena? Te lo explico fácil, paso a paso.
-https://kevthetech143.github.io/leyes-rd/ (pestaña "Dinero")
+https://politica-sencilla-rd.github.io/leyes-rd/ (pestaña "Dinero")
 
 ### Facebook / largo
 El SENASA es el seguro de salud del Estado, para 7.5 millones de personas. Se perdieron más de RD$15,000 millones.
 En Política Sencilla RD lo explicamos paso a paso: dónde se rompió la cadena del dinero y cómo se evita. Sin palabras difíciles, gratis.
-👉 https://kevthetech143.github.io/leyes-rd/
+👉 https://politica-sencilla-rd.github.io/leyes-rd/
 (Adjuntar imagen: share-senasa.png)
 
 ## Registro de publicaciones (fecha — canal — enlace)
