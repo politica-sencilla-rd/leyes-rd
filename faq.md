@@ -49,7 +49,7 @@ A: Senators and deputies per province are being filled in from the Senate and Ch
 ## Build / tech
 
 Q: Where does it live?
-A: GitHub Pages (free), repo Kevthetech143/leyes-rd, served from /docs. Live: https://kevthetech143.github.io/leyes-rd/
+A: GitHub Pages (free), repo politica-sencilla-rd/leyes-rd, served from /docs. Live: https://politica-sencilla-rd.github.io/leyes-rd/
 
 Q: What is it built with?
 A: TypeScript (src/app.ts compiled to docs/app.js), plain HTML/CSS, JSON data files. No backend.

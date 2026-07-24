@@ -41,7 +41,7 @@ Tienes dos caminos. El primero es para cualquiera. El segundo es para quien sabe
 
 Un "issue" es solo un mensaje que le dejas al proyecto en GitHub. Es gratis y toma un minuto.
 
-1. Entra a la página de formularios: https://github.com/Kevthetech143/leyes-rd/issues/new/choose
+1. Entra a la página de formularios: https://github.com/politica-sencilla-rd/leyes-rd/issues/new/choose
 2. Elige el formulario que va contigo (error, sugerencia o fuente de datos).
 3. Llena lo que te pregunta. Cada formulario te pide **el enlace a la fuente oficial** si lo tienes.
 4. Envíalo. Listo. Nosotros lo revisamos.
@@ -84,7 +84,7 @@ Este sitio es de código abierto y la licencia te da el derecho de copiarlo. Eso
 
 Hacer tu propia copia en vivo toma minutos y no cuesta nada:
 
-1. Entra al repositorio en GitHub: https://github.com/Kevthetech143/leyes-rd
+1. Entra al repositorio en GitHub: https://github.com/politica-sencilla-rd/leyes-rd
 2. Toca el botón **"Fork"** (arriba a la derecha). Eso crea una copia tuya, con todos los datos incluidos.
 3. En tu copia, ve a **Settings → Pages**.
 4. En "Source", elige la rama `main` y la carpeta `/docs`. Guarda.

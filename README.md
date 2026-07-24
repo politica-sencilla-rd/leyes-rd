@@ -5,7 +5,7 @@ provinces, Senate sessions, and public money — in plain, kid-friendly Spanish,
 grouped by sector, with expandable detail, vote records, and a province view of
 leaders.
 
-Live: https://kevthetech143.github.io/leyes-rd/
+Live: https://politica-sencilla-rd.github.io/leyes-rd/
 
 Built 2026-06-07 by Lawyer (under Kelvin's explicit override).
 

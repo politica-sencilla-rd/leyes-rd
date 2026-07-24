@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://kevthetech143.github.io/leyes-rd/sitemap.xml
+Sitemap: https://politica-sencilla-rd.github.io/leyes-rd/sitemap.xml
