@@ -1,6 +1,12 @@
 {
- "_generated": "2026-07-20T12:10:15.513265+00:00",
- "_unmatched": [],
+ "_generated": "2026-08-17T09:52:03.508233+00:00",
+ "_unmatched": [
+  {
+   "nombre": "Jorge Frías",
+   "provincia": "Santo Domingo",
+   "reason": "no search hit"
+  }
+ ],
  "diputados": {
   "Alfredo Pacheco Osoria": {
    "provincia": "Distrito Nacional",
@@ -15,10 +21,10 @@
    "iniciativas_cd": 23,
    "iniciativas_total_sil": 23,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 186,
+    "total": 191,
     "breakdown": {
-     "Presente": 165,
+     "Presente": 175,
      "Presente Incorporado": 11,
      "Excusa": 5
     }
@@ -43,10 +49,10 @@
    "iniciativas_cd": 31,
    "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 166,
-    "total": 181,
+    "presentes": 176,
+    "total": 191,
     "breakdown": {
-     "Presente": 162,
+     "Presente": 172,
      "Presente Incorporado": 4,
      "Excusa": 15
     }
@@ -70,10 +76,10 @@
    "iniciativas_cd": 43,
    "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 168,
-    "total": 181,
+    "presentes": 178,
+    "total": 191,
     "breakdown": {
-     "Presente": 156,
+     "Presente": 166,
      "Presente Incorporado": 12,
      "Excusa": 12,
      "Ausente": 1
@@ -97,12 +103,12 @@
    "iniciativas_cd": 47,
    "iniciativas_total_sil": 47,
    "asistencia": {
-    "presentes": 161,
-    "total": 181,
+    "presentes": 165,
+    "total": 191,
     "breakdown": {
-     "Presente": 151,
+     "Presente": 155,
+     "Excusa": 13,
      "Presente Incorporado": 10,
-     "Excusa": 7,
      "Licencia": 12,
      "Ausente": 1
     }
@@ -122,11 +128,11 @@
    "iniciativas_cd": 29,
    "iniciativas_total_sil": 29,
    "asistencia": {
-    "presentes": 160,
-    "total": 181,
+    "presentes": 170,
+    "total": 191,
     "breakdown": {
-     "Presente Incorporado": 46,
-     "Presente": 114,
+     "Presente": 120,
+     "Presente Incorporado": 50,
      "Excusa": 19,
      "Ausente": 1,
      "Representación de la Cámara": 1
@@ -146,14 +152,14 @@
     "Modernización y Reforma",
     "Turismo"
    ],
-   "iniciativas_cd": 61,
-   "iniciativas_total_sil": 61,
+   "iniciativas_cd": 63,
+   "iniciativas_total_sil": 63,
    "asistencia": {
-    "presentes": 159,
-    "total": 181,
+    "presentes": 168,
+    "total": 191,
     "breakdown": {
-     "Presente": 140,
-     "Excusa": 18,
+     "Presente": 149,
+     "Excusa": 19,
      "Presente Incorporado": 19,
      "Ausente": 4
     }
@@ -178,11 +184,11 @@
    "iniciativas_cd": 42,
    "iniciativas_total_sil": 42,
    "asistencia": {
-    "presentes": 167,
-    "total": 181,
+    "presentes": 176,
+    "total": 191,
     "breakdown": {
-     "Presente": 167,
-     "Excusa": 14
+     "Presente": 176,
+     "Excusa": 15
     }
    }
   },
@@ -202,11 +208,11 @@
    "iniciativas_cd": 25,
    "iniciativas_total_sil": 25,
    "asistencia": {
-    "presentes": 159,
-    "total": 181,
+    "presentes": 167,
+    "total": 191,
     "breakdown": {
-     "Excusa": 19,
-     "Presente": 146,
+     "Presente": 154,
+     "Excusa": 21,
      "Presente Incorporado": 13,
      "Ausente": 3
     }
@@ -229,10 +235,10 @@
    "iniciativas_cd": 26,
    "iniciativas_total_sil": 26,
    "asistencia": {
-    "presentes": 168,
-    "total": 181,
+    "presentes": 178,
+    "total": 191,
     "breakdown": {
-     "Presente": 167,
+     "Presente": 177,
      "Excusa": 13,
      "Presente Incorporado": 1
     }
@@ -254,10 +260,10 @@
    "iniciativas_cd": 35,
    "iniciativas_total_sil": 35,
    "asistencia": {
-    "presentes": 163,
-    "total": 181,
+    "presentes": 173,
+    "total": 191,
     "breakdown": {
-     "Presente": 159,
+     "Presente": 169,
      "Excusa": 13,
      "Presente Incorporado": 4,
      "Ausente": 5
@@ -283,10 +289,10 @@
    "iniciativas_cd": 26,
    "iniciativas_total_sil": 26,
    "asistencia": {
-    "presentes": 168,
-    "total": 181,
+    "presentes": 178,
+    "total": 191,
     "breakdown": {
-     "Presente": 157,
+     "Presente": 167,
      "Presente Incorporado": 11,
      "Excusa": 12,
      "Ausente": 1
@@ -312,10 +318,10 @@
    "iniciativas_cd": 46,
    "iniciativas_total_sil": 46,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 186,
+    "total": 191,
     "breakdown": {
-     "Presente": 174,
+     "Presente": 184,
      "Presente Incorporado": 2,
      "Excusa": 5
     }
@@ -335,11 +341,11 @@
    "iniciativas_cd": 36,
    "iniciativas_total_sil": 36,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 179,
+    "total": 191,
     "breakdown": {
-     "Presente": 122,
-     "Presente Incorporado": 47,
+     "Presente": 131,
+     "Presente Incorporado": 48,
      "Excusa": 7,
      "Ausente": 5
     }
@@ -360,10 +366,10 @@
    "iniciativas_cd": 65,
    "iniciativas_total_sil": 65,
    "asistencia": {
-    "presentes": 168,
-    "total": 181,
+    "presentes": 178,
+    "total": 191,
     "breakdown": {
-     "Presente": 135,
+     "Presente": 145,
      "Presente Incorporado": 33,
      "Excusa": 11,
      "Ausente": 2
@@ -387,13 +393,13 @@
     "Modernización y Reforma",
     "Salud"
    ],
-   "iniciativas_cd": 28,
-   "iniciativas_total_sil": 28,
+   "iniciativas_cd": 29,
+   "iniciativas_total_sil": 29,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 179,
+    "total": 191,
     "breakdown": {
-     "Presente": 165,
+     "Presente": 175,
      "Presente Incorporado": 4,
      "Excusa": 12
     }
@@ -414,12 +420,12 @@
    "iniciativas_cd": 11,
    "iniciativas_total_sil": 11,
    "asistencia": {
-    "presentes": 134,
-    "total": 181,
+    "presentes": 144,
+    "total": 191,
     "breakdown": {
-     "Presente": 109,
+     "Presente": 118,
+     "Presente Incorporado": 26,
      "Excusa": 34,
-     "Presente Incorporado": 25,
      "Ausente": 13
     }
    }
@@ -440,10 +446,10 @@
    "iniciativas_cd": 39,
    "iniciativas_total_sil": 39,
    "asistencia": {
-    "presentes": 164,
-    "total": 181,
+    "presentes": 174,
+    "total": 191,
     "breakdown": {
-     "Presente": 145,
+     "Presente": 155,
      "Presente Incorporado": 19,
      "Excusa": 10,
      "Ausente": 7
@@ -468,12 +474,12 @@
    "iniciativas_cd": 35,
    "iniciativas_total_sil": 35,
    "asistencia": {
-    "presentes": 166,
-    "total": 181,
+    "presentes": 174,
+    "total": 191,
     "breakdown": {
-     "Presente Incorporado": 45,
-     "Presente": 121,
-     "Excusa": 12,
+     "Presente": 127,
+     "Presente Incorporado": 47,
+     "Excusa": 14,
      "Ausente": 3
     }
    }
@@ -496,10 +502,10 @@
    "iniciativas_cd": 66,
    "iniciativas_total_sil": 66,
    "asistencia": {
-    "presentes": 163,
-    "total": 181,
+    "presentes": 173,
+    "total": 191,
     "breakdown": {
-     "Presente": 157,
+     "Presente": 167,
      "Excusa": 18,
      "Presente Incorporado": 6
     }
@@ -522,10 +528,10 @@
    "iniciativas_cd": 62,
    "iniciativas_total_sil": 62,
    "asistencia": {
-    "presentes": 160,
-    "total": 181,
+    "presentes": 170,
+    "total": 191,
     "breakdown": {
-     "Presente": 159,
+     "Presente": 169,
      "Ausente": 1,
      "Excusa": 19,
      "Representación de la Cámara": 1,
@@ -547,13 +553,13 @@
     "Dominicanos en el Exterior",
     "Reconocimientos"
    ],
-   "iniciativas_cd": 63,
-   "iniciativas_total_sil": 63,
+   "iniciativas_cd": 64,
+   "iniciativas_total_sil": 64,
    "asistencia": {
-    "presentes": 162,
-    "total": 181,
+    "presentes": 172,
+    "total": 191,
     "breakdown": {
-     "Presente": 156,
+     "Presente": 166,
      "Presente Incorporado": 6,
      "Excusa": 11,
      "Ausente": 4,
@@ -574,13 +580,13 @@
     "Energía",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 54,
-   "iniciativas_total_sil": 54,
+   "iniciativas_cd": 55,
+   "iniciativas_total_sil": 55,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 186,
+    "total": 191,
     "breakdown": {
-     "Presente": 166,
+     "Presente": 176,
      "Presente Incorporado": 10,
      "Excusa": 4,
      "Ausente": 1
@@ -605,11 +611,11 @@
    "iniciativas_cd": 70,
    "iniciativas_total_sil": 70,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 185,
+    "total": 191,
     "breakdown": {
-     "Presente": 175,
-     "Excusa": 3,
+     "Presente": 184,
+     "Excusa": 4,
      "Ausente": 2,
      "Presente Incorporado": 1
     }
@@ -632,11 +638,11 @@
    "iniciativas_cd": 54,
    "iniciativas_total_sil": 54,
    "asistencia": {
-    "presentes": 150,
-    "total": 181,
+    "presentes": 154,
+    "total": 191,
     "breakdown": {
-     "Excusa": 31,
-     "Presente": 125,
+     "Presente": 129,
+     "Excusa": 37,
      "Presente Incorporado": 25
     }
    }
@@ -657,9 +663,9 @@
    "iniciativas_total_sil": 9,
    "asistencia": {
     "presentes": 136,
-    "total": 181,
+    "total": 191,
     "breakdown": {
-     "Excusa": 41,
+     "Excusa": 51,
      "Presente": 129,
      "Ausente": 4,
      "Presente Incorporado": 7
@@ -684,10 +690,10 @@
    "iniciativas_cd": 38,
    "iniciativas_total_sil": 38,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 183,
+    "total": 191,
     "breakdown": {
-     "Presente": 162,
+     "Presente": 172,
      "Presente Incorporado": 11,
      "Excusa": 7,
      "Ausente": 1
@@ -710,10 +716,10 @@
    "iniciativas_cd": 51,
    "iniciativas_total_sil": 51,
    "asistencia": {
-    "presentes": 161,
-    "total": 181,
+    "presentes": 171,
+    "total": 191,
     "breakdown": {
-     "Presente": 154,
+     "Presente": 164,
      "Presente Incorporado": 7,
      "Excusa": 15,
      "Ausente": 5
@@ -737,11 +743,11 @@
    "iniciativas_cd": 43,
    "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 155,
-    "total": 181,
+    "presentes": 165,
+    "total": 191,
     "breakdown": {
-     "Presente": 137,
-     "Presente Incorporado": 18,
+     "Presente": 146,
+     "Presente Incorporado": 19,
      "Excusa": 23,
      "Ausente": 3
     }
@@ -765,10 +771,10 @@
    "iniciativas_cd": 39,
    "iniciativas_total_sil": 39,
    "asistencia": {
-    "presentes": 141,
-    "total": 181,
+    "presentes": 151,
+    "total": 191,
     "breakdown": {
-     "Presente": 115,
+     "Presente": 125,
      "Presente Incorporado": 26,
      "Excusa": 15,
      "Ausente": 4,
@@ -796,10 +802,10 @@
    "iniciativas_cd": 39,
    "iniciativas_total_sil": 39,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 186,
+    "total": 191,
     "breakdown": {
-     "Presente": 162,
+     "Presente": 172,
      "Presente Incorporado": 14,
      "Excusa": 4,
      "Ausente": 1
@@ -822,11 +828,11 @@
    "iniciativas_cd": 52,
    "iniciativas_total_sil": 52,
    "asistencia": {
-    "presentes": 174,
-    "total": 181,
+    "presentes": 184,
+    "total": 191,
     "breakdown": {
-     "Presente": 172,
-     "Presente Incorporado": 2,
+     "Presente": 181,
+     "Presente Incorporado": 3,
      "Excusa": 7
     }
    }
@@ -844,11 +850,11 @@
    "iniciativas_cd": 31,
    "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 182,
+    "total": 191,
     "breakdown": {
-     "Presente": 139,
-     "Presente Incorporado": 33,
+     "Presente": 147,
+     "Presente Incorporado": 35,
      "Excusa": 5,
      "Ausente": 4
     }
@@ -869,10 +875,10 @@
    "iniciativas_cd": 18,
    "iniciativas_total_sil": 18,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 186,
+    "total": 191,
     "breakdown": {
-     "Presente": 173,
+     "Presente": 183,
      "Excusa": 2,
      "Presente Incorporado": 3,
      "Ausente": 3
@@ -895,11 +901,11 @@
    "iniciativas_cd": 37,
    "iniciativas_total_sil": 37,
    "asistencia": {
-    "presentes": 164,
-    "total": 181,
+    "presentes": 174,
+    "total": 191,
     "breakdown": {
+     "Presente": 172,
      "Excusa": 15,
-     "Presente": 162,
      "Presente Incorporado": 2,
      "Ausente": 2
     }
@@ -922,10 +928,10 @@
    "iniciativas_cd": 45,
    "iniciativas_total_sil": 45,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 186,
+    "total": 191,
     "breakdown": {
-     "Presente": 171,
+     "Presente": 181,
      "Presente Incorporado": 5,
      "Excusa": 5
     }
@@ -946,10 +952,10 @@
    "iniciativas_cd": 47,
    "iniciativas_total_sil": 47,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 179,
+    "total": 191,
     "breakdown": {
-     "Presente": 167,
+     "Presente": 177,
      "Excusa": 10,
      "Ausente": 2,
      "Presente Incorporado": 2
@@ -973,12 +979,12 @@
    "iniciativas_cd": 40,
    "iniciativas_total_sil": 40,
    "asistencia": {
-    "presentes": 168,
-    "total": 181,
+    "presentes": 178,
+    "total": 191,
     "breakdown": {
+     "Presente": 169,
      "Excusa": 9,
      "Presente Incorporado": 9,
-     "Presente": 159,
      "Ausente": 4
     }
    }
@@ -1001,10 +1007,10 @@
    "iniciativas_cd": 59,
    "iniciativas_total_sil": 59,
    "asistencia": {
-    "presentes": 174,
-    "total": 181,
+    "presentes": 184,
+    "total": 191,
     "breakdown": {
-     "Presente": 172,
+     "Presente": 182,
      "Presente Incorporado": 2,
      "Excusa": 7
     }
@@ -1026,10 +1032,10 @@
    "iniciativas_cd": 39,
    "iniciativas_total_sil": 39,
    "asistencia": {
-    "presentes": 175,
-    "total": 181,
+    "presentes": 185,
+    "total": 191,
     "breakdown": {
-     "Presente": 170,
+     "Presente": 180,
      "Presente Incorporado": 5,
      "Excusa": 6
     }
@@ -1051,10 +1057,10 @@
    "iniciativas_cd": 41,
    "iniciativas_total_sil": 41,
    "asistencia": {
-    "presentes": 174,
-    "total": 181,
+    "presentes": 184,
+    "total": 191,
     "breakdown": {
-     "Presente": 169,
+     "Presente": 179,
      "Presente Incorporado": 5,
      "Excusa": 7
     }
@@ -1075,11 +1081,11 @@
    "iniciativas_cd": 28,
    "iniciativas_total_sil": 28,
    "asistencia": {
-    "presentes": 135,
-    "total": 181,
+    "presentes": 145,
+    "total": 191,
     "breakdown": {
-     "Presente": 108,
-     "Presente Incorporado": 27,
+     "Presente": 116,
+     "Presente Incorporado": 29,
      "Excusa": 46
     }
    }
@@ -1100,11 +1106,11 @@
    "iniciativas_cd": 59,
    "iniciativas_total_sil": 59,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 182,
+    "total": 191,
     "breakdown": {
-     "Presente": 172,
-     "Excusa": 8,
+     "Presente": 181,
+     "Excusa": 9,
      "Presente Incorporado": 1
     }
    }
@@ -1128,11 +1134,10 @@
    "iniciativas_total_sil": 87,
    "asistencia": {
     "presentes": 163,
-    "total": 181,
+    "total": 191,
     "breakdown": {
-     "Ausente": 1,
+     "Excusa": 28,
      "Presente Incorporado": 8,
-     "Excusa": 17,
      "Presente": 155
     }
    }
@@ -1153,10 +1158,10 @@
    "iniciativas_cd": 25,
    "iniciativas_total_sil": 25,
    "asistencia": {
-    "presentes": 178,
-    "total": 181,
+    "presentes": 188,
+    "total": 191,
     "breakdown": {
-     "Presente": 177,
+     "Presente": 187,
      "Excusa": 3,
      "Presente Incorporado": 1
     }
@@ -1179,10 +1184,11 @@
    "iniciativas_cd": 115,
    "iniciativas_total_sil": 115,
    "asistencia": {
-    "presentes": 181,
-    "total": 181,
+    "presentes": 187,
+    "total": 191,
     "breakdown": {
-     "Presente": 179,
+     "Presente": 185,
+     "Excusa": 4,
      "Presente Incorporado": 2
     }
    }
@@ -1203,10 +1209,10 @@
    "iniciativas_cd": 47,
    "iniciativas_total_sil": 47,
    "asistencia": {
-    "presentes": 178,
-    "total": 181,
+    "presentes": 188,
+    "total": 191,
     "breakdown": {
-     "Presente": 173,
+     "Presente": 183,
      "Presente Incorporado": 5,
      "Excusa": 3
     }
@@ -1229,10 +1235,10 @@
    "iniciativas_cd": 44,
    "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 183,
+    "total": 191,
     "breakdown": {
-     "Presente": 171,
+     "Presente": 181,
      "Excusa": 7,
      "Presente Incorporado": 2,
      "Ausente": 1
@@ -1254,11 +1260,11 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 166,
-    "total": 181,
+    "presentes": 175,
+    "total": 191,
     "breakdown": {
-     "Excusa": 6,
-     "Presente": 151,
+     "Presente": 160,
+     "Excusa": 7,
      "Presente Incorporado": 15,
      "Ausente": 9
     }
@@ -1282,10 +1288,10 @@
    "iniciativas_cd": 44,
    "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 167,
-    "total": 181,
+    "presentes": 177,
+    "total": 191,
     "breakdown": {
-     "Presente": 167,
+     "Presente": 177,
      "Excusa": 14
     }
    }
@@ -1306,12 +1312,12 @@
    "iniciativas_cd": 118,
    "iniciativas_total_sil": 118,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 177,
+    "total": 191,
     "breakdown": {
-     "Presente": 171,
+     "Presente": 175,
+     "Excusa": 12,
      "Presente Incorporado": 2,
-     "Excusa": 6,
      "Ausente": 2
     }
    }
@@ -1330,12 +1336,12 @@
    "iniciativas_cd": 34,
    "iniciativas_total_sil": 34,
    "asistencia": {
-    "presentes": 156,
-    "total": 181,
+    "presentes": 165,
+    "total": 191,
     "breakdown": {
-     "Presente": 142,
-     "Presente Incorporado": 14,
-     "Excusa": 22,
+     "Presente": 150,
+     "Presente Incorporado": 15,
+     "Excusa": 23,
      "Ausente": 3
     }
    }
@@ -1358,11 +1364,11 @@
    "iniciativas_cd": 91,
    "iniciativas_total_sil": 91,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 173,
+    "total": 191,
     "breakdown": {
-     "Presente": 165,
-     "Excusa": 11,
+     "Presente": 169,
+     "Excusa": 17,
      "Presente Incorporado": 4,
      "Ausente": 1
     }
@@ -1385,11 +1391,11 @@
    "iniciativas_cd": 64,
    "iniciativas_total_sil": 64,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 185,
+    "total": 191,
     "breakdown": {
-     "Presente": 175,
-     "Excusa": 5,
+     "Presente": 184,
+     "Excusa": 6,
      "Presente Incorporado": 1
     }
    }
@@ -1410,15 +1416,15 @@
     "Junta Central Electoral",
     "Justicia"
    ],
-   "iniciativas_cd": 52,
-   "iniciativas_total_sil": 52,
+   "iniciativas_cd": 53,
+   "iniciativas_total_sil": 53,
    "asistencia": {
-    "presentes": 159,
-    "total": 181,
+    "presentes": 165,
+    "total": 191,
     "breakdown": {
-     "Excusa": 20,
-     "Presente Incorporado": 25,
-     "Presente": 134,
+     "Presente": 138,
+     "Presente Incorporado": 27,
+     "Excusa": 24,
      "Representación de la Cámara": 1,
      "Ausente": 1
     }
@@ -1440,11 +1446,11 @@
    "iniciativas_cd": 43,
    "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 158,
-    "total": 181,
+    "presentes": 168,
+    "total": 191,
     "breakdown": {
+     "Presente": 159,
      "Ausente": 5,
-     "Presente": 149,
      "Excusa": 17,
      "Presente Incorporado": 9,
      "Representación de la Cámara": 1
@@ -1465,10 +1471,10 @@
    "iniciativas_cd": 46,
    "iniciativas_total_sil": 46,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 182,
+    "total": 191,
     "breakdown": {
-     "Presente": 167,
+     "Presente": 177,
      "Excusa": 7,
      "Presente Incorporado": 5,
      "Ausente": 2
@@ -1491,12 +1497,12 @@
    "iniciativas_cd": 19,
    "iniciativas_total_sil": 19,
    "asistencia": {
-    "presentes": 154,
-    "total": 181,
+    "presentes": 162,
+    "total": 191,
     "breakdown": {
-     "Presente": 131,
+     "Presente": 139,
+     "Excusa": 21,
      "Presente Incorporado": 23,
-     "Excusa": 19,
      "Ausente": 7,
      "Representación de la Cámara": 1
     }
@@ -1520,10 +1526,10 @@
    "iniciativas_cd": 29,
    "iniciativas_total_sil": 29,
    "asistencia": {
-    "presentes": 156,
-    "total": 181,
+    "presentes": 166,
+    "total": 191,
     "breakdown": {
-     "Presente": 150,
+     "Presente": 160,
      "Presente Incorporado": 6,
      "Excusa": 18,
      "Representación de la Cámara": 1,
@@ -1547,12 +1553,12 @@
    "iniciativas_cd": 19,
    "iniciativas_total_sil": 19,
    "asistencia": {
-    "presentes": 162,
-    "total": 181,
+    "presentes": 170,
+    "total": 191,
     "breakdown": {
-     "Presente": 157,
-     "Excusa": 17,
-     "Presente Incorporado": 5,
+     "Presente": 164,
+     "Excusa": 19,
+     "Presente Incorporado": 6,
      "Ausente": 2
     }
    }
@@ -1575,11 +1581,11 @@
    "iniciativas_cd": 72,
    "iniciativas_total_sil": 72,
    "asistencia": {
-    "presentes": 174,
-    "total": 181,
+    "presentes": 178,
+    "total": 191,
     "breakdown": {
-     "Presente": 170,
-     "Excusa": 6,
+     "Presente": 174,
+     "Excusa": 12,
      "Presente Incorporado": 4,
      "Ausente": 1
     }
@@ -1603,10 +1609,10 @@
    "iniciativas_cd": 21,
    "iniciativas_total_sil": 21,
    "asistencia": {
-    "presentes": 155,
-    "total": 181,
+    "presentes": 165,
+    "total": 191,
     "breakdown": {
-     "Presente": 146,
+     "Presente": 156,
      "Presente Incorporado": 9,
      "Excusa": 25,
      "Ausente": 1
@@ -1627,13 +1633,13 @@
     "Deportes y Recreación",
     "Industria y Comercio"
    ],
-   "iniciativas_cd": 30,
-   "iniciativas_total_sil": 30,
+   "iniciativas_cd": 31,
+   "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 175,
-    "total": 181,
+    "presentes": 185,
+    "total": 191,
     "breakdown": {
-     "Presente": 168,
+     "Presente": 178,
      "Excusa": 6,
      "Presente Incorporado": 7
     }
@@ -1658,10 +1664,10 @@
    "iniciativas_cd": 31,
    "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 160,
-    "total": 181,
+    "presentes": 170,
+    "total": 191,
     "breakdown": {
-     "Presente": 145,
+     "Presente": 155,
      "Presente Incorporado": 15,
      "Excusa": 21
     }
@@ -1684,10 +1690,10 @@
    "iniciativas_cd": 10,
    "iniciativas_total_sil": 10,
    "asistencia": {
-    "presentes": 57,
-    "total": 71,
+    "presentes": 67,
+    "total": 81,
     "breakdown": {
-     "Presente": 56,
+     "Presente": 66,
      "Excusa": 14,
      "Presente Incorporado": 1
     }
@@ -1707,13 +1713,13 @@
     "Interior y Policía",
     "Juventud"
    ],
-   "iniciativas_cd": 51,
-   "iniciativas_total_sil": 51,
+   "iniciativas_cd": 52,
+   "iniciativas_total_sil": 52,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 186,
+    "total": 191,
     "breakdown": {
-     "Presente": 171,
+     "Presente": 181,
      "Presente Incorporado": 5,
      "Excusa": 5
     }
@@ -1736,10 +1742,10 @@
    "iniciativas_cd": 53,
    "iniciativas_total_sil": 53,
    "asistencia": {
-    "presentes": 165,
-    "total": 181,
+    "presentes": 175,
+    "total": 191,
     "breakdown": {
-     "Presente": 146,
+     "Presente": 156,
      "Excusa": 15,
      "Representación de la Cámara": 1,
      "Presente Incorporado": 19
@@ -1762,10 +1768,10 @@
    "iniciativas_cd": 47,
    "iniciativas_total_sil": 47,
    "asistencia": {
-    "presentes": 175,
-    "total": 181,
+    "presentes": 185,
+    "total": 191,
     "breakdown": {
-     "Presente": 172,
+     "Presente": 182,
      "Excusa": 5,
      "Presente Incorporado": 3,
      "Ausente": 1
@@ -1790,13 +1796,13 @@
    "iniciativas_cd": 42,
    "iniciativas_total_sil": 42,
    "asistencia": {
-    "presentes": 167,
-    "total": 181,
+    "presentes": 177,
+    "total": 191,
     "breakdown": {
-     "Presente": 165,
+     "Presente": 174,
+     "Presente Incorporado": 3,
      "Excusa": 10,
-     "Ausente": 4,
-     "Presente Incorporado": 2
+     "Ausente": 4
     }
    }
   },
@@ -1815,10 +1821,10 @@
    "iniciativas_cd": 88,
    "iniciativas_total_sil": 88,
    "asistencia": {
-    "presentes": 168,
-    "total": 181,
+    "presentes": 178,
+    "total": 191,
     "breakdown": {
-     "Presente": 139,
+     "Presente": 149,
      "Presente Incorporado": 29,
      "Excusa": 9,
      "Ausente": 4
@@ -1841,12 +1847,12 @@
    "iniciativas_cd": 29,
    "iniciativas_total_sil": 29,
    "asistencia": {
-    "presentes": 110,
-    "total": 180,
+    "presentes": 118,
+    "total": 190,
     "breakdown": {
-     "Presente Incorporado": 46,
-     "Excusa": 26,
-     "Presente": 64,
+     "Excusa": 28,
+     "Presente": 71,
+     "Presente Incorporado": 47,
      "Ausente": 39,
      "Licencia": 5
     }
@@ -1867,10 +1873,10 @@
    "iniciativas_cd": 56,
    "iniciativas_total_sil": 56,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 182,
+    "total": 191,
     "breakdown": {
-     "Presente": 167,
+     "Presente": 177,
      "Presente Incorporado": 5,
      "Excusa": 4,
      "Licencia": 5
@@ -1895,13 +1901,13 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 180,
+    "total": 191,
     "breakdown": {
-     "Presente": 165,
+     "Presente": 173,
+     "Excusa": 8,
      "Presente Incorporado": 7,
-     "Ausente": 3,
-     "Excusa": 6
+     "Ausente": 3
     }
    }
   },
@@ -1922,10 +1928,10 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 177,
-    "total": 181,
+    "presentes": 187,
+    "total": 191,
     "breakdown": {
-     "Presente": 170,
+     "Presente": 180,
      "Presente Incorporado": 7,
      "Excusa": 3,
      "Ausente": 1
@@ -1952,12 +1958,12 @@
    "iniciativas_cd": 43,
    "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 171,
-    "total": 181,
+    "presentes": 180,
+    "total": 191,
     "breakdown": {
-     "Presente": 158,
+     "Presente": 167,
+     "Excusa": 7,
      "Presente Incorporado": 13,
-     "Excusa": 6,
      "Ausente": 4
     }
    }
@@ -1976,11 +1982,11 @@
    "iniciativas_cd": 70,
    "iniciativas_total_sil": 70,
    "asistencia": {
-    "presentes": 166,
-    "total": 181,
+    "presentes": 176,
+    "total": 191,
     "breakdown": {
-     "Presente": 148,
-     "Presente Incorporado": 18,
+     "Presente": 157,
+     "Presente Incorporado": 19,
      "Excusa": 15
     }
    }
@@ -2001,11 +2007,11 @@
    "iniciativas_cd": 46,
    "iniciativas_total_sil": 46,
    "asistencia": {
-    "presentes": 148,
-    "total": 181,
+    "presentes": 157,
+    "total": 191,
     "breakdown": {
-     "Excusa": 24,
-     "Presente": 147,
+     "Presente": 156,
+     "Excusa": 25,
      "Presente Incorporado": 1,
      "Licencia": 9
     }
@@ -2026,12 +2032,12 @@
    "iniciativas_cd": 56,
    "iniciativas_total_sil": 56,
    "asistencia": {
-    "presentes": 167,
-    "total": 181,
+    "presentes": 176,
+    "total": 191,
     "breakdown": {
-     "Presente": 165,
+     "Presente": 174,
+     "Excusa": 13,
      "Presente Incorporado": 2,
-     "Excusa": 12,
      "Ausente": 2
     }
    }
@@ -2052,12 +2058,13 @@
    "iniciativas_cd": 45,
    "iniciativas_total_sil": 45,
    "asistencia": {
-    "presentes": 178,
-    "total": 181,
+    "presentes": 180,
+    "total": 191,
     "breakdown": {
-     "Presente": 177,
-     "Presente Incorporado": 1,
-     "Excusa": 3
+     "Ausente": 2,
+     "Presente": 179,
+     "Excusa": 9,
+     "Presente Incorporado": 1
     }
    }
   },
@@ -2078,12 +2085,12 @@
    "iniciativas_cd": 36,
    "iniciativas_total_sil": 36,
    "asistencia": {
-    "presentes": 162,
-    "total": 181,
+    "presentes": 169,
+    "total": 191,
     "breakdown": {
-     "Presente": 148,
-     "Presente Incorporado": 14,
-     "Excusa": 18,
+     "Excusa": 21,
+     "Presente Incorporado": 15,
+     "Presente": 154,
      "Ausente": 1
     }
    }
@@ -2101,15 +2108,15 @@
     "Obras Públicas y Comunicaciones",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 30,
-   "iniciativas_total_sil": 30,
+   "iniciativas_cd": 31,
+   "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 160,
-    "total": 181,
+    "presentes": 170,
+    "total": 191,
     "breakdown": {
-     "Presente": 142,
+     "Presente": 151,
+     "Presente Incorporado": 19,
      "Excusa": 20,
-     "Presente Incorporado": 18,
      "Ausente": 1
     }
    }
@@ -2135,12 +2142,12 @@
    "iniciativas_cd": 39,
    "iniciativas_total_sil": 39,
    "asistencia": {
-    "presentes": 165,
-    "total": 181,
+    "presentes": 175,
+    "total": 191,
     "breakdown": {
-     "Presente": 154,
+     "Presente": 163,
+     "Presente Incorporado": 12,
      "Excusa": 15,
-     "Presente Incorporado": 11,
      "Ausente": 1
     }
    }
@@ -2163,12 +2170,12 @@
    "iniciativas_cd": 28,
    "iniciativas_total_sil": 28,
    "asistencia": {
-    "presentes": 159,
-    "total": 181,
+    "presentes": 165,
+    "total": 191,
     "breakdown": {
-     "Presente": 142,
+     "Excusa": 21,
+     "Presente": 148,
      "Presente Incorporado": 17,
-     "Excusa": 17,
      "Ausente": 5
     }
    }
@@ -2188,10 +2195,10 @@
    "iniciativas_cd": 43,
    "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 166,
-    "total": 181,
+    "presentes": 176,
+    "total": 191,
     "breakdown": {
-     "Presente": 155,
+     "Presente": 165,
      "Excusa": 15,
      "Presente Incorporado": 11
     }
@@ -2212,10 +2219,10 @@
    "iniciativas_cd": 94,
    "iniciativas_total_sil": 94,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 182,
+    "total": 191,
     "breakdown": {
-     "Presente": 170,
+     "Presente": 180,
      "Presente Incorporado": 2,
      "Excusa": 9
     }
@@ -2237,10 +2244,10 @@
    "iniciativas_cd": 23,
    "iniciativas_total_sil": 23,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 182,
+    "total": 191,
     "breakdown": {
-     "Presente": 169,
+     "Presente": 179,
      "Excusa": 9,
      "Presente Incorporado": 3
     }
@@ -2260,15 +2267,15 @@
     "Salud",
     "Ética"
    ],
-   "iniciativas_cd": 61,
-   "iniciativas_total_sil": 61,
+   "iniciativas_cd": 67,
+   "iniciativas_total_sil": 67,
    "asistencia": {
-    "presentes": 161,
-    "total": 181,
+    "presentes": 171,
+    "total": 191,
     "breakdown": {
+     "Presente": 164,
      "Excusa": 19,
      "Presente Incorporado": 7,
-     "Presente": 154,
      "Ausente": 1
     }
    }
@@ -2292,10 +2299,10 @@
    "iniciativas_cd": 38,
    "iniciativas_total_sil": 38,
    "asistencia": {
-    "presentes": 159,
-    "total": 181,
+    "presentes": 169,
+    "total": 191,
     "breakdown": {
-     "Presente": 138,
+     "Presente": 148,
      "Presente Incorporado": 21,
      "Ausente": 8,
      "Excusa": 11,
@@ -2318,11 +2325,11 @@
    "iniciativas_cd": 19,
    "iniciativas_total_sil": 19,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 182,
+    "total": 191,
     "breakdown": {
+     "Presente": 171,
      "Presente Incorporado": 11,
-     "Presente": 161,
      "Excusa": 7,
      "Ausente": 2
     }
@@ -2344,12 +2351,12 @@
    "iniciativas_cd": 33,
    "iniciativas_total_sil": 33,
    "asistencia": {
-    "presentes": 141,
-    "total": 181,
+    "presentes": 145,
+    "total": 191,
     "breakdown": {
-     "Presente": 129,
-     "Presente Incorporado": 12,
-     "Excusa": 40
+     "Excusa": 46,
+     "Presente": 133,
+     "Presente Incorporado": 12
     }
    }
   },
@@ -2367,14 +2374,14 @@
     "Movilidad y Transporte",
     "Obras Públicas y Comunicaciones"
    ],
-   "iniciativas_cd": 60,
-   "iniciativas_total_sil": 60,
+   "iniciativas_cd": 62,
+   "iniciativas_total_sil": 62,
    "asistencia": {
-    "presentes": 171,
-    "total": 181,
+    "presentes": 179,
+    "total": 191,
     "breakdown": {
-     "Excusa": 9,
-     "Presente": 169,
+     "Presente": 177,
+     "Excusa": 11,
      "Presente Incorporado": 2,
      "Ausente": 1
     }
@@ -2395,10 +2402,10 @@
    "iniciativas_cd": 21,
    "iniciativas_total_sil": 21,
    "asistencia": {
-    "presentes": 167,
-    "total": 181,
+    "presentes": 177,
+    "total": 191,
     "breakdown": {
-     "Presente": 165,
+     "Presente": 175,
      "Presente Incorporado": 2,
      "Excusa": 6,
      "Ausente": 1,
@@ -2423,10 +2430,10 @@
    "iniciativas_cd": 49,
    "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 170,
-    "total": 181,
+    "presentes": 180,
+    "total": 191,
     "breakdown": {
-     "Presente": 167,
+     "Presente": 177,
      "Ausente": 2,
      "Presente Incorporado": 3,
      "Excusa": 9
@@ -2451,11 +2458,11 @@
    "iniciativas_cd": 35,
    "iniciativas_total_sil": 35,
    "asistencia": {
-    "presentes": 167,
-    "total": 181,
+    "presentes": 177,
+    "total": 191,
     "breakdown": {
-     "Presente": 163,
-     "Presente Incorporado": 4,
+     "Presente": 172,
+     "Presente Incorporado": 5,
      "Excusa": 14
     }
    }
@@ -2473,15 +2480,15 @@
     "Presupuesto, Patrimonio y Contabilidad",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 55,
-   "iniciativas_total_sil": 55,
+   "iniciativas_cd": 56,
+   "iniciativas_total_sil": 56,
    "asistencia": {
-    "presentes": 148,
-    "total": 181,
+    "presentes": 157,
+    "total": 191,
     "breakdown": {
-     "Presente": 145,
-     "Presente Incorporado": 3,
-     "Excusa": 31,
+     "Presente": 153,
+     "Presente Incorporado": 4,
+     "Excusa": 32,
      "Ausente": 2
     }
    }
@@ -2507,10 +2514,10 @@
    "iniciativas_cd": 153,
    "iniciativas_total_sil": 153,
    "asistencia": {
-    "presentes": 178,
-    "total": 181,
+    "presentes": 188,
+    "total": 191,
     "breakdown": {
-     "Presente": 177,
+     "Presente": 187,
      "Excusa": 3,
      "Presente Incorporado": 1
     }
@@ -2533,10 +2540,10 @@
    "iniciativas_cd": 36,
    "iniciativas_total_sil": 36,
    "asistencia": {
-    "presentes": 154,
-    "total": 181,
+    "presentes": 164,
+    "total": 191,
     "breakdown": {
-     "Presente": 152,
+     "Presente": 162,
      "Excusa": 18,
      "Licencia": 7,
      "Presente Incorporado": 2,
@@ -2562,11 +2569,11 @@
    "iniciativas_cd": 48,
    "iniciativas_total_sil": 48,
    "asistencia": {
-    "presentes": 164,
-    "total": 181,
+    "presentes": 174,
+    "total": 191,
     "breakdown": {
-     "Presente": 135,
-     "Presente Incorporado": 29,
+     "Presente": 144,
+     "Presente Incorporado": 30,
      "Excusa": 11,
      "Ausente": 6
     }
@@ -2591,10 +2598,10 @@
    "iniciativas_cd": 90,
    "iniciativas_total_sil": 90,
    "asistencia": {
-    "presentes": 175,
-    "total": 181,
+    "presentes": 185,
+    "total": 191,
     "breakdown": {
-     "Presente": 172,
+     "Presente": 182,
      "Excusa": 5,
      "Presente Incorporado": 3,
      "Ausente": 1
@@ -2616,12 +2623,12 @@
    "iniciativas_cd": 26,
    "iniciativas_total_sil": 26,
    "asistencia": {
-    "presentes": 171,
-    "total": 181,
+    "presentes": 180,
+    "total": 191,
     "breakdown": {
-     "Presente": 168,
-     "Excusa": 10,
-     "Presente Incorporado": 3
+     "Presente": 176,
+     "Excusa": 11,
+     "Presente Incorporado": 4
     }
    }
   },
@@ -2642,11 +2649,11 @@
    "iniciativas_cd": 53,
    "iniciativas_total_sil": 53,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 179,
+    "total": 191,
     "breakdown": {
-     "Presente": 164,
-     "Presente Incorporado": 5,
+     "Presente": 173,
+     "Presente Incorporado": 6,
      "Excusa": 12
     }
    }
@@ -2668,13 +2675,13 @@
    "iniciativas_cd": 25,
    "iniciativas_total_sil": 25,
    "asistencia": {
-    "presentes": 171,
-    "total": 181,
+    "presentes": 175,
+    "total": 191,
     "breakdown": {
-     "Presente": 168,
-     "Presente Incorporado": 3,
-     "Excusa": 7,
-     "Ausente": 3
+     "Excusa": 9,
+     "Ausente": 7,
+     "Presente": 171,
+     "Presente Incorporado": 4
     }
    }
   },
@@ -2693,12 +2700,12 @@
    "iniciativas_cd": 65,
    "iniciativas_total_sil": 65,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 183,
+    "total": 191,
     "breakdown": {
-     "Presente": 171,
+     "Presente": 180,
+     "Presente Incorporado": 3,
      "Excusa": 7,
-     "Presente Incorporado": 2,
      "Ausente": 1
     }
    }
@@ -2716,14 +2723,14 @@
     "Industria y Comercio",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 53,
-   "iniciativas_total_sil": 53,
+   "iniciativas_cd": 54,
+   "iniciativas_total_sil": 54,
    "asistencia": {
-    "presentes": 164,
-    "total": 181,
+    "presentes": 173,
+    "total": 191,
     "breakdown": {
-     "Presente": 149,
-     "Excusa": 13,
+     "Presente": 158,
+     "Excusa": 14,
      "Presente Incorporado": 15,
      "Ausente": 4
     }
@@ -2747,10 +2754,10 @@
    "iniciativas_cd": 113,
    "iniciativas_total_sil": 113,
    "asistencia": {
-    "presentes": 175,
-    "total": 181,
+    "presentes": 185,
+    "total": 191,
     "breakdown": {
-     "Presente": 170,
+     "Presente": 180,
      "Presente Incorporado": 5,
      "Excusa": 5,
      "Ausente": 1
@@ -2774,10 +2781,10 @@
    "iniciativas_cd": 45,
    "iniciativas_total_sil": 45,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 183,
+    "total": 191,
     "breakdown": {
-     "Presente": 172,
+     "Presente": 182,
      "Excusa": 7,
      "Presente Incorporado": 1,
      "Ausente": 1
@@ -2799,13 +2806,13 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 59,
-    "total": 181,
+    "presentes": 67,
+    "total": 191,
     "breakdown": {
-     "Presente": 45,
+     "Ausente": 3,
+     "Presente": 53,
      "Presente Incorporado": 14,
-     "Excusa": 121,
-     "Ausente": 1
+     "Excusa": 121
     }
    }
   },
@@ -2824,11 +2831,11 @@
    "iniciativas_cd": 42,
    "iniciativas_total_sil": 42,
    "asistencia": {
-    "presentes": 113,
-    "total": 181,
+    "presentes": 120,
+    "total": 191,
     "breakdown": {
-     "Presente": 112,
-     "Excusa": 67,
+     "Presente": 119,
+     "Excusa": 70,
      "Presente Incorporado": 1,
      "Ausente": 1
     }
@@ -2852,12 +2859,12 @@
    "iniciativas_cd": 76,
    "iniciativas_total_sil": 76,
    "asistencia": {
-    "presentes": 167,
-    "total": 181,
+    "presentes": 177,
+    "total": 191,
     "breakdown": {
-     "Presente": 156,
+     "Presente": 165,
+     "Presente Incorporado": 12,
      "Excusa": 9,
-     "Presente Incorporado": 11,
      "Ausente": 1,
      "Licencia": 4
     }
@@ -2877,13 +2884,13 @@
     "Ministerio Público",
     "Movilidad y Transporte"
    ],
-   "iniciativas_cd": 146,
-   "iniciativas_total_sil": 146,
+   "iniciativas_cd": 150,
+   "iniciativas_total_sil": 150,
    "asistencia": {
     "presentes": 174,
-    "total": 181,
+    "total": 191,
     "breakdown": {
-     "Excusa": 7,
+     "Excusa": 17,
      "Presente": 158,
      "Presente Incorporado": 16
     }
@@ -2906,10 +2913,10 @@
    "iniciativas_cd": 54,
    "iniciativas_total_sil": 54,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 179,
+    "total": 191,
     "breakdown": {
-     "Presente": 164,
+     "Presente": 174,
      "Presente Incorporado": 5,
      "Excusa": 9,
      "Ausente": 3
@@ -2933,10 +2940,10 @@
    "iniciativas_cd": 37,
    "iniciativas_total_sil": 37,
    "asistencia": {
-    "presentes": 178,
-    "total": 181,
+    "presentes": 188,
+    "total": 191,
     "breakdown": {
-     "Presente": 175,
+     "Presente": 185,
      "Presente Incorporado": 3,
      "Excusa": 1,
      "Ausente": 2
@@ -2962,10 +2969,10 @@
    "iniciativas_cd": 68,
    "iniciativas_total_sil": 68,
    "asistencia": {
-    "presentes": 174,
-    "total": 181,
+    "presentes": 184,
+    "total": 191,
     "breakdown": {
-     "Presente": 144,
+     "Presente": 154,
      "Ausente": 4,
      "Presente Incorporado": 30,
      "Excusa": 3
@@ -2988,10 +2995,10 @@
    "iniciativas_cd": 69,
    "iniciativas_total_sil": 69,
    "asistencia": {
-    "presentes": 166,
-    "total": 181,
+    "presentes": 176,
+    "total": 191,
     "breakdown": {
-     "Presente": 161,
+     "Presente": 171,
      "Excusa": 14,
      "Presente Incorporado": 5,
      "Ausente": 1
@@ -3019,10 +3026,10 @@
    "iniciativas_cd": 64,
    "iniciativas_total_sil": 64,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 183,
+    "total": 191,
     "breakdown": {
-     "Presente": 170,
+     "Presente": 180,
      "Excusa": 8,
      "Presente Incorporado": 3
     }
@@ -3044,13 +3051,13 @@
     "Educación Superior, Ciencia y Tecnología",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 48,
-   "iniciativas_total_sil": 48,
+   "iniciativas_cd": 49,
+   "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 183,
+    "total": 191,
     "breakdown": {
-     "Presente": 173,
+     "Presente": 183,
      "Excusa": 8
     }
    }
@@ -3073,10 +3080,10 @@
    "iniciativas_cd": 61,
    "iniciativas_total_sil": 61,
    "asistencia": {
-    "presentes": 170,
-    "total": 181,
+    "presentes": 180,
+    "total": 191,
     "breakdown": {
-     "Presente": 168,
+     "Presente": 178,
      "Excusa": 11,
      "Presente Incorporado": 2
     }
@@ -3102,10 +3109,10 @@
    "iniciativas_cd": 92,
    "iniciativas_total_sil": 92,
    "asistencia": {
-    "presentes": 180,
-    "total": 181,
+    "presentes": 190,
+    "total": 191,
     "breakdown": {
-     "Presente": 180,
+     "Presente": 190,
      "Excusa": 1
     }
    }
@@ -3125,13 +3132,13 @@
     "Relaciones Exteriores y Cooperación Internacional",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 52,
-   "iniciativas_total_sil": 52,
+   "iniciativas_cd": 53,
+   "iniciativas_total_sil": 53,
    "asistencia": {
-    "presentes": 170,
-    "total": 181,
+    "presentes": 180,
+    "total": 191,
     "breakdown": {
-     "Presente": 169,
+     "Presente": 179,
      "Excusa": 10,
      "Presente Incorporado": 1,
      "Ausente": 1
@@ -3153,10 +3160,10 @@
    "iniciativas_cd": 32,
    "iniciativas_total_sil": 32,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 182,
+    "total": 191,
     "breakdown": {
-     "Presente": 160,
+     "Presente": 170,
      "Presente Incorporado": 12,
      "Excusa": 6,
      "Ausente": 3
@@ -3176,10 +3183,10 @@
    "iniciativas_total_sil": 27,
    "asistencia": {
     "presentes": 137,
-    "total": 181,
+    "total": 191,
     "breakdown": {
+     "Excusa": 52,
      "Presente": 137,
-     "Excusa": 42,
      "Ausente": 2
     }
    }
@@ -3201,10 +3208,10 @@
    "iniciativas_cd": 60,
    "iniciativas_total_sil": 60,
    "asistencia": {
-    "presentes": 175,
-    "total": 181,
+    "presentes": 185,
+    "total": 191,
     "breakdown": {
-     "Presente": 169,
+     "Presente": 179,
      "Presente Incorporado": 6,
      "Excusa": 4,
      "Ausente": 2
@@ -3230,10 +3237,10 @@
    "iniciativas_cd": 55,
    "iniciativas_total_sil": 55,
    "asistencia": {
-    "presentes": 174,
-    "total": 181,
+    "presentes": 184,
+    "total": 191,
     "breakdown": {
-     "Presente": 168,
+     "Presente": 178,
      "Presente Incorporado": 6,
      "Excusa": 5,
      "Ausente": 2
@@ -3254,14 +3261,14 @@
     "Medio Ambiente y Recursos Naturales",
     "Ética"
    ],
-   "iniciativas_cd": 88,
-   "iniciativas_total_sil": 88,
+   "iniciativas_cd": 89,
+   "iniciativas_total_sil": 89,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 182,
+    "total": 191,
     "breakdown": {
-     "Presente": 164,
-     "Presente Incorporado": 8,
+     "Presente": 173,
+     "Presente Incorporado": 9,
      "Excusa": 6,
      "Ausente": 3
     }
@@ -3282,11 +3289,11 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 153,
-    "total": 181,
+    "presentes": 163,
+    "total": 191,
     "breakdown": {
-     "Presente": 123,
-     "Presente Incorporado": 30,
+     "Presente": 132,
+     "Presente Incorporado": 31,
      "Excusa": 19,
      "Ausente": 9
     }
@@ -3311,10 +3318,10 @@
    "iniciativas_cd": 62,
    "iniciativas_total_sil": 62,
    "asistencia": {
-    "presentes": 174,
-    "total": 181,
+    "presentes": 184,
+    "total": 191,
     "breakdown": {
-     "Presente": 163,
+     "Presente": 173,
      "Licencia": 6,
      "Presente Incorporado": 11,
      "Excusa": 1
@@ -3336,13 +3343,13 @@
     "Familia",
     "Salud"
    ],
-   "iniciativas_cd": 98,
-   "iniciativas_total_sil": 98,
+   "iniciativas_cd": 101,
+   "iniciativas_total_sil": 101,
    "asistencia": {
-    "presentes": 155,
-    "total": 181,
+    "presentes": 165,
+    "total": 191,
     "breakdown": {
-     "Presente": 154,
+     "Presente": 164,
      "Excusa": 24,
      "Presente Incorporado": 1,
      "Ausente": 2
@@ -3367,10 +3374,10 @@
    "iniciativas_cd": 120,
    "iniciativas_total_sil": 120,
    "asistencia": {
-    "presentes": 145,
-    "total": 181,
+    "presentes": 155,
+    "total": 191,
     "breakdown": {
-     "Presente": 124,
+     "Presente": 134,
      "Presente Incorporado": 21,
      "Excusa": 36
     }
@@ -3393,10 +3400,10 @@
    "iniciativas_cd": 60,
    "iniciativas_total_sil": 60,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 186,
+    "total": 191,
     "breakdown": {
-     "Presente": 170,
+     "Presente": 180,
      "Excusa": 5,
      "Presente Incorporado": 6
     }
@@ -3422,12 +3429,12 @@
    "iniciativas_cd": 45,
    "iniciativas_total_sil": 45,
    "asistencia": {
-    "presentes": 155,
-    "total": 181,
+    "presentes": 162,
+    "total": 191,
     "breakdown": {
-     "Presente": 138,
-     "Presente Incorporado": 17,
-     "Excusa": 21,
+     "Excusa": 24,
+     "Presente": 144,
+     "Presente Incorporado": 18,
      "Ausente": 4,
      "Representación de la Cámara": 1
     }
@@ -3448,10 +3455,10 @@
    "iniciativas_cd": 28,
    "iniciativas_total_sil": 28,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 179,
+    "total": 191,
     "breakdown": {
-     "Presente": 158,
+     "Presente": 168,
      "Excusa": 9,
      "Presente Incorporado": 11,
      "Ausente": 3
@@ -3473,10 +3480,10 @@
    "iniciativas_cd": 59,
    "iniciativas_total_sil": 59,
    "asistencia": {
-    "presentes": 168,
-    "total": 181,
+    "presentes": 178,
+    "total": 191,
     "breakdown": {
-     "Presente": 162,
+     "Presente": 172,
      "Presente Incorporado": 6,
      "Excusa": 13
     }
@@ -3498,10 +3505,10 @@
    "iniciativas_cd": 43,
    "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 179,
-    "total": 181,
+    "presentes": 189,
+    "total": 191,
     "breakdown": {
-     "Presente": 176,
+     "Presente": 186,
      "Presente Incorporado": 3,
      "Excusa": 2
     }
@@ -3522,14 +3529,14 @@
     "Inteligencia Artificial",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 23,
-   "iniciativas_total_sil": 23,
+   "iniciativas_cd": 24,
+   "iniciativas_total_sil": 24,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 186,
+    "total": 191,
     "breakdown": {
-     "Presente": 166,
-     "Presente Incorporado": 10,
+     "Presente": 175,
+     "Presente Incorporado": 11,
      "Excusa": 5
     }
    }
@@ -3550,11 +3557,11 @@
    "iniciativas_cd": 26,
    "iniciativas_total_sil": 26,
    "asistencia": {
-    "presentes": 167,
-    "total": 181,
+    "presentes": 177,
+    "total": 191,
     "breakdown": {
+     "Presente": 151,
      "Presente Incorporado": 26,
-     "Presente": 141,
      "Excusa": 14
     }
    }
@@ -3575,11 +3582,11 @@
    "iniciativas_cd": 48,
    "iniciativas_total_sil": 48,
    "asistencia": {
-    "presentes": 181,
-    "total": 181,
+    "presentes": 191,
+    "total": 191,
     "breakdown": {
-     "Presente": 175,
-     "Presente Incorporado": 6
+     "Presente": 183,
+     "Presente Incorporado": 8
     }
    }
   },
@@ -3599,10 +3606,10 @@
    "iniciativas_cd": 51,
    "iniciativas_total_sil": 51,
    "asistencia": {
-    "presentes": 171,
-    "total": 181,
+    "presentes": 181,
+    "total": 191,
     "breakdown": {
-     "Presente": 168,
+     "Presente": 178,
      "Excusa": 10,
      "Presente Incorporado": 3
     }
@@ -3624,10 +3631,10 @@
    "iniciativas_cd": 52,
    "iniciativas_total_sil": 52,
    "asistencia": {
-    "presentes": 180,
-    "total": 181,
+    "presentes": 190,
+    "total": 191,
     "breakdown": {
-     "Presente": 180,
+     "Presente": 190,
      "Excusa": 1
     }
    }
@@ -3648,10 +3655,10 @@
    "iniciativas_cd": 43,
    "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 182,
+    "total": 191,
     "breakdown": {
-     "Presente": 160,
+     "Presente": 170,
      "Excusa": 9,
      "Presente Incorporado": 12
     }
@@ -3671,13 +3678,13 @@
     "Ciberseguridad",
     "Salud"
    ],
-   "iniciativas_cd": 42,
-   "iniciativas_total_sil": 42,
+   "iniciativas_cd": 43,
+   "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 183,
+    "total": 191,
     "breakdown": {
-     "Presente": 166,
+     "Presente": 176,
      "Excusa": 8,
      "Presente Incorporado": 7
     }
@@ -3698,10 +3705,10 @@
    "iniciativas_cd": 43,
    "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 125,
-    "total": 181,
+    "presentes": 135,
+    "total": 191,
     "breakdown": {
-     "Presente": 106,
+     "Presente": 116,
      "Excusa": 50,
      "Presente Incorporado": 19,
      "Ausente": 6
@@ -3719,13 +3726,13 @@
     "Recursos Hídricos",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 72,
-   "iniciativas_total_sil": 72,
+   "iniciativas_cd": 73,
+   "iniciativas_total_sil": 73,
    "asistencia": {
-    "presentes": 171,
-    "total": 181,
+    "presentes": 181,
+    "total": 191,
     "breakdown": {
-     "Presente": 168,
+     "Presente": 178,
      "Excusa": 8,
      "Presente Incorporado": 3,
      "Ausente": 2
@@ -3747,10 +3754,10 @@
    "iniciativas_cd": 23,
    "iniciativas_total_sil": 23,
    "asistencia": {
-    "presentes": 110,
-    "total": 181,
+    "presentes": 120,
+    "total": 191,
     "breakdown": {
-     "Presente": 81,
+     "Presente": 91,
      "Excusa": 31,
      "Presente Incorporado": 29,
      "Ausente": 32,
@@ -3775,10 +3782,10 @@
    "iniciativas_cd": 51,
    "iniciativas_total_sil": 51,
    "asistencia": {
-    "presentes": 178,
-    "total": 181,
+    "presentes": 188,
+    "total": 191,
     "breakdown": {
-     "Presente": 175,
+     "Presente": 185,
      "Ausente": 2,
      "Presente Incorporado": 3,
      "Representación de la Cámara": 1
@@ -3805,12 +3812,12 @@
    "iniciativas_cd": 37,
    "iniciativas_total_sil": 37,
    "asistencia": {
-    "presentes": 151,
-    "total": 181,
+    "presentes": 159,
+    "total": 191,
     "breakdown": {
-     "Presente": 133,
+     "Excusa": 25,
+     "Presente": 141,
      "Presente Incorporado": 18,
-     "Excusa": 23,
      "Ausente": 7
     }
    }
@@ -3831,10 +3838,10 @@
    "iniciativas_cd": 54,
    "iniciativas_total_sil": 54,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 182,
+    "total": 191,
     "breakdown": {
-     "Presente": 171,
+     "Presente": 181,
      "Excusa": 8,
      "Representación de la Cámara": 1,
      "Presente Incorporado": 1
@@ -3855,12 +3862,12 @@
    "iniciativas_cd": 19,
    "iniciativas_total_sil": 19,
    "asistencia": {
-    "presentes": 115,
-    "total": 181,
+    "presentes": 123,
+    "total": 191,
     "breakdown": {
-     "Presente": 97,
+     "Excusa": 60,
+     "Presente": 105,
      "Presente Incorporado": 18,
-     "Excusa": 58,
      "Ausente": 8
     }
    }
@@ -3882,10 +3889,10 @@
    "iniciativas_cd": 50,
    "iniciativas_total_sil": 50,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 182,
+    "total": 191,
     "breakdown": {
-     "Presente": 167,
+     "Presente": 177,
      "Presente Incorporado": 5,
      "Excusa": 9
     }
@@ -3908,10 +3915,10 @@
    "iniciativas_cd": 39,
    "iniciativas_total_sil": 39,
    "asistencia": {
-    "presentes": 152,
-    "total": 181,
+    "presentes": 162,
+    "total": 191,
     "breakdown": {
-     "Presente": 123,
+     "Presente": 133,
      "Presente Incorporado": 29,
      "Ausente": 7,
      "Excusa": 22
@@ -3935,13 +3942,13 @@
    "iniciativas_cd": 22,
    "iniciativas_total_sil": 22,
    "asistencia": {
-    "presentes": 160,
-    "total": 181,
+    "presentes": 169,
+    "total": 191,
     "breakdown": {
-     "Presente": 154,
-     "Excusa": 11,
-     "Ausente": 10,
-     "Presente Incorporado": 6
+     "Presente": 162,
+     "Presente Incorporado": 7,
+     "Excusa": 12,
+     "Ausente": 10
     }
    }
   },
@@ -3960,11 +3967,11 @@
    "iniciativas_cd": 19,
    "iniciativas_total_sil": 19,
    "asistencia": {
-    "presentes": 178,
-    "total": 181,
+    "presentes": 188,
+    "total": 191,
     "breakdown": {
-     "Presente": 168,
-     "Presente Incorporado": 10,
+     "Presente": 177,
+     "Presente Incorporado": 11,
      "Excusa": 1,
      "Ausente": 2
     }
@@ -3982,13 +3989,13 @@
     "Interior y Policía",
     "Relaciones Exteriores y Cooperación Internacional"
    ],
-   "iniciativas_cd": 26,
-   "iniciativas_total_sil": 26,
+   "iniciativas_cd": 27,
+   "iniciativas_total_sil": 27,
    "asistencia": {
-    "presentes": 163,
-    "total": 181,
+    "presentes": 173,
+    "total": 191,
     "breakdown": {
-     "Presente": 148,
+     "Presente": 158,
      "Presente Incorporado": 15,
      "Excusa": 2,
      "Ausente": 16
@@ -4012,10 +4019,10 @@
    "iniciativas_cd": 37,
    "iniciativas_total_sil": 37,
    "asistencia": {
-    "presentes": 179,
-    "total": 181,
+    "presentes": 189,
+    "total": 191,
     "breakdown": {
-     "Presente": 163,
+     "Presente": 173,
      "Presente Incorporado": 16,
      "Excusa": 1,
      "Ausente": 1
@@ -4034,13 +4041,13 @@
     "Relaciones Exteriores y Cooperación Internacional",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 60,
-   "iniciativas_total_sil": 60,
+   "iniciativas_cd": 62,
+   "iniciativas_total_sil": 62,
    "asistencia": {
-    "presentes": 161,
-    "total": 181,
+    "presentes": 171,
+    "total": 191,
     "breakdown": {
-     "Presente": 154,
+     "Presente": 164,
      "Presente Incorporado": 7,
      "Excusa": 16,
      "Ausente": 4
@@ -4062,11 +4069,11 @@
    "iniciativas_cd": 34,
    "iniciativas_total_sil": 34,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 183,
+    "total": 191,
     "breakdown": {
-     "Presente": 157,
-     "Presente Incorporado": 16,
+     "Presente": 166,
+     "Presente Incorporado": 17,
      "Excusa": 8
     }
    }
@@ -4088,10 +4095,10 @@
    "iniciativas_cd": 40,
    "iniciativas_total_sil": 40,
    "asistencia": {
-    "presentes": 177,
-    "total": 181,
+    "presentes": 187,
+    "total": 191,
     "breakdown": {
-     "Presente": 169,
+     "Presente": 179,
      "Presente Incorporado": 8,
      "Representación de la Cámara": 1,
      "Excusa": 3
@@ -4114,39 +4121,13 @@
    "iniciativas_cd": 49,
    "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 141,
-    "total": 181,
+    "presentes": 149,
+    "total": 191,
     "breakdown": {
-     "Excusa": 28,
-     "Presente Incorporado": 28,
-     "Presente": 113,
+     "Presente": 119,
+     "Presente Incorporado": 30,
+     "Excusa": 30,
      "Ausente": 12
-    }
-   }
-  },
-  "Jorge Frías": {
-   "provincia": "Santo Domingo",
-   "legisladorId": 1466,
-   "sil_nombre": "Jorge Frías",
-   "sil_provincia": "Santo Domingo",
-   "match_score": 1.0,
-   "comisiones": [
-    "04711-2024-2028-CD Comisión especial que estudia el proyecto de ley que regula la libertad religiosa de conciencia y de cultos",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
-    "Contratos",
-    "Hacienda"
-   ],
-   "iniciativas_cd": 15,
-   "iniciativas_total_sil": 15,
-   "asistencia": {
-    "presentes": 178,
-    "total": 181,
-    "breakdown": {
-     "Ausente": 2,
-     "Presente Incorporado": 1,
-     "Presente": 177,
-     "Excusa": 1
     }
    }
   },
@@ -4167,10 +4148,10 @@
    "iniciativas_cd": 45,
    "iniciativas_total_sil": 45,
    "asistencia": {
-    "presentes": 177,
-    "total": 181,
+    "presentes": 187,
+    "total": 191,
     "breakdown": {
-     "Presente": 176,
+     "Presente": 186,
      "Presente Incorporado": 1,
      "Ausente": 3,
      "Excusa": 1
@@ -4191,11 +4172,11 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 152,
-    "total": 181,
+    "presentes": 162,
+    "total": 191,
     "breakdown": {
+     "Presente": 142,
      "Excusa": 27,
-     "Presente": 132,
      "Presente Incorporado": 20,
      "Ausente": 2
     }
@@ -4215,13 +4196,13 @@
     "Economía, Planificación y Desarrollo",
     "Junta Central Electoral"
    ],
-   "iniciativas_cd": 106,
-   "iniciativas_total_sil": 106,
+   "iniciativas_cd": 107,
+   "iniciativas_total_sil": 107,
    "asistencia": {
-    "presentes": 166,
-    "total": 181,
+    "presentes": 176,
+    "total": 191,
     "breakdown": {
-     "Presente": 161,
+     "Presente": 171,
      "Presente Incorporado": 5,
      "Excusa": 15
     }
@@ -4242,11 +4223,11 @@
    "iniciativas_cd": 49,
    "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 181,
-    "total": 181,
+    "presentes": 191,
+    "total": 191,
     "breakdown": {
-     "Presente": 172,
-     "Presente Incorporado": 9
+     "Presente": 180,
+     "Presente Incorporado": 11
     }
    }
   },
@@ -4266,12 +4247,12 @@
    "iniciativas_cd": 48,
    "iniciativas_total_sil": 48,
    "asistencia": {
-    "presentes": 140,
-    "total": 181,
+    "presentes": 148,
+    "total": 191,
     "breakdown": {
-     "Excusa": 32,
-     "Presente Incorporado": 32,
-     "Presente": 108,
+     "Presente": 114,
+     "Presente Incorporado": 34,
+     "Excusa": 34,
      "Ausente": 9
     }
    }
@@ -4293,10 +4274,10 @@
    "iniciativas_cd": 45,
    "iniciativas_total_sil": 45,
    "asistencia": {
-    "presentes": 179,
-    "total": 181,
+    "presentes": 189,
+    "total": 191,
     "breakdown": {
-     "Presente": 176,
+     "Presente": 186,
      "Presente Incorporado": 3,
      "Excusa": 2
     }
@@ -4317,10 +4298,10 @@
    "iniciativas_cd": 59,
    "iniciativas_total_sil": 59,
    "asistencia": {
-    "presentes": 153,
-    "total": 181,
+    "presentes": 163,
+    "total": 191,
     "breakdown": {
-     "Presente": 145,
+     "Presente": 155,
      "Presente Incorporado": 8,
      "Ausente": 7,
      "Excusa": 21
@@ -4342,11 +4323,11 @@
    "iniciativas_cd": 48,
    "iniciativas_total_sil": 48,
    "asistencia": {
-    "presentes": 180,
-    "total": 181,
+    "presentes": 190,
+    "total": 191,
     "breakdown": {
-     "Presente": 126,
-     "Presente Incorporado": 54,
+     "Presente": 135,
+     "Presente Incorporado": 55,
      "Ausente": 1
     }
    }
@@ -4363,13 +4344,13 @@
     "Obras Públicas y Comunicaciones",
     "Reconocimientos"
    ],
-   "iniciativas_cd": 38,
-   "iniciativas_total_sil": 38,
+   "iniciativas_cd": 39,
+   "iniciativas_total_sil": 39,
    "asistencia": {
-    "presentes": 161,
-    "total": 181,
+    "presentes": 171,
+    "total": 191,
     "breakdown": {
-     "Presente": 156,
+     "Presente": 166,
      "Excusa": 12,
      "Presente Incorporado": 5,
      "Ausente": 8
@@ -4395,12 +4376,12 @@
    "iniciativas_cd": 12,
    "iniciativas_total_sil": 12,
    "asistencia": {
-    "presentes": 170,
-    "total": 181,
+    "presentes": 177,
+    "total": 191,
     "breakdown": {
-     "Presente Incorporado": 18,
-     "Excusa": 10,
-     "Presente": 152,
+     "Excusa": 13,
+     "Presente": 158,
+     "Presente Incorporado": 19,
      "Ausente": 1
     }
    }
@@ -4423,12 +4404,12 @@
    "iniciativas_cd": 79,
    "iniciativas_total_sil": 79,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 181,
+    "total": 191,
     "breakdown": {
-     "Presente": 163,
+     "Presente": 172,
+     "Excusa": 9,
      "Presente Incorporado": 9,
-     "Excusa": 8,
      "Ausente": 1
     }
    }
@@ -4449,11 +4430,11 @@
    "iniciativas_cd": 26,
    "iniciativas_total_sil": 26,
    "asistencia": {
-    "presentes": 148,
-    "total": 181,
+    "presentes": 150,
+    "total": 191,
     "breakdown": {
-     "Presente": 145,
-     "Excusa": 29,
+     "Excusa": 37,
+     "Presente": 147,
      "Ausente": 4,
      "Presente Incorporado": 3
     }
@@ -4479,10 +4460,10 @@
    "iniciativas_cd": 57,
    "iniciativas_total_sil": 57,
    "asistencia": {
-    "presentes": 163,
-    "total": 181,
+    "presentes": 173,
+    "total": 191,
     "breakdown": {
-     "Presente": 154,
+     "Presente": 164,
      "Excusa": 17,
      "Presente Incorporado": 9,
      "Ausente": 1
@@ -4504,13 +4485,13 @@
     "Presidencia de la República",
     "Trabajo"
    ],
-   "iniciativas_cd": 60,
-   "iniciativas_total_sil": 60,
+   "iniciativas_cd": 62,
+   "iniciativas_total_sil": 62,
    "asistencia": {
-    "presentes": 171,
-    "total": 181,
+    "presentes": 181,
+    "total": 191,
     "breakdown": {
-     "Presente": 170,
+     "Presente": 180,
      "Excusa": 6,
      "Presente Incorporado": 1,
      "Licencia": 3,
@@ -4536,10 +4517,10 @@
    "iniciativas_cd": 90,
    "iniciativas_total_sil": 90,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 179,
+    "total": 191,
     "breakdown": {
-     "Presente": 142,
+     "Presente": 152,
      "Presente Incorporado": 27,
      "Ausente": 4,
      "Excusa": 8
@@ -4559,12 +4540,12 @@
    "iniciativas_cd": 11,
    "iniciativas_total_sil": 11,
    "asistencia": {
-    "presentes": 163,
-    "total": 181,
+    "presentes": 171,
+    "total": 191,
     "breakdown": {
-     "Presente Incorporado": 11,
-     "Presente": 152,
-     "Excusa": 14,
+     "Presente": 159,
+     "Presente Incorporado": 12,
+     "Excusa": 16,
      "Ausente": 4
     }
    }
@@ -4586,10 +4567,10 @@
    "iniciativas_cd": 42,
    "iniciativas_total_sil": 42,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 186,
+    "total": 191,
     "breakdown": {
-     "Presente": 168,
+     "Presente": 178,
      "Presente Incorporado": 8,
      "Excusa": 4,
      "Ausente": 1
@@ -4612,12 +4593,12 @@
    "iniciativas_cd": 62,
    "iniciativas_total_sil": 62,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 178,
+    "total": 191,
     "breakdown": {
-     "Presente": 133,
+     "Presente": 142,
+     "Excusa": 12,
      "Presente Incorporado": 36,
-     "Excusa": 11,
      "Ausente": 1
     }
    }
@@ -4638,11 +4619,11 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 171,
-    "total": 181,
+    "presentes": 181,
+    "total": 191,
     "breakdown": {
+     "Presente": 180,
      "Ausente": 1,
-     "Presente": 170,
      "Excusa": 9,
      "Presente Incorporado": 1
     }
@@ -4665,13 +4646,13 @@
    "iniciativas_cd": 55,
    "iniciativas_total_sil": 55,
    "asistencia": {
-    "presentes": 175,
-    "total": 181,
+    "presentes": 184,
+    "total": 191,
     "breakdown": {
+     "Presente": 182,
+     "Presente Incorporado": 2,
+     "Excusa": 4,
      "Ausente": 2,
-     "Presente": 174,
-     "Presente Incorporado": 1,
-     "Excusa": 3,
      "Representación de la Cámara": 1
     }
    }
@@ -4694,11 +4675,11 @@
    "iniciativas_cd": 23,
    "iniciativas_total_sil": 23,
    "asistencia": {
-    "presentes": 181,
-    "total": 181,
+    "presentes": 191,
+    "total": 191,
     "breakdown": {
-     "Presente Incorporado": 3,
-     "Presente": 178
+     "Presente": 188,
+     "Presente Incorporado": 3
     }
    }
   }
