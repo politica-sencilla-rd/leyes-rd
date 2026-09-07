@@ -1,6 +1,12 @@
 {
- "_generated": "2026-07-20T12:10:15.513265+00:00",
- "_unmatched": [],
+ "_generated": "2026-09-07T15:12:25.918066+00:00",
+ "_unmatched": [
+  {
+   "nombre": "Jorge Frías",
+   "provincia": "Santo Domingo",
+   "reason": "no search hit"
+  }
+ ],
  "diputados": {
   "Alfredo Pacheco Osoria": {
    "provincia": "Distrito Nacional",
@@ -10,16 +16,16 @@
    "match_score": 1.0,
    "comisiones": [
     "Administración Interior",
-    "Comisión Coordinadora 2025-2026"
+    "Comisión Coordinadora 2026-2027"
    ],
-   "iniciativas_cd": 23,
-   "iniciativas_total_sil": 23,
+   "iniciativas_cd": 24,
+   "iniciativas_total_sil": 24,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 191,
+    "total": 196,
     "breakdown": {
-     "Presente": 165,
-     "Presente Incorporado": 11,
+     "Presente Incorporado": 13,
+     "Presente": 178,
      "Excusa": 5
     }
    }
@@ -40,13 +46,13 @@
     "Medios de Comunicación",
     "Ministerio Público"
    ],
-   "iniciativas_cd": 31,
-   "iniciativas_total_sil": 31,
+   "iniciativas_cd": 33,
+   "iniciativas_total_sil": 33,
    "asistencia": {
-    "presentes": 166,
-    "total": 181,
+    "presentes": 181,
+    "total": 196,
     "breakdown": {
-     "Presente": 162,
+     "Presente": 177,
      "Presente Incorporado": 4,
      "Excusa": 15
     }
@@ -62,21 +68,22 @@
     "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
     "05368-2024-2028-CD Comisión especial designada para estudiar el Proyecto de ley que modifica la Ley núm.5-13 sobre Discapacidad en la República Dominicana.",
+    "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
     "Industria y Comercio",
     "Juventud",
     "Medios de Comunicación",
     "Seguridad Social"
    ],
-   "iniciativas_cd": 43,
-   "iniciativas_total_sil": 43,
+   "iniciativas_cd": 48,
+   "iniciativas_total_sil": 48,
    "asistencia": {
-    "presentes": 168,
-    "total": 181,
+    "presentes": 181,
+    "total": 196,
     "breakdown": {
-     "Presente": 156,
-     "Presente Incorporado": 12,
-     "Excusa": 12,
-     "Ausente": 1
+     "Presente": 169,
+     "Excusa": 13,
+     "Ausente": 2,
+     "Presente Incorporado": 12
     }
    }
   },
@@ -94,15 +101,15 @@
     "Medios de Comunicación",
     "Relaciones Exteriores y Cooperación Internacional"
    ],
-   "iniciativas_cd": 47,
-   "iniciativas_total_sil": 47,
+   "iniciativas_cd": 49,
+   "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 161,
-    "total": 181,
+    "presentes": 170,
+    "total": 196,
     "breakdown": {
-     "Presente": 151,
-     "Presente Incorporado": 10,
-     "Excusa": 7,
+     "Presente": 159,
+     "Presente Incorporado": 11,
+     "Excusa": 13,
      "Licencia": 12,
      "Ausente": 1
     }
@@ -119,15 +126,15 @@
     "Movilidad y Transporte",
     "Trabajo"
    ],
-   "iniciativas_cd": 29,
-   "iniciativas_total_sil": 29,
+   "iniciativas_cd": 30,
+   "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 160,
-    "total": 181,
+    "presentes": 174,
+    "total": 196,
     "breakdown": {
-     "Presente Incorporado": 46,
-     "Presente": 114,
-     "Excusa": 19,
+     "Presente": 123,
+     "Excusa": 20,
+     "Presente Incorporado": 51,
      "Ausente": 1,
      "Representación de la Cámara": 1
     }
@@ -146,14 +153,14 @@
     "Modernización y Reforma",
     "Turismo"
    ],
-   "iniciativas_cd": 61,
-   "iniciativas_total_sil": 61,
+   "iniciativas_cd": 65,
+   "iniciativas_total_sil": 65,
    "asistencia": {
-    "presentes": 159,
-    "total": 181,
+    "presentes": 173,
+    "total": 196,
     "breakdown": {
-     "Presente": 140,
-     "Excusa": 18,
+     "Presente": 154,
+     "Excusa": 19,
      "Presente Incorporado": 19,
      "Ausente": 4
     }
@@ -167,7 +174,6 @@
    "match_score": 1.0,
    "comisiones": [
     "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
-    "05274-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que modifica los límites territoriales de Bonao, Juma-Bejucal y La Salvia-Los Quemados, provincia Monseñor Nouel.",
     "05405-2024-2028-CD Comisión especial designada para el estudio del Proyecto de ley de los cuerpos de bomberos de la República Dominicana.",
     "Asuntos Municipales",
     "Educación Superior, Ciencia y Tecnología",
@@ -175,14 +181,14 @@
     "Seguridad Social",
     "Trabajo"
    ],
-   "iniciativas_cd": 42,
-   "iniciativas_total_sil": 42,
+   "iniciativas_cd": 43,
+   "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 167,
-    "total": 181,
+    "presentes": 181,
+    "total": 196,
     "breakdown": {
-     "Presente": 167,
-     "Excusa": 14
+     "Presente": 181,
+     "Excusa": 15
     }
    }
   },
@@ -196,17 +202,16 @@
     "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
     "Administración Interior",
     "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
-    "Comisión Coordinadora 2025-2026",
     "Modernización y Reforma"
    ],
    "iniciativas_cd": 25,
    "iniciativas_total_sil": 25,
    "asistencia": {
-    "presentes": 159,
-    "total": 181,
+    "presentes": 168,
+    "total": 196,
     "breakdown": {
-     "Excusa": 19,
-     "Presente": 146,
+     "Excusa": 25,
+     "Presente": 155,
      "Presente Incorporado": 13,
      "Ausente": 3
     }
@@ -221,18 +226,19 @@
    "comisiones": [
     "00674-2025-PLO-SE Comisión bicameral designada para estudiar el proyecto de ley general de salud.",
     "05137-2024-2028-CD y 05138-2024-2028-CD Comisión Especial designada para el estudio de los proyectos de ley para la superación y reinserción de los adolescentes.",
+    "Contratos",
     "Desarrollo Humano",
     "Inteligencia Artificial",
     "Presupuesto, Patrimonio y Contabilidad",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 26,
-   "iniciativas_total_sil": 26,
+   "iniciativas_cd": 29,
+   "iniciativas_total_sil": 29,
    "asistencia": {
-    "presentes": 168,
-    "total": 181,
+    "presentes": 183,
+    "total": 196,
     "breakdown": {
-     "Presente": 167,
+     "Presente": 182,
      "Excusa": 13,
      "Presente Incorporado": 1
     }
@@ -251,14 +257,14 @@
     "Medio Ambiente y Recursos Naturales",
     "Relaciones Exteriores y Cooperación Internacional"
    ],
-   "iniciativas_cd": 35,
-   "iniciativas_total_sil": 35,
+   "iniciativas_cd": 36,
+   "iniciativas_total_sil": 36,
    "asistencia": {
-    "presentes": 163,
-    "total": 181,
+    "presentes": 177,
+    "total": 196,
     "breakdown": {
-     "Presente": 159,
-     "Excusa": 13,
+     "Presente": 173,
+     "Excusa": 14,
      "Presente Incorporado": 4,
      "Ausente": 5
     }
@@ -280,14 +286,14 @@
     "Presidencia de la República",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 26,
-   "iniciativas_total_sil": 26,
+   "iniciativas_cd": 27,
+   "iniciativas_total_sil": 27,
    "asistencia": {
-    "presentes": 168,
-    "total": 181,
+    "presentes": 183,
+    "total": 196,
     "breakdown": {
-     "Presente": 157,
-     "Presente Incorporado": 11,
+     "Presente Incorporado": 12,
+     "Presente": 171,
      "Excusa": 12,
      "Ausente": 1
     }
@@ -309,13 +315,13 @@
     "Educación Superior, Ciencia y Tecnología",
     "Familia"
    ],
-   "iniciativas_cd": 46,
-   "iniciativas_total_sil": 46,
+   "iniciativas_cd": 47,
+   "iniciativas_total_sil": 47,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 191,
+    "total": 196,
     "breakdown": {
-     "Presente": 174,
+     "Presente": 189,
      "Presente Incorporado": 2,
      "Excusa": 5
     }
@@ -335,11 +341,11 @@
    "iniciativas_cd": 36,
    "iniciativas_total_sil": 36,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 184,
+    "total": 196,
     "breakdown": {
-     "Presente": 122,
-     "Presente Incorporado": 47,
+     "Presente": 134,
+     "Presente Incorporado": 50,
      "Excusa": 7,
      "Ausente": 5
     }
@@ -352,19 +358,20 @@
    "sil_provincia": "Distrito Nacional",
    "match_score": 1.0,
    "comisiones": [
+    "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
     "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Contratos",
     "Movilidad y Transporte",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 65,
-   "iniciativas_total_sil": 65,
+   "iniciativas_cd": 75,
+   "iniciativas_total_sil": 75,
    "asistencia": {
-    "presentes": 168,
-    "total": 181,
+    "presentes": 183,
+    "total": 196,
     "breakdown": {
-     "Presente": 135,
-     "Presente Incorporado": 33,
+     "Presente": 148,
+     "Presente Incorporado": 35,
      "Excusa": 11,
      "Ausente": 2
     }
@@ -387,13 +394,13 @@
     "Modernización y Reforma",
     "Salud"
    ],
-   "iniciativas_cd": 28,
-   "iniciativas_total_sil": 28,
+   "iniciativas_cd": 31,
+   "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 184,
+    "total": 196,
     "breakdown": {
-     "Presente": 165,
+     "Presente": 180,
      "Presente Incorporado": 4,
      "Excusa": 12
     }
@@ -414,12 +421,12 @@
    "iniciativas_cd": 11,
    "iniciativas_total_sil": 11,
    "asistencia": {
-    "presentes": 134,
-    "total": 181,
+    "presentes": 147,
+    "total": 196,
     "breakdown": {
-     "Presente": 109,
-     "Excusa": 34,
-     "Presente Incorporado": 25,
+     "Presente": 121,
+     "Excusa": 36,
+     "Presente Incorporado": 26,
      "Ausente": 13
     }
    }
@@ -432,6 +439,7 @@
    "match_score": 1.0,
    "comisiones": [
     "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
+    "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
     "Inteligencia Artificial",
     "Juventud",
     "Relaciones Exteriores y Cooperación Internacional",
@@ -440,10 +448,10 @@
    "iniciativas_cd": 39,
    "iniciativas_total_sil": 39,
    "asistencia": {
-    "presentes": 164,
-    "total": 181,
+    "presentes": 179,
+    "total": 196,
     "breakdown": {
-     "Presente": 145,
+     "Presente": 160,
      "Presente Incorporado": 19,
      "Excusa": 10,
      "Ausente": 7
@@ -465,15 +473,15 @@
     "Presidencia de la República",
     "Ética"
    ],
-   "iniciativas_cd": 35,
-   "iniciativas_total_sil": 35,
+   "iniciativas_cd": 37,
+   "iniciativas_total_sil": 37,
    "asistencia": {
-    "presentes": 166,
-    "total": 181,
+    "presentes": 179,
+    "total": 196,
     "breakdown": {
-     "Presente Incorporado": 45,
-     "Presente": 121,
-     "Excusa": 12,
+     "Presente": 130,
+     "Presente Incorporado": 49,
+     "Excusa": 14,
      "Ausente": 3
     }
    }
@@ -493,13 +501,13 @@
     "Presupuesto, Patrimonio y Contabilidad",
     "Reconocimientos"
    ],
-   "iniciativas_cd": 66,
-   "iniciativas_total_sil": 66,
+   "iniciativas_cd": 68,
+   "iniciativas_total_sil": 68,
    "asistencia": {
-    "presentes": 163,
-    "total": 181,
+    "presentes": 178,
+    "total": 196,
     "breakdown": {
-     "Presente": 157,
+     "Presente": 172,
      "Excusa": 18,
      "Presente Incorporado": 6
     }
@@ -516,16 +524,17 @@
     "Asuntos de Equidad de Género",
     "Defensor del Pueblo",
     "Educación Superior, Ciencia y Tecnología",
+    "Hacienda",
     "Juventud",
     "Movilidad y Transporte"
    ],
-   "iniciativas_cd": 62,
-   "iniciativas_total_sil": 62,
+   "iniciativas_cd": 65,
+   "iniciativas_total_sil": 65,
    "asistencia": {
-    "presentes": 160,
-    "total": 181,
+    "presentes": 175,
+    "total": 196,
     "breakdown": {
-     "Presente": 159,
+     "Presente": 174,
      "Ausente": 1,
      "Excusa": 19,
      "Representación de la Cámara": 1,
@@ -547,15 +556,15 @@
     "Dominicanos en el Exterior",
     "Reconocimientos"
    ],
-   "iniciativas_cd": 63,
-   "iniciativas_total_sil": 63,
+   "iniciativas_cd": 72,
+   "iniciativas_total_sil": 72,
    "asistencia": {
-    "presentes": 162,
-    "total": 181,
+    "presentes": 176,
+    "total": 196,
     "breakdown": {
-     "Presente": 156,
+     "Presente": 170,
+     "Excusa": 12,
      "Presente Incorporado": 6,
-     "Excusa": 11,
      "Ausente": 4,
      "Licencia": 4
     }
@@ -568,20 +577,19 @@
    "sil_provincia": "Azua",
    "match_score": 1.0,
    "comisiones": [
-    "05274-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que modifica los límites territoriales de Bonao, Juma-Bejucal y La Salvia-Los Quemados, provincia Monseñor Nouel.",
     "Defensor del Pueblo",
     "Educación Superior, Ciencia y Tecnología",
     "Energía",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 54,
-   "iniciativas_total_sil": 54,
+   "iniciativas_cd": 58,
+   "iniciativas_total_sil": 58,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 191,
+    "total": 196,
     "breakdown": {
-     "Presente": 166,
-     "Presente Incorporado": 10,
+     "Presente": 180,
+     "Presente Incorporado": 11,
      "Excusa": 4,
      "Ausente": 1
     }
@@ -602,15 +610,15 @@
     "Salud",
     "Seguridad Social"
    ],
-   "iniciativas_cd": 70,
-   "iniciativas_total_sil": 70,
+   "iniciativas_cd": 77,
+   "iniciativas_total_sil": 77,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 189,
+    "total": 196,
     "breakdown": {
-     "Presente": 175,
-     "Excusa": 3,
-     "Ausente": 2,
+     "Excusa": 5,
+     "Presente": 188,
+     "Representación de la Cámara": 2,
      "Presente Incorporado": 1
     }
    }
@@ -632,11 +640,11 @@
    "iniciativas_cd": 54,
    "iniciativas_total_sil": 54,
    "asistencia": {
-    "presentes": 150,
-    "total": 181,
+    "presentes": 157,
+    "total": 196,
     "breakdown": {
-     "Excusa": 31,
-     "Presente": 125,
+     "Presente": 132,
+     "Excusa": 39,
      "Presente Incorporado": 25
     }
    }
@@ -656,12 +664,12 @@
    "iniciativas_cd": 9,
    "iniciativas_total_sil": 9,
    "asistencia": {
-    "presentes": 136,
-    "total": 181,
+    "presentes": 137,
+    "total": 196,
     "breakdown": {
-     "Excusa": 41,
-     "Presente": 129,
-     "Ausente": 4,
+     "Excusa": 54,
+     "Ausente": 5,
+     "Presente": 130,
      "Presente Incorporado": 7
     }
    }
@@ -673,7 +681,6 @@
    "sil_provincia": "Barahona",
    "match_score": 1.0,
    "comisiones": [
-    "05274-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que modifica los límites territoriales de Bonao, Juma-Bejucal y La Salvia-Los Quemados, provincia Monseñor Nouel.",
     "05405-2024-2028-CD Comisión especial designada para el estudio del Proyecto de ley de los cuerpos de bomberos de la República Dominicana.",
     "Asuntos Mineros",
     "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
@@ -681,13 +688,13 @@
     "Presidencia de la República",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 38,
-   "iniciativas_total_sil": 38,
+   "iniciativas_cd": 39,
+   "iniciativas_total_sil": 39,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 188,
+    "total": 196,
     "breakdown": {
-     "Presente": 162,
+     "Presente": 177,
      "Presente Incorporado": 11,
      "Excusa": 7,
      "Ausente": 1
@@ -707,13 +714,13 @@
     "Mipymes",
     "Turismo"
    ],
-   "iniciativas_cd": 51,
-   "iniciativas_total_sil": 51,
+   "iniciativas_cd": 52,
+   "iniciativas_total_sil": 52,
    "asistencia": {
-    "presentes": 161,
-    "total": 181,
+    "presentes": 176,
+    "total": 196,
     "breakdown": {
-     "Presente": 154,
+     "Presente": 169,
      "Presente Incorporado": 7,
      "Excusa": 15,
      "Ausente": 5
@@ -734,14 +741,14 @@
     "Educación Superior, Ciencia y Tecnología",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 43,
-   "iniciativas_total_sil": 43,
+   "iniciativas_cd": 44,
+   "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 155,
-    "total": 181,
+    "presentes": 170,
+    "total": 196,
     "breakdown": {
-     "Presente": 137,
-     "Presente Incorporado": 18,
+     "Presente": 151,
+     "Presente Incorporado": 19,
      "Excusa": 23,
      "Ausente": 3
     }
@@ -762,14 +769,14 @@
     "Juventud",
     "Obras Públicas y Comunicaciones"
    ],
-   "iniciativas_cd": 39,
-   "iniciativas_total_sil": 39,
+   "iniciativas_cd": 42,
+   "iniciativas_total_sil": 42,
    "asistencia": {
-    "presentes": 141,
-    "total": 181,
+    "presentes": 156,
+    "total": 196,
     "breakdown": {
-     "Presente": 115,
-     "Presente Incorporado": 26,
+     "Presente Incorporado": 28,
+     "Presente": 128,
      "Excusa": 15,
      "Ausente": 4,
      "Licencia": 21
@@ -793,13 +800,13 @@
     "Desarrollo Humano",
     "Hacienda"
    ],
-   "iniciativas_cd": 39,
-   "iniciativas_total_sil": 39,
+   "iniciativas_cd": 40,
+   "iniciativas_total_sil": 40,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 191,
+    "total": 196,
     "breakdown": {
-     "Presente": 162,
+     "Presente": 177,
      "Presente Incorporado": 14,
      "Excusa": 4,
      "Ausente": 1
@@ -819,14 +826,14 @@
     "Asuntos de Equidad de Género",
     "Dominicanos en el Exterior"
    ],
-   "iniciativas_cd": 52,
-   "iniciativas_total_sil": 52,
+   "iniciativas_cd": 53,
+   "iniciativas_total_sil": 53,
    "asistencia": {
-    "presentes": 174,
-    "total": 181,
+    "presentes": 189,
+    "total": 196,
     "breakdown": {
-     "Presente": 172,
-     "Presente Incorporado": 2,
+     "Presente": 186,
+     "Presente Incorporado": 3,
      "Excusa": 7
     }
    }
@@ -844,11 +851,11 @@
    "iniciativas_cd": 31,
    "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 187,
+    "total": 196,
     "breakdown": {
-     "Presente": 139,
-     "Presente Incorporado": 33,
+     "Presente Incorporado": 39,
+     "Presente": 148,
      "Excusa": 5,
      "Ausente": 4
     }
@@ -866,15 +873,15 @@
     "Inteligencia Artificial",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 18,
-   "iniciativas_total_sil": 18,
+   "iniciativas_cd": 20,
+   "iniciativas_total_sil": 20,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 191,
+    "total": 196,
     "breakdown": {
-     "Presente": 173,
+     "Presente Incorporado": 5,
+     "Presente": 186,
      "Excusa": 2,
-     "Presente Incorporado": 3,
      "Ausente": 3
     }
    }
@@ -892,15 +899,15 @@
     "Junta Central Electoral",
     "Mipymes"
    ],
-   "iniciativas_cd": 37,
-   "iniciativas_total_sil": 37,
+   "iniciativas_cd": 38,
+   "iniciativas_total_sil": 38,
    "asistencia": {
-    "presentes": 164,
-    "total": 181,
+    "presentes": 178,
+    "total": 196,
     "breakdown": {
-     "Excusa": 15,
-     "Presente": 162,
-     "Presente Incorporado": 2,
+     "Excusa": 16,
+     "Presente": 175,
+     "Presente Incorporado": 3,
      "Ausente": 2
     }
    }
@@ -919,13 +926,13 @@
     "Obras Públicas y Comunicaciones",
     "Seguridad Social"
    ],
-   "iniciativas_cd": 45,
-   "iniciativas_total_sil": 45,
+   "iniciativas_cd": 46,
+   "iniciativas_total_sil": 46,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 191,
+    "total": 196,
     "breakdown": {
-     "Presente": 171,
+     "Presente": 186,
      "Presente Incorporado": 5,
      "Excusa": 5
     }
@@ -943,14 +950,14 @@
     "Movilidad y Transporte",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 47,
-   "iniciativas_total_sil": 47,
+   "iniciativas_cd": 48,
+   "iniciativas_total_sil": 48,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 181,
+    "total": 196,
     "breakdown": {
-     "Presente": 167,
-     "Excusa": 10,
+     "Excusa": 13,
+     "Presente": 179,
      "Ausente": 2,
      "Presente Incorporado": 2
     }
@@ -970,15 +977,15 @@
     "Recursos Hídricos",
     "Ética"
    ],
-   "iniciativas_cd": 40,
-   "iniciativas_total_sil": 40,
+   "iniciativas_cd": 41,
+   "iniciativas_total_sil": 41,
    "asistencia": {
-    "presentes": 168,
-    "total": 181,
+    "presentes": 183,
+    "total": 196,
     "breakdown": {
+     "Presente": 174,
      "Excusa": 9,
      "Presente Incorporado": 9,
-     "Presente": 159,
      "Ausente": 4
     }
    }
@@ -998,13 +1005,13 @@
     "Salud",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 59,
-   "iniciativas_total_sil": 59,
+   "iniciativas_cd": 62,
+   "iniciativas_total_sil": 62,
    "asistencia": {
-    "presentes": 174,
-    "total": 181,
+    "presentes": 189,
+    "total": 196,
     "breakdown": {
-     "Presente": 172,
+     "Presente": 187,
      "Presente Incorporado": 2,
      "Excusa": 7
     }
@@ -1023,13 +1030,13 @@
     "Industria y Comercio",
     "Ministerio Público"
    ],
-   "iniciativas_cd": 39,
-   "iniciativas_total_sil": 39,
+   "iniciativas_cd": 41,
+   "iniciativas_total_sil": 41,
    "asistencia": {
-    "presentes": 175,
-    "total": 181,
+    "presentes": 190,
+    "total": 196,
     "breakdown": {
-     "Presente": 170,
+     "Presente": 185,
      "Presente Incorporado": 5,
      "Excusa": 6
     }
@@ -1051,12 +1058,12 @@
    "iniciativas_cd": 41,
    "iniciativas_total_sil": 41,
    "asistencia": {
-    "presentes": 174,
-    "total": 181,
+    "presentes": 187,
+    "total": 196,
     "breakdown": {
-     "Presente": 169,
-     "Presente Incorporado": 5,
-     "Excusa": 7
+     "Presente": 182,
+     "Excusa": 9,
+     "Presente Incorporado": 5
     }
    }
   },
@@ -1072,15 +1079,15 @@
     "Economía, Planificación y Desarrollo",
     "Ética"
    ],
-   "iniciativas_cd": 28,
-   "iniciativas_total_sil": 28,
+   "iniciativas_cd": 29,
+   "iniciativas_total_sil": 29,
    "asistencia": {
-    "presentes": 135,
-    "total": 181,
+    "presentes": 149,
+    "total": 196,
     "breakdown": {
-     "Presente": 108,
-     "Presente Incorporado": 27,
-     "Excusa": 46
+     "Presente Incorporado": 30,
+     "Presente": 119,
+     "Excusa": 47
     }
    }
   },
@@ -1097,14 +1104,14 @@
     "Energía",
     "Medio Ambiente y Recursos Naturales"
    ],
-   "iniciativas_cd": 59,
-   "iniciativas_total_sil": 59,
+   "iniciativas_cd": 61,
+   "iniciativas_total_sil": 61,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 187,
+    "total": 196,
     "breakdown": {
-     "Presente": 172,
-     "Excusa": 8,
+     "Presente": 186,
+     "Excusa": 9,
      "Presente Incorporado": 1
     }
    }
@@ -1124,16 +1131,15 @@
     "Trabajo",
     "Turismo"
    ],
-   "iniciativas_cd": 87,
-   "iniciativas_total_sil": 87,
+   "iniciativas_cd": 90,
+   "iniciativas_total_sil": 90,
    "asistencia": {
-    "presentes": 163,
-    "total": 181,
+    "presentes": 166,
+    "total": 196,
     "breakdown": {
-     "Ausente": 1,
-     "Presente Incorporado": 8,
-     "Excusa": 17,
-     "Presente": 155
+     "Presente": 158,
+     "Excusa": 30,
+     "Presente Incorporado": 8
     }
    }
   },
@@ -1150,15 +1156,15 @@
     "Medio Ambiente y Recursos Naturales",
     "Presupuesto, Patrimonio y Contabilidad"
    ],
-   "iniciativas_cd": 25,
-   "iniciativas_total_sil": 25,
+   "iniciativas_cd": 26,
+   "iniciativas_total_sil": 26,
    "asistencia": {
-    "presentes": 178,
-    "total": 181,
+    "presentes": 193,
+    "total": 196,
     "breakdown": {
-     "Presente": 177,
-     "Excusa": 3,
-     "Presente Incorporado": 1
+     "Presente Incorporado": 2,
+     "Presente": 191,
+     "Excusa": 3
     }
    }
   },
@@ -1176,13 +1182,14 @@
     "Mipymes",
     "Presidencia de la República"
    ],
-   "iniciativas_cd": 115,
-   "iniciativas_total_sil": 115,
+   "iniciativas_cd": 116,
+   "iniciativas_total_sil": 116,
    "asistencia": {
-    "presentes": 181,
-    "total": 181,
+    "presentes": 192,
+    "total": 196,
     "breakdown": {
-     "Presente": 179,
+     "Presente": 190,
+     "Excusa": 4,
      "Presente Incorporado": 2
     }
    }
@@ -1200,13 +1207,13 @@
     "Modernización y Reforma",
     "Presupuesto, Patrimonio y Contabilidad"
    ],
-   "iniciativas_cd": 47,
-   "iniciativas_total_sil": 47,
+   "iniciativas_cd": 48,
+   "iniciativas_total_sil": 48,
    "asistencia": {
-    "presentes": 178,
-    "total": 181,
+    "presentes": 193,
+    "total": 196,
     "breakdown": {
-     "Presente": 173,
+     "Presente": 188,
      "Presente Incorporado": 5,
      "Excusa": 3
     }
@@ -1229,11 +1236,11 @@
    "iniciativas_cd": 44,
    "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 186,
+    "total": 196,
     "breakdown": {
-     "Presente": 171,
-     "Excusa": 7,
+     "Excusa": 9,
+     "Presente": 184,
      "Presente Incorporado": 2,
      "Ausente": 1
     }
@@ -1254,11 +1261,11 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 166,
-    "total": 181,
+    "presentes": 179,
+    "total": 196,
     "breakdown": {
-     "Excusa": 6,
-     "Presente": 151,
+     "Presente": 164,
+     "Excusa": 8,
      "Presente Incorporado": 15,
      "Ausente": 9
     }
@@ -1279,13 +1286,14 @@
     "Obras Públicas y Comunicaciones",
     "Trabajo"
    ],
-   "iniciativas_cd": 44,
-   "iniciativas_total_sil": 44,
+   "iniciativas_cd": 45,
+   "iniciativas_total_sil": 45,
    "asistencia": {
-    "presentes": 167,
-    "total": 181,
+    "presentes": 182,
+    "total": 196,
     "breakdown": {
-     "Presente": 167,
+     "Presente": 181,
+     "Presente Incorporado": 1,
      "Excusa": 14
     }
    }
@@ -1303,15 +1311,15 @@
     "Relaciones Exteriores y Cooperación Internacional",
     "Turismo"
    ],
-   "iniciativas_cd": 118,
-   "iniciativas_total_sil": 118,
+   "iniciativas_cd": 120,
+   "iniciativas_total_sil": 120,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 182,
+    "total": 196,
     "breakdown": {
-     "Presente": 171,
+     "Presente": 180,
+     "Excusa": 12,
      "Presente Incorporado": 2,
-     "Excusa": 6,
      "Ausente": 2
     }
    }
@@ -1330,13 +1338,13 @@
    "iniciativas_cd": 34,
    "iniciativas_total_sil": 34,
    "asistencia": {
-    "presentes": 156,
-    "total": 181,
+    "presentes": 168,
+    "total": 196,
     "breakdown": {
-     "Presente": 142,
-     "Presente Incorporado": 14,
-     "Excusa": 22,
-     "Ausente": 3
+     "Presente": 153,
+     "Excusa": 24,
+     "Ausente": 4,
+     "Presente Incorporado": 15
     }
    }
   },
@@ -1355,14 +1363,14 @@
     "Justicia",
     "Turismo"
    ],
-   "iniciativas_cd": 91,
-   "iniciativas_total_sil": 91,
+   "iniciativas_cd": 97,
+   "iniciativas_total_sil": 97,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 178,
+    "total": 196,
     "breakdown": {
-     "Presente": 165,
-     "Excusa": 11,
+     "Presente": 174,
+     "Excusa": 17,
      "Presente Incorporado": 4,
      "Ausente": 1
     }
@@ -1376,20 +1384,21 @@
    "match_score": 1.0,
    "comisiones": [
     "05137-2024-2028-CD y 05138-2024-2028-CD Comisión Especial designada para el estudio de los proyectos de ley para la superación y reinserción de los adolescentes.",
+    "Comisión Coordinadora 2026-2027",
     "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Cultura",
     "Deportes y Recreación",
     "Juventud",
     "Mipymes"
    ],
-   "iniciativas_cd": 64,
-   "iniciativas_total_sil": 64,
+   "iniciativas_cd": 68,
+   "iniciativas_total_sil": 68,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 190,
+    "total": 196,
     "breakdown": {
-     "Presente": 175,
-     "Excusa": 5,
+     "Presente": 189,
+     "Excusa": 6,
      "Presente Incorporado": 1
     }
    }
@@ -1410,15 +1419,15 @@
     "Junta Central Electoral",
     "Justicia"
    ],
-   "iniciativas_cd": 52,
-   "iniciativas_total_sil": 52,
+   "iniciativas_cd": 55,
+   "iniciativas_total_sil": 55,
    "asistencia": {
-    "presentes": 159,
-    "total": 181,
+    "presentes": 169,
+    "total": 196,
     "breakdown": {
-     "Excusa": 20,
-     "Presente Incorporado": 25,
-     "Presente": 134,
+     "Presente": 141,
+     "Presente Incorporado": 28,
+     "Excusa": 25,
      "Representación de la Cámara": 1,
      "Ausente": 1
     }
@@ -1437,16 +1446,16 @@
     "Ministerio Público",
     "Turismo"
    ],
-   "iniciativas_cd": 43,
-   "iniciativas_total_sil": 43,
+   "iniciativas_cd": 44,
+   "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 158,
-    "total": 181,
+    "presentes": 172,
+    "total": 196,
     "breakdown": {
+     "Presente": 162,
+     "Excusa": 18,
+     "Presente Incorporado": 10,
      "Ausente": 5,
-     "Presente": 149,
-     "Excusa": 17,
-     "Presente Incorporado": 9,
      "Representación de la Cámara": 1
     }
    }
@@ -1462,15 +1471,15 @@
     "Presidencia de la República",
     "Turismo"
    ],
-   "iniciativas_cd": 46,
-   "iniciativas_total_sil": 46,
+   "iniciativas_cd": 47,
+   "iniciativas_total_sil": 47,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 187,
+    "total": 196,
     "breakdown": {
-     "Presente": 167,
+     "Presente Incorporado": 8,
+     "Presente": 179,
      "Excusa": 7,
-     "Presente Incorporado": 5,
      "Ausente": 2
     }
    }
@@ -1483,20 +1492,21 @@
    "match_score": 1.0,
    "comisiones": [
     "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
+    "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
     "Defensor del Pueblo",
     "Justicia",
     "Ministerio Público",
     "Ética"
    ],
-   "iniciativas_cd": 19,
-   "iniciativas_total_sil": 19,
+   "iniciativas_cd": 20,
+   "iniciativas_total_sil": 20,
    "asistencia": {
-    "presentes": 154,
-    "total": 181,
+    "presentes": 167,
+    "total": 196,
     "breakdown": {
-     "Presente": 131,
-     "Presente Incorporado": 23,
-     "Excusa": 19,
+     "Presente": 143,
+     "Presente Incorporado": 24,
+     "Excusa": 21,
      "Ausente": 7,
      "Representación de la Cámara": 1
     }
@@ -1511,20 +1521,21 @@
    "comisiones": [
     "05137-2024-2028-CD y 05138-2024-2028-CD Comisión Especial designada para el estudio de los proyectos de ley para la superación y reinserción de los adolescentes.",
     "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
+    "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
     "Cámara de Cuentas",
     "Justicia",
     "Juventud",
     "Medios de Comunicación",
     "Trabajo"
    ],
-   "iniciativas_cd": 29,
-   "iniciativas_total_sil": 29,
+   "iniciativas_cd": 30,
+   "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 156,
-    "total": 181,
+    "presentes": 171,
+    "total": 196,
     "breakdown": {
-     "Presente": 150,
-     "Presente Incorporado": 6,
+     "Presente": 164,
+     "Presente Incorporado": 7,
      "Excusa": 18,
      "Representación de la Cámara": 1,
      "Licencia": 4,
@@ -1544,15 +1555,15 @@
     "Mipymes",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 19,
-   "iniciativas_total_sil": 19,
+   "iniciativas_cd": 20,
+   "iniciativas_total_sil": 20,
    "asistencia": {
-    "presentes": 162,
-    "total": 181,
+    "presentes": 173,
+    "total": 196,
     "breakdown": {
-     "Presente": 157,
-     "Excusa": 17,
-     "Presente Incorporado": 5,
+     "Presente": 167,
+     "Excusa": 21,
+     "Presente Incorporado": 6,
      "Ausente": 2
     }
    }
@@ -1564,7 +1575,6 @@
    "sil_provincia": "La Vega",
    "match_score": 1.0,
    "comisiones": [
-    "05274-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que modifica los límites territoriales de Bonao, Juma-Bejucal y La Salvia-Los Quemados, provincia Monseñor Nouel.",
     "Industria y Comercio",
     "Inteligencia Artificial",
     "Juventud",
@@ -1572,15 +1582,15 @@
     "Presidencia de la República",
     "Presupuesto, Patrimonio y Contabilidad"
    ],
-   "iniciativas_cd": 72,
-   "iniciativas_total_sil": 72,
+   "iniciativas_cd": 74,
+   "iniciativas_total_sil": 74,
    "asistencia": {
-    "presentes": 174,
-    "total": 181,
+    "presentes": 183,
+    "total": 196,
     "breakdown": {
-     "Presente": 170,
-     "Excusa": 6,
-     "Presente Incorporado": 4,
+     "Presente Incorporado": 5,
+     "Presente": 178,
+     "Excusa": 12,
      "Ausente": 1
     }
    }
@@ -1600,16 +1610,16 @@
     "Reconocimientos",
     "Salud"
    ],
-   "iniciativas_cd": 21,
-   "iniciativas_total_sil": 21,
+   "iniciativas_cd": 24,
+   "iniciativas_total_sil": 24,
    "asistencia": {
-    "presentes": 155,
-    "total": 181,
+    "presentes": 169,
+    "total": 196,
     "breakdown": {
-     "Presente": 146,
+     "Presente": 160,
+     "Ausente": 2,
      "Presente Incorporado": 9,
-     "Excusa": 25,
-     "Ausente": 1
+     "Excusa": 25
     }
    }
   },
@@ -1627,15 +1637,15 @@
     "Deportes y Recreación",
     "Industria y Comercio"
    ],
-   "iniciativas_cd": 30,
-   "iniciativas_total_sil": 30,
+   "iniciativas_cd": 32,
+   "iniciativas_total_sil": 32,
    "asistencia": {
-    "presentes": 175,
-    "total": 181,
+    "presentes": 190,
+    "total": 196,
     "breakdown": {
-     "Presente": 168,
-     "Excusa": 6,
-     "Presente Incorporado": 7
+     "Presente": 182,
+     "Presente Incorporado": 8,
+     "Excusa": 6
     }
    }
   },
@@ -1649,20 +1659,22 @@
     "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "05137-2024-2028-CD y 05138-2024-2028-CD Comisión Especial designada para el estudio de los proyectos de ley para la superación y reinserción de los adolescentes.",
     "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
+    "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
+    "Comisión Coordinadora 2026-2027",
     "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Cámara de Cuentas",
     "Industria y Comercio",
     "Relaciones Exteriores y Cooperación Internacional",
     "Seguridad Social"
    ],
-   "iniciativas_cd": 31,
-   "iniciativas_total_sil": 31,
+   "iniciativas_cd": 33,
+   "iniciativas_total_sil": 33,
    "asistencia": {
-    "presentes": 160,
-    "total": 181,
+    "presentes": 175,
+    "total": 196,
     "breakdown": {
-     "Presente": 145,
-     "Presente Incorporado": 15,
+     "Presente": 159,
+     "Presente Incorporado": 16,
      "Excusa": 21
     }
    }
@@ -1681,13 +1693,13 @@
     "Junta Central Electoral",
     "Presidencia de la República"
    ],
-   "iniciativas_cd": 10,
-   "iniciativas_total_sil": 10,
+   "iniciativas_cd": 11,
+   "iniciativas_total_sil": 11,
    "asistencia": {
-    "presentes": 57,
-    "total": 71,
+    "presentes": 72,
+    "total": 86,
     "breakdown": {
-     "Presente": 56,
+     "Presente": 71,
      "Excusa": 14,
      "Presente Incorporado": 1
     }
@@ -1707,14 +1719,14 @@
     "Interior y Policía",
     "Juventud"
    ],
-   "iniciativas_cd": 51,
-   "iniciativas_total_sil": 51,
+   "iniciativas_cd": 54,
+   "iniciativas_total_sil": 54,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 191,
+    "total": 196,
     "breakdown": {
-     "Presente": 171,
-     "Presente Incorporado": 5,
+     "Presente": 185,
+     "Presente Incorporado": 6,
      "Excusa": 5
     }
    }
@@ -1726,23 +1738,22 @@
    "sil_provincia": "María Trinidad Sánchez",
    "match_score": 1.0,
    "comisiones": [
-    "05274-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que modifica los límites territoriales de Bonao, Juma-Bejucal y La Salvia-Los Quemados, provincia Monseñor Nouel.",
     "Agricultura",
     "Asuntos Marítimos",
     "Cultura",
     "Recursos Hídricos",
     "Turismo"
    ],
-   "iniciativas_cd": 53,
-   "iniciativas_total_sil": 53,
+   "iniciativas_cd": 57,
+   "iniciativas_total_sil": 57,
    "asistencia": {
-    "presentes": 165,
-    "total": 181,
+    "presentes": 180,
+    "total": 196,
     "breakdown": {
-     "Presente": 146,
+     "Presente Incorporado": 20,
+     "Presente": 160,
      "Excusa": 15,
-     "Representación de la Cámara": 1,
-     "Presente Incorporado": 19
+     "Representación de la Cámara": 1
     }
    }
   },
@@ -1759,14 +1770,14 @@
     "Obras Públicas y Comunicaciones",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 47,
-   "iniciativas_total_sil": 47,
+   "iniciativas_cd": 48,
+   "iniciativas_total_sil": 48,
    "asistencia": {
-    "presentes": 175,
-    "total": 181,
+    "presentes": 189,
+    "total": 196,
     "breakdown": {
-     "Presente": 172,
-     "Excusa": 5,
+     "Presente": 186,
+     "Excusa": 6,
      "Presente Incorporado": 3,
      "Ausente": 1
     }
@@ -1787,16 +1798,16 @@
     "Medio Ambiente y Recursos Naturales",
     "Salud"
    ],
-   "iniciativas_cd": 42,
-   "iniciativas_total_sil": 42,
+   "iniciativas_cd": 44,
+   "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 167,
-    "total": 181,
+    "presentes": 182,
+    "total": 196,
     "breakdown": {
-     "Presente": 165,
+     "Presente": 179,
+     "Presente Incorporado": 3,
      "Excusa": 10,
-     "Ausente": 4,
-     "Presente Incorporado": 2
+     "Ausente": 4
     }
    }
   },
@@ -1812,13 +1823,13 @@
     "Economía, Planificación y Desarrollo",
     "Educación"
    ],
-   "iniciativas_cd": 88,
-   "iniciativas_total_sil": 88,
+   "iniciativas_cd": 89,
+   "iniciativas_total_sil": 89,
    "asistencia": {
-    "presentes": 168,
-    "total": 181,
+    "presentes": 183,
+    "total": 196,
     "breakdown": {
-     "Presente": 139,
+     "Presente": 154,
      "Presente Incorporado": 29,
      "Excusa": 9,
      "Ausente": 4
@@ -1838,15 +1849,15 @@
     "Modernización y Reforma",
     "Presidencia de la República"
    ],
-   "iniciativas_cd": 29,
-   "iniciativas_total_sil": 29,
+   "iniciativas_cd": 30,
+   "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 110,
-    "total": 180,
+    "presentes": 122,
+    "total": 195,
     "breakdown": {
-     "Presente Incorporado": 46,
-     "Excusa": 26,
-     "Presente": 64,
+     "Presente Incorporado": 49,
+     "Presente": 73,
+     "Excusa": 29,
      "Ausente": 39,
      "Licencia": 5
     }
@@ -1864,14 +1875,14 @@
     "Defensor del Pueblo",
     "Deportes y Recreación"
    ],
-   "iniciativas_cd": 56,
-   "iniciativas_total_sil": 56,
+   "iniciativas_cd": 57,
+   "iniciativas_total_sil": 57,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 187,
+    "total": 196,
     "breakdown": {
-     "Presente": 167,
-     "Presente Incorporado": 5,
+     "Presente Incorporado": 7,
+     "Presente": 180,
      "Excusa": 4,
      "Licencia": 5
     }
@@ -1886,22 +1897,23 @@
    "comisiones": [
     "03313-2024-2028-CD Comisión especial PR investigación abandono La Cruz de Manzanillo.",
     "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
+    "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
     "Agricultura",
     "Asuntos Fronterizos",
     "Asuntos Migratorios",
     "Defensor del Pueblo",
     "Justicia"
    ],
-   "iniciativas_cd": 30,
-   "iniciativas_total_sil": 30,
+   "iniciativas_cd": 44,
+   "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 185,
+    "total": 196,
     "breakdown": {
-     "Presente": 165,
+     "Presente": 178,
+     "Excusa": 8,
      "Presente Incorporado": 7,
-     "Ausente": 3,
-     "Excusa": 6
+     "Ausente": 3
     }
    }
   },
@@ -1919,13 +1931,13 @@
     "Deportes y Recreación",
     "Educación"
    ],
-   "iniciativas_cd": 30,
-   "iniciativas_total_sil": 30,
+   "iniciativas_cd": 31,
+   "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 177,
-    "total": 181,
+    "presentes": 192,
+    "total": 196,
     "breakdown": {
-     "Presente": 170,
+     "Presente": 185,
      "Presente Incorporado": 7,
      "Excusa": 3,
      "Ausente": 1
@@ -1941,7 +1953,6 @@
    "comisiones": [
     "04691-2024-2028-CD proyecto de resolución de interpelación al señor Celso Marranzini",
     "05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza el pago de deuda por obras ejecutadas sin contrato formal.",
-    "05274-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que modifica los límites territoriales de Bonao, Juma-Bejucal y La Salvia-Los Quemados, provincia Monseñor Nouel.",
     "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
     "Asuntos Mineros",
     "Ciberseguridad",
@@ -1949,15 +1960,15 @@
     "Inteligencia Artificial",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 43,
-   "iniciativas_total_sil": 43,
+   "iniciativas_cd": 50,
+   "iniciativas_total_sil": 50,
    "asistencia": {
-    "presentes": 171,
-    "total": 181,
+    "presentes": 185,
+    "total": 196,
     "breakdown": {
-     "Presente": 158,
-     "Presente Incorporado": 13,
-     "Excusa": 6,
+     "Presente": 171,
+     "Presente Incorporado": 14,
+     "Excusa": 7,
      "Ausente": 4
     }
    }
@@ -1973,14 +1984,14 @@
     "Inteligencia Artificial",
     "Medio Ambiente y Recursos Naturales"
    ],
-   "iniciativas_cd": 70,
-   "iniciativas_total_sil": 70,
+   "iniciativas_cd": 74,
+   "iniciativas_total_sil": 74,
    "asistencia": {
-    "presentes": 166,
-    "total": 181,
+    "presentes": 181,
+    "total": 196,
     "breakdown": {
-     "Presente": 148,
-     "Presente Incorporado": 18,
+     "Presente": 160,
+     "Presente Incorporado": 21,
      "Excusa": 15
     }
    }
@@ -1998,14 +2009,14 @@
     "Educación Superior, Ciencia y Tecnología",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 46,
-   "iniciativas_total_sil": 46,
+   "iniciativas_cd": 48,
+   "iniciativas_total_sil": 48,
    "asistencia": {
-    "presentes": 148,
-    "total": 181,
+    "presentes": 162,
+    "total": 196,
     "breakdown": {
-     "Excusa": 24,
-     "Presente": 147,
+     "Presente": 161,
+     "Excusa": 25,
      "Presente Incorporado": 1,
      "Licencia": 9
     }
@@ -2023,15 +2034,15 @@
     "Asuntos Marítimos",
     "Reconocimientos"
    ],
-   "iniciativas_cd": 56,
-   "iniciativas_total_sil": 56,
+   "iniciativas_cd": 60,
+   "iniciativas_total_sil": 60,
    "asistencia": {
-    "presentes": 167,
-    "total": 181,
+    "presentes": 181,
+    "total": 196,
     "breakdown": {
-     "Presente": 165,
+     "Presente": 179,
+     "Excusa": 13,
      "Presente Incorporado": 2,
-     "Excusa": 12,
      "Ausente": 2
     }
    }
@@ -2049,15 +2060,16 @@
     "Presidencia de la República",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 45,
-   "iniciativas_total_sil": 45,
+   "iniciativas_cd": 47,
+   "iniciativas_total_sil": 47,
    "asistencia": {
-    "presentes": 178,
-    "total": 181,
+    "presentes": 183,
+    "total": 196,
     "breakdown": {
-     "Presente": 177,
-     "Presente Incorporado": 1,
-     "Excusa": 3
+     "Excusa": 11,
+     "Presente": 182,
+     "Ausente": 2,
+     "Presente Incorporado": 1
     }
    }
   },
@@ -2075,15 +2087,15 @@
     "Justicia",
     "Turismo"
    ],
-   "iniciativas_cd": 36,
-   "iniciativas_total_sil": 36,
+   "iniciativas_cd": 37,
+   "iniciativas_total_sil": 37,
    "asistencia": {
-    "presentes": 162,
-    "total": 181,
+    "presentes": 174,
+    "total": 196,
     "breakdown": {
-     "Presente": 148,
-     "Presente Incorporado": 14,
-     "Excusa": 18,
+     "Presente": 159,
+     "Excusa": 21,
+     "Presente Incorporado": 15,
      "Ausente": 1
     }
    }
@@ -2101,15 +2113,15 @@
     "Obras Públicas y Comunicaciones",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 30,
-   "iniciativas_total_sil": 30,
+   "iniciativas_cd": 31,
+   "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 160,
-    "total": 181,
+    "presentes": 174,
+    "total": 196,
     "breakdown": {
-     "Presente": 142,
-     "Excusa": 20,
-     "Presente Incorporado": 18,
+     "Presente": 155,
+     "Excusa": 21,
+     "Presente Incorporado": 19,
      "Ausente": 1
     }
    }
@@ -2125,22 +2137,21 @@
     "04691-2024-2028-CD proyecto de resolución de interpelación al señor Celso Marranzini",
     "05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza el pago de deuda por obras ejecutadas sin contrato formal.",
     "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
-    "Comisión Coordinadora 2025-2026",
     "Contratos",
     "Deportes y Recreación",
     "Energía",
     "Medio Ambiente y Recursos Naturales",
     "Modernización y Reforma"
    ],
-   "iniciativas_cd": 39,
-   "iniciativas_total_sil": 39,
+   "iniciativas_cd": 40,
+   "iniciativas_total_sil": 40,
    "asistencia": {
-    "presentes": 165,
-    "total": 181,
+    "presentes": 179,
+    "total": 196,
     "breakdown": {
-     "Presente": 154,
-     "Excusa": 15,
-     "Presente Incorporado": 11,
+     "Presente": 166,
+     "Excusa": 16,
+     "Presente Incorporado": 13,
      "Ausente": 1
     }
    }
@@ -2152,7 +2163,6 @@
    "sil_provincia": "Puerto Plata",
    "match_score": 1.0,
    "comisiones": [
-    "05274-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que modifica los límites territoriales de Bonao, Juma-Bejucal y La Salvia-Los Quemados, provincia Monseñor Nouel.",
     "05368-2024-2028-CD Comisión especial designada para estudiar el Proyecto de ley que modifica la Ley núm.5-13 sobre Discapacidad en la República Dominicana.",
     "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
     "Dominicanos en el Exterior",
@@ -2160,15 +2170,15 @@
     "Reconocimientos",
     "Turismo"
    ],
-   "iniciativas_cd": 28,
-   "iniciativas_total_sil": 28,
+   "iniciativas_cd": 31,
+   "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 159,
-    "total": 181,
+    "presentes": 170,
+    "total": 196,
     "breakdown": {
-     "Presente": 142,
-     "Presente Incorporado": 17,
-     "Excusa": 17,
+     "Presente": 152,
+     "Presente Incorporado": 18,
+     "Excusa": 21,
      "Ausente": 5
     }
    }
@@ -2188,11 +2198,11 @@
    "iniciativas_cd": 43,
    "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 166,
-    "total": 181,
+    "presentes": 180,
+    "total": 196,
     "breakdown": {
-     "Presente": 155,
-     "Excusa": 15,
+     "Presente": 169,
+     "Excusa": 16,
      "Presente Incorporado": 11
     }
    }
@@ -2204,7 +2214,6 @@
    "sil_provincia": "Puerto Plata",
    "match_score": 1.0,
    "comisiones": [
-    "05274-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que modifica los límites territoriales de Bonao, Juma-Bejucal y La Salvia-Los Quemados, provincia Monseñor Nouel.",
     "Asuntos Municipales",
     "Defensor del Pueblo",
     "Medio Ambiente y Recursos Naturales"
@@ -2212,12 +2221,12 @@
    "iniciativas_cd": 94,
    "iniciativas_total_sil": 94,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 186,
+    "total": 196,
     "breakdown": {
-     "Presente": 170,
-     "Presente Incorporado": 2,
-     "Excusa": 9
+     "Presente": 184,
+     "Excusa": 10,
+     "Presente Incorporado": 2
     }
    }
   },
@@ -2229,20 +2238,20 @@
    "match_score": 1.0,
    "comisiones": [
     "Administración Interior",
-    "Comisión Coordinadora 2025-2026",
+    "Comisión Coordinadora 2026-2027",
     "Presidencia de la República",
     "Presupuesto, Patrimonio y Contabilidad",
     "Turismo"
    ],
-   "iniciativas_cd": 23,
-   "iniciativas_total_sil": 23,
+   "iniciativas_cd": 24,
+   "iniciativas_total_sil": 24,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 187,
+    "total": 196,
     "breakdown": {
-     "Presente": 169,
-     "Excusa": 9,
-     "Presente Incorporado": 3
+     "Presente": 183,
+     "Presente Incorporado": 4,
+     "Excusa": 9
     }
    }
   },
@@ -2260,15 +2269,15 @@
     "Salud",
     "Ética"
    ],
-   "iniciativas_cd": 61,
-   "iniciativas_total_sil": 61,
+   "iniciativas_cd": 68,
+   "iniciativas_total_sil": 68,
    "asistencia": {
-    "presentes": 161,
-    "total": 181,
+    "presentes": 173,
+    "total": 196,
     "breakdown": {
-     "Excusa": 19,
+     "Excusa": 22,
+     "Presente": 166,
      "Presente Incorporado": 7,
-     "Presente": 154,
      "Ausente": 1
     }
    }
@@ -2292,11 +2301,11 @@
    "iniciativas_cd": 38,
    "iniciativas_total_sil": 38,
    "asistencia": {
-    "presentes": 159,
-    "total": 181,
+    "presentes": 174,
+    "total": 196,
     "breakdown": {
-     "Presente": 138,
-     "Presente Incorporado": 21,
+     "Presente": 152,
+     "Presente Incorporado": 22,
      "Ausente": 8,
      "Excusa": 11,
      "Licencia": 3
@@ -2315,14 +2324,14 @@
     "Contratos",
     "Medio Ambiente y Recursos Naturales"
    ],
-   "iniciativas_cd": 19,
-   "iniciativas_total_sil": 19,
+   "iniciativas_cd": 20,
+   "iniciativas_total_sil": 20,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 187,
+    "total": 196,
     "breakdown": {
+     "Presente": 176,
      "Presente Incorporado": 11,
-     "Presente": 161,
      "Excusa": 7,
      "Ausente": 2
     }
@@ -2341,15 +2350,15 @@
     "Salud",
     "Trabajo"
    ],
-   "iniciativas_cd": 33,
-   "iniciativas_total_sil": 33,
+   "iniciativas_cd": 34,
+   "iniciativas_total_sil": 34,
    "asistencia": {
-    "presentes": 141,
-    "total": 181,
+    "presentes": 150,
+    "total": 196,
     "breakdown": {
-     "Presente": 129,
-     "Presente Incorporado": 12,
-     "Excusa": 40
+     "Presente": 138,
+     "Excusa": 46,
+     "Presente Incorporado": 12
     }
    }
   },
@@ -2367,14 +2376,14 @@
     "Movilidad y Transporte",
     "Obras Públicas y Comunicaciones"
    ],
-   "iniciativas_cd": 60,
-   "iniciativas_total_sil": 60,
+   "iniciativas_cd": 63,
+   "iniciativas_total_sil": 63,
    "asistencia": {
-    "presentes": 171,
-    "total": 181,
+    "presentes": 184,
+    "total": 196,
     "breakdown": {
-     "Excusa": 9,
-     "Presente": 169,
+     "Presente": 182,
+     "Excusa": 11,
      "Presente Incorporado": 2,
      "Ausente": 1
     }
@@ -2392,13 +2401,13 @@
     "Educación Superior, Ciencia y Tecnología",
     "Hacienda"
    ],
-   "iniciativas_cd": 21,
-   "iniciativas_total_sil": 21,
+   "iniciativas_cd": 22,
+   "iniciativas_total_sil": 22,
    "asistencia": {
-    "presentes": 167,
-    "total": 181,
+    "presentes": 182,
+    "total": 196,
     "breakdown": {
-     "Presente": 165,
+     "Presente": 180,
      "Presente Incorporado": 2,
      "Excusa": 6,
      "Ausente": 1,
@@ -2414,19 +2423,18 @@
    "match_score": 1.0,
    "comisiones": [
     "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
-    "05274-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que modifica los límites territoriales de Bonao, Juma-Bejucal y La Salvia-Los Quemados, provincia Monseñor Nouel.",
     "Asuntos Cooperativos",
     "Ciberseguridad",
     "Desarrollo Humano",
     "Educación"
    ],
-   "iniciativas_cd": 49,
-   "iniciativas_total_sil": 49,
+   "iniciativas_cd": 52,
+   "iniciativas_total_sil": 52,
    "asistencia": {
-    "presentes": 170,
-    "total": 181,
+    "presentes": 185,
+    "total": 196,
     "breakdown": {
-     "Presente": 167,
+     "Presente": 182,
      "Ausente": 2,
      "Presente Incorporado": 3,
      "Excusa": 9
@@ -2448,14 +2456,14 @@
     "Inteligencia Artificial",
     "Salud"
    ],
-   "iniciativas_cd": 35,
-   "iniciativas_total_sil": 35,
+   "iniciativas_cd": 38,
+   "iniciativas_total_sil": 38,
    "asistencia": {
-    "presentes": 167,
-    "total": 181,
+    "presentes": 182,
+    "total": 196,
     "breakdown": {
-     "Presente": 163,
-     "Presente Incorporado": 4,
+     "Presente Incorporado": 6,
+     "Presente": 176,
      "Excusa": 14
     }
    }
@@ -2473,15 +2481,15 @@
     "Presupuesto, Patrimonio y Contabilidad",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 55,
-   "iniciativas_total_sil": 55,
+   "iniciativas_cd": 56,
+   "iniciativas_total_sil": 56,
    "asistencia": {
-    "presentes": 148,
-    "total": 181,
+    "presentes": 162,
+    "total": 196,
     "breakdown": {
-     "Presente": 145,
-     "Presente Incorporado": 3,
-     "Excusa": 31,
+     "Presente": 158,
+     "Presente Incorporado": 4,
+     "Excusa": 32,
      "Ausente": 2
     }
    }
@@ -2504,13 +2512,13 @@
     "Salud",
     "Seguridad Social"
    ],
-   "iniciativas_cd": 153,
-   "iniciativas_total_sil": 153,
+   "iniciativas_cd": 159,
+   "iniciativas_total_sil": 159,
    "asistencia": {
-    "presentes": 178,
-    "total": 181,
+    "presentes": 193,
+    "total": 196,
     "breakdown": {
-     "Presente": 177,
+     "Presente": 192,
      "Excusa": 3,
      "Presente Incorporado": 1
     }
@@ -2530,14 +2538,14 @@
     "Mipymes",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 36,
-   "iniciativas_total_sil": 36,
+   "iniciativas_cd": 39,
+   "iniciativas_total_sil": 39,
    "asistencia": {
-    "presentes": 154,
-    "total": 181,
+    "presentes": 167,
+    "total": 196,
     "breakdown": {
-     "Presente": 152,
-     "Excusa": 18,
+     "Excusa": 20,
+     "Presente": 165,
      "Licencia": 7,
      "Presente Incorporado": 2,
      "Ausente": 2
@@ -2562,11 +2570,11 @@
    "iniciativas_cd": 48,
    "iniciativas_total_sil": 48,
    "asistencia": {
-    "presentes": 164,
-    "total": 181,
+    "presentes": 179,
+    "total": 196,
     "breakdown": {
-     "Presente": 135,
-     "Presente Incorporado": 29,
+     "Presente Incorporado": 33,
+     "Presente": 146,
      "Excusa": 11,
      "Ausente": 6
     }
@@ -2584,17 +2592,19 @@
     "05137-2024-2028-CD y 05138-2024-2028-CD Comisión Especial designada para el estudio de los proyectos de ley para la superación y reinserción de los adolescentes.",
     "05368-2024-2028-CD Comisión especial designada para estudiar el Proyecto de ley que modifica la Ley núm.5-13 sobre Discapacidad en la República Dominicana.",
     "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
+    "Comisión Coordinadora 2026-2027",
     "Cámara de Cuentas",
+    "Derechos Humanos",
     "Educación",
     "Hacienda"
    ],
-   "iniciativas_cd": 90,
-   "iniciativas_total_sil": 90,
+   "iniciativas_cd": 95,
+   "iniciativas_total_sil": 95,
    "asistencia": {
-    "presentes": 175,
-    "total": 181,
+    "presentes": 190,
+    "total": 196,
     "breakdown": {
-     "Presente": 172,
+     "Presente": 187,
      "Excusa": 5,
      "Presente Incorporado": 3,
      "Ausente": 1
@@ -2616,12 +2626,12 @@
    "iniciativas_cd": 26,
    "iniciativas_total_sil": 26,
    "asistencia": {
-    "presentes": 171,
-    "total": 181,
+    "presentes": 185,
+    "total": 196,
     "breakdown": {
-     "Presente": 168,
-     "Excusa": 10,
-     "Presente Incorporado": 3
+     "Presente": 181,
+     "Excusa": 11,
+     "Presente Incorporado": 4
     }
    }
   },
@@ -2639,14 +2649,14 @@
     "Derechos Humanos",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 53,
-   "iniciativas_total_sil": 53,
+   "iniciativas_cd": 54,
+   "iniciativas_total_sil": 54,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 184,
+    "total": 196,
     "breakdown": {
-     "Presente": 164,
-     "Presente Incorporado": 5,
+     "Presente": 177,
+     "Presente Incorporado": 7,
      "Excusa": 12
     }
    }
@@ -2665,16 +2675,16 @@
     "Mipymes",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 25,
-   "iniciativas_total_sil": 25,
+   "iniciativas_cd": 26,
+   "iniciativas_total_sil": 26,
    "asistencia": {
-    "presentes": 171,
-    "total": 181,
+    "presentes": 180,
+    "total": 196,
     "breakdown": {
-     "Presente": 168,
-     "Presente Incorporado": 3,
-     "Excusa": 7,
-     "Ausente": 3
+     "Presente": 176,
+     "Excusa": 9,
+     "Ausente": 7,
+     "Presente Incorporado": 4
     }
    }
   },
@@ -2690,15 +2700,15 @@
     "Educación Superior, Ciencia y Tecnología",
     "Reconocimientos"
    ],
-   "iniciativas_cd": 65,
-   "iniciativas_total_sil": 65,
+   "iniciativas_cd": 66,
+   "iniciativas_total_sil": 66,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 188,
+    "total": 196,
     "breakdown": {
-     "Presente": 171,
+     "Presente": 185,
+     "Presente Incorporado": 3,
      "Excusa": 7,
-     "Presente Incorporado": 2,
      "Ausente": 1
     }
    }
@@ -2710,21 +2720,20 @@
    "sil_provincia": "San Juan",
    "match_score": 1.0,
    "comisiones": [
-    "05274-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que modifica los límites territoriales de Bonao, Juma-Bejucal y La Salvia-Los Quemados, provincia Monseñor Nouel.",
     "Agricultura",
     "Defensa",
     "Industria y Comercio",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 53,
-   "iniciativas_total_sil": 53,
+   "iniciativas_cd": 54,
+   "iniciativas_total_sil": 54,
    "asistencia": {
-    "presentes": 164,
-    "total": 181,
+    "presentes": 178,
+    "total": 196,
     "breakdown": {
-     "Presente": 149,
-     "Excusa": 13,
-     "Presente Incorporado": 15,
+     "Presente Incorporado": 16,
+     "Presente": 162,
+     "Excusa": 14,
      "Ausente": 4
     }
    }
@@ -2737,20 +2746,19 @@
    "match_score": 1.0,
    "comisiones": [
     "03313-2024-2028-CD Comisión especial PR investigación abandono La Cruz de Manzanillo.",
-    "05274-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que modifica los límites territoriales de Bonao, Juma-Bejucal y La Salvia-Los Quemados, provincia Monseñor Nouel.",
     "05405-2024-2028-CD Comisión especial designada para el estudio del Proyecto de ley de los cuerpos de bomberos de la República Dominicana.",
     "Administración Interior",
     "Agricultura",
     "Ministerio Público",
     "Trabajo"
    ],
-   "iniciativas_cd": 113,
-   "iniciativas_total_sil": 113,
+   "iniciativas_cd": 121,
+   "iniciativas_total_sil": 121,
    "asistencia": {
-    "presentes": 175,
-    "total": 181,
+    "presentes": 190,
+    "total": 196,
     "breakdown": {
-     "Presente": 170,
+     "Presente": 185,
      "Presente Incorporado": 5,
      "Excusa": 5,
      "Ausente": 1
@@ -2771,13 +2779,13 @@
     "Presupuesto, Patrimonio y Contabilidad",
     "Seguridad Social"
    ],
-   "iniciativas_cd": 45,
-   "iniciativas_total_sil": 45,
+   "iniciativas_cd": 47,
+   "iniciativas_total_sil": 47,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 188,
+    "total": 196,
     "breakdown": {
-     "Presente": 172,
+     "Presente": 187,
      "Excusa": 7,
      "Presente Incorporado": 1,
      "Ausente": 1
@@ -2796,16 +2804,16 @@
     "Presidencia de la República",
     "Trabajo"
    ],
-   "iniciativas_cd": 30,
-   "iniciativas_total_sil": 30,
+   "iniciativas_cd": 31,
+   "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 59,
-    "total": 181,
+    "presentes": 72,
+    "total": 196,
     "breakdown": {
-     "Presente": 45,
+     "Presente": 58,
+     "Ausente": 3,
      "Presente Incorporado": 14,
-     "Excusa": 121,
-     "Ausente": 1
+     "Excusa": 121
     }
    }
   },
@@ -2821,14 +2829,14 @@
     "Movilidad y Transporte",
     "Trabajo"
    ],
-   "iniciativas_cd": 42,
-   "iniciativas_total_sil": 42,
+   "iniciativas_cd": 45,
+   "iniciativas_total_sil": 45,
    "asistencia": {
-    "presentes": 113,
-    "total": 181,
+    "presentes": 123,
+    "total": 196,
     "breakdown": {
-     "Presente": 112,
-     "Excusa": 67,
+     "Excusa": 72,
+     "Presente": 122,
      "Presente Incorporado": 1,
      "Ausente": 1
     }
@@ -2849,15 +2857,15 @@
     "Obras Públicas y Comunicaciones",
     "Presupuesto, Patrimonio y Contabilidad"
    ],
-   "iniciativas_cd": 76,
-   "iniciativas_total_sil": 76,
+   "iniciativas_cd": 79,
+   "iniciativas_total_sil": 79,
    "asistencia": {
-    "presentes": 167,
-    "total": 181,
+    "presentes": 182,
+    "total": 196,
     "breakdown": {
-     "Presente": 156,
+     "Presente": 170,
+     "Presente Incorporado": 12,
      "Excusa": 9,
-     "Presente Incorporado": 11,
      "Ausente": 1,
      "Licencia": 4
     }
@@ -2877,15 +2885,15 @@
     "Ministerio Público",
     "Movilidad y Transporte"
    ],
-   "iniciativas_cd": 146,
-   "iniciativas_total_sil": 146,
+   "iniciativas_cd": 157,
+   "iniciativas_total_sil": 157,
    "asistencia": {
-    "presentes": 174,
-    "total": 181,
+    "presentes": 179,
+    "total": 196,
     "breakdown": {
-     "Excusa": 7,
-     "Presente": 158,
-     "Presente Incorporado": 16
+     "Presente": 162,
+     "Presente Incorporado": 17,
+     "Excusa": 17
     }
    }
   },
@@ -2903,14 +2911,14 @@
     "Medio Ambiente y Recursos Naturales",
     "Reconocimientos"
    ],
-   "iniciativas_cd": 54,
-   "iniciativas_total_sil": 54,
+   "iniciativas_cd": 56,
+   "iniciativas_total_sil": 56,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 184,
+    "total": 196,
     "breakdown": {
-     "Presente": 164,
-     "Presente Incorporado": 5,
+     "Presente": 178,
+     "Presente Incorporado": 6,
      "Excusa": 9,
      "Ausente": 3
     }
@@ -2930,13 +2938,13 @@
     "Justicia",
     "Ministerio Público"
    ],
-   "iniciativas_cd": 37,
-   "iniciativas_total_sil": 37,
+   "iniciativas_cd": 41,
+   "iniciativas_total_sil": 41,
    "asistencia": {
-    "presentes": 178,
-    "total": 181,
+    "presentes": 193,
+    "total": 196,
     "breakdown": {
-     "Presente": 175,
+     "Presente": 190,
      "Presente Incorporado": 3,
      "Excusa": 1,
      "Ausente": 2
@@ -2952,6 +2960,7 @@
    "comisiones": [
     "05405-2024-2028-CD Comisión especial designada para el estudio del Proyecto de ley de los cuerpos de bomberos de la República Dominicana.",
     "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
+    "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
     "Asuntos Migratorios",
     "Asuntos Mineros",
     "Ciberseguridad",
@@ -2959,15 +2968,15 @@
     "Justicia",
     "Ministerio Público"
    ],
-   "iniciativas_cd": 68,
-   "iniciativas_total_sil": 68,
+   "iniciativas_cd": 69,
+   "iniciativas_total_sil": 69,
    "asistencia": {
-    "presentes": 174,
-    "total": 181,
+    "presentes": 189,
+    "total": 196,
     "breakdown": {
-     "Presente": 144,
+     "Presente": 157,
+     "Presente Incorporado": 32,
      "Ausente": 4,
-     "Presente Incorporado": 30,
      "Excusa": 3
     }
    }
@@ -2985,13 +2994,13 @@
     "Obras Públicas y Comunicaciones",
     "Relaciones Exteriores y Cooperación Internacional"
    ],
-   "iniciativas_cd": 69,
-   "iniciativas_total_sil": 69,
+   "iniciativas_cd": 74,
+   "iniciativas_total_sil": 74,
    "asistencia": {
-    "presentes": 166,
-    "total": 181,
+    "presentes": 181,
+    "total": 196,
     "breakdown": {
-     "Presente": 161,
+     "Presente": 176,
      "Excusa": 14,
      "Presente Incorporado": 5,
      "Ausente": 1
@@ -3009,22 +3018,22 @@
     "04691-2024-2028-CD proyecto de resolución de interpelación al señor Celso Marranzini",
     "04711-2024-2028-CD Comisión especial que estudia el proyecto de ley que regula la libertad religiosa de conciencia y de cultos",
     "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
+    "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
     "Administración de Deuda Pública y Activos Financieros",
     "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
-    "Comisión Coordinadora 2025-2026",
     "Defensa",
     "Inteligencia Artificial",
     "Presidencia de la República"
    ],
-   "iniciativas_cd": 64,
-   "iniciativas_total_sil": 64,
+   "iniciativas_cd": 66,
+   "iniciativas_total_sil": 66,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 188,
+    "total": 196,
     "breakdown": {
-     "Presente": 170,
-     "Excusa": 8,
-     "Presente Incorporado": 3
+     "Presente": 184,
+     "Presente Incorporado": 4,
+     "Excusa": 8
     }
    }
   },
@@ -3036,7 +3045,6 @@
    "match_score": 1.0,
    "comisiones": [
     "04691-2024-2028-CD proyecto de resolución de interpelación al señor Celso Marranzini",
-    "05274-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que modifica los límites territoriales de Bonao, Juma-Bejucal y La Salvia-Los Quemados, provincia Monseñor Nouel.",
     "05368-2024-2028-CD Comisión especial designada para estudiar el Proyecto de ley que modifica la Ley núm.5-13 sobre Discapacidad en la República Dominicana.",
     "Asuntos Cooperativos",
     "Asuntos Mineros",
@@ -3044,13 +3052,13 @@
     "Educación Superior, Ciencia y Tecnología",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 48,
-   "iniciativas_total_sil": 48,
+   "iniciativas_cd": 50,
+   "iniciativas_total_sil": 50,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 188,
+    "total": 196,
     "breakdown": {
-     "Presente": 173,
+     "Presente": 188,
      "Excusa": 8
     }
    }
@@ -3065,18 +3073,18 @@
     "05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza el pago de deuda por obras ejecutadas sin contrato formal.",
     "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
     "Administración Interior",
-    "Comisión Coordinadora 2025-2026",
+    "Comisión Coordinadora 2026-2027",
     "Juventud",
     "Presidencia de la República",
     "Relaciones Exteriores y Cooperación Internacional"
    ],
-   "iniciativas_cd": 61,
-   "iniciativas_total_sil": 61,
+   "iniciativas_cd": 66,
+   "iniciativas_total_sil": 66,
    "asistencia": {
-    "presentes": 170,
-    "total": 181,
+    "presentes": 185,
+    "total": 196,
     "breakdown": {
-     "Presente": 168,
+     "Presente": 183,
      "Excusa": 11,
      "Presente Incorporado": 2
     }
@@ -3102,11 +3110,11 @@
    "iniciativas_cd": 92,
    "iniciativas_total_sil": 92,
    "asistencia": {
-    "presentes": 180,
-    "total": 181,
+    "presentes": 191,
+    "total": 196,
     "breakdown": {
-     "Presente": 180,
-     "Excusa": 1
+     "Excusa": 5,
+     "Presente": 191
     }
    }
   },
@@ -3125,13 +3133,13 @@
     "Relaciones Exteriores y Cooperación Internacional",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 52,
-   "iniciativas_total_sil": 52,
+   "iniciativas_cd": 55,
+   "iniciativas_total_sil": 55,
    "asistencia": {
-    "presentes": 170,
-    "total": 181,
+    "presentes": 185,
+    "total": 196,
     "breakdown": {
-     "Presente": 169,
+     "Presente": 184,
      "Excusa": 10,
      "Presente Incorporado": 1,
      "Ausente": 1
@@ -3150,13 +3158,13 @@
     "Contratos",
     "Hacienda"
    ],
-   "iniciativas_cd": 32,
-   "iniciativas_total_sil": 32,
+   "iniciativas_cd": 33,
+   "iniciativas_total_sil": 33,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 187,
+    "total": 196,
     "breakdown": {
-     "Presente": 160,
+     "Presente": 175,
      "Presente Incorporado": 12,
      "Excusa": 6,
      "Ausente": 3
@@ -3172,14 +3180,14 @@
    "comisiones": [
     "Salud"
    ],
-   "iniciativas_cd": 27,
-   "iniciativas_total_sil": 27,
+   "iniciativas_cd": 28,
+   "iniciativas_total_sil": 28,
    "asistencia": {
-    "presentes": 137,
-    "total": 181,
+    "presentes": 142,
+    "total": 196,
     "breakdown": {
-     "Presente": 137,
-     "Excusa": 42,
+     "Presente": 142,
+     "Excusa": 52,
      "Ausente": 2
     }
    }
@@ -3198,13 +3206,13 @@
     "Recursos Hídricos",
     "Trabajo"
    ],
-   "iniciativas_cd": 60,
-   "iniciativas_total_sil": 60,
+   "iniciativas_cd": 61,
+   "iniciativas_total_sil": 61,
    "asistencia": {
-    "presentes": 175,
-    "total": 181,
+    "presentes": 190,
+    "total": 196,
     "breakdown": {
-     "Presente": 169,
+     "Presente": 184,
      "Presente Incorporado": 6,
      "Excusa": 4,
      "Ausente": 2
@@ -3221,19 +3229,20 @@
     "04691-2024-2028-CD proyecto de resolución de interpelación al señor Celso Marranzini",
     "04711-2024-2028-CD Comisión especial que estudia el proyecto de ley que regula la libertad religiosa de conciencia y de cultos",
     "Asuntos Fronterizos",
+    "Comisión Coordinadora 2026-2027",
     "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Educación",
     "Educación Superior, Ciencia y Tecnología",
     "Energía",
     "Mipymes"
    ],
-   "iniciativas_cd": 55,
-   "iniciativas_total_sil": 55,
+   "iniciativas_cd": 59,
+   "iniciativas_total_sil": 59,
    "asistencia": {
-    "presentes": 174,
-    "total": 181,
+    "presentes": 189,
+    "total": 196,
     "breakdown": {
-     "Presente": 168,
+     "Presente": 183,
      "Presente Incorporado": 6,
      "Excusa": 5,
      "Ausente": 2
@@ -3254,14 +3263,14 @@
     "Medio Ambiente y Recursos Naturales",
     "Ética"
    ],
-   "iniciativas_cd": 88,
-   "iniciativas_total_sil": 88,
+   "iniciativas_cd": 97,
+   "iniciativas_total_sil": 97,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 187,
+    "total": 196,
     "breakdown": {
-     "Presente": 164,
-     "Presente Incorporado": 8,
+     "Presente": 178,
+     "Presente Incorporado": 9,
      "Excusa": 6,
      "Ausente": 3
     }
@@ -3282,12 +3291,12 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 153,
-    "total": 181,
+    "presentes": 167,
+    "total": 196,
     "breakdown": {
-     "Presente": 123,
-     "Presente Incorporado": 30,
-     "Excusa": 19,
+     "Presente": 136,
+     "Excusa": 20,
+     "Presente Incorporado": 31,
      "Ausente": 9
     }
    }
@@ -3308,13 +3317,13 @@
     "Derechos Humanos",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 62,
-   "iniciativas_total_sil": 62,
+   "iniciativas_cd": 63,
+   "iniciativas_total_sil": 63,
    "asistencia": {
-    "presentes": 174,
-    "total": 181,
+    "presentes": 189,
+    "total": 196,
     "breakdown": {
-     "Presente": 163,
+     "Presente": 178,
      "Licencia": 6,
      "Presente Incorporado": 11,
      "Excusa": 1
@@ -3336,13 +3345,13 @@
     "Familia",
     "Salud"
    ],
-   "iniciativas_cd": 98,
-   "iniciativas_total_sil": 98,
+   "iniciativas_cd": 107,
+   "iniciativas_total_sil": 107,
    "asistencia": {
-    "presentes": 155,
-    "total": 181,
+    "presentes": 170,
+    "total": 196,
     "breakdown": {
-     "Presente": 154,
+     "Presente": 169,
      "Excusa": 24,
      "Presente Incorporado": 1,
      "Ausente": 2
@@ -3367,12 +3376,12 @@
    "iniciativas_cd": 120,
    "iniciativas_total_sil": 120,
    "asistencia": {
-    "presentes": 145,
-    "total": 181,
+    "presentes": 158,
+    "total": 196,
     "breakdown": {
-     "Presente": 124,
-     "Presente Incorporado": 21,
-     "Excusa": 36
+     "Presente": 136,
+     "Presente Incorporado": 22,
+     "Excusa": 38
     }
    }
   },
@@ -3393,12 +3402,12 @@
    "iniciativas_cd": 60,
    "iniciativas_total_sil": 60,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 191,
+    "total": 196,
     "breakdown": {
-     "Presente": 170,
-     "Excusa": 5,
-     "Presente Incorporado": 6
+     "Presente": 184,
+     "Presente Incorporado": 7,
+     "Excusa": 5
     }
    }
   },
@@ -3414,20 +3423,22 @@
     "05368-2024-2028-CD Comisión especial designada para estudiar el Proyecto de ley que modifica la Ley núm.5-13 sobre Discapacidad en la República Dominicana.",
     "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
     "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
+    "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
     "Desarrollo Humano",
     "Dominicanos en el Exterior",
     "Justicia",
+    "Presidencia de la República",
     "Trabajo"
    ],
-   "iniciativas_cd": 45,
-   "iniciativas_total_sil": 45,
+   "iniciativas_cd": 49,
+   "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 155,
-    "total": 181,
+    "presentes": 167,
+    "total": 196,
     "breakdown": {
-     "Presente": 138,
-     "Presente Incorporado": 17,
-     "Excusa": 21,
+     "Presente": 149,
+     "Excusa": 24,
+     "Presente Incorporado": 18,
      "Ausente": 4,
      "Representación de la Cámara": 1
     }
@@ -3448,13 +3459,13 @@
    "iniciativas_cd": 28,
    "iniciativas_total_sil": 28,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 183,
+    "total": 196,
     "breakdown": {
-     "Presente": 158,
+     "Presente": 172,
+     "Ausente": 4,
      "Excusa": 9,
-     "Presente Incorporado": 11,
-     "Ausente": 3
+     "Presente Incorporado": 11
     }
    }
   },
@@ -3470,14 +3481,14 @@
     "Educación",
     "Ética"
    ],
-   "iniciativas_cd": 59,
-   "iniciativas_total_sil": 59,
+   "iniciativas_cd": 60,
+   "iniciativas_total_sil": 60,
    "asistencia": {
-    "presentes": 168,
-    "total": 181,
+    "presentes": 183,
+    "total": 196,
     "breakdown": {
-     "Presente": 162,
-     "Presente Incorporado": 6,
+     "Presente": 175,
+     "Presente Incorporado": 8,
      "Excusa": 13
     }
    }
@@ -3495,13 +3506,13 @@
     "Mipymes",
     "Ética"
    ],
-   "iniciativas_cd": 43,
-   "iniciativas_total_sil": 43,
+   "iniciativas_cd": 44,
+   "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 179,
-    "total": 181,
+    "presentes": 194,
+    "total": 196,
     "breakdown": {
-     "Presente": 176,
+     "Presente": 191,
      "Presente Incorporado": 3,
      "Excusa": 2
     }
@@ -3514,6 +3525,7 @@
    "sil_provincia": "Santo Domingo",
    "match_score": 1.0,
    "comisiones": [
+    "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
     "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
     "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Deportes y Recreación",
@@ -3522,14 +3534,14 @@
     "Inteligencia Artificial",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 23,
-   "iniciativas_total_sil": 23,
+   "iniciativas_cd": 27,
+   "iniciativas_total_sil": 27,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 191,
+    "total": 196,
     "breakdown": {
-     "Presente": 166,
-     "Presente Incorporado": 10,
+     "Presente": 179,
+     "Presente Incorporado": 12,
      "Excusa": 5
     }
    }
@@ -3541,20 +3553,19 @@
    "sil_provincia": "Santo Domingo",
    "match_score": 1.0,
    "comisiones": [
-    "05274-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que modifica los límites territoriales de Bonao, Juma-Bejucal y La Salvia-Los Quemados, provincia Monseñor Nouel.",
     "Administración Interior",
     "Contratos",
     "Mipymes",
     "Relaciones Exteriores y Cooperación Internacional"
    ],
-   "iniciativas_cd": 26,
-   "iniciativas_total_sil": 26,
+   "iniciativas_cd": 27,
+   "iniciativas_total_sil": 27,
    "asistencia": {
-    "presentes": 167,
-    "total": 181,
+    "presentes": 182,
+    "total": 196,
     "breakdown": {
-     "Presente Incorporado": 26,
-     "Presente": 141,
+     "Presente Incorporado": 28,
+     "Presente": 154,
      "Excusa": 14
     }
    }
@@ -3575,11 +3586,11 @@
    "iniciativas_cd": 48,
    "iniciativas_total_sil": 48,
    "asistencia": {
-    "presentes": 181,
-    "total": 181,
+    "presentes": 196,
+    "total": 196,
     "breakdown": {
-     "Presente": 175,
-     "Presente Incorporado": 6
+     "Presente": 188,
+     "Presente Incorporado": 8
     }
    }
   },
@@ -3599,10 +3610,10 @@
    "iniciativas_cd": 51,
    "iniciativas_total_sil": 51,
    "asistencia": {
-    "presentes": 171,
-    "total": 181,
+    "presentes": 186,
+    "total": 196,
     "breakdown": {
-     "Presente": 168,
+     "Presente": 183,
      "Excusa": 10,
      "Presente Incorporado": 3
     }
@@ -3618,16 +3629,16 @@
     "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
     "Administración Interior",
     "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
-    "Comisión Coordinadora 2025-2026",
+    "Comisión Coordinadora 2026-2027",
     "Modernización y Reforma"
    ],
-   "iniciativas_cd": 52,
-   "iniciativas_total_sil": 52,
+   "iniciativas_cd": 54,
+   "iniciativas_total_sil": 54,
    "asistencia": {
-    "presentes": 180,
-    "total": 181,
+    "presentes": 195,
+    "total": 196,
     "breakdown": {
-     "Presente": 180,
+     "Presente": 195,
      "Excusa": 1
     }
    }
@@ -3645,13 +3656,13 @@
     "Salud",
     "Seguridad Social"
    ],
-   "iniciativas_cd": 43,
-   "iniciativas_total_sil": 43,
+   "iniciativas_cd": 44,
+   "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 187,
+    "total": 196,
     "breakdown": {
-     "Presente": 160,
+     "Presente": 175,
      "Excusa": 9,
      "Presente Incorporado": 12
     }
@@ -3671,13 +3682,13 @@
     "Ciberseguridad",
     "Salud"
    ],
-   "iniciativas_cd": 42,
-   "iniciativas_total_sil": 42,
+   "iniciativas_cd": 43,
+   "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 188,
+    "total": 196,
     "breakdown": {
-     "Presente": 166,
+     "Presente": 181,
      "Excusa": 8,
      "Presente Incorporado": 7
     }
@@ -3698,11 +3709,11 @@
    "iniciativas_cd": 43,
    "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 125,
-    "total": 181,
+    "presentes": 139,
+    "total": 196,
     "breakdown": {
-     "Presente": 106,
-     "Excusa": 50,
+     "Presente": 120,
+     "Excusa": 51,
      "Presente Incorporado": 19,
      "Ausente": 6
     }
@@ -3719,13 +3730,13 @@
     "Recursos Hídricos",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 72,
-   "iniciativas_total_sil": 72,
+   "iniciativas_cd": 78,
+   "iniciativas_total_sil": 78,
    "asistencia": {
-    "presentes": 171,
-    "total": 181,
+    "presentes": 186,
+    "total": 196,
     "breakdown": {
-     "Presente": 168,
+     "Presente": 183,
      "Excusa": 8,
      "Presente Incorporado": 3,
      "Ausente": 2
@@ -3744,16 +3755,16 @@
     "Movilidad y Transporte",
     "Presupuesto, Patrimonio y Contabilidad"
    ],
-   "iniciativas_cd": 23,
-   "iniciativas_total_sil": 23,
+   "iniciativas_cd": 24,
+   "iniciativas_total_sil": 24,
    "asistencia": {
-    "presentes": 110,
-    "total": 181,
+    "presentes": 123,
+    "total": 196,
     "breakdown": {
-     "Presente": 81,
-     "Excusa": 31,
-     "Presente Incorporado": 29,
-     "Ausente": 32,
+     "Presente": 93,
+     "Excusa": 32,
+     "Presente Incorporado": 30,
+     "Ausente": 33,
      "Licencia": 8
     }
    }
@@ -3766,19 +3777,20 @@
    "match_score": 1.0,
    "comisiones": [
     "00674-2025-PLO-SE Comisión bicameral designada para estudiar el proyecto de ley general de salud.",
-    "05274-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que modifica los límites territoriales de Bonao, Juma-Bejucal y La Salvia-Los Quemados, provincia Monseñor Nouel.",
     "05405-2024-2028-CD Comisión especial designada para el estudio del Proyecto de ley de los cuerpos de bomberos de la República Dominicana.",
+    "Asuntos Marítimos",
     "Asuntos de Equidad de Género",
     "Familia",
-    "Salud"
+    "Salud",
+    "Ética"
    ],
-   "iniciativas_cd": 51,
-   "iniciativas_total_sil": 51,
+   "iniciativas_cd": 56,
+   "iniciativas_total_sil": 56,
    "asistencia": {
-    "presentes": 178,
-    "total": 181,
+    "presentes": 193,
+    "total": 196,
     "breakdown": {
-     "Presente": 175,
+     "Presente": 190,
      "Ausente": 2,
      "Presente Incorporado": 3,
      "Representación de la Cámara": 1
@@ -3794,7 +3806,6 @@
    "comisiones": [
     "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
     "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
-    "05274-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que modifica los límites territoriales de Bonao, Juma-Bejucal y La Salvia-Los Quemados, provincia Monseñor Nouel.",
     "Administración de Deuda Pública y Activos Financieros",
     "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
     "Derechos Humanos",
@@ -3802,15 +3813,15 @@
     "Hacienda",
     "Presupuesto, Patrimonio y Contabilidad"
    ],
-   "iniciativas_cd": 37,
-   "iniciativas_total_sil": 37,
+   "iniciativas_cd": 38,
+   "iniciativas_total_sil": 38,
    "asistencia": {
-    "presentes": 151,
-    "total": 181,
+    "presentes": 164,
+    "total": 196,
     "breakdown": {
-     "Presente": 133,
-     "Presente Incorporado": 18,
-     "Excusa": 23,
+     "Presente": 145,
+     "Presente Incorporado": 19,
+     "Excusa": 25,
      "Ausente": 7
     }
    }
@@ -3828,13 +3839,13 @@
     "Desarrollo Humano",
     "Salud"
    ],
-   "iniciativas_cd": 54,
-   "iniciativas_total_sil": 54,
+   "iniciativas_cd": 56,
+   "iniciativas_total_sil": 56,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 187,
+    "total": 196,
     "breakdown": {
-     "Presente": 171,
+     "Presente": 186,
      "Excusa": 8,
      "Representación de la Cámara": 1,
      "Presente Incorporado": 1
@@ -3852,15 +3863,15 @@
     "Defensa",
     "Interior y Policía"
    ],
-   "iniciativas_cd": 19,
-   "iniciativas_total_sil": 19,
+   "iniciativas_cd": 20,
+   "iniciativas_total_sil": 20,
    "asistencia": {
-    "presentes": 115,
-    "total": 181,
+    "presentes": 127,
+    "total": 196,
     "breakdown": {
-     "Presente": 97,
+     "Presente": 109,
+     "Excusa": 61,
      "Presente Incorporado": 18,
-     "Excusa": 58,
      "Ausente": 8
     }
    }
@@ -3874,18 +3885,18 @@
    "comisiones": [
     "Administración Interior",
     "Asuntos de Equidad de Género",
-    "Comisión Coordinadora 2025-2026",
+    "Comisión Coordinadora 2026-2027",
     "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Industria y Comercio",
     "Medio Ambiente y Recursos Naturales"
    ],
-   "iniciativas_cd": 50,
-   "iniciativas_total_sil": 50,
+   "iniciativas_cd": 52,
+   "iniciativas_total_sil": 52,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 187,
+    "total": 196,
     "breakdown": {
-     "Presente": 167,
+     "Presente": 182,
      "Presente Incorporado": 5,
      "Excusa": 9
     }
@@ -3905,15 +3916,15 @@
     "Hacienda",
     "Presupuesto, Patrimonio y Contabilidad"
    ],
-   "iniciativas_cd": 39,
-   "iniciativas_total_sil": 39,
+   "iniciativas_cd": 40,
+   "iniciativas_total_sil": 40,
    "asistencia": {
-    "presentes": 152,
-    "total": 181,
+    "presentes": 166,
+    "total": 196,
     "breakdown": {
-     "Presente": 123,
+     "Presente": 137,
+     "Ausente": 8,
      "Presente Incorporado": 29,
-     "Ausente": 7,
      "Excusa": 22
     }
    }
@@ -3932,16 +3943,16 @@
     "Mipymes",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 22,
-   "iniciativas_total_sil": 22,
+   "iniciativas_cd": 23,
+   "iniciativas_total_sil": 23,
    "asistencia": {
-    "presentes": 160,
-    "total": 181,
+    "presentes": 174,
+    "total": 196,
     "breakdown": {
-     "Presente": 154,
-     "Excusa": 11,
-     "Ausente": 10,
-     "Presente Incorporado": 6
+     "Presente": 167,
+     "Presente Incorporado": 7,
+     "Excusa": 12,
+     "Ausente": 10
     }
    }
   },
@@ -3957,14 +3968,14 @@
     "Movilidad y Transporte",
     "Obras Públicas y Comunicaciones"
    ],
-   "iniciativas_cd": 19,
-   "iniciativas_total_sil": 19,
+   "iniciativas_cd": 20,
+   "iniciativas_total_sil": 20,
    "asistencia": {
-    "presentes": 178,
-    "total": 181,
+    "presentes": 193,
+    "total": 196,
     "breakdown": {
-     "Presente": 168,
-     "Presente Incorporado": 10,
+     "Presente": 181,
+     "Presente Incorporado": 12,
      "Excusa": 1,
      "Ausente": 2
     }
@@ -3978,17 +3989,20 @@
    "match_score": 1.0,
    "comisiones": [
     "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
+    "Administración de Deuda Pública y Activos Financieros",
+    "Asuntos Cooperativos",
+    "Asuntos Municipales",
     "Deportes y Recreación",
     "Interior y Policía",
     "Relaciones Exteriores y Cooperación Internacional"
    ],
-   "iniciativas_cd": 26,
-   "iniciativas_total_sil": 26,
+   "iniciativas_cd": 31,
+   "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 163,
-    "total": 181,
+    "presentes": 178,
+    "total": 196,
     "breakdown": {
-     "Presente": 148,
+     "Presente": 163,
      "Presente Incorporado": 15,
      "Excusa": 2,
      "Ausente": 16
@@ -4009,13 +4023,13 @@
     "Modernización y Reforma",
     "Movilidad y Transporte"
    ],
-   "iniciativas_cd": 37,
-   "iniciativas_total_sil": 37,
+   "iniciativas_cd": 40,
+   "iniciativas_total_sil": 40,
    "asistencia": {
-    "presentes": 179,
-    "total": 181,
+    "presentes": 194,
+    "total": 196,
     "breakdown": {
-     "Presente": 163,
+     "Presente": 178,
      "Presente Incorporado": 16,
      "Excusa": 1,
      "Ausente": 1
@@ -4034,13 +4048,13 @@
     "Relaciones Exteriores y Cooperación Internacional",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 60,
-   "iniciativas_total_sil": 60,
+   "iniciativas_cd": 63,
+   "iniciativas_total_sil": 63,
    "asistencia": {
-    "presentes": 161,
-    "total": 181,
+    "presentes": 176,
+    "total": 196,
     "breakdown": {
-     "Presente": 154,
+     "Presente": 169,
      "Presente Incorporado": 7,
      "Excusa": 16,
      "Ausente": 4
@@ -4054,19 +4068,20 @@
    "sil_provincia": "Santo Domingo",
    "match_score": 1.0,
    "comisiones": [
+    "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
     "Energía",
     "Recursos Hídricos",
     "Trabajo",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 34,
-   "iniciativas_total_sil": 34,
+   "iniciativas_cd": 35,
+   "iniciativas_total_sil": 35,
    "asistencia": {
-    "presentes": 173,
-    "total": 181,
+    "presentes": 188,
+    "total": 196,
     "breakdown": {
-     "Presente": 157,
-     "Presente Incorporado": 16,
+     "Presente": 171,
+     "Presente Incorporado": 17,
      "Excusa": 8
     }
    }
@@ -4079,6 +4094,7 @@
    "match_score": 1.0,
    "comisiones": [
     "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
+    "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
     "Asuntos Municipales",
     "Interior y Policía",
     "Justicia",
@@ -4088,10 +4104,10 @@
    "iniciativas_cd": 40,
    "iniciativas_total_sil": 40,
    "asistencia": {
-    "presentes": 177,
-    "total": 181,
+    "presentes": 192,
+    "total": 196,
     "breakdown": {
-     "Presente": 169,
+     "Presente": 184,
      "Presente Incorporado": 8,
      "Representación de la Cámara": 1,
      "Excusa": 3
@@ -4114,39 +4130,13 @@
    "iniciativas_cd": 49,
    "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 141,
-    "total": 181,
+    "presentes": 153,
+    "total": 196,
     "breakdown": {
-     "Excusa": 28,
-     "Presente Incorporado": 28,
-     "Presente": 113,
+     "Presente Incorporado": 32,
+     "Presente": 121,
+     "Excusa": 31,
      "Ausente": 12
-    }
-   }
-  },
-  "Jorge Frías": {
-   "provincia": "Santo Domingo",
-   "legisladorId": 1466,
-   "sil_nombre": "Jorge Frías",
-   "sil_provincia": "Santo Domingo",
-   "match_score": 1.0,
-   "comisiones": [
-    "04711-2024-2028-CD Comisión especial que estudia el proyecto de ley que regula la libertad religiosa de conciencia y de cultos",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
-    "Contratos",
-    "Hacienda"
-   ],
-   "iniciativas_cd": 15,
-   "iniciativas_total_sil": 15,
-   "asistencia": {
-    "presentes": 178,
-    "total": 181,
-    "breakdown": {
-     "Ausente": 2,
-     "Presente Incorporado": 1,
-     "Presente": 177,
-     "Excusa": 1
     }
    }
   },
@@ -4164,13 +4154,13 @@
     "Obras Públicas y Comunicaciones",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 45,
-   "iniciativas_total_sil": 45,
+   "iniciativas_cd": 46,
+   "iniciativas_total_sil": 46,
    "asistencia": {
-    "presentes": 177,
-    "total": 181,
+    "presentes": 192,
+    "total": 196,
     "breakdown": {
-     "Presente": 176,
+     "Presente": 191,
      "Presente Incorporado": 1,
      "Ausente": 3,
      "Excusa": 1
@@ -4191,11 +4181,11 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 152,
-    "total": 181,
+    "presentes": 165,
+    "total": 196,
     "breakdown": {
-     "Excusa": 27,
-     "Presente": 132,
+     "Excusa": 29,
+     "Presente": 145,
      "Presente Incorporado": 20,
      "Ausente": 2
     }
@@ -4215,13 +4205,13 @@
     "Economía, Planificación y Desarrollo",
     "Junta Central Electoral"
    ],
-   "iniciativas_cd": 106,
-   "iniciativas_total_sil": 106,
+   "iniciativas_cd": 111,
+   "iniciativas_total_sil": 111,
    "asistencia": {
-    "presentes": 166,
-    "total": 181,
+    "presentes": 181,
+    "total": 196,
     "breakdown": {
-     "Presente": 161,
+     "Presente": 176,
      "Presente Incorporado": 5,
      "Excusa": 15
     }
@@ -4242,11 +4232,11 @@
    "iniciativas_cd": 49,
    "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 181,
-    "total": 181,
+    "presentes": 196,
+    "total": 196,
     "breakdown": {
-     "Presente": 172,
-     "Presente Incorporado": 9
+     "Presente": 185,
+     "Presente Incorporado": 11
     }
    }
   },
@@ -4261,17 +4251,18 @@
     "Asuntos Mineros",
     "Asuntos Municipales",
     "Energía",
-    "Hacienda"
+    "Hacienda",
+    "Relaciones Exteriores y Cooperación Internacional"
    ],
    "iniciativas_cd": 48,
    "iniciativas_total_sil": 48,
    "asistencia": {
-    "presentes": 140,
-    "total": 181,
+    "presentes": 151,
+    "total": 196,
     "breakdown": {
-     "Excusa": 32,
-     "Presente Incorporado": 32,
-     "Presente": 108,
+     "Excusa": 36,
+     "Presente": 116,
+     "Presente Incorporado": 35,
      "Ausente": 9
     }
    }
@@ -4290,13 +4281,13 @@
     "Dominicanos en el Exterior",
     "Ética"
    ],
-   "iniciativas_cd": 45,
-   "iniciativas_total_sil": 45,
+   "iniciativas_cd": 46,
+   "iniciativas_total_sil": 46,
    "asistencia": {
-    "presentes": 179,
-    "total": 181,
+    "presentes": 194,
+    "total": 196,
     "breakdown": {
-     "Presente": 176,
+     "Presente": 191,
      "Presente Incorporado": 3,
      "Excusa": 2
     }
@@ -4317,10 +4308,10 @@
    "iniciativas_cd": 59,
    "iniciativas_total_sil": 59,
    "asistencia": {
-    "presentes": 153,
-    "total": 181,
+    "presentes": 168,
+    "total": 196,
     "breakdown": {
-     "Presente": 145,
+     "Presente": 160,
      "Presente Incorporado": 8,
      "Ausente": 7,
      "Excusa": 21
@@ -4339,14 +4330,15 @@
     "Movilidad y Transporte",
     "Ética"
    ],
-   "iniciativas_cd": 48,
-   "iniciativas_total_sil": 48,
+   "iniciativas_cd": 49,
+   "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 180,
-    "total": 181,
+    "presentes": 194,
+    "total": 196,
     "breakdown": {
-     "Presente": 126,
-     "Presente Incorporado": 54,
+     "Excusa": 1,
+     "Presente": 139,
+     "Presente Incorporado": 55,
      "Ausente": 1
     }
    }
@@ -4363,13 +4355,13 @@
     "Obras Públicas y Comunicaciones",
     "Reconocimientos"
    ],
-   "iniciativas_cd": 38,
-   "iniciativas_total_sil": 38,
+   "iniciativas_cd": 40,
+   "iniciativas_total_sil": 40,
    "asistencia": {
-    "presentes": 161,
-    "total": 181,
+    "presentes": 176,
+    "total": 196,
     "breakdown": {
-     "Presente": 156,
+     "Presente": 171,
      "Excusa": 12,
      "Presente Incorporado": 5,
      "Ausente": 8
@@ -4392,15 +4384,15 @@
     "Derechos Humanos",
     "Obras Públicas y Comunicaciones"
    ],
-   "iniciativas_cd": 12,
-   "iniciativas_total_sil": 12,
+   "iniciativas_cd": 13,
+   "iniciativas_total_sil": 13,
    "asistencia": {
-    "presentes": 170,
-    "total": 181,
+    "presentes": 180,
+    "total": 196,
     "breakdown": {
-     "Presente Incorporado": 18,
-     "Excusa": 10,
-     "Presente": 152,
+     "Excusa": 15,
+     "Presente": 161,
+     "Presente Incorporado": 19,
      "Ausente": 1
     }
    }
@@ -4420,15 +4412,15 @@
     "Seguridad Social",
     "Trabajo"
    ],
-   "iniciativas_cd": 79,
-   "iniciativas_total_sil": 79,
+   "iniciativas_cd": 80,
+   "iniciativas_total_sil": 80,
    "asistencia": {
-    "presentes": 172,
-    "total": 181,
+    "presentes": 186,
+    "total": 196,
     "breakdown": {
-     "Presente": 163,
+     "Presente": 177,
+     "Excusa": 9,
      "Presente Incorporado": 9,
-     "Excusa": 8,
      "Ausente": 1
     }
    }
@@ -4446,14 +4438,14 @@
     "Trabajo",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 26,
-   "iniciativas_total_sil": 26,
+   "iniciativas_cd": 27,
+   "iniciativas_total_sil": 27,
    "asistencia": {
-    "presentes": 148,
-    "total": 181,
+    "presentes": 154,
+    "total": 196,
     "breakdown": {
-     "Presente": 145,
-     "Excusa": 29,
+     "Presente": 151,
+     "Excusa": 38,
      "Ausente": 4,
      "Presente Incorporado": 3
     }
@@ -4472,17 +4464,16 @@
     "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
     "Administración Interior",
     "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
-    "Comisión Coordinadora 2025-2026",
     "Hacienda",
     "Seguridad Social"
    ],
    "iniciativas_cd": 57,
    "iniciativas_total_sil": 57,
    "asistencia": {
-    "presentes": 163,
-    "total": 181,
+    "presentes": 178,
+    "total": 196,
     "breakdown": {
-     "Presente": 154,
+     "Presente": 169,
      "Excusa": 17,
      "Presente Incorporado": 9,
      "Ausente": 1
@@ -4504,15 +4495,15 @@
     "Presidencia de la República",
     "Trabajo"
    ],
-   "iniciativas_cd": 60,
-   "iniciativas_total_sil": 60,
+   "iniciativas_cd": 65,
+   "iniciativas_total_sil": 65,
    "asistencia": {
-    "presentes": 171,
-    "total": 181,
+    "presentes": 186,
+    "total": 196,
     "breakdown": {
-     "Presente": 170,
+     "Presente": 184,
+     "Presente Incorporado": 2,
      "Excusa": 6,
-     "Presente Incorporado": 1,
      "Licencia": 3,
      "Ausente": 1
     }
@@ -4533,14 +4524,14 @@
     "Relaciones Exteriores y Cooperación Internacional",
     "Seguridad Social"
    ],
-   "iniciativas_cd": 90,
-   "iniciativas_total_sil": 90,
+   "iniciativas_cd": 93,
+   "iniciativas_total_sil": 93,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 184,
+    "total": 196,
     "breakdown": {
-     "Presente": 142,
-     "Presente Incorporado": 27,
+     "Presente": 156,
+     "Presente Incorporado": 28,
      "Ausente": 4,
      "Excusa": 8
     }
@@ -4559,12 +4550,12 @@
    "iniciativas_cd": 11,
    "iniciativas_total_sil": 11,
    "asistencia": {
-    "presentes": 163,
-    "total": 181,
+    "presentes": 174,
+    "total": 196,
     "breakdown": {
-     "Presente Incorporado": 11,
-     "Presente": 152,
-     "Excusa": 14,
+     "Excusa": 18,
+     "Presente": 162,
+     "Presente Incorporado": 12,
      "Ausente": 4
     }
    }
@@ -4586,10 +4577,10 @@
    "iniciativas_cd": 42,
    "iniciativas_total_sil": 42,
    "asistencia": {
-    "presentes": 176,
-    "total": 181,
+    "presentes": 191,
+    "total": 196,
     "breakdown": {
-     "Presente": 168,
+     "Presente": 183,
      "Presente Incorporado": 8,
      "Excusa": 4,
      "Ausente": 1
@@ -4609,15 +4600,15 @@
     "Relaciones Exteriores y Cooperación Internacional",
     "Turismo"
    ],
-   "iniciativas_cd": 62,
-   "iniciativas_total_sil": 62,
+   "iniciativas_cd": 65,
+   "iniciativas_total_sil": 65,
    "asistencia": {
-    "presentes": 169,
-    "total": 181,
+    "presentes": 183,
+    "total": 196,
     "breakdown": {
-     "Presente": 133,
+     "Presente": 147,
+     "Excusa": 12,
      "Presente Incorporado": 36,
-     "Excusa": 11,
      "Ausente": 1
     }
    }
@@ -4638,11 +4629,11 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 171,
-    "total": 181,
+    "presentes": 186,
+    "total": 196,
     "breakdown": {
+     "Presente": 185,
      "Ausente": 1,
-     "Presente": 170,
      "Excusa": 9,
      "Presente Incorporado": 1
     }
@@ -4665,13 +4656,13 @@
    "iniciativas_cd": 55,
    "iniciativas_total_sil": 55,
    "asistencia": {
-    "presentes": 175,
-    "total": 181,
+    "presentes": 187,
+    "total": 196,
     "breakdown": {
+     "Presente": 185,
+     "Excusa": 6,
+     "Presente Incorporado": 2,
      "Ausente": 2,
-     "Presente": 174,
-     "Presente Incorporado": 1,
-     "Excusa": 3,
      "Representación de la Cámara": 1
     }
    }
@@ -4694,11 +4685,11 @@
    "iniciativas_cd": 23,
    "iniciativas_total_sil": 23,
    "asistencia": {
-    "presentes": 181,
-    "total": 181,
+    "presentes": 196,
+    "total": 196,
     "breakdown": {
-     "Presente Incorporado": 3,
-     "Presente": 178
+     "Presente": 193,
+     "Presente Incorporado": 3
     }
    }
   }
