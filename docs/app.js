@@ -995,7 +995,9 @@ function renderProvincias(data) {
                 perfil.innerHTML = "";
             });
             perfil.append(cerrar);
-            perfil.append(el("h3", null, prov.nombre));
+            const perfilTitulo = el("h3", null, prov.nombre);
+            perfilTitulo.tabIndex = -1;
+            perfil.append(perfilTitulo);
             // Group the officials by role so a long list (e.g. 43 deputies) stays scannable.
             const grupos = {};
             prov.lideres.forEach((l) => {
@@ -1026,6 +1028,7 @@ function renderProvincias(data) {
             // The card just added a new .palabra word; wire tap-to-define on it.
             setupGlosario();
             perfil.scrollIntoView({ behavior: "smooth", block: "start" });
+            perfilTitulo.focus({ preventScroll: true });
         });
         grid.append(c);
     });
@@ -1747,7 +1750,10 @@ function mostrarVista(view) {
     document.querySelectorAll(".tab").forEach((t) => {
         const activo = t.dataset.view === view;
         t.classList.toggle("active", activo);
-        t.setAttribute("aria-selected", activo ? "true" : "false");
+        if (activo)
+            t.setAttribute("aria-current", "page");
+        else
+            t.removeAttribute("aria-current");
     });
     // Bring the new section into view on small screens.
     window.scrollTo({ top: 0, behavior: "auto" });
@@ -1929,7 +1935,7 @@ function setupSabias(leyes, ses) {
         if (pausado)
             return;
         detener();
-        timer = window.setInterval(avanzar, 6000);
+        timer = window.setInterval(avanzar, 12000);
     }
     function detener() { if (timer) {
         window.clearInterval(timer);
@@ -1938,7 +1944,6 @@ function setupSabias(leyes, ses) {
     function reiniciar() { detener(); arrancar(); }
     pausaBtn.addEventListener("click", () => {
         pausado = !pausado;
-        pausaBtn.textContent = pausado ? "▶️" : "⏸️";
         pausaBtn.setAttribute("aria-pressed", String(pausado));
         pausaBtn.setAttribute("aria-label", pausado ? "Reanudar el cambio automático" : "Pausar el cambio automático");
         if (pausado)
@@ -1950,9 +1955,13 @@ function setupSabias(leyes, ses) {
     seccion.addEventListener("focusin", detener);
     seccion.addEventListener("focusout", () => { if (!pausado)
         arrancar(); });
-    // Reflect the reduced-motion start state on the pause button.
+    // Pause while a finger or mouse rests on the card, so nobody loses a fact mid-read.
+    seccion.addEventListener("pointerenter", detener);
+    seccion.addEventListener("pointerdown", detener);
+    seccion.addEventListener("pointerleave", () => { if (!pausado)
+        arrancar(); });
+    // Reflect the reduced-motion start state on the pause button (icon via CSS).
     if (reduce) {
-        pausaBtn.textContent = "▶️";
         pausaBtn.setAttribute("aria-pressed", "true");
         pausaBtn.setAttribute("aria-label", "Reanudar el cambio automático");
     }

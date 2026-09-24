@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%87%A9%F0%9F%87%B4%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23fff'/%3E%3Cpath fill='%2315327a' d='M4 4h10v10H4zM18 18h10v10H18z'/%3E%3Cpath fill='%23b3261e' d='M18 4h10v10H18zM4 18h10v10H4z'/%3E%3C/svg%3E" />
   <title>Política Sencilla RD — Las leyes y el gobierno, fácil de entender</title>
   <meta name="description" content="Política Sencilla RD: entiende la política dominicana fácil. Las leyes por tema, quién manda en cada provincia, cómo vota el Senado y cómo se mueve el dinero público. Sin palabras difíciles." />
-  <meta name="theme-color" content="#1a4ed8" />
+  <meta name="theme-color" content="#ffffff" />
   <link rel="manifest" href="manifest.json" />
   <meta property="og:title" content="Política Sencilla RD" />
   <meta property="og:description" content="Entiende la política dominicana fácil: las leyes por tema, quién manda en cada provincia, cómo vota el Senado y cómo se mueve el dinero público." />
@@ -21,35 +21,48 @@
   <meta name="twitter:image" content="https://politica-sencilla-rd.github.io/leyes-rd/og.png" />
   <meta name="twitter:title" content="Política Sencilla RD" />
   <meta name="twitter:description" content="La política dominicana, explicada fácil." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260615c" />
+  <link rel="stylesheet" href="styles.css?v=20260923a" />
 </head>
 <body>
   <header class="topbar">
-    <button class="topbar-home" id="homeLink" aria-label="Ir al inicio">
-      <h1>🇩🇴 Política Sencilla RD</h1>
-    </button>
-    <p class="sub">Entiende la política dominicana: las leyes, las provincias, el Senado y el dinero público. Fácil y gratis.</p>
+    <div class="topbar-in">
+      <h1 class="marca">
+        <button class="topbar-home" id="homeLink" type="button" aria-label="Política Sencilla RD. Ir al inicio">
+          <span class="marca-sello" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="marca-nombre">Política Sencilla <span class="marca-rd">RD</span></span>
+        </button>
+      </h1>
+      <p class="sub">Entiende la política dominicana: las leyes, las provincias, el Senado y el dinero público. Fácil y gratis.</p>
+      <nav class="tabs" aria-label="Secciones">
+        <button class="tab tab-inicio active" data-view="home" type="button" aria-current="page"><span class="ico ico-home" aria-hidden="true"></span><span class="tab-txt">Inicio</span></button>
+        <button class="tab" data-view="pais" type="button"><span class="ico ico-flag" aria-hidden="true"></span><span class="tab-txt">El país</span></button>
+        <button class="tab" data-view="leyes" type="button"><span class="ico ico-leyes" aria-hidden="true"></span><span class="tab-txt">Leyes</span></button>
+        <button class="tab" data-view="mapa" type="button"><span class="ico ico-mapa" aria-hidden="true"></span><span class="tab-txt">Provincias</span></button>
+        <button class="tab" data-view="sesiones" type="button"><span class="ico ico-sesiones" aria-hidden="true"></span><span class="tab-txt">Sesiones</span></button>
+        <button class="tab" data-view="dinero" type="button"><span class="ico ico-dinero" aria-hidden="true"></span><span class="tab-txt">Dinero</span></button>
+      </nav>
+    </div>
   </header>
-
-  <nav class="tabs" role="tablist" aria-label="Secciones">
-    <button class="tab active" data-view="home" role="tab" aria-selected="true">🏠 Inicio</button>
-    <button class="tab" data-view="pais" role="tab" aria-selected="false">🇩🇴 El país</button>
-    <button class="tab" data-view="leyes" role="tab" aria-selected="false">📜 Leyes</button>
-    <button class="tab" data-view="mapa" role="tab" aria-selected="false">🗺️ Provincias</button>
-    <button class="tab" data-view="sesiones" role="tab" aria-selected="false">🏛️ Sesiones</button>
-    <button class="tab" data-view="dinero" role="tab" aria-selected="false">💰 Dinero</button>
-  </nav>
 
   <main>
     <section id="view-home" class="view">
       <div class="hero">
-        <p class="hero-kicker">Bienvenido</p>
-        <h2 class="hero-titulo">La política dominicana, fácil de entender</h2>
-        <p class="hero-sub">Aquí ves quién te representa, qué leyes se hacen y a dónde va el dinero del país. Sin enredos. Toca una tarjeta para empezar.</p>
-        <button class="hero-proyecto-btn" type="button" data-goto="proyecto">📖 Conoce el proyecto</button>
+        <div class="hero-txt">
+          <p class="hero-kicker">Gratis, sin partidos y con fuentes oficiales</p>
+          <h2 class="hero-titulo">La política dominicana, fácil de entender</h2>
+          <p class="hero-sub">Aquí ves quién te representa, qué leyes se hacen y a dónde va el dinero del país. Sin enredos.</p>
+          <button class="hero-proyecto-btn" type="button" data-goto="proyecto">Conoce el proyecto <span aria-hidden="true">→</span></button>
+        </div>
+        <!-- "¿Quién te representa?" finder: fastest path to your own officials.
+             The <select> is filled and wired by setupFinder() in app.js from
+             provincias.json; choosing a province opens its profile. -->
+        <div class="finder">
+          <h3 class="finder-titulo">¿Quién te representa?</h3>
+          <p class="finder-sub">Elige tu provincia y ve a tu senador y tus diputados: qué hacen, cuánto ganan y cómo votaron.</p>
+          <select id="finderProvincia" class="finder-select" aria-label="Elige tu provincia">
+            <option value="">Elige tu provincia…</option>
+          </select>
+        </div>
       </div>
 
       <!-- Hero "¿Sabías que...?" — rotating facts pulled from our real data.
@@ -57,26 +70,12 @@
            gently; pausable; respects prefers-reduced-motion (no auto-rotate). -->
       <section id="sabias" class="sabias" aria-roledescription="carrusel" aria-label="¿Sabías que...?">
         <div class="sabias-cab">
-          <span class="sabias-kicker">🤔 ¿Sabías que…?</span>
-          <button id="sabiasPausa" class="sabias-pausa" type="button" aria-label="Pausar el cambio automático" aria-pressed="false">⏸️</button>
+          <span class="sabias-kicker">¿Sabías que…?</span>
+          <button id="sabiasPausa" class="sabias-pausa" type="button" aria-label="Pausar el cambio automático" aria-pressed="false"></button>
         </div>
         <div id="sabiasViva" class="sabias-viva" aria-live="polite"></div>
         <div id="sabiasPuntos" class="sabias-puntos" role="tablist" aria-label="Elegir dato"></div>
       </section>
-
-      <!-- Suggested learning order — the home cards reframed as a journey, in the
-           chain order El país → Leyes → Sesiones → Provincias → Dinero. Each card
-           carries its step number so it reads as "first this, then this". -->
-      <!-- "¿Quién te representa?" finder — fastest path to your own officials.
-           The <select> is filled and wired by setupFinder() in app.js from
-           provincias.json; choosing a province opens its profile. -->
-      <div class="finder">
-        <h3 class="finder-titulo">🔎 ¿Quién te representa?</h3>
-        <p class="finder-sub">Elige tu provincia y ve a tu senador y tus diputados: qué hacen, cuánto ganan y cómo votaron.</p>
-        <select id="finderProvincia" class="finder-select" aria-label="Elige tu provincia">
-          <option value="">Elige tu provincia…</option>
-        </select>
-      </div>
 
       <div class="ruta-cab">
         <h3 class="ruta-titulo">¿Qué quieres aprender hoy?</h3>
@@ -86,54 +85,54 @@
       <div class="home-grid">
         <button class="home-card card-pais" data-goto="pais">
           <span class="home-paso" aria-hidden="true">1</span>
-          <span class="home-emoji">🇩🇴</span>
+          <span class="home-emoji"><span class="ico ico-flag" aria-hidden="true"></span></span>
           <span class="home-card-titulo">El país</span>
           <span class="home-card-desc">Quién manda y cuándo votas.</span>
           <span class="home-card-cifra">Próximas elecciones: 2028</span>
-          <span class="home-card-go">Empezar aquí ▸</span>
+          <span class="home-card-go">Empezar aquí <span aria-hidden="true">→</span></span>
         </button>
         <button class="home-card card-leyes" data-goto="leyes">
           <span class="home-paso" aria-hidden="true">2</span>
-          <span class="home-emoji">📜</span>
+          <span class="home-emoji"><span class="ico ico-leyes" aria-hidden="true"></span></span>
           <span class="home-card-titulo">Leyes</span>
           <span class="home-card-desc">Qué se propone y se aprueba, por tema.</span>
           <span class="home-card-cifra" data-cifra="leyes"></span>
-          <span class="home-card-go">Explorar ▸</span>
+          <span class="home-card-go">Explorar <span aria-hidden="true">→</span></span>
         </button>
         <button class="home-card card-sesiones" data-goto="sesiones">
           <span class="home-paso" aria-hidden="true">3</span>
-          <span class="home-emoji">🏛️</span>
+          <span class="home-emoji"><span class="ico ico-sesiones" aria-hidden="true"></span></span>
           <span class="home-card-titulo">Sesiones</span>
           <span class="home-card-desc">Qué votó el Senado y quién asistió.</span>
           <span class="home-card-cifra" data-cifra="sesiones"></span>
-          <span class="home-card-go">Explorar ▸</span>
+          <span class="home-card-go">Explorar <span aria-hidden="true">→</span></span>
         </button>
         <button class="home-card card-mapa" data-goto="mapa">
           <span class="home-paso" aria-hidden="true">4</span>
-          <span class="home-emoji">🗺️</span>
+          <span class="home-emoji"><span class="ico ico-mapa" aria-hidden="true"></span></span>
           <span class="home-card-titulo">Provincias</span>
           <span class="home-card-desc">Quién manda en cada provincia.</span>
           <span class="home-card-cifra" data-cifra="provincias"></span>
-          <span class="home-card-go">Explorar ▸</span>
+          <span class="home-card-go">Explorar <span aria-hidden="true">→</span></span>
         </button>
         <button class="home-card card-dinero" data-goto="dinero">
           <span class="home-paso" aria-hidden="true">5</span>
-          <span class="home-emoji">💰</span>
+          <span class="home-emoji"><span class="ico ico-dinero" aria-hidden="true"></span></span>
           <span class="home-card-titulo">Dinero</span>
           <span class="home-card-desc">Cómo viaja el dinero público, con un caso real.</span>
           <span class="home-card-cifra">Un caso real: más de RD$15,900 millones</span>
-          <span class="home-card-go">Explorar ▸</span>
+          <span class="home-card-go">Explorar <span aria-hidden="true">→</span></span>
         </button>
       </div>
 
       <div class="participa">
-        <h3 class="participa-titulo">📣 Comparte y participa</h3>
+        <h3 class="participa-titulo">Comparte y participa</h3>
         <p class="participa-sub">Mientras más gente lo conozca, mejor. Y tú puedes ayudar a mejorarlo.</p>
         <div class="participa-botones">
-          <button id="shareBtn" class="btn-part btn-compartir" type="button">📤 Compartir</button>
-          <a id="waShare" class="btn-part btn-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
-          <button id="copyBtn" class="btn-part btn-copiar" type="button">🔗 Copiar enlace</button>
-          <a class="btn-part btn-aportar" href="https://github.com/politica-sencilla-rd/leyes-rd/issues/new/choose" target="_blank" rel="noopener">✍️ Reportar o aportar</a>
+          <a id="waShare" class="btn-part btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+          <button id="shareBtn" class="btn-part btn-compartir" type="button">Compartir</button>
+          <button id="copyBtn" class="btn-part btn-copiar" type="button">Copiar enlace</button>
+          <a class="btn-part btn-aportar" href="https://github.com/politica-sencilla-rd/leyes-rd/issues/new/choose" target="_blank" rel="noopener">Reportar o aportar</a>
         </div>
       </div>
 
@@ -144,7 +143,7 @@
       <section class="novedades">
         <details class="novedades-fold">
           <summary class="novedades-cab">
-            <span class="novedades-titulo">🆕 Novedades</span>
+            <span class="novedades-titulo">Novedades</span>
             <span class="novedades-sub">Lo último que mejoramos</span>
             <span class="novedades-chev" aria-hidden="true">▸</span>
           </summary>
@@ -158,17 +157,19 @@
         </details>
       </section>
 
-      <p class="home-nota">ℹ️ Datos reales del <b>Senado de la República Dominicana</b>. Gratis y sin palabras difíciles.</p>
+      <p class="home-nota">Datos reales del <b>Senado de la República Dominicana</b>. Gratis y sin palabras difíciles.</p>
     </section>
 
     <section id="view-pais" class="view hidden sec-pais">
-      <h2 class="seccion-titulo">🇩🇴 El país</h2>
+      <header class="vista-cab">
+      <h2 class="seccion-titulo">El país</h2>
       <p class="seccion-desc">Quién manda en la República Dominicana, y cuándo y cómo votas tú.</p>
 
       <div class="en30">
-        <span class="en30-cab">⏱️ En 30 segundos</span>
+        <span class="en30-cab"><span class="ico ico-reloj" aria-hidden="true"></span>En 30 segundos</span>
         <p>En RD mandan varios, no uno solo. Tú votas y eliges a casi todos: al Presidente, al Congreso que hace las leyes y a tu alcalde. Cada uno tiene su trabajo. Empieza por aquí y lo demás se entiende solo.</p>
       </div>
+      </header>
 
       <!-- ===== GRUPO 1 (El país) — ¿Quién manda? (plegado por defecto) =====
            Envuelve el intro + el flujo de 5 pasos existente. Mismo plegable
@@ -258,13 +259,21 @@
     </section>
 
     <section id="view-leyes" class="view hidden sec-leyes">
-      <h2 class="seccion-titulo">📜 Las Leyes</h2>
+      <header class="vista-cab">
+      <h2 class="seccion-titulo">Las Leyes</h2>
       <p class="seccion-desc">Lo que se propone y se aprueba en el país, contado fácil y ordenado por tema.</p>
 
       <div class="en30">
-        <span class="en30-cab">⏱️ En 30 segundos</span>
+        <span class="en30-cab"><span class="ico ico-reloj" aria-hidden="true"></span>En 30 segundos</span>
         <p>Una ley es una regla que vale para todo el país. Alguien la propone, el Congreso la estudia y la vota, y el Presidente la firma. Aquí las ves por tema —salud, luz, trabajo— con su estado: si está aprobada, en votación o rechazada.</p>
       </div>
+      </header>
+      <div class="buscador">
+        <span class="buscador-icono ico ico-buscar" aria-hidden="true"></span>
+        <input id="buscarLey" class="buscador-input" type="search" placeholder="Busca un tema o una ley (salud, luz…)" aria-label="Buscar un tema o una ley" autocomplete="off" />
+      </div>
+      <p id="leyNoResultado" class="hint hidden">No encontramos nada con esa palabra. Prueba otra.</p>
+
       <!-- Source/honesty note + how-to + state legend, grouped into one tight
            intro box so the law sectors aren't pushed down by three stacked boxes. -->
       <div class="como leyes-intro">
@@ -276,6 +285,7 @@
         </div>
         <p id="fuenteBanner" class="leyes-intro-fuente">ℹ️ Datos reales del <b>Senado de la República Dominicana</b> (recogidos en junio de 2026). El voto de cada legislador todavía no es público.</p>
       </div>
+      <div id="sectores"></div>
 
       <!-- Leyes que entran en vigencia (4ª sugerencia de un usuario real).
            Se rellena desde data/vigencia.json en src/app.ts (renderVigencia). -->
@@ -311,13 +321,6 @@
         </div>
       </details>
 
-      <div class="buscador">
-        <span class="buscador-icono" aria-hidden="true">🔎</span>
-        <input id="buscarLey" class="buscador-input" type="search" placeholder="Busca un tema o una ley (salud, luz…)" aria-label="Buscar un tema o una ley" autocomplete="off" />
-      </div>
-      <p id="leyNoResultado" class="hint hidden">No encontramos nada con esa palabra. Prueba otra.</p>
-      <div id="sectores"></div>
-
       <div class="siguiente va-sesiones">
         <span class="siguiente-cab">¿Y ahora qué?</span>
         <p class="siguiente-porque">Ya viste qué leyes hay. Ahora mira el día en que el Senado se junta a votarlas.</p>
@@ -326,16 +329,18 @@
     </section>
 
     <section id="view-mapa" class="view hidden sec-mapa">
-      <h2 class="seccion-titulo">🗺️ Las Provincias</h2>
+      <header class="vista-cab">
+      <h2 class="seccion-titulo">Las Provincias</h2>
       <p class="seccion-desc">Quién representa a cada provincia: el senador y los diputados (hacen las leyes) y el gobernador y los alcaldes (gobiernan lo local).</p>
 
       <div class="en30">
-        <span class="en30-cab">⏱️ En 30 segundos</span>
+        <span class="en30-cab"><span class="ico ico-reloj" aria-hidden="true"></span>En 30 segundos</span>
         <p>El país tiene 32 provincias y cada una tiene su gente que manda: un senador y varios diputados que hacen las leyes, un gobernador y los alcaldes que cuidan lo local. Toca tu provincia y mira quiénes son, qué hacen y cuánto ganan.</p>
       </div>
+      </header>
       <p class="hint">Toca una provincia para ver a su gente.</p>
       <div class="buscador">
-        <span class="buscador-icono" aria-hidden="true">🔎</span>
+        <span class="buscador-icono ico ico-buscar" aria-hidden="true"></span>
         <input id="buscarProvincia" class="buscador-input" type="search" placeholder="Busca tu provincia…" aria-label="Buscar tu provincia" autocomplete="off" />
       </div>
       <p id="provNoResultado" class="hint hidden">No encontramos esa provincia. Revisa cómo se escribe.</p>
@@ -350,13 +355,15 @@
     </section>
 
     <section id="view-sesiones" class="view hidden sec-sesiones">
-      <h2 class="seccion-titulo">🏛️ Las Sesiones</h2>
+      <header class="vista-cab">
+      <h2 class="seccion-titulo">Las Sesiones</h2>
       <p class="seccion-desc">Las reuniones del Senado: qué votaron ese día, cuántos dijeron que sí, y quién asistió.</p>
 
       <div class="en30">
-        <span class="en30-cab">⏱️ En 30 segundos</span>
+        <span class="en30-cab"><span class="ico ico-reloj" aria-hidden="true"></span>En 30 segundos</span>
         <p>Una sesión es el día en que los 32 senadores se juntan a votar. Aquí ves qué votaron, cuántos dijeron que sí y quién faltó. Así sabes si quien te representa va a trabajar y qué decide cuando llega.</p>
       </div>
+      </header>
       <div class="como">
         <b>¿Qué es una sesión y por qué te importa?</b>
         Una sesión es una reunión donde los senadores <b>votan leyes</b>. Y las leyes que se votan ahí
@@ -377,13 +384,15 @@
     </section>
 
     <section id="view-dinero" class="view hidden sec-dinero">
-      <h2 class="seccion-titulo">💰 El Dinero</h2>
-      <p class="seccion-desc">Cómo viaja el dinero público, paso a paso — y dónde se suele perder.</p>
+      <header class="vista-cab">
+      <h2 class="seccion-titulo">El Dinero</h2>
+      <p class="seccion-desc">Cómo viaja el dinero público, paso a paso, y dónde se suele perder.</p>
 
       <div class="en30">
-        <span class="en30-cab">⏱️ En 30 segundos</span>
+        <span class="en30-cab"><span class="ico ico-reloj" aria-hidden="true"></span>En 30 segundos</span>
         <p>El dinero del país sale de los impuestos de todos. El Congreso decide en qué se gasta, y luego viaja por varias manos hasta llegar a una obra o un servicio. En ese camino, a veces, se pierde. Aquí lo sigues paso a paso, con un caso real.</p>
       </div>
+      </header>
 
       <!-- ===== GRUPO 1 — El bolsillo del país (plegado por defecto) =====
            Envuelve el bloque .salud-pais existente (PIB, deuda, etc.) verbatim
@@ -516,34 +525,14 @@
       </details>
       <!-- ===== fin GRUPO 1 ===== -->
 
-      <!-- ===== GRUPO 2 — El rastro del dinero público (plegado por defecto) =====
-           Reúne las dos mitades de "seguir el dinero". Por la REGLA de agrupar
-           (un nivel más abajo), cada mitad es su PROPIO sub-grupo Nivel-2,
-           plegado por defecto:
-             (a) "Cómo debería viajar el dinero" — el camino sano paso a paso
-                 (intro + flujo de 6 pasos + punto débil), estático aquí.
-             (b) "El rastro real de los fondos" — #fondos-publicos, que src/app.ts
-                 (renderFondos) rellena con UN sub-grupo plegado por cada fondo
-                 del JSON (hoy: el barrilito). Añadir un fondo crea su sub-grupo
-                 solo, sin tocar el HTML.
-           Al abrir el grupo se ven dos encabezados de sub-grupo cortos; cada uno
-           se toca para abrirse. Mismo plegable Nivel-1 por fuera, Nivel-2 dentro. -->
-      <details class="grupo-cargo grupo-pagina">
-        <summary class="grupo-cab">
-          <span class="grupo-cab-txt">
-            <span class="grupo-nombre">🔎 El rastro del dinero público</span>
-            <span class="grupo-sub">Sigue un peso hasta donde se puede ver — y donde se pierde.</span>
-          </span>
-          <span class="grupo-chev" aria-hidden="true">▸</span>
-        </summary>
-        <div class="grupo-pagina-body">
-
+      <!-- ===== GRUPOS 2 y 3: el rastro del dinero público, en dos grupos de primer nivel
+           (antes iban anidados dentro de otro plegable; ahora hay un nivel menos). ===== -->
       <!-- (a) Sub-grupo Nivel-2 — cómo DEBERÍA viajar el dinero (camino sano). -->
       <details class="grupo-cargo grupo-pagina">
         <summary class="grupo-cab">
           <span class="grupo-cab-txt">
             <span class="grupo-nombre">🛣️ Cómo debería viajar el dinero</span>
-            <span class="grupo-sub">El camino sano, paso a paso — y dónde se suele perder.</span>
+            <span class="grupo-sub">El camino sano, paso a paso, y dónde se suele perder.</span>
           </span>
           <span class="grupo-chev" aria-hidden="true">▸</span>
         </summary>
@@ -597,10 +586,6 @@
       </details>
       <!-- fin sub-grupo (b) -->
 
-        </div>
-      </details>
-      <!-- ===== fin GRUPO 2 ===== -->
-
       <!-- ===== GRUPO 3 — Cuando el rastro se rompe, y lo que te cuesta =====
            Plegado por defecto. Encabeza con el COSTO HUMANO en lenguaje sencillo
            (qué le pasó a personas reales cuando el rastro del dinero se rompió),
@@ -609,10 +594,10 @@
            "Ver fuentes y por qué este caso" más abajo. Construido para crecer:
            se pueden añadir más casos reales como nuevas tarjetas/plegables
            dentro de este grupo (ver el comentario CASOS-FUTUROS al final). -->
-      <details class="grupo-cargo grupo-pagina">
+      <details class="grupo-cargo grupo-pagina grupo-destacado">
         <summary class="grupo-cab">
           <span class="grupo-cab-txt">
-            <span class="grupo-nombre">💔 Cuando el rastro se rompe — y lo que te cuesta</span>
+            <span class="grupo-nombre">💔 Cuando el rastro se rompe, y lo que te cuesta</span>
             <span class="grupo-sub">Un caso real: el SENASA. Lo que le pasó a la gente.</span>
           </span>
           <span class="grupo-chev" aria-hidden="true">▸</span>
@@ -733,11 +718,13 @@
     <section id="view-proyecto" class="view hidden sec-proyecto">
       <button class="volver-btn" type="button" data-goto="home">← Volver al inicio</button>
 
-      <h2 class="seccion-titulo">📖 Sobre este proyecto</h2>
+      <header class="vista-cab">
+      <h2 class="seccion-titulo">Sobre este proyecto</h2>
       <p class="seccion-desc">La historia, la meta y el estado honesto del sitio.</p>
+      </header>
 
       <section class="proyecto">
-        <h3 class="proyecto-titulo">📖 Sobre este proyecto</h3>
+        <h3 class="proyecto-titulo">Sobre este proyecto</h3>
         <p class="proyecto-intro">Aquí la política dominicana se cuenta fácil: quién manda, qué leyes hacen y a dónde va el dinero. Todo junto y explicado para que cualquiera lo entienda.</p>
 
         <details class="proyecto-fold">
@@ -771,8 +758,8 @@
         <p class="proyecto-tuyo">Y lo mejor: este proyecto es de <span class="palabra" data-def="Código abierto quiere decir que la receta completa del sitio es pública. Cualquiera puede copiarla, revisarla y volver a publicarla, para siempre. Nada está escondido.">código abierto</span>. La receta completa es pública y es tuya también.</p>
 
         <div class="proyecto-botones">
-          <a class="btn-part btn-codigo" href="https://github.com/politica-sencilla-rd/leyes-rd" target="_blank" rel="noopener">💻 Ver el código</a>
-          <a class="btn-part btn-aportar" href="https://github.com/politica-sencilla-rd/leyes-rd/issues/new/choose" target="_blank" rel="noopener">✍️ Reportar o aportar</a>
+          <a class="btn-part btn-codigo" href="https://github.com/politica-sencilla-rd/leyes-rd" target="_blank" rel="noopener">Ver el código</a>
+          <a class="btn-part btn-aportar" href="https://github.com/politica-sencilla-rd/leyes-rd/issues/new/choose" target="_blank" rel="noopener">Reportar o aportar</a>
         </div>
 
         <p class="proyecto-ayuda">¿Quieres ayudar? Compártelo, reporta errores y aporta datos. Y pronto: maneras de apoyar su mantenimiento.</p>
@@ -784,13 +771,16 @@
   </main>
 
   <footer class="foot">
-    <p class="foot-acciones">
-      <button id="footShare" class="foot-link" type="button">📤 Compartir</button>
-      <a class="foot-link" href="https://github.com/politica-sencilla-rd/leyes-rd/issues/new/choose" target="_blank" rel="noopener">✍️ Reportar o aportar</a>
-    </p>
-    <p>Información pública, explicada para que cualquiera la entienda. Gratis.</p>
-    <p class="foot-fuente">Fuentes: Senado y Cámara de Diputados de la República Dominicana.</p>
-    <p class="foot-fuente">Retratos oficiales: senadores del Senado de la República Dominicana (senadord.gob.do) y diputados de la Cámara de Diputados (diputadosrd.gob.do).</p>
+    <div class="foot-in">
+      <p class="foot-marca"><span class="marca-sello" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Política Sencilla RD</p>
+      <p class="foot-lema">Información pública, explicada para que cualquiera la entienda. Gratis.</p>
+      <p class="foot-acciones">
+        <button id="footShare" class="foot-link" type="button">Compartir</button>
+        <a class="foot-link" href="https://github.com/politica-sencilla-rd/leyes-rd/issues/new/choose" target="_blank" rel="noopener">Reportar un error o aportar</a>
+      </p>
+      <p class="foot-fuente">Fuentes: Senado y Cámara de Diputados de la República Dominicana.</p>
+      <p class="foot-fuente">Retratos oficiales: senadores del Senado de la República Dominicana (senadord.gob.do) y diputados de la Cámara de Diputados (diputadosrd.gob.do).</p>
+    </div>
   </footer>
 
   <!-- Aviso antes de salir a un buscador oficial. Solo aparece cuando el enlace
@@ -814,7 +804,7 @@
     </div>
   </dialog>
 
-  <script src="app.js?v=20260615c"></script>
+  <script src="app.js?v=20260923a"></script>
   <!-- Contador de visitas, privado y sin cookies (GoatCounter) -->
   <script data-goatcounter="https://politicasencillard.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
