@@ -45,7 +45,8 @@ rebase on `main`, write the news item, write "Datos al", run gates G0 to G10, co
   checked, not only the ones its type asks for, and a field the type doesn't ask
   for blocks it. There must be at least 5 AI checks per field. Numbers must come
   from the source. A bill described as already law ("ya es ley", "ahora rige",
-  "entró en vigor", "se promulgó") is blocked by code, not only by the AI
+  "entró en vigor", "se promulgó", "está en vigencia", "es obligatorio",
+  "ya se aplica", "ya funciona") is blocked by code, not only by the AI
   checker. Whether an item is law yet comes from the data, never from the
   summary itself: `senado-…` is never law, `sil-…` takes its bill's `estado`
   from `leyes.json`, `ley-…` must be a law in `vigencia.json`. A summary that
@@ -91,6 +92,28 @@ rebase on `main`, write the news item, write "Datos al", run gates G0 to G10, co
   title of a Senate vote is published as the acta prints it and is not
   scanned: real titles contain words on the opinion list (an honoree's
   "valiosa contribución"), so scanning them would block real actas.
+  The same goes for the other strings copied word for word from an official
+  source: a deputy's committee names, a new bill's `titulo` and `estado_sil`
+  (SIL), a new law's `titulo` and `vigencia_cita` (Consultoría) and a vote's
+  `titulo` (acta). They publish unscanned for names and opinions. The page
+  always shows them as plain text, never as HTML, so they can't add a link, an
+  image or a script.
+- **No HTML from the data, ever.** The page escapes every value it reads from
+  `docs/data` before showing it, and opens a link only if it starts with
+  `http://` or `https://` (a test runs the real page with every data string
+  replaced by an HTML tag and fails if one gets through). The gates also block
+  `<` or `>` in any new robot text, including a vote's result line (which must
+  read "Aprobado…"/"Aprobada…" or "No indicado"; any other result, such as a
+  rejected bill, blocks the Senate commit until `schemas/sesiones.schema.json`
+  is widened by hand) and a summary's source name. A
+  vote's source line must be exactly "Acta NNNN, votación electrónica NNN". A
+  name in a new acta's absence list must be one of the 32 senators on `main`
+  (the acta's longer form of the name is fine). A link must be `http(s)` on an
+  official domain.
+- **Fixed labels stay fixed.** In `estado-fuentes.json` each source's name,
+  section, link and delay line must be exactly the ones in `config/fuentes.json`
+  on `main`, and no source outside that file can appear. The note at the top of
+  `resumenes.json` never changes in a robot commit.
 - **Money numbers must be believable.** A new money number must stay in a sane
   range and can't jump too far from the last published one (inflation 5
   points, unemployment 3, growth 8, debt 10, salary 15% or RD$15,000 to

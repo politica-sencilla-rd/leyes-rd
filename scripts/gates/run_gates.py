@@ -65,6 +65,11 @@ LEY_AUTO_CAMBIAN = {"estado", "estado_sil", "datos_al"}
 FECHA = re.compile(r"\d{4}-\d{2}-\d{2}")
 _MES_ANIO = rf"(?:{'|'.join(MESES)}) \d{{4}}"
 PERIODO_ASIS = re.compile(rf"{_MES_ANIO}(?: a {_MES_ANIO})?")  # camara.etiqueta_periodo()
+HTML = re.compile(r"[<>]")
+# Fields of estado-fuentes.json that are copied from config/fuentes.json (datos_al.py) and shown on the site.
+FUENTE_FIJA = ("nombre", "seccion", "url_fuente", "retraso")
+# Words that may sit between the parts of a senator's name in an acta ("Socías de Jiménez").
+PARTICULAS = {"de", "del", "la", "las", "los", "y", "e", "vda", "viuda"}
 
 
 # ------------------------------------------------------------------ trees
@@ -129,6 +134,36 @@ def recorrer(base, nuevo, ruta="$", visitar=None):
 def norm(s: str) -> str:
     s = unicodedata.normalize("NFD", s or "").encode("ascii", "ignore").decode()
     return " ".join(s.lower().split())
+
+
+def es_forma_de(nombre: str, senador: str) -> bool:
+    """True if an acta's name is a form of a roster name: the acta may add up to 3 more
+    capitalised words or particles ("Félix Ramón Bautista Rosario" for "Félix Bautista Rosario",
+    "Héctor Elpidio Acosta Restituyo" for "Héctor E. Acosta") or drop some (2 words at least).
+    Only letters, spaces, dots, hyphens and apostrophes."""
+    if not nombre or not all(ch.isalpha() or ch in " .-'’" for ch in nombre):
+        return False
+    orig = [w for w in re.split(r"[\s.]+", nombre) if w]
+    act = [norm(w) for w in orig]
+    ros = [norm(w) for w in re.split(r"[\s.]+", senador) if w]
+    ros = [w for w in ros if w not in PARTICULAS]
+    if len(ros) < 2 or len([w for w in act if w not in PARTICULAS]) < 2:
+        return False
+
+    def igual(r, a):
+        return r == a or (len(r) == 1 and a.startswith(r))
+    usados = set()
+    for r in ros:
+        i = next((i for i, a in enumerate(act) if i not in usados and igual(r, a)), None)
+        if i is None:
+            break
+        usados.add(i)
+    else:
+        extra = [i for i in range(len(act)) if i not in usados]
+        return len([i for i in extra if act[i] not in PARTICULAS]) <= 3 and \
+            all(act[i] in PARTICULAS or orig[i][:1].isupper() for i in extra)
+    # the acta may also use a shorter form: every word of it is in the roster name
+    return all(any(igual(a, r) or igual(r, a) for r in ros) for a in act if a not in PARTICULAS)
 
 
 # ------------------------------------------------------------------ gates
@@ -301,6 +336,9 @@ class Gates:
 
     # G4 ---------------------------------------------------------------
     def _url_ok(self, url: str, donde: str, exigir_recibo=True):
+        if urlsplit(url).scheme not in ("http", "https"):
+            self.fallo("G4", f"{donde}: {url[:60]!r} no es una dirección web (http/https)")
+            return
         host = (urlsplit(url).hostname or "").lower()
         if host not in self.dominios:
             self.fallo("G4", f"{donde}: {host} no es un dominio oficial de config/dominios_oficiales.json")
@@ -639,6 +677,26 @@ class Gates:
         def sin(d, quitar):
             return {k: v for k, v in (d or {}).items() if k not in quitar}
 
+        # resumenes.json: only 'resumenes' and 'sin_resumen' are the robot's; the rest (its _nota) is frozen.
+        rsb, rsn = self.base.json("docs/data/resumenes.json"), self.nuevo.json("docs/data/resumenes.json")
+        if rsb is not None and rsn is not None and sin(rsb, {"resumenes", "sin_resumen"}) != sin(rsn, {"resumenes", "sin_resumen"}):
+            self.fallo("G8", "resumenes.json: cambió una parte escrita a mano (fuera de 'resumenes' y 'sin_resumen')")
+
+        # estado-fuentes.json: the names, sections, links and delay lines shown on the site are copied
+        # from config/fuentes.json on main (datos_al.py); a source that is not there can't appear.
+        efn = self.nuevo.json("docs/data/estado-fuentes.json")
+        if efn is not None:
+            conf = self._conf("fuentes.json", {"fuentes": {}}).get("fuentes", {})
+            for k, e in (efn.get("fuentes") or {}).items():
+                c = conf.get(k)
+                if c is None:
+                    self.fallo("G8", f"estado-fuentes.json: la fuente {k!r} no está en config/fuentes.json")
+                    continue
+                for campo in FUENTE_FIJA:
+                    if isinstance(e, dict) and e.get(campo, c.get(campo)) != c.get(campo):
+                        self.fallo("G8", f"estado-fuentes.json {k}.{campo}: {str(e.get(campo))[:60]!r} no es el de "
+                                         f"config/fuentes.json ({str(c.get(campo))[:60]!r})")
+
         # leyes.json: hand-written bills identical (same sector, same order); auto bills only change
         # estado/estado_sil/datos_al; new ones carry only the fields leyes.py writes.
         lb, ln = self.base.json("docs/data/leyes.json"), self.nuevo.json("docs/data/leyes.json")
@@ -798,6 +856,8 @@ class Gates:
             for campo in PROSA:
                 if r.get(campo):
                     out.append((f"resumen {k}.{campo}", r[campo], r))
+            if isinstance(r.get("fuente_nombre"), str) and r["fuente_nombre"]:
+                out.append((f"resumen {k}.fuente_nombre", r["fuente_nombre"], r))
         for _, n in self.cambiados("docs/data/novedades.json", "novedades", "texto")[0]:
             out.append(("novedad", n["texto"], n))
             if isinstance(n.get("aporte"), str) and n["aporte"]:
@@ -810,6 +870,11 @@ class Gates:
             nota_asis = (s.get("asistencia") or {}).get("nota")
             if isinstance(nota_asis, str) and nota_asis:
                 out.append((f"acta {s['acta']} asistencia.nota", nota_asis, s))
+            # the result line of a vote is source text shown on the page (X1)
+            for v in s.get("votaciones", []):
+                if isinstance(v, dict) and isinstance(v.get("resultado"), str):
+                    out.append((f"acta {s['acta']} votación {v.get('votacion_num') or v.get('iniciativa')} resultado",
+                                v["resultado"], v))
         for donde, nota, v, _s in self.notas_nuevas():
             out.append((donde, nota, v))
         for _, m in self.cambiados("docs/data/finanzas.json", "metricas", "id")[0]:
@@ -833,6 +898,8 @@ class Gates:
                         nombres.append(l["nombre"])
         patrones = patrones_nombres(nombres)
         for donde, txt, ctx in self.textos_nuevos():
+            if HTML.search(txt):
+                self.fallo("G9", f"{donde}: trae '<' o '>' (el sitio no publica HTML): {txt[:60]!r}")
             if exact and exact.search(txt):
                 self.fallo("G9", f"{donde}: palabra partidista '{exact.search(txt).group(0)}'")
             if suaves and suaves.search(txt):
@@ -846,6 +913,22 @@ class Gates:
                     if frase and not (frase.startswith("La propuesta busca") or frase.startswith("Si se aprueba,")):
                         self.fallo("G9", f"{donde}: en un proyecto no aprobado cada frase debe empezar con "
                                          f"'La propuesta busca' o 'Si se aprueba,': {frase[:60]!r}")
+        self._g9_ausentes(exact, suaves)
+
+    def _g9_ausentes(self, exact, suaves):
+        """A name in a new acta's absence list must be one of the 32 senators on MAIN (acta form allowed)."""
+        roster = [str(l.get("nombre", "")) for p in (self.base.json("docs/data/provincias.json") or {}).get("provincias", [])
+                  for l in p.get("lideres", []) if str(l.get("cargo", "")).startswith("Senador")]
+        roster += [str(x.get("nombre", "")) for x in json.loads(self.base.texto("scripts/senators_canon.json") or "[]")]
+        for _, s in self.cambiados("docs/data/sesiones.json", "sesiones", "acta")[0]:
+            for p in (s.get("asistencia") or {}).get("detalle", []) or []:
+                nombre = p.get("nombre") if isinstance(p, dict) else None
+                donde = f"acta {s.get('acta')} asistencia.detalle"
+                if not isinstance(nombre, str) or HTML.search(nombre) or \
+                        (exact and exact.search(nombre)) or (suaves and suaves.search(nombre)):
+                    self.fallo("G9", f"{donde}: {str(nombre)[:60]!r} no es un nombre")
+                elif not any(es_forma_de(nombre, r) for r in roster):
+                    self.fallo("G9", f"{donde}: {nombre[:60]!r} no es ningún senador de provincias.json")
 
     # G10 --------------------------------------------------------------
     def g10_avanzar(self):

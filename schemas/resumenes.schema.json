@@ -107,7 +107,8 @@
      "fuente_url": {
       "type": "string"
      }
-    }
+    },
+    "additionalProperties": false
    }
   }
  }

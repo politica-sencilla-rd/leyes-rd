@@ -40,7 +40,10 @@ async function cargar(path) {
 let RESUMENES = { resumenes: {}, sin_resumen: {} };
 let ESTADO = { fuentes: {} };
 function esc(t) {
-    return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+function urlSegura(u) {
+    return typeof u === "string" && /^https?:\/\//i.test(u.trim()) ? u : "";
 }
 function resumenDe(id) {
     const r = RESUMENES.resumenes[id];
@@ -49,7 +52,7 @@ function resumenDe(id) {
 function fechaCorta(iso) {
     const p = iso.split("-");
     const mes = MESES[Number(p[1]) - 1] || p[1];
-    return p.length === 2 ? mes + " " + p[0] : Number(p[2]) + " " + mes.slice(0, 3) + " " + p[0];
+    return esc(p.length === 2 ? mes + " " + p[0] : Number(p[2]) + " " + mes.slice(0, 3) + " " + p[0]);
 }
 function etiquetaResumen(r) {
     const p = el("p", "resumen-auto");
@@ -130,7 +133,7 @@ function renderFinanzasAuto(fin) {
             if (fuente)
                 fuente.textContent = a.fuente + " Datos al " + a.periodo + ". Lo actualiza un robot desde el archivo oficial.";
             const link = card.querySelector("a.enlace-doc");
-            if (link && a.url_pagina)
+            if (link && urlSegura(a.url_pagina))
                 link.href = a.url_pagina;
         });
         document.querySelectorAll('[data-auto="' + m.id + '"]').forEach((e) => { e.textContent = a.valor_texto; });
@@ -158,7 +161,7 @@ function byId(id) {
     return n;
 }
 function enlaceDoc(url, texto) {
-    if (!url)
+    if (!url || !urlSegura(url))
         return null;
     const a = el("a", "enlace-doc");
     a.href = url;
@@ -265,8 +268,8 @@ function renderLeyes(data) {
         const card = el("div", "sector");
         const head = el("div", "sector-head");
         const txt = el("div", "sector-txt");
-        txt.append(el("h3", "sector-title", sec.nombre), el("span", "sector-count", sec.leyes.length + (sec.leyes.length === 1 ? " ley" : " leyes")));
-        head.append(el("span", "sector-emoji", SECTOR_ICO[sec.emoji] ? ico(SECTOR_ICO[sec.emoji]) : sec.emoji), txt, el("span", "sector-chev", "▸"));
+        txt.append(el("h3", "sector-title", esc(sec.nombre)), el("span", "sector-count", sec.leyes.length + (sec.leyes.length === 1 ? " ley" : " leyes")));
+        head.append(el("span", "sector-emoji", SECTOR_ICO[sec.emoji] ? ico(SECTOR_ICO[sec.emoji]) : esc(sec.emoji)), txt, el("span", "sector-chev", "▸"));
         const body = el("div", "sector-body");
         body.style.display = "none";
         sec.leyes.forEach((ley) => body.append(renderLey(ley, data.busqueda_oficial)));
@@ -296,8 +299,8 @@ function numeroIniciativa(titulo) {
 function renderLey(ley, busqueda) {
     const wrap = el("div", "ley");
     const res = ley.auto && ley.id ? resumenDe("sil-" + ley.id) : null;
-    wrap.append(el("p", "ley-titulo", ley.auto ? esc(res && res.titulo_facil ? res.titulo_facil : ley.titulo) : ley.titulo));
-    wrap.append(el("span", "ley-estado estado-" + ley.estado, estadoLabel[ley.estado] || esc(ley.estado)));
+    wrap.append(el("p", "ley-titulo", esc(ley.auto && res && res.titulo_facil ? res.titulo_facil : ley.titulo)));
+    wrap.append(el("span", "ley-estado estado-" + ley.estado, estadoLabel.hasOwnProperty(ley.estado) ? estadoLabel[ley.estado] : esc(ley.estado)));
     if (ley.auto)
         wrap.append(el("span", "ley-auto", "automático"));
     if (ley.camara) {
@@ -314,10 +317,10 @@ function renderLey(ley, busqueda) {
             (ley.datos_al ? " · datos al " + fechaCorta(ley.datos_al) : "") + "."));
     }
     else if (ley.que_es) {
-        det.append(el("h4", null, "¿Qué es?"), el("p", null, ley.que_es));
+        det.append(el("h4", null, "¿Qué es?"), el("p", null, esc(ley.que_es)));
     }
     if (ley.te_afecta) {
-        det.append(el("h4", null, "¿Y a mí qué?"), el("p", "te-afecta leer-voz", ley.te_afecta));
+        det.append(el("h4", null, "¿Y a mí qué?"), el("p", "te-afecta leer-voz", esc(ley.te_afecta)));
     }
     const sinMotivo = !ley.por_que || /^razón no indicada/i.test(ley.por_que);
     if (ley.auto) {
@@ -326,15 +329,15 @@ function renderLey(ley, busqueda) {
         det.append(el("p", "nota-fuente", "El Senado no publicó el motivo. Cuando lo publique, te lo contamos aquí."));
     }
     else {
-        det.append(el("h4", null, "¿Por qué se propuso?"), el("p", null, ley.por_que));
+        det.append(el("h4", null, "¿Por qué se propuso?"), el("p", null, esc(ley.por_que || "")));
     }
     if (ley.votos && ley.votos.length && (ley.camara || MOSTRAR_VOTOS_POR_SENADOR)) {
         det.append(el("h4", null, "¿Quién votó?"));
         const votos = el("div", "votos");
         ley.votos.forEach((v) => {
             const fila = el("div", "voto-fila");
-            fila.append(el("span", null, v.nombre));
-            fila.append(el("span", votoClass[v.voto] || "", votoLabel[v.voto] || v.voto));
+            fila.append(el("span", null, esc(v.nombre)));
+            fila.append(el("span", votoClass[v.voto] || "", votoLabel.hasOwnProperty(v.voto) ? votoLabel[v.voto] : esc(v.voto)));
             votos.append(fila);
         });
         det.append(votos);
@@ -384,13 +387,13 @@ function renderVigenciaLey(ley) {
     const card = el("details", "vig-ley");
     const cab = el("summary", "vig-ley-cab");
     const est = estadoVigencia(ley);
-    cab.append(el("span", "vig-ley-num", "Ley " + esc(ley.numero)), el("span", "vig-ley-titulo", ley.auto ? esc(ley.titulo) : ley.titulo), el("span", "vig-ley-fecha", ley.vigencia_fecha
+    cab.append(el("span", "vig-ley-num", "Ley " + esc(ley.numero)), el("span", "vig-ley-titulo", esc(ley.titulo)), el("span", "vig-ley-fecha", ley.vigencia_fecha
         ? (est === "pronto" ? ico("calendar") + "Entra: " : ico("check") + "Desde: ") + fechaLarga(ley.vigencia_fecha)
         : ico("info") + "Fecha: lee su artículo"), el("span", "vig-ley-chev", "▸"));
     card.append(cab);
     const det = el("div", "vig-ley-det");
     if (ley.que_es) {
-        det.append(el("h4", null, "¿Qué es?"), el("p", null, ley.que_es));
+        det.append(el("h4", null, "¿Qué es?"), el("p", null, esc(ley.que_es)));
     }
     else {
         const r = resumenDe("ley-" + ley.numero);
@@ -399,13 +402,13 @@ function renderVigenciaLey(ley) {
         else
             det.append(el("h4", null, "¿Qué es?"), resumenPendiente("ley-" + ley.numero, ley.url_documento));
     }
-    det.append(el("h4", null, est === "pronto" ? "¿Cuándo empieza?" : est === "vigencia" ? "¿Desde cuándo rige?" : "¿Cuándo empieza?"), el("p", "vig-ley-cuando", ley.auto ? esc(ley.vigencia_texto) : ley.vigencia_texto));
+    det.append(el("h4", null, est === "pronto" ? "¿Cuándo empieza?" : est === "vigencia" ? "¿Desde cuándo rige?" : "¿Cuándo empieza?"), el("p", "vig-ley-cuando", esc(ley.vigencia_texto)));
     if (ley.vigencia_cita)
         det.append(el("p", "vig-ley-cita", "Lo que dice la ley: «" + esc(ley.vigencia_cita) + "»"));
     det.append(el("p", "vig-ley-meta", "El Presidente la firmó (la promulgó) el <b>" + fechaLarga(ley.promulgada) +
         "</b> y se publicó en la Gaceta Oficial " +
-        (/^\d+$/.test(ley.gaceta) ? "núm. <b>" + ley.gaceta + "</b>" : "(" + ley.gaceta + ")") + "."));
-    det.append(el("p", "nota-fuente", "Fuente: " + conPunto(ley.fuente)));
+        (/^\d+$/.test(ley.gaceta) ? "núm. <b>" + ley.gaceta + "</b>" : "(" + esc(ley.gaceta) + ")") + "."));
+    det.append(el("p", "nota-fuente", "Fuente: " + esc(conPunto(ley.fuente))));
     if (ley.url_documento) {
         const a = enlaceDoc(ley.url_documento, "Leer la ley completa (documento oficial)");
         if (a)
@@ -468,10 +471,10 @@ function renderVigencia(data) {
     if (data.regla_por_defecto) {
         const r = data.regla_por_defecto;
         const det = el("details", "vig-regla");
-        det.append(el("summary", "vig-regla-cab", ico("ayuda") + r.titulo));
+        det.append(el("summary", "vig-regla-cab", ico("ayuda") + esc(r.titulo)));
         const body = el("div", "vig-regla-body");
-        body.append(el("p", null, r.texto));
-        body.append(el("p", "nota-fuente", "Fuente: " + conPunto(r.fuente)));
+        body.append(el("p", null, esc(r.texto)));
+        body.append(el("p", "nota-fuente", "Fuente: " + esc(conPunto(r.fuente))));
         const aRegla = enlaceDoc(r.url, "Ver el documento oficial (PDF)");
         if (aRegla)
             body.append(aRegla);
@@ -499,7 +502,7 @@ function renderNovedades(data) {
         wrap.classList.remove("hidden");
     items.forEach((n) => {
         const li = el("li", "novedad");
-        li.append(el("span", "novedad-fecha", fechaLarga(n.fecha)), el("span", "novedad-texto", n.texto));
+        li.append(el("span", "novedad-fecha", fechaLarga(n.fecha)), el("span", "novedad-texto", esc(n.texto)));
         if (n.aporte)
             li.append(el("span", "novedad-aporte", aporteHtml(n.aporte)));
         host.append(li);
@@ -507,10 +510,10 @@ function renderNovedades(data) {
 }
 function aporteHtml(a) {
     if (a.indexOf("💡") === 0)
-        return ico("bulb") + a.slice(2).trim();
+        return ico("bulb") + esc(a.slice(2).trim());
     if (a.indexOf("🔧") === 0)
-        return ico("tool") + a.slice(2).trim();
-    return a;
+        return ico("tool") + esc(a.slice(2).trim());
+    return esc(a);
 }
 function funcionDeCargo(cargo) {
     const c = cargo.toLowerCase();
@@ -822,19 +825,19 @@ function renderLider(l, provincia, conFuncion = true) {
         img.loading = "lazy";
         img.decoding = "async";
         img.addEventListener("error", () => {
-            const fb = el("span", "avatar", iniciales(l.nombre));
+            const fb = el("span", "avatar", esc(iniciales(l.nombre)));
             img.replaceWith(fb);
         });
         cab.append(img);
     }
     else {
-        cab.append(el("span", "avatar", iniciales(l.nombre)));
+        cab.append(el("span", "avatar", esc(iniciales(l.nombre))));
     }
     const ident = el("div", "lider-ident");
     const tienePartido = Boolean(l.partido && l.partido.trim() !== "—");
-    ident.append(el("p", "lider-nombre", "<b>" + l.nombre + "</b>" +
-        (tienePartido ? "<span class='partido-chip'>" + l.partido + "</span>" : "")));
-    ident.append(el("p", "lider-cargo", l.cargo));
+    ident.append(el("p", "lider-nombre", "<b>" + esc(l.nombre) + "</b>" +
+        (tienePartido ? "<span class='partido-chip'>" + esc(l.partido) + "</span>" : "")));
+    ident.append(el("p", "lider-cargo", esc(l.cargo)));
     cab.append(ident);
     block.append(cab);
     if (esElecto(l.cargo)) {
@@ -844,7 +847,7 @@ function renderLider(l, provincia, conFuncion = true) {
     if (fn)
         block.append(el("p", "lider-funcion", fn));
     if (l.resumen)
-        block.append(el("p", null, l.resumen));
+        block.append(el("p", null, esc(l.resumen)));
     const chips = el("div", "lider-chips");
     const datoChip = (icono, resumen, detalle) => {
         const d = el("details", "dato-chip");
@@ -853,7 +856,7 @@ function renderLider(l, provincia, conFuncion = true) {
     };
     if (l.asistencia && l.asistencia.total > 0) {
         const a = l.asistencia;
-        chips.append(datoChip("calendar", "<b>" + a.presentes + "/" + a.total + "</b> sesiones", "Asistencia: estuvo en <b>" + a.presentes + " de " + a.total +
+        chips.append(datoChip("calendar", "<b>" + esc(String(a.presentes)) + "/" + esc(String(a.total)) + "</b> sesiones", "Asistencia: estuvo en <b>" + esc(String(a.presentes)) + " de " + esc(String(a.total)) +
             "</b> sesiones del Pleno (" + esc(a.periodo) + ")." +
             (a.datos_al ? " Datos al " + fechaCorta(a.datos_al) + "." : "") + (a.nota ? " " + esc(a.nota) : "")));
     }
@@ -861,7 +864,7 @@ function renderLider(l, provincia, conFuncion = true) {
         chips.append(el("p", "nota-fuente", ico("info") + "Según el SIL de la Cámara, estuvo en el cargo hasta el " + fechaLarga(l.cargo_hasta) + "."));
     }
     if (l.comisiones && l.comisiones.length) {
-        chips.append(datoChip("folders", "<b>" + l.comisiones.length + "</b> comisiones", "Trabaja en " + l.comisiones.length + " comisiones: " + l.comisiones.join(", ") + "."));
+        chips.append(datoChip("folders", "<b>" + l.comisiones.length + "</b> comisiones", "Trabaja en " + l.comisiones.length + " comisiones: " + esc(l.comisiones.join(", ")) + "."));
     }
     if (typeof l.iniciativas_propuestas === "number") {
         const n = l.iniciativas_propuestas;
@@ -877,10 +880,10 @@ function renderLider(l, provincia, conFuncion = true) {
     }
     const sueldo = sueldoDeCargo(l.cargo) || l.sueldo || null;
     if (sueldo) {
-        chips.append(datoChip("coin", "Sueldo del cargo: <b>" + sueldo.monto + "/mes</b>", "Es el salario mensual oficial que paga el Estado por ocupar el cargo. " +
+        chips.append(datoChip("coin", "Sueldo del cargo: <b>" + esc(sueldo.monto) + "/mes</b>", "Es el salario mensual oficial que paga el Estado por ocupar el cargo. " +
             "No es dinero de otras fuentes ni su patrimonio.<br>" +
-            "Monto: <b>" + sueldo.monto + " al mes</b>, según la " + sueldo.fuente +
-            " de " + sueldo.mes + ". Lo pagan los impuestos de todos."));
+            "Monto: <b>" + esc(sueldo.monto) + " al mes</b>, según la " + esc(sueldo.fuente) +
+            " de " + esc(sueldo.mes) + ". Lo pagan los impuestos de todos."));
     }
     if (chips.children.length)
         block.append(chips);
@@ -918,25 +921,25 @@ function renderRegistroVotos(l) {
     const body = el("div", "votos-registro-body");
     const nota = l.votos_nota ||
         "Estas son las sesiones recientes del Senado que ya leímos, no todo su período.";
-    body.append(el("p", "nota-fuente", nota));
+    body.append(el("p", "nota-fuente", esc(nota)));
     votos.forEach((ses) => {
         if (!ses.leyes || !ses.leyes.length)
             return;
         const sDet = el("details", "votos-sesion");
         const sCab = el("summary", "votos-sesion-cab");
-        sCab.append(el("span", "votos-sesion-nom", "Sesión " + ses.sesion), el("span", "votos-sesion-conteo", ses.leyes.length + (ses.leyes.length === 1 ? " ley" : " leyes")), el("span", "grupo-chev", "▸"));
+        sCab.append(el("span", "votos-sesion-nom", "Sesión " + esc(String(ses.sesion))), el("span", "votos-sesion-conteo", ses.leyes.length + (ses.leyes.length === 1 ? " ley" : " leyes")), el("span", "grupo-chev", "▸"));
         sDet.append(sCab);
         ses.leyes.forEach((ley) => {
             const wrap = el("div", "voto-ley");
             const top = el("div", "voto-ley-top");
-            top.append(el("span", "voto-ley-titulo", ley.titulo));
-            top.append(el("span", "voto-ley-voto " + (votoClass[ley.voto] || ""), votoLabel[ley.voto] || ley.voto));
+            top.append(el("span", "voto-ley-titulo", esc(ley.titulo)));
+            top.append(el("span", "voto-ley-voto " + (votoClass[ley.voto] || ""), votoLabel.hasOwnProperty(ley.voto) ? votoLabel[ley.voto] : esc(ley.voto)));
             wrap.append(top);
             if (ley.que_es) {
-                wrap.append(el("h4", "voto-ley-h", "¿Qué es?"), el("p", "voto-ley-p", ley.que_es));
+                wrap.append(el("h4", "voto-ley-h", "¿Qué es?"), el("p", "voto-ley-p", esc(ley.que_es)));
             }
             if (ley.como_afecta) {
-                wrap.append(el("h4", "voto-ley-h", "¿Y a mí qué?"), el("p", "voto-ley-p", ley.como_afecta));
+                wrap.append(el("h4", "voto-ley-h", "¿Y a mí qué?"), el("p", "voto-ley-p", esc(ley.como_afecta)));
             }
             sDet.append(wrap);
         });
@@ -974,7 +977,7 @@ function renderRegidoresBody(prov) {
             fuenteTotalLink = enlaceDoc(partida.url || undefined, "Ver la lista oficial (JCE)");
         }
         html += "<br><br>En esta provincia hay <b>" + r.total + " regidores</b> en total" +
-            (textoFuente ? ", según " + textoFuente : "") + ".";
+            (textoFuente ? ", según " + esc(textoFuente) : "") + ".";
     }
     else {
         html += "<br><br><span class=\"nota-fuente\">Cuántos hay en total en esta provincia: aún estamos confirmando la cifra con datos oficiales de la JCE.</span>";
@@ -989,15 +992,15 @@ function renderRegidoresBody(prov) {
             if (!m.lista || !m.lista.length)
                 return;
             const det = el("details", "regidores-lista");
-            det.append(el("summary", "regidores-municipio", "<span>" + ico("silla") + "Regidores de " + m.municipio + "</span><span class=\"grupo-conteo\">" + m.lista.length + "</span>"));
+            det.append(el("summary", "regidores-municipio", "<span>" + ico("silla") + "Regidores de " + esc(m.municipio) + "</span><span class=\"grupo-conteo\">" + m.lista.length + "</span>"));
             m.lista.forEach((rg) => {
                 const fila = el("p", "regidor-fila");
-                fila.innerHTML = rg.nombre + " <span class='partido-chip'>" + rg.partido + "</span>";
+                fila.innerHTML = esc(rg.nombre) + " <span class='partido-chip'>" + esc(rg.partido) + "</span>";
                 det.append(fila);
             });
             if (m.fuente_lista) {
                 const partida = partirFuenteUrl(m.fuente_lista);
-                det.append(el("p", "nota-fuente", "Fuente: " + partida.texto + "."));
+                det.append(el("p", "nota-fuente", "Fuente: " + esc(partida.texto) + "."));
                 const a = enlaceDoc(partida.url || undefined, "Ver la lista oficial (JCE)");
                 if (a)
                     det.append(a);
@@ -1024,7 +1027,7 @@ function renderProvincias(data) {
     const ordenadas = [...data.provincias].sort((a, b) => a.nombre.localeCompare(b.nombre, "es"));
     ordenadas.forEach((prov) => {
         const c = el("div", "prov-card");
-        c.append(el("span", "prov-nombre", prov.nombre));
+        c.append(el("span", "prov-nombre", esc(prov.nombre)));
         const n = prov.lideres.length;
         c.append(el("span", "prov-count", n + (n === 1 ? " cargo" : " cargos")));
         c.setAttribute("role", "button");
@@ -1043,7 +1046,7 @@ function renderProvincias(data) {
             const cerrar = el("button", "perfil-cerrar", ico("arriba") + "Todas las provincias");
             cerrar.type = "button";
             cerrar.addEventListener("click", () => cerrarPerfil());
-            const perfilTitulo = el("h3", null, prov.nombre);
+            const perfilTitulo = el("h3", null, esc(prov.nombre));
             perfilTitulo.tabIndex = -1;
             const perfilCab = el("div", "perfil-cab");
             perfilCab.append(perfilTitulo, cerrar);
@@ -1180,7 +1183,7 @@ function renderCamara(nombre, total, conteo) {
             punto = el("span", "comp-punto");
             punto.style.background = colorDePartido(s.partido);
         }
-        chip.append(punto, el("span", "comp-chip-txt", s.partido + " " + s.asientos));
+        chip.append(punto, el("span", "comp-chip-txt", esc(s.partido) + " " + s.asientos));
         leyenda.append(chip);
     });
     wrap.append(leyenda);
@@ -1195,7 +1198,7 @@ function renderCamara(nombre, total, conteo) {
         else
             cola = " — la mayor parte, pero no la mitad.";
         const sustantivo = nombre.toLowerCase().includes("senado") ? "senadores" : "diputados";
-        wrap.append(el("p", "comp-clave", "El <b>" + lider.partido + "</b> tiene <b>" + lider.asientos + " de " + total + "</b> " + sustantivo + cola));
+        wrap.append(el("p", "comp-clave", "El <b>" + esc(lider.partido) + "</b> tiene <b>" + lider.asientos + " de " + total + "</b> " + sustantivo + cola));
     }
     const det = el("details", "comp-detalle");
     det.append(el("summary", "comp-detalle-cab", "Ver el detalle por partido"));
@@ -1203,7 +1206,7 @@ function renderCamara(nombre, total, conteo) {
         const fila = el("p", "comp-detalle-fila");
         const punto = el("span", "comp-punto");
         punto.style.background = colorDePartido(c.partido);
-        fila.append(punto, el("span", null, c.partido + ": " + c.asientos +
+        fila.append(punto, el("span", null, esc(c.partido) + ": " + c.asientos +
             (c.asientos === 1 ? " asiento" : " asientos")));
         det.append(fila);
     });
@@ -1232,12 +1235,12 @@ const MESES = [
 function fechaLarga(iso) {
     const parts = iso.split("-");
     if (parts.length !== 3)
-        return iso;
+        return esc(iso);
     const y = parts[0];
     const m = Number(parts[1]) - 1;
     const d = Number(parts[2]);
     const mes = MESES[m] || parts[1];
-    return d + " de " + mes + " de " + y;
+    return esc(d + " de " + mes + " de " + y);
 }
 function esFechaIso(s) {
     return /^\d{4}-\d{2}-\d{2}$/.test(s);
@@ -1293,30 +1296,30 @@ function renderSesiones(data, votosPorSesion) {
         }
         const card = el("details", "sesion");
         const head = el("summary", "sesion-head");
-        head.append(el("span", "sesion-fecha", fechaLarga(ses.fecha)), el("span", "sesion-conteo", ses.votaciones.length + " votaciones"), el("span", "sesion-acta", "Acta " + ses.acta), el("span", "sesion-chev", "▸"));
+        head.append(el("span", "sesion-fecha", fechaLarga(ses.fecha)), el("span", "sesion-conteo", ses.votaciones.length + " votaciones"), el("span", "sesion-acta", "Acta " + esc(ses.acta)), el("span", "sesion-chev", "▸"));
         card.append(head);
         const vlist = el("div", "votaciones");
         ses.votaciones.forEach((v) => {
             const row = el("div", "votacion");
             const auto = v.titulo_facil ? null : resumenDe("senado-" + v.iniciativa);
-            const facil = v.titulo_facil || (auto && auto.titulo_facil ? esc(auto.titulo_facil) : "");
+            const facil = esc(v.titulo_facil || (auto && auto.titulo_facil ? auto.titulo_facil : ""));
             if (facil) {
                 row.append(el("p", "votacion-titulo", facil));
                 if (auto)
                     row.append(etiquetaResumen(auto));
                 const oficial = el("details", "oficial");
-                oficial.append(el("summary", null, ico("leyes") + "Ver nombre oficial"), el("p", "votacion-titulo-oficial", ses.auto ? esc(v.titulo) : v.titulo));
+                oficial.append(el("summary", null, ico("leyes") + "Ver nombre oficial"), el("p", "votacion-titulo-oficial", esc(v.titulo)));
                 row.append(oficial);
             }
             else {
-                row.append(el("p", "votacion-titulo", ses.auto ? esc(v.titulo) : v.titulo));
+                row.append(el("p", "votacion-titulo", esc(v.titulo)));
                 if (ses.auto)
                     row.append(el("p", "resumen-pendiente", "Título fácil en preparación: arriba va el nombre oficial."));
             }
             const meta = el("div", "votacion-meta");
             const aprob = /^aprob/i.test(v.resultado);
             const icono = aprob ? ico("check") : "•&nbsp;";
-            const conteo = el("span", "v-conteo", "<b>" + v.a_favor + " de " + v.presentes + "</b> presentes votaron a favor");
+            const conteo = el("span", "v-conteo", "<b>" + esc(String(v.a_favor)) + " de " + esc(String(v.presentes)) + "</b> presentes votaron a favor");
             const pct = v.presentes > 0 ? Math.round((v.a_favor / v.presentes) * 100) : 0;
             const barra = el("div", "voto-barra");
             barra.setAttribute("role", "img");
@@ -1325,7 +1328,7 @@ function renderSesiones(data, votosPorSesion) {
             const fill = el("span", "voto-barra-fill");
             fill.style.width = pct + "%";
             barra.append(fill);
-            meta.append(conteo, barra, el("span", aprob ? "v-resultado" : "v-resultado v-resultado-neutral", icono + v.resultado), el("span", "v-iniciativa", "Iniciativa " + esc(v.iniciativa) + (v.fuente ? " · " + esc(v.fuente) : "")));
+            meta.append(conteo, barra, el("span", aprob ? "v-resultado" : "v-resultado v-resultado-neutral", icono + esc(v.resultado)), el("span", "v-iniciativa", "Iniciativa " + esc(v.iniciativa) + (v.fuente ? " · " + esc(v.fuente) : "")));
             row.append(meta);
             vlist.append(row);
         });
@@ -1355,13 +1358,13 @@ function renderSesiones(data, votosPorSesion) {
                 const ul = el("div", "asist-lista");
                 det.forEach((p) => {
                     const fila = el("div", "asist-fila");
-                    fila.append(el("span", null, p.nombre));
-                    fila.append(el("span", "asist-estado-" + p.estado, estadoAsist[p.estado] || p.estado));
+                    fila.append(el("span", null, esc(p.nombre)));
+                    fila.append(el("span", "asist-estado-" + p.estado, estadoAsist.hasOwnProperty(p.estado) ? estadoAsist[p.estado] : esc(p.estado)));
                     ul.append(fila);
                 });
                 body.append(ul);
                 body.append(el("p", "nota-fuente", ses.asistencia.presentes !== null && ses.asistencia.presentes !== undefined
-                    ? "Lista de senadores ausentes, según el acta oficial. Presentes en el último pase de lista: <b>" + ses.asistencia.presentes + "</b>."
+                    ? "Lista de senadores ausentes, según el acta oficial. Presentes en el último pase de lista: <b>" + esc(String(ses.asistencia.presentes)) + "</b>."
                     : "Lista de senadores que presentaron excusa, según el acta oficial. El acta no publica una cifra total de presentes."));
             }
             else {
@@ -1415,10 +1418,10 @@ function renderSesionesVotos(data) {
         const tieneFecha = esFechaIso(ses.fecha);
         const nombreSesion = tieneFecha
             ? "Sesión del " + fechaLarga(ses.fecha)
-            : "Sesión " + ses.numero;
+            : "Sesión " + esc(String(ses.numero));
         const cabNombre = el("span", "grupo-nombre", nombreSesion);
         if (tieneFecha) {
-            cabNombre.append(el("span", "ses-votos-num", "N.º " + ses.numero));
+            cabNombre.append(el("span", "ses-votos-num", "N.º " + esc(String(ses.numero))));
         }
         sCab.append(cabNombre, el("span", "grupo-conteo", ses.bills.length + (ses.bills.length === 1 ? " proyecto" : " proyectos")), el("span", "grupo-chev", "▸"));
         sCard.append(sCab);
@@ -1428,7 +1431,7 @@ function renderSesionesVotos(data) {
             const bCab = el("summary", "ses-voto-bill-cab");
             const tituloWrap = el("span", "ses-voto-bill-titulo");
             tituloWrap.append(el("span", "ses-voto-bill-kicker", "La ley"));
-            tituloWrap.append(el("span", "ses-voto-bill-nombre", b.titulo));
+            tituloWrap.append(el("span", "ses-voto-bill-nombre", esc(b.titulo)));
             bCab.append(tituloWrap);
             const totales = el("span", "ses-voto-totales");
             totales.append(el("span", "ses-total voto-si", ico("thumb-up") + b.si), el("span", "ses-total voto-no", ico("thumb-down") + b.no), el("span", "ses-total voto-aus", ico("minus") + b.ausente));
@@ -1436,18 +1439,18 @@ function renderSesionesVotos(data) {
             bCab.append(el("span", "grupo-chev", "▸"));
             bDet.append(bCab);
             if (b.que_es) {
-                bDet.append(el("h4", "voto-ley-h", "¿Qué es?"), el("p", "voto-ley-p", b.que_es));
+                bDet.append(el("h4", "voto-ley-h", "¿Qué es?"), el("p", "voto-ley-p", esc(b.que_es)));
             }
             if (b.como_afecta) {
-                bDet.append(el("h4", "voto-ley-h", "¿Y a mí qué?"), el("p", "voto-ley-p", b.como_afecta));
+                bDet.append(el("h4", "voto-ley-h", "¿Y a mí qué?"), el("p", "voto-ley-p", esc(b.como_afecta)));
             }
             const rollDet = el("details", "ses-voto-roll");
             rollDet.append(el("summary", "ses-voto-roll-cab", ico("users") + "Cómo votó cada senador (" + b.roll.length + ")"));
             const lista = el("div", "asist-lista");
             b.roll.forEach((r) => {
                 const fila = el("div", "asist-fila");
-                fila.append(el("span", null, r.senator));
-                fila.append(el("span", "ses-voto-roll-voto " + (votoClass[r.vote] || ""), votoLabel[r.vote] || r.vote));
+                fila.append(el("span", null, esc(r.senator)));
+                fila.append(el("span", "ses-voto-roll-voto " + (votoClass[r.vote] || ""), votoLabel.hasOwnProperty(r.vote) ? votoLabel[r.vote] : esc(r.vote)));
                 lista.append(fila);
             });
             rollDet.append(lista);
@@ -1488,7 +1491,7 @@ function renderFondos(data) {
         if (!li)
             return;
         const item = el("span", "rastro-leyenda-item rastro-" + k);
-        item.append(el("span", "rastro-leyenda-emoji", '<span class="rastro-punto" aria-hidden="true"></span>'), el("span", "rastro-leyenda-txt", "<b>" + li.etiqueta + "</b> — " + li.explica));
+        item.append(el("span", "rastro-leyenda-emoji", '<span class="rastro-punto" aria-hidden="true"></span>'), el("span", "rastro-leyenda-txt", "<b>" + esc(li.etiqueta) + "</b> — " + esc(li.explica)));
         leyDiv.append(item);
     });
     cont.append(leyDiv);
@@ -1503,7 +1506,7 @@ function renderFondoGrupo(f, leyenda) {
     const grupo = el("details", "grupo-cargo grupo-pagina fondo-grupo");
     const cab = el("summary", "grupo-cab");
     const txt = el("span", "grupo-cab-txt");
-    txt.append(el("span", "grupo-nombre", ico("coin") + f.nombre_popular), el("span", "grupo-sub", "Nombre oficial: " + f.nombre_oficial + ". Sigue su rastro y mira el veredicto."));
+    txt.append(el("span", "grupo-nombre", ico("coin") + esc(f.nombre_popular)), el("span", "grupo-sub", "Nombre oficial: " + esc(f.nombre_oficial) + ". Sigue su rastro y mira el veredicto."));
     cab.append(txt, el("span", "grupo-chev", "▸"));
     grupo.append(cab);
     const body = el("div", "grupo-pagina-body");
@@ -1513,25 +1516,25 @@ function renderFondoGrupo(f, leyenda) {
 }
 function renderFondo(f, leyenda) {
     const card = el("div", "fondo");
-    card.append(el("p", "fondo-quees leer-voz", f.que_es));
+    card.append(el("p", "fondo-quees leer-voz", esc(f.que_es)));
     if (f.para_quien) {
         const pq = el("p", "fondo-quees fondo-paraquien");
-        pq.innerHTML = "<b>¿Para quién?</b> " + f.para_quien;
+        pq.innerHTML = "<b>¿Para quién?</b> " + esc(f.para_quien);
         card.append(pq);
     }
     if (f.monto_total) {
         const montos = el("div", "fondo-montos");
         if (f.monto_total.anual)
-            montos.append(el("span", "fondo-monto-pill", f.monto_total.anual));
+            montos.append(el("span", "fondo-monto-pill", esc(f.monto_total.anual)));
         if (f.monto_total.mensual)
-            montos.append(el("span", "fondo-monto-pill", f.monto_total.mensual));
+            montos.append(el("span", "fondo-monto-pill", esc(f.monto_total.mensual)));
         card.append(montos);
         if (f.monto_total.nota)
-            card.append(el("p", "nota-fuente", f.monto_total.nota));
+            card.append(el("p", "nota-fuente", esc(f.monto_total.nota)));
     }
     const ver = el("div", "fondo-veredicto leer-voz");
-    ver.append(el("span", "fondo-veredicto-kicker", "Veredicto"), " ", el("strong", "fondo-veredicto-etiqueta", f.veredicto.etiqueta));
-    ver.append(el("p", "fondo-veredicto-txt", f.veredicto.explica));
+    ver.append(el("span", "fondo-veredicto-kicker", "Veredicto"), " ", el("strong", "fondo-veredicto-etiqueta", esc(f.veredicto.etiqueta)));
+    ver.append(el("p", "fondo-veredicto-txt", esc(f.veredicto.explica)));
     card.append(ver);
     card.append(el("h5", "fondo-cadena-titulo", ico("buscar") + "El rastro, paso a paso"));
     const flujo = el("div", "flujo-graf fondo-cadena");
@@ -1543,68 +1546,68 @@ function renderFondo(f, leyenda) {
     card.append(flujo);
     if (f.mal_uso_documentado) {
         const mu = el("div", "fondo-maluso");
-        mu.innerHTML = "<b>" + ico("alerta") + "Lo que encontró la prensa:</b> " + f.mal_uso_documentado;
+        mu.innerHTML = "<b>" + ico("alerta") + "Lo que encontró la prensa:</b> " + esc(f.mal_uso_documentado);
         card.append(mu);
     }
     if (f.formula) {
         const fDet = el("details", "fondo-fold");
         fDet.append(el("summary", "fondo-fold-cab", ico("calc") + "<span>¿Cómo se calcula cuánto recibe cada uno?</span>"));
         const body = el("div", "fondo-fold-body");
-        body.append(el("p", "fondo-formula-regla", f.formula.regla));
+        body.append(el("p", "fondo-formula-regla", esc(f.formula.regla)));
         if (f.formula.minimo) {
             const mn = el("p", null);
-            mn.innerHTML = "<b>Mínimo:</b> " + f.formula.minimo;
+            mn.innerHTML = "<b>Mínimo:</b> " + esc(f.formula.minimo);
             body.append(mn);
         }
         if (f.formula.tope) {
             const tp = el("p", null);
-            tp.innerHTML = "<b>Tope:</b> " + f.formula.tope;
+            tp.innerHTML = "<b>Tope:</b> " + esc(f.formula.tope);
             body.append(tp);
         }
         if (f.formula.nota)
-            body.append(el("p", "nota-fuente", f.formula.nota));
+            body.append(el("p", "nota-fuente", esc(f.formula.nota)));
         fDet.append(body);
         card.append(fDet);
     }
     if (f.tabla_por_provincia && f.tabla_por_provincia.filas.length) {
         const t = f.tabla_por_provincia;
         const tDet = el("details", "fondo-fold");
-        const cab = ico("mapa") + "<span>" + (t.titulo || "Cuánto recibe cada provincia") +
+        const cab = ico("mapa") + "<span>" + esc(t.titulo || "Cuánto recibe cada provincia") +
             " <span class=\"fondo-fold-conteo\">" + t.filas.length + " provincias</span></span>";
         tDet.append(el("summary", "fondo-fold-cab", cab));
         const body = el("div", "fondo-fold-body");
         if (t.mes_referencia) {
             const mr = el("p", "fondo-tabla-mes");
-            mr.innerHTML = "Montos de <b>" + t.mes_referencia + "</b>" +
-                (t.moneda ? " (" + t.moneda + ")" : "") + ".";
+            mr.innerHTML = "Montos de <b>" + esc(t.mes_referencia) + "</b>" +
+                (t.moneda ? " (" + esc(t.moneda) + ")" : "") + ".";
             body.append(mr);
         }
         const tabla = el("div", "fondo-tabla");
         t.filas.forEach((row) => {
             const fila = el("div", "fondo-tabla-fila");
-            fila.append(el("span", "fondo-tabla-prov", row.provincia), el("span", "fondo-tabla-monto", pesosRD(row.monto)));
+            fila.append(el("span", "fondo-tabla-prov", esc(row.provincia)), el("span", "fondo-tabla-monto", esc(pesosRD(row.monto))));
             tabla.append(fila);
         });
         body.append(tabla);
         if (t.nota)
-            body.append(el("p", "nota-fuente", t.nota));
+            body.append(el("p", "nota-fuente", esc(t.nota)));
         tDet.append(body);
         card.append(tDet);
     }
     if (f.quien_lo_rechaza && (f.quien_lo_rechaza.nombres.length || f.quien_lo_rechaza.nota)) {
         const r = f.quien_lo_rechaza;
         const box = el("div", "fondo-rechaza");
-        const t = el("b", null, ico("x") + (r.titulo || "No todos lo aceptan"));
+        const t = el("b", null, ico("x") + esc(r.titulo || "No todos lo aceptan"));
         box.append(t);
         if (r.nombres.length)
-            box.append(el("p", "fondo-rechaza-nombres", r.nombres.join(" · ")));
+            box.append(el("p", "fondo-rechaza-nombres", esc(r.nombres.join(" · "))));
         if (r.nota)
-            box.append(el("p", "nota-fuente", r.nota));
+            box.append(el("p", "nota-fuente", esc(r.nota)));
         card.append(box);
     }
     if (f.base_legal) {
         const bl = el("div", "fondo-legal");
-        bl.innerHTML = "<b>" + ico("scale") + "¿Qué ley lo crea?</b> " + f.base_legal;
+        bl.innerHTML = "<b>" + ico("scale") + "¿Qué ley lo crea?</b> " + esc(f.base_legal);
         card.append(bl);
     }
     if (f.legal && f.legal.items.length) {
@@ -1617,7 +1620,7 @@ function renderFondo(f, leyenda) {
         f.fuentes.forEach((src) => {
             const li = el("li", null);
             const a = el("a", "enlace-doc");
-            a.href = src.url;
+            a.href = urlSegura(src.url);
             a.target = "_blank";
             a.rel = "noopener";
             a.textContent = src.titulo;
@@ -1632,7 +1635,7 @@ function renderFondo(f, leyenda) {
 }
 function fondoFuenteLink(src) {
     const a = el("a", "enlace-doc fondo-legal-fuente");
-    a.href = src.url;
+    a.href = urlSegura(src.url);
     a.target = "_blank";
     a.rel = "noopener";
     a.textContent = src.titulo;
@@ -1641,15 +1644,15 @@ function fondoFuenteLink(src) {
 }
 function renderFondoLegal(legal) {
     const det = el("details", "fondo-fold fondo-legal-fold");
-    det.append(el("summary", "fondo-fold-cab", ico("scale") + "<span>" + (legal.titulo || "Las preguntas legales, en sencillo") +
+    det.append(el("summary", "fondo-fold-cab", ico("scale") + "<span>" + esc(legal.titulo || "Las preguntas legales, en sencillo") +
         " <span class=\"fondo-fold-conteo\">" + legal.items.length + " preguntas</span></span>"));
     const body = el("div", "fondo-fold-body");
     if (legal.intro)
-        body.append(el("p", "fondo-legal-intro", legal.intro));
+        body.append(el("p", "fondo-legal-intro", esc(legal.intro)));
     legal.items.forEach((it) => {
         const qa = el("div", "fondo-legal-qa");
-        qa.append(el("p", "fondo-legal-q", it.q));
-        qa.append(el("p", "fondo-legal-a", it.a));
+        qa.append(el("p", "fondo-legal-q", esc(it.q)));
+        qa.append(el("p", "fondo-legal-a", esc(it.a)));
         const fuentes = [];
         if (it.fuente)
             fuentes.push(it.fuente);
@@ -1672,10 +1675,10 @@ function renderFondoPaso(p, num, leyenda) {
     paso.append(el("span", "paso-num", String(num)));
     const txt = el("div", "paso-txt");
     const titulo = p.subtitulo ? p.paso + " — " + p.subtitulo : p.paso;
-    txt.append(el("b", null, titulo));
-    txt.append(el("span", null, p.que_pasa));
+    txt.append(el("b", null, esc(titulo)));
+    txt.append(el("span", null, esc(p.que_pasa)));
     if (li) {
-        const badge = el("span", "rastro-badge rastro-" + p.estado, '<span class="rastro-punto" aria-hidden="true"></span> ' + li.etiqueta);
+        const badge = el("span", "rastro-badge rastro-" + p.estado, '<span class="rastro-punto" aria-hidden="true"></span> ' + esc(li.etiqueta));
         txt.append(badge);
     }
     paso.append(txt);

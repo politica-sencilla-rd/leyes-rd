@@ -839,3 +839,146 @@ def test_r4_normal_leyes_update_still_passes(par):
     escribir(n, "docs/data/leyes.json", data)
     ok, g = correr(base, n)
     assert ok, g.fallos
+
+
+# ------------------------------------------------------------------ review round 5
+RECIBO_0127 = [{"url": _acta_nueva()["url_acta"], "status": 200, "error": None}]
+
+
+def _con_acta(n, **cambios):
+    d = leer(n, SES)
+    a = _acta_nueva()
+    a["votaciones"][0].update(cambios.pop("voto", {}))
+    a.update(cambios)
+    d["sesiones"].insert(0, a)
+    escribir(n, SES, d)
+
+
+@pytest.mark.parametrize("resultado", ["Aprobado <img src=x onerror=alert(1)>", "<b>Aprobado</b>",
+                                       "Aprobado en primera discusión<script>"])
+def test_x1_vote_result_with_html_is_blocked(par, resultado):
+    base, n = par
+    _con_acta(n, voto={"resultado": resultado})
+    ok, g = correr(base, n, RECIBO_0127)
+    assert not ok, g.fallos
+    assert any(f.startswith("G1") and "resultado" in f for f in g.fallos), g.fallos
+    assert any(f.startswith("G9") and "resultado" in f and "'<'" in f for f in g.fallos), g.fallos
+
+
+def test_x1_every_real_vote_result_passes_the_schema_and_g9(par):
+    base, n = par
+    reales = sorted({v["resultado"] for s in leer(n, SES)["sesiones"] for v in s.get("votaciones", [])})
+    d = leer(n, SES)
+    a = _acta_nueva()
+    a["votaciones"] = [dict(a["votaciones"][0], iniciativa=f"{i:05d}-2026", votacion_num=f"{i:03d}", resultado=r,
+                            fuente=f"Acta 0127, votación electrónica {i:03d}") for i, r in enumerate(reales, 1)]
+    d["sesiones"].insert(0, a)
+    escribir(n, SES, d)
+    ok, g = correr(base, n, RECIBO_0127)
+    assert ok, g.fallos
+
+
+@pytest.mark.parametrize("fuente", ["Acta 0127, votación electrónica 003 <i>", "Según el periódico",
+                                    "Acta 127, votación electrónica 3"])
+def test_b_vote_fuente_is_the_fixed_acta_form(par, fuente):
+    base, n = par
+    _con_acta(n, voto={"fuente": fuente})
+    ok, g = correr(base, n, RECIBO_0127)
+    assert not ok and any(f.startswith("G1") and "fuente" in f for f in g.fallos), g.fallos
+
+
+@pytest.mark.parametrize("nombre,bloquea", [
+    ("Félix Ramón Bautista Rosario", False),              # acta form of "Félix Bautista Rosario"
+    ("Héctor Elpidio Acosta Restituyo", False),           # acta form of "Héctor E. Acosta"
+    ("Ginnette Altagracia Bournigal Socías de Jiménez", False),
+    ("Juan Pérez", True),                                 # not a senator
+    ("Félix Bautista Rosario es corrupto", True),         # free text after a real name
+    ("Félix Bautista Rosario <img src=x>", True),
+    ("Omar Fernández", False),                            # short form of "Omar Leonel Fernández Domínguez"
+    ("Luis Rodolfo Abinader Corona", True),               # a public person who is not a senator
+])
+def test_c_absence_names_must_be_senators_on_main(par, nombre, bloquea):
+    base, n = par
+    _con_acta(n, asistencia={"presentes": 22, "ausentes": 1, "detalle": [{"nombre": nombre, "estado": "excusado"}]})
+    ok, g = correr(base, n, RECIBO_0127)
+    assert (not ok) is bloquea, g.fallos
+    if bloquea:
+        assert any("asistencia.detalle" in f or "nombre" in f for f in g.fallos), g.fallos
+
+
+def test_d_resumenes_nota_is_frozen_and_sin_resumen_takes_no_extra_fields(par):
+    base, n = par
+    res = leer(n, "docs/data/resumenes.json")
+    res["_nota"] = "Resúmenes escritos por un robot <b>confiable</b>."
+    escribir(n, "docs/data/resumenes.json", res)
+    ok, g = correr(base, n)
+    assert not ok and any(f.startswith("G8") and "resumenes.json" in f for f in g.fallos), g.fallos
+    res = leer(base, "docs/data/resumenes.json")
+    res["sin_resumen"]["senado-00636-2025"] = {"intentos": 3, "motivo": "<b>x</b>"}
+    escribir(n, "docs/data/resumenes.json", res)
+    ok, g = correr(base, n)
+    assert not ok and any(f.startswith("G1") and "sin_resumen" in f for f in g.fallos), g.fallos
+
+
+@pytest.mark.parametrize("fuente_nombre", ["Acta de Evangelina Rodríguez", "Acta <i>0127</i>"])
+def test_d_resumen_fuente_nombre_is_scanned(par, fuente_nombre):
+    base, n = par
+    _con_resumen(n, fuente_nombre=fuente_nombre)
+    ok, g = correr(base, n)
+    assert not ok and any(f.startswith("G9") and "fuente_nombre" in f for f in g.fallos), g.fallos
+
+
+def test_d_real_fuente_nombre_forms_pass(par):
+    base, n = par
+    for fn in ("Acta 0106, votación electrónica 003", "SIL de la Cámara, iniciativa 01234-2026",
+               "Ley 5-26, Gaceta Oficial 11230"):
+        _con_resumen(n, fuente_nombre=fn)
+        ok, g = correr(base, n)
+        assert ok, (fn, g.fallos)
+
+
+@pytest.mark.parametrize("mutar", [
+    lambda e: e["fuentes"]["senado_actas"].update(retraso="El Senado esconde sus actas <b>a propósito</b>."),
+    lambda e: e["fuentes"]["senado_actas"].update(nombre="Actas secretas"),
+    lambda e: e["fuentes"]["senado_actas"].update(url_fuente="https://www.senadord.gob.do/otra"),
+    lambda e: e["fuentes"]["dinero_deuda"].update(seccion="leyes"),
+    lambda e: e["fuentes"].update(nueva={"nombre": "Fuente nueva", "estado": "ok", "fallos_seguidos": 0}),
+])
+def test_e_estado_fuentes_copies_config_fuentes_from_main(par, mutar):
+    base, n = par
+    e = leer(n, "docs/data/estado-fuentes.json")
+    mutar(e)
+    escribir(n, "docs/data/estado-fuentes.json", e)
+    ok, g = correr(base, n)
+    assert not ok and any(f.startswith("G8") and "estado-fuentes" in f for f in g.fallos), g.fallos
+
+
+def test_e_estado_fuentes_normal_update_passes(par):
+    base, n = par
+    e = leer(n, "docs/data/estado-fuentes.json")
+    e["fuentes"]["senado_actas"].update(estado="ok", revisado_el="2026-09-30", datos_al="2026-07-22")
+    escribir(n, "docs/data/estado-fuentes.json", e)
+    ok, g = correr(base, n)
+    assert ok, g.fallos
+
+
+def test_x1_link_must_be_http_even_on_an_official_host(par):
+    base, n = par
+    res = leer(n, "docs/data/resumenes.json")
+    res["sin_resumen"]["senado-00636-2025"] = {"intentos": 3, "fuente_url": "javascript://www.senadord.gob.do/%0aalert(1)"}
+    escribir(n, "docs/data/resumenes.json", res)
+    ok, g = correr(base, n)
+    assert not ok and any(f.startswith("G4") and "http" in f for f in g.fallos), g.fallos
+
+
+@pytest.mark.parametrize("texto", ["La ley está en vigencia desde enero.", "El casco es obligatorio en la moto.",
+                                   "El Congreso convirtió el proyecto de cuidados en ley.",
+                                   "La regla ya se aplica en todo el país.", "El sistema ya funciona.",
+                                   "El fondo ya opera en tres provincias."])
+def test_a_more_ways_of_calling_a_bill_law_are_blocked(par, texto):
+    from comun import PARECE_LEY
+    assert PARECE_LEY.search(texto)
+    base, n = par
+    _con_resumen(n, titulo_facil=texto)
+    ok, g = correr(base, n)
+    assert not ok and any(f.startswith("G8") and "presenta como ley" in f for f in g.fallos), g.fallos

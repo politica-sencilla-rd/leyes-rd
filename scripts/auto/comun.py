@@ -292,7 +292,7 @@ CABEZAS = set(
     "secretaria secretario comite pleno bufete mesa sala partido cuerpo cuerpos bomberos punta cruce paraje "
     "seccion barrio academia fideicomiso patrimonio batalla procesion hermandad virgen regulacion poderes club "
     "federacion asociacion fundacion cooperativa sindicato iglesia catedral basilica santuario fortaleza faro "
-    "puente acueducto parroquia".split())
+    "puente acueducto parroquia sil".split())
 # Multi-word places (provinces and municipalities whose names look like people's names too).
 LUGARES = {norm(x) for x in (
     "Distrito Nacional", "El Seibo", "Elías Piña", "Hato Mayor", "Hermanas Mirabal", "La Altagracia", "La Romana",
@@ -346,7 +346,8 @@ NUM_PALABRAS = re.compile(
 PARECE_LEY = re.compile(
     r"\b(es ley|ya es|ya rige|entró en vigencia|entra en vigencia|está vigente|se aprobó la ley|rigen?|"
     r"entró en vigor|está en vigor|se convirtió en ley|ahora es|ahora (?:obliga|manda|prohíbe|castiga|exige)|"
-    r"(?:fue|ha sido|quedó) promulgad[oa]|se promulgó|promulgó|aprobó la ley)\b", re.I)
+    r"(?:fue|ha sido|quedó) promulgad[oa]|se promulgó|promulgó|aprobó la ley|"
+    r"está en vigencia|es obligatori[oa]|convirtió .{0,40} en ley|ya se aplica|ya (?:funciona|opera))\b", re.I)
 
 
 def estado_ley_de(clave: str, leyes: dict | None, vigencia: dict | None) -> str | None:
