@@ -30,8 +30,12 @@
       "seccion": "leyes",
       "url_fuente": "https://www.diputadosrd.gob.do/sil",
       "retraso": "",
-      "estado": "sin_revisar",
-      "fallos_seguidos": 0
+      "estado": "ok",
+      "fallos_seguidos": 0,
+      "datos_al": "2026-09-24",
+      "revisado_el": "2026-09-24",
+      "ultimo_documento": "6357 iniciativas en el SIL",
+      "subido_por_la_fuente": "2026-09-17"
     },
     "vigencia_consultoria": {
       "nombre": "Leyes promulgadas (Consultoría Jurídica)",
@@ -39,8 +43,9 @@
       "url_fuente": "https://www.consultoria.gov.do/consultas",
       "retraso": "La Gaceta Oficial sale unos días después de firmada la ley.",
       "datos_al": "2026-05-01",
-      "estado": "sin_revisar",
-      "fallos_seguidos": 0
+      "estado": "sin_respuesta",
+      "fallos_seguidos": 1,
+      "revisado_el": "2026-09-24"
     },
     "dinero_inflacion": {
       "nombre": "Inflación (Banco Central)",
