@@ -789,7 +789,7 @@ class Gates:
         quien = l.get("nombre")
         c = l.get("comisiones")
         if c != b.get("comisiones") and (not isinstance(c, list) or
-                                         not all(isinstance(x, str) and x and len(x) <= 200 and not re.search(r"[<>]", x)
+                                         not all(isinstance(x, str) and x and len(x) <= 400 and not re.search(r"[<>]", x)
                                                  for x in c)):
             self.fallo("G8", f"{quien}: comisiones no es una lista de nombres")
         i = l.get("iniciativas_propuestas")

@@ -734,6 +734,24 @@ def test_r4_normal_camara_update_still_passes(par):
     assert ok, g.fallos
 
 
+def test_real_long_committee_names_pass(par):
+    """2026-09-24 first live run: real Cámara special-committee names reach 223
+    characters and a 200-char cap false-blocked the whole deputy update."""
+    import camara
+    base, n = par
+    p = leer(n, "docs/data/provincias.json")
+    uno = [l for pr in p["provincias"] for l in pr["lideres"] if l["cargo"] == "Diputado/a" and l.get("asistencia")][0]
+    largo = ("05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza "
+             "el pago de deuda por obras ejecutadas sin contrato formal y otras disposiciones relacionadas con "
+             "la deuda pública y los contratos del Estado.")
+    assert 200 < len(largo) <= 400
+    camara.fusionar(p, {"diputados": {uno["nombre"]: {"comisiones": [largo], "iniciativas_cd": 7, "cargo_hasta": None,
+        "asistencia": {"presentes": 90, "total": 100, "desde": "2024-08-16", "hasta": "2026-07-24"}}}})
+    escribir(n, "docs/data/provincias.json", p)
+    ok, g = correr(base, n)
+    assert ok, g.fallos
+
+
 def test_r4_novedad_aporte_is_fixed_and_old_ones_never_change(par):
     base, n = par
     for aporte in ("El PRM es corrupto y Luis Abinader también", "<img src=x onerror=alert(1)>"):
