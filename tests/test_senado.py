@@ -22,7 +22,7 @@ def test_acta_golden(acta):
 
 @pytest.mark.parametrize("acta", ["0122", "0127"])
 def test_acta_pdf_end_to_end(acta):
-    """Real PDF -> text (pdftotext on the runner) -> parse. Must equal the golden
+    """Real PDF -> text (PyMuPDF, pinned, on every machine) -> parse. Must equal the golden
     output, so a text-tool change can't silently change published numbers."""
     ses = S.a_sesion(S.parse(texto_pdf((FIX / "senado" / f"acta_{acta}.pdf").read_bytes())), f"https://example/{acta}")
     assert ses == ESPERADO[acta]
