@@ -13,6 +13,8 @@
     "rootDir": "src",
     "outDir": "docs",
     "sourceMap": false,
+    // Keep this: it strips the source comments from docs/app.js (about 12 KB).
+    // Turning it off pushes the page back over its weight budget.
     "removeComments": true
   },
   "include": [

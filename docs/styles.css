@@ -755,7 +755,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 8px var(--gutter) 56px; }
 .sector.open > .sector-body { animation: aparece .28s var(--curva); }
 @media (max-width: 759px) {
   /* Temas de Leyes: un solo índice con filetes, como el sumario de una revista */
-  #sectores { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); box-shadow: var(--sombra-1); overflow: hidden; }
+  #sectores { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); box-shadow: var(--sombra-1); overflow: hidden; overflow: clip; }
   #sectores > .sector { margin: 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; box-shadow: none; overflow: hidden; overflow: clip; }
   #sectores > .sector:first-child { border-top: 0; }
   #sectores > .sector.open { box-shadow: inset 3px 0 0 var(--acc); }
@@ -828,8 +828,8 @@ main { max-width: 1120px; margin: 0 auto; padding: 8px var(--gutter) 56px; }
 .transp-body, .asistencia-body, .vig-regla-body { padding: 0 0 18px; }
 .transp-body ul { margin: 8px 0 0; padding-left: 20px; }
 /* Enlace oficial dentro de un párrafo: no rompe el interlineado; el área de toque sigue alta por el relleno */
-.transp-body li .enlace-doc, .transp-body p .enlace-doc { display: inline; min-height: 0; padding: 10px 0; margin: -10px 0; }
-.transp-body li .enlace-doc::before { vertical-align: -.2em; margin-right: 4px; }
+.transp-body li .enlace-doc, .transp-body p .enlace-doc, .lider .nota-fuente .enlace-doc { display: inline; min-height: 0; padding: 10px 0; margin: -10px 0; }
+.transp-body li .enlace-doc::before, .lider .nota-fuente .enlace-doc::before { vertical-align: -.2em; margin-right: 4px; }
 .transp-body li { margin-bottom: 10px; }
 .transp-pie { margin-top: 12px; color: var(--ink-3); }
 .flujo { margin: var(--s-3) 0 0; padding-left: 0; list-style: none; counter-reset: paso; }
@@ -1111,7 +1111,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 8px var(--gutter) 56px; }
   /* La cabecera de la ficha se queda arriba mientras bajas */
   .perfil-cab {
     position: sticky; top: 0; z-index: 6; margin: 0 calc(-1 * var(--gutter)) var(--s-3); padding: var(--s-2) var(--gutter);
-    background: rgba(245, 246, 248, .94); border-bottom: 1px solid var(--line);
+    background: var(--paper); border-bottom: 1px solid var(--line);
   }
   .perfil-cab h3 { font-size: var(--t-md); }
   .perfil .grupo-cargo { overflow: hidden; overflow: clip; }
@@ -1338,7 +1338,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 8px var(--gutter) 56px; }
   line-height: 1.2; letter-spacing: -.01em; color: var(--ink); font-variant-numeric: tabular-nums;
 }
 .salud-card.alerta .salud-cifra { color: var(--danger); }
-.salud-unidad { font-family: var(--f-sans); font-size: .6em; font-weight: 650; letter-spacing: 0; color: var(--ink-3); }
+.salud-unidad { font-family: var(--f-sans); font-size: .6em; font-size: max(.6em, .875rem); font-weight: 650; letter-spacing: 0; color: var(--ink-3); }
 .salud-nota { font-size: var(--t-sm); color: var(--ink-2); }
 .salud-trend {
   display: block; margin-top: 10px; padding: 10px 12px; border-radius: var(--r-sm);
@@ -1416,7 +1416,8 @@ main { max-width: 1120px; margin: 0 auto; padding: 8px var(--gutter) 56px; }
 .sec-dinero .fondo-legal b { color: var(--ink); }
 .sec-dinero .fondo-legal-fold > .fondo-fold-cab, .sec-dinero .fondo-legal-fold .fondo-fold-conteo { color: var(--acc); background-color: transparent; }
 /* Dinero: todo lo que se lee va a 16px o más; solo las notas de fuente quedan en 14 */
-.sec-dinero :is(.salud-nota, .salud-trend, .paso-txt > span, .paso-ej, .fondo-fold-body p, .fondo-veredicto-txt, .rastro-leyenda-item, .fondo-tabla-fila, .fondo-fuentes li, .grupo-sub) { font-size: 1rem; line-height: 1.55; }
+.sec-dinero .salud-nota, .sec-dinero .salud-trend, .sec-dinero .paso-txt > span, .sec-dinero .paso-ej, .sec-dinero .fondo-fold-body p,
+.sec-dinero .fondo-veredicto-txt, .sec-dinero .rastro-leyenda-item, .sec-dinero .fondo-tabla-fila, .sec-dinero .fondo-fuentes li, .sec-dinero .grupo-sub { font-size: 1rem; line-height: 1.55; }
 .sec-dinero .fondo-fold-body p.nota-fuente { font-size: var(--t-cap); }
 .sec-dinero .fondo-legal-a { font-size: 1rem !important; line-height: 1.6; }
 @media (max-width: 480px) {
@@ -1431,7 +1432,8 @@ main { max-width: 1120px; margin: 0 auto; padding: 8px var(--gutter) 56px; }
   .sec-dinero .salud-card:first-child { border-top: 0; padding-top: var(--s-1); }
   .sec-dinero .salud-card.alerta { padding-left: 14px; }
   .sec-dinero .caso-head { padding: 18px var(--s-4); box-shadow: none; }
-  .sec-dinero :is(.costo-humano, .aviso-legal, .tu-parte, .arreglo, .punto-debil, .fondo-legal, .fondo-maluso, .fondo-rechaza, .fondo-veredicto, .rastro-leyenda) { padding: var(--s-4); }
+  .sec-dinero .costo-humano, .sec-dinero .aviso-legal, .sec-dinero .tu-parte, .sec-dinero .arreglo, .sec-dinero .punto-debil,
+  .sec-dinero .fondo-legal, .sec-dinero .fondo-maluso, .sec-dinero .fondo-rechaza, .sec-dinero .fondo-veredicto, .sec-dinero .rastro-leyenda { padding: var(--s-4); }
   /* Pasos: número y texto; el ícono decorativo se va y la línea pasa por los números */
   .sec-dinero .paso { grid-template-columns: 28px minmax(0, 1fr); gap: 2px var(--s-3); padding: var(--s-3) 14px var(--s-3) var(--s-3); }
   .sec-dinero .paso-colapsable { padding-right: 40px; }

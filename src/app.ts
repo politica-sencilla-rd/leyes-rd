@@ -1487,14 +1487,15 @@ function renderRegidoresBody(prov: Provincia): HTMLElement {
 }
 
 // Closing a profile brings the full grid back, scrolled to its top.
-function cerrarPerfil(): void {
+// desplazar=false just resets the view (used by the Provincias tab).
+function cerrarPerfil(desplazar = true): void {
   const perfil = byId("perfilProvincia");
   perfil.classList.add("hidden");
   perfil.innerHTML = "";
   const vista = byId("view-mapa");
   if (!vista.classList.contains("con-perfil")) return;
   vista.classList.remove("con-perfil");
-  byId("provincias").scrollIntoView({ block: "start", behavior: suave() });
+  if (desplazar) byId("provincias").scrollIntoView({ block: "start", behavior: suave() });
 }
 
 function renderProvincias(data: ProvinciasData): void {
@@ -1521,7 +1522,7 @@ function renderProvincias(data: ProvinciasData): void {
       byId("view-mapa").classList.add("con-perfil");
       const cerrar = el("button", "perfil-cerrar", ico("arriba") + "Todas las provincias");
       (cerrar as HTMLButtonElement).type = "button";
-      cerrar.addEventListener("click", cerrarPerfil);
+      cerrar.addEventListener("click", () => cerrarPerfil());
       const perfilTitulo = el("h3", null, prov.nombre);
       perfilTitulo.tabIndex = -1;
       const perfilCab = el("div", "perfil-cab");
@@ -2453,6 +2454,8 @@ function setupTabs(): void {
   document.querySelectorAll<HTMLButtonElement>(".tab").forEach((tab) => {
     tab.addEventListener("click", () => {
       const view = tab.dataset.view;
+      // The Provincias tab always lands on the list, not on the last profile.
+      if (view === "mapa") cerrarPerfil(false);
       if (view) mostrarVista(view);
     });
   });
@@ -2462,6 +2465,7 @@ function setupTabs(): void {
   document.querySelectorAll<HTMLElement>("[data-goto]").forEach((card) => {
     card.addEventListener("click", () => {
       const dest = card.dataset.goto;
+      if (dest === "mapa") cerrarPerfil(false);
       if (dest) mostrarVista(dest);
     });
   });

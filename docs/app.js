@@ -852,7 +852,7 @@ function renderRegidoresBody(prov) {
     }
     return wrap;
 }
-function cerrarPerfil() {
+function cerrarPerfil(desplazar = true) {
     const perfil = byId("perfilProvincia");
     perfil.classList.add("hidden");
     perfil.innerHTML = "";
@@ -860,7 +860,8 @@ function cerrarPerfil() {
     if (!vista.classList.contains("con-perfil"))
         return;
     vista.classList.remove("con-perfil");
-    byId("provincias").scrollIntoView({ block: "start", behavior: suave() });
+    if (desplazar)
+        byId("provincias").scrollIntoView({ block: "start", behavior: suave() });
 }
 function renderProvincias(data) {
     const grid = el("div", "prov-grid");
@@ -886,7 +887,7 @@ function renderProvincias(data) {
             byId("view-mapa").classList.add("con-perfil");
             const cerrar = el("button", "perfil-cerrar", ico("arriba") + "Todas las provincias");
             cerrar.type = "button";
-            cerrar.addEventListener("click", cerrarPerfil);
+            cerrar.addEventListener("click", () => cerrarPerfil());
             const perfilTitulo = el("h3", null, prov.nombre);
             perfilTitulo.tabIndex = -1;
             const perfilCab = el("div", "perfil-cab");
@@ -1575,6 +1576,8 @@ function setupTabs() {
     document.querySelectorAll(".tab").forEach((tab) => {
         tab.addEventListener("click", () => {
             const view = tab.dataset.view;
+            if (view === "mapa")
+                cerrarPerfil(false);
             if (view)
                 mostrarVista(view);
         });
@@ -1582,6 +1585,8 @@ function setupTabs() {
     document.querySelectorAll("[data-goto]").forEach((card) => {
         card.addEventListener("click", () => {
             const dest = card.dataset.goto;
+            if (dest === "mapa")
+                cerrarPerfil(false);
             if (dest)
                 mostrarVista(dest);
         });
