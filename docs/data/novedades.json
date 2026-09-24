@@ -3,6 +3,13 @@
   "novedades": [
     {
       "fecha": "2026-09-24",
+      "texto": "Actualizamos las cifras del país: inflación (agosto 2026), desempleo (abril-junio 2026), crecimiento de la economía (enero-diciembre 2025), deuda del país (cierre de 2025), sueldo promedio (junio 2026).",
+      "aporte": "🔄 Actualización automática",
+      "guid": "psrd-auto-dinero-2026-09-24-d44361bd",
+      "auto": true
+    },
+    {
+      "fecha": "2026-09-24",
       "texto": "Agregamos 21 sesiones del Senado (actas 0107 a 0127), leídas de las actas oficiales. Corregimos los totales de las actas 0104, 0105, 0106 con el acta oficial.",
       "aporte": "🔄 Actualización automática",
       "guid": "psrd-auto-senado-2026-09-24-ddd0bc85",

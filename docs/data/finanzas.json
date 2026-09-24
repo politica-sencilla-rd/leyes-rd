@@ -32,6 +32,25 @@
         "base": "PIB real, crecimiento interanual acumulado del año completo (misma base ambos años).",
         "fuente": "Banco Central RD — La economía dominicana se expandió en 5.0 % en el año 2024",
         "url": "https://www.bancentral.gov.do/a/d/6153-la-economia-dominicana-se-expandio-en-50--en-el-ano-2024"
+      },
+      "auto": {
+        "valor_num": 2.12,
+        "periodo": "enero-diciembre 2025",
+        "periodo_iso": "2025-12",
+        "preliminar": true,
+        "anterior_num": 4.95,
+        "anterior_periodo": "enero-diciembre 2024",
+        "parcial_num": 4.14,
+        "parcial_periodo": "enero-marzo 2026",
+        "valor_texto": "2.12%",
+        "unidad": "",
+        "texto": "De cada RD$100 que producía, el país pasó a producir como RD$102.",
+        "comparacion": "El año anterior creció 4.95%; en enero-diciembre 2025 creció 2.12%. Creció más lento. En lo que va del año (enero-marzo 2026) va 4.14%.",
+        "fuente": "Banco Central RD, producto interno bruto real, enero-diciembre 2025 (preliminar).",
+        "url": "https://cdn.bancentral.gov.do/documents/estadisticas/sector-real/documents/pib_origen_2018.xlsx",
+        "url_pagina": "https://www.bancentral.gov.do/a/d/2533-sector-real",
+        "datos_al": "2025-12",
+        "revisado_el": "2026-09-24"
       }
     },
     {
@@ -100,6 +119,23 @@
         "base": "Deuda del Sector Público No Financiero (SPNF) como porcentaje del PIB, cierre de año (misma medida ambos años). Cierre 2024 = US$57,587.2 millones, 46.3% del PIB.",
         "fuente": "Dirección General de Crédito Público (vía análisis CREES de la deuda consolidada al cierre 2024)",
         "url": "https://crees.org.do/?p=27646"
+      },
+      "auto": {
+        "valor_num": 48.14,
+        "anterior_num": 46.35,
+        "usd_millones": 61549.9,
+        "periodo": "cierre de 2025",
+        "periodo_iso": "2025-12",
+        "anterior_periodo": "cierre de 2024",
+        "valor_texto": "48.14%",
+        "unidad": "del PIB",
+        "texto": "El país debe US$61,549.9 millones (sector público no financiero). Son como US$5,713 de deuda por cada dominicano.",
+        "comparacion": "Al cierre de 2024 debía 46.35% del PIB; al cierre de 2025, 48.14%. Subió.",
+        "fuente": "Dirección General de Crédito Público, saldo de la deuda, cierre de 2025.",
+        "url": "https://www.creditopublico.gob.do/Content/estadisticas/historico/saldo/01Saldo%20Deuda%20Hist%C3%B3rico%20%281970-2025%29.xlsx",
+        "url_pagina": "https://www.creditopublico.gob.do/inicio/estadisticas",
+        "datos_al": "2025-12",
+        "revisado_el": "2026-09-24"
       }
     },
     {
@@ -117,6 +153,23 @@
         "base": "Salario promedio cotizable a la seguridad social (régimen contributivo TSS). La TSS reportó el dato de junio 2025 (RD$37,572.82) con un crecimiento interanual oficial de 6.7% frente a junio 2024. Se cita el crecimiento publicado porque el valor exacto de junio 2024 no quedó verificable en fuente oficial en línea hoy.",
         "fuente": "Tesorería de la Seguridad Social (TSS) — Boletín del Régimen Contributivo, junio 2025 (crecimiento interanual 6.7%)",
         "url": "https://tss.gob.do/"
+      },
+      "auto": {
+        "valor_num": 39844.66,
+        "anterior_num": 37524.07,
+        "var_pct": 6.18,
+        "periodo": "junio 2026",
+        "periodo_iso": "2026-06",
+        "anterior_periodo": "junio 2025",
+        "valor_texto": "RD$39,844.66",
+        "unidad": "al mes",
+        "texto": "Es el sueldo promedio de quien tiene trabajo \"con papeles\" y cotiza a la seguridad social. Muchos ganan menos.",
+        "comparacion": "En junio 2025 era RD$37,524.07; en junio 2026, RD$39,844.66 (+6.18%). Subió.",
+        "fuente": "Tesorería de la Seguridad Social (TSS), salario promedio cotizable, junio 2026.",
+        "url": "https://tss.gob.do/descargar/2205/2026/19082/boletin-estadistico-del-regimen-contributivo-del-sdss-junio-2026-2.xlsx",
+        "url_pagina": "https://www.tss.gob.do/",
+        "datos_al": "2026-06",
+        "revisado_el": "2026-09-24"
       }
     },
     {
@@ -134,6 +187,22 @@
         "base": "Inflación interanual del IPC medida al mes de mayo (misma medida ambos años). Mayo 2024 a mayo 2025 = 3.84%, dentro del rango meta del Banco Central.",
         "fuente": "Banco Central RD — IPC mayo 2025 (inflación interanual 3.84%)",
         "url": "https://eldinero.com.do/325993/banco-central-informa-inflacion-interanual-se-situa-en-3-84-a-mayo-2025/"
+      },
+      "auto": {
+        "valor_num": 5.13,
+        "anterior_num": 3.71,
+        "periodo": "agosto 2026",
+        "periodo_iso": "2026-08",
+        "anterior_periodo": "agosto 2025",
+        "valor_texto": "5.13%",
+        "unidad": "en un año",
+        "texto": "Lo que costaba RD$100 hace un año, hoy cuesta como RD$105.",
+        "comparacion": "Hace un año (agosto 2025) fue 3.71%; ahora (agosto 2026) es 5.13%. Los precios suben más rápido que hace un año.",
+        "fuente": "Banco Central RD, índice de precios (IPC), agosto 2026, comparado con agosto 2025.",
+        "url": "https://cdn.bancentral.gov.do/documents/estadisticas/precios/documents/ipc_base_2019-2020.xls",
+        "url_pagina": "https://www.bancentral.gov.do/a/d/2534-precios",
+        "datos_al": "2026-08",
+        "revisado_el": "2026-09-24"
       }
     },
     {
@@ -151,6 +220,22 @@
         "base": "Tasa de desocupación abierta (SU1) del mismo trimestre (octubre-diciembre) ambos años. El 4.8% del cuarto trimestre 2024 fue un mínimo histórico.",
         "fuente": "Banco Central RD — ENCFT, tasa de desocupación abierta 4.8% al cierre de 2024",
         "url": "https://eldinero.com.do/314027/tasas-de-desocupacion-abierta-se-situa-en-4-8-al-cierre-de-2024/"
+      },
+      "auto": {
+        "valor_num": 5.31,
+        "anterior_num": 4.95,
+        "periodo": "abril-junio 2026",
+        "periodo_iso": "2026-06",
+        "anterior_periodo": "abril-junio 2025",
+        "valor_texto": "5.31%",
+        "unidad": "",
+        "texto": "De cada 100 personas que buscan empleo, unas 5 no lo consiguen.",
+        "comparacion": "Hace un año (abril-junio 2025) fue 4.95%; ahora (abril-junio 2026) es 5.31%. Subió.",
+        "fuente": "Banco Central RD, encuesta de empleo (ENCFT), tasa SU1, abril-junio 2026, comparado con abril-junio 2025.",
+        "url": "https://cdn.bancentral.gov.do/documents/estadisticas/mercado-de-trabajo/documents/00_Indicadores.xlsx",
+        "url_pagina": "https://www.bancentral.gov.do/a/d/2541-encuesta-continua-encft",
+        "datos_al": "2026-06",
+        "revisado_el": "2026-09-24"
       }
     }
   ],
@@ -161,5 +246,6 @@
     "deficit_por_persona_rd": 26042,
     "deuda_por_persona_usd": 5713,
     "gasta_por_cada_100_que_gana_rd": 121
-  }
+  },
+  "actualizado_auto": "2026-09-24"
 }

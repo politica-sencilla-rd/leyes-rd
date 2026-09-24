@@ -52,40 +52,55 @@
       "seccion": "dinero",
       "url_fuente": "https://www.bancentral.gov.do/a/d/2534-precios",
       "retraso": "",
-      "estado": "sin_revisar",
-      "fallos_seguidos": 0
+      "estado": "ok",
+      "fallos_seguidos": 0,
+      "datos_al": "2026-08",
+      "periodo": "agosto 2026",
+      "revisado_el": "2026-09-24"
     },
     "dinero_desempleo": {
       "nombre": "Desempleo (Banco Central)",
       "seccion": "dinero",
       "url_fuente": "https://www.bancentral.gov.do/a/d/2541-encuesta-continua-encft",
       "retraso": "El Banco Central publica el empleo cada 3 meses.",
-      "estado": "sin_revisar",
-      "fallos_seguidos": 0
+      "estado": "ok",
+      "fallos_seguidos": 0,
+      "datos_al": "2026-06",
+      "periodo": "abril-junio 2026",
+      "revisado_el": "2026-09-24"
     },
     "dinero_crecimiento": {
       "nombre": "Crecimiento (Banco Central)",
       "seccion": "dinero",
       "url_fuente": "https://www.bancentral.gov.do/a/d/2533-sector-real",
       "retraso": "El dato del año completo sale a inicios del año siguiente.",
-      "estado": "sin_revisar",
-      "fallos_seguidos": 0
+      "estado": "ok",
+      "fallos_seguidos": 0,
+      "datos_al": "2025-12",
+      "periodo": "enero-diciembre 2025",
+      "revisado_el": "2026-09-24"
     },
     "dinero_deuda": {
       "nombre": "Deuda (Crédito Público)",
       "seccion": "dinero",
       "url_fuente": "https://www.creditopublico.gob.do/inicio/estadisticas",
       "retraso": "La deuda del año completo sale unos meses después de diciembre.",
-      "estado": "sin_revisar",
-      "fallos_seguidos": 0
+      "estado": "ok",
+      "fallos_seguidos": 0,
+      "datos_al": "2025-12",
+      "periodo": "cierre de 2025",
+      "revisado_el": "2026-09-24"
     },
     "dinero_salario": {
       "nombre": "Sueldo promedio (TSS)",
       "seccion": "dinero",
       "url_fuente": "https://www.tss.gob.do/",
       "retraso": "La TSS publica su boletín unos 2 meses después de cada mes.",
-      "estado": "sin_revisar",
-      "fallos_seguidos": 0
+      "estado": "ok",
+      "fallos_seguidos": 0,
+      "datos_al": "2026-06",
+      "periodo": "junio 2026",
+      "revisado_el": "2026-09-24"
     },
     "resumenes_ia": {
       "nombre": "Resúmenes automáticos",
