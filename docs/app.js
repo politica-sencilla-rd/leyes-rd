@@ -29,7 +29,7 @@ function avisoVotosCamara() {
 function avisoVotosSenado() {
     return el("p", "nota-fuente", AVISO_VOTOS_SENADO + " Los totales de cada votación (cuántos votaron a favor) sí salen en el acta oficial: los ves en Sesiones.");
 }
-const DATA_VERSION = "20260924d";
+const DATA_VERSION = "20260924g";
 async function cargar(path) {
     const sep = path.indexOf("?") >= 0 ? "&" : "?";
     const res = await fetch(path + sep + "v=" + DATA_VERSION);
@@ -576,7 +576,7 @@ const RETRATOS_SENADORES = {
     "Dajabón||Manuel María Rodríguez Ortega": "manuel-maria-rodriguez-ortega.jpg",
     "Duarte||Franklin Martín Romero Morillo": "franklin-martin-romero-morillo.jpg",
     "El Seibo||Santiago José Zorrilla": "santiago-jose-zorrilla.jpg",
-    "Elías Piña||Jonhson Encarnación Díaz": "jonhson-encarnacion-diaz.jpg",
+    "Elías Piña||Johnson Encarnación Díaz": "jonhson-encarnacion-diaz.jpg",
     "Espaillat||Carlos Manuel Gómez Ureña": "carlos-manuel-gomez-urena.jpg",
     "Hato Mayor||Cristóbal Venerado Castillo": "cristobal-venerado-castillo.jpg",
     "Hermanas Mirabal||María Mercedes Ortiz Diloné": "maria-mercedes-ortiz-dilone.jpg",
