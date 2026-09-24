@@ -107,8 +107,9 @@
       "seccion": "",
       "url_fuente": "",
       "retraso": "",
-      "estado": "sin_revisar",
-      "fallos_seguidos": 0
+      "estado": "roto",
+      "fallos_seguidos": 1,
+      "revisado_el": "2026-09-24"
     }
   }
 }
