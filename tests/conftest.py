@@ -26,5 +26,13 @@ def arbol_copia(tmp_path):
         else:
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src, dst)
+    # Tests build a "new" acta 0127. Once the live robot has published 0127 (or
+    # later actas), drop them from the copy so the tests keep testing a NEW acta
+    # instead of a replacement (first live run, 2026-09-24).
+    import json
+    ses = tmp_path / "docs/data/sesiones.json"
+    d = json.loads(ses.read_text())
+    d["sesiones"] = [x for x in d["sesiones"] if str(x.get("acta", "")) < "0127"]
+    ses.write_text(json.dumps(d, ensure_ascii=False, indent=2) + "\n")
     (tmp_path / ".psrd-run").mkdir()
     return tmp_path
