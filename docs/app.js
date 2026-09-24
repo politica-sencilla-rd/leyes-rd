@@ -1,14 +1,7 @@
 "use strict";
-// Leyes RD — fácil. TypeScript source.
-// Compiles to site/app.js via `npm run build` (tsc). Loads sample JSON,
-// groups laws by sector, expandable cards + province profiles.
-// One Tabler line icon (CSS mask, takes the text color). Decorative, so it is
-// hidden from screen readers. The trailing space separates it from inline text.
 function ico(nombre) {
     return '<span class="ico ico-' + nombre + '" aria-hidden="true"></span> ';
 }
-// Law sectors carry an emoji in data/leyes.json; the page shows the matching
-// line icon so every phone draws the same picture.
 const SECTOR_ICO = {
     "⚖️": "scale", "💼": "briefcase", "🏥": "hospital", "💧": "droplet", "🚌": "bus",
     "📶": "antena", "🏠": "home", "🌱": "plant", "🎭": "masks", "🌍": "world",
@@ -20,16 +13,9 @@ const estadoLabel = {
 };
 const votoLabel = { si: ico("thumb-up") + "Sí", no: ico("thumb-down") + "No", ausente: ico("minus") + "Ausente" };
 const votoClass = { si: "voto-si", no: "voto-no", ausente: "voto-aus" };
-// PAUSA (Kelvin, 2026-09-24): the named per-senator vote lists were read from
-// the broadcast vote board and disagree with the official acta on 2 of 4 bills
-// checked. They stay OFF until each is checked against its acta. The data was
-// moved out of docs/ to datos-sin-verificar/votos-senado/ (see its README).
-// The Cámara's per-deputy data (its own official API) is unaffected.
 const MOSTRAR_VOTOS_POR_SENADOR = false;
 const AVISO_VOTOS_SENADO = "El Senado no publica cómo votó cada senador. Estamos revisando nuestra lista contra las actas oficiales antes de mostrarla.";
 const URL_SIL_CAMARA = "https://www.diputadosrd.gob.do/sil";
-// One story everywhere: the Cámara publishes each deputy's vote; the Senado
-// publishes only totals (in its actas).
 function avisoVotosCamara() {
     const p = el("p", "nota-fuente", "La Cámara de Diputados sí publica cómo votó cada diputado, con su nombre, en su sistema oficial. ");
     const a = enlaceDoc(URL_SIL_CAMARA, "Ver los votos en el SIL de la Cámara");
@@ -40,11 +26,7 @@ function avisoVotosCamara() {
 function avisoVotosSenado() {
     return el("p", "nota-fuente", AVISO_VOTOS_SENADO + " Los totales de cada votación (cuántos votaron a favor) sí salen en el acta oficial: los ves en Sesiones.");
 }
-// Bumped with every data/content change, same value as the index.html
-// cache-buster (?v=...). Appended to every data fetch so returning visitors
-// don't render stale JSON from the browser's HTTP cache when only the data
-// changed (the data files are not versioned in the HTML).
-const DATA_VERSION = "20260924b";
+const DATA_VERSION = "20260924c";
 async function cargar(path) {
     const sep = path.indexOf("?") >= 0 ? "&" : "?";
     const res = await fetch(path + sep + "v=" + DATA_VERSION);
@@ -66,11 +48,6 @@ function byId(id) {
         throw new Error("Falta el elemento #" + id);
     return n;
 }
-// One consistent "official document" link line, used across the whole site
-// (5ª sugerencia de un usuario real, Ángel). Returns an <a> that opens the
-// official source in a new tab, safely (rel="noopener"). texto is the visible
-// label, e.g. "Leer la ley completa"; the file icon comes from CSS.
-// Returns null when there is no url, so callers can skip it cleanly.
 function enlaceDoc(url, texto) {
     if (!url)
         return null;
@@ -79,30 +56,15 @@ function enlaceDoc(url, texto) {
     a.target = "_blank";
     a.rel = "noopener";
     a.textContent = texto;
-    // Don't let a tap on the link also toggle the surrounding collapsible card.
     a.addEventListener("click", (e) => e.stopPropagation());
     return a;
 }
-// Marks a doc link as a SEARCH-type link: one that drops the visitor on an
-// official government search page where they must look the document up by
-// number themselves (no fixed address per document). A single delegated click
-// handler (setupAvisoBusqueda) shows a friendly heads-up before leaving the
-// site. numero may be null when the document carries no number — then the
-// dialog adjusts its wording honestly. etiqueta names the number in plain
-// Spanish, e.g. "el número de la ley".
 function marcarBusqueda(a, numero, etiqueta) {
     a.dataset.busqueda = "1";
     if (numero)
         a.dataset.numero = numero;
     a.dataset.numeroEtiqueta = etiqueta;
 }
-/* ---------- Aviso antes de ir al buscador oficial ---------- */
-// One small, friendly dialog shown when a visitor taps a SEARCH-type doc link
-// (data-busqueda). Direct document links never trigger it — they open in one
-// tap, untouched. Wired ONCE via a single delegated listener on the document
-// (guarded so it can't double-wire and cancel itself, the bug setupGlosario
-// hit). Uses the native <dialog> in docs/index.html for built-in focus trap,
-// Escape-to-close and backdrop. Kid-simple Spanish throughout.
 let avisoBusquedaWired = false;
 function setupAvisoBusqueda() {
     if (avisoBusquedaWired)
@@ -119,11 +81,6 @@ function setupAvisoBusqueda() {
         return;
     const con = "Esa página del gobierno no tiene una dirección fija para cada documento. Cuando llegues, busca este número:";
     const sin = "Esa página del gobierno no tiene una dirección fija para cada documento. Cuando llegues, busca el documento por su nombre o su número.";
-    // Delegated, in the CAPTURE phase: every doc link adds its own bubble-phase
-    // click listener that calls stopPropagation (so a tap doesn't toggle the
-    // surrounding card). That would stop a bubble-phase delegated listener from
-    // ever seeing the click. Capturing runs first, top-down, so we intercept the
-    // search-type link before its own handler can stop the event.
     document.addEventListener("click", (e) => {
         const target = e.target;
         const a = target === null || target === void 0 ? void 0 : target.closest("a.enlace-doc[data-busqueda]");
@@ -151,8 +108,6 @@ function setupAvisoBusqueda() {
         else
             dlg.setAttribute("open", "");
     }, true);
-    // Tap-to-copy the number, with "¡Copiado!" feedback. Skipped silently if the
-    // browser has no clipboard (the visitor still sees the number plainly).
     numWrap.addEventListener("click", () => {
         var _a;
         const txt = numEl.textContent || "";
@@ -165,56 +120,40 @@ function setupAvisoBusqueda() {
             copyFeed.classList.remove("hidden");
             window.setTimeout(() => copyFeed.classList.add("hidden"), 1600);
         };
-        // Same forgiving pattern as copiarEnlace: show "¡Copiado!" on both resolve
-        // and reject. The number is already on screen, so worst case the visitor
-        // copies it by hand — never a broken-looking failure.
         if ((_a = nav.clipboard) === null || _a === void 0 ? void 0 : _a.writeText)
             nav.clipboard.writeText(txt).then(ok, ok);
         else
             ok();
     });
-    // "Ir al buscador →" opens the official page in a new tab, then closes the
-    // dialog. The anchor's own target/rel handle the safe new-tab open.
     irBtn.addEventListener("click", () => { if (dlg.open)
         dlg.close(); });
-    // "Quedarme aquí" and the backdrop both close without leaving the site.
     const quedarme = document.getElementById("avisoQuedarme");
     if (quedarme)
         quedarme.addEventListener("click", () => { if (dlg.open)
             dlg.close(); });
-    // Backdrop tap: a click that lands on the <dialog> element itself (not its
-    // inner card) is the backdrop. Native dialog already closes on Escape.
     dlg.addEventListener("click", (e) => {
         if (e.target === dlg)
             dlg.close();
     });
 }
-// Some source strings carry their URL inline as a trailing "(https://...)",
-// e.g. the JCE regidores source. This splits that into the descriptive text
-// (without the URL) and the bare URL, so the text reads clean and the URL can
-// render as a real link. Returns url=null when the string has no trailing URL.
 function partirFuenteUrl(fuente) {
     const m = fuente.match(/^(.*?)\s*\((https?:\/\/[^\s)]+)\)\s*$/);
     if (m)
         return { texto: m[1].trim(), url: m[2] };
     return { texto: fuente, url: null };
 }
-/* ---------- Leyes ---------- */
 function renderLeyes(data) {
     const cont = byId("sectores");
     cont.innerHTML = "";
     data.sectores.forEach((sec) => {
         const card = el("div", "sector");
         const head = el("div", "sector-head");
-        // Title + count in one column: on phones the count sits under the title,
-        // so every topic reads as one clean line.
         const txt = el("div", "sector-txt");
         txt.append(el("h3", "sector-title", sec.nombre), el("span", "sector-count", sec.leyes.length + (sec.leyes.length === 1 ? " ley" : " leyes")));
         head.append(el("span", "sector-emoji", SECTOR_ICO[sec.emoji] ? ico(SECTOR_ICO[sec.emoji]) : sec.emoji), txt, el("span", "sector-chev", "▸"));
         const body = el("div", "sector-body");
         body.style.display = "none";
         sec.leyes.forEach((ley) => body.append(renderLey(ley, data.busqueda_oficial)));
-        // Keyboard accessible: behave like an expandable button.
         head.setAttribute("role", "button");
         head.tabIndex = 0;
         head.setAttribute("aria-expanded", "false");
@@ -234,9 +173,6 @@ function renderLeyes(data) {
         cont.append(card);
     });
 }
-// Pulls the initiative number out of a bill title when present, e.g.
-// "...(Iniciativa 04789-2024-2028-CD)" -> "04789-2024-2028-CD". Returns null
-// when the title carries no number (most Senate bills in our data don't).
 function numeroIniciativa(titulo) {
     const m = titulo.match(/Iniciativa\s+([\w-]+)/i);
     return m ? m[1] : null;
@@ -245,18 +181,14 @@ function renderLey(ley, busqueda) {
     const wrap = el("div", "ley");
     wrap.append(el("p", "ley-titulo", ley.titulo));
     wrap.append(el("span", "ley-estado estado-" + ley.estado, estadoLabel[ley.estado] || ley.estado));
-    // Which chamber the bill comes from. Senate is the default (no chip);
-    // a chip is shown only when the bill comes from the Cámara de Diputados.
     if (ley.camara) {
         wrap.append(el("span", "ley-camara", ico("banco") + "Cámara de Diputados"));
     }
     const det = el("div", "ley-detalle");
     det.append(el("h4", null, "¿Qué es?"), el("p", null, ley.que_es));
-    // One plain line: how this law touches daily life.
     if (ley.te_afecta) {
         det.append(el("h4", null, "¿Y a mí qué?"), el("p", "te-afecta leer-voz", ley.te_afecta));
     }
-    // Only show a real reason; otherwise a quiet note (the Senate source rarely states the motive).
     const sinMotivo = !ley.por_que || /^razón no indicada/i.test(ley.por_que);
     if (sinMotivo) {
         det.append(el("p", "nota-fuente", "El Senado no publicó el motivo. Cuando lo publique, te lo contamos aquí."));
@@ -264,8 +196,6 @@ function renderLey(ley, busqueda) {
     else {
         det.append(el("h4", null, "¿Por qué se propuso?"), el("p", null, ley.por_que));
     }
-    // Votes: named rows only for Cámara bills (its official API) or when the
-    // senator lists are verified; otherwise the one-story note per chamber.
     if (ley.votos && ley.votos.length && (ley.camara || MOSTRAR_VOTOS_POR_SENADOR)) {
         det.append(el("h4", null, "¿Quién votó?"));
         const votos = el("div", "votos");
@@ -283,9 +213,6 @@ function renderLey(ley, busqueda) {
     else {
         det.append(el("p", "nota-fuente", "El Senado no publica cómo votó cada senador; solo publica los totales de cada votación."));
     }
-    // Link to the official search system (5ª sugerencia de un usuario real,
-    // Ángel). No stable per-bill URL exists, so we link the chamber's official
-    // initiatives page and, when the title carries the initiative number, name it.
     const url = ley.camara ? busqueda === null || busqueda === void 0 ? void 0 : busqueda.camara : busqueda === null || busqueda === void 0 ? void 0 : busqueda.senado;
     if (url) {
         const num = numeroIniciativa(ley.titulo);
@@ -294,21 +221,19 @@ function renderLey(ley, busqueda) {
             ? "Búscala en el sistema oficial: iniciativa " + num
             : "Búscala en " + sistema + " (sistema oficial)";
         const a = enlaceDoc(url, texto);
-        // Search-type link: warn the visitor before sending them to the chamber's
-        // search system, and (when we have it) tell them which iniciativa number to
-        // type. Some Senate bills carry no number — then we show no number, honestly.
         if (a)
             marcarBusqueda(a, num, "el número de la iniciativa");
         if (a)
             det.append(a);
     }
     wrap.append(det);
-    // Keyboard accessible: behave like an expandable button.
     wrap.setAttribute("role", "button");
     wrap.tabIndex = 0;
     wrap.setAttribute("aria-expanded", "false");
     wrap.addEventListener("click", (e) => {
         e.stopPropagation();
+        if (e.target.closest(".ley-detalle"))
+            return;
         const abierto = wrap.classList.toggle("open");
         wrap.setAttribute("aria-expanded", String(abierto));
     });
@@ -320,11 +245,9 @@ function renderLey(ley, busqueda) {
     });
     return wrap;
 }
-/* ---------- Leyes que entran en vigencia ---------- */
-// One tappable card per promulgated law. Collapsed it shows the plain title,
-// the law number and the vigencia date; tapped it reveals "¿qué es?", the
-// full date explanation and the per-entry source. Same fold idiom (details/
-// summary) the rest of the site uses, so it reads consistent on a phone.
+function conPunto(t) {
+    return t.replace(/\.+$/, "") + ".";
+}
 function renderVigenciaLey(ley) {
     const card = el("details", "vig-ley");
     const cab = el("summary", "vig-ley-cab");
@@ -336,10 +259,7 @@ function renderVigenciaLey(ley) {
     det.append(el("p", "vig-ley-meta", "El Presidente la firmó (la promulgó) el <b>" + fechaLarga(ley.promulgada) +
         "</b> y se publicó en la Gaceta Oficial " +
         (/^\d+$/.test(ley.gaceta) ? "núm. <b>" + ley.gaceta + "</b>" : "(" + ley.gaceta + ")") + "."));
-    det.append(el("p", "nota-fuente", "Fuente: " + ley.fuente + "."));
-    // Official-document deep link (5ª sugerencia de un usuario real, Ángel).
-    // A direct link to the full law text when we have a verified PDF; otherwise
-    // an honest line pointing to the official portal to look it up by number.
+    det.append(el("p", "nota-fuente", "Fuente: " + conPunto(ley.fuente)));
     if (ley.url_documento) {
         const a = enlaceDoc(ley.url_documento, "Leer la ley completa (documento oficial)");
         if (a)
@@ -347,8 +267,6 @@ function renderVigenciaLey(ley) {
     }
     else if (ley.url_busqueda) {
         const a = enlaceDoc(ley.url_busqueda, "Búscala en el portal oficial: Ley " + ley.numero);
-        // Search-type link: the official portal has no fixed address per law, so we
-        // pop a friendly heads-up telling the visitor which number to look up.
         if (a)
             marcarBusqueda(a, ley.numero, "el número de la ley");
         if (a)
@@ -357,10 +275,6 @@ function renderVigenciaLey(ley) {
     card.append(det);
     return card;
 }
-// Renders the whole "¿Cuáles leyes están por empezar?" block: a glossary intro
-// that explains aprobada vs en vigencia, then two groups — already in force
-// (nuevas) and entering soon — each a tappable card list. Nothing is invented:
-// the block hides itself if the data is missing or empty.
 function renderVigencia(data) {
     const host = document.getElementById("vigencia");
     if (!host)
@@ -372,7 +286,6 @@ function renderVigencia(data) {
         return;
     }
     host.classList.remove("hidden");
-    // Intro: aprobada vs en vigencia, with tap-to-define words.
     const intro = el("div", "como vig-intro");
     intro.innerHTML =
         "<b>" + ico("calendar") + "¿Cuáles leyes están por empezar?</b>" +
@@ -387,11 +300,6 @@ function renderVigencia(data) {
     host.append(intro);
     const vigentes = leyes.filter((l) => l.estado === "vigencia");
     const pronto = leyes.filter((l) => l.estado === "pronto");
-    // Group "Entran pronto" goes first — it answers the user's exact question
-    // ("¿qué reglas nuevas están por empezar a aplicarme?"); already-in-force
-    // laws follow as recent context.
-    // Each group folds into a collapsible card (Kelvin: same drop-down flow as
-    // the role cards) — title + count visible, tap to see the laws.
     const grupo = (titulo, sub, arr, cls) => {
         if (!arr.length)
             return;
@@ -400,34 +308,27 @@ function renderVigencia(data) {
         cab.append(el("span", "grupo-nombre", titulo), el("span", "grupo-conteo", arr.length === 1 ? "1 ley" : arr.length + " leyes"), el("span", "grupo-chev", "▸"));
         wrap.append(cab);
         wrap.append(el("p", "vig-grupo-sub", sub));
-        // Newest entry-into-force first within each group.
         const ordenadas = [...arr].sort((a, b) => b.vigencia_fecha.localeCompare(a.vigencia_fecha));
         ordenadas.forEach((l) => wrap.append(renderVigenciaLey(l)));
         host.append(wrap);
     };
     grupo(ico("reloj") + "Entran pronto", "Ya firmadas, pero su fecha de empezar todavía no llega. Apunta el día.", pronto, "vig-grupo-pronto");
     grupo(ico("check") + "Ya en vigencia (nuevas)", "Leyes recientes que ya mandan. Estas reglas ya te aplican.", vigentes, "vig-grupo-vigencia");
-    // Default-rule note, folded so the page stays airy.
     if (data.regla_por_defecto) {
         const r = data.regla_por_defecto;
         const det = el("details", "vig-regla");
         det.append(el("summary", "vig-regla-cab", ico("ayuda") + r.titulo));
         const body = el("div", "vig-regla-body");
         body.append(el("p", null, r.texto));
-        body.append(el("p", "nota-fuente", "Fuente: " + r.fuente + "."));
+        body.append(el("p", "nota-fuente", "Fuente: " + conPunto(r.fuente)));
         const aRegla = enlaceDoc(r.url, "Ver el documento oficial (PDF)");
         if (aRegla)
             body.append(aRegla);
         det.append(body);
         host.append(det);
     }
-    // The block just added glossary words and they need tap-to-define wiring.
     setupGlosario();
 }
-/* ---------- Novedades (FOLLOW) ---------- */
-// Renders the latest improvements into the #novedadesLista list on Inicio.
-// Each item is one short line + its long-form date. Newest first, capped at 5.
-// Hides the whole block if the data is missing or empty (never an empty card).
 function renderNovedades(data) {
     const host = document.getElementById("novedadesLista");
     if (!host)
@@ -448,15 +349,11 @@ function renderNovedades(data) {
     items.forEach((n) => {
         const li = el("li", "novedad");
         li.append(el("span", "novedad-fecha", fechaLarga(n.fecha)), el("span", "novedad-texto", n.texto));
-        // Credit / origin label on every entry (Kelvin): who contributed the idea,
-        // or a "🔧 Mejora interna" marker for team changes.
         if (n.aporte)
             li.append(el("span", "novedad-aporte", aporteHtml(n.aporte)));
         host.append(li);
     });
 }
-// The data keeps its emoji ("💡 Idea de…", "🔧 Mejora interna"); the page
-// draws the matching line icon instead, like every other label.
 function aporteHtml(a) {
     if (a.indexOf("💡") === 0)
         return ico("bulb") + a.slice(2).trim();
@@ -464,9 +361,6 @@ function aporteHtml(a) {
         return ico("tool") + a.slice(2).trim();
     return a;
 }
-/* ---------- Provincias ---------- */
-// One kid-friendly explanation per ROLE, matched by the start of the cargo.
-// Keeps the language identical for every person with the same job.
 function funcionDeCargo(cargo) {
     const c = cargo.toLowerCase();
     if (c.startsWith("senador"))
@@ -520,12 +414,6 @@ function iniciales(nombre) {
     const ini = (((_a = palabras[0]) === null || _a === void 0 ? void 0 : _a[0]) || "") + (((_b = palabras[1]) === null || _b === void 0 ? void 0 : _b[0]) || "");
     return ini.toUpperCase() || "·";
 }
-// Official senator portraits from senadord.gob.do (32 verified, fetched
-// 2026-06-12). Keyed by "provincia||nombre" so a name is only matched when the
-// province also lines up — no portrait is shown for a senator we can't verify.
-// Only senators have verified photos; deputies/governors/mayors keep initials.
-// Filenames live in docs/img/senadores/. Manifest of record (name, party,
-// province, source_url, sha256): senado-reader/gallery/gallery.json.
 const RETRATOS_SENADORES = {
     "Distrito Nacional||Omar Leonel Fernández Domínguez": "omar-leonel-fernandez-dominguez.jpg",
     "Azua||Lía Ynocencia Díaz Santana": "lia-ynocencia-diaz-santana.jpg",
@@ -560,20 +448,11 @@ const RETRATOS_SENADORES = {
     "Santo Domingo||Antonio M. Taveras Guzmán": "antonio-m-taveras-guzman.jpg",
     "Valverde||Odalís Rafael Rodríguez Rodríguez": "odalis-rafael-rodriguez-rodriguez.jpg",
 };
-// Returns the portrait filename for a senator, or null when we have no verified
-// photo for that exact person in that exact province. Only senators qualify.
 function retratoSenador(provincia, l) {
     if (!l.cargo.toLowerCase().startsWith("senador"))
         return null;
     return RETRATOS_SENADORES[provincia + "||" + l.nombre] || null;
 }
-// Official deputy portraits from diputadosrd.gob.do (178 verified, fetched
-// 2026-06-12). Keyed by "provincia||nombre" exactly like the senators so a
-// name is only matched when the province also lines up. Matched 178/178 by
-// normalized name against provincias.json — no portrait is fabricated.
-// Filenames live in docs/img/diputados/. Manifest of record (name, party,
-// province, source_url, sha256):
-// senado-reader/gallery-diputados/gallery-diputados.json.
 const RETRATOS_DIPUTADOS = {
     "Azua||Brenda Mercedes Ogando Campos": "brenda-mercedes-ogando-campos.jpg",
     "Azua||Julio César Beltré Méndez": "julio-cesar-beltre-mendez.jpg",
@@ -754,8 +633,6 @@ const RETRATOS_DIPUTADOS = {
     "Valverde||María de los Ángeles Rodríguez Bonseñor": "maria-de-los-angeles-rodriguez-bonsenor.jpg",
     "Valverde||Rubén Darío Peñaló Torres": "ruben-dario-penalo-torres.jpg",
 };
-// Returns the portrait filename for a deputy, or null when we have no verified
-// photo for that exact person in that exact province. Only deputies qualify.
 function retratoDiputado(provincia, l) {
     if (!l.cargo.toLowerCase().startsWith("diputad"))
         return null;
@@ -775,13 +652,12 @@ function grupoDeCargo(cargo) {
     const c = cargo.toLowerCase();
     return ORDEN_GRUPOS.find((k) => k !== "otros" && c.startsWith(k)) || "otros";
 }
-function renderLider(l, provincia) {
+function suave() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+}
+function renderLider(l, provincia, conFuncion = true) {
     const block = el("div", "lider");
     const cab = el("div", "lider-cab");
-    // Senators and deputies with a verified official portrait show the photo;
-    // everyone else (governors, mayors, regidores, and anyone we couldn't match)
-    // keeps the initials circle. The carpeta (folder) differs per cargo so each
-    // photo is read from its own official-source set.
     const retratoSen = retratoSenador(provincia, l);
     const retratoDip = retratoSen ? null : retratoDiputado(provincia, l);
     const retrato = retratoSen || retratoDip;
@@ -790,12 +666,10 @@ function renderLider(l, provincia) {
         const img = el("img", "avatar avatar-foto");
         img.src = carpeta + retrato;
         img.alt = "Retrato oficial de " + l.nombre;
-        img.width = 44;
-        img.height = 44;
+        img.width = 56;
+        img.height = 56;
         img.loading = "lazy";
         img.decoding = "async";
-        // If the file ever fails to load, fall back to the initials circle so the
-        // card never shows a broken-image icon.
         img.addEventListener("error", () => {
             const fb = el("span", "avatar", iniciales(l.nombre));
             img.replaceWith(fb);
@@ -806,49 +680,39 @@ function renderLider(l, provincia) {
         cab.append(el("span", "avatar", iniciales(l.nombre)));
     }
     const ident = el("div", "lider-ident");
-    ident.append(el("p", "lider-nombre", "<b>" + l.nombre + "</b><span class='partido-chip'>" + l.partido + "</span>"));
+    const tienePartido = Boolean(l.partido && l.partido.trim() !== "—");
+    ident.append(el("p", "lider-nombre", "<b>" + l.nombre + "</b>" +
+        (tienePartido ? "<span class='partido-chip'>" + l.partido + "</span>" : "")));
     ident.append(el("p", "lider-cargo", l.cargo));
     cab.append(ident);
     block.append(cab);
     if (esElecto(l.cargo)) {
         block.append(el("p", "lider-dato", ico("calendar") + "En el cargo: 2024–2028 (elegido por voto)"));
     }
-    const fn = funcionDeCargo(l.cargo);
+    const fn = conFuncion ? funcionDeCargo(l.cargo) : "";
     if (fn)
         block.append(el("p", "lider-funcion", fn));
     if (l.resumen)
         block.append(el("p", null, l.resumen));
-    // --- Report-card lines, regrouped into a compact chip row. Each stat shows a
-    //     short headline in the chip (emoji + number) and tucks its full sentence
-    //     behind a tap, reusing the native <details> fold idiom. A leader without
-    //     any data renders no chip row at all, exactly as before. ---
     const chips = el("div", "lider-chips");
-    // Helper: one tappable stat chip. summary = short headline; body = full line.
-    // Icon + ONE text span, so a long label wraps as a block and never splits
-    // into separate columns inside the flex row.
     const datoChip = (icono, resumen, detalle) => {
         const d = el("details", "dato-chip");
         d.append(el("summary", "dato-chip-cab", ico(icono) + '<span class="dato-chip-txt">' + resumen + "</span>"), el("p", "dato-chip-det", detalle));
         return d;
     };
-    // Lane 1: plenary attendance.
     if (l.asistencia && l.asistencia.total > 0) {
         const a = l.asistencia;
         chips.append(datoChip("calendar", "<b>" + a.presentes + "/" + a.total + "</b> sesiones", "Asistencia: estuvo en <b>" + a.presentes + " de " + a.total +
             "</b> sesiones del Pleno (" + a.periodo + ")."));
     }
-    // Lane 2: committees the senator works in.
     if (l.comisiones && l.comisiones.length) {
         chips.append(datoChip("folders", "<b>" + l.comisiones.length + "</b> comisiones", "Trabaja en " + l.comisiones.length + " comisiones: " + l.comisiones.join(", ") + "."));
     }
-    // Lane 3: bills proposed or co-proposed.
     if (typeof l.iniciativas_propuestas === "number") {
         const n = l.iniciativas_propuestas;
         chips.append(datoChip("pencil", "<b>" + n + "</b> " + (n === 1 ? "iniciativa" : "iniciativas"), "Ha propuesto o copropuesto <b>" + n + "</b> " +
             (n === 1 ? "iniciativa" : "iniciativas") + " en este período."));
     }
-    // Lane 5: voting participation (deputies) — how many recent recorded roll-call
-    // votes they actually cast. Neutral count from the Chamber's own public data.
     if (l.votaciones_pleno && l.votaciones_pleno.total > 0) {
         const vp = l.votaciones_pleno;
         chips.append(datoChip("voto", "Votó en <b>" + vp.emitidas + "/" + vp.total + "</b>", "En las últimas <b>" + vp.total + "</b> votaciones del Pleno que registramos (sesiones " +
@@ -856,9 +720,6 @@ function renderLider(l, provincia) {
             "Algunas votaciones son de procedimiento interno; esto muestra si participa en las votaciones, " +
             "no cómo votó cada ley. Dato público de la Cámara de Diputados."));
     }
-    // Lane 4: base monthly salary, from the public payroll. Senators, deputies
-    // and governors share a role-wide rate (sueldoDeCargo); mayors each have their
-    // own amount read from their own ayuntamiento's nómina (l.sueldo).
     const sueldo = sueldoDeCargo(l.cargo) || l.sueldo || null;
     if (sueldo) {
         chips.append(datoChip("coin", "Sueldo del cargo: <b>" + sueldo.monto + "/mes</b>", "Es el salario mensual oficial que paga el Estado por ocupar el cargo. " +
@@ -868,46 +729,30 @@ function renderLider(l, provincia) {
     }
     if (chips.children.length)
         block.append(chips);
-    // Honest note for roles that don't legislate: explain why there are no
-    // attendance/bill stats instead of leaving the card looking unfinished.
     const cargoLower = l.cargo.toLowerCase();
     if (cargoLower.startsWith("gobernador")) {
         block.append(el("p", "nota-fuente", "El gobernador no hace leyes ni vota en el Congreso, por eso no tiene asistencia ni iniciativas. Lo nombra la Presidencia, y su sueldo sale en la nómina del Ministerio de Interior y Policía."));
     }
     else if (cargoLower.startsWith("alcalde")) {
-        // When we already show this mayor's salary (from their ayuntamiento's own
-        // nómina), drop the "estamos reuniendo" promise and just explain the role.
         const nota = l.sueldo
             ? "El alcalde trabaja en el ayuntamiento, no en el Congreso, por eso no tiene asistencia ni iniciativas de leyes. Su sueldo sale en la nómina de su propio ayuntamiento."
             : "El alcalde trabaja en el ayuntamiento, no en el Congreso, por eso no tiene asistencia ni iniciativas de leyes. Su sueldo lo publica cada ayuntamiento; aún estamos reuniendo esas nóminas.";
         block.append(el("p", "nota-fuente", nota));
     }
     if (esLegislador(l.cargo)) {
-        // When we've read this legislator's votes from the official boards, show an
-        // expandable record: a "Registro de votos" card -> one fold per session ->
-        // the bills voted on, each with the plain "¿qué es?" / "¿y a mí qué?" and how
-        // this person voted. Gated on l.votos so the other legislators (and every
-        // non-legislator) keep the plain fallback line below, exactly as before.
-        // PAUSA 2026-09-24: senators get the honest one-liner instead of the list;
-        // deputies get the pointer to the Cámara's own published votes.
         const esSenador = l.cargo.toLowerCase().startsWith("senador");
         if (esSenador && MOSTRAR_VOTOS_POR_SENADOR && l.votos && l.votos.length) {
             block.append(renderRegistroVotos(l));
         }
         else if (esSenador) {
-            block.append(el("p", "lider-cargo", ico("voto") + "Cómo votó"), avisoVotosSenado());
+            block.append(el("p", "lider-subtit", ico("voto") + "Cómo votó"), avisoVotosSenado());
         }
         else {
-            block.append(el("p", "lider-cargo", ico("voto") + "Cómo votó"), avisoVotosCamara());
+            block.append(el("p", "lider-subtit", ico("voto") + "Cómo votó"), avisoVotosCamara());
         }
     }
     return block;
 }
-// Builds the expandable "Registro de votos" record for a legislator that has
-// per-session vote data (l.votos). Outer card folds open to the honest scope
-// note + one fold per session; each session fold opens to its bills, and each
-// bill shows the plain explanation and this person's vote. Nothing is invented:
-// every title/explanation comes verbatim from the data passed in.
 function renderRegistroVotos(l) {
     const votos = l.votos;
     const totalLeyes = votos.reduce((n, s) => n + (s.leyes ? s.leyes.length : 0), 0);
@@ -916,8 +761,6 @@ function renderRegistroVotos(l) {
     cab.append(el("span", "grupo-nombre", ico("voto") + "Registro de votos"), el("span", "grupo-conteo", totalLeyes + (totalLeyes === 1 ? " voto" : " votos")), el("span", "grupo-chev", "▸"));
     card.append(cab);
     const body = el("div", "votos-registro-body");
-    // Honest scope line first: these are the recent sessions we've read, not the
-    // whole term.
     const nota = l.votos_nota ||
         "Estas son las sesiones recientes del Senado que ya leímos, no todo su período.";
     body.append(el("p", "nota-fuente", nota));
@@ -930,8 +773,6 @@ function renderRegistroVotos(l) {
         sDet.append(sCab);
         ses.leyes.forEach((ley) => {
             const wrap = el("div", "voto-ley");
-            // Title + this person's vote on the same row, the vote colored like the
-            // existing per-law vote rows (voto-si / voto-no / voto-aus).
             const top = el("div", "voto-ley-top");
             top.append(el("span", "voto-ley-titulo", ley.titulo));
             top.append(el("span", "voto-ley-voto " + (votoClass[ley.voto] || ""), votoLabel[ley.voto] || ley.voto));
@@ -949,15 +790,7 @@ function renderRegistroVotos(l) {
     card.append(body);
     return card;
 }
-// "¿Y los regidores?" — a small explainer card in every province profile.
-// Explains, kid-simple, what a regidor is (the town council that approves the
-// mayor's budget and rules — los concejales del pueblo) and that each
-// municipality elects several. Shows the verified total ONLY when present in
-// the data; otherwise it stays a pure explainer with no invented number.
-// When verified names exist (regidores.lista), they render as a name+party list.
 function renderRegidoresCard(prov) {
-    // Same drop-down card flow as the other roles (Kelvin): title + count
-    // collapsed; tap to see the explainer and the named lists.
     const r0 = prov.regidores;
     const nombres = r0 && r0.municipios
         ? r0.municipios.reduce((n, m) => n + (m.lista ? m.lista.length : 0), 0) : 0;
@@ -977,9 +810,6 @@ function renderRegidoresBody(prov) {
         "son los concejales del pueblo. Aprueban el presupuesto del municipio, dictan las normas locales y vigilan al alcalde. " +
         "Cada municipio elige varios por voto, según cuánta gente vive en él.";
     const r = prov.regidores;
-    // When the source string carries its URL inline (JCE), keep the descriptive
-    // text here and render the URL as a tappable link below (5ª sugerencia de un
-    // usuario real, Ángel).
     let fuenteTotalLink = null;
     if (r && typeof r.total === "number") {
         let textoFuente = r.fuente_total || "";
@@ -997,31 +827,41 @@ function renderRegidoresBody(prov) {
     card.innerHTML = html;
     if (fuenteTotalLink)
         card.append(fuenteTotalLink);
-    // Verified names per municipality, when we have them. A municipality's list
-    // folds behind a tap so a 30-name council doesn't flood the card.
+    const wrap = el("div", "regidores-body");
+    wrap.append(card);
     if (r && r.municipios && r.municipios.length) {
         r.municipios.forEach((m) => {
             if (!m.lista || !m.lista.length)
                 return;
             const det = el("details", "regidores-lista");
-            det.append(el("summary", "regidores-municipio", ico("silla") + "Regidores de " + m.municipio + " (" + m.lista.length + ")"));
+            det.append(el("summary", "regidores-municipio", "<span>" + ico("silla") + "Regidores de " + m.municipio + "</span><span class=\"grupo-conteo\">" + m.lista.length + "</span>"));
             m.lista.forEach((rg) => {
                 const fila = el("p", "regidor-fila");
                 fila.innerHTML = rg.nombre + " <span class='partido-chip'>" + rg.partido + "</span>";
                 det.append(fila);
             });
             if (m.fuente_lista) {
-                // Render the source text clean and turn its inline URL into a link.
                 const partida = partirFuenteUrl(m.fuente_lista);
                 det.append(el("p", "nota-fuente", "Fuente: " + partida.texto + "."));
                 const a = enlaceDoc(partida.url || undefined, "Ver la lista oficial (JCE)");
                 if (a)
                     det.append(a);
             }
-            card.append(det);
+            wrap.append(det);
         });
     }
-    return card;
+    return wrap;
+}
+function cerrarPerfil(desplazar = true) {
+    const perfil = byId("perfilProvincia");
+    perfil.classList.add("hidden");
+    perfil.innerHTML = "";
+    const vista = byId("view-mapa");
+    if (!vista.classList.contains("con-perfil"))
+        return;
+    vista.classList.remove("con-perfil");
+    if (desplazar)
+        byId("provincias").scrollIntoView({ block: "start", behavior: suave() });
 }
 function renderProvincias(data) {
     const grid = el("div", "prov-grid");
@@ -1032,7 +872,6 @@ function renderProvincias(data) {
         c.append(el("span", "prov-nombre", prov.nombre));
         const n = prov.lideres.length;
         c.append(el("span", "prov-count", n + (n === 1 ? " cargo" : " cargos")));
-        // Keyboard accessible: behave like a button.
         c.setAttribute("role", "button");
         c.tabIndex = 0;
         c.setAttribute("aria-label", "Ver " + prov.nombre);
@@ -1045,23 +884,20 @@ function renderProvincias(data) {
         c.addEventListener("click", () => {
             perfil.classList.remove("hidden");
             perfil.innerHTML = "";
-            const cerrar = el("button", "perfil-cerrar", ico("x") + "Cerrar");
-            cerrar.addEventListener("click", () => {
-                perfil.classList.add("hidden");
-                perfil.innerHTML = "";
-            });
-            perfil.append(cerrar);
+            byId("view-mapa").classList.add("con-perfil");
+            const cerrar = el("button", "perfil-cerrar", ico("arriba") + "Todas las provincias");
+            cerrar.type = "button";
+            cerrar.addEventListener("click", () => cerrarPerfil());
             const perfilTitulo = el("h3", null, prov.nombre);
             perfilTitulo.tabIndex = -1;
-            perfil.append(perfilTitulo);
-            // Group the officials by role so a long list (e.g. 43 deputies) stays scannable.
+            const perfilCab = el("div", "perfil-cab");
+            perfilCab.append(perfilTitulo, cerrar);
+            perfil.append(perfilCab);
             const grupos = {};
             prov.lideres.forEach((l) => {
                 const k = grupoDeCargo(l.cargo);
                 (grupos[k] = grupos[k] || []).push(l);
             });
-            // Each role folds into its own card (Kelvin: find your target without
-            // scrolling through every position). Same details/summary flow as Sesiones.
             ORDEN_GRUPOS.forEach((k) => {
                 const arr = grupos[k];
                 if (!arr || !arr.length)
@@ -1071,30 +907,43 @@ function renderProvincias(data) {
                 const cab = el("summary", "grupo-cab");
                 cab.append(el("span", "grupo-nombre", etq), el("span", "grupo-conteo", arr.length === 1 ? "1 persona" : arr.length + " personas"), el("span", "grupo-chev", "▸"));
                 grupoCard.append(cab);
-                arr.forEach((l) => grupoCard.append(renderLider(l, prov.nombre)));
+                const funciones = Array.from(new Set(arr.map((l) => funcionDeCargo(l.cargo))));
+                const unaFuncion = funciones.length === 1 && funciones[0] !== "";
+                if (unaFuncion)
+                    grupoCard.append(el("p", "lider-funcion grupo-funcion", funciones[0]));
+                arr.forEach((l) => {
+                    const block = renderLider(l, prov.nombre, !unaFuncion);
+                    const cabLider = block.querySelector(".lider-cab");
+                    if (arr.length > 3 && cabLider) {
+                        const fold = el("details", "lider-fold");
+                        const sumLider = el("summary");
+                        sumLider.append(cabLider);
+                        fold.append(sumLider, block);
+                        grupoCard.append(fold);
+                    }
+                    else {
+                        grupoCard.append(block);
+                    }
+                });
                 perfil.append(grupoCard);
             });
-            // Honest note when this province's mayors aren't loaded yet.
             if (!grupos["alcalde"]) {
                 perfil.append(el("p", "nota-fuente", "Alcaldes: aún por añadir. Estamos completando esta provincia con datos oficiales. " +
                     "¿Conoces a tu alcalde? <a href=\"https://github.com/politica-sencilla-rd/leyes-rd/issues/new/choose\" target=\"_blank\" rel=\"noopener\">Ayúdanos a completarlo</a>."));
             }
-            // Always explain the town council (regidores) — feedback de un usuario real.
             perfil.append(renderRegidoresCard(prov));
-            // The card just added a new .palabra word; wire tap-to-define on it.
             setupGlosario();
-            perfil.scrollIntoView({ behavior: "smooth", block: "start" });
+            perfil.style.setProperty("--cab-h", perfilCab.offsetHeight + "px");
+            perfil.scrollIntoView({ behavior: suave(), block: "start" });
             perfilTitulo.focus({ preventScroll: true });
         });
         grid.append(c);
     });
     const host = byId("provincias");
     host.innerHTML = "";
-    // "¿Cómo leer esto?" — explains the new report-card lines on a senator card,
-    // in kid-simple Spanish, with tap-to-define words. Only shows once, on top.
-    const comoLeer = el("div", "como");
+    const comoLeer = el("details", "transp como-leer");
     comoLeer.innerHTML =
-        "<b>¿Cómo leer la ficha de un senador?</b> Al abrir una provincia y tocar a su senador verás cuatro datos nuevos:<br>" +
+        "<summary>" + ico("info") + "¿Cómo leer la ficha de un senador?</summary><div class=\"transp-body\">Al abrir una provincia y tocar a su senador verás cuatro datos nuevos:<br>" +
             ico("calendar") + "<b>Asistencia</b>: a cuántas reuniones del " +
             "<span class=\"palabra\" data-def=\"La reunión grande donde todos los senadores se juntan a votar las leyes.\">Pleno</span> " +
             "fue, de las que pudimos contar. Ir es su trabajo.<br>" +
@@ -1107,10 +956,8 @@ function renderProvincias(data) {
             ico("coin") + "<b>Sueldo del cargo</b>: el salario mensual oficial que paga el Estado por ocupar el puesto. " +
             "No es dinero de otras fuentes ni su patrimonio. Sale de la " +
             "<span class=\"palabra\" data-def=\"La lista pública de lo que cobra cada empleado del Estado. La ley obliga a publicarla cada mes.\">nómina</span> " +
-            "pública. Lo pagan los impuestos de todos nosotros.";
-    host.append(comoLeer);
-    host.append(grid);
-    // New glossary words were just added — wire up tap-to-define on them.
+            "pública. Lo pagan los impuestos de todos nosotros.</div>";
+    host.append(grid, comoLeer);
     setupGlosario();
 }
 function contarPorPartido(data, cargoStart) {
@@ -1125,46 +972,30 @@ function contarPorPartido(data, cargoStart) {
     });
     return Object.keys(cuenta)
         .map((k) => ({ partido: k, asientos: cuenta[k] }))
-        // Most seats first; ties broken by party initials so the order is stable.
         .sort((a, b) => b.asientos - a.asientos || a.partido.localeCompare(b.partido));
 }
-// A fixed color per party so the bar, the legend and the detail all agree.
-// Parties not listed fall back to a neutral grey (never invented data, just a
-// color). Colors picked to read apart on a small phone screen.
 const COLOR_PARTIDO = {
-    PRM: "#1a4ed8", // azul — same family as the site accent
-    FP: "#7b2ff7", // morado
-    PLD: "#1f9d57", // verde
-    PRSC: "#e0651a", // naranja
-    DXC: "#0fb5c4", // turquesa
-    PPG: "#d8261a", // rojo
-    PLR: "#c01b8a", // magenta
+    PRM: "#1a4ed8",
+    FP: "#7b2ff7",
+    PLD: "#1f9d57",
+    PRSC: "#e0651a",
+    DXC: "#0fb5c4",
+    PPG: "#d8261a",
+    PLR: "#c01b8a",
 };
-const COLOR_OTROS = "#565e6e"; // gris para el grupo "Otros"
+const COLOR_OTROS = "#565e6e";
 function colorDePartido(partido) {
     return COLOR_PARTIDO[partido] || COLOR_OTROS;
 }
-// Renders one chamber: a grid of actual seat dots (one per legislator, colored
-// by party, sorted so each party forms a contiguous block, majority obvious at a
-// glance) + a legend of party chips, with the real per-party counts folded behind
-// a tap, plus one honest takeaway derived only from the math. Tiny parties (1–2
-// seats) collapse into "Otros" on the legend for readability — the seat grid and
-// the fold-out detail still show every party.
 function renderCamara(nombre, total, conteo) {
     const wrap = el("div", "camara-comp");
     wrap.append(el("p", "camara-titulo", "<b>" + nombre + "</b> <span class=\"camara-total\">" + total + " asientos</span>"));
-    // Group tiny parties (1–2 seats) into "Otros" for the legend only.
     const grandes = conteo.filter((c) => c.asientos > 2);
     const pequenos = conteo.filter((c) => c.asientos <= 2);
     const otrosTotal = pequenos.reduce((n, c) => n + c.asientos, 0);
     const segmentos = [...grandes];
     if (otrosTotal > 0)
         segmentos.push({ partido: "Otros", asientos: otrosTotal });
-    // Seat grid: one dot per legislator, in party order so each party is a solid
-    // block and the majority reads at a glance. The grid is decorative-plus — it
-    // carries an aria-label summarizing the counts; the legend below is the
-    // readable source of truth. Tighter dots for the bigger Cámara so 178 stay
-    // crisp and the grid wraps instead of stretching the page.
     const grande = total > 60;
     const grid = el("div", "comp-asientos" + (grande ? " comp-asientos-densa" : ""));
     grid.setAttribute("role", "img");
@@ -1178,17 +1009,26 @@ function renderCamara(nombre, total, conteo) {
         }
     });
     wrap.append(grid);
-    // Legend: one chip per visible segment (initials + count).
     const leyenda = el("div", "comp-leyenda");
     segmentos.forEach((s) => {
         const chip = el("span", "comp-chip");
-        const punto = el("span", "comp-punto");
-        punto.style.background = s.partido === "Otros" ? COLOR_OTROS : colorDePartido(s.partido);
+        let punto;
+        if (s.partido === "Otros") {
+            punto = el("span", "comp-punto-multi");
+            pequenos.forEach((p) => {
+                const d = el("span", "comp-punto");
+                d.style.background = colorDePartido(p.partido);
+                punto.append(d);
+            });
+        }
+        else {
+            punto = el("span", "comp-punto");
+            punto.style.background = colorDePartido(s.partido);
+        }
         chip.append(punto, el("span", "comp-chip-txt", s.partido + " " + s.asientos));
         leyenda.append(chip);
     });
     wrap.append(leyenda);
-    // Honest takeaway, derived from the math only — no political commentary.
     const lider = conteo[0];
     if (lider) {
         const mitad = total / 2;
@@ -1202,7 +1042,6 @@ function renderCamara(nombre, total, conteo) {
         const sustantivo = nombre.toLowerCase().includes("senado") ? "senadores" : "diputados";
         wrap.append(el("p", "comp-clave", "El <b>" + lider.partido + "</b> tiene <b>" + lider.asientos + " de " + total + "</b> " + sustantivo + cola));
     }
-    // Fold-out detail: every party with its real count, biggest first.
     const det = el("details", "comp-detalle");
     det.append(el("summary", "comp-detalle-cab", "Ver el detalle por partido"));
     conteo.forEach((c) => {
@@ -1231,13 +1070,11 @@ function renderComposicion(data) {
     card.append(el("p", "nota-fuente", "Cuenta hecha con los datos verificados de esta misma página (Senado y Cámara, 2024–2028)."));
     host.append(card);
 }
-/* ---------- Sesiones ---------- */
 const MESES = [
     "enero", "febrero", "marzo", "abril", "mayo", "junio",
     "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
 ];
 function fechaLarga(iso) {
-    // iso = "2026-04-15"
     const parts = iso.split("-");
     if (parts.length !== 3)
         return iso;
@@ -1247,10 +1084,6 @@ function fechaLarga(iso) {
     const mes = MESES[m] || parts[1];
     return d + " de " + mes + " de " + y;
 }
-// True when a string is a real ISO date ("2026-06-12"), false for the
-// by-session fallback (the session code like "0116"). Lets the by-session view
-// show a friendly date when one exists and fall back to the number otherwise,
-// without ever inventing a date.
 function esFechaIso(s) {
     return /^\d{4}-\d{2}-\d{2}$/.test(s);
 }
@@ -1262,49 +1095,41 @@ const estadoAsist = {
 function renderSesiones(data, votosPorSesion) {
     const cont = byId("sesiones");
     cont.innerHTML = "";
+    const leyenda = el("details", "transp ses-leyenda");
+    leyenda.innerHTML =
+        "<summary>" + ico("leyes") + "¿Qué es primera y segunda discusión?</summary><div class=\"transp-body\"><p>" +
+            "Una ley se vota <b>dos veces</b> en el Senado: la primera discusión y la segunda. " +
+            "Si gana las dos, sigue su camino para ser ley. Las resoluciones (homenajes, peticiones) se deciden en una sola votación: <b>única discusión</b>. " +
+            "<b>Unanimidad</b> = todos los presentes dijeron que sí.</p></div>";
+    cont.append(leyenda);
     if (data.sesiones.length) {
         const fechas = data.sesiones.map((s) => s.fecha).sort();
         const ultima = fechas[fechas.length - 1];
-        cont.append(el("p", "nota-fuente", "Última sesión publicada: " + fechaLarga(ultima) + "."));
+        const cab = el("div", "ses-lista-cab");
+        cab.append(el("h3", "ses-lista-titulo", "Sesiones del Senado"), el("p", "ses-lista-meta", data.sesiones.length + " sesiones · de la más reciente a la más antigua · última: " + fechaLarga(ultima)));
+        cont.append(cab);
     }
-    // By-session vote detail (the second door to the same vote data): voting record
-    // organized by session and bill, with the per-senator roll. Rendered first, as
-    // its own clearly-labelled block; the anonymous attendance/tally cards below
-    // stay exactly as before. Skipped cleanly if the data file is missing/empty.
     if (MOSTRAR_VOTOS_POR_SENADOR && votosPorSesion) {
         const detalle = renderSesionesVotos(votosPorSesion);
         if (detalle)
             cont.append(detalle);
     }
     else {
-        // PAUSA 2026-09-24: one honest block in place of the named roll calls.
-        const aviso = el("div", "como");
-        aviso.append(el("b", null, ico("voto") + "¿Cómo votó cada senador?"));
+        const aviso = el("div", "aviso-pausa");
+        aviso.append(el("b", null, ico("pausa") + "¿Cómo votó cada senador?"));
         aviso.append(el("p", null, AVISO_VOTOS_SENADO +
             " Abajo ves los totales de cada votación, sacados del acta oficial del Senado."));
         aviso.append(avisoVotosCamara());
         cont.append(aviso);
     }
-    // Kid-simple legend: what "primera/segunda discusión" and "unanimidad" mean.
-    const leyenda = el("div", "como");
-    leyenda.innerHTML =
-        "<b>¿Cómo leer esto?</b> Una ley se vota <b>dos veces</b> en el Senado: la primera discusión y la segunda. " +
-            "Si gana las dos, sigue su camino para ser ley. Las resoluciones (homenajes, peticiones) se deciden en una sola votación: <b>única discusión</b>. " +
-            "<b>Unanimidad</b> = todos los presentes dijeron que sí.";
-    cont.append(leyenda);
     data.sesiones.forEach((ses) => {
-        // Each session collapses to one line. All start CLOSED so the tab opens
-        // short and consistent with every other tab (the user taps the session
-        // they want). The most recent is listed first.
         const card = el("details", "sesion");
         const head = el("summary", "sesion-head");
         head.append(el("span", "sesion-fecha", fechaLarga(ses.fecha)), el("span", "sesion-conteo", ses.votaciones.length + " votaciones"), el("span", "sesion-acta", "Acta " + ses.acta), el("span", "sesion-chev", "▸"));
         card.append(head);
-        // Votaciones
         const vlist = el("div", "votaciones");
         ses.votaciones.forEach((v) => {
             const row = el("div", "votacion");
-            // Plain title up front; the official legalese title tucks behind a tap.
             if (v.titulo_facil) {
                 row.append(el("p", "votacion-titulo", v.titulo_facil));
                 const oficial = el("details", "oficial");
@@ -1317,10 +1142,7 @@ function renderSesiones(data, votosPorSesion) {
             const meta = el("div", "votacion-meta");
             const aprob = /^aprob/i.test(v.resultado);
             const icono = aprob ? ico("check") : "•&nbsp;";
-            meta.append(el("span", "v-iniciativa", "Iniciativa " + v.iniciativa), el("span", "v-conteo", v.a_favor + " de " + v.presentes + " presentes votaron a favor"), el("span", aprob ? "v-resultado" : "v-resultado v-resultado-neutral", icono + v.resultado));
-            row.append(meta);
-            // Proportion bar: turns "X de Y" into a felt amount. Grey = simply "did not vote in favor",
-            // never shown as a vote against (the Senate does not publish per-person votes).
+            const conteo = el("span", "v-conteo", "<b>" + v.a_favor + " de " + v.presentes + "</b> presentes votaron a favor");
             const pct = v.presentes > 0 ? Math.round((v.a_favor / v.presentes) * 100) : 0;
             const barra = el("div", "voto-barra");
             barra.setAttribute("role", "img");
@@ -1329,58 +1151,53 @@ function renderSesiones(data, votosPorSesion) {
             const fill = el("span", "voto-barra-fill");
             fill.style.width = pct + "%";
             barra.append(fill);
-            row.append(barra);
+            meta.append(conteo, barra, el("span", aprob ? "v-resultado" : "v-resultado v-resultado-neutral", icono + v.resultado), el("span", "v-iniciativa", "Iniciativa " + v.iniciativa));
+            row.append(meta);
             vlist.append(row);
         });
         card.append(vlist);
-        // Asistencia (expandable)
         const det = ses.asistencia.detalle;
-        const asistWrap = el("details", "asistencia");
-        const sum = el("summary", "asistencia-sum");
-        if (det.length) {
-            sum.innerHTML = ico("users") + "Quién faltó (con excusa): " + det.length;
-        }
-        else if (ses.asistencia.ausentes === 0) {
-            sum.innerHTML = ico("users") + "Asistencia: nadie presentó excusa ese día";
+        if (!det.length && ses.asistencia.ausentes === 0) {
+            card.append(el("p", "asistencia-nula", ico("users") + "Según el acta, ningún senador presentó excusa ese día."));
         }
         else {
-            sum.innerHTML = ico("users") + "Asistencia";
+            const asistWrap = el("details", "asistencia");
+            const sum = el("summary", "asistencia-sum");
+            if (det.length) {
+                sum.innerHTML = ico("users") + "Quién faltó (con excusa): " + det.length;
+            }
+            else {
+                sum.innerHTML = ico("users") + "Asistencia";
+            }
+            asistWrap.append(sum);
+            const body = el("div", "asistencia-body");
+            if (det.length) {
+                const ul = el("div", "asist-lista");
+                det.forEach((p) => {
+                    const fila = el("div", "asist-fila");
+                    fila.append(el("span", null, p.nombre));
+                    fila.append(el("span", "asist-estado-" + p.estado, estadoAsist[p.estado] || p.estado));
+                    ul.append(fila);
+                });
+                body.append(ul);
+                body.append(el("p", "nota-fuente", "Lista de senadores que presentaron excusa, según el acta oficial. El acta no publica una cifra total de presentes."));
+            }
+            else {
+                body.append(el("p", "nota-fuente", "La lista por nombre no está disponible de forma legible para esta sesión."));
+            }
+            asistWrap.append(body);
+            card.append(asistWrap);
         }
-        asistWrap.append(sum);
-        const body = el("div", "asistencia-body");
-        if (det.length) {
-            const ul = el("div", "asist-lista");
-            det.forEach((p) => {
-                const fila = el("div", "asist-fila");
-                fila.append(el("span", null, p.nombre));
-                fila.append(el("span", "asist-estado-" + p.estado, estadoAsist[p.estado] || p.estado));
-                ul.append(fila);
-            });
-            body.append(ul);
-            body.append(el("p", "nota-fuente", "Lista de senadores que presentaron excusa, según el acta oficial. El acta no publica una cifra total de presentes."));
-        }
-        else if (ses.asistencia.ausentes === 0) {
-            body.append(el("p", null, "Según el acta, ningún senador presentó excusa ese día."));
-        }
-        else {
-            body.append(el("p", "nota-fuente", "La lista por nombre no está disponible de forma legible para esta sesión."));
-        }
-        asistWrap.append(body);
-        card.append(asistWrap);
-        // Link to the official acta PDF (5ª sugerencia de un usuario real, Ángel).
         const aActa = enlaceDoc(ses.url_acta, "Ver el acta oficial (PDF)");
         if (aActa)
             card.append(aActa);
+        const cerrar = el("button", "ses-cerrar", "Cerrar esta sesión");
+        cerrar.type = "button";
+        cerrar.addEventListener("click", () => { card.open = false; head.scrollIntoView({ block: "nearest" }); });
+        card.append(cerrar);
         cont.append(card);
     });
 }
-// Builds the by-session vote detail: the same vote data as the per-senator
-// "Registro de votos", but entered by SESSION instead of by person. A chamber
-// chooser (Senado now, Cámara de Diputados "próximamente") sits on top; each
-// session folds open to its bills; each bill folds open to the plain
-// "¿qué es? / ¿y a mí qué?" and the full per-senator roll. Reuses the same
-// chip/fold idiom and the same voto colors as the rest of the site. Returns
-// null when there is nothing to show, so the caller can skip it cleanly.
 function renderSesionesVotos(data) {
     const senado = data.Senado || [];
     const tieneSenado = senado.some((s) => s.bills && s.bills.length);
@@ -1391,8 +1208,6 @@ function renderSesionesVotos(data) {
     host.append(el("p", "como", "<b>Otra puerta a lo mismo:</b> aquí entras por la sesión, no por la persona. " +
         "Eliges la cámara, abres una sesión y ves cada proyecto que se votó ese día, " +
         "con el resultado (Sí / No / Ausente) y cómo votó cada senador por su nombre."));
-    // Chamber chooser. Senado is the only chamber with data today; the Cámara de
-    // Diputados sits as a disabled "próximamente" option so the scope reads honest.
     const chooser = el("div", "ses-votos-camaras");
     const btnSen = el("button", "ses-camara-btn ses-camara-activa", "Senado <span class=\"ses-camara-conteo\">" + senado.length +
         (senado.length === 1 ? " sesión" : " sesiones") + "</span>");
@@ -1404,27 +1219,17 @@ function renderSesionesVotos(data) {
     btnDip.setAttribute("aria-disabled", "true");
     chooser.append(btnSen, btnDip);
     host.append(chooser);
-    // One plain line on each chamber, so the chooser isn't a bare pair of buttons.
     host.append(el("p", "ses-votos-camaras-nota", "El <b>Senado</b> son los 32 senadores, uno por provincia (y uno por el Distrito Nacional). " +
         "La <b>Cámara de Diputados</b> es el otro grupo del Congreso, más grande; sus votos los " +
         "leeremos próximamente."));
-    // Honest scope line: these are the recent sessions we've read, not the whole
-    // term. Each session now carries its real date (from the Senate sessions
-    // ledger), so we name the session by its date.
     host.append(el("p", "nota-fuente", "Estas son las sesiones recientes que ya leímos, no todo el período. " +
         "Solo aparecen los proyectos con su explicación verificada."));
-    // Senado panel: one collapsible card per session, newest first (data already
-    // arrives newest-first). All start CLOSED so the view opens short and matches
-    // every other tab; the user taps the session they want.
     const panelSen = el("div", "ses-votos-panel");
     senado.forEach((ses) => {
         if (!ses.bills || !ses.bills.length)
             return;
         const sCard = el("details", "grupo-cargo ses-votos-sesion");
         const sCab = el("summary", "grupo-cab");
-        // Header names the session by its real date when we have one ("Sesión del
-        // 16 de diciembre de 2025"), keeping the session number as a small tag.
-        // Sessions whose code has no ledger date fall back to "Sesión <número>".
         const tieneFecha = esFechaIso(ses.fecha);
         const nombreSesion = tieneFecha
             ? "Sesión del " + fechaLarga(ses.fecha)
@@ -1435,15 +1240,10 @@ function renderSesionesVotos(data) {
         }
         sCab.append(cabNombre, el("span", "grupo-conteo", ses.bills.length + (ses.bills.length === 1 ? " proyecto" : " proyectos")), el("span", "grupo-chev", "▸"));
         sCard.append(sCab);
-        // Kid-friendly one-liner: what this card is and what to do with it.
         sCard.append(el("p", "ses-votos-sesion-linea", "Una reunión donde votaron leyes — ábrela para ver qué decidieron ese día."));
         ses.bills.forEach((b) => {
-            // Each bill folds open to its explanation and roll. The summary shows the
-            // plain title and the Sí/No/Ausente totals as small colored chips.
             const bDet = el("details", "ses-voto-bill");
             const bCab = el("summary", "ses-voto-bill-cab");
-            // Tiny "La ley" label above the title so the fold reads as a small lesson:
-            // La ley → ¿Qué es? → ¿Y a mí qué? → cómo votó cada senador.
             const tituloWrap = el("span", "ses-voto-bill-titulo");
             tituloWrap.append(el("span", "ses-voto-bill-kicker", "La ley"));
             tituloWrap.append(el("span", "ses-voto-bill-nombre", b.titulo));
@@ -1459,9 +1259,6 @@ function renderSesionesVotos(data) {
             if (b.como_afecta) {
                 bDet.append(el("h4", "voto-ley-h", "¿Y a mí qué?"), el("p", "voto-ley-p", b.como_afecta));
             }
-            // Per-senator roll, folded so a 32-name list doesn't flood the card. Same
-            // name+colored-vote row idiom as the attendance list and the per-senator
-            // record.
             const rollDet = el("details", "ses-voto-roll");
             rollDet.append(el("summary", "ses-voto-roll-cab", ico("users") + "Cómo votó cada senador (" + b.roll.length + ")"));
             const lista = el("div", "asist-lista");
@@ -1480,20 +1277,19 @@ function renderSesionesVotos(data) {
     host.append(panelSen);
     return host;
 }
-/* ---------- El rastro del dinero público (money trails) ---------- */
-// Formats a plain peso amount with thousands separators, e.g. 1059000 ->
-// "RD$1,059,000". Used in the per-province table inside a fund.
 function pesosRD(monto) {
     return "RD$" + monto.toLocaleString("en-US");
 }
-// Builds the whole "El rastro del dinero público" feature from
-// data/fondos_publicos.json. One card per fund: what it is, how much, an
-// expandable per-province table, who refuses it, the 5-step money chain shown
-// as labeled steps each with a colored transparency badge (🟢/🟡/🔴), and a
-// big verdict badge. Reuses the site's flow-step (.paso) and chip/fold idioms.
-// Returns nothing when there are no funds, leaving the host empty (and the
-// section header without orphaned content). Strictly non-partisan: no
-// name-and-shame gallery; one sourced category-level misuse line at most.
+function setupDineroFolds() {
+    document.querySelectorAll("#view-dinero > .grupo-pagina").forEach((d) => {
+        d.addEventListener("toggle", () => {
+            const sum = d.querySelector("summary");
+            if (!d.open && sum && sum.getBoundingClientRect().top < 0) {
+                sum.scrollIntoView({ block: "start", behavior: suave() });
+            }
+        });
+    });
+}
 function renderFondos(data) {
     const cont = byId("fondos-publicos");
     cont.innerHTML = "";
@@ -1501,12 +1297,9 @@ function renderFondos(data) {
     if (!fondos.length)
         return;
     const leyenda = data.leyenda_estado;
-    // Intro: this is public money that should reach people; here's how far we can
-    // follow it. Kid-Spanish, set in the section accent.
     cont.append(el("p", "fondos-intro", "Esto es dinero público: <b>tuyo y de todos</b>. Debería llegar a la gente. " +
         "Aquí seguimos su rastro paso a paso y marcamos cada paso con un semáforo, " +
         "para que veas <b>hasta dónde se puede mirar</b> y dónde se pierde de vista."));
-    // The 3-state legend, shown once at the top so every badge below reads clear.
     const leyDiv = el("div", "rastro-leyenda");
     ["publico", "dificil", "oculto"].forEach((k) => {
         const li = leyenda[k];
@@ -1517,15 +1310,13 @@ function renderFondos(data) {
         leyDiv.append(item);
     });
     cont.append(leyDiv);
-    // Each fund is its own COLLAPSED Nivel-2 sub-group (the grouping rule, one
-    // level deeper). Adding a fund to the JSON makes a new collapsed sub-group
-    // automatically — no markup change. Reuses the site's Nivel-2 grouper
-    // (.grupo-pagina) so it folds and recolors like every other sub-group.
-    fondos.forEach((f) => cont.append(renderFondoGrupo(f, leyenda)));
+    fondos.forEach((f) => {
+        const g = renderFondoGrupo(f, leyenda);
+        if (fondos.length === 1)
+            g.open = true;
+        cont.append(g);
+    });
 }
-// Wraps one fund card in a collapsed Nivel-2 sub-group. The summary shows the
-// fund's popular name and a one-line teaser; tapping it reveals the full card
-// built by renderFondo. Same fold/accent idiom as the page's other groups.
 function renderFondoGrupo(f, leyenda) {
     const grupo = el("details", "grupo-cargo grupo-pagina fondo-grupo");
     const cab = el("summary", "grupo-cab");
@@ -1538,20 +1329,14 @@ function renderFondoGrupo(f, leyenda) {
     grupo.append(body);
     return grupo;
 }
-// Builds one fund card. Split out from renderFondos so adding a second fund is
-// just another array entry — the card markup is shared.
 function renderFondo(f, leyenda) {
     const card = el("div", "fondo");
-    // No header here: the fund's popular and official names live in the
-    // collapsed sub-group summary (renderFondoGrupo) that wraps this card.
-    // What it is + who it's for, plain.
     card.append(el("p", "fondo-quees leer-voz", f.que_es));
     if (f.para_quien) {
         const pq = el("p", "fondo-quees fondo-paraquien");
         pq.innerHTML = "<b>¿Para quién?</b> " + f.para_quien;
         card.append(pq);
     }
-    // The amount, as a small pill row (annual + monthly), with a note.
     if (f.monto_total) {
         const montos = el("div", "fondo-montos");
         if (f.monto_total.anual)
@@ -1562,7 +1347,23 @@ function renderFondo(f, leyenda) {
         if (f.monto_total.nota)
             card.append(el("p", "nota-fuente", f.monto_total.nota));
     }
-    // The formula, folded so it doesn't crowd the card.
+    const ver = el("div", "fondo-veredicto leer-voz");
+    ver.append(el("span", "fondo-veredicto-kicker", "Veredicto"), " ", el("strong", "fondo-veredicto-etiqueta", f.veredicto.etiqueta));
+    ver.append(el("p", "fondo-veredicto-txt", f.veredicto.explica));
+    card.append(ver);
+    card.append(el("h5", "fondo-cadena-titulo", ico("buscar") + "El rastro, paso a paso"));
+    const flujo = el("div", "flujo-graf fondo-cadena");
+    f.cadena.forEach((p, i) => {
+        if (i > 0)
+            flujo.append(el("div", "flecha", "↓"));
+        flujo.append(renderFondoPaso(p, i + 1, leyenda));
+    });
+    card.append(flujo);
+    if (f.mal_uso_documentado) {
+        const mu = el("div", "fondo-maluso");
+        mu.innerHTML = "<b>" + ico("alerta") + "Lo que encontró la prensa:</b> " + f.mal_uso_documentado;
+        card.append(mu);
+    }
     if (f.formula) {
         const fDet = el("details", "fondo-fold");
         fDet.append(el("summary", "fondo-fold-cab", ico("calc") + "<span>¿Cómo se calcula cuánto recibe cada uno?</span>"));
@@ -1583,7 +1384,6 @@ function renderFondo(f, leyenda) {
         fDet.append(body);
         card.append(fDet);
     }
-    // The per-province table, folded. Each row = province + monthly amount.
     if (f.tabla_por_provincia && f.tabla_por_provincia.filas.length) {
         const t = f.tabla_por_provincia;
         const tDet = el("details", "fondo-fold");
@@ -1609,10 +1409,6 @@ function renderFondo(f, leyenda) {
         tDet.append(body);
         card.append(tDet);
     }
-    // Accepts vs. refuses note (factual, names only those publicly known to
-    // refuse — that is a positive disclosure, not a spending accusation).
-    // Names render only when present (each needs its own source); a note alone
-    // still shows, so an honest "no public list" line can stand by itself.
     if (f.quien_lo_rechaza && (f.quien_lo_rechaza.nombres.length || f.quien_lo_rechaza.nota)) {
         const r = f.quien_lo_rechaza;
         const box = el("div", "fondo-rechaza");
@@ -1624,39 +1420,14 @@ function renderFondo(f, leyenda) {
             box.append(el("p", "nota-fuente", r.nota));
         card.append(box);
     }
-    // Legal basis line, when present (the barrilito's "ninguna" is itself a fact).
     if (f.base_legal) {
         const bl = el("div", "fondo-legal");
         bl.innerHTML = "<b>" + ico("scale") + "¿Qué ley lo crea?</b> " + f.base_legal;
         card.append(bl);
     }
-    // The plain-Spanish legal explainer: the questions a citizen would ask, each
-    // answered simply with its own cited source. Folded so it doesn't crowd the
-    // card. Data-driven (f.legal) so any future fund can carry the same block.
     if (f.legal && f.legal.items.length) {
         card.append(renderFondoLegal(f.legal));
     }
-    // The money chain: a header, then the 5 steps as a flow, each with a badge.
-    card.append(el("h5", "fondo-cadena-titulo", ico("buscar") + "El rastro, paso a paso"));
-    const flujo = el("div", "flujo-graf fondo-cadena");
-    f.cadena.forEach((p, i) => {
-        if (i > 0)
-            flujo.append(el("div", "flecha", "↓"));
-        flujo.append(renderFondoPaso(p, i + 1, leyenda));
-    });
-    card.append(flujo);
-    // One sourced, category-level misuse line (no names) — only if present.
-    if (f.mal_uso_documentado) {
-        const mu = el("div", "fondo-maluso");
-        mu.innerHTML = "<b>" + ico("alerta") + "Lo que encontró la prensa:</b> " + f.mal_uso_documentado;
-        card.append(mu);
-    }
-    // The big verdict badge + its plain explanation.
-    const ver = el("div", "fondo-veredicto leer-voz");
-    ver.append(el("span", "fondo-veredicto-pill", "Veredicto: " + f.veredicto.etiqueta));
-    ver.append(el("p", "fondo-veredicto-txt", f.veredicto.explica));
-    card.append(ver);
-    // Source links at the bottom, folded.
     if (f.fuentes && f.fuentes.length) {
         const sDet = el("details", "fuente-fold");
         sDet.append(el("summary", null, ico("libros") + "Ver fuentes"));
@@ -1677,8 +1448,6 @@ function renderFondo(f, leyenda) {
     }
     return card;
 }
-// A small cited-source link in the site's enlace-doc idiom. Opens in a new tab
-// and stops the click from toggling any enclosing <details> fold.
 function fondoFuenteLink(src) {
     const a = el("a", "enlace-doc fondo-legal-fuente");
     a.href = src.url;
@@ -1688,11 +1457,6 @@ function fondoFuenteLink(src) {
     a.addEventListener("click", (e) => e.stopPropagation());
     return a;
 }
-// The plain-Spanish legal explainer for a fund: a folded "the legal questions,
-// in simple words" panel. Each item shows the citizen's question as a kicker,
-// the kid-Spanish answer, and its cited source link(s) right below — so every
-// legal claim is checkable, per the project's hard sourcing rule. Reuses the
-// same fold idiom as the formula / per-province table.
 function renderFondoLegal(legal) {
     const det = el("details", "fondo-fold fondo-legal-fold");
     det.append(el("summary", "fondo-fold-cab", ico("scale") + "<span>" + (legal.titulo || "Las preguntas legales, en sencillo") +
@@ -1704,7 +1468,6 @@ function renderFondoLegal(legal) {
         const qa = el("div", "fondo-legal-qa");
         qa.append(el("p", "fondo-legal-q", it.q));
         qa.append(el("p", "fondo-legal-a", it.a));
-        // Every answer carries its source(s), so the claim is verifiable.
         const fuentes = [];
         if (it.fuente)
             fuentes.push(it.fuente);
@@ -1721,10 +1484,6 @@ function renderFondoLegal(legal) {
     det.append(body);
     return det;
 }
-// One chain step: number + label + what-happens, plus a colored transparency
-// badge that carries the 🟢/🟡/🔴 legend wording. The .paso class gives it the
-// same flow-step look as the money-journey diagram; the rastro-<estado> class
-// paints the left border to match the badge.
 function renderFondoPaso(p, num, leyenda) {
     const li = leyenda[p.estado];
     const paso = el("div", "paso fondo-paso rastro-borde-" + p.estado);
@@ -1733,8 +1492,6 @@ function renderFondoPaso(p, num, leyenda) {
     const titulo = p.subtitulo ? p.paso + " — " + p.subtitulo : p.paso;
     txt.append(el("b", null, titulo));
     txt.append(el("span", null, p.que_pasa));
-    // The badge: a colored dot + label, colored by state (same dot on every phone,
-    // unlike the data's emoji circles).
     if (li) {
         const badge = el("span", "rastro-badge rastro-" + p.estado, '<span class="rastro-punto" aria-hidden="true"></span> ' + li.etiqueta);
         txt.append(badge);
@@ -1742,12 +1499,9 @@ function renderFondoPaso(p, num, leyenda) {
     paso.append(txt);
     return paso;
 }
-/* ---------- Buscadores (search) ---------- */
-// Accent-insensitive, lowercase match so "san cristobal" finds "San Cristóbal".
 function normaliza(s) {
     return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 }
-// Live filter of province cards by name.
 function setupBuscadorProvincias() {
     const inp = document.getElementById("buscarProvincia");
     if (!inp)
@@ -1768,13 +1522,13 @@ function setupBuscadorProvincias() {
             aviso.classList.toggle("hidden", !(q && visibles === 0));
     });
 }
-// Live filter of law sectors by topic or law title; opens matching sectors.
 function setupBuscadorLeyes() {
     const inp = document.getElementById("buscarLey");
     if (!inp)
         return;
     const aviso = document.getElementById("leyNoResultado");
     inp.addEventListener("input", () => {
+        var _a;
         const q = normaliza(inp.value);
         let visibles = 0;
         document.querySelectorAll("#sectores .sector").forEach((sec) => {
@@ -1792,10 +1546,9 @@ function setupBuscadorLeyes() {
         });
         if (aviso)
             aviso.classList.toggle("hidden", !(q && visibles === 0));
+        (_a = document.getElementById("sectores")) === null || _a === void 0 ? void 0 : _a.classList.toggle("hidden", Boolean(q) && visibles === 0);
     });
 }
-/* ---------- Navegación ---------- */
-// Every view id, keyed by the data-view / data-goto name.
 const VISTAS = {
     home: "view-home",
     pais: "view-pais",
@@ -1803,19 +1556,12 @@ const VISTAS = {
     mapa: "view-mapa",
     sesiones: "view-sesiones",
     dinero: "view-dinero",
-    // "proyecto" has no tab in the nav. It's reachable only from the hero
-    // button. When it's the active view, no tab matches in mostrarVista, so no
-    // tab is highlighted — which is what we want. Tapping any real tab leaves
-    // this view cleanly because the tab handler calls mostrarVista with its own
-    // view name, hiding view-proyecto like any other section.
     proyecto: "view-proyecto",
 };
 function mostrarVista(view) {
-    // Show only the requested section, hide the rest.
     Object.keys(VISTAS).forEach((k) => {
         byId(VISTAS[k]).classList.toggle("hidden", k !== view);
     });
-    // Sync the tab bar state (highlight + aria).
     document.querySelectorAll(".tab").forEach((t) => {
         const activo = t.dataset.view === view;
         t.classList.toggle("active", activo);
@@ -1824,32 +1570,31 @@ function mostrarVista(view) {
         else
             t.removeAttribute("aria-current");
     });
-    // Bring the new section into view on small screens.
     window.scrollTo({ top: 0, behavior: "auto" });
 }
 function setupTabs() {
     document.querySelectorAll(".tab").forEach((tab) => {
         tab.addEventListener("click", () => {
             const view = tab.dataset.view;
+            if (view === "mapa")
+                cerrarPerfil(false);
             if (view)
                 mostrarVista(view);
         });
     });
-    // Any element with data-goto jumps straight into a section: the big home
-    // cards AND the "¿Y ahora qué?" footer that chains one section to the next.
     document.querySelectorAll("[data-goto]").forEach((card) => {
         card.addEventListener("click", () => {
             const dest = card.dataset.goto;
+            if (dest === "mapa")
+                cerrarPerfil(false);
             if (dest)
                 mostrarVista(dest);
         });
     });
-    // Tapping the site title returns home.
     const homeLink = document.getElementById("homeLink");
     if (homeLink)
         homeLink.addEventListener("click", () => mostrarVista("home"));
 }
-/* ---------- Compartir y participar ---------- */
 function copiarEnlace(url, btn) {
     var _a;
     const prev = btn.textContent;
@@ -1895,9 +1640,6 @@ function setupCompartir() {
         });
     }
 }
-/* ---------- Inicio: cifras reales vivas ---------- */
-// Prints one real count per home card, computed from the data already loaded.
-// Numbers only — never invented; if data is missing the line stays empty.
 function llenarCifrasHome(leyes, prov, ses) {
     const setC = (k, t) => {
         const e = document.querySelector('[data-cifra="' + k + '"]');
@@ -1913,32 +1655,24 @@ function llenarCifrasHome(leyes, prov, ses) {
         setC("sesiones", "Última sesión: " + fechaLarga(ult));
     }
 }
-// Build the fact list from data already loaded. Every number is copied faithful
-// from its source field; nothing is invented. If a source is missing, that fact
-// is simply skipped (never faked).
 function construirSabias(leyes, ses) {
     const datos = [];
-    // 1) Sueldo promedio formal — finanzas.json metricas[salario].valor.
     datos.push({
         texto: "El sueldo promedio del trabajador formal en RD es <b>RD$37,572.82 al mes</b>, según la seguridad social (junio 2025).",
         cta: "Ver el bolsillo del país", destino: "dinero", acento: "acc-dinero",
     });
-    // 2) Deuda por persona — finanzas.json comparaciones_derivadas.deuda_por_persona_usd.
     datos.push({
         texto: "Cada dominicano carga <b>US$5,713</b> de la deuda del país, sin haberlo pedido.",
         cta: "Ver el dinero", destino: "dinero", acento: "acc-dinero",
     });
-    // 3) Gasta vs gana — finanzas.json comparaciones_derivadas.gasta_por_cada_100_que_gana_rd.
     datos.push({
         texto: "Por cada <b>RD$100</b> que el Estado gana, gasta como <b>RD$121</b>. Ese hueco se tapa con préstamos.",
         cta: "Ver el dinero", destino: "dinero", acento: "acc-dinero",
     });
-    // 4) Tamaño del Senado — 32 provincias = 32 senadores (uno por provincia).
     datos.push({
         texto: "El Senado son solo <b>32 personas</b> que hacen las leyes de todo el país: una por provincia.",
         cta: "Ver las sesiones", destino: "sesiones", acento: "acc-sesiones",
     });
-    // 5) Última sesión publicada — sesiones.json: la fecha más reciente.
     if (ses.sesiones.length) {
         const ult = ses.sesiones.map((s) => s.fecha).sort().slice(-1)[0];
         datos.push({
@@ -1946,7 +1680,6 @@ function construirSabias(leyes, ses) {
             cta: "Ver las sesiones", destino: "sesiones", acento: "acc-sesiones",
         });
     }
-    // 6) Leyes explicadas — leyes.json: total de leyes en total de temas.
     const totalLeyes = leyes.sectores.reduce((n, s) => n + s.leyes.length, 0);
     datos.push({
         texto: "Aquí tienes <b>" + totalLeyes + " leyes</b> explicadas fácil, ordenadas en <b>" +
@@ -1970,8 +1703,7 @@ function setupSabias(leyes, ses) {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let idx = 0;
     let timer = 0;
-    let pausado = reduce; // reduced-motion starts paused (no auto-rotate)
-    // Build the dots once.
+    let pausado = reduce;
     const puntos = datos.map((_, i) => {
         const b = el("button", "sabias-punto");
         b.type = "button";
@@ -1989,14 +1721,12 @@ function setupSabias(leyes, ses) {
         tarjeta.append(el("p", "sabias-texto", d.texto));
         const btn = el("button", "sabias-btn");
         btn.type = "button";
-        btn.innerHTML = d.cta + " ▸";
+        btn.innerHTML = d.cta + ' <span aria-hidden="true">→</span>';
         btn.addEventListener("click", () => mostrarVista(d.destino));
         tarjeta.append(btn);
         viva.append(tarjeta);
-        // Recolor the whole strip to the destination's accent.
         seccion.classList.remove("acc-dinero", "acc-leyes", "acc-sesiones");
         seccion.classList.add(d.acento);
-        // Sync dots.
         puntos.forEach((p, j) => p.setAttribute("aria-selected", j === idx ? "true" : "false"));
     }
     function avanzar() { mostrar(idx + 1); }
@@ -2020,16 +1750,22 @@ function setupSabias(leyes, ses) {
         else
             arrancar();
     });
-    // Pause while a keyboard user is tabbing through the strip; resume on leave.
     seccion.addEventListener("focusin", detener);
     seccion.addEventListener("focusout", () => { if (!pausado)
         arrancar(); });
-    // Pause while a finger or mouse rests on the card, so nobody loses a fact mid-read.
     seccion.addEventListener("pointerenter", detener);
     seccion.addEventListener("pointerdown", detener);
     seccion.addEventListener("pointerleave", () => { if (!pausado)
         arrancar(); });
-    // Reflect the reduced-motion start state on the pause button (icon via CSS).
+    let x0 = 0;
+    seccion.addEventListener("pointerdown", (e) => { x0 = e.clientX; });
+    seccion.addEventListener("pointerup", (e) => {
+        const dx = e.clientX - x0;
+        if (Math.abs(dx) > 40) {
+            mostrar(idx + (dx < 0 ? 1 : -1));
+            reiniciar();
+        }
+    });
     if (reduce) {
         pausaBtn.setAttribute("aria-pressed", "true");
         pausaBtn.setAttribute("aria-label", "Reanudar el cambio automático");
@@ -2037,9 +1773,6 @@ function setupSabias(leyes, ses) {
     mostrar(0);
     arrancar();
 }
-/* ---------- Dinero: cada paso del caso SENASA se abre al tocarlo ---------- */
-// Turns the hardcoded case steps into tap-to-reveal, reusing the accordion idiom.
-// Scoped to #caso-senasa so the general money flow stays as-is.
 function setupCasoAccordion() {
     const caso = document.getElementById("caso-senasa");
     if (!caso)
@@ -2070,14 +1803,8 @@ function setupCasoAccordion() {
         });
     });
 }
-/* ---------- Glosario: palabras difíciles se explican al tocarlas ---------- */
-// Any <span class="palabra" data-def="..."> shows its plain-Spanish meaning on tap.
-// stopPropagation so a word inside a collapsible step doesn't also toggle the step.
 function setupGlosario() {
     document.querySelectorAll(".palabra").forEach((p) => {
-        // setupGlosario runs more than once (init + after senator cards render).
-        // Wire each word only once, or the click handler stacks and the toggle
-        // fires twice — cancelling itself so the definition never opens.
         if (p.dataset.glosarioWired === "1")
             return;
         p.dataset.glosarioWired = "1";
@@ -2107,16 +1834,10 @@ function setupEscape() {
         if (e.key !== "Escape")
             return;
         const p = document.getElementById("perfilProvincia");
-        if (p && !p.classList.contains("hidden")) {
-            p.classList.add("hidden");
-            p.innerHTML = "";
-        }
+        if (p && !p.classList.contains("hidden"))
+            cerrarPerfil();
     });
 }
-// "🔊 Escúchalo" — read-aloud for citizens who read with difficulty (the mission's
-// most-excluded reader). Adds a listen button to each "En 30 segundos" card that
-// speaks its text with the phone's own voice (free, offline, no API). Hidden
-// entirely when the device has no Spanish voice — never offer what won't work.
 function setupEscuchar() {
     const synth = window.speechSynthesis;
     if (!synth || typeof SpeechSynthesisUtterance === "undefined")
@@ -2159,14 +1880,11 @@ function setupEscuchar() {
     const montar = () => {
         if (!hayVozEs())
             return;
-        // "En 30 segundos" summary cards -> read the summary paragraph.
         document.querySelectorAll(".en30").forEach((card) => {
             const p = card.querySelector("p");
             if (p)
                 wire(card, p.textContent || "");
         });
-        // Any block marked .leer-voz (e.g. the SENASA help card) -> read its full
-        // text, captured before the button is appended so it isn't read back.
         document.querySelectorAll(".leer-voz").forEach((blk) => {
             wire(blk, blk.textContent || "");
         });
@@ -2175,9 +1893,6 @@ function setupEscuchar() {
     if (!hayVozEs())
         synth.addEventListener("voiceschanged", montar, { once: true });
 }
-// "¿Quién te representa?" finder on Inicio: pick your province -> jump straight
-// to its officials (reuses the existing province-card flow). For the citizen who
-// can't navigate menus well.
 function setupFinder(data) {
     const sel = document.getElementById("finderProvincia");
     if (!sel)
@@ -2202,7 +1917,7 @@ function setupFinder(data) {
             card.click();
             const perfil = document.getElementById("perfilProvincia");
             if (perfil)
-                perfil.scrollIntoView({ behavior: "smooth", block: "start" });
+                perfil.scrollIntoView({ behavior: suave(), block: "start" });
         }
     });
 }
@@ -2220,17 +1935,9 @@ async function init() {
             cargar("data/sesiones.json"),
             cargar("data/vigencia.json"),
             cargar("data/novedades.json"),
-            // By-session vote detail. Optional: if it fails to load, the Sesiones view
-            // still renders its attendance/tally cards (the catch below handles a hard
-            // failure; a soft null keeps the rest of the page intact).
-            // PAUSA 2026-09-24: not fetched while the senator lists are off (the
-            // file lives in datos-sin-verificar/votos-senado/, outside docs/).
             MOSTRAR_VOTOS_POR_SENADOR
                 ? cargar("data/votos_por_sesion.json").catch(() => ({}))
                 : Promise.resolve(undefined),
-            // Money trails (El rastro del dinero público). Optional, same pattern:
-            // a soft-fail keeps the rest of the Dinero view intact if the file is
-            // missing. renderFondos no-ops when there are no funds or no legend.
             cargar("data/fondos_publicos.json").catch(() => ({ leyenda_estado: {}, fondos: [] })),
         ]);
         renderVigencia(vigencia);
@@ -2242,10 +1949,11 @@ async function init() {
         renderSesiones(sesiones, votosPorSesion);
         if (fondos && fondos.leyenda_estado)
             renderFondos(fondos);
-        setupEscuchar(); // re-run: wire .leer-voz blocks rendered from data (e.g. the barrilito)
+        setupEscuchar();
         llenarCifrasHome(leyes, provincias, sesiones);
         setupSabias(leyes, sesiones);
         setupCasoAccordion();
+        setupDineroFolds();
         setupBuscadorProvincias();
         setupBuscadorLeyes();
     }
