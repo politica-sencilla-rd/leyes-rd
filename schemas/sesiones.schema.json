@@ -89,7 +89,7 @@
         },
         "resultado": {
          "type": "string",
-         "pattern": "^(Aprobad[oa]\\b[^<>]*|No indicado)$"
+         "pattern": "^((?:Aprobad|Rechazad)[oa]\\b[^<>]*|No indicado)$"
         },
         "votacion_num": {
          "type": "string",
