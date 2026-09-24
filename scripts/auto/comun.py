@@ -182,22 +182,23 @@ def encolar(arbol: Arbol, item: dict) -> bool:
 
 
 def texto_pdf(pdf: bytes) -> str:
-    """PDF -> text. pdftotext (poppler; apt-get on the runner, a separate GPL
-    program) is the primary tool. Local fallbacks: PyMuPDF (AGPL, only if
-    installed), then pypdf (BSD)."""
-    if shutil.which("pdftotext"):
-        with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
-            f.write(pdf)
-            f.flush()
-            out = subprocess.run(["pdftotext", "-enc", "UTF-8", f.name, "-"], capture_output=True, check=True)
-            return out.stdout.decode("utf-8", errors="replace")
+    """PDF -> text with PyMuPDF (version pinned in requirements.txt) on every
+    machine, so the runner reads an acta exactly like the tests and the local dry
+    runs do. Changed 2026-09-24: the runner used pdftotext first, which joins
+    hyphenated line breaks differently ("ProCrecimiento" vs "Pro- Crecimiento"),
+    so the golden acta tests failed there and blocked every robot. pypdf cannot
+    read the vote blocks at all. PyMuPDF is AGPL; it is only run as a tool in CI
+    and is not shipped with the site. pdftotext stays as a last resort."""
     try:
         import fitz  # type: ignore
         return "\n".join(p.get_text() for p in fitz.open(stream=pdf, filetype="pdf"))
     except ImportError:
-        import io
-        import pypdf  # type: ignore
-        return "\n".join((p.extract_text() or "") for p in pypdf.PdfReader(io.BytesIO(pdf)).pages)
+        pass
+    with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
+        f.write(pdf)
+        f.flush()
+        out = subprocess.run(["pdftotext", "-enc", "UTF-8", f.name, "-"], capture_output=True, check=True)
+        return out.stdout.decode("utf-8", errors="replace")
 
 
 # ------------------------------------------------------------------ shared text checks
