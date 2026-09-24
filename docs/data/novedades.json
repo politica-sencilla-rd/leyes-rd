@@ -3,6 +3,13 @@
   "novedades": [
     {
       "fecha": "2026-09-24",
+      "texto": "Actualizamos la asistencia, las comisiones y las iniciativas de los diputados, con datos de la Cámara al 9 de septiembre de 2026.",
+      "aporte": "🔄 Actualización automática",
+      "guid": "psrd-auto-camara-2026-09-24-337400b9",
+      "auto": true
+    },
+    {
+      "fecha": "2026-09-24",
       "texto": "Pausamos las listas de cómo votó cada senador. Al compararlas con las actas oficiales del Senado encontramos errores, así que las estamos revisando una por una antes de volver a mostrarlas. Los totales de cada votación siguen ahí, sacados del acta oficial.",
       "aporte": "🔧 Mejora interna",
       "guid": "psrd-2026-09-24-pausa-votos-senado"

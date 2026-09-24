@@ -16,8 +16,10 @@
       "seccion": "provincias",
       "url_fuente": "https://www.diputadosrd.gob.do/sil",
       "retraso": "",
-      "estado": "sin_revisar",
-      "fallos_seguidos": 0
+      "estado": "ok",
+      "fallos_seguidos": 0,
+      "datos_al": "2026-09-09",
+      "revisado_el": "2026-09-24"
     },
     "leyes_sil": {
       "nombre": "Proyectos de ley (SIL)",
