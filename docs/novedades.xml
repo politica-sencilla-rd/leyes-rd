@@ -5,7 +5,14 @@
     <link>https://politica-sencilla-rd.github.io/leyes-rd/</link>
     <description>Las mejoras más recientes del sitio, escritas fácil. Sin redes sociales: tu app te avisa cuando hay algo nuevo.</description>
     <language>es</language>
-    <lastBuildDate>Sat, 14 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Pausamos las listas de cómo votó cada senador. Al compararlas con las actas oficiales del Senado encontramos errores, así que las estamos revisando una por una antes de volver a mostrarlas. Los totales de cada votación siguen ahí, sacados del acta oficial.</title>
+      <link>https://politica-sencilla-rd.github.io/leyes-rd/</link>
+      <guid isPermaLink="false">psrd-2026-09-24-pausa-votos-senado</guid>
+      <pubDate>Thu, 24 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Pausamos las listas de cómo votó cada senador. Al compararlas con las actas oficiales del Senado encontramos errores, así que las estamos revisando una por una antes de volver a mostrarlas. Los totales de cada votación siguen ahí, sacados del acta oficial. Mejora interna.</description>
+    </item>
     <item>
       <title>Ahora puedes tocar las fuentes para comprobarlas tú mismo: en el caso del SENASA y en las cifras del país, como la inflación y el desempleo, el enlace te lleva directo al sitio oficial.</title>
       <link>https://politica-sencilla-rd.github.io/leyes-rd/</link>

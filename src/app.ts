@@ -372,11 +372,34 @@ const estadoLabel: Record<Estado, string> = {
 const votoLabel: Record<Voto, string> = { si: ico("thumb-up") + "Sí", no: ico("thumb-down") + "No", ausente: ico("minus") + "Ausente" };
 const votoClass: Record<Voto, string> = { si: "voto-si", no: "voto-no", ausente: "voto-aus" };
 
+// PAUSA (Kelvin, 2026-09-24): the named per-senator vote lists were read from
+// the broadcast vote board and disagree with the official acta on 2 of 4 bills
+// checked. They stay OFF until each is checked against its acta. The data was
+// moved out of docs/ to datos-sin-verificar/votos-senado/ (see its README).
+// The Cámara's per-deputy data (its own official API) is unaffected.
+const MOSTRAR_VOTOS_POR_SENADOR = false;
+const AVISO_VOTOS_SENADO =
+  "El Senado no publica cómo votó cada senador. Estamos revisando nuestra lista contra las actas oficiales antes de mostrarla.";
+const URL_SIL_CAMARA = "https://www.diputadosrd.gob.do/sil";
+// One story everywhere: the Cámara publishes each deputy's vote; the Senado
+// publishes only totals (in its actas).
+function avisoVotosCamara(): HTMLElement {
+  const p = el("p", "nota-fuente",
+    "La Cámara de Diputados sí publica cómo votó cada diputado, con su nombre, en su sistema oficial. ");
+  const a = enlaceDoc(URL_SIL_CAMARA, "Ver los votos en el SIL de la Cámara");
+  if (a) p.append(a);
+  return p;
+}
+function avisoVotosSenado(): HTMLElement {
+  return el("p", "nota-fuente",
+    AVISO_VOTOS_SENADO + " Los totales de cada votación (cuántos votaron a favor) sí salen en el acta oficial: los ves en Sesiones.");
+}
+
 // Bumped with every data/content change, same value as the index.html
 // cache-buster (?v=...). Appended to every data fetch so returning visitors
 // don't render stale JSON from the browser's HTTP cache when only the data
 // changed (the data files are not versioned in the HTML).
-const DATA_VERSION = "20260615c";
+const DATA_VERSION = "20260924b";
 
 async function cargar<T>(path: string): Promise<T> {
   const sep = path.indexOf("?") >= 0 ? "&" : "?";
@@ -596,8 +619,9 @@ function renderLey(ley: Ley, busqueda?: BusquedaOficial): HTMLElement {
     det.append(el("h4", null, "¿Por qué se propuso?"), el("p", null, ley.por_que));
   }
 
-  // Votes: shown when the Senate publishes them; otherwise a quiet note.
-  if (ley.votos && ley.votos.length) {
+  // Votes: named rows only for Cámara bills (its official API) or when the
+  // senator lists are verified; otherwise the one-story note per chamber.
+  if (ley.votos && ley.votos.length && (ley.camara || MOSTRAR_VOTOS_POR_SENADOR)) {
     det.append(el("h4", null, "¿Quién votó?"));
     const votos = el("div", "votos");
     ley.votos.forEach((v) => {
@@ -607,8 +631,10 @@ function renderLey(ley: Ley, busqueda?: BusquedaOficial): HTMLElement {
       votos.append(fila);
     });
     det.append(votos);
+  } else if (ley.camara) {
+    det.append(avisoVotosCamara());
   } else {
-    det.append(el("p", "nota-fuente", "Voto de cada legislador: el Senado aún no lo hace público."));
+    det.append(el("p", "nota-fuente", "El Senado no publica cómo votó cada senador; solo publica los totales de cada votación."));
   }
 
   // Link to the official search system (5ª sugerencia de un usuario real,
@@ -1276,10 +1302,15 @@ function renderLider(l: Lider, provincia: string): HTMLElement {
     // the bills voted on, each with the plain "¿qué es?" / "¿y a mí qué?" and how
     // this person voted. Gated on l.votos so the other legislators (and every
     // non-legislator) keep the plain fallback line below, exactly as before.
-    if (l.votos && l.votos.length) {
+    // PAUSA 2026-09-24: senators get the honest one-liner instead of the list;
+    // deputies get the pointer to the Cámara's own published votes.
+    const esSenador = l.cargo.toLowerCase().startsWith("senador");
+    if (esSenador && MOSTRAR_VOTOS_POR_SENADOR && l.votos && l.votos.length) {
       block.append(renderRegistroVotos(l));
+    } else if (esSenador) {
+      block.append(el("p", "lider-cargo", ico("voto") + "Cómo votó"), avisoVotosSenado());
     } else {
-      block.append(el("p", "lider-cargo", "Registro de votos: " + l.registro));
+      block.append(el("p", "lider-cargo", ico("voto") + "Cómo votó"), avisoVotosCamara());
     }
   }
   return block;
@@ -1709,9 +1740,17 @@ function renderSesiones(data: SesionesData, votosPorSesion?: VotosPorSesionData)
   // organized by session and bill, with the per-senator roll. Rendered first, as
   // its own clearly-labelled block; the anonymous attendance/tally cards below
   // stay exactly as before. Skipped cleanly if the data file is missing/empty.
-  if (votosPorSesion) {
+  if (MOSTRAR_VOTOS_POR_SENADOR && votosPorSesion) {
     const detalle = renderSesionesVotos(votosPorSesion);
     if (detalle) cont.append(detalle);
+  } else {
+    // PAUSA 2026-09-24: one honest block in place of the named roll calls.
+    const aviso = el("div", "como");
+    aviso.append(el("b", null, ico("voto") + "¿Cómo votó cada senador?"));
+    aviso.append(el("p", null, AVISO_VOTOS_SENADO +
+      " Abajo ves los totales de cada votación, sacados del acta oficial del Senado."));
+    aviso.append(avisoVotosCamara());
+    cont.append(aviso);
   }
 
   // Kid-simple legend: what "primera/segunda discusión" and "unanimidad" mean.
@@ -2094,12 +2133,14 @@ function renderFondo(f: Fondo, leyenda: Record<EstadoRastro, RastroLeyendaItem>)
 
   // Accepts vs. refuses note (factual, names only those publicly known to
   // refuse — that is a positive disclosure, not a spending accusation).
-  if (f.quien_lo_rechaza && f.quien_lo_rechaza.nombres.length) {
+  // Names render only when present (each needs its own source); a note alone
+  // still shows, so an honest "no public list" line can stand by itself.
+  if (f.quien_lo_rechaza && (f.quien_lo_rechaza.nombres.length || f.quien_lo_rechaza.nota)) {
     const r = f.quien_lo_rechaza;
     const box = el("div", "fondo-rechaza");
     const t = el("b", null, ico("x") + (r.titulo || "No todos lo aceptan"));
     box.append(t);
-    box.append(el("p", "fondo-rechaza-nombres", r.nombres.join(" · ")));
+    if (r.nombres.length) box.append(el("p", "fondo-rechaza-nombres", r.nombres.join(" · ")));
     if (r.nota) box.append(el("p", "nota-fuente", r.nota));
     card.append(box);
   }
@@ -2693,7 +2734,11 @@ async function init(): Promise<void> {
       // By-session vote detail. Optional: if it fails to load, the Sesiones view
       // still renders its attendance/tally cards (the catch below handles a hard
       // failure; a soft null keeps the rest of the page intact).
-      cargar<VotosPorSesionData>("data/votos_por_sesion.json").catch(() => ({} as VotosPorSesionData)),
+      // PAUSA 2026-09-24: not fetched while the senator lists are off (the
+      // file lives in datos-sin-verificar/votos-senado/, outside docs/).
+      MOSTRAR_VOTOS_POR_SENADOR
+        ? cargar<VotosPorSesionData>("data/votos_por_sesion.json").catch(() => ({} as VotosPorSesionData))
+        : Promise.resolve(undefined),
       // Money trails (El rastro del dinero público). Optional, same pattern:
       // a soft-fail keeps the rest of the Dinero view intact if the file is
       // missing. renderFondos no-ops when there are no funds or no legend.
