@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260615c" />
+  <link rel="stylesheet" href="styles.css?v=20260924a" />
 </head>
 <body>
   <header class="topbar">
@@ -72,7 +72,7 @@
            provincias.json; choosing a province opens its profile. -->
       <div class="finder">
         <h3 class="finder-titulo">🔎 ¿Quién te representa?</h3>
-        <p class="finder-sub">Elige tu provincia y ve a tu senador y tus diputados: qué hacen, cuánto ganan y cómo votaron.</p>
+        <p class="finder-sub">Elige tu provincia y ve a tu senador y tus diputados: qué hacen y cuánto ganan.</p>
         <select id="finderProvincia" class="finder-select" aria-label="Elige tu provincia">
           <option value="">Elige tu provincia…</option>
         </select>
@@ -274,7 +274,7 @@
           <span class="leyenda-item"><span class="ley-estado estado-votando">🗳️ En votación</span> todavía se está decidiendo.</span>
           <span class="leyenda-item"><span class="ley-estado estado-rechazada">❌ Rechazada</span> se cayó o fue archivada.</span>
         </div>
-        <p id="fuenteBanner" class="leyes-intro-fuente">ℹ️ Datos reales del <b>Senado de la República Dominicana</b> (recogidos en junio de 2026). El voto de cada legislador todavía no es público.</p>
+        <p id="fuenteBanner" class="leyes-intro-fuente">ℹ️ Datos reales del <b>Senado de la República Dominicana</b> (recogidos en junio de 2026). El Senado solo publica los totales de cada votación, no cómo votó cada senador. La Cámara de Diputados sí publica el voto de cada diputado.</p>
       </div>
 
       <!-- Leyes que entran en vigencia (4ª sugerencia de un usuario real).
@@ -287,11 +287,12 @@
           <p>Buena pregunta. Esto es lo que pasa:</p>
           <ul>
             <li><b>El voto sí se registra.</b> El reglamento de la Cámara de Diputados permite votar de dos formas: por <b>sistema electrónico</b> o <b>por nombre</b> (votación nominal). El <b>voto secreto está prohibido</b>.</li>
-            <li><b>El problema es que no lo publican.</b> Aunque el voto queda registrado, el Congreso no lo pone abierto al público como sí pasa en otros países (por ejemplo, Estados Unidos).</li>
-            <li><b>En la votación común</b> (la electrónica) muchas veces solo se anuncia el <b>total</b> —cuántos a favor y en contra— y no el nombre de cada quien. El detalle por nombre existe cuando la votación es nominal.</li>
-            <li><b>Tú puedes pedirlo.</b> La <b>Ley 200-04</b> de Libre Acceso a la Información te deja solicitar ese registro, gratis, por el portal <b>SAIP</b> (saip.gob.do). Deben responder en unos 15 días hábiles.</li>
+            <li><b>La Cámara de Diputados sí lo publica.</b> En su sistema oficial puedes ver cómo votó cada diputado, con su nombre: <a class="enlace-doc" href="https://www.diputadosrd.gob.do/sil" target="_blank" rel="noopener">📄 SIL de la Cámara</a>.</li>
+            <li><b>El Senado no lo publica.</b> En sus actas oficiales solo pone los <b>totales</b>: cuántos votaron a favor. Esos totales los ves en Sesiones.</li>
+            <li><b>Nuestra lista de senadores está en pausa.</b> La armamos nosotros, no viene del Senado. Al compararla con las actas oficiales encontramos diferencias. Por eso no la mostramos hasta revisarla contra cada acta.</li>
+            <li><b>Tú puedes pedirlo.</b> La <b>Ley 200-04</b> de Libre Acceso a la Información te deja pedirle al Senado ese registro, gratis, por el portal <b>SAIP</b> (saip.gob.do). Deben responder en unos 15 días hábiles.</li>
           </ul>
-          <p class="transp-pie">Cuando consigamos un registro público de votos, lo mostraremos aquí.</p>
+          <p class="transp-pie">Cuando cada lista esté revisada contra su acta oficial, la volveremos a mostrar.</p>
         </div>
       </details>
 
@@ -361,10 +362,9 @@
         <b>¿Qué es una sesión y por qué te importa?</b>
         Una sesión es una reunión donde los senadores <b>votan leyes</b>. Y las leyes que se votan ahí
         deciden cosas de tu vida diaria: el precio de la luz, tu seguro de salud, los impuestos, tu trabajo.
-        <br><b>¿Cómo leer lo que sigue?</b> Más abajo verás dos partes.
-        Primero, <b>cómo votó cada senador, sesión por sesión</b>: eliges la cámara, abres una sesión por su
-        fecha, y ves cada ley que se votó ese día con el voto de cada quien por su nombre.
-        Después, una lista de sesiones con <b>cuántos votaron a favor y quién faltó</b>.
+        <br><b>¿Cómo leer lo que sigue?</b>
+        Verás una lista de sesiones con <b>cuántos votaron a favor y quién faltó</b>, sacada del acta oficial.
+        El Senado no publica cómo votó cada senador, solo los totales.
       </div>
       <p class="hint">Las sesiones están en orden, de la más reciente a la más antigua. Toca una para abrirla.</p>
       <div id="sesiones"></div>
@@ -814,7 +814,7 @@
     </div>
   </dialog>
 
-  <script src="app.js?v=20260615c"></script>
+  <script src="app.js?v=20260924a"></script>
   <!-- Contador de visitas, privado y sin cookies (GoatCounter) -->
   <script data-goatcounter="https://politicasencillard.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
