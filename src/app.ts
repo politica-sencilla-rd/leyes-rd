@@ -428,7 +428,7 @@ function avisoVotosSenado(): HTMLElement {
 // cache-buster (?v=...). Appended to every data fetch so returning visitors
 // don't render stale JSON from the browser's HTTP cache when only the data
 // changed (the data files are not versioned in the HTML).
-const DATA_VERSION = "20260924d";
+const DATA_VERSION = "20260924g";
 
 async function cargar<T>(path: string): Promise<T> {
   const sep = path.indexOf("?") >= 0 ? "&" : "?";
@@ -1178,7 +1178,7 @@ const RETRATOS_SENADORES: Record<string, string> = {
   "Dajabón||Manuel María Rodríguez Ortega": "manuel-maria-rodriguez-ortega.jpg",
   "Duarte||Franklin Martín Romero Morillo": "franklin-martin-romero-morillo.jpg",
   "El Seibo||Santiago José Zorrilla": "santiago-jose-zorrilla.jpg",
-  "Elías Piña||Jonhson Encarnación Díaz": "jonhson-encarnacion-diaz.jpg",
+  "Elías Piña||Johnson Encarnación Díaz": "jonhson-encarnacion-diaz.jpg",
   "Espaillat||Carlos Manuel Gómez Ureña": "carlos-manuel-gomez-urena.jpg",
   "Hato Mayor||Cristóbal Venerado Castillo": "cristobal-venerado-castillo.jpg",
   "Hermanas Mirabal||María Mercedes Ortiz Diloné": "maria-mercedes-ortiz-dilone.jpg",
