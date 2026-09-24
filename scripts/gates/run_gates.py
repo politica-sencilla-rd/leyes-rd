@@ -27,13 +27,16 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts" / "auto"))
+# Shared with escribir.py / dinero.py so the writer and the gate never disagree.
+from comun import (PARECE_LEY, nombra_persona, numero_en_letras, numeros_ausentes,  # noqa: E402
+                   patrones_nombres, problema_metrica, valor_previo)
 PROSA = {"que_es", "por_que", "te_afecta", "titulo_facil", "en_30_segundos", "resumen", "resumen_corto"}
 CLAVES_LISTA = ("acta", "numero", "id", "iniciativa", "nombre", "legisladorId", "fecha", "titulo")
 VOTO_SENADO_OK = {"iniciativa", "titulo", "titulo_facil", "a_favor", "presentes", "resultado",
                   "votacion_num", "fuente", "nota"}
 LIMITES = {"sesiones_actas": 30, "sesiones_votos": 250, "leyes_cambiadas": 60, "leyes_nuevas": 40,
            "vigencia_nuevas": 10, "finanzas_metricas": 9, "novedades_nuevas": 1}
-RANGOS_FINANZAS = {"inflacion": (-5, 30), "desempleo": (2, 20), "deuda": (20, 100), "crecimiento": (-15, 20)}
 MAX_REPARACIONES_G7 = 5
 
 
@@ -217,13 +220,16 @@ class Gates:
                 if isinstance(vp, dict) and not (0 <= vp.get("emitidas", 0) <= vp.get("total", 0) <= 190 * 100):
                     self.fallo("G3", f"{l['nombre']}: votaciones_pleno imposible")
         fin = self.nuevo.json("docs/data/finanzas.json") or {}
+        fin_b = {m.get("id"): m for m in (self.base.json("docs/data/finanzas.json") or {}).get("metricas", [])}
         for m in fin.get("metricas", []):
-            auto = m.get("auto") or {}
-            rango = RANGOS_FINANZAS.get(m.get("id"))
-            if rango and isinstance(auto.get("valor_num"), (int, float)):
-                lo, hi = rango
-                if not (lo <= auto["valor_num"] <= hi):
-                    self.fallo("G3", f"finanzas {m['id']}: {auto['valor_num']} fuera de {lo}..{hi}")
+            auto = m.get("auto")
+            if not auto:
+                continue
+            # range + max jump vs the value on main (robot's last number, else the hand-written card)
+            previo = valor_previo(fin_b[m["id"]]) if m.get("id") in fin_b else None
+            prob = problema_metrica(m.get("id"), auto, previo)
+            if prob:
+                self.fallo("G3", f"finanzas {prob}")
         pre = fin.get("presupuesto_auto")
         if isinstance(pre, dict) and all(isinstance(pre.get(k), (int, float)) for k in ("ingresos", "gastos", "resultado")):
             calc = pre["ingresos"] - pre["gastos"]
@@ -354,6 +360,9 @@ class Gates:
     # G7 ---------------------------------------------------------------
     def g7_no_vaciar(self):
         for rel in self.datos():
+            # resumenes.json: withdrawing a summary is legitimate (G8 checks every record instead)
+            if rel.endswith("resumenes.json"):
+                continue
             b = self.base.json(rel)
             if b is None:
                 continue
@@ -364,6 +373,10 @@ class Gates:
                 if isinstance(bv, dict) and isinstance(nv, dict):
                     for k, v in bv.items():
                         if k in nv and not _vacio(v) and _vacio(nv[k]) and not isinstance(v, bool):
+                            if ruta == "$" and isinstance(v, (list, dict)):
+                                # a whole top-level list/object emptied = the source broke; never "repair" it
+                                self.fallo("G7", f"{_rel}: '{k}' quedó vacío (fuente rota?)")
+                                continue
                             nv[k] = v
                             reparados.append(f"{_rel} {ruta}.{k}")
             recorrer(b, n, "$", visitar)
@@ -411,8 +424,28 @@ class Gates:
             if r.get("modelo_escritor") and r.get("modelo_escritor") == r.get("modelo_revisor"):
                 self.fallo("G8", f"resumen {k}: el revisor es el mismo modelo que el escritor")
             sha = r.get("fuente_sha256", "")
-            if not re.fullmatch(r"[0-9a-f]{64}", sha) or not (self.nd / "pipeline-state" / "textos" / f"{sha}.txt").exists():
+            ftxt = self.nd / "pipeline-state" / "textos" / f"{sha}.txt"
+            if not re.fullmatch(r"[0-9a-f]{64}", sha) or not ftxt.exists():
                 self.fallo("G8", f"resumen {k}: falta el texto fuente pipeline-state/textos/{sha}.txt")
+                continue
+            # Same source + different text = someone edited a checked summary without a new review.
+            if k in rb and rb[k].get("fuente_sha256") == sha:
+                self.fallo("G8", f"resumen {k}: el texto cambió sin un texto fuente nuevo (no pasó por la revisión)")
+            # Re-run the code checks against the stored source (defence in depth; the writer ran them too).
+            fuente = ftxt.read_text(encoding="utf-8")
+            no_aprobado = r.get("estado_ley") not in ("aprobada", "promulgada")
+            for campo in ia.get("campos_por_tipo", {}).get(r.get("tipo"), []):
+                t = r.get(campo)
+                if not isinstance(t, str) or not t.strip():
+                    self.fallo("G8", f"resumen {k}: el campo {campo} está vacío")
+                    continue
+                for num in numeros_ausentes(t, fuente):
+                    self.fallo("G8", f"resumen {k}.{campo}: el número {num} no está en el texto fuente")
+                if numero_en_letras(t):
+                    self.fallo("G8", f"resumen {k}.{campo}: número escrito en letras ({numero_en_letras(t)})")
+                if no_aprobado and PARECE_LEY.search(t):
+                    self.fallo("G8", f"resumen {k}.{campo}: presenta como ley algo no aprobado "
+                                     f"({PARECE_LEY.search(t).group(0)!r})")
 
     def _prosa(self, o) -> set:
         out = set()
@@ -454,23 +487,22 @@ class Gates:
         exact = re.compile(r"\b(" + "|".join(map(re.escape, neu["prohibidas_exactas"])) + r")\b") \
             if neu["prohibidas_exactas"] else None
         suaves = re.compile(r"\b(" + "|".join(neu["prohibidas"]) + r")\b", re.I) if neu["prohibidas"] else None
-        nombres = set()
-        prov = self.nuevo.json("docs/data/provincias.json") or {"provincias": []}
-        for p in prov["provincias"]:
-            for l in p["lideres"]:
-                if l.get("nombre") and len(l["nombre"].split()) >= 2:
-                    nombres.add(norm(l["nombre"]))
-        for n in self._conf("personas_publicas.json", {"nombres": []})["nombres"]:
-            nombres.add(norm(n))
+        nombres = list(self._conf("personas_publicas.json", {"nombres": []})["nombres"])
+        for side in (self.base, self.nuevo):
+            prov = side.json("docs/data/provincias.json") or {"provincias": []}
+            for p in prov["provincias"]:
+                for l in p["lideres"]:
+                    if l.get("nombre") and len(l["nombre"].split()) >= 2:
+                        nombres.append(l["nombre"])
+        patrones = patrones_nombres(nombres)
         for donde, txt, ctx in self.textos_nuevos():
             if exact and exact.search(txt):
                 self.fallo("G9", f"{donde}: palabra partidista '{exact.search(txt).group(0)}'")
             if suaves and suaves.search(txt):
                 self.fallo("G9", f"{donde}: palabra de juicio u opinión '{suaves.search(txt).group(0)}'")
-            nt = norm(txt)
-            for nom in nombres:
-                if nom and re.search(r"\b" + re.escape(nom) + r"\b", nt):
-                    self.fallo("G9", f"{donde}: nombra a una persona ({nom})")
+            persona = nombra_persona(txt, patrones)
+            if persona:
+                self.fallo("G9", f"{donde}: nombra a una persona ({persona})")
             if donde.endswith(".te_afecta") and ctx.get("estado_ley") not in ("aprobada", "promulgada"):
                 for frase in re.split(r"(?<=[.!?])\s+", txt.strip()):
                     if frase and not (frase.startswith("La propuesta busca") or frase.startswith("Si se aprueba,")):

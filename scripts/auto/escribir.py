@@ -39,17 +39,12 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from comun import ROOT, Arbol, hoy_et, norm  # noqa: E402
+from comun import (PARECE_LEY, ROOT, Arbol, hoy_et, nombra_persona, norm, numero_en_letras,  # noqa: E402
+                   numeros_ausentes, patrones_nombres)
 
 RES = "docs/data/resumenes.json"
 COLA = "pipeline-state/cola_resumenes.json"
 CANARIO = ROOT / "tests" / "fixtures" / "ia_canario.json"
-NUM_PALABRAS = re.compile(
-    r"\b(dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieci\w+|"
-    r"veinte|veinti\w+|treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa|cien|ciento|"
-    r"doscientos|trescientos|cuatrocientos|quinientos|seiscientos|setecientos|ochocientos|novecientos|"
-    r"mil|millón|millon|millones|billón|billon|billones)\b", re.I)
-PARECE_LEY = re.compile(r"\b(es ley|ya es|ya|entró en vigencia|entra en vigencia|está vigente|se aprobó la ley)\b", re.I)
 INICIO_PROPUESTA = ("La propuesta busca", "Si se aprueba,")
 
 
@@ -200,14 +195,9 @@ def ventana(fuente: str, cita: str, conf: dict) -> str:
     return f[max(0, i - w): i + len(_n(cita)) + w] if i >= 0 else f[: 2 * w]
 
 
-def numeros(s: str) -> list[str]:
-    return re.findall(r"\d[\d.,\-/]*\d|\d", s)
-
-
 def chequeos_codigo(frases: list[dict], fuente: str, item: dict, conf: dict, prohibidas, nombres) -> list[str]:
     err = []
     fn = _n(fuente)
-    fsin = re.sub(r"\s+", "", fuente)
     no_aprobado = item.get("estado_ley") not in ("aprobada", "promulgada")
     por_campo: dict[str, list[str]] = {}
     for fr in frases:
@@ -225,19 +215,17 @@ def chequeos_codigo(frases: list[dict], fuente: str, item: dict, conf: dict, pro
             err.append(f"(1) la cita no aparece tal cual en la fuente: {cita[:60]!r}")
         if len(cita) > conf["max_caracteres_cita"]:
             err.append("(5) cita demasiado larga")
-        for num in numeros(t):
-            if num not in fsin:
-                err.append(f"(2) el número {num} no está en la fuente")
-        if NUM_PALABRAS.search(t):
-            err.append(f"(2) número escrito en letras: {NUM_PALABRAS.search(t).group(0)!r}")
+        for num in numeros_ausentes(t, fuente):
+            err.append(f"(2) el número {num} no está en la fuente")
+        if numero_en_letras(t):
+            err.append(f"(2) número escrito en letras: {numero_en_letras(t)!r}")
         for rx in prohibidas:
             m = rx.search(t)
             if m:
                 err.append(f"(3) palabra no permitida: {m.group(0)!r}")
-        nt = norm(t)
-        for nom in nombres:
-            if re.search(r"\b" + re.escape(nom) + r"\b", nt):
-                err.append(f"(3) nombra a una persona: {nom}")
+        persona = nombra_persona(t, nombres)
+        if persona:
+            err.append(f"(3) nombra a una persona: {persona}")
         if no_aprobado:
             if campo == "te_afecta" and not t.startswith(INICIO_PROPUESTA):
                 err.append("(4) en un proyecto no aprobado 'te_afecta' empieza con 'La propuesta busca' o 'Si se aprueba,'")
@@ -290,14 +278,16 @@ def revisar(frases: list[dict], fuente: str, item: dict, modelo_obj, revisor: st
                 pasadas += 1
             else:
                 fallos.append({"pregunta": qid, "texto_pregunta": q, "frase": fr["texto"], "campo": fr["campo"]})
-    resumen = " ".join(f["texto"] for f in frases)
-    total += 1
-    dice_ley = pregunta(modelo_obj, revisor, "¿El RESUMEN dice que esto ya es ley?", resumen, None)
-    if dice_ley == (not no_aprobado):
-        pasadas += 1
-    else:
-        fallos.append({"pregunta": "Q7", "texto_pregunta": "¿El RESUMEN dice que esto ya es ley?", "frase": resumen,
-                       "campo": "*"})
+    # Q7 guards only against over-claiming: it is asked when the item is NOT law
+    # yet. For a passed law, a summary that doesn't repeat "es ley" is not wrong.
+    if no_aprobado:
+        resumen = " ".join(f["texto"] for f in frases)
+        total += 1
+        if not pregunta(modelo_obj, revisor, "¿El RESUMEN dice que esto ya es ley?", resumen, None):
+            pasadas += 1
+        else:
+            fallos.append({"pregunta": "Q7", "texto_pregunta": "¿El RESUMEN dice que esto ya es ley?", "frase": resumen,
+                           "campo": "*"})
     return pasadas, total, fallos
 
 
@@ -343,12 +333,12 @@ def cargar_listas(arbol: Arbol):
         prohibidas.append(re.compile(r"\b(" + "|".join(map(re.escape, neu["prohibidas_exactas"])) + r")\b"))
     if neu["prohibidas"]:
         prohibidas.append(re.compile(r"\b(" + "|".join(neu["prohibidas"]) + r")\b", re.I))
-    nombres = {norm(n) for n in arbol.leer("config/personas_publicas.json")["nombres"]}
+    nombres = list(arbol.leer("config/personas_publicas.json")["nombres"])
     for p in arbol.leer("docs/data/provincias.json")["provincias"]:
         for l in p["lideres"]:
             if len((l.get("nombre") or "").split()) >= 2:
-                nombres.add(norm(l["nombre"]))
-    return prohibidas, nombres
+                nombres.append(l["nombre"])
+    return prohibidas, patrones_nombres(nombres)
 
 
 def procesar(item: dict, fuente: str, modelo_obj, conf: dict, listas, escritores, revisores) -> dict:

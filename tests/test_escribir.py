@@ -172,3 +172,72 @@ def test_model_chain_falls_back_then_fails_closed():
             raise E.Rechazo("caido")
     with pytest.raises(E.Rechazo):
         E.Cadena(Nada(), ["a", "b"]).generar("", "p")
+
+
+# ---------------------------------------------------------------- review round 1 regressions
+def _roster_senador(arbol_copia):
+    prov = json.loads((arbol_copia / "docs/data/provincias.json").read_text())
+    return next(l["nombre"] for p in prov["provincias"] for l in p["lideres"]
+                if l["cargo"].startswith("Senador") and len(l["nombre"].split()) >= 4)
+
+
+def test_b1_partial_and_off_roster_names_are_caught(listas, arbol_copia):
+    completo = _roster_senador(arbol_copia)  # e.g. "Omar Leonel Fernández Domínguez"
+    t = completo.split()
+    for texto in (f"{t[0]} {t[-2]} pasó la iniciativa a la Comisión Permanente de Cultura.",   # first name + first surname
+                  f"{t[0]} {t[1]} {t[-2]} pasó la iniciativa a la Comisión Permanente de Cultura.",
+                  "El ministro Juan Pérez Gómez pasó la iniciativa a la Comisión Permanente de Cultura.",  # not on any roster
+                  "La senadora Ana pasó la iniciativa a la Comisión Permanente de Cultura."):
+        errs = E.chequeos_codigo(f(texto), FUENTE, ITEM, CONF, *listas)
+        assert any(e.startswith("(3) nombra") for e in errs), (texto, errs)
+
+
+def test_b1_escribir_and_gate_share_one_name_helper():
+    import run_gates
+    assert E.nombra_persona is run_gates.nombra_persona
+
+
+def test_n3_money_words_after_digits_are_allowed():
+    from comun import numero_en_letras
+    assert numero_en_letras("Presupuesto de 1500 millones de pesos.") is None
+    assert numero_en_letras("Son RD$5 mil millones.") is None
+    assert numero_en_letras("Son dos millones.") == "dos"
+    assert numero_en_letras("Cuesta millones.") == "millones"
+
+
+def test_n4_numbers_match_whole_tokens_only():
+    from comun import numeros_ausentes
+    assert numeros_ausentes("Vence en 30 días.", "Vence en el año 2030.") == ["30"]
+    assert numeros_ausentes("Son 50 casas.", "Son 1500 casas.") == ["50"]
+    assert numeros_ausentes("Iniciativa 03737-2024-2028-CD, 1500 millones.", "la 03737-2024-2028-CD y 1500 millones") == []
+
+
+class _Contador(E.Stub):
+    def __init__(self):
+        self.preguntas = []
+
+    def generar(self, modelo, prompt, system=None, schema=None):
+        if not schema:
+            self.preguntas.append(prompt.split("Pregunta: ", 1)[1].split("\n", 1)[0])
+        return super().generar(modelo, prompt, system, schema)
+
+
+def test_n2_q7_only_asked_when_not_law_yet():
+    fr = f("La Cámara pasó la iniciativa 03737-2024-2028-CD a la Comisión Permanente de Cultura.")
+    for estado, esperado in (("promulgada", False), ("votando", True)):
+        c = _Contador()
+        p, t, _ = E.revisar(fr, FUENTE, {"tipo": "ley", "estado_ley": estado}, c, "r", CONF)
+        assert p == t
+        assert any("ya es ley" in q for q in c.preguntas) is esperado
+
+
+@pytest.mark.parametrize("texto,nombra", [
+    ("Honra a la doctora Evangelina Rodríguez Perozo.", True),   # found by the live dry run (not on any roster)
+    ("Lo firmó el presidente Abinader.", True),
+    ("Declara a Monseñor Nouel provincia de ecoturismo.", False),   # place names that start like a title
+    ("Arregla la carretera de General Luperón.", False),
+    ("Lo pide el Procurador General de la República.", False),
+    ("Pausamos las listas de cada senador. Al compararlas hubo errores.", False),
+])
+def test_b1_titles_before_names_without_place_false_positives(texto, nombra):
+    assert (E.nombra_persona(texto, set()) is not None) is nombra

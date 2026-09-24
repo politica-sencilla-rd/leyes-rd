@@ -231,3 +231,103 @@ def test_g1_schema_rejects_unknown_estado(par):
     escribir(n, "docs/data/vigencia.json", v)
     ok, g = correr(base, n)
     assert not ok and any(f.startswith("G1") for f in g.fallos)
+
+
+# ---------------------------------------------------------------- review round 1 regressions
+def _con_resumen(n, sha, fuente="Proyecto de ley que crea el sistema nacional de cuidados. Presupuesto de 1500 millones.", **k):
+    (n / "pipeline-state" / "textos").mkdir(parents=True, exist_ok=True)
+    (n / "pipeline-state" / "textos" / f"{sha}.txt").write_text(fuente)
+    res = leer(n, "docs/data/resumenes.json")
+    res["resumenes"]["x"] = _resumen(sha, **k)
+    escribir(n, "docs/data/resumenes.json", res)
+
+
+def test_b1_g9_partial_roster_and_title_plus_name(par):
+    base, n = par
+    prov = leer(n, "docs/data/provincias.json")
+    completo = next(l["nombre"] for p in prov["provincias"] for l in p["lideres"]
+                    if l["cargo"].startswith("Senador") and len(l["nombre"].split()) >= 4)
+    t = completo.split()
+    for texto in (f"{t[0]} {t[-2]} propuso cuidar a los niños.", f"{t[0]} {t[1]} {t[-2]} propuso cuidar a los niños.",
+                  "Lo propuso el ministro Juan Pérez Gómez."):
+        _con_resumen(n, "a" * 64, titulo_facil=texto)
+        ok, g = correr(base, n)
+        assert not ok and any(f.startswith("G9") and "persona" in f for f in g.fallos), (texto, g.fallos)
+
+
+def test_b2_g3_money_jump_and_salary_range(par):
+    base, n = par
+    rec = [{"url": "https://cdn.bancentral.gov.do/x.xls", "status": 200, "error": None}]
+    f = leer(n, "docs/data/finanzas.json")
+    m = next(m for m in f["metricas"] if m["id"] == "inflacion")  # card on main says 5.35%
+    m["auto"] = {"valor_num": 5.13, "anterior_num": 3.71, "valor_texto": "5.13%", "periodo": "agosto 2026",
+                 "periodo_iso": "2026-08", "url": rec[0]["url"], "fuente": "BCRD", "texto": "t", "comparacion": "c"}
+    escribir(n, "docs/data/finanzas.json", f)
+    ok, g = correr(base, n, rec)
+    assert ok, g.fallos                                   # the real August number publishes
+    m["auto"]["valor_num"] = 28.0                          # in range, absurd jump
+    escribir(n, "docs/data/finanzas.json", f)
+    ok, g = correr(base, n, rec)
+    assert not ok and any("G3" in x and "inflacion" in x for x in g.fallos)
+    m["auto"]["valor_num"] = 5.13
+    s = next(m for m in f["metricas"] if m["id"] == "salario")
+    s["auto"] = {"valor_num": 3.0, "anterior_num": 2.9, "var_pct": 3.45, "valor_texto": "RD$3.00", "periodo": "junio 2026",
+                 "periodo_iso": "2026-06", "url": rec[0]["url"], "fuente": "TSS", "texto": "t", "comparacion": "c"}
+    escribir(n, "docs/data/finanzas.json", f)
+    ok, g = correr(base, n, rec)
+    assert not ok and any("G3" in x and "salario" in x for x in g.fallos)
+
+
+@pytest.mark.parametrize("campos,pista", [
+    ({"titulo_facil": "Crear un sistema de cuidados con 9999 millones de pesos."}, "9999"),
+    ({"titulo_facil": ""}, "vacío"),
+    ({"tipo": "proyecto", "titulo_facil": None, "que_es": "Ya es ley el sistema de cuidados.",
+      "por_que": "Para cuidar.", "te_afecta": "La propuesta busca cuidar a los niños.", "en_30_segundos": "Cuida."},
+     "no aprobado"),
+])
+def test_n1_g8_rechecks_the_record_against_the_stored_source(par, campos, pista):
+    base, n = par
+    _con_resumen(n, "a" * 64, **campos)
+    res = leer(n, "docs/data/resumenes.json")
+    res["resumenes"]["x"] = {k: v for k, v in res["resumenes"]["x"].items() if v is not None}
+    escribir(n, "docs/data/resumenes.json", res)
+    ok, g = correr(base, n)
+    assert not ok and any(pista in x for x in g.fallos), g.fallos
+
+
+def test_n1_g8_money_amount_from_source_passes(par):
+    base, n = par
+    _con_resumen(n, "a" * 64, titulo_facil="Crear un sistema de cuidados con 1500 millones.")
+    ok, g = correr(base, n)
+    assert ok, g.fallos
+
+
+def test_n1_g8_old_summary_edited_without_new_source_is_blocked(par):
+    base, n = par
+    sha = "a" * 64
+    _con_resumen(base, sha)
+    (n / "pipeline-state" / "textos" / f"{sha}.txt").write_text("fuente")
+    _con_resumen(n, sha, titulo_facil="Texto cambiado sin revisar por nadie.")
+    ok, g = correr(base, n)
+    assert not ok and any("sin un texto fuente nuevo" in x for x in g.fallos)
+
+
+def test_n9_g7_emptied_top_level_list_fails_instead_of_repair(par):
+    base, n = par
+    escribir(n, SES, {"sesiones": []})
+    ok, g = correr(base, n)
+    assert not ok and any(x.startswith("G7") and "sesiones" in x for x in g.fallos)
+    assert leer(n, SES)["sesiones"] == []  # not silently put back
+
+
+def test_n9_g7_withdrawn_summary_is_not_restored(par):
+    base, n = par
+    sha = "a" * 64
+    _con_resumen(base, sha)
+    (n / "pipeline-state" / "textos" / f"{sha}.txt").write_text("fuente")
+    res = leer(n, "docs/data/resumenes.json")
+    res["resumenes"] = {}
+    escribir(n, "docs/data/resumenes.json", res)
+    ok, g = correr(base, n)
+    assert ok, g.fallos
+    assert leer(n, "docs/data/resumenes.json")["resumenes"] == {}

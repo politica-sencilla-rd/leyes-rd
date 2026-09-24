@@ -1639,7 +1639,7 @@ main { max-width: 1120px; margin: 0 auto; padding: 8px var(--gutter) 56px; }
 
 /* ---------- Datos automáticos (robots + resúmenes IA revisados) ---------- */
 .datos-al { margin: 8px 0 12px; font-size: var(--t-cap); line-height: 1.5; color: var(--ink-3); }
-.datos-al .enlace-doc { display: inline; margin: 0; }
+.datos-al .enlace-doc { display: inline; margin: 0; white-space: nowrap; }
 .resumen-auto { margin: 6px 0 10px; font-size: var(--t-cap); line-height: 1.5; color: var(--ink-3); }
 .resumen-auto .enlace-doc, .resumen-auto .como-link { display: inline; margin: 0; color: inherit; text-decoration: underline; }
 .resumen-pendiente { margin: 6px 0 10px; font-size: var(--t-cap); color: var(--ink-3); font-style: italic; }

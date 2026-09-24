@@ -14,8 +14,10 @@ Rules: the year-ago comparison comes from the same file and the same series;
 debt/GDP is never computed by us (taken from the Crédito Público file); a
 metric changes value, comparison, period and link together or not at all; one
 metric that fails keeps its last good value (the others still publish); a
-period may never move backwards (gate G10); values outside sane ranges are
-blocked by gate G3.
+period may never move backwards (gate G10); a value outside its sane range, or
+one that jumps too far from the last published value (a shifted Excel column
+gives a wrong but "normal-looking" number), is dropped here and listed in the
+auto-fuente issue, and gate G3 blocks it again (comun.LIMITES_DINERO).
 
 Usage: python3 scripts/auto/dinero.py [--dry-run]
 """
@@ -30,7 +32,7 @@ import urllib.parse
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from comun import Arbol, hoy_et  # noqa: E402
+from comun import Arbol, hoy_et, problema_metrica, valor_previo  # noqa: E402
 from red import Cliente, FalloFuente  # noqa: E402
 
 FIN = "docs/data/finanzas.json"
@@ -72,10 +74,18 @@ def tendencia(nuevo: float, viejo: float, sube: str, baja: str, igual: str) -> s
 # ---------------------------------------------------------------- parsers (pure: bytes -> dict)
 def parse_ipc(contenido: bytes) -> dict:
     df = pd().read_excel(io.BytesIO(contenido), header=None)
+    # Column positions are checked, not trusted: col 2 must be the index and col 5
+    # the 12-month change, and col 5 must equal the change computed from col 2.
+    cab = " ".join(str(x) for x in df.iloc[:8, 2].tolist()), " ".join(str(x) for x in df.iloc[:8, 5].tolist())
+    if "Indice" not in cab[0] or "12 meses" not in cab[1]:
+        raise ValueError(f"el IPC cambió de formato (columnas: {cab[0][:40]!r} / {cab[1][:40]!r})")
     df[0] = df[0].ffill()
     d = df[df[1].isin(MES)].dropna(subset=[5])
     last = d.iloc[-1]
     prev = d[(d[0] == last[0] - 1) & (d[1] == last[1])].iloc[0]
+    calc = (float(last[2]) / float(prev[2]) - 1) * 100
+    if abs(calc - float(last[5])) > 0.05:
+        raise ValueError(f"el IPC no cuadra: el índice da {calc:.2f}% y la columna dice {float(last[5]):.2f}%")
     y, m = int(last[0]), MES.index(last[1]) + 1
     return {"valor_num": round(float(last[5]), 2), "anterior_num": round(float(prev[5]), 2),
             "periodo": f"{last[1].lower()} {y}", "periodo_iso": f"{y}-{m:02d}",
@@ -242,6 +252,11 @@ def main(argv=None) -> int:
         if m is None:
             continue
         viejo = m.get("auto") or {}
+        prob = problema_metrica(mid, d, valor_previo(m))
+        if prob:
+            fallos.append({"metrica": mid, "error": f"número no creíble, se conserva el anterior: {prob}"})
+            print(f"{mid}: DESCARTADO ({prob})", file=sys.stderr)
+            continue
         if viejo.get("periodo_iso") and d["periodo_iso"] < viejo["periodo_iso"]:
             fallos.append({"metrica": mid, "error": f"el archivo trae un período más viejo ({d['periodo_iso']})"})
             continue

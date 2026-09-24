@@ -196,3 +196,142 @@ def texto_pdf(pdf: bytes) -> str:
         import io
         import pypdf  # type: ignore
         return "\n".join((p.extract_text() or "") for p in pypdf.PdfReader(io.BytesIO(pdf)).pages)
+
+
+# ------------------------------------------------------------------ shared text checks
+# Used by BOTH escribir.py (before the AI checker) and gate G9/G8 (before publishing),
+# so the writer and the gate can never disagree about what counts as a name or a number.
+PARTICULAS = {"de", "del", "la", "las", "los", "y", "e", "san", "santa"}
+# Title + capitalised word. Titles that are also place names (Monseñor Nouel,
+# General Luperón, Padre Las Casas, Don Juan) are left out on purpose.
+CARGO_NOMBRE = re.compile(
+    r"\b(?i:senador|senadora|diputado|diputada|ministro|ministra|viceministro|viceministra|presidente|presidenta|"
+    r"vicepresidente|vicepresidenta|alcalde|alcaldesa|gobernador|gobernadora|legislador|legisladora|"
+    r"director|directora|juez|jueza|procurador|procuradora|doctor|doctora|licenciado|licenciada|"
+    r"ingeniero|ingeniera|profesor|profesora|señor|señora|(?:dr|dra|lic|ing|sr|sra)\.)"
+    r"\s+(?!(?:General|Ejecutiv[oa]|Nacional|Adjunt[oa]|Regional|Municipal|Provincial|Interin[oa]|Fiscal)\b)"
+    r"[A-ZÁÉÍÓÚÑ][a-záéíóúñü]+")
+
+
+def partes_nombre(nombre: str) -> list[str]:
+    return [t for t in re.split(r"[^a-z]+", norm(nombre)) if len(t) > 1 and t not in PARTICULAS]
+
+
+def pares_nombre(nombre: str) -> set[str]:
+    """Every two-word way to name a roster person: any two consecutive name words
+    (particles de/la/los dropped) plus each given name + first surname ('Omar
+    Fernández' for 'Omar Leonel Fernández Domínguez')."""
+    t = partes_nombre(nombre)
+    if len(t) < 2:
+        return set()
+    out = {f"{a} {b}" for a, b in zip(t, t[1:])}
+    primer_apellido = t[-2] if len(t) >= 3 else t[-1]
+    for dado in t[: len(t) - 2 if len(t) >= 3 else 1]:
+        out.add(f"{dado} {primer_apellido}")
+    return out
+
+
+def patrones_nombres(nombres) -> set[str]:
+    out: set[str] = set()
+    for n in nombres:
+        out |= pares_nombre(n)
+    return out
+
+
+def nombra_persona(texto: str, patrones: set[str]) -> str | None:
+    """-> what was found, or None. `patrones` from patrones_nombres(roster).
+    Catches a job title followed by a capitalised word ('el ministro Juan'), and
+    any two-word form of a roster name (particles ignored on both sides)."""
+    m = CARGO_NOMBRE.search(texto or "")
+    if m:
+        return m.group(0)
+    t = partes_nombre(texto or "")
+    for a, b in zip(t, t[1:]):
+        if f"{a} {b}" in patrones:
+            return f"{a} {b}"
+    return None
+
+
+NUM_PALABRAS = re.compile(
+    r"\b(dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieci\w+|"
+    r"veinte|veinti\w+|treinta|cuarenta|cincuenta|sesenta|setenta|ochenta|noventa|cien|ciento|"
+    r"doscientos|trescientos|cuatrocientos|quinientos|seiscientos|setecientos|ochocientos|novecientos|"
+    r"mil|millón|millon|millones|billón|billon|billones)\b", re.I)
+# "1500 millones" / "RD$2 mil" are fine: the digits carry the number, the word is the unit.
+PARECE_LEY = re.compile(r"\b(es ley|ya es|ya|entró en vigencia|entra en vigencia|está vigente|se aprobó la ley)\b", re.I)
+
+
+def numero_en_letras(texto: str) -> str | None:
+    unidades = {"mil", "millón", "millon", "millones", "billón", "billon", "billones"}
+    for m in NUM_PALABRAS.finditer(texto):
+        if m.group(0).lower() in unidades and re.search(r"\d(?:[.,]\d+)?\s+(?:mil\s+)?$", texto[: m.start()]):
+            continue
+        return m.group(0)
+    return None
+
+
+def numeros(s: str) -> list[str]:
+    return re.findall(r"\d[\d.,\-/]*\d|\d", s)
+
+
+def numeros_ausentes(texto: str, fuente: str) -> list[str]:
+    """Numbers in `texto` that do not appear in `fuente` as a whole token ('30'
+    does NOT match '2030'). Checked against the source with whitespace
+    collapsed and with whitespace removed (PDF text splits numbers)."""
+    variantes = (" ".join(fuente.split()), re.sub(r"\s+", "", fuente))
+    out = []
+    for num in numeros(texto):
+        rx = re.compile(r"(?<!\d)" + re.escape(num) + r"(?!\d)")
+        if not any(rx.search(v) for v in variantes):
+            out.append(num)
+    return out
+
+
+# ------------------------------------------------------------------ money plausibility
+# One inserted column in an official Excel gives a wrong but "in range" number.
+# Both dinero.py (drops the metric, lists it in the auto-fuente issue) and gate
+# G3 (blocks the publish) use this. 'salto' = max change vs the previous value
+# in percentage points; 'salto_pct' = max relative change in %.
+LIMITES_DINERO = {
+    "inflacion": {"rango": (-5, 30), "salto": 5},
+    "desempleo": {"rango": (2, 20), "salto": 3},
+    "crecimiento": {"rango": (-15, 20), "salto": 8},
+    "deuda": {"rango": (20, 100), "salto": 10},
+    "salario": {"rango": (15_000, 150_000), "salto_pct": 15},
+}
+
+
+def valor_previo(metrica: dict) -> float | None:
+    """Last published value: the robot's last number, else the hand-written card
+    value ('5.35% en un año' -> 5.35, 'RD$37,572.82 al mes' -> 37572.82)."""
+    auto = metrica.get("auto") or {}
+    if isinstance(auto.get("valor_num"), (int, float)):
+        return float(auto["valor_num"])
+    m = re.search(r"-?\d[\d,]*(?:\.\d+)?", str(metrica.get("valor") or ""))
+    return float(m.group(0).replace(",", "")) if m else None
+
+
+def problema_metrica(mid: str, auto: dict, previo: float | None) -> str | None:
+    """None when the number is plausible; else the reason it must not publish."""
+    lim = LIMITES_DINERO.get(mid)
+    v = auto.get("valor_num")
+    if lim is None:
+        return None
+    if not isinstance(v, (int, float)):
+        return f"{mid}: sin valor numérico"
+    lo, hi = lim["rango"]
+    if not lo <= v <= hi:
+        return f"{mid}: {v} fuera de {lo}..{hi}"
+    a = auto.get("anterior_num")
+    if isinstance(a, (int, float)) and not lo <= a <= hi:
+        return f"{mid}: el valor de hace un año ({a}) está fuera de {lo}..{hi}"
+    if previo is not None:
+        if "salto" in lim and abs(v - previo) > lim["salto"]:
+            return f"{mid}: cambió de {previo} a {v} (más de {lim['salto']} puntos de una vez)"
+        if "salto_pct" in lim and previo and abs(v / previo - 1) * 100 > lim["salto_pct"]:
+            return f"{mid}: cambió de {previo} a {v} (más de {lim['salto_pct']}% de una vez)"
+    if mid == "salario" and isinstance(a, (int, float)) and a and isinstance(auto.get("var_pct"), (int, float)):
+        calc = (v / a - 1) * 100
+        if abs(calc - auto["var_pct"]) > 0.5:
+            return f"salario: el archivo dice {auto['var_pct']}% pero {a} -> {v} es {calc:.2f}% (¿columna corrida?)"
+    return None

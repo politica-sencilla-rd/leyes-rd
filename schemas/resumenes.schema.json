@@ -70,19 +70,24 @@
      },
      "titulo_facil": {
       "type": "string",
-      "maxLength": 140
+      "maxLength": 140,
+      "minLength": 1
      },
      "que_es": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
      },
      "por_que": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
      },
      "te_afecta": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
      },
      "en_30_segundos": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
      }
     },
     "additionalProperties": false

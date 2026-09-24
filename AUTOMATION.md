@@ -16,8 +16,13 @@ fails, nothing is published and you get an issue plus GitHub's failure email.
 | Sun 8:00 am | `frescura.yml` | Stale data, broken links (including "página no encontrada" pages), live site vs `main` | issues only |
 | By hand | `sonda.yml` | One request per source from a GitHub runner, plus one AI call. Run this first. | nothing |
 
+Times are fixed in UTC by GitHub, so each run happens one hour earlier in
+winter (after early November) than shown here.
+
 Every publishing workflow runs in one queue (`publicar-main`), so two never
-write at the same time. Each one runs its tests, reads its source, then runs
+write at the same time. GitHub keeps at most one run waiting in that queue: if
+a third one arrives, the waiting one is cancelled. Nothing breaks; it simply
+runs again on its next schedule. Each one runs its tests, reads its source, then runs
 `scripts/auto/publicar.sh`:
 rebase on `main`, write the news item, write "Datos al", run gates G1 to G10, commit.
 
@@ -28,6 +33,18 @@ rebase on `main`, write the news item, write "Datos al", run gates G1 to G10, co
   an official domain or did not answer 200, too many changes, deleted items, good
   data replaced with blanks, text not written by the checked AI, party names,
   opinions or people's names, or a date moving backwards.
+- **No names of people in robot text.** The writer's code checks and gate G9
+  use one shared check (`scripts/auto/comun.py`): any two-word form of a
+  deputy's, senator's or official's name ("Omar Fernández" for "Omar Leonel
+  Fernández Domínguez"), or a job title followed by a name ("el ministro Juan"),
+  blocks the text, even for people not on any list.
+- **Money numbers must be believable.** A new money number must stay in a sane
+  range and can't jump too far from the last published one (inflation 5
+  points, unemployment 3, growth 8, debt 10, salary 15% or RD$15,000 to
+  RD$150,000). If it does, `dinero.py` keeps the old number and lists it in an
+  `auto-fuente` issue, and gate G3 blocks it again. The inflation reader also
+  checks that its column really is the 12-month rate. This catches an official
+  Excel file that gained a column.
 - **Named Senate votes can never come back by accident.** Gate G2 fails if any
   file under `docs/` holds a senator-by-name vote, or if
   `MOSTRAR_VOTOS_POR_SENADOR` is anything but `false`.
@@ -35,7 +52,9 @@ rebase on `main`, write the news item, write "Datos al", run gates G1 to G10, co
   API won't return, or one money file that fails: that item keeps its last good
   value and gets an issue. The others still publish.
 - **A dead source never erases data.** An empty or short pull is treated as a
-  failure. Only `estado-fuentes.json` is updated, so the site shows the source
+  failure. A single blank field is refilled with its last good value and noted
+  in the run log. A whole list or section that comes back empty blocks the
+  publish. Only `estado-fuentes.json` is updated, so the site shows the source
   did not answer. The job stays red.
 - **The AI fails closed.** Any error, timeout, block, odd answer or failed
   question means that item is not published. The site shows "Resumen en
@@ -52,12 +71,20 @@ rebase on `main`, write the news item, write "Datos al", run gates G1 to G10, co
 1. Run **Sonda** once (Actions tab, then Run workflow). It shows which sources a
    GitHub runner can reach. Only the Cámara SIL has been proven so far.
 2. Add the secret **`GEMINI_API_KEY`**. Use a free AI Studio key from a project
-   the site owns, with no billing attached. GitHub Models no longer works: it
+   the site owns, with no billing attached. On the free tier, Google may use
+   what we send to improve its products. That is fine here: we only send public
+   official texts. The free daily limit is shown only inside AI Studio.
+   Unverified: whether a busy day (several hundred check questions) fits in it.
+   If the limit is hit, the rest of the items fail closed and retry the next
+   day. GitHub Models no longer works: it
    answers "OK" with no model behind it (tested 2026-09-24).
 3. Set the repo variables **`PSRD_AUTOPUBLICAR = si`** and **`PSRD_IA = si`**.
    Until you do, every workflow runs in dry-run mode: it checks everything,
    publishes nothing, and saves the would-be change as a run artifact.
-4. Close PR #4. `camara.yml` replaces it.
+4. Close PR #4. `camara.yml` replaces it. The fixed Cámara period label and the
+   deputy it could not match (Jorge Frías, now matched by his SIL ID) are fixed
+   in code. The live site still shows the old label until the first real
+   `camara.yml` run with `PSRD_AUTOPUBLICAR = si`.
 
 ## Kill switch and undo
 
