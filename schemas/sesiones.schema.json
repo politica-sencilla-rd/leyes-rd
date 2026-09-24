@@ -1,0 +1,185 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "type": "object",
+ "required": [
+  "sesiones"
+ ],
+ "properties": {
+  "_nota": {
+   "type": "string"
+  },
+  "sesiones": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "acta",
+     "fecha",
+     "url_acta"
+    ],
+    "properties": {
+     "acta": {
+      "type": "string",
+      "pattern": "^\\d{4}$"
+     },
+     "fecha": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+     },
+     "url_acta": {
+      "type": "string",
+      "pattern": "^https?://"
+     },
+     "tipo": {
+      "enum": [
+       "ordinaria",
+       "extraordinaria"
+      ]
+     },
+     "estado": {
+      "enum": [
+       "no_procesada"
+      ]
+     },
+     "motivo": {
+      "type": "string"
+     },
+     "auto": {
+      "type": "boolean"
+     },
+     "notas_fuente": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "votaciones": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "additionalProperties": false,
+       "required": [
+        "iniciativa",
+        "titulo",
+        "a_favor",
+        "presentes",
+        "resultado"
+       ],
+       "properties": {
+        "iniciativa": {
+         "type": "string",
+         "pattern": "^\\d{5}-\\d{4}$"
+        },
+        "titulo": {
+         "type": "string",
+         "minLength": 3
+        },
+        "titulo_facil": {
+         "type": "string"
+        },
+        "a_favor": {
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 32
+        },
+        "presentes": {
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 32
+        },
+        "resultado": {
+         "type": "string"
+        },
+        "votacion_num": {
+         "type": "string",
+         "pattern": "^\\d{3}$"
+        },
+        "fuente": {
+         "type": "string"
+        },
+        "nota": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "asistencia": {
+      "type": "object",
+      "required": [
+       "presentes",
+       "ausentes",
+       "detalle"
+      ],
+      "properties": {
+       "presentes": {
+        "type": [
+         "integer",
+         "null"
+        ],
+        "minimum": 0,
+        "maximum": 32
+       },
+       "ausentes": {
+        "type": [
+         "integer",
+         "null"
+        ],
+        "minimum": 0,
+        "maximum": 32
+       },
+       "nota": {
+        "type": "string"
+       },
+       "detalle": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "additionalProperties": false,
+         "required": [
+          "nombre",
+          "estado"
+         ],
+         "properties": {
+          "nombre": {
+           "type": "string"
+          },
+          "estado": {
+           "enum": [
+            "presente",
+            "ausente",
+            "excusado"
+           ]
+          }
+         }
+        }
+       }
+      }
+     }
+    },
+    "if": {
+     "properties": {
+      "estado": {
+       "const": "no_procesada"
+      }
+     },
+     "required": [
+      "estado"
+     ]
+    },
+    "then": {
+     "not": {
+      "required": [
+       "votaciones"
+      ]
+     }
+    },
+    "else": {
+     "required": [
+      "votaciones",
+      "asistencia"
+     ]
+    }
+   }
+  }
+ }
+}

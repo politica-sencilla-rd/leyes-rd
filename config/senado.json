@@ -1,0 +1,8 @@
+{
+ "_nota": "Actas que la primera corrida automática vuelve a leer y reemplaza (errores conocidos de la carga a mano: 01165-2025 26/26, 00117-2024 27/28 y 4 votaciones que faltaban en la 0105). Gate G10 permite que estas, y solo estas, cambien sus votaciones. Tras el reemplazo quedan marcadas 'auto': true y no se vuelven a tocar.",
+ "reemplazar_una_vez": [
+  "0104",
+  "0105",
+  "0106"
+ ]
+}

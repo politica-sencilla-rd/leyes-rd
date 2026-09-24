@@ -1,0 +1,159 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "type": "object",
+ "required": [
+  "sectores"
+ ],
+ "properties": {
+  "_nota": {
+   "type": "string"
+  },
+  "busqueda_oficial": {
+   "type": "object"
+  },
+  "sectores": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "nombre",
+     "leyes"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "emoji": {
+      "type": "string"
+     },
+     "nombre": {
+      "type": "string"
+     },
+     "leyes": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": [
+        "titulo",
+        "estado",
+        "votos"
+       ],
+       "properties": {
+        "titulo": {
+         "type": "string",
+         "minLength": 3
+        },
+        "estado": {
+         "enum": [
+          "votando",
+          "aprobada",
+          "rechazada",
+          "vencida",
+          "retirada"
+         ]
+        },
+        "que_es": {
+         "type": "string"
+        },
+        "por_que": {
+         "type": "string"
+        },
+        "te_afecta": {
+         "type": "string"
+        },
+        "votos": {
+         "type": "array"
+        },
+        "camara": {
+         "type": "boolean"
+        },
+        "id": {
+         "type": "string"
+        },
+        "sil_id": {
+         "type": "integer"
+        },
+        "titulo_oficial": {
+         "type": "string"
+        },
+        "estado_sil": {
+         "type": "string"
+        },
+        "origen": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "materia": {
+         "type": [
+          "string",
+          "null"
+         ]
+        },
+        "url_oficial": {
+         "type": "string",
+         "pattern": "^https?://"
+        },
+        "datos_al": {
+         "type": "string",
+         "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "auto": {
+         "type": "boolean"
+        }
+       },
+       "if": {
+        "properties": {
+         "auto": {
+          "const": true
+         }
+        },
+        "required": [
+         "auto"
+        ]
+       },
+       "then": {
+        "required": [
+         "id",
+         "sil_id",
+         "titulo_oficial",
+         "url_oficial",
+         "datos_al"
+        ],
+        "not": {
+         "anyOf": [
+          {
+           "required": [
+            "que_es"
+           ]
+          },
+          {
+           "required": [
+            "por_que"
+           ]
+          },
+          {
+           "required": [
+            "te_afecta"
+           ]
+          }
+         ]
+        }
+       },
+       "else": {
+        "required": [
+         "que_es",
+         "por_que",
+         "te_afecta"
+        ]
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

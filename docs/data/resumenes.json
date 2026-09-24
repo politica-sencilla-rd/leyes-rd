@@ -1,0 +1,5 @@
+{
+ "_nota": "Resúmenes automáticos: los escribe un modelo de IA y otro modelo distinto los revisa pregunta por pregunta contra el documento oficial. Solo se publica lo que pasa todas las revisiones. 'sin_resumen' lista lo que no pasó tras 3 intentos.",
+ "resumenes": {},
+ "sin_resumen": {}
+}

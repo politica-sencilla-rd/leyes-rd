@@ -21,7 +21,7 @@
   <meta name="twitter:image" content="https://politica-sencilla-rd.github.io/leyes-rd/og.png" />
   <meta name="twitter:title" content="Política Sencilla RD" />
   <meta name="twitter:description" content="La política dominicana, explicada fácil." />
-  <link rel="stylesheet" href="styles.css?v=20260924c" />
+  <link rel="stylesheet" href="styles.css?v=20260924d" />
 </head>
 <body>
   <header class="topbar">
@@ -337,6 +337,7 @@
     <section id="view-mapa" class="view hidden sec-mapa">
       <header class="vista-cab">
       <h2 class="seccion-titulo">Las Provincias</h2>
+      <span id="datosAlMapa" hidden></span>
       <p class="seccion-desc">Quién representa a cada provincia: el senador y los diputados (hacen las leyes) y el gobernador y los alcaldes (gobiernan lo local).</p>
 
       <div class="en30">
@@ -415,16 +416,17 @@
       <div class="salud-pais">
         <div class="salud-head">
           <h3><span class="ico ico-pulso" aria-hidden="true"></span> ¿Cómo está el bolsillo del país?</h3>
+          <p class="datos-al hidden" id="datosAlDinero"></p>
           <p class="salud-leer"><b>¿Cómo leer esto?</b> Mira al país como a una familia: cuánto produce, cuánto gana, cuánto gasta y cuánto debe. Toca las <span class="palabra" data-def="palabras difíciles que se explican al tocarlas">palabras con puntitos</span> para entenderlas.</p>
         </div>
 
         <details class="cuanto-es">
           <summary><span class="ico ico-bulb" aria-hidden="true"></span> En cristiano: ¿el país está bien o mal de plata?</summary>
           <ul>
-            <li>Produce muchísimo (cerca de RD$8 billones al año) y casi no hay desempleo (5%).</li>
+            <li>Produce muchísimo (cerca de RD$8 billones al año) y casi no hay desempleo (<span data-auto="desempleo">5%</span>).</li>
             <li>Pero gasta más de lo que gana: por cada RD$100 que entra, salen como RD$121.</li>
             <li>Ese hueco se tapa con préstamos, por eso la deuda ya es casi medio año de todo lo que el país produce.</li>
-            <li>Y los precios siguen subiendo más rápido (5.35%) que lo que crece la economía (2.1%).</li>
+            <li>Y los precios siguen subiendo más rápido (<span data-auto="inflacion">5.35%</span>) que lo que crece la economía (<span data-auto="crecimiento">2.1%</span>).</li>
           </ul>
         </details>
 
@@ -438,7 +440,7 @@
             <a class="enlace-doc" href="https://www.hacienda.gob.do/gobierno-dominicano-cierra-2025-con-un-gasto-de-capital-de-2-6-del-pib/" target="_blank" rel="noopener">Ver la fuente oficial</a>
           </div>
 
-          <div class="salud-card">
+          <div class="salud-card" data-metrica="crecimiento">
             <span class="salud-emoji"><span class="ico ico-tendencia" aria-hidden="true"></span></span>
             <span class="salud-label">Cuánto creció la economía</span>
             <span class="salud-cifra">2.1%</span>
@@ -478,7 +480,7 @@
             <a class="enlace-doc" href="https://www.digepres.gob.do/poder-ejecutivo-deposita-en-el-congreso-nacional-proyecto-de-ley-de-presupuesto-general-del-estado-2026/" target="_blank" rel="noopener">Ver la fuente oficial</a>
           </div>
 
-          <div class="salud-card alerta">
+          <div class="salud-card alerta" data-metrica="deuda">
             <span class="salud-emoji"><span class="ico ico-tarjeta" aria-hidden="true"></span></span>
             <span class="salud-label">Lo que el país debe (<span class="palabra" data-def="Deuda pública: todo el dinero que el país ha pedido prestado y todavía no ha pagado.">deuda pública</span>)</span>
             <span class="salud-cifra">47.9% <span class="salud-unidad">del PIB</span></span>
@@ -488,7 +490,7 @@
             <a class="enlace-doc" href="https://www.hacienda.gob.do/gobierno-dominicano-cierra-2025-con-un-gasto-de-capital-de-2-6-del-pib/" target="_blank" rel="noopener">Ver la fuente oficial</a>
           </div>
 
-          <div class="salud-card">
+          <div class="salud-card" data-metrica="salario">
             <span class="salud-emoji"><span class="ico ico-briefcase" aria-hidden="true"></span></span>
             <span class="salud-label">El sueldo promedio del trabajador formal</span>
             <span class="salud-cifra">RD$37,572.82 <span class="salud-unidad">al mes</span></span>
@@ -498,7 +500,7 @@
             <a class="enlace-doc" href="https://presidencia.gob.do/noticias/salario-promedio-de-cotizantes-en-la-seguridad-social-supera-los-rd-38000" target="_blank" rel="noopener">Ver la fuente oficial</a>
           </div>
 
-          <div class="salud-card">
+          <div class="salud-card" data-metrica="inflacion">
             <span class="salud-emoji"><span class="ico ico-etiqueta" aria-hidden="true"></span></span>
             <span class="salud-label">Cuánto subieron los precios (<span class="palabra" data-def="Inflación: cuando las cosas suben de precio. Con el mismo dinero compras menos que antes.">inflación</span>)</span>
             <span class="salud-cifra">5.35% <span class="salud-unidad">en un año</span></span>
@@ -508,7 +510,7 @@
             <a class="enlace-doc" href="https://www.bancentral.gov.do/a/d/2541-inflacion" target="_blank" rel="noopener">Ver la fuente oficial (Banco Central)</a>
           </div>
 
-          <div class="salud-card">
+          <div class="salud-card" data-metrica="desempleo">
             <span class="salud-emoji"><span class="ico ico-users" aria-hidden="true"></span></span>
             <span class="salud-label">Gente que busca trabajo y no encuentra (desempleo)</span>
             <span class="salud-cifra">5.0%</span>
@@ -747,6 +749,16 @@
           </div>
         </details>
 
+        <details class="proyecto-fold" id="como-lo-hacemos">
+          <summary><span class="ico ico-info" aria-hidden="true"></span> Cómo se actualiza solo (y cómo lo hacemos)</summary>
+          <div class="proyecto-fold-body">
+            <p>Este sitio se actualiza solo. Unos robots gratis (GitHub Actions) leen cada semana las fuentes oficiales: las actas del Senado, el sistema de la Cámara de Diputados, la Consultoría Jurídica, el Banco Central, Crédito Público y la Seguridad Social.</p>
+            <p>Antes de publicar, el robot pasa controles automáticos: que cada dato tenga su enlace oficial, que los números tengan sentido, que nada bueno se borre y que nunca aparezca cómo votó cada senador.</p>
+            <p>Los <b>resúmenes automáticos</b> los escribe una inteligencia artificial solo con el texto oficial. Otra inteligencia artificial distinta los revisa frase por frase con preguntas de sí o no: ¿lo dice el documento?, ¿trae algo inventado?, ¿opina?, ¿nombra a alguien? Si una sola respuesta falla, no se publica y ves el documento oficial.</p>
+            <p>Cada sección dice <b>«Datos al»</b>: la fecha real de lo que publicó la fuente, que puede ser vieja porque algunas oficinas publican tarde. Si ves un error, avísanos.</p>
+          </div>
+        </details>
+
         <details class="proyecto-fold">
           <summary><span class="ico ico-honesto" aria-hidden="true"></span> El estado honesto, sin adornos</summary>
           <div class="proyecto-fold-body">
@@ -806,7 +818,7 @@
     </div>
   </dialog>
 
-  <script src="app.js?v=20260924c"></script>
+  <script src="app.js?v=20260924d"></script>
   <!-- Contador de visitas, privado y sin cookies (GoatCounter) -->
   <script data-goatcounter="https://politicasencillard.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>

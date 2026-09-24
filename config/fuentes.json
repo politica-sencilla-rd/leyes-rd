@@ -1,0 +1,85 @@
+{
+ "_nota": "Una fila por fuente. datos_al.py las usa para escribir docs/data/estado-fuentes.json y frescura.py para abrir avisos. max_dias_sin_novedad: días sin nada nuevo en la propia fuente antes de avisar (la fuente está callada). max_dias_sin_revisar: días sin que nuestro robot la revise (el robot se murió o está apagado). retraso: cómo publica la fuente, dicho en fácil para el sitio.",
+ "fuentes": {
+  "senado_actas": {
+   "nombre": "Actas del Senado",
+   "seccion": "sesiones",
+   "url_fuente": "https://www.senadord.gob.do/elaboracion-de-actas/actas-de-sesiones/",
+   "max_dias_sin_novedad": 90,
+   "max_dias_sin_revisar": 10,
+   "retraso": "El Senado publica sus actas unas 7 semanas después de cada sesión."
+  },
+  "camara_diputados": {
+   "nombre": "Cámara de Diputados (SIL)",
+   "seccion": "provincias",
+   "url_fuente": "https://www.diputadosrd.gob.do/sil",
+   "max_dias_sin_novedad": 45,
+   "max_dias_sin_revisar": 10,
+   "retraso": ""
+  },
+  "leyes_sil": {
+   "nombre": "Proyectos de ley (SIL)",
+   "seccion": "leyes",
+   "url_fuente": "https://www.diputadosrd.gob.do/sil",
+   "max_dias_sin_novedad": 14,
+   "max_dias_sin_revisar": 10,
+   "retraso": ""
+  },
+  "vigencia_consultoria": {
+   "nombre": "Leyes promulgadas (Consultoría Jurídica)",
+   "seccion": "vigencia",
+   "url_fuente": "https://www.consultoria.gov.do/consultas",
+   "max_dias_sin_novedad": 60,
+   "max_dias_sin_revisar": 10,
+   "retraso": "La Gaceta Oficial sale unos días después de firmada la ley."
+  },
+  "dinero_inflacion": {
+   "nombre": "Inflación (Banco Central)",
+   "seccion": "dinero",
+   "url_fuente": "https://www.bancentral.gov.do/a/d/2534-precios",
+   "max_dias_sin_novedad": 40,
+   "max_dias_sin_revisar": 20,
+   "retraso": ""
+  },
+  "dinero_desempleo": {
+   "nombre": "Desempleo (Banco Central)",
+   "seccion": "dinero",
+   "url_fuente": "https://www.bancentral.gov.do/a/d/2541-encuesta-continua-encft",
+   "max_dias_sin_novedad": 120,
+   "max_dias_sin_revisar": 20,
+   "retraso": "El Banco Central publica el empleo cada 3 meses."
+  },
+  "dinero_crecimiento": {
+   "nombre": "Crecimiento (Banco Central)",
+   "seccion": "dinero",
+   "url_fuente": "https://www.bancentral.gov.do/a/d/2533-sector-real",
+   "max_dias_sin_novedad": 400,
+   "max_dias_sin_revisar": 20,
+   "retraso": "El dato del año completo sale a inicios del año siguiente."
+  },
+  "dinero_deuda": {
+   "nombre": "Deuda (Crédito Público)",
+   "seccion": "dinero",
+   "url_fuente": "https://www.creditopublico.gob.do/inicio/estadisticas",
+   "max_dias_sin_novedad": 400,
+   "max_dias_sin_revisar": 20,
+   "retraso": "La deuda del año completo sale unos meses después de diciembre."
+  },
+  "dinero_salario": {
+   "nombre": "Sueldo promedio (TSS)",
+   "seccion": "dinero",
+   "url_fuente": "https://www.tss.gob.do/",
+   "max_dias_sin_novedad": 75,
+   "max_dias_sin_revisar": 20,
+   "retraso": "La TSS publica su boletín unos 2 meses después de cada mes."
+  },
+  "resumenes_ia": {
+   "nombre": "Resúmenes automáticos",
+   "seccion": "",
+   "url_fuente": "",
+   "max_dias_sin_novedad": 0,
+   "max_dias_sin_revisar": 3,
+   "retraso": ""
+  }
+ }
+}

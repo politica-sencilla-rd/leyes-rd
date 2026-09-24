@@ -1,0 +1,61 @@
+{
+ "_nota": "leyes.py: cómo se traduce el SIL de la Cámara al sitio. 'estado': estado del SIL -> estado del sitio (lo que no aparece aquí es 'votando'). 'entra_si': estados del SIL con los que un Proyecto de Ley NUEVO entra solo a la lista (pasó al menos una votación o fue promulgado). 'materia_a_sector': materia del SIL -> tema del sitio; lo que no esté aquí va a 'otros'.",
+ "estado": {
+  "aprobada": [
+   "Promulgado"
+  ],
+  "vencida": [
+   "Perimido",
+   "Plazo vencido",
+   "Perimido procedente del Senado"
+  ],
+  "retirada": [
+   "Retirado"
+  ],
+  "rechazada": [
+   "Rechazado",
+   "Rechazada",
+   "Desestimado"
+  ]
+ },
+ "entra_si": [
+  "Promulgado",
+  "Aprobado en 1ra. lectura",
+  "Aprobado en 2da. lectura",
+  "Aprobado en única lectura",
+  "Declarado de Urgencia y aprobado en Seg. lectura",
+  "Despachado al Ejecutivo",
+  "Aceptado por el Senado"
+ ],
+ "materia_a_sector": {
+  "JUSTICIA": "justicia",
+  "DERECHOS HUMANOS": "justicia",
+  "ASUNTOS PENITENCIARIOS": "justicia",
+  "DEFENSA AL CONSUMIDOR Y AL USUARIO": "justicia",
+  "INTERIOR Y POLICÍA": "justicia",
+  "TRABAJO": "trabajo",
+  "SEGURIDAD SOCIAL": "trabajo",
+  "PENSIONES": "trabajo",
+  "SALUD PÚBLICA Y ASISTENCIA SOCIAL": "salud",
+  "AGUA": "agua",
+  "OBRAS PÚBLICAS Y COMUNICACIONES": "transporte",
+  "TRANSPORTE AÉREO": "transporte",
+  "TECNOLOGÍA DE LA INFORMACIÓN Y LA COMUNICACIÓN": "conectividad",
+  "TELECOMUNICACIONES": "conectividad",
+  "VIVIENDA": "vivienda",
+  "MEDIO AMBIENTE": "ambiente",
+  "RECURSOS ENERGÉTICOS": "ambiente",
+  "MINERÍA": "ambiente",
+  "CULTURA": "cultura",
+  "DEPORTES": "cultura",
+  "CONMEMORATIVAS": "cultura",
+  "RECONOCIMIENTOS": "cultura",
+  "PATRIMONIO NACIONAL": "cultura",
+  "RELACIONES EXTERIORES": "exterior",
+  "FRONTERA": "exterior"
+ },
+ "sector_otros": {
+  "emoji": "📄",
+  "nombre": "Otros temas"
+ }
+}

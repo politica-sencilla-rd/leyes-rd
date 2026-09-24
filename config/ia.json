@@ -1,0 +1,38 @@
+{
+ "_nota": "Modelos y límites del escritor IA (scripts/auto/escribir.py). Los IDs de modelo de Gemini cambian sin aviso: se cambian aquí, no en el código. El revisor debe ser de otra familia que el escritor (el código lo exige). GitHub Models no sirve: desde el 2026-07-30 responde HTTP 200 con el texto 'OK' (probado el 2026-09-24).",
+ "api": "https://generativelanguage.googleapis.com/v1beta/models/{modelo}:generateContent",
+ "escritores": [
+  "gemini-3.5-flash-lite",
+  "gemini-3.1-flash-lite"
+ ],
+ "revisores": [
+  "gemma-4-31b-it",
+  "gemma-4-26b-a4b-it"
+ ],
+ "max_items_por_corrida": 15,
+ "max_minutos_por_corrida": 150,
+ "max_reescrituras": 2,
+ "max_intentos": 3,
+ "llamadas_en_paralelo": 4,
+ "segundos_entre_llamadas": 2.1,
+ "timeout_segundos": 120,
+ "ventana_caracteres": 1500,
+ "fuente_completa_si_menor_de": 6000,
+ "max_palabras_frase": 20,
+ "max_palabras_titulo_facil": 14,
+ "max_caracteres_cita": 300,
+ "campos_por_tipo": {
+  "titulo_voto": [
+   "titulo_facil"
+  ],
+  "proyecto": [
+   "que_es",
+   "por_que",
+   "te_afecta",
+   "en_30_segundos"
+  ],
+  "ley": [
+   "que_es"
+  ]
+ }
+}

@@ -5,11 +5,14 @@ function ico(nombre) {
 const SECTOR_ICO = {
     "⚖️": "scale", "💼": "briefcase", "🏥": "hospital", "💧": "droplet", "🚌": "bus",
     "📶": "antena", "🏠": "home", "🌱": "plant", "🎭": "masks", "🌍": "world",
+    "📄": "leyes",
 };
 const estadoLabel = {
     aprobada: ico("check") + "Aprobada",
     votando: ico("hourglass") + "En votación",
     rechazada: ico("x") + "Rechazada",
+    vencida: ico("reloj") + "Se venció sin votarse",
+    retirada: ico("minus") + "Retirada",
 };
 const votoLabel = { si: ico("thumb-up") + "Sí", no: ico("thumb-down") + "No", ausente: ico("minus") + "Ausente" };
 const votoClass = { si: "voto-si", no: "voto-no", ausente: "voto-aus" };
@@ -26,13 +29,119 @@ function avisoVotosCamara() {
 function avisoVotosSenado() {
     return el("p", "nota-fuente", AVISO_VOTOS_SENADO + " Los totales de cada votación (cuántos votaron a favor) sí salen en el acta oficial: los ves en Sesiones.");
 }
-const DATA_VERSION = "20260924c";
+const DATA_VERSION = "20260924d";
 async function cargar(path) {
     const sep = path.indexOf("?") >= 0 ? "&" : "?";
     const res = await fetch(path + sep + "v=" + DATA_VERSION);
     if (!res.ok)
         throw new Error("No se pudo cargar " + path);
     return (await res.json());
+}
+let RESUMENES = { resumenes: {}, sin_resumen: {} };
+let ESTADO = { fuentes: {} };
+function esc(t) {
+    return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+function resumenDe(id) {
+    const r = RESUMENES.resumenes[id];
+    return r && r.estado === "verificado" && r.checks_total > 0 && r.checks_pasados === r.checks_total ? r : null;
+}
+function fechaCorta(iso) {
+    const p = iso.split("-");
+    const mes = MESES[Number(p[1]) - 1] || p[1];
+    return p.length === 2 ? mes + " " + p[0] : Number(p[2]) + " " + mes.slice(0, 3) + " " + p[0];
+}
+function etiquetaResumen(r) {
+    const p = el("p", "resumen-auto");
+    p.append(el("span", null, ico("info") + "Resumen automático, revisado contra el documento oficial"));
+    const a = enlaceDoc(r.fuente_url, "Ver documento oficial ↗");
+    if (a)
+        p.append(document.createTextNode(" · "), a);
+    const como = el("a", "como-link", "¿Cómo lo hacemos?");
+    como.href = "#como-lo-hacemos";
+    como.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        mostrarVista("proyecto");
+        const d = document.getElementById("como-lo-hacemos");
+        if (d) {
+            d.open = true;
+            d.scrollIntoView({ block: "start" });
+        }
+    });
+    p.append(document.createTextNode(" · "), como);
+    return p;
+}
+function resumenPendiente(id, url) {
+    const falla = RESUMENES.sin_resumen && RESUMENES.sin_resumen[id];
+    const p = el("p", "resumen-pendiente", falla ? "Resumen automático no disponible. Lee el documento oficial." : "Resumen en preparación.");
+    const a = enlaceDoc((falla && falla.fuente_url) || url, "Documento oficial ↗");
+    if (a)
+        p.append(document.createTextNode(" "), a);
+    return p;
+}
+function lineaDatosAl(clave, manual) {
+    const f = ESTADO.fuentes[clave];
+    const partes = [];
+    if (f && f.datos_al)
+        partes.push("Datos al <b>" + fechaCorta(f.datos_al) + "</b>");
+    else if (manual)
+        partes.push("Datos al <b>" + fechaCorta(manual) + "</b>");
+    if (!partes.length)
+        return null;
+    if (f && f.revisado_el)
+        partes.push("revisado el " + fechaCorta(f.revisado_el));
+    if (f && (f.estado === "roto" || f.estado === "sin_respuesta"))
+        partes.push("la fuente no respondió en la última revisión");
+    const p = el("p", "datos-al", ico("reloj") + partes.join(" · ") + (f && f.retraso ? ". " + esc(f.retraso) : ""));
+    if (f && f.url_fuente) {
+        const a = enlaceDoc(f.url_fuente, "Fuente ↗");
+        if (a)
+            p.append(document.createTextNode(" "), a);
+    }
+    return p;
+}
+function estadoVigencia(l) {
+    if (!l.vigencia_fecha)
+        return "ver_articulo";
+    const hoy = new Date();
+    const iso = hoy.getFullYear() + "-" + String(hoy.getMonth() + 1).padStart(2, "0") + "-" + String(hoy.getDate()).padStart(2, "0");
+    return l.vigencia_fecha <= iso ? "vigencia" : "pronto";
+}
+function renderFinanzasAuto(fin) {
+    const hayAuto = (fin.metricas || []).some((m) => m.auto);
+    (fin.metricas || []).forEach((m) => {
+        const a = m.auto;
+        if (!a)
+            return;
+        document.querySelectorAll('[data-metrica="' + m.id + '"]').forEach((card) => {
+            const cifra = card.querySelector(".salud-cifra");
+            if (cifra)
+                cifra.innerHTML = esc(a.valor_texto) + (a.unidad ? ' <span class="salud-unidad">' + esc(a.unidad) + "</span>" : "");
+            const nota = card.querySelector(".salud-nota");
+            if (nota)
+                nota.textContent = a.texto;
+            const trend = card.querySelector(".salud-trend");
+            if (trend) {
+                trend.className = "salud-trend " + (a.anterior_num === undefined ? "" : a.valor_num > a.anterior_num ? "sube" : a.valor_num < a.anterior_num ? "baja" : "");
+                trend.textContent = a.comparacion;
+            }
+            const fuente = card.querySelector(".nota-fuente");
+            if (fuente)
+                fuente.textContent = a.fuente + " Datos al " + a.periodo + ". Lo actualiza un robot desde el archivo oficial.";
+            const link = card.querySelector("a.enlace-doc");
+            if (link && a.url_pagina)
+                link.href = a.url_pagina;
+        });
+        document.querySelectorAll('[data-auto="' + m.id + '"]').forEach((e) => { e.textContent = a.valor_texto; });
+    });
+    const host = document.getElementById("datosAlDinero");
+    if (host && hayAuto) {
+        const fechas = (fin.metricas || []).filter((m) => m.auto).map((m) => m.auto.periodo_iso).sort();
+        host.innerHTML = ico("reloj") + "Cada tarjeta dice su propia fecha. La más vieja es de <b>" + fechaCorta(fechas[0]) +
+            "</b> y la más nueva de <b>" + fechaCorta(fechas[fechas.length - 1]) + "</b>: cada oficina publica a su ritmo.";
+        host.classList.remove("hidden");
+    }
 }
 function el(tag, cls, html) {
     const n = document.createElement(tag);
@@ -145,6 +254,13 @@ function partirFuenteUrl(fuente) {
 function renderLeyes(data) {
     const cont = byId("sectores");
     cont.innerHTML = "";
+    const dAuto = lineaDatosAl("leyes_sil");
+    if (dAuto)
+        cont.append(dAuto);
+    if (data.datos_al_manual && data.sectores.some((s) => s.leyes.some((l) => !l.auto))) {
+        cont.append(el("p", "datos-al", ico("pencil") + "Las leyes explicadas a mano tienen datos al <b>" +
+            fechaCorta(data.datos_al_manual) + "</b>. Las marcadas «automático» las revisa un robot cada semana."));
+    }
     data.sectores.forEach((sec) => {
         const card = el("div", "sector");
         const head = el("div", "sector-head");
@@ -179,18 +295,34 @@ function numeroIniciativa(titulo) {
 }
 function renderLey(ley, busqueda) {
     const wrap = el("div", "ley");
-    wrap.append(el("p", "ley-titulo", ley.titulo));
-    wrap.append(el("span", "ley-estado estado-" + ley.estado, estadoLabel[ley.estado] || ley.estado));
+    const res = ley.auto && ley.id ? resumenDe("sil-" + ley.id) : null;
+    wrap.append(el("p", "ley-titulo", ley.auto ? esc(res && res.titulo_facil ? res.titulo_facil : ley.titulo) : ley.titulo));
+    wrap.append(el("span", "ley-estado estado-" + ley.estado, estadoLabel[ley.estado] || esc(ley.estado)));
+    if (ley.auto)
+        wrap.append(el("span", "ley-auto", "automático"));
     if (ley.camara) {
         wrap.append(el("span", "ley-camara", ico("banco") + "Cámara de Diputados"));
     }
     const det = el("div", "ley-detalle");
-    det.append(el("h4", null, "¿Qué es?"), el("p", null, ley.que_es));
+    if (ley.auto) {
+        if (res)
+            det.append(etiquetaResumen(res));
+        else
+            det.append(resumenPendiente("sil-" + ley.id, ley.url_oficial));
+        det.append(el("h4", null, "Nombre oficial"), el("p", "ley-oficial", esc(ley.titulo_oficial || ley.titulo)));
+        det.append(el("p", "nota-fuente", "En el SIL de la Cámara: <b>" + esc(ley.estado_sil || "") + "</b>" +
+            (ley.datos_al ? " · datos al " + fechaCorta(ley.datos_al) : "") + "."));
+    }
+    else if (ley.que_es) {
+        det.append(el("h4", null, "¿Qué es?"), el("p", null, ley.que_es));
+    }
     if (ley.te_afecta) {
         det.append(el("h4", null, "¿Y a mí qué?"), el("p", "te-afecta leer-voz", ley.te_afecta));
     }
     const sinMotivo = !ley.por_que || /^razón no indicada/i.test(ley.por_que);
-    if (sinMotivo) {
+    if (ley.auto) {
+    }
+    else if (sinMotivo) {
         det.append(el("p", "nota-fuente", "El Senado no publicó el motivo. Cuando lo publique, te lo contamos aquí."));
     }
     else {
@@ -215,7 +347,7 @@ function renderLey(ley, busqueda) {
     }
     const url = ley.camara ? busqueda === null || busqueda === void 0 ? void 0 : busqueda.camara : busqueda === null || busqueda === void 0 ? void 0 : busqueda.senado;
     if (url) {
-        const num = numeroIniciativa(ley.titulo);
+        const num = ley.id || numeroIniciativa(ley.titulo);
         const sistema = ley.camara ? "el SIL de la Cámara" : "el sistema del Senado";
         const texto = num
             ? "Búscala en el sistema oficial: iniciativa " + num
@@ -251,11 +383,25 @@ function conPunto(t) {
 function renderVigenciaLey(ley) {
     const card = el("details", "vig-ley");
     const cab = el("summary", "vig-ley-cab");
-    cab.append(el("span", "vig-ley-num", "Ley " + ley.numero), el("span", "vig-ley-titulo", ley.titulo), el("span", "vig-ley-fecha", (ley.estado === "pronto" ? ico("calendar") + "Entra: " : ico("check") + "Desde: ") + fechaLarga(ley.vigencia_fecha)), el("span", "vig-ley-chev", "▸"));
+    const est = estadoVigencia(ley);
+    cab.append(el("span", "vig-ley-num", "Ley " + esc(ley.numero)), el("span", "vig-ley-titulo", ley.auto ? esc(ley.titulo) : ley.titulo), el("span", "vig-ley-fecha", ley.vigencia_fecha
+        ? (est === "pronto" ? ico("calendar") + "Entra: " : ico("check") + "Desde: ") + fechaLarga(ley.vigencia_fecha)
+        : ico("info") + "Fecha: lee su artículo"), el("span", "vig-ley-chev", "▸"));
     card.append(cab);
     const det = el("div", "vig-ley-det");
-    det.append(el("h4", null, "¿Qué es?"), el("p", null, ley.que_es));
-    det.append(el("h4", null, ley.estado === "pronto" ? "¿Cuándo empieza?" : "¿Desde cuándo rige?"), el("p", "vig-ley-cuando", ley.vigencia_texto));
+    if (ley.que_es) {
+        det.append(el("h4", null, "¿Qué es?"), el("p", null, ley.que_es));
+    }
+    else {
+        const r = resumenDe("ley-" + ley.numero);
+        if (r && r.que_es)
+            det.append(el("h4", null, "¿Qué es?"), el("p", null, esc(r.que_es)), etiquetaResumen(r));
+        else
+            det.append(el("h4", null, "¿Qué es?"), resumenPendiente("ley-" + ley.numero, ley.url_documento));
+    }
+    det.append(el("h4", null, est === "pronto" ? "¿Cuándo empieza?" : est === "vigencia" ? "¿Desde cuándo rige?" : "¿Cuándo empieza?"), el("p", "vig-ley-cuando", ley.auto ? esc(ley.vigencia_texto) : ley.vigencia_texto));
+    if (ley.vigencia_cita)
+        det.append(el("p", "vig-ley-cita", "Lo que dice la ley: «" + esc(ley.vigencia_cita) + "»"));
     det.append(el("p", "vig-ley-meta", "El Presidente la firmó (la promulgó) el <b>" + fechaLarga(ley.promulgada) +
         "</b> y se publicó en la Gaceta Oficial " +
         (/^\d+$/.test(ley.gaceta) ? "núm. <b>" + ley.gaceta + "</b>" : "(" + ley.gaceta + ")") + "."));
@@ -298,8 +444,12 @@ function renderVigencia(data) {
             "<span class=\"palabra\" data-def=\"La vigencia es el momento desde el cual una ley ya manda y debes cumplirla. Algunas rigen de una vez; otras esperan unos meses.\">vigencia</span>: " +
             "la fecha desde la cual ya manda.";
     host.append(intro);
-    const vigentes = leyes.filter((l) => l.estado === "vigencia");
-    const pronto = leyes.filter((l) => l.estado === "pronto");
+    const dv = lineaDatosAl("vigencia_consultoria");
+    if (dv)
+        host.append(dv);
+    const vigentes = leyes.filter((l) => estadoVigencia(l) === "vigencia");
+    const pronto = leyes.filter((l) => estadoVigencia(l) === "pronto");
+    const verArticulo = leyes.filter((l) => estadoVigencia(l) === "ver_articulo");
     const grupo = (titulo, sub, arr, cls) => {
         if (!arr.length)
             return;
@@ -308,12 +458,13 @@ function renderVigencia(data) {
         cab.append(el("span", "grupo-nombre", titulo), el("span", "grupo-conteo", arr.length === 1 ? "1 ley" : arr.length + " leyes"), el("span", "grupo-chev", "▸"));
         wrap.append(cab);
         wrap.append(el("p", "vig-grupo-sub", sub));
-        const ordenadas = [...arr].sort((a, b) => b.vigencia_fecha.localeCompare(a.vigencia_fecha));
+        const ordenadas = [...arr].sort((a, b) => (b.vigencia_fecha || b.promulgada).localeCompare(a.vigencia_fecha || a.promulgada));
         ordenadas.forEach((l) => wrap.append(renderVigenciaLey(l)));
         host.append(wrap);
     };
     grupo(ico("reloj") + "Entran pronto", "Ya firmadas, pero su fecha de empezar todavía no llega. Apunta el día.", pronto, "vig-grupo-pronto");
     grupo(ico("check") + "Ya en vigencia (nuevas)", "Leyes recientes que ya mandan. Estas reglas ya te aplican.", vigentes, "vig-grupo-vigencia");
+    grupo(ico("info") + "Firmadas: la fecha la dice su artículo", "El robot no pudo calcular la fecha con seguridad. Abre la ley para leer su propio artículo.", verArticulo, "vig-grupo-articulo");
     if (data.regla_por_defecto) {
         const r = data.regla_por_defecto;
         const det = el("details", "vig-regla");
@@ -703,7 +854,11 @@ function renderLider(l, provincia, conFuncion = true) {
     if (l.asistencia && l.asistencia.total > 0) {
         const a = l.asistencia;
         chips.append(datoChip("calendar", "<b>" + a.presentes + "/" + a.total + "</b> sesiones", "Asistencia: estuvo en <b>" + a.presentes + " de " + a.total +
-            "</b> sesiones del Pleno (" + a.periodo + ")."));
+            "</b> sesiones del Pleno (" + esc(a.periodo) + ")." +
+            (a.datos_al ? " Datos al " + fechaCorta(a.datos_al) + "." : "") + (a.nota ? " " + esc(a.nota) : "")));
+    }
+    if (l.cargo_hasta) {
+        chips.append(el("p", "nota-fuente", ico("info") + "Según el SIL de la Cámara, estuvo en el cargo hasta el " + fechaLarga(l.cargo_hasta) + "."));
     }
     if (l.comisiones && l.comisiones.length) {
         chips.append(datoChip("folders", "<b>" + l.comisiones.length + "</b> comisiones", "Trabaja en " + l.comisiones.length + " comisiones: " + l.comisiones.join(", ") + "."));
@@ -1107,6 +1262,9 @@ function renderSesiones(data, votosPorSesion) {
         const ultima = fechas[fechas.length - 1];
         const cab = el("div", "ses-lista-cab");
         cab.append(el("h3", "ses-lista-titulo", "Sesiones del Senado"), el("p", "ses-lista-meta", data.sesiones.length + " sesiones · de la más reciente a la más antigua · última: " + fechaLarga(ultima)));
+        const dal = lineaDatosAl("senado_actas");
+        if (dal)
+            cab.append(dal);
         cont.append(cab);
     }
     if (MOSTRAR_VOTOS_POR_SENADOR && votosPorSesion) {
@@ -1123,6 +1281,16 @@ function renderSesiones(data, votosPorSesion) {
         cont.append(aviso);
     }
     data.sesiones.forEach((ses) => {
+        if (ses.estado === "no_procesada") {
+            const c = el("div", "sesion sesion-no-leida");
+            c.append(el("p", "sesion-head", '<span class="sesion-fecha">' + fechaLarga(ses.fecha) + '</span><span class="sesion-acta">Acta ' + esc(ses.acta) + "</span>"));
+            c.append(el("p", "nota-fuente", "El robot no pudo leer esta acta completa, así que no mostramos sus números. Léela en el documento oficial."));
+            const a = enlaceDoc(ses.url_acta, "Ver el acta oficial (PDF)");
+            if (a)
+                c.append(a);
+            cont.append(c);
+            return;
+        }
         const card = el("details", "sesion");
         const head = el("summary", "sesion-head");
         head.append(el("span", "sesion-fecha", fechaLarga(ses.fecha)), el("span", "sesion-conteo", ses.votaciones.length + " votaciones"), el("span", "sesion-acta", "Acta " + ses.acta), el("span", "sesion-chev", "▸"));
@@ -1130,14 +1298,20 @@ function renderSesiones(data, votosPorSesion) {
         const vlist = el("div", "votaciones");
         ses.votaciones.forEach((v) => {
             const row = el("div", "votacion");
-            if (v.titulo_facil) {
-                row.append(el("p", "votacion-titulo", v.titulo_facil));
+            const auto = v.titulo_facil ? null : resumenDe("senado-" + v.iniciativa);
+            const facil = v.titulo_facil || (auto && auto.titulo_facil ? esc(auto.titulo_facil) : "");
+            if (facil) {
+                row.append(el("p", "votacion-titulo", facil));
+                if (auto)
+                    row.append(etiquetaResumen(auto));
                 const oficial = el("details", "oficial");
-                oficial.append(el("summary", null, ico("leyes") + "Ver nombre oficial"), el("p", "votacion-titulo-oficial", v.titulo));
+                oficial.append(el("summary", null, ico("leyes") + "Ver nombre oficial"), el("p", "votacion-titulo-oficial", ses.auto ? esc(v.titulo) : v.titulo));
                 row.append(oficial);
             }
             else {
-                row.append(el("p", "votacion-titulo", v.titulo));
+                row.append(el("p", "votacion-titulo", ses.auto ? esc(v.titulo) : v.titulo));
+                if (ses.auto)
+                    row.append(el("p", "resumen-pendiente", "Título fácil en preparación: arriba va el nombre oficial."));
             }
             const meta = el("div", "votacion-meta");
             const aprob = /^aprob/i.test(v.resultado);
@@ -1151,11 +1325,17 @@ function renderSesiones(data, votosPorSesion) {
             const fill = el("span", "voto-barra-fill");
             fill.style.width = pct + "%";
             barra.append(fill);
-            meta.append(conteo, barra, el("span", aprob ? "v-resultado" : "v-resultado v-resultado-neutral", icono + v.resultado), el("span", "v-iniciativa", "Iniciativa " + v.iniciativa));
+            meta.append(conteo, barra, el("span", aprob ? "v-resultado" : "v-resultado v-resultado-neutral", icono + v.resultado), el("span", "v-iniciativa", "Iniciativa " + esc(v.iniciativa) + (v.fuente ? " · " + esc(v.fuente) : "")));
             row.append(meta);
             vlist.append(row);
         });
         card.append(vlist);
+        if (ses.notas_fuente && ses.notas_fuente.length) {
+            const notas = el("div", "notas-fuente");
+            notas.append(el("p", null, ico("alerta") + "<b>Lo que dejamos fuera y por qué</b>"));
+            ses.notas_fuente.forEach((n) => notas.append(el("p", "nota-fuente", esc(n))));
+            card.append(notas);
+        }
         const det = ses.asistencia.detalle;
         if (!det.length && ses.asistencia.ausentes === 0) {
             card.append(el("p", "asistencia-nula", ico("users") + "Según el acta, ningún senador presentó excusa ese día."));
@@ -1180,7 +1360,9 @@ function renderSesiones(data, votosPorSesion) {
                     ul.append(fila);
                 });
                 body.append(ul);
-                body.append(el("p", "nota-fuente", "Lista de senadores que presentaron excusa, según el acta oficial. El acta no publica una cifra total de presentes."));
+                body.append(el("p", "nota-fuente", ses.asistencia.presentes !== null && ses.asistencia.presentes !== undefined
+                    ? "Lista de senadores ausentes, según el acta oficial. Presentes en el último pase de lista: <b>" + ses.asistencia.presentes + "</b>."
+                    : "Lista de senadores que presentaron excusa, según el acta oficial. El acta no publica una cifra total de presentes."));
             }
             else {
                 body.append(el("p", "nota-fuente", "La lista por nombre no está disponible de forma legible para esta sesión."));
@@ -1655,14 +1837,18 @@ function llenarCifrasHome(leyes, prov, ses) {
         setC("sesiones", "Última sesión: " + fechaLarga(ult));
     }
 }
-function construirSabias(leyes, ses) {
+function construirSabias(leyes, ses, fin) {
     const datos = [];
+    const sal = fin && (fin.metricas || []).find((m) => m.id === "salario" && m.auto);
+    const deudaPP = fin && fin.comparaciones_derivadas && fin.comparaciones_derivadas.deuda_por_persona_usd;
     datos.push({
-        texto: "El sueldo promedio del trabajador formal en RD es <b>RD$37,572.82 al mes</b>, según la seguridad social (junio 2025).",
+        texto: sal && sal.auto
+            ? "El sueldo promedio del trabajador formal en RD es <b>" + esc(sal.auto.valor_texto) + " al mes</b>, según la seguridad social (" + esc(sal.auto.periodo) + ")."
+            : "El sueldo promedio del trabajador formal en RD es <b>RD$37,572.82 al mes</b>, según la seguridad social (junio 2025).",
         cta: "Ver el bolsillo del país", destino: "dinero", acento: "acc-dinero",
     });
     datos.push({
-        texto: "Cada dominicano carga <b>US$5,713</b> de la deuda del país, sin haberlo pedido.",
+        texto: "Cada dominicano carga <b>US$" + (typeof deudaPP === "number" ? deudaPP.toLocaleString("en-US") : "5,713") + "</b> de la deuda del país, sin haberlo pedido.",
         cta: "Ver el dinero", destino: "dinero", acento: "acc-dinero",
     });
     datos.push({
@@ -1688,14 +1874,14 @@ function construirSabias(leyes, ses) {
     });
     return datos;
 }
-function setupSabias(leyes, ses) {
+function setupSabias(leyes, ses, fin) {
     const seccion = document.getElementById("sabias");
     const viva = document.getElementById("sabiasViva");
     const puntosCont = document.getElementById("sabiasPuntos");
     const pausaBtn = document.getElementById("sabiasPausa");
     if (!seccion || !viva || !puntosCont || !pausaBtn)
         return;
-    const datos = construirSabias(leyes, ses);
+    const datos = construirSabias(leyes, ses, fin);
     if (!datos.length) {
         seccion.classList.add("hidden");
         return;
@@ -1940,6 +2126,19 @@ async function init() {
                 : Promise.resolve(undefined),
             cargar("data/fondos_publicos.json").catch(() => ({ leyenda_estado: {}, fondos: [] })),
         ]);
+        const [resumenes, estado, finanzas] = await Promise.all([
+            cargar("data/resumenes.json").catch(() => ({ resumenes: {}, sin_resumen: {} })),
+            cargar("data/estado-fuentes.json").catch(() => ({ fuentes: {} })),
+            cargar("data/finanzas.json").catch(() => ({ metricas: [] })),
+        ]);
+        RESUMENES = resumenes;
+        ESTADO = estado;
+        sesiones.sesiones.forEach((x) => {
+            if (!x.votaciones)
+                x.votaciones = [];
+            if (!x.asistencia)
+                x.asistencia = { presentes: null, ausentes: null, detalle: [] };
+        });
         renderVigencia(vigencia);
         renderNovedades(novedades);
         renderLeyes(leyes);
@@ -1949,9 +2148,14 @@ async function init() {
         renderSesiones(sesiones, votosPorSesion);
         if (fondos && fondos.leyenda_estado)
             renderFondos(fondos);
+        renderFinanzasAuto(finanzas);
+        const dMapa = document.getElementById("datosAlMapa");
+        const lMapa = lineaDatosAl("camara_diputados");
+        if (dMapa && lMapa)
+            dMapa.replaceWith(lMapa);
         setupEscuchar();
         llenarCifrasHome(leyes, provincias, sesiones);
-        setupSabias(leyes, sesiones);
+        setupSabias(leyes, sesiones, finanzas);
         setupCasoAccordion();
         setupDineroFolds();
         setupBuscadorProvincias();

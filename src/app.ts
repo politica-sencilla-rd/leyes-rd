@@ -2,7 +2,7 @@
 // Compiles to site/app.js via `npm run build` (tsc). Loads sample JSON,
 // groups laws by sector, expandable cards + province profiles.
 
-type Estado = "aprobada" | "votando" | "rechazada";
+type Estado = "aprobada" | "votando" | "rechazada" | "vencida" | "retirada";
 type Voto = "si" | "no" | "ausente";
 
 interface VotoFila {
@@ -13,13 +13,23 @@ interface VotoFila {
 interface Ley {
   titulo: string;
   estado: Estado;
-  que_es: string;
-  por_que: string;
+  // Hand-written entries always carry these. Entries added by the robot
+  // (auto: true) never do: their plain text lives in resumenes.json.
+  que_es?: string;
+  por_que?: string;
   te_afecta?: string;
   votos?: VotoFila[];
   // true when the bill comes from the Cámara de Diputados (lower house)
   // instead of the Senate. Shows a small "Cámara de Diputados" chip.
   camara?: boolean;
+  // Robot-tracked bills (scripts/auto/leyes.py): SIL number, official title,
+  // the SIL's own status wording and the date the data was read.
+  id?: string;
+  titulo_oficial?: string;
+  estado_sil?: string;
+  datos_al?: string;
+  url_oficial?: string;
+  auto?: boolean;
 }
 
 interface Sector {
@@ -40,6 +50,7 @@ interface BusquedaOficial {
 interface LeyesData {
   sectores: Sector[];
   busqueda_oficial?: BusquedaOficial;
+  datos_al_manual?: string;
 }
 
 // --- Leyes que entran en vigencia (4ª sugerencia de un usuario real) ---
@@ -52,11 +63,15 @@ interface LeyesData {
 interface VigenciaLey {
   numero: string;
   titulo: string;
-  que_es: string;
+  que_es?: string;           // hand entries; robot entries use resumenes.json
   promulgada: string;        // ISO date the President signed it
   gaceta: string;            // Gaceta Oficial number (or a short description)
-  estado: "vigencia" | "pronto";
-  vigencia_fecha: string;    // ISO date it takes / took effect
+  // Stored value is only a hint: the browser recomputes it from vigencia_fecha
+  // and today (estadoVigencia), so "Entra pronto" can never go stale again.
+  estado: "vigencia" | "pronto" | "ver_articulo";
+  vigencia_fecha: string | null; // ISO date it takes / took effect; null = read the article
+  vigencia_cita?: string;    // the law's own words about when it starts
+  auto?: boolean;
   vigencia_texto: string;    // plain-Spanish explanation of that date
   fuente: string;            // per-entry source citation
   // Official-document deep link (5ª sugerencia de un usuario real, Ángel).
@@ -98,6 +113,8 @@ interface Asistenciasenador {
   presentes: number;
   total: number;
   periodo: string;
+  datos_al?: string;         // newest session in the official record (robot)
+  nota?: string;             // e.g. "could not update this week"
   fuente: string;
 }
 
@@ -140,6 +157,8 @@ interface Lider {
   // Per-person salary, used for mayors (each ayuntamiento pays its own amount,
   // so this is read from that municipality's own nómina, not a role-wide rate).
   sueldo?: { monto: string; mes: string; fuente: string };
+  // The Cámara's SIL says this term ended on this date (robot, camara.py).
+  cargo_hasta?: string;
 }
 
 // One regidor (town-council member): name + party. Filled only with verified
@@ -179,6 +198,7 @@ interface Votacion {
   a_favor: number;
   presentes: number;
   resultado: string;
+  fuente?: string;           // "Acta 0127, votación electrónica 003"
 }
 
 interface AsistenciaDetalle {
@@ -190,6 +210,7 @@ interface Asistencia {
   presentes: number | null;
   ausentes: number | null;
   detalle: AsistenciaDetalle[];
+  nota?: string;
 }
 
 interface Sesion {
@@ -201,6 +222,11 @@ interface Sesion {
   // un usuario real, Ángel). Optional so sessions without a recoverable PDF
   // render unchanged.
   url_acta?: string;
+  // Robot-read actas: known source errors shown in plain words, and actas the
+  // robot could not fully account for (shown only as a link, never half-read).
+  auto?: boolean;
+  estado?: "no_procesada";
+  notas_fuente?: string[];
 }
 
 interface SesionesData {
@@ -362,12 +388,15 @@ function ico(nombre: string): string {
 const SECTOR_ICO: Record<string, string> = {
   "⚖️": "scale", "💼": "briefcase", "🏥": "hospital", "💧": "droplet", "🚌": "bus",
   "📶": "antena", "🏠": "home", "🌱": "plant", "🎭": "masks", "🌍": "world",
+  "📄": "leyes",
 };
 
 const estadoLabel: Record<Estado, string> = {
   aprobada: ico("check") + "Aprobada",
   votando: ico("hourglass") + "En votación",
   rechazada: ico("x") + "Rechazada",
+  vencida: ico("reloj") + "Se venció sin votarse",
+  retirada: ico("minus") + "Retirada",
 };
 const votoLabel: Record<Voto, string> = { si: ico("thumb-up") + "Sí", no: ico("thumb-down") + "No", ausente: ico("minus") + "Ausente" };
 const votoClass: Record<Voto, string> = { si: "voto-si", no: "voto-no", ausente: "voto-aus" };
@@ -399,13 +428,174 @@ function avisoVotosSenado(): HTMLElement {
 // cache-buster (?v=...). Appended to every data fetch so returning visitors
 // don't render stale JSON from the browser's HTTP cache when only the data
 // changed (the data files are not versioned in the HTML).
-const DATA_VERSION = "20260924c";
+const DATA_VERSION = "20260924d";
 
 async function cargar<T>(path: string): Promise<T> {
   const sep = path.indexOf("?") >= 0 ? "&" : "?";
   const res = await fetch(path + sep + "v=" + DATA_VERSION);
   if (!res.ok) throw new Error("No se pudo cargar " + path);
   return (await res.json()) as T;
+}
+
+/* ---------- Datos automáticos: resúmenes IA verificados y "Datos al" ---------- */
+// resumenes.json: plain Spanish written by one AI model and checked question by
+// question by a different one against the official text. Only records marked
+// "verificado" with every check passed are shown (the gates enforce the same).
+interface Resumen {
+  tipo: string;
+  estado: string;
+  estado_ley?: string | null;
+  fuente_url: string;
+  fuente_nombre?: string;
+  checks_pasados: number;
+  checks_total: number;
+  fecha: string;
+  titulo_facil?: string;
+  que_es?: string;
+  por_que?: string;
+  te_afecta?: string;
+  en_30_segundos?: string;
+}
+interface ResumenesData {
+  resumenes: Record<string, Resumen>;
+  sin_resumen?: Record<string, { intentos: number; fuente_url?: string }>;
+}
+// estado-fuentes.json: per source, "datos_al" computed from the data itself and
+// "revisado_el" = the day a robot last checked it.
+interface EstadoFuente {
+  nombre: string;
+  datos_al?: string | null;
+  revisado_el?: string;
+  estado: string;
+  url_fuente?: string;
+  retraso?: string;
+}
+interface EstadoFuentesData {
+  fuentes: Record<string, EstadoFuente>;
+}
+interface MetricaAuto {
+  valor_texto: string;
+  unidad?: string;
+  periodo: string;
+  periodo_iso: string;
+  texto: string;
+  comparacion: string;
+  fuente: string;
+  url: string;
+  url_pagina?: string;
+  valor_num: number;
+  anterior_num?: number;
+}
+interface FinanzasData {
+  metricas: { id: string; auto?: MetricaAuto }[];
+  comparaciones_derivadas?: Record<string, number | string>;
+}
+
+let RESUMENES: ResumenesData = { resumenes: {}, sin_resumen: {} };
+let ESTADO: EstadoFuentesData = { fuentes: {} };
+
+// Robot and AI text is never trusted as HTML.
+function esc(t: string): string {
+  return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+function resumenDe(id: string): Resumen | null {
+  const r = RESUMENES.resumenes[id];
+  return r && r.estado === "verificado" && r.checks_total > 0 && r.checks_pasados === r.checks_total ? r : null;
+}
+
+// "2026-07-22" -> "22 jul 2026"; "2026-08" -> "agosto 2026".
+function fechaCorta(iso: string): string {
+  const p = iso.split("-");
+  const mes = MESES[Number(p[1]) - 1] || p[1];
+  return p.length === 2 ? mes + " " + p[0] : Number(p[2]) + " " + mes.slice(0, 3) + " " + p[0];
+}
+
+// The label under every AI text (design 5.4; Google asks that AI content be disclosed).
+function etiquetaResumen(r: Resumen): HTMLElement {
+  const p = el("p", "resumen-auto");
+  p.append(el("span", null, ico("info") + "Resumen automático, revisado contra el documento oficial"));
+  const a = enlaceDoc(r.fuente_url, "Ver documento oficial ↗");
+  if (a) p.append(document.createTextNode(" · "), a);
+  const como = el("a", "como-link", "¿Cómo lo hacemos?") as HTMLAnchorElement;
+  como.href = "#como-lo-hacemos";
+  como.addEventListener("click", (e: Event) => {
+    e.preventDefault();
+    e.stopPropagation();
+    mostrarVista("proyecto");
+    const d = document.getElementById("como-lo-hacemos") as HTMLDetailsElement | null;
+    if (d) { d.open = true; d.scrollIntoView({ block: "start" }); }
+  });
+  p.append(document.createTextNode(" · "), como);
+  return p;
+}
+
+// What to show while no verified summary exists.
+function resumenPendiente(id: string, url?: string): HTMLElement {
+  const falla = RESUMENES.sin_resumen && RESUMENES.sin_resumen[id];
+  const p = el("p", "resumen-pendiente",
+    falla ? "Resumen automático no disponible. Lee el documento oficial." : "Resumen en preparación.");
+  const a = enlaceDoc((falla && falla.fuente_url) || url, "Documento oficial ↗");
+  if (a) p.append(document.createTextNode(" "), a);
+  return p;
+}
+
+// One honest line per section: "Datos al 22 jul 2026 · revisado el 29 sep 2026 ·
+// El Senado publica sus actas unas 7 semanas después (fuente)".
+function lineaDatosAl(clave: string, manual?: string): HTMLElement | null {
+  const f = ESTADO.fuentes[clave];
+  const partes: string[] = [];
+  if (f && f.datos_al) partes.push("Datos al <b>" + fechaCorta(f.datos_al) + "</b>");
+  else if (manual) partes.push("Datos al <b>" + fechaCorta(manual) + "</b>");
+  if (!partes.length) return null;
+  if (f && f.revisado_el) partes.push("revisado el " + fechaCorta(f.revisado_el));
+  if (f && (f.estado === "roto" || f.estado === "sin_respuesta")) partes.push("la fuente no respondió en la última revisión");
+  const p = el("p", "datos-al", ico("reloj") + partes.join(" · ") + (f && f.retraso ? ". " + esc(f.retraso) : ""));
+  if (f && f.url_fuente) {
+    const a = enlaceDoc(f.url_fuente, "Fuente ↗");
+    if (a) p.append(document.createTextNode(" "), a);
+  }
+  return p;
+}
+
+// "Ya rige / entra pronto / lee el artículo", computed from the date and today.
+function estadoVigencia(l: VigenciaLey): "vigencia" | "pronto" | "ver_articulo" {
+  if (!l.vigencia_fecha) return "ver_articulo";
+  const hoy = new Date();
+  const iso = hoy.getFullYear() + "-" + String(hoy.getMonth() + 1).padStart(2, "0") + "-" + String(hoy.getDate()).padStart(2, "0");
+  return l.vigencia_fecha <= iso ? "vigencia" : "pronto";
+}
+
+// Money cards marked data-metrica take the robot's numbers when they exist.
+function renderFinanzasAuto(fin: FinanzasData): void {
+  const hayAuto = (fin.metricas || []).some((m) => m.auto);
+  (fin.metricas || []).forEach((m) => {
+    const a = m.auto;
+    if (!a) return;
+    document.querySelectorAll<HTMLElement>('[data-metrica="' + m.id + '"]').forEach((card) => {
+      const cifra = card.querySelector(".salud-cifra");
+      if (cifra) cifra.innerHTML = esc(a.valor_texto) + (a.unidad ? ' <span class="salud-unidad">' + esc(a.unidad) + "</span>" : "");
+      const nota = card.querySelector(".salud-nota");
+      if (nota) nota.textContent = a.texto;
+      const trend = card.querySelector(".salud-trend");
+      if (trend) {
+        trend.className = "salud-trend " + (a.anterior_num === undefined ? "" : a.valor_num > a.anterior_num ? "sube" : a.valor_num < a.anterior_num ? "baja" : "");
+        trend.textContent = a.comparacion;
+      }
+      const fuente = card.querySelector(".nota-fuente");
+      if (fuente) fuente.textContent = a.fuente + " Datos al " + a.periodo + ". Lo actualiza un robot desde el archivo oficial.";
+      const link = card.querySelector<HTMLAnchorElement>("a.enlace-doc");
+      if (link && a.url_pagina) link.href = a.url_pagina;
+    });
+    document.querySelectorAll<HTMLElement>('[data-auto="' + m.id + '"]').forEach((e) => { e.textContent = a.valor_texto; });
+  });
+  const host = document.getElementById("datosAlDinero");
+  if (host && hayAuto) {
+    const fechas = (fin.metricas || []).filter((m) => m.auto).map((m) => (m.auto as MetricaAuto).periodo_iso).sort();
+    host.innerHTML = ico("reloj") + "Cada tarjeta dice su propia fecha. La más vieja es de <b>" + fechaCorta(fechas[0]) +
+      "</b> y la más nueva de <b>" + fechaCorta(fechas[fechas.length - 1]) + "</b>: cada oficina publica a su ritmo.";
+    host.classList.remove("hidden");
+  }
 }
 
 function el(tag: string, cls?: string | null, html?: string): HTMLElement {
@@ -552,6 +742,12 @@ function partirFuenteUrl(fuente: string): { texto: string; url: string | null } 
 function renderLeyes(data: LeyesData): void {
   const cont = byId("sectores");
   cont.innerHTML = "";
+  const dAuto = lineaDatosAl("leyes_sil");
+  if (dAuto) cont.append(dAuto);
+  if (data.datos_al_manual && data.sectores.some((s) => s.leyes.some((l) => !l.auto))) {
+    cont.append(el("p", "datos-al", ico("pencil") + "Las leyes explicadas a mano tienen datos al <b>" +
+      fechaCorta(data.datos_al_manual) + "</b>. Las marcadas «automático» las revisa un robot cada semana."));
+  }
   data.sectores.forEach((sec) => {
     const card = el("div", "sector");
     const head = el("div", "sector-head");
@@ -601,8 +797,10 @@ function numeroIniciativa(titulo: string): string | null {
 
 function renderLey(ley: Ley, busqueda?: BusquedaOficial): HTMLElement {
   const wrap = el("div", "ley");
-  wrap.append(el("p", "ley-titulo", ley.titulo));
-  wrap.append(el("span", "ley-estado estado-" + ley.estado, estadoLabel[ley.estado] || ley.estado));
+  const res = ley.auto && ley.id ? resumenDe("sil-" + ley.id) : null;
+  wrap.append(el("p", "ley-titulo", ley.auto ? esc(res && res.titulo_facil ? res.titulo_facil : ley.titulo) : ley.titulo));
+  wrap.append(el("span", "ley-estado estado-" + ley.estado, estadoLabel[ley.estado] || esc(ley.estado)));
+  if (ley.auto) wrap.append(el("span", "ley-auto", "automático"));
   // Which chamber the bill comes from. Senate is the default (no chip);
   // a chip is shown only when the bill comes from the Cámara de Diputados.
   if (ley.camara) {
@@ -610,7 +808,17 @@ function renderLey(ley: Ley, busqueda?: BusquedaOficial): HTMLElement {
   }
 
   const det = el("div", "ley-detalle");
-  det.append(el("h4", null, "¿Qué es?"), el("p", null, ley.que_es));
+  if (ley.auto) {
+    // Robot-tracked bill: official data always; plain text only if an AI summary
+    // passed every check (resumenes.json), otherwise an honest "en preparación".
+    if (res) det.append(etiquetaResumen(res));
+    else det.append(resumenPendiente("sil-" + ley.id, ley.url_oficial));
+    det.append(el("h4", null, "Nombre oficial"), el("p", "ley-oficial", esc(ley.titulo_oficial || ley.titulo)));
+    det.append(el("p", "nota-fuente", "En el SIL de la Cámara: <b>" + esc(ley.estado_sil || "") + "</b>" +
+      (ley.datos_al ? " · datos al " + fechaCorta(ley.datos_al) : "") + "."));
+  } else if (ley.que_es) {
+    det.append(el("h4", null, "¿Qué es?"), el("p", null, ley.que_es));
+  }
 
   // One plain line: how this law touches daily life.
   if (ley.te_afecta) {
@@ -619,7 +827,9 @@ function renderLey(ley: Ley, busqueda?: BusquedaOficial): HTMLElement {
 
   // Only show a real reason; otherwise a quiet note (the Senate source rarely states the motive).
   const sinMotivo = !ley.por_que || /^razón no indicada/i.test(ley.por_que);
-  if (sinMotivo) {
+  if (ley.auto) {
+    // no reason line: the robot never writes one by itself
+  } else if (sinMotivo) {
     det.append(el("p", "nota-fuente", "El Senado no publicó el motivo. Cuando lo publique, te lo contamos aquí."));
   } else {
     det.append(el("h4", null, "¿Por qué se propuso?"), el("p", null, ley.por_que));
@@ -648,7 +858,7 @@ function renderLey(ley: Ley, busqueda?: BusquedaOficial): HTMLElement {
   // initiatives page and, when the title carries the initiative number, name it.
   const url = ley.camara ? busqueda?.camara : busqueda?.senado;
   if (url) {
-    const num = numeroIniciativa(ley.titulo);
+    const num = ley.id || numeroIniciativa(ley.titulo);
     const sistema = ley.camara ? "el SIL de la Cámara" : "el sistema del Senado";
     const texto = num
       ? "Búscala en el sistema oficial: iniciativa " + num
@@ -692,24 +902,34 @@ function conPunto(t: string): string {
 function renderVigenciaLey(ley: VigenciaLey): HTMLElement {
   const card = el("details", "vig-ley") as HTMLDetailsElement;
   const cab = el("summary", "vig-ley-cab");
+  const est = estadoVigencia(ley);
   cab.append(
-    el("span", "vig-ley-num", "Ley " + ley.numero),
-    el("span", "vig-ley-titulo", ley.titulo),
+    el("span", "vig-ley-num", "Ley " + esc(ley.numero)),
+    el("span", "vig-ley-titulo", ley.auto ? esc(ley.titulo) : ley.titulo),
     el(
       "span",
       "vig-ley-fecha",
-      (ley.estado === "pronto" ? ico("calendar") + "Entra: " : ico("check") + "Desde: ") + fechaLarga(ley.vigencia_fecha)
+      ley.vigencia_fecha
+        ? (est === "pronto" ? ico("calendar") + "Entra: " : ico("check") + "Desde: ") + fechaLarga(ley.vigencia_fecha)
+        : ico("info") + "Fecha: lee su artículo"
     ),
     el("span", "vig-ley-chev", "▸")
   );
   card.append(cab);
 
   const det = el("div", "vig-ley-det");
-  det.append(el("h4", null, "¿Qué es?"), el("p", null, ley.que_es));
+  if (ley.que_es) {
+    det.append(el("h4", null, "¿Qué es?"), el("p", null, ley.que_es));
+  } else {
+    const r = resumenDe("ley-" + ley.numero);
+    if (r && r.que_es) det.append(el("h4", null, "¿Qué es?"), el("p", null, esc(r.que_es)), etiquetaResumen(r));
+    else det.append(el("h4", null, "¿Qué es?"), resumenPendiente("ley-" + ley.numero, ley.url_documento));
+  }
   det.append(
-    el("h4", null, ley.estado === "pronto" ? "¿Cuándo empieza?" : "¿Desde cuándo rige?"),
-    el("p", "vig-ley-cuando", ley.vigencia_texto)
+    el("h4", null, est === "pronto" ? "¿Cuándo empieza?" : est === "vigencia" ? "¿Desde cuándo rige?" : "¿Cuándo empieza?"),
+    el("p", "vig-ley-cuando", ley.auto ? esc(ley.vigencia_texto) : ley.vigencia_texto)
   );
+  if (ley.vigencia_cita) det.append(el("p", "vig-ley-cita", "Lo que dice la ley: «" + esc(ley.vigencia_cita) + "»"));
   det.append(
     el(
       "p",
@@ -765,8 +985,11 @@ function renderVigencia(data: VigenciaData): void {
     "la fecha desde la cual ya manda.";
   host.append(intro);
 
-  const vigentes = leyes.filter((l) => l.estado === "vigencia");
-  const pronto = leyes.filter((l) => l.estado === "pronto");
+  const dv = lineaDatosAl("vigencia_consultoria");
+  if (dv) host.append(dv);
+  const vigentes = leyes.filter((l) => estadoVigencia(l) === "vigencia");
+  const pronto = leyes.filter((l) => estadoVigencia(l) === "pronto");
+  const verArticulo = leyes.filter((l) => estadoVigencia(l) === "ver_articulo");
 
   // Group "Entran pronto" goes first — it answers the user's exact question
   // ("¿qué reglas nuevas están por empezar a aplicarme?"); already-in-force
@@ -785,7 +1008,7 @@ function renderVigencia(data: VigenciaData): void {
     wrap.append(cab);
     wrap.append(el("p", "vig-grupo-sub", sub));
     // Newest entry-into-force first within each group.
-    const ordenadas = [...arr].sort((a, b) => b.vigencia_fecha.localeCompare(a.vigencia_fecha));
+    const ordenadas = [...arr].sort((a, b) => (b.vigencia_fecha || b.promulgada).localeCompare(a.vigencia_fecha || a.promulgada));
     ordenadas.forEach((l) => wrap.append(renderVigenciaLey(l)));
     host.append(wrap);
   };
@@ -801,6 +1024,12 @@ function renderVigencia(data: VigenciaData): void {
     "Leyes recientes que ya mandan. Estas reglas ya te aplican.",
     vigentes,
     "vig-grupo-vigencia"
+  );
+  grupo(
+    ico("info") + "Firmadas: la fecha la dice su artículo",
+    "El robot no pudo calcular la fecha con seguridad. Abre la ley para leer su propio artículo.",
+    verArticulo,
+    "vig-grupo-articulo"
   );
 
   // Default-rule note, folded so the page stays airy.
@@ -1259,8 +1488,12 @@ function renderLider(l: Lider, provincia: string, conFuncion = true): HTMLElemen
     chips.append(datoChip("calendar",
       "<b>" + a.presentes + "/" + a.total + "</b> sesiones",
       "Asistencia: estuvo en <b>" + a.presentes + " de " + a.total +
-      "</b> sesiones del Pleno (" + a.periodo + ")."
+      "</b> sesiones del Pleno (" + esc(a.periodo) + ")." +
+      (a.datos_al ? " Datos al " + fechaCorta(a.datos_al) + "." : "") + (a.nota ? " " + esc(a.nota) : "")
     ));
+  }
+  if (l.cargo_hasta) {
+    chips.append(el("p", "nota-fuente", ico("info") + "Según el SIL de la Cámara, estuvo en el cargo hasta el " + fechaLarga(l.cargo_hasta) + "."));
   }
 
   // Lane 2: committees the senator works in.
@@ -1820,6 +2053,8 @@ function renderSesiones(data: SesionesData, votosPorSesion?: VotosPorSesionData)
       el("h3", "ses-lista-titulo", "Sesiones del Senado"),
       el("p", "ses-lista-meta", data.sesiones.length + " sesiones · de la más reciente a la más antigua · última: " + fechaLarga(ultima))
     );
+    const dal = lineaDatosAl("senado_actas");
+    if (dal) cab.append(dal);
     cont.append(cab);
   }
 
@@ -1842,6 +2077,17 @@ function renderSesiones(data: SesionesData, votosPorSesion?: VotosPorSesionData)
 
 
   data.sesiones.forEach((ses) => {
+    // An acta the robot could not fully account for is never shown half-read:
+    // only its date, an honest line and the official PDF.
+    if (ses.estado === "no_procesada") {
+      const c = el("div", "sesion sesion-no-leida");
+      c.append(el("p", "sesion-head", '<span class="sesion-fecha">' + fechaLarga(ses.fecha) + '</span><span class="sesion-acta">Acta ' + esc(ses.acta) + "</span>"));
+      c.append(el("p", "nota-fuente", "El robot no pudo leer esta acta completa, así que no mostramos sus números. Léela en el documento oficial."));
+      const a = enlaceDoc(ses.url_acta, "Ver el acta oficial (PDF)");
+      if (a) c.append(a);
+      cont.append(c);
+      return;
+    }
     // Each session collapses to one line. All start CLOSED so the tab opens
     // short and consistent with every other tab (the user taps the session
     // they want). The most recent is listed first.
@@ -1861,16 +2107,21 @@ function renderSesiones(data: SesionesData, votosPorSesion?: VotosPorSesionData)
     ses.votaciones.forEach((v) => {
       const row = el("div", "votacion");
       // Plain title up front; the official legalese title tucks behind a tap.
-      if (v.titulo_facil) {
-        row.append(el("p", "votacion-titulo", v.titulo_facil));
+      // Hand-written titles first; else a verified automatic one (with its label).
+      const auto = v.titulo_facil ? null : resumenDe("senado-" + v.iniciativa);
+      const facil = v.titulo_facil || (auto && auto.titulo_facil ? esc(auto.titulo_facil) : "");
+      if (facil) {
+        row.append(el("p", "votacion-titulo", facil));
+        if (auto) row.append(etiquetaResumen(auto));
         const oficial = el("details", "oficial");
         oficial.append(
           el("summary", null, ico("leyes") + "Ver nombre oficial"),
-          el("p", "votacion-titulo-oficial", v.titulo)
+          el("p", "votacion-titulo-oficial", ses.auto ? esc(v.titulo) : v.titulo)
         );
         row.append(oficial);
       } else {
-        row.append(el("p", "votacion-titulo", v.titulo));
+        row.append(el("p", "votacion-titulo", ses.auto ? esc(v.titulo) : v.titulo));
+        if (ses.auto) row.append(el("p", "resumen-pendiente", "Título fácil en preparación: arriba va el nombre oficial."));
       }
       const meta = el("div", "votacion-meta");
       const aprob = /^aprob/i.test(v.resultado);
@@ -1889,11 +2140,17 @@ function renderSesiones(data: SesionesData, votosPorSesion?: VotosPorSesionData)
       // One clean tally: the count, its bar, the result, then the Iniciativa number as a caption.
       meta.append(conteo, barra,
         el("span", aprob ? "v-resultado" : "v-resultado v-resultado-neutral", icono + v.resultado),
-        el("span", "v-iniciativa", "Iniciativa " + v.iniciativa));
+        el("span", "v-iniciativa", "Iniciativa " + esc(v.iniciativa) + (v.fuente ? " · " + esc(v.fuente) : "")));
       row.append(meta);
       vlist.append(row);
     });
     card.append(vlist);
+    if (ses.notas_fuente && ses.notas_fuente.length) {
+      const notas = el("div", "notas-fuente");
+      notas.append(el("p", null, ico("alerta") + "<b>Lo que dejamos fuera y por qué</b>"));
+      ses.notas_fuente.forEach((n) => notas.append(el("p", "nota-fuente", esc(n))));
+      card.append(notas);
+    }
 
     // Asistencia (expandable). When nobody was excused, say so plainly: no fold that only repeats its title.
     const det = ses.asistencia.detalle;
@@ -1920,7 +2177,9 @@ function renderSesiones(data: SesionesData, votosPorSesion?: VotosPorSesionData)
         });
         body.append(ul);
         body.append(
-          el("p", "nota-fuente", "Lista de senadores que presentaron excusa, según el acta oficial. El acta no publica una cifra total de presentes.")
+          el("p", "nota-fuente", ses.asistencia.presentes !== null && ses.asistencia.presentes !== undefined
+            ? "Lista de senadores ausentes, según el acta oficial. Presentes en el último pase de lista: <b>" + ses.asistencia.presentes + "</b>."
+            : "Lista de senadores que presentaron excusa, según el acta oficial. El acta no publica una cifra total de presentes.")
         );
       } else {
         body.append(el("p", "nota-fuente", "La lista por nombre no está disponible de forma legible para esta sesión."));
@@ -2544,18 +2803,22 @@ interface SabiasDato {
 // Build the fact list from data already loaded. Every number is copied faithful
 // from its source field; nothing is invented. If a source is missing, that fact
 // is simply skipped (never faked).
-function construirSabias(leyes: LeyesData, ses: SesionesData): SabiasDato[] {
+function construirSabias(leyes: LeyesData, ses: SesionesData, fin?: FinanzasData): SabiasDato[] {
   const datos: SabiasDato[] = [];
+  const sal = fin && (fin.metricas || []).find((m) => m.id === "salario" && m.auto);
+  const deudaPP = fin && fin.comparaciones_derivadas && fin.comparaciones_derivadas.deuda_por_persona_usd;
 
-  // 1) Sueldo promedio formal — finanzas.json metricas[salario].valor.
+  // 1) Sueldo promedio formal — robot value (TSS file) when present, else the hand-checked one.
   datos.push({
-    texto: "El sueldo promedio del trabajador formal en RD es <b>RD$37,572.82 al mes</b>, según la seguridad social (junio 2025).",
+    texto: sal && sal.auto
+      ? "El sueldo promedio del trabajador formal en RD es <b>" + esc(sal.auto.valor_texto) + " al mes</b>, según la seguridad social (" + esc(sal.auto.periodo) + ")."
+      : "El sueldo promedio del trabajador formal en RD es <b>RD$37,572.82 al mes</b>, según la seguridad social (junio 2025).",
     cta: "Ver el bolsillo del país", destino: "dinero", acento: "acc-dinero",
   });
 
   // 2) Deuda por persona — finanzas.json comparaciones_derivadas.deuda_por_persona_usd.
   datos.push({
-    texto: "Cada dominicano carga <b>US$5,713</b> de la deuda del país, sin haberlo pedido.",
+    texto: "Cada dominicano carga <b>US$" + (typeof deudaPP === "number" ? deudaPP.toLocaleString("en-US") : "5,713") + "</b> de la deuda del país, sin haberlo pedido.",
     cta: "Ver el dinero", destino: "dinero", acento: "acc-dinero",
   });
 
@@ -2591,14 +2854,14 @@ function construirSabias(leyes: LeyesData, ses: SesionesData): SabiasDato[] {
   return datos;
 }
 
-function setupSabias(leyes: LeyesData, ses: SesionesData): void {
+function setupSabias(leyes: LeyesData, ses: SesionesData, fin?: FinanzasData): void {
   const seccion = document.getElementById("sabias");
   const viva = document.getElementById("sabiasViva");
   const puntosCont = document.getElementById("sabiasPuntos");
   const pausaBtn = document.getElementById("sabiasPausa") as HTMLButtonElement | null;
   if (!seccion || !viva || !puntosCont || !pausaBtn) return;
 
-  const datos = construirSabias(leyes, ses);
+  const datos = construirSabias(leyes, ses, fin);
   if (!datos.length) { seccion.classList.add("hidden"); return; }
 
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -2855,6 +3118,19 @@ async function init(): Promise<void> {
       // missing. renderFondos no-ops when there are no funds or no legend.
       cargar<FondosData>("data/fondos_publicos.json").catch(() => ({ leyenda_estado: {}, fondos: [] } as unknown as FondosData)),
     ]);
+    // Robot files: optional. If one fails to load, the site shows the data
+    // without AI text and without "Datos al" lines (never breaks the page).
+    const [resumenes, estado, finanzas] = await Promise.all([
+      cargar<ResumenesData>("data/resumenes.json").catch(() => ({ resumenes: {}, sin_resumen: {} })),
+      cargar<EstadoFuentesData>("data/estado-fuentes.json").catch(() => ({ fuentes: {} })),
+      cargar<FinanzasData>("data/finanzas.json").catch(() => ({ metricas: [] } as FinanzasData)),
+    ]);
+    RESUMENES = resumenes;
+    ESTADO = estado;
+    sesiones.sesiones.forEach((x) => {
+      if (!x.votaciones) x.votaciones = [];
+      if (!x.asistencia) x.asistencia = { presentes: null, ausentes: null, detalle: [] };
+    });
     renderVigencia(vigencia);
     renderNovedades(novedades);
     renderLeyes(leyes);
@@ -2863,9 +3139,13 @@ async function init(): Promise<void> {
     setupFinder(provincias);
     renderSesiones(sesiones, votosPorSesion);
     if (fondos && fondos.leyenda_estado) renderFondos(fondos);
+    renderFinanzasAuto(finanzas);
+    const dMapa = document.getElementById("datosAlMapa");
+    const lMapa = lineaDatosAl("camara_diputados");
+    if (dMapa && lMapa) dMapa.replaceWith(lMapa);
     setupEscuchar(); // re-run: wire .leer-voz blocks rendered from data (e.g. the barrilito)
     llenarCifrasHome(leyes, provincias, sesiones);
-    setupSabias(leyes, sesiones);
+    setupSabias(leyes, sesiones, finanzas);
     setupCasoAccordion();
     setupDineroFolds();
     setupBuscadorProvincias();

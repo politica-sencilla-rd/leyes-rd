@@ -1,0 +1,4 @@
+{
+ "_nota": "vigencia.py: leyes que NO se agregan solas a '¿Ya está vigente?' (expresiones regulares sobre el título oficial). Hoy: las que solo ponen un nombre a una obra o lugar, que no cambian reglas para la gente.",
+ "excluir_titulos": ["^\\s*(LEY\\s+)?QUE\\s+DESIGNA\\s+CON\\s+EL\\s+NOMBRE"]
+}

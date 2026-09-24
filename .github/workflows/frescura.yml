@@ -1,0 +1,40 @@
+name: "Frescura y enlaces (avisos)"
+# Weekly, Sunday 08:00 ET. Never commits: only opens, updates or closes issues
+# (label datos-viejos), one per problem, never duplicated.
+on:
+  schedule:
+    - cron: "0 12 * * 0"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: frescura
+  cancel-in-progress: false
+
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 20
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install -q certifi
+      - name: Datos viejos, fuentes rotas, enlaces rotos y sitio publicado
+        run: python scripts/auto/frescura.py
+      - if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: frescura-${{ github.run_id }}
+          path: .psrd-run/
+          include-hidden-files: true
+          retention-days: 30
