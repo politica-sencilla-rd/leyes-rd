@@ -2049,7 +2049,7 @@ function renderFondo(f: Fondo, leyenda: Record<EstadoRastro, RastroLeyendaItem>)
   // The formula, folded so it doesn't crowd the card.
   if (f.formula) {
     const fDet = el("details", "fondo-fold");
-    fDet.append(el("summary", "fondo-fold-cab", ico("calc") + "¿Cómo se calcula cuánto recibe cada uno?"));
+    fDet.append(el("summary", "fondo-fold-cab", ico("calc") + "<span>¿Cómo se calcula cuánto recibe cada uno?</span>"));
     const body = el("div", "fondo-fold-body");
     body.append(el("p", "fondo-formula-regla", f.formula.regla));
     if (f.formula.minimo) {
@@ -2067,8 +2067,8 @@ function renderFondo(f: Fondo, leyenda: Record<EstadoRastro, RastroLeyendaItem>)
   if (f.tabla_por_provincia && f.tabla_por_provincia.filas.length) {
     const t = f.tabla_por_provincia;
     const tDet = el("details", "fondo-fold");
-    const cab = ico("mapa") + (t.titulo || "Cuánto recibe cada provincia") +
-      " <span class=\"fondo-fold-conteo\">" + t.filas.length + " provincias</span>";
+    const cab = ico("mapa") + "<span>" + (t.titulo || "Cuánto recibe cada provincia") +
+      " <span class=\"fondo-fold-conteo\">" + t.filas.length + " provincias</span></span>";
     tDet.append(el("summary", "fondo-fold-cab", cab));
     const body = el("div", "fondo-fold-body");
     if (t.mes_referencia) {
@@ -2179,8 +2179,8 @@ function fondoFuenteLink(src: FondoFuente): HTMLAnchorElement {
 function renderFondoLegal(legal: FondoLegal): HTMLElement {
   const det = el("details", "fondo-fold fondo-legal-fold");
   det.append(el("summary", "fondo-fold-cab",
-    ico("scale") + (legal.titulo || "Las preguntas legales, en sencillo") +
-    " <span class=\"fondo-fold-conteo\">" + legal.items.length + " preguntas</span>"));
+    ico("scale") + "<span>" + (legal.titulo || "Las preguntas legales, en sencillo") +
+    " <span class=\"fondo-fold-conteo\">" + legal.items.length + " preguntas</span></span>"));
   const body = el("div", "fondo-fold-body");
   if (legal.intro) body.append(el("p", "fondo-legal-intro", legal.intro));
   legal.items.forEach((it) => {
