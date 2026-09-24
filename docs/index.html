@@ -21,7 +21,7 @@
   <meta name="twitter:image" content="https://politica-sencilla-rd.github.io/leyes-rd/og.png" />
   <meta name="twitter:title" content="Política Sencilla RD" />
   <meta name="twitter:description" content="La política dominicana, explicada fácil." />
-  <link rel="stylesheet" href="styles.css?v=20260924b" />
+  <link rel="stylesheet" href="styles.css?v=20260924c" />
 </head>
 <body>
   <header class="topbar">
@@ -151,7 +151,7 @@
             <ul id="novedadesLista" class="novedades-lista"></ul>
             <p class="novedades-rss">
               <span class="ico ico-rss" aria-hidden="true"></span> Sigue las novedades por <a href="novedades.xml" target="_blank" rel="noopener">RSS</a>.
-              <span class="palabra" data-def="RSS es una forma de que una app te avise cuando hay algo nuevo aquí, sin usar redes sociales. Pegas este enlace en un lector de RSS y te llegan las novedades solas.">¿Qué es RSS?</span>
+              <span class="palabra" data-def="RSS es una forma de que una app te avise cuando hay algo nuevo aquí, sin usar redes sociales. Pegas este enlace en un lector de RSS y te llegan las novedades solas.">¿Qué&nbsp;es&nbsp;RSS?</span>
             </p>
           </div>
         </details>
@@ -177,7 +177,7 @@
       <details class="grupo-cargo grupo-pagina">
         <summary class="grupo-cab">
           <span class="grupo-cab-txt">
-            <span class="grupo-nombre"><span class="ico ico-voto" aria-hidden="true"></span> ¿Quién manda?</span>
+            <span class="grupo-nombre"><span class="ico ico-users" aria-hidden="true"></span> ¿Quién manda?</span>
             <span class="grupo-sub">Del voto a los jueces: quién hace qué en el país.</span>
           </span>
           <span class="grupo-chev" aria-hidden="true">▸</span>
@@ -215,8 +215,9 @@
         </summary>
         <div class="grupo-pagina-body">
 
-      <p class="bloque-intro">Controlar el Congreso es tener más asientos. El partido con más asientos decide más: qué leyes se votan y cuáles pasan. Aquí ves cuántos asientos tiene cada partido. Nota: en la Cámara, las barras cuentan los 178 diputados de provincia; faltan 5 nacionales y 7 del exterior, para 190 en total (fuente: JCE 2024).</p>
+      <p class="bloque-intro">Controlar el Congreso es tener más asientos. El partido con más asientos decide más: qué leyes se votan y cuáles pasan. Aquí ves cuántos asientos tiene cada partido.</p>
       <div id="composicionCongreso"></div>
+      <p class="nota-fuente">Nota: en la Cámara, las barras cuentan los 178 diputados de provincia; faltan 5 nacionales y 7 del exterior, para 190 en total (fuente: JCE 2024).</p>
 
         </div>
       </details>
@@ -226,7 +227,7 @@
       <details class="grupo-cargo grupo-pagina">
         <summary class="grupo-cab">
           <span class="grupo-cab-txt">
-            <span class="grupo-nombre"><span class="ico ico-voto" aria-hidden="true"></span> ¿Cuándo y cómo voto?</span>
+            <span class="grupo-nombre"><span class="ico ico-calendar" aria-hidden="true"></span> ¿Cuándo y cómo voto?</span>
             <span class="grupo-sub">Las fechas y cómo prepararte para votar.</span>
           </span>
           <span class="grupo-chev" aria-hidden="true">▸</span>
@@ -234,7 +235,11 @@
         <div class="grupo-pagina-body">
 
       <div class="como">
-        <b>¿Cuándo?</b> Cada 4 años hay elecciones. Las próximas son en <b>2028</b>: en <b>febrero</b> votas por tu alcalde y regidores; en <b>mayo</b> por presidente, senadores y diputados.
+        <b>¿Cuándo?</b> Cada 4 años hay elecciones. Las próximas son en <b>2028</b>:
+        <dl class="fechas-voto">
+          <div><dt>Febrero 2028</dt><dd>Tu alcalde y regidores</dd></div>
+          <div><dt>Mayo 2028</dt><dd>Presidente, senadores y diputados</dd></div>
+        </dl>
         <span class="nota-fuente">La JCE publica la fecha exacta cuando se acerca.</span>
       </div>
       <div class="arreglo">
@@ -254,7 +259,7 @@
       <div class="siguiente va-leyes">
         <span class="siguiente-cab">¿Y ahora qué?</span>
         <p class="siguiente-porque">Ya sabes quién hace las leyes. Ahora mira cuáles están haciendo.</p>
-        <button class="siguiente-btn" type="button" data-goto="leyes">Seguir: Las Leyes ▸</button>
+        <button class="siguiente-btn" type="button" data-goto="leyes">Seguir: Las Leyes <span class="ico ico-arriba" aria-hidden="true"></span></button>
       </div>
     </section>
 
@@ -274,8 +279,9 @@
       </div>
       <p id="leyNoResultado" class="hint hidden">No encontramos nada con esa palabra. Prueba otra.</p>
 
+      <div id="sectores"></div>
       <!-- Source/honesty note + how-to + state legend, grouped into one tight
-           intro box so the law sectors aren't pushed down by three stacked boxes. -->
+           box, placed after the topics so search results sit right under the search box. -->
       <div class="como leyes-intro">
         <p class="leyes-intro-comofunciona"><b>¿Cómo funciona?</b> Las leyes están ordenadas por <b>tema</b>, no por números. Toca un tema, luego una ley, y verás <b>qué dice</b> y <b>en qué estado va</b>.</p>
         <div class="leyenda">
@@ -285,7 +291,6 @@
         </div>
         <p id="fuenteBanner" class="leyes-intro-fuente"><span class="ico ico-info" aria-hidden="true"></span> Datos reales del <b>Senado de la República Dominicana</b> (recogidos en junio de 2026). El Senado solo publica los totales de cada votación, no cómo votó cada senador. La Cámara de Diputados sí publica el voto de cada diputado.</p>
       </div>
-      <div id="sectores"></div>
 
       <!-- Leyes que entran en vigencia (4ª sugerencia de un usuario real).
            Se rellena desde data/vigencia.json en src/app.ts (renderVigencia). -->
@@ -318,14 +323,14 @@
             <li><b>El Presidente la promulga.</b> La firma para que sea ley; o la observa (la devuelve con reparos).</li>
             <li><b>Se publica y entra en vigencia.</b> Sale en la Gaceta Oficial y ya rige para todos.</li>
           </ol>
-          <p class="transp-pie">Por eso una ley puede estar "en votación" un buen tiempo: tiene que pasar por varios pasos.</p>
+          <p class="transp-pie">Por eso una ley puede estar «en votación» un buen tiempo: tiene que pasar por varios pasos.</p>
         </div>
       </details>
 
       <div class="siguiente va-sesiones">
         <span class="siguiente-cab">¿Y ahora qué?</span>
         <p class="siguiente-porque">Ya viste qué leyes hay. Ahora mira el día en que el Senado se junta a votarlas.</p>
-        <button class="siguiente-btn" type="button" data-goto="sesiones">Seguir: Las Sesiones ▸</button>
+        <button class="siguiente-btn" type="button" data-goto="sesiones">Seguir: Las Sesiones <span class="ico ico-arriba" aria-hidden="true"></span></button>
       </div>
     </section>
 
@@ -339,10 +344,9 @@
         <p>El país tiene 32 provincias y cada una tiene su gente que manda: un senador y varios diputados que hacen las leyes, un gobernador y los alcaldes que cuidan lo local. Toca tu provincia y mira quiénes son, qué hacen y cuánto ganan.</p>
       </div>
       </header>
-      <p class="hint">Toca una provincia para ver a su gente.</p>
       <div class="buscador">
         <span class="buscador-icono ico ico-buscar" aria-hidden="true"></span>
-        <input id="buscarProvincia" class="buscador-input" type="search" placeholder="Busca tu provincia…" aria-label="Buscar tu provincia" autocomplete="off" />
+        <input id="buscarProvincia" class="buscador-input" type="search" placeholder="Busca o toca tu provincia…" aria-label="Buscar tu provincia" autocomplete="off" />
       </div>
       <p id="provNoResultado" class="hint hidden">No encontramos esa provincia. Revisa cómo se escribe.</p>
       <div id="provincias"></div>
@@ -351,7 +355,7 @@
       <div class="siguiente va-dinero">
         <span class="siguiente-cab">¿Y ahora qué?</span>
         <p class="siguiente-porque">Ya sabes quién te representa y cuánto gana. Ahora sigue el dinero del país: de dónde sale, a dónde va y dónde se pierde.</p>
-        <button class="siguiente-btn" type="button" data-goto="dinero">Seguir: El Dinero ▸</button>
+        <button class="siguiente-btn" type="button" data-goto="dinero">Seguir: El Dinero <span class="ico ico-arriba" aria-hidden="true"></span></button>
       </div>
     </section>
 
@@ -365,21 +369,21 @@
         <p>Una sesión es el día en que los 32 senadores se juntan a votar. Aquí ves qué votaron, cuántos dijeron que sí y quién faltó. Así sabes si quien te representa va a trabajar y qué decide cuando llega.</p>
       </div>
       </header>
-      <div class="como">
-        <b>¿Qué es una sesión y por qué te importa?</b>
-        Una sesión es una reunión donde los senadores <b>votan leyes</b>. Y las leyes que se votan ahí
-        deciden cosas de tu vida diaria: el precio de la luz, tu seguro de salud, los impuestos, tu trabajo.
-        <br><b>¿Cómo leer lo que sigue?</b>
-        Verás una lista de sesiones con <b>cuántos votaron a favor y quién faltó</b>, sacada del acta oficial.
-        El Senado no publica cómo votó cada senador, solo los totales.
-      </div>
-      <p class="hint">Las sesiones están en orden, de la más reciente a la más antigua. Toca una para abrirla.</p>
+      <details class="transp ses-guia">
+        <summary><span class="ico ico-ayuda" aria-hidden="true"></span> ¿Qué es una sesión y cómo se lee?</summary>
+        <div class="transp-body">
+          <p><b>¿Por qué te importa?</b> Una sesión es una reunión donde los senadores <b>votan leyes</b>. Y las leyes que se votan ahí
+          deciden cosas de tu vida diaria: el precio de la luz, tu seguro de salud, los impuestos, tu trabajo.</p>
+          <p><b>¿Cómo leer lo que sigue?</b> Verás una lista de sesiones con <b>cuántos votaron a favor y quién faltó</b>, sacada del acta oficial.
+          El Senado no publica cómo votó cada senador, solo los totales.</p>
+        </div>
+      </details>
       <div id="sesiones"></div>
 
       <div class="siguiente va-mapa">
         <span class="siguiente-cab">¿Y ahora qué?</span>
         <p class="siguiente-porque">Ya viste cómo vota el Senado. Ahora busca tu provincia y conoce a la gente que te representa.</p>
-        <button class="siguiente-btn" type="button" data-goto="mapa">Seguir: Las Provincias ▸</button>
+        <button class="siguiente-btn" type="button" data-goto="mapa">Seguir: Las Provincias <span class="ico ico-arriba" aria-hidden="true"></span></button>
       </div>
     </section>
 
@@ -414,11 +418,21 @@
           <p class="salud-leer"><b>¿Cómo leer esto?</b> Mira al país como a una familia: cuánto produce, cuánto gana, cuánto gasta y cuánto debe. Toca las <span class="palabra" data-def="palabras difíciles que se explican al tocarlas">palabras con puntitos</span> para entenderlas.</p>
         </div>
 
+        <details class="cuanto-es">
+          <summary><span class="ico ico-bulb" aria-hidden="true"></span> En cristiano: ¿el país está bien o mal de plata?</summary>
+          <ul>
+            <li>Produce muchísimo (cerca de RD$8 billones al año) y casi no hay desempleo (5%).</li>
+            <li>Pero gasta más de lo que gana: por cada RD$100 que entra, salen como RD$121.</li>
+            <li>Ese hueco se tapa con préstamos, por eso la deuda ya es casi medio año de todo lo que el país produce.</li>
+            <li>Y los precios siguen subiendo más rápido (5.35%) que lo que crece la economía (2.1%).</li>
+          </ul>
+        </details>
+
         <div class="salud-grid">
           <div class="salud-card">
             <span class="salud-emoji"><span class="ico ico-fabrica" aria-hidden="true"></span></span>
             <span class="salud-label">Lo que produce el país en un año (<span class="palabra" data-def="PIB: el valor de TODO lo que el país produce en un año — toda la comida, las casas, los servicios, todo junto.">PIB</span>)</span>
-            <span class="salud-cifra">Cerca de RD$8 billones</span>
+            <span class="salud-cifra">Cerca de RD$8 <span class="salud-unidad">billones</span></span>
             <span class="salud-nota">Eso es casi US$128 mil millones de dólares.</span>
             <span class="nota-fuente">Banco Central RD y Ministerio de Hacienda, cierre 2025.</span>
             <a class="enlace-doc" href="https://www.hacienda.gob.do/gobierno-dominicano-cierra-2025-con-un-gasto-de-capital-de-2-6-del-pib/" target="_blank" rel="noopener">Ver la fuente oficial</a>
@@ -437,7 +451,7 @@
           <div class="salud-card">
             <span class="salud-emoji"><span class="ico ico-cash" aria-hidden="true"></span></span>
             <span class="salud-label">Lo que el gobierno espera ganar (ingresos)</span>
-            <span class="salud-cifra">RD$1,342,258.2 millones</span>
+            <span class="salud-cifra">RD$1,342,258.2 <span class="salud-unidad">millones</span></span>
             <span class="salud-nota">Repartido entre toda la gente, son unos RD$124,583 por cada dominicano al año.</span>
             <span class="salud-trend sube"><span class="trend-chip ico ico-arriba" aria-hidden="true"></span>El presupuesto pasado pensaba ganar <b>RD$1,241,364.7 millones</b> → este año <b>RD$1,342,258.2 millones</b>. Más que el año pasado.</span>
             <span class="nota-fuente">Presupuesto 2026, DIGEPRES. Comparado con el proyecto de presupuesto 2025 (Hacienda).</span>
@@ -447,7 +461,7 @@
           <div class="salud-card">
             <span class="salud-emoji"><span class="ico ico-carrito" aria-hidden="true"></span></span>
             <span class="salud-label">Lo que el gobierno planea gastar (gastos)</span>
-            <span class="salud-cifra">RD$1,622,833.4 millones</span>
+            <span class="salud-cifra">RD$1,622,833.4 <span class="salud-unidad">millones</span></span>
             <span class="salud-nota">Son unos RD$150,625 gastados por cada dominicano al año.</span>
             <span class="salud-trend sube"><span class="trend-chip ico ico-arriba" aria-hidden="true"></span>El presupuesto pasado pensaba gastar <b>RD$1,484,234.6 millones</b> → este año <b>RD$1,622,833.4 millones</b>. Más que el año pasado.</span>
             <span class="nota-fuente">Presupuesto 2026, DIGEPRES. Comparado con el proyecto de presupuesto 2025 (Hacienda).</span>
@@ -457,7 +471,7 @@
           <div class="salud-card alerta">
             <span class="salud-emoji"><span class="ico ico-alerta" aria-hidden="true"></span></span>
             <span class="salud-label">El hueco: gasta más de lo que gana (<span class="palabra" data-def="Déficit: cuando gastas más de lo que ganas. La diferencia hay que pedirla prestada.">déficit</span>)</span>
-            <span class="salud-cifra">RD$280,575.3 millones</span>
+            <span class="salud-cifra">RD$280,575.3 <span class="salud-unidad">millones</span></span>
             <span class="salud-nota">Por cada RD$100 que el Estado piensa ganar, piensa gastar como RD$121. Ese hueco se tapa pidiendo dinero prestado.</span>
             <span class="salud-trend sube"><span class="trend-chip ico ico-arriba" aria-hidden="true"></span>El hueco del presupuesto pasado era de <b>RD$242,869.9 millones</b> → este año <b>RD$280,575.3 millones</b>. El hueco creció.</span>
             <span class="nota-fuente">Presupuesto 2026, DIGEPRES (déficit = 3.2% del PIB). El hueco 2025 es del proyecto de presupuesto (gastos menos ingresos), mismo cálculo que el 2026.</span>
@@ -467,7 +481,7 @@
           <div class="salud-card alerta">
             <span class="salud-emoji"><span class="ico ico-tarjeta" aria-hidden="true"></span></span>
             <span class="salud-label">Lo que el país debe (<span class="palabra" data-def="Deuda pública: todo el dinero que el país ha pedido prestado y todavía no ha pagado.">deuda pública</span>)</span>
-            <span class="salud-cifra">47.9% del PIB</span>
+            <span class="salud-cifra">47.9% <span class="salud-unidad">del PIB</span></span>
             <span class="salud-nota">Es casi medio año de TODO lo que el país produce. Son como US$5,713 de deuda por cada dominicano.</span>
             <span class="salud-trend sube"><span class="trend-chip ico ico-arriba" aria-hidden="true"></span>El año pasado debía <b>46.3% del PIB</b> → este año <b>47.9%</b>. Subió un poco.</span>
             <span class="nota-fuente">Hacienda / Crédito Público, cierre 2025 (US$61,549.9 millones, deuda del sector público no financiero). Comparado con el cierre de 2024 (46.3% del PIB, Crédito Público).</span>
@@ -477,7 +491,7 @@
           <div class="salud-card">
             <span class="salud-emoji"><span class="ico ico-briefcase" aria-hidden="true"></span></span>
             <span class="salud-label">El sueldo promedio del trabajador formal</span>
-            <span class="salud-cifra">RD$37,572.82 al mes</span>
+            <span class="salud-cifra">RD$37,572.82 <span class="salud-unidad">al mes</span></span>
             <span class="salud-nota">Es el sueldo promedio de quien tiene trabajo "con papeles" y cotiza a la seguridad social. Muchos ganan menos.</span>
             <span class="salud-trend sube"><span class="trend-chip ico ico-arriba" aria-hidden="true"></span>Subió <b>6.7%</b> frente al año pasado (junio 2024). El sueldo formal promedio subió.</span>
             <span class="nota-fuente">Tesorería de la Seguridad Social (TSS), salario promedio cotizable, junio 2025. La TSS reportó este sueldo con un alza oficial de 6.7% frente a junio 2024.</span>
@@ -487,7 +501,7 @@
           <div class="salud-card">
             <span class="salud-emoji"><span class="ico ico-etiqueta" aria-hidden="true"></span></span>
             <span class="salud-label">Cuánto subieron los precios (<span class="palabra" data-def="Inflación: cuando las cosas suben de precio. Con el mismo dinero compras menos que antes.">inflación</span>)</span>
-            <span class="salud-cifra">5.35% en un año</span>
+            <span class="salud-cifra">5.35% <span class="salud-unidad">en un año</span></span>
             <span class="salud-nota">Lo que costaba RD$100 hace un año, hoy cuesta como RD$105.</span>
             <span class="salud-trend sube"><span class="trend-chip ico ico-arriba" aria-hidden="true"></span>El año pasado fue <b>3.84%</b> → este año <b>5.35%</b>. Los precios están subiendo más rápido que el año pasado.</span>
             <span class="nota-fuente">Banco Central RD, IPC a mayo 2026 (interanual). Comparado con la inflación interanual a mayo 2025 (3.84%, BCRD).</span>
@@ -505,15 +519,6 @@
           </div>
         </div>
 
-        <details class="cuanto-es">
-          <summary><span class="ico ico-bulb" aria-hidden="true"></span> En cristiano: ¿el país está bien o mal de plata?</summary>
-          <ul>
-            <li>Produce muchísimo (cerca de RD$8 billones al año) y casi no hay desempleo (5%).</li>
-            <li>Pero gasta más de lo que gana: por cada RD$100 que entra, salen como RD$121.</li>
-            <li>Ese hueco se tapa con préstamos, por eso la deuda ya es casi medio año de todo lo que el país produce.</li>
-            <li>Y los precios siguen subiendo más rápido (5.35%) que lo que crece la economía (2.1%).</li>
-          </ul>
-        </details>
 
         <details class="fuente-fold">
           <summary><span class="ico ico-libros" aria-hidden="true"></span> Ver fuentes oficiales</summary>
@@ -638,6 +643,7 @@
           Esto es lo que el Ministerio Público (la Fiscalía) ACUSA. Nadie está condenado todavía; el caso sigue en los tribunales. Aquí lo contamos como lo que se alega, no como hecho probado.
         </div>
 
+        <p class="hint">Toca cada paso para ver qué pasó.</p>
         <div class="flujo-graf">
           <div class="paso ok"><span class="paso-num">1</span><span class="paso-emoji"><span class="ico ico-banco" aria-hidden="true"></span></span><div class="paso-txt"><b>El Estado pone el dinero en SENASA</b><span>Para pagar la salud de los <span class="palabra" data-def="las personas que tienen ese seguro">afiliados</span>.</span></div></div>
           <div class="flecha">↓</div>
@@ -707,7 +713,7 @@
       <div class="siguiente va-pais">
         <span class="siguiente-cab"><span class="ico ico-confeti" aria-hidden="true"></span> ¡Diste la vuelta completa!</span>
         <p class="siguiente-porque">Ya entiendes quién manda, qué leyes hay, cómo vota el Senado, quién te representa y a dónde va el dinero. Lo más importante: tu voto elige a quienes cuidan todo esto. Repasa cuando quieras.</p>
-        <button class="siguiente-btn" type="button" data-goto="pais">Volver al principio: El país ▸</button>
+        <button class="siguiente-btn" type="button" data-goto="pais">Volver al principio: El país <span class="ico ico-arriba" aria-hidden="true"></span></button>
       </div>
     </section>
 
@@ -725,7 +731,7 @@
       <section class="proyecto">
         <p class="proyecto-intro">Aquí la política dominicana se cuenta fácil: quién manda, qué leyes hacen y a dónde va el dinero. Todo junto y explicado para que cualquiera lo entienda.</p>
 
-        <details class="proyecto-fold">
+        <details class="proyecto-fold" open>
           <summary><span class="ico ico-plant" aria-hidden="true"></span> Cómo nació y por qué</summary>
           <div class="proyecto-fold-body">
             <p>Esto lo construyó alguien que creció viendo cómo la falta de información sencilla deja a la gente fuera de las decisiones. Sin saber qué pasa, no puedes opinar ni reclamar.</p>
@@ -736,7 +742,7 @@
         <details class="proyecto-fold">
           <summary><span class="ico ico-meta" aria-hidden="true"></span> La meta</summary>
           <div class="proyecto-fold-body">
-            <p>Ciudadanos informados que preguntan y vigilan. No fanáticos que solo aplauden.</p>
+            <p class="proyecto-cita">Ciudadanos informados que preguntan y vigilan. No fanáticos que solo aplauden.</p>
             <p>Saber cómo funciona tu país es tu derecho. Cuando entiendes, puedes pedir cuentas. Y mientras más gente mira, más difícil es hacer las cosas mal.</p>
           </div>
         </details>
@@ -800,7 +806,7 @@
     </div>
   </dialog>
 
-  <script src="app.js?v=20260924b"></script>
+  <script src="app.js?v=20260924c"></script>
   <!-- Contador de visitas, privado y sin cookies (GoatCounter) -->
   <script data-goatcounter="https://politicasencillard.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>

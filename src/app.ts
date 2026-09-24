@@ -399,7 +399,7 @@ function avisoVotosSenado(): HTMLElement {
 // cache-buster (?v=...). Appended to every data fetch so returning visitors
 // don't render stale JSON from the browser's HTTP cache when only the data
 // changed (the data files are not versioned in the HTML).
-const DATA_VERSION = "20260924b";
+const DATA_VERSION = "20260924c";
 
 async function cargar<T>(path: string): Promise<T> {
   const sep = path.indexOf("?") >= 0 ? "&" : "?";
@@ -668,6 +668,8 @@ function renderLey(ley: Ley, busqueda?: BusquedaOficial): HTMLElement {
   wrap.setAttribute("aria-expanded", "false");
   wrap.addEventListener("click", (e: Event) => {
     e.stopPropagation();
+    // A tap while reading the open detail must not fold the law shut; the title still toggles.
+    if ((e.target as Element).closest(".ley-detalle")) return;
     const abierto = wrap.classList.toggle("open");
     wrap.setAttribute("aria-expanded", String(abierto));
   });
@@ -682,6 +684,11 @@ function renderLey(ley: Ley, busqueda?: BusquedaOficial): HTMLElement {
 // the law number and the vigencia date; tapped it reveals "¿qué es?", the
 // full date explanation and the per-entry source. Same fold idiom (details/
 // summary) the rest of the site uses, so it reads consistent on a phone.
+// Ends a source line with exactly one period (some sources already end in ".").
+function conPunto(t: string): string {
+  return t.replace(/\.+$/, "") + ".";
+}
+
 function renderVigenciaLey(ley: VigenciaLey): HTMLElement {
   const card = el("details", "vig-ley") as HTMLDetailsElement;
   const cab = el("summary", "vig-ley-cab");
@@ -712,7 +719,7 @@ function renderVigenciaLey(ley: VigenciaLey): HTMLElement {
       (/^\d+$/.test(ley.gaceta) ? "núm. <b>" + ley.gaceta + "</b>" : "(" + ley.gaceta + ")") + "."
     )
   );
-  det.append(el("p", "nota-fuente", "Fuente: " + ley.fuente + "."));
+  det.append(el("p", "nota-fuente", "Fuente: " + conPunto(ley.fuente)));
 
   // Official-document deep link (5ª sugerencia de un usuario real, Ángel).
   // A direct link to the full law text when we have a verified PDF; otherwise
@@ -803,7 +810,7 @@ function renderVigencia(data: VigenciaData): void {
     det.append(el("summary", "vig-regla-cab", ico("ayuda") + r.titulo));
     const body = el("div", "vig-regla-body");
     body.append(el("p", null, r.texto));
-    body.append(el("p", "nota-fuente", "Fuente: " + r.fuente + "."));
+    body.append(el("p", "nota-fuente", "Fuente: " + conPunto(r.fuente)));
     const aRegla = enlaceDoc(r.url, "Ver el documento oficial (PDF)");
     if (aRegla) body.append(aRegla);
     det.append(body);
@@ -1181,7 +1188,13 @@ function grupoDeCargo(cargo: string): string {
   return ORDEN_GRUPOS.find((k) => k !== "otros" && c.startsWith(k)) || "otros";
 }
 
-function renderLider(l: Lider, provincia: string): HTMLElement {
+// Honors prefers-reduced-motion for JS scrolls (a JS "smooth" would override the CSS rule).
+function suave(): ScrollBehavior {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+}
+
+// conFuncion = false when the group already shows the role explanation once on top.
+function renderLider(l: Lider, provincia: string, conFuncion = true): HTMLElement {
   const block = el("div", "lider");
   const cab = el("div", "lider-cab");
   // Senators and deputies with a verified official portrait show the photo;
@@ -1196,8 +1209,8 @@ function renderLider(l: Lider, provincia: string): HTMLElement {
     const img = el("img", "avatar avatar-foto") as HTMLImageElement;
     img.src = carpeta + retrato;
     img.alt = "Retrato oficial de " + l.nombre;
-    img.width = 44;
-    img.height = 44;
+    img.width = 56;
+    img.height = 56;
     img.loading = "lazy";
     img.decoding = "async";
     // If the file ever fails to load, fall back to the initials circle so the
@@ -1211,14 +1224,16 @@ function renderLider(l: Lider, provincia: string): HTMLElement {
     cab.append(el("span", "avatar", iniciales(l.nombre)));
   }
   const ident = el("div", "lider-ident");
-  ident.append(el("p", "lider-nombre", "<b>" + l.nombre + "</b><span class='partido-chip'>" + l.partido + "</span>"));
+  const tienePartido = Boolean(l.partido && l.partido.trim() !== "—");
+  ident.append(el("p", "lider-nombre", "<b>" + l.nombre + "</b>" +
+    (tienePartido ? "<span class='partido-chip'>" + l.partido + "</span>" : "")));
   ident.append(el("p", "lider-cargo", l.cargo));
   cab.append(ident);
   block.append(cab);
   if (esElecto(l.cargo)) {
     block.append(el("p", "lider-dato", ico("calendar") + "En el cargo: 2024–2028 (elegido por voto)"));
   }
-  const fn = funcionDeCargo(l.cargo);
+  const fn = conFuncion ? funcionDeCargo(l.cargo) : "";
   if (fn) block.append(el("p", "lider-funcion", fn));
   if (l.resumen) block.append(el("p", null, l.resumen));
 
@@ -1322,9 +1337,9 @@ function renderLider(l: Lider, provincia: string): HTMLElement {
     if (esSenador && MOSTRAR_VOTOS_POR_SENADOR && l.votos && l.votos.length) {
       block.append(renderRegistroVotos(l));
     } else if (esSenador) {
-      block.append(el("p", "lider-cargo", ico("voto") + "Cómo votó"), avisoVotosSenado());
+      block.append(el("p", "lider-subtit", ico("voto") + "Cómo votó"), avisoVotosSenado());
     } else {
-      block.append(el("p", "lider-cargo", ico("voto") + "Cómo votó"), avisoVotosCamara());
+      block.append(el("p", "lider-subtit", ico("voto") + "Cómo votó"), avisoVotosCamara());
     }
   }
   return block;
@@ -1441,6 +1456,9 @@ function renderRegidoresBody(prov: Provincia): HTMLElement {
   }
   card.innerHTML = html;
   if (fuenteTotalLink) card.append(fuenteTotalLink);
+  // The municipality lists sit beside the explainer, not inside the tinted box.
+  const wrap = el("div", "regidores-body");
+  wrap.append(card);
 
   // Verified names per municipality, when we have them. A municipality's list
   // folds behind a tap so a 30-name council doesn't flood the card.
@@ -1449,7 +1467,7 @@ function renderRegidoresBody(prov: Provincia): HTMLElement {
       if (!m.lista || !m.lista.length) return;
       const det = el("details", "regidores-lista") as HTMLDetailsElement;
       det.append(el("summary", "regidores-municipio",
-        ico("silla") + "Regidores de " + m.municipio + " (" + m.lista.length + ")"));
+        "<span>" + ico("silla") + "Regidores de " + m.municipio + "</span><span class=\"grupo-conteo\">" + m.lista.length + "</span>"));
       m.lista.forEach((rg) => {
         const fila = el("p", "regidor-fila");
         fila.innerHTML = rg.nombre + " <span class='partido-chip'>" + rg.partido + "</span>";
@@ -1462,10 +1480,21 @@ function renderRegidoresBody(prov: Provincia): HTMLElement {
         const a = enlaceDoc(partida.url || undefined, "Ver la lista oficial (JCE)");
         if (a) det.append(a);
       }
-      card.append(det);
+      wrap.append(det);
     });
   }
-  return card;
+  return wrap;
+}
+
+// Closing a profile brings the full grid back, scrolled to its top.
+function cerrarPerfil(): void {
+  const perfil = byId("perfilProvincia");
+  perfil.classList.add("hidden");
+  perfil.innerHTML = "";
+  const vista = byId("view-mapa");
+  if (!vista.classList.contains("con-perfil")) return;
+  vista.classList.remove("con-perfil");
+  byId("provincias").scrollIntoView({ block: "start", behavior: suave() });
 }
 
 function renderProvincias(data: ProvinciasData): void {
@@ -1488,15 +1517,16 @@ function renderProvincias(data: ProvinciasData): void {
     c.addEventListener("click", () => {
       perfil.classList.remove("hidden");
       perfil.innerHTML = "";
-      const cerrar = el("button", "perfil-cerrar", ico("x") + "Cerrar");
-      cerrar.addEventListener("click", () => {
-        perfil.classList.add("hidden");
-        perfil.innerHTML = "";
-      });
-      perfil.append(cerrar);
+      // While a profile is open the grid steps aside, so the profile opens at the top.
+      byId("view-mapa").classList.add("con-perfil");
+      const cerrar = el("button", "perfil-cerrar", ico("arriba") + "Todas las provincias");
+      (cerrar as HTMLButtonElement).type = "button";
+      cerrar.addEventListener("click", cerrarPerfil);
       const perfilTitulo = el("h3", null, prov.nombre);
       perfilTitulo.tabIndex = -1;
-      perfil.append(perfilTitulo);
+      const perfilCab = el("div", "perfil-cab");
+      perfilCab.append(perfilTitulo, cerrar);
+      perfil.append(perfilCab);
       // Group the officials by role so a long list (e.g. 43 deputies) stays scannable.
       const grupos: Record<string, Lider[]> = {};
       prov.lideres.forEach((l) => {
@@ -1517,7 +1547,24 @@ function renderProvincias(data: ProvinciasData): void {
           el("span", "grupo-chev", "▸")
         );
         grupoCard.append(cab);
-        arr.forEach((l) => grupoCard.append(renderLider(l, prov.nombre)));
+        // The role explanation is the same for everyone in the group: show it once, on top.
+        const funciones = Array.from(new Set(arr.map((l) => funcionDeCargo(l.cargo))));
+        const unaFuncion = funciones.length === 1 && funciones[0] !== "";
+        if (unaFuncion) grupoCard.append(el("p", "lider-funcion grupo-funcion", funciones[0]));
+        arr.forEach((l) => {
+          const block = renderLider(l, prov.nombre, !unaFuncion);
+          const cabLider = block.querySelector(".lider-cab");
+          if (arr.length > 3 && cabLider) {
+            // Long groups (e.g. 18 deputies) fold each person to one row: photo, name, party.
+            const fold = el("details", "lider-fold");
+            const sumLider = el("summary");
+            sumLider.append(cabLider);
+            fold.append(sumLider, block);
+            grupoCard.append(fold);
+          } else {
+            grupoCard.append(block);
+          }
+        });
         perfil.append(grupoCard);
       });
       // Honest note when this province's mayors aren't loaded yet.
@@ -1533,7 +1580,8 @@ function renderProvincias(data: ProvinciasData): void {
       perfil.append(renderRegidoresCard(prov));
       // The card just added a new .palabra word; wire tap-to-define on it.
       setupGlosario();
-      perfil.scrollIntoView({ behavior: "smooth", block: "start" });
+      perfil.style.setProperty("--cab-h", perfilCab.offsetHeight + "px");
+      perfil.scrollIntoView({ behavior: suave(), block: "start" });
       perfilTitulo.focus({ preventScroll: true });
     });
     grid.append(c);
@@ -1544,9 +1592,9 @@ function renderProvincias(data: ProvinciasData): void {
 
   // "¿Cómo leer esto?" — explains the new report-card lines on a senator card,
   // in kid-simple Spanish, with tap-to-define words. Only shows once, on top.
-  const comoLeer = el("div", "como");
+  const comoLeer = el("details", "transp como-leer");
   comoLeer.innerHTML =
-    "<b>¿Cómo leer la ficha de un senador?</b> Al abrir una provincia y tocar a su senador verás cuatro datos nuevos:<br>" +
+    "<summary>" + ico("info") + "¿Cómo leer la ficha de un senador?</summary><div class=\"transp-body\">Al abrir una provincia y tocar a su senador verás cuatro datos nuevos:<br>" +
     ico("calendar") + "<b>Asistencia</b>: a cuántas reuniones del " +
     "<span class=\"palabra\" data-def=\"La reunión grande donde todos los senadores se juntan a votar las leyes.\">Pleno</span> " +
     "fue, de las que pudimos contar. Ir es su trabajo.<br>" +
@@ -1559,10 +1607,8 @@ function renderProvincias(data: ProvinciasData): void {
     ico("coin") + "<b>Sueldo del cargo</b>: el salario mensual oficial que paga el Estado por ocupar el puesto. " +
     "No es dinero de otras fuentes ni su patrimonio. Sale de la " +
     "<span class=\"palabra\" data-def=\"La lista pública de lo que cobra cada empleado del Estado. La ley obliga a publicarla cada mes.\">nómina</span> " +
-    "pública. Lo pagan los impuestos de todos nosotros.";
-  host.append(comoLeer);
-
-  host.append(grid);
+    "pública. Lo pagan los impuestos de todos nosotros.</div>";
+  host.append(grid, comoLeer);
   // New glossary words were just added — wire up tap-to-define on them.
   setupGlosario();
 }
@@ -1651,8 +1697,19 @@ function renderCamara(nombre: string, total: number, conteo: ConteoPartido[]): H
   const leyenda = el("div", "comp-leyenda");
   segmentos.forEach((s) => {
     const chip = el("span", "comp-chip");
-    const punto = el("span", "comp-punto");
-    punto.style.background = s.partido === "Otros" ? COLOR_OTROS : colorDePartido(s.partido);
+    // "Otros" shows one mini-dot per small party, so every seat color on the grid maps to a chip.
+    let punto: HTMLElement;
+    if (s.partido === "Otros") {
+      punto = el("span", "comp-punto-multi");
+      pequenos.forEach((p) => {
+        const d = el("span", "comp-punto");
+        d.style.background = colorDePartido(p.partido);
+        punto.append(d);
+      });
+    } else {
+      punto = el("span", "comp-punto");
+      punto.style.background = colorDePartido(s.partido);
+    }
     chip.append(punto, el("span", "comp-chip-txt", s.partido + " " + s.asientos));
     leyenda.append(chip);
   });
@@ -1744,10 +1801,25 @@ function renderSesiones(data: SesionesData, votosPorSesion?: VotosPorSesionData)
   const cont = byId("sesiones");
   cont.innerHTML = "";
 
+  // Kid-simple legend (primera/segunda discusión, unanimidad), folded next to the guide above.
+  const leyenda = el("details", "transp ses-leyenda");
+  leyenda.innerHTML =
+    "<summary>" + ico("leyes") + "¿Qué es primera y segunda discusión?</summary><div class=\"transp-body\"><p>" +
+    "Una ley se vota <b>dos veces</b> en el Senado: la primera discusión y la segunda. " +
+    "Si gana las dos, sigue su camino para ser ley. Las resoluciones (homenajes, peticiones) se deciden en una sola votación: <b>única discusión</b>. " +
+    "<b>Unanimidad</b> = todos los presentes dijeron que sí.</p></div>";
+  cont.append(leyenda);
+
+  // List header: what the list is, how it is ordered, and how fresh it is.
   if (data.sesiones.length) {
     const fechas = data.sesiones.map((s) => s.fecha).sort();
     const ultima = fechas[fechas.length - 1];
-    cont.append(el("p", "nota-fuente", "Última sesión publicada: " + fechaLarga(ultima) + "."));
+    const cab = el("div", "ses-lista-cab");
+    cab.append(
+      el("h3", "ses-lista-titulo", "Sesiones del Senado"),
+      el("p", "ses-lista-meta", data.sesiones.length + " sesiones · de la más reciente a la más antigua · última: " + fechaLarga(ultima))
+    );
+    cont.append(cab);
   }
 
   // By-session vote detail (the second door to the same vote data): voting record
@@ -1759,21 +1831,14 @@ function renderSesiones(data: SesionesData, votosPorSesion?: VotosPorSesionData)
     if (detalle) cont.append(detalle);
   } else {
     // PAUSA 2026-09-24: one honest block in place of the named roll calls.
-    const aviso = el("div", "como");
-    aviso.append(el("b", null, ico("voto") + "¿Cómo votó cada senador?"));
+    const aviso = el("div", "aviso-pausa");
+    aviso.append(el("b", null, ico("pausa") + "¿Cómo votó cada senador?"));
     aviso.append(el("p", null, AVISO_VOTOS_SENADO +
       " Abajo ves los totales de cada votación, sacados del acta oficial del Senado."));
     aviso.append(avisoVotosCamara());
     cont.append(aviso);
   }
 
-  // Kid-simple legend: what "primera/segunda discusión" and "unanimidad" mean.
-  const leyenda = el("div", "como");
-  leyenda.innerHTML =
-    "<b>¿Cómo leer esto?</b> Una ley se vota <b>dos veces</b> en el Senado: la primera discusión y la segunda. " +
-    "Si gana las dos, sigue su camino para ser ley. Las resoluciones (homenajes, peticiones) se deciden en una sola votación: <b>única discusión</b>. " +
-    "<b>Unanimidad</b> = todos los presentes dijeron que sí.";
-  cont.append(leyenda);
 
   data.sesiones.forEach((ses) => {
     // Each session collapses to one line. All start CLOSED so the tab opens
@@ -1809,12 +1874,7 @@ function renderSesiones(data: SesionesData, votosPorSesion?: VotosPorSesionData)
       const meta = el("div", "votacion-meta");
       const aprob = /^aprob/i.test(v.resultado);
       const icono = aprob ? ico("check") : "•&nbsp;";
-      meta.append(
-        el("span", "v-iniciativa", "Iniciativa " + v.iniciativa),
-        el("span", "v-conteo", v.a_favor + " de " + v.presentes + " presentes votaron a favor"),
-        el("span", aprob ? "v-resultado" : "v-resultado v-resultado-neutral", icono + v.resultado)
-      );
-      row.append(meta);
+      const conteo = el("span", "v-conteo", "<b>" + v.a_favor + " de " + v.presentes + "</b> presentes votaron a favor");
       // Proportion bar: turns "X de Y" into a felt amount. Grey = simply "did not vote in favor",
       // never shown as a vote against (the Senate does not publish per-person votes).
       const pct = v.presentes > 0 ? Math.round((v.a_favor / v.presentes) * 100) : 0;
@@ -1825,48 +1885,58 @@ function renderSesiones(data: SesionesData, votosPorSesion?: VotosPorSesionData)
       const fill = el("span", "voto-barra-fill");
       fill.style.width = pct + "%";
       barra.append(fill);
-      row.append(barra);
+      // One clean tally: the count, its bar, the result, then the Iniciativa number as a caption.
+      meta.append(conteo, barra,
+        el("span", aprob ? "v-resultado" : "v-resultado v-resultado-neutral", icono + v.resultado),
+        el("span", "v-iniciativa", "Iniciativa " + v.iniciativa));
+      row.append(meta);
       vlist.append(row);
     });
     card.append(vlist);
 
-    // Asistencia (expandable)
+    // Asistencia (expandable). When nobody was excused, say so plainly: no fold that only repeats its title.
     const det = ses.asistencia.detalle;
-    const asistWrap = el("details", "asistencia");
-    const sum = el("summary", "asistencia-sum");
-    if (det.length) {
-      sum.innerHTML = ico("users") + "Quién faltó (con excusa): " + det.length;
-    } else if (ses.asistencia.ausentes === 0) {
-      sum.innerHTML = ico("users") + "Asistencia: nadie presentó excusa ese día";
+    if (!det.length && ses.asistencia.ausentes === 0) {
+      card.append(el("p", "asistencia-nula", ico("users") + "Según el acta, ningún senador presentó excusa ese día."));
     } else {
-      sum.innerHTML = ico("users") + "Asistencia";
-    }
-    asistWrap.append(sum);
+      const asistWrap = el("details", "asistencia");
+      const sum = el("summary", "asistencia-sum");
+      if (det.length) {
+        sum.innerHTML = ico("users") + "Quién faltó (con excusa): " + det.length;
+      } else {
+        sum.innerHTML = ico("users") + "Asistencia";
+      }
+      asistWrap.append(sum);
 
-    const body = el("div", "asistencia-body");
-    if (det.length) {
-      const ul = el("div", "asist-lista");
-      det.forEach((p) => {
-        const fila = el("div", "asist-fila");
-        fila.append(el("span", null, p.nombre));
-        fila.append(el("span", "asist-estado-" + p.estado, estadoAsist[p.estado] || p.estado));
-        ul.append(fila);
-      });
-      body.append(ul);
-      body.append(
-        el("p", "nota-fuente", "Lista de senadores que presentaron excusa, según el acta oficial. El acta no publica una cifra total de presentes.")
-      );
-    } else if (ses.asistencia.ausentes === 0) {
-      body.append(el("p", null, "Según el acta, ningún senador presentó excusa ese día."));
-    } else {
-      body.append(el("p", "nota-fuente", "La lista por nombre no está disponible de forma legible para esta sesión."));
+      const body = el("div", "asistencia-body");
+      if (det.length) {
+        const ul = el("div", "asist-lista");
+        det.forEach((p) => {
+          const fila = el("div", "asist-fila");
+          fila.append(el("span", null, p.nombre));
+          fila.append(el("span", "asist-estado-" + p.estado, estadoAsist[p.estado] || p.estado));
+          ul.append(fila);
+        });
+        body.append(ul);
+        body.append(
+          el("p", "nota-fuente", "Lista de senadores que presentaron excusa, según el acta oficial. El acta no publica una cifra total de presentes.")
+        );
+      } else {
+        body.append(el("p", "nota-fuente", "La lista por nombre no está disponible de forma legible para esta sesión."));
+      }
+      asistWrap.append(body);
+      card.append(asistWrap);
     }
-    asistWrap.append(body);
-    card.append(asistWrap);
 
     // Link to the official acta PDF (5ª sugerencia de un usuario real, Ángel).
     const aActa = enlaceDoc(ses.url_acta, "Ver el acta oficial (PDF)");
     if (aActa) card.append(aActa);
+
+    // Close control at the end of a long open session, so nobody scrolls back up to fold it.
+    const cerrar = el("button", "ses-cerrar", "Cerrar esta sesión") as HTMLButtonElement;
+    cerrar.type = "button";
+    cerrar.addEventListener("click", () => { card.open = false; head.scrollIntoView({ block: "nearest" }); });
+    card.append(cerrar);
 
     cont.append(card);
   });
@@ -2019,6 +2089,18 @@ function pesosRD(monto: number): string {
 // Returns nothing when there are no funds, leaving the host empty (and the
 // section header without orphaned content). Strictly non-partisan: no
 // name-and-shame gallery; one sourced category-level misuse line at most.
+// Closing a long Dinero part far down the page brings its header back into view.
+function setupDineroFolds(): void {
+  document.querySelectorAll<HTMLDetailsElement>("#view-dinero > .grupo-pagina").forEach((d) => {
+    d.addEventListener("toggle", () => {
+      const sum = d.querySelector("summary");
+      if (!d.open && sum && sum.getBoundingClientRect().top < 0) {
+        sum.scrollIntoView({ block: "start", behavior: suave() });
+      }
+    });
+  });
+}
+
 function renderFondos(data: FondosData): void {
   const cont = byId("fondos-publicos");
   cont.innerHTML = "";
@@ -2052,7 +2134,12 @@ function renderFondos(data: FondosData): void {
   // level deeper). Adding a fund to the JSON makes a new collapsed sub-group
   // automatically — no markup change. Reuses the site's Nivel-2 grouper
   // (.grupo-pagina) so it folds and recolors like every other sub-group.
-  fondos.forEach((f) => cont.append(renderFondoGrupo(f, leyenda)));
+  // While there is only one fund, open it: a lone nested fold is just an extra tap.
+  fondos.forEach((f) => {
+    const g = renderFondoGrupo(f, leyenda) as HTMLDetailsElement;
+    if (fondos.length === 1) g.open = true;
+    cont.append(g);
+  });
 }
 
 // Wraps one fund card in a collapsed Nivel-2 sub-group. The summary shows the
@@ -2097,6 +2184,29 @@ function renderFondo(f: Fondo, leyenda: Record<EstadoRastro, RastroLeyendaItem>)
     if (f.monto_total.mensual) montos.append(el("span", "fondo-monto-pill", f.monto_total.mensual));
     card.append(montos);
     if (f.monto_total.nota) card.append(el("p", "nota-fuente", f.monto_total.nota));
+  }
+
+  // The verdict first, as a stamp (kicker + label), so the one-line takeaway is never buried.
+  const ver = el("div", "fondo-veredicto leer-voz");
+  ver.append(el("span", "fondo-veredicto-kicker", "Veredicto"), " ",
+    el("strong", "fondo-veredicto-etiqueta", f.veredicto.etiqueta));
+  ver.append(el("p", "fondo-veredicto-txt", f.veredicto.explica));
+  card.append(ver);
+
+  // The money chain: a header, then the 5 steps as a flow, each with a badge.
+  card.append(el("h5", "fondo-cadena-titulo", ico("buscar") + "El rastro, paso a paso"));
+  const flujo = el("div", "flujo-graf fondo-cadena");
+  f.cadena.forEach((p, i) => {
+    if (i > 0) flujo.append(el("div", "flecha", "↓"));
+    flujo.append(renderFondoPaso(p, i + 1, leyenda));
+  });
+  card.append(flujo);
+
+  // One sourced, category-level misuse line (no names) — only if present.
+  if (f.mal_uso_documentado) {
+    const mu = el("div", "fondo-maluso");
+    mu.innerHTML = "<b>" + ico("alerta") + "Lo que encontró la prensa:</b> " + f.mal_uso_documentado;
+    card.append(mu);
   }
 
   // The formula, folded so it doesn't crowd the card.
@@ -2172,28 +2282,6 @@ function renderFondo(f: Fondo, leyenda: Record<EstadoRastro, RastroLeyendaItem>)
   if (f.legal && f.legal.items.length) {
     card.append(renderFondoLegal(f.legal));
   }
-
-  // The money chain: a header, then the 5 steps as a flow, each with a badge.
-  card.append(el("h5", "fondo-cadena-titulo", ico("buscar") + "El rastro, paso a paso"));
-  const flujo = el("div", "flujo-graf fondo-cadena");
-  f.cadena.forEach((p, i) => {
-    if (i > 0) flujo.append(el("div", "flecha", "↓"));
-    flujo.append(renderFondoPaso(p, i + 1, leyenda));
-  });
-  card.append(flujo);
-
-  // One sourced, category-level misuse line (no names) — only if present.
-  if (f.mal_uso_documentado) {
-    const mu = el("div", "fondo-maluso");
-    mu.innerHTML = "<b>" + ico("alerta") + "Lo que encontró la prensa:</b> " + f.mal_uso_documentado;
-    card.append(mu);
-  }
-
-  // The big verdict badge + its plain explanation.
-  const ver = el("div", "fondo-veredicto leer-voz");
-  ver.append(el("span", "fondo-veredicto-pill", "Veredicto: " + f.veredicto.etiqueta));
-  ver.append(el("p", "fondo-veredicto-txt", f.veredicto.explica));
-  card.append(ver);
 
   // Source links at the bottom, folded.
   if (f.fuentes && f.fuentes.length) {
@@ -2324,6 +2412,7 @@ function setupBuscadorLeyes(): void {
       if (match) visibles++;
     });
     if (aviso) aviso.classList.toggle("hidden", !(q && visibles === 0));
+    document.getElementById("sectores")?.classList.toggle("hidden", Boolean(q) && visibles === 0);
   });
 }
 
@@ -2532,7 +2621,7 @@ function setupSabias(leyes: LeyesData, ses: SesionesData): void {
     tarjeta.append(el("p", "sabias-texto", d.texto));
     const btn = el("button", "sabias-btn") as HTMLButtonElement;
     btn.type = "button";
-    btn.innerHTML = d.cta + " ▸";
+    btn.innerHTML = d.cta + ' <span aria-hidden="true">→</span>';
     btn.addEventListener("click", () => mostrarVista(d.destino));
     tarjeta.append(btn);
     viva!.append(tarjeta);
@@ -2567,6 +2656,13 @@ function setupSabias(leyes: LeyesData, ses: SesionesData): void {
   seccion.addEventListener("pointerenter", detener);
   seccion.addEventListener("pointerdown", detener);
   seccion.addEventListener("pointerleave", () => { if (!pausado) arrancar(); });
+  // Swipe sideways to change the fact (vertical scroll stays native: touch-action pan-y).
+  let x0 = 0;
+  seccion.addEventListener("pointerdown", (e: PointerEvent) => { x0 = e.clientX; });
+  seccion.addEventListener("pointerup", (e: PointerEvent) => {
+    const dx = e.clientX - x0;
+    if (Math.abs(dx) > 40) { mostrar(idx + (dx < 0 ? 1 : -1)); reiniciar(); }
+  });
 
   // Reflect the reduced-motion start state on the pause button (icon via CSS).
   if (reduce) {
@@ -2638,10 +2734,7 @@ function setupEscape(): void {
   document.addEventListener("keydown", (e: KeyboardEvent) => {
     if (e.key !== "Escape") return;
     const p = document.getElementById("perfilProvincia");
-    if (p && !p.classList.contains("hidden")) {
-      p.classList.add("hidden");
-      p.innerHTML = "";
-    }
+    if (p && !p.classList.contains("hidden")) cerrarPerfil();
   });
 }
 
@@ -2726,7 +2819,7 @@ function setupFinder(data: ProvinciasData): void {
     if (card) {
       card.click();
       const perfil = document.getElementById("perfilProvincia");
-      if (perfil) perfil.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (perfil) perfil.scrollIntoView({ behavior: suave(), block: "start" });
     }
   });
 }
@@ -2770,6 +2863,7 @@ async function init(): Promise<void> {
     llenarCifrasHome(leyes, provincias, sesiones);
     setupSabias(leyes, sesiones);
     setupCasoAccordion();
+    setupDineroFolds();
     setupBuscadorProvincias();
     setupBuscadorLeyes();
   } catch (err) {
