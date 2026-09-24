@@ -1,0 +1,63 @@
+name: "Dinero del país (automático)"
+# 3 times a month (after BCRD, DGCP and TSS publish). Numbers + fixed templates, no AI.
+on:
+  schedule:
+    - cron: "0 13 2,11,27 * *"
+  workflow_dispatch: {}
+
+# Least privilege: write to the repo (data commit) and to issues (one per problem).
+permissions:
+  contents: write
+  issues: write
+
+# Every publishing workflow shares ONE group: two writers to main never run at the same time.
+concurrency:
+  group: publicar-main
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      PSRD_AUTOPUBLICAR: ${{ vars.PSRD_AUTOPUBLICAR }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Descargar main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-auto.txt
+      - name: Instalar herramientas
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          pip install -q -r requirements-auto.txt
+      - name: Pruebas del robot (si fallan, no se publica nada)
+        run: python -m pytest -q tests/test_gates.py tests/test_publicar.py tests/test_red.py tests/test_dinero.py
+      - name: Leer la fuente oficial
+        id: fuente
+        continue-on-error: true
+        run: python scripts/auto/dinero.py
+      - name: Avisos por elemento (un issue por fuente, sin duplicados)
+        if: always()
+        run: python scripts/auto/issues.py run --dir . --workflow dinero
+      - name: Publicar (controles G0-G10, luego commit a main)
+        if: steps.fuente.outcome == 'success'
+        run: bash scripts/auto/publicar.sh dinero
+      - name: "La fuente falló, publicar solo su estado y dejar el job en rojo"
+        if: steps.fuente.outcome == 'failure'
+        run: bash scripts/auto/publicar.sh dinero --fallo
+      - name: Guardar el registro de la corrida
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: corrida-dinero-${{ github.run_id }}
+          path: .psrd-run/
+          include-hidden-files: true
+          retention-days: 30

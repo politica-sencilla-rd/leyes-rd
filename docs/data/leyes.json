@@ -4,6 +4,7 @@
   "senado": "https://www.senadord.gob.do/iniciativas-legislativa/",
   "camara": "https://www.diputadosrd.gob.do/sil"
  },
+ "datos_al_manual": "2026-06-09",
  "sectores": [
   {
    "id": "justicia",

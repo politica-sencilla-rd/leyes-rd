@@ -1,0 +1,134 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "type": "object",
+ "required": [
+  "leyes"
+ ],
+ "properties": {
+  "_nota": {
+   "type": "string"
+  },
+  "regla_por_defecto": {
+   "type": "object"
+  },
+  "leyes": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "numero",
+     "titulo",
+     "promulgada",
+     "estado",
+     "vigencia_fecha",
+     "fuente"
+    ],
+    "properties": {
+     "numero": {
+      "type": "string",
+      "pattern": "^\\d{1,3}-\\d{2}$"
+     },
+     "titulo": {
+      "type": "string"
+     },
+     "titulo_oficial": {
+      "type": "string"
+     },
+     "que_es": {
+      "type": "string"
+     },
+     "promulgada": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+     },
+     "publicada": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+     },
+     "gaceta": {
+      "type": "string"
+     },
+     "estado": {
+      "enum": [
+       "vigencia",
+       "pronto",
+       "ver_articulo"
+      ]
+     },
+     "vigencia_fecha": {
+      "anyOf": [
+       {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     },
+     "vigencia_texto": {
+      "type": "string"
+     },
+     "vigencia_cita": {
+      "type": "string"
+     },
+     "regla": {
+      "type": "string"
+     },
+     "fuente": {
+      "type": "string"
+     },
+     "url_documento": {
+      "type": "string",
+      "pattern": "^https?://"
+     },
+     "url_busqueda": {
+      "type": "string",
+      "pattern": "^https?://"
+     },
+     "auto": {
+      "type": "boolean"
+     },
+     "datos_al": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+     }
+    },
+    "anyOf": [
+     {
+      "required": [
+       "url_documento"
+      ]
+     },
+     {
+      "required": [
+       "url_busqueda"
+      ]
+     }
+    ],
+    "if": {
+     "properties": {
+      "auto": {
+       "const": true
+      }
+     },
+     "required": [
+      "auto"
+     ]
+    },
+    "then": {
+     "not": {
+      "required": [
+       "que_es"
+      ]
+     }
+    },
+    "else": {
+     "required": [
+      "que_es"
+     ]
+    }
+   }
+  }
+ }
+}

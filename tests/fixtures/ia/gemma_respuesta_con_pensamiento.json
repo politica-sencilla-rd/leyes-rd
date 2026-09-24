@@ -1,0 +1,34 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "*   Question: \"Es Santo Domingo la capital de Republica Dominicana?\" (Is Santo Domingo the capital of the Dominican Republic?)\n    *   Constraint: \"Responde con UNA sola palabra: SI o NO.\" (Respond with ONE single word: YES or NO.)\n\n    *   Santo Domingo is indeed the capital of the Dominican Republic.\n\n    *   The answer is \"SI\".\n\n    *   One word? Yes.\n    *   SI or NO? SI.",
+            "thought": true
+          },
+          {
+            "text": "SI"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 22,
+    "totalTokenCount": 121,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 22
+      }
+    ],
+    "thoughtsTokenCount": 99,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemma-4-26b-a4b-it",
+  "responseId": "vEq1atSSFq_TjMcPs-OeQA"
+}

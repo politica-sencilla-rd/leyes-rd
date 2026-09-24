@@ -1,0 +1,25 @@
+{
+ "_nota": "Gate G4: un enlace de fuente en un dato nuevo o cambiado solo se publica si su dominio está aquí (sitios oficiales del Estado dominicano). La prensa nunca entra en datos automáticos.",
+ "dominios": [
+  "www.senadord.gob.do",
+  "senadord.gob.do",
+  "www.senado.gov.do",
+  "senado.gov.do",
+  "www.diputadosrd.gob.do",
+  "diputadosrd.gob.do",
+  "www.camaradediputados.gob.do",
+  "camaradediputados.gob.do",
+  "www.consultoria.gov.do",
+  "consultoria.gov.do",
+  "www.bancentral.gov.do",
+  "bancentral.gov.do",
+  "cdn.bancentral.gov.do",
+  "www.creditopublico.gob.do",
+  "creditopublico.gob.do",
+  "www.tss.gob.do",
+  "tss.gob.do",
+  "www.digepres.gob.do",
+  "digepres.gob.do",
+  "s-sil.senado.gov.do"
+ ]
+}

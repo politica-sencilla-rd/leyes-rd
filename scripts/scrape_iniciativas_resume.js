@@ -21,7 +21,7 @@ async function main() {
   const page = await ctx.newPage();
   page.setDefaultTimeout(30000);
   // establish session
-  await page.goto(ENTRY, { waitUntil: "domcontentloaded" });
+  await page.goto(ENTRY, { waitUntil: "load" });
   await sleep(4500);
 
   const records = [];
@@ -29,7 +29,7 @@ async function main() {
   for (const id of ids) {
     const url = `http://www.senado.gov.do/wfilemaster/Ficha.aspx?IdExpediente=${id}&numeropagina=1&ContExpedientes=1&Coleccion=53`;
     try {
-      await page.goto(url, { waitUntil: "domcontentloaded" });
+      await page.goto(url, { waitUntil: "load" });
       await sleep(900);
       const rec = await page.evaluate(() => {
         const prop = document.getElementsByName("campos_nota_644")[0];

@@ -1,5 +1,5 @@
 {
  "fecha": "2026-09-21",
  "fuente": "Repull automático semanal del API SIL de la Cámara de Diputados (diputadosrd.gob.do)",
- "detalle": "Comisiones, iniciativas propuestas y asistencia al pleno de los 178 diputados. No incluye resúmenes en español fácil de proyectos de ley nuevos: esa parte la revisa una persona, nunca se genera sola."
+ "detalle": "Comisiones, iniciativas propuestas y asistencia al pleno de los diputados. Desde septiembre de 2026 el sitio se actualiza solo: robots leen las fuentes oficiales y publican solo lo que pasa controles automáticos. Los resúmenes en español fácil los escribe una IA y los revisa otra IA contra el documento oficial; si no pasan, no se publican. La fecha real de cada sección está en 'Datos al'."
 }

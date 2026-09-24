@@ -1,0 +1,9 @@
+# Python packages for the automatic pipeline (scripts/auto, scripts/gates, tests).
+# pdftotext comes from apt (poppler-utils) on the runner, not from pip.
+jsonschema==4.26.0
+pytest==9.0.2
+pandas==3.0.2
+openpyxl==3.1.5
+xlrd==2.0.2
+pypdf==6.10.2
+certifi

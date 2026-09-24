@@ -38,6 +38,8 @@ def norm(s: str) -> str:
 
 
 def main() -> None:
+    raise SystemExit("Reemplazado por scripts/auto/camara.py: allí la etiqueta del período sale de los datos "
+                     "(este archivo tenía fijo 'agosto 2024 a junio 2026'). Se guarda solo como historia.")
     stats = json.loads(STATS.read_text())["diputados"]
     # Index the scraped stats by normalized name for a robust lookup.
     by_name = {norm(name): row for name, row in stats.items()}

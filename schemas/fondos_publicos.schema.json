@@ -1,0 +1,13 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "type": "object",
+ "description": "Escrito a mano (rastro del dinero). El robot no lo toca; solo se valida que siga siendo JSON con fondos.",
+ "required": [
+  "fondos"
+ ],
+ "properties": {
+  "fondos": {
+   "type": "array"
+  }
+ }
+}

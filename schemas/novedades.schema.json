@@ -1,0 +1,45 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "type": "object",
+ "required": [
+  "novedades"
+ ],
+ "properties": {
+  "_nota": {
+   "type": "string"
+  },
+  "novedades": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "fecha",
+     "texto",
+     "aporte",
+     "guid"
+    ],
+    "properties": {
+     "fecha": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+     },
+     "texto": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 600
+     },
+     "aporte": {
+      "type": "string"
+     },
+     "guid": {
+      "type": "string"
+     },
+     "auto": {
+      "type": "boolean"
+     }
+    }
+   }
+  }
+ }
+}

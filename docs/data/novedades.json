@@ -4,47 +4,56 @@
     {
       "fecha": "2026-09-24",
       "texto": "Pausamos las listas de cómo votó cada senador. Al compararlas con las actas oficiales del Senado encontramos errores, así que las estamos revisando una por una antes de volver a mostrarlas. Los totales de cada votación siguen ahí, sacados del acta oficial.",
-      "aporte": "🔧 Mejora interna"
+      "aporte": "🔧 Mejora interna",
+      "guid": "psrd-2026-09-24-pausa-votos-senado"
     },
     {
       "fecha": "2026-06-14",
       "texto": "Ahora puedes tocar las fuentes para comprobarlas tú mismo: en el caso del SENASA y en las cifras del país, como la inflación y el desempleo, el enlace te lleva directo al sitio oficial.",
-      "aporte": "🔧 Mejora interna"
+      "aporte": "🔧 Mejora interna",
+      "guid": "psrd-2026-06-14-fuentes-oficiales"
     },
     {
       "fecha": "2026-06-11",
       "texto": "Ahora, antes de mandarte al buscador del gobierno, te explicamos qué número buscar cuando llegues.",
-      "aporte": "🔧 Mejora interna"
+      "aporte": "🔧 Mejora interna",
+      "guid": "psrd-2026-06-11-aviso-buscador"
     },
     {
       "fecha": "2026-06-11",
       "texto": "Ahora muchas tarjetas traen un enlace para leer el documento oficial: la ley completa, el acta del Senado o la fuente del dato.",
-      "aporte": "💡 Idea de Ángel"
+      "aporte": "💡 Idea de Ángel",
+      "guid": "psrd-2026-06-11-enlaces-doc"
     },
     {
       "fecha": "2026-06-11",
       "texto": "Ahora todas las tarjetas que se abren y cierran se ven igual en todo el sitio, con el color de su sección.",
-      "aporte": "🔧 Mejora interna"
+      "aporte": "🔧 Mejora interna",
+      "guid": "psrd-2026-06-11-diseno"
     },
     {
       "fecha": "2026-06-10",
       "texto": "Nueva sección en Leyes: cuáles leyes nuevas ya mandan y cuáles están por empezar, con su fecha.",
-      "aporte": "💡 Idea de un usuario"
+      "aporte": "💡 Idea de un usuario",
+      "guid": "psrd-2026-06-10-vigencia"
     },
     {
       "fecha": "2026-06-10",
       "texto": "Provincias ya tiene los regidores de todo el país, con nombre y partido, de la lista oficial de la JCE.",
-      "aporte": "💡 Idea de Alejandro"
+      "aporte": "💡 Idea de Alejandro",
+      "guid": "psrd-2026-06-10-regidores"
     },
     {
       "fecha": "2026-06-10",
       "texto": "Nuevo bloque que muestra quién controla el Congreso: cuántos asientos tiene cada partido.",
-      "aporte": "💡 Idea de un usuario"
+      "aporte": "💡 Idea de un usuario",
+      "guid": "psrd-2026-06-10-congreso"
     },
     {
       "fecha": "2026-06-10",
       "texto": "En Dinero, cada cifra del país ahora se compara con el año pasado, para ver si va mejor o peor.",
-      "aporte": "💡 Idea de Alejandro"
+      "aporte": "💡 Idea de Alejandro",
+      "guid": "psrd-2026-06-10-dinero"
     }
   ]
 }

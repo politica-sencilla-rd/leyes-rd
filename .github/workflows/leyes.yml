@@ -1,0 +1,74 @@
+name: "Leyes y proyectos (automático)"
+# Weekly, Wednesday 06:00 ET. SIL bills (status changes + newly passed bills) and new laws
+# from the Consultoría (¿Ya está vigente?).
+on:
+  schedule:
+    - cron: "0 10 * * 3"
+  workflow_dispatch: {}
+
+# Least privilege: write to the repo (data commit) and to issues (one per problem).
+permissions:
+  contents: write
+  issues: write
+
+# Every publishing workflow shares ONE group: two writers to main never run at the same time.
+concurrency:
+  group: publicar-main
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      PSRD_AUTOPUBLICAR: ${{ vars.PSRD_AUTOPUBLICAR }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Descargar main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-auto.txt
+      - name: Instalar herramientas
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          pip install -q -r requirements-auto.txt
+      - name: Pruebas del robot (si fallan, no se publica nada)
+        run: python -m pytest -q tests/test_gates.py tests/test_publicar.py tests/test_red.py tests/test_leyes.py
+      - name: Leer las fuentes oficiales (SIL y Consultoría)
+        id: fuente
+        # Each reader writes nothing when its source fails, so one failing source
+        # (the Consultoría answers 403 to GitHub runners) never blocks the other.
+        run: |
+          set +e
+          python scripts/auto/leyes.py; echo "leyes=$?" >> "$GITHUB_OUTPUT"
+          python scripts/auto/vigencia.py; echo "vigencia=$?" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Avisos por elemento (un issue por fuente, sin duplicados)
+        if: always()
+        run: python scripts/auto/issues.py run --dir . --workflow leyes
+      - name: Publicar lo que sí llegó (controles G0-G10, luego commit a main)
+        if: steps.fuente.outputs.leyes == '0' || steps.fuente.outputs.vigencia == '0'
+        run: bash scripts/auto/publicar.sh leyes
+      - name: "Ninguna fuente respondió: publicar solo su estado"
+        if: steps.fuente.outputs.leyes != '0' && steps.fuente.outputs.vigencia != '0'
+        run: bash scripts/auto/publicar.sh leyes --fallo
+      - name: Dejar el job en rojo si una fuente falló
+        if: always() && (steps.fuente.outputs.leyes != '0' || steps.fuente.outputs.vigencia != '0')
+        run: |
+          echo "Fuente con fallo: SIL=${{ steps.fuente.outputs.leyes }} Consultoría=${{ steps.fuente.outputs.vigencia }}"
+          exit 1
+      - name: Guardar el registro de la corrida
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: corrida-leyes-${{ github.run_id }}
+          path: .psrd-run/
+          include-hidden-files: true
+          retention-days: 30

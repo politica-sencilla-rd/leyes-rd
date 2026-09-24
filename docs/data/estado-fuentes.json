@@ -1,0 +1,88 @@
+{
+  "_nota": "Qué tan al día está cada fuente. 'datos_al' sale de los propios datos (la fecha más nueva que trae la fuente); 'revisado_el' es el último día que el robot la revisó. Lo escribe scripts/auto/datos_al.py en cada corrida.",
+  "fuentes": {
+    "senado_actas": {
+      "nombre": "Actas del Senado",
+      "seccion": "sesiones",
+      "url_fuente": "https://www.senadord.gob.do/elaboracion-de-actas/actas-de-sesiones/",
+      "retraso": "El Senado publica sus actas unas 7 semanas después de cada sesión.",
+      "datos_al": "2026-04-15",
+      "ultimo_leido": "Acta 0106",
+      "estado": "sin_revisar",
+      "fallos_seguidos": 0
+    },
+    "camara_diputados": {
+      "nombre": "Cámara de Diputados (SIL)",
+      "seccion": "provincias",
+      "url_fuente": "https://www.diputadosrd.gob.do/sil",
+      "retraso": "",
+      "estado": "sin_revisar",
+      "fallos_seguidos": 0
+    },
+    "leyes_sil": {
+      "nombre": "Proyectos de ley (SIL)",
+      "seccion": "leyes",
+      "url_fuente": "https://www.diputadosrd.gob.do/sil",
+      "retraso": "",
+      "estado": "sin_revisar",
+      "fallos_seguidos": 0
+    },
+    "vigencia_consultoria": {
+      "nombre": "Leyes promulgadas (Consultoría Jurídica)",
+      "seccion": "vigencia",
+      "url_fuente": "https://www.consultoria.gov.do/consultas",
+      "retraso": "La Gaceta Oficial sale unos días después de firmada la ley.",
+      "datos_al": "2026-05-01",
+      "estado": "sin_revisar",
+      "fallos_seguidos": 0
+    },
+    "dinero_inflacion": {
+      "nombre": "Inflación (Banco Central)",
+      "seccion": "dinero",
+      "url_fuente": "https://www.bancentral.gov.do/a/d/2534-precios",
+      "retraso": "",
+      "estado": "sin_revisar",
+      "fallos_seguidos": 0
+    },
+    "dinero_desempleo": {
+      "nombre": "Desempleo (Banco Central)",
+      "seccion": "dinero",
+      "url_fuente": "https://www.bancentral.gov.do/a/d/2541-encuesta-continua-encft",
+      "retraso": "El Banco Central publica el empleo cada 3 meses.",
+      "estado": "sin_revisar",
+      "fallos_seguidos": 0
+    },
+    "dinero_crecimiento": {
+      "nombre": "Crecimiento (Banco Central)",
+      "seccion": "dinero",
+      "url_fuente": "https://www.bancentral.gov.do/a/d/2533-sector-real",
+      "retraso": "El dato del año completo sale a inicios del año siguiente.",
+      "estado": "sin_revisar",
+      "fallos_seguidos": 0
+    },
+    "dinero_deuda": {
+      "nombre": "Deuda (Crédito Público)",
+      "seccion": "dinero",
+      "url_fuente": "https://www.creditopublico.gob.do/inicio/estadisticas",
+      "retraso": "La deuda del año completo sale unos meses después de diciembre.",
+      "estado": "sin_revisar",
+      "fallos_seguidos": 0
+    },
+    "dinero_salario": {
+      "nombre": "Sueldo promedio (TSS)",
+      "seccion": "dinero",
+      "url_fuente": "https://www.tss.gob.do/",
+      "retraso": "La TSS publica su boletín unos 2 meses después de cada mes.",
+      "estado": "sin_revisar",
+      "fallos_seguidos": 0
+    },
+    "resumenes_ia": {
+      "nombre": "Resúmenes automáticos",
+      "seccion": "",
+      "url_fuente": "",
+      "retraso": "",
+      "estado": "sin_revisar",
+      "fallos_seguidos": 0
+    }
+  }
+}
