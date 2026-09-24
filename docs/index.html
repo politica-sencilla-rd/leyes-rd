@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%87%A9%F0%9F%87%B4%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23fff'/%3E%3Cpath fill='%2315327a' d='M4 4h10v10H4zM18 18h10v10H18z'/%3E%3Cpath fill='%23b3261e' d='M18 4h10v10H18zM4 18h10v10H4z'/%3E%3C/svg%3E" />
   <title>Política Sencilla RD — Las leyes y el gobierno, fácil de entender</title>
   <meta name="description" content="Política Sencilla RD: entiende la política dominicana fácil. Las leyes por tema, quién manda en cada provincia, cómo vota el Senado y cómo se mueve el dinero público. Sin palabras difíciles." />
-  <meta name="theme-color" content="#1a4ed8" />
+  <meta name="theme-color" content="#ffffff" />
   <link rel="manifest" href="manifest.json" />
   <meta property="og:title" content="Política Sencilla RD" />
   <meta property="og:description" content="Entiende la política dominicana fácil: las leyes por tema, quién manda en cada provincia, cómo vota el Senado y cómo se mueve el dinero público." />
@@ -21,35 +21,48 @@
   <meta name="twitter:image" content="https://politica-sencilla-rd.github.io/leyes-rd/og.png" />
   <meta name="twitter:title" content="Política Sencilla RD" />
   <meta name="twitter:description" content="La política dominicana, explicada fácil." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260924a" />
+  <link rel="stylesheet" href="styles.css?v=20260924b" />
 </head>
 <body>
   <header class="topbar">
-    <button class="topbar-home" id="homeLink" aria-label="Ir al inicio">
-      <h1>🇩🇴 Política Sencilla RD</h1>
-    </button>
-    <p class="sub">Entiende la política dominicana: las leyes, las provincias, el Senado y el dinero público. Fácil y gratis.</p>
+    <div class="topbar-in">
+      <h1 class="marca">
+        <button class="topbar-home" id="homeLink" type="button" aria-label="Política Sencilla RD. Ir al inicio">
+          <span class="marca-sello" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="marca-nombre">Política Sencilla <span class="marca-rd">RD</span></span>
+        </button>
+      </h1>
+      <p class="sub">Entiende la política dominicana: las leyes, las provincias, el Senado y el dinero público. Fácil y gratis.</p>
+      <nav class="tabs" aria-label="Secciones">
+        <button class="tab tab-inicio active" data-view="home" type="button" aria-current="page"><span class="ico ico-home" aria-hidden="true"></span><span class="tab-txt">Inicio</span></button>
+        <button class="tab" data-view="pais" type="button"><span class="ico ico-flag" aria-hidden="true"></span><span class="tab-txt">El país</span></button>
+        <button class="tab" data-view="leyes" type="button"><span class="ico ico-leyes" aria-hidden="true"></span><span class="tab-txt">Leyes</span></button>
+        <button class="tab" data-view="mapa" type="button"><span class="ico ico-mapa" aria-hidden="true"></span><span class="tab-txt">Provincias</span></button>
+        <button class="tab" data-view="sesiones" type="button"><span class="ico ico-sesiones" aria-hidden="true"></span><span class="tab-txt">Sesiones</span></button>
+        <button class="tab" data-view="dinero" type="button"><span class="ico ico-dinero" aria-hidden="true"></span><span class="tab-txt">Dinero</span></button>
+      </nav>
+    </div>
   </header>
-
-  <nav class="tabs" role="tablist" aria-label="Secciones">
-    <button class="tab active" data-view="home" role="tab" aria-selected="true">🏠 Inicio</button>
-    <button class="tab" data-view="pais" role="tab" aria-selected="false">🇩🇴 El país</button>
-    <button class="tab" data-view="leyes" role="tab" aria-selected="false">📜 Leyes</button>
-    <button class="tab" data-view="mapa" role="tab" aria-selected="false">🗺️ Provincias</button>
-    <button class="tab" data-view="sesiones" role="tab" aria-selected="false">🏛️ Sesiones</button>
-    <button class="tab" data-view="dinero" role="tab" aria-selected="false">💰 Dinero</button>
-  </nav>
 
   <main>
     <section id="view-home" class="view">
       <div class="hero">
-        <p class="hero-kicker">Bienvenido</p>
-        <h2 class="hero-titulo">La política dominicana, fácil de entender</h2>
-        <p class="hero-sub">Aquí ves quién te representa, qué leyes se hacen y a dónde va el dinero del país. Sin enredos. Toca una tarjeta para empezar.</p>
-        <button class="hero-proyecto-btn" type="button" data-goto="proyecto">📖 Conoce el proyecto</button>
+        <div class="hero-txt">
+          <p class="hero-kicker">Gratis, sin partidos y con fuentes oficiales</p>
+          <h2 class="hero-titulo">La política dominicana, fácil de entender</h2>
+          <p class="hero-sub">Aquí ves quién te representa, qué leyes se hacen y a dónde va el dinero del país. Sin enredos.</p>
+          <button class="hero-proyecto-btn" type="button" data-goto="proyecto">Conoce el proyecto <span aria-hidden="true">→</span></button>
+        </div>
+        <!-- "¿Quién te representa?" finder: fastest path to your own officials.
+             The <select> is filled and wired by setupFinder() in app.js from
+             provincias.json; choosing a province opens its profile. -->
+        <div class="finder">
+          <h3 class="finder-titulo">¿Quién te representa?</h3>
+          <p class="finder-sub">Elige tu provincia y ve a tu senador y tus diputados: qué hacen y cuánto ganan.</p>
+          <select id="finderProvincia" class="finder-select" aria-label="Elige tu provincia">
+            <option value="">Elige tu provincia…</option>
+          </select>
+        </div>
       </div>
 
       <!-- Hero "¿Sabías que...?" — rotating facts pulled from our real data.
@@ -57,26 +70,12 @@
            gently; pausable; respects prefers-reduced-motion (no auto-rotate). -->
       <section id="sabias" class="sabias" aria-roledescription="carrusel" aria-label="¿Sabías que...?">
         <div class="sabias-cab">
-          <span class="sabias-kicker">🤔 ¿Sabías que…?</span>
-          <button id="sabiasPausa" class="sabias-pausa" type="button" aria-label="Pausar el cambio automático" aria-pressed="false">⏸️</button>
+          <span class="sabias-kicker">¿Sabías que…?</span>
+          <button id="sabiasPausa" class="sabias-pausa" type="button" aria-label="Pausar el cambio automático" aria-pressed="false"></button>
         </div>
         <div id="sabiasViva" class="sabias-viva" aria-live="polite"></div>
         <div id="sabiasPuntos" class="sabias-puntos" role="tablist" aria-label="Elegir dato"></div>
       </section>
-
-      <!-- Suggested learning order — the home cards reframed as a journey, in the
-           chain order El país → Leyes → Sesiones → Provincias → Dinero. Each card
-           carries its step number so it reads as "first this, then this". -->
-      <!-- "¿Quién te representa?" finder — fastest path to your own officials.
-           The <select> is filled and wired by setupFinder() in app.js from
-           provincias.json; choosing a province opens its profile. -->
-      <div class="finder">
-        <h3 class="finder-titulo">🔎 ¿Quién te representa?</h3>
-        <p class="finder-sub">Elige tu provincia y ve a tu senador y tus diputados: qué hacen y cuánto ganan.</p>
-        <select id="finderProvincia" class="finder-select" aria-label="Elige tu provincia">
-          <option value="">Elige tu provincia…</option>
-        </select>
-      </div>
 
       <div class="ruta-cab">
         <h3 class="ruta-titulo">¿Qué quieres aprender hoy?</h3>
@@ -86,54 +85,54 @@
       <div class="home-grid">
         <button class="home-card card-pais" data-goto="pais">
           <span class="home-paso" aria-hidden="true">1</span>
-          <span class="home-emoji">🇩🇴</span>
+          <span class="home-emoji"><span class="ico ico-flag" aria-hidden="true"></span></span>
           <span class="home-card-titulo">El país</span>
           <span class="home-card-desc">Quién manda y cuándo votas.</span>
           <span class="home-card-cifra">Próximas elecciones: 2028</span>
-          <span class="home-card-go">Empezar aquí ▸</span>
+          <span class="home-card-go">Empezar aquí <span aria-hidden="true">→</span></span>
         </button>
         <button class="home-card card-leyes" data-goto="leyes">
           <span class="home-paso" aria-hidden="true">2</span>
-          <span class="home-emoji">📜</span>
+          <span class="home-emoji"><span class="ico ico-leyes" aria-hidden="true"></span></span>
           <span class="home-card-titulo">Leyes</span>
           <span class="home-card-desc">Qué se propone y se aprueba, por tema.</span>
           <span class="home-card-cifra" data-cifra="leyes"></span>
-          <span class="home-card-go">Explorar ▸</span>
+          <span class="home-card-go">Explorar <span aria-hidden="true">→</span></span>
         </button>
         <button class="home-card card-sesiones" data-goto="sesiones">
           <span class="home-paso" aria-hidden="true">3</span>
-          <span class="home-emoji">🏛️</span>
+          <span class="home-emoji"><span class="ico ico-sesiones" aria-hidden="true"></span></span>
           <span class="home-card-titulo">Sesiones</span>
           <span class="home-card-desc">Qué votó el Senado y quién asistió.</span>
           <span class="home-card-cifra" data-cifra="sesiones"></span>
-          <span class="home-card-go">Explorar ▸</span>
+          <span class="home-card-go">Explorar <span aria-hidden="true">→</span></span>
         </button>
         <button class="home-card card-mapa" data-goto="mapa">
           <span class="home-paso" aria-hidden="true">4</span>
-          <span class="home-emoji">🗺️</span>
+          <span class="home-emoji"><span class="ico ico-mapa" aria-hidden="true"></span></span>
           <span class="home-card-titulo">Provincias</span>
           <span class="home-card-desc">Quién manda en cada provincia.</span>
           <span class="home-card-cifra" data-cifra="provincias"></span>
-          <span class="home-card-go">Explorar ▸</span>
+          <span class="home-card-go">Explorar <span aria-hidden="true">→</span></span>
         </button>
         <button class="home-card card-dinero" data-goto="dinero">
           <span class="home-paso" aria-hidden="true">5</span>
-          <span class="home-emoji">💰</span>
+          <span class="home-emoji"><span class="ico ico-dinero" aria-hidden="true"></span></span>
           <span class="home-card-titulo">Dinero</span>
           <span class="home-card-desc">Cómo viaja el dinero público, con un caso real.</span>
           <span class="home-card-cifra">Un caso real: más de RD$15,900 millones</span>
-          <span class="home-card-go">Explorar ▸</span>
+          <span class="home-card-go">Explorar <span aria-hidden="true">→</span></span>
         </button>
       </div>
 
       <div class="participa">
-        <h3 class="participa-titulo">📣 Comparte y participa</h3>
+        <h3 class="participa-titulo">Comparte y participa</h3>
         <p class="participa-sub">Mientras más gente lo conozca, mejor. Y tú puedes ayudar a mejorarlo.</p>
         <div class="participa-botones">
-          <button id="shareBtn" class="btn-part btn-compartir" type="button">📤 Compartir</button>
-          <a id="waShare" class="btn-part btn-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
-          <button id="copyBtn" class="btn-part btn-copiar" type="button">🔗 Copiar enlace</button>
-          <a class="btn-part btn-aportar" href="https://github.com/politica-sencilla-rd/leyes-rd/issues/new/choose" target="_blank" rel="noopener">✍️ Reportar o aportar</a>
+          <a id="waShare" class="btn-part btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+          <button id="shareBtn" class="btn-part btn-compartir" type="button">Compartir</button>
+          <button id="copyBtn" class="btn-part btn-copiar" type="button">Copiar enlace</button>
+          <a class="btn-part btn-aportar" href="https://github.com/politica-sencilla-rd/leyes-rd/issues/new/choose" target="_blank" rel="noopener">Reportar o aportar</a>
         </div>
       </div>
 
@@ -144,31 +143,33 @@
       <section class="novedades">
         <details class="novedades-fold">
           <summary class="novedades-cab">
-            <span class="novedades-titulo">🆕 Novedades</span>
+            <span class="novedades-titulo">Novedades</span>
             <span class="novedades-sub">Lo último que mejoramos</span>
             <span class="novedades-chev" aria-hidden="true">▸</span>
           </summary>
           <div class="novedades-body">
             <ul id="novedadesLista" class="novedades-lista"></ul>
             <p class="novedades-rss">
-              📡 Sigue las novedades por <a href="novedades.xml" target="_blank" rel="noopener">RSS</a>.
+              <span class="ico ico-rss" aria-hidden="true"></span> Sigue las novedades por <a href="novedades.xml" target="_blank" rel="noopener">RSS</a>.
               <span class="palabra" data-def="RSS es una forma de que una app te avise cuando hay algo nuevo aquí, sin usar redes sociales. Pegas este enlace en un lector de RSS y te llegan las novedades solas.">¿Qué es RSS?</span>
             </p>
           </div>
         </details>
       </section>
 
-      <p class="home-nota">ℹ️ Datos reales del <b>Senado de la República Dominicana</b>. Gratis y sin palabras difíciles.</p>
+      <p class="home-nota">Datos reales del <b>Senado de la República Dominicana</b>. Gratis y sin palabras difíciles.</p>
     </section>
 
     <section id="view-pais" class="view hidden sec-pais">
-      <h2 class="seccion-titulo">🇩🇴 El país</h2>
+      <header class="vista-cab">
+      <h2 class="seccion-titulo">El país</h2>
       <p class="seccion-desc">Quién manda en la República Dominicana, y cuándo y cómo votas tú.</p>
 
       <div class="en30">
-        <span class="en30-cab">⏱️ En 30 segundos</span>
+        <span class="en30-cab"><span class="ico ico-reloj" aria-hidden="true"></span>En 30 segundos</span>
         <p>En RD mandan varios, no uno solo. Tú votas y eliges a casi todos: al Presidente, al Congreso que hace las leyes y a tu alcalde. Cada uno tiene su trabajo. Empieza por aquí y lo demás se entiende solo.</p>
       </div>
+      </header>
 
       <!-- ===== GRUPO 1 (El país) — ¿Quién manda? (plegado por defecto) =====
            Envuelve el intro + el flujo de 5 pasos existente. Mismo plegable
@@ -176,7 +177,7 @@
       <details class="grupo-cargo grupo-pagina">
         <summary class="grupo-cab">
           <span class="grupo-cab-txt">
-            <span class="grupo-nombre">🗳️ ¿Quién manda?</span>
+            <span class="grupo-nombre"><span class="ico ico-voto" aria-hidden="true"></span> ¿Quién manda?</span>
             <span class="grupo-sub">Del voto a los jueces: quién hace qué en el país.</span>
           </span>
           <span class="grupo-chev" aria-hidden="true">▸</span>
@@ -185,15 +186,15 @@
 
       <p class="bloque-intro">Todo empieza con tu voto. La gente elige a casi todos los que mandan:</p>
       <div class="flujo-graf">
-        <div class="paso"><span class="paso-num">1</span><span class="paso-emoji">🗳️</span><div class="paso-txt"><b>El pueblo vota</b><span>Tú eliges a casi todos los que mandan.</span></div></div>
+        <div class="paso"><span class="paso-num">1</span><span class="paso-emoji"><span class="ico ico-voto" aria-hidden="true"></span></span><div class="paso-txt"><b>El pueblo vota</b><span>Tú eliges a casi todos los que mandan.</span></div></div>
         <div class="flecha">↓</div>
-        <div class="paso"><span class="paso-num">2</span><span class="paso-emoji">🏛️</span><div class="paso-txt"><b>El Presidente</b><span>Dirige el país día a día, con sus ministerios. Hoy es Luis Abinader (PRM), período 2024–2028, junto a la vicepresidenta Raquel Peña.</span></div></div>
+        <div class="paso"><span class="paso-num">2</span><span class="paso-emoji"><span class="ico ico-flag" aria-hidden="true"></span></span><div class="paso-txt"><b>El Presidente</b><span>Dirige el país día a día, con sus ministerios. Hoy es Luis Abinader (PRM), período 2024–2028, junto a la vicepresidenta Raquel Peña.</span></div></div>
         <div class="flecha">↓</div>
-        <div class="paso"><span class="paso-num">3</span><span class="paso-emoji">⚖️</span><div class="paso-txt"><b>El Congreso</b><span>Hace las leyes. Son dos grupos: el Senado (32 personas, una por provincia) y la Cámara de Diputados (190 personas). De los diputados, 178 los eliges por tu provincia; hay además 5 nacionales y 7 del exterior.</span></div></div>
+        <div class="paso"><span class="paso-num">3</span><span class="paso-emoji"><span class="ico ico-sesiones" aria-hidden="true"></span></span><div class="paso-txt"><b>El Congreso</b><span>Hace las leyes. Son dos grupos: el Senado (32 personas, una por provincia) y la Cámara de Diputados (190 personas). De los diputados, 178 los eliges por tu provincia; hay además 5 nacionales y 7 del exterior.</span></div></div>
         <div class="flecha">↓</div>
-        <div class="paso"><span class="paso-num">4</span><span class="paso-emoji">🏘️</span><div class="paso-txt"><b>Tu alcalde y los regidores</b><span>El alcalde manda en tu pueblo: calles, basura, parques, agua. Los <span class="palabra" data-def="Los regidores son los concejales del pueblo: el grupo que aprueba el presupuesto del municipio, dicta las normas locales y vigila al alcalde. Cada municipio elige varios por voto.">regidores</span> son el concejo que aprueba el presupuesto del pueblo y vigila al alcalde. A todos los eliges por voto.</span></div></div>
+        <div class="paso"><span class="paso-num">4</span><span class="paso-emoji"><span class="ico ico-home" aria-hidden="true"></span></span><div class="paso-txt"><b>Tu alcalde y los regidores</b><span>El alcalde manda en tu pueblo: calles, basura, parques, agua. Los <span class="palabra" data-def="Los regidores son los concejales del pueblo: el grupo que aprueba el presupuesto del municipio, dicta las normas locales y vigila al alcalde. Cada municipio elige varios por voto.">regidores</span> son el concejo que aprueba el presupuesto del pueblo y vigila al alcalde. A todos los eliges por voto.</span></div></div>
         <div class="flecha">↓</div>
-        <div class="paso"><span class="paso-num">5</span><span class="paso-emoji">👨‍⚖️</span><div class="paso-txt"><b>Los jueces</b><span>Aplican la ley cuando hay un problema. A estos no los eliges por voto.</span></div></div>
+        <div class="paso"><span class="paso-num">5</span><span class="paso-emoji"><span class="ico ico-scale" aria-hidden="true"></span></span><div class="paso-txt"><b>Los jueces</b><span>Aplican la ley cuando hay un problema. A estos no los eliges por voto.</span></div></div>
       </div>
 
         </div>
@@ -207,7 +208,7 @@
       <details class="grupo-cargo grupo-pagina">
         <summary class="grupo-cab">
           <span class="grupo-cab-txt">
-            <span class="grupo-nombre">🏛️ ¿Quién controla el Congreso?</span>
+            <span class="grupo-nombre"><span class="ico ico-banco" aria-hidden="true"></span> ¿Quién controla el Congreso?</span>
             <span class="grupo-sub">Cuántos asientos tiene cada partido.</span>
           </span>
           <span class="grupo-chev" aria-hidden="true">▸</span>
@@ -225,7 +226,7 @@
       <details class="grupo-cargo grupo-pagina">
         <summary class="grupo-cab">
           <span class="grupo-cab-txt">
-            <span class="grupo-nombre">🗳️ ¿Cuándo y cómo voto?</span>
+            <span class="grupo-nombre"><span class="ico ico-voto" aria-hidden="true"></span> ¿Cuándo y cómo voto?</span>
             <span class="grupo-sub">Las fechas y cómo prepararte para votar.</span>
           </span>
           <span class="grupo-chev" aria-hidden="true">▸</span>
@@ -237,7 +238,7 @@
         <span class="nota-fuente">La JCE publica la fecha exacta cuando se acerca.</span>
       </div>
       <div class="arreglo">
-        <b>✅ ¿Cómo me preparo para votar?</b>
+        <b><span class="ico ico-check" aria-hidden="true"></span> ¿Cómo me preparo para votar?</b>
         <ul>
           <li>Ten tu <b>cédula</b> al día. No hay un registro aparte: al tener la cédula, ya estás en la lista para votar (el padrón).</li>
           <li>Revisa que estás en la lista en <b>jce.gob.do</b>.</li>
@@ -258,36 +259,45 @@
     </section>
 
     <section id="view-leyes" class="view hidden sec-leyes">
-      <h2 class="seccion-titulo">📜 Las Leyes</h2>
+      <header class="vista-cab">
+      <h2 class="seccion-titulo">Las Leyes</h2>
       <p class="seccion-desc">Lo que se propone y se aprueba en el país, contado fácil y ordenado por tema.</p>
 
       <div class="en30">
-        <span class="en30-cab">⏱️ En 30 segundos</span>
+        <span class="en30-cab"><span class="ico ico-reloj" aria-hidden="true"></span>En 30 segundos</span>
         <p>Una ley es una regla que vale para todo el país. Alguien la propone, el Congreso la estudia y la vota, y el Presidente la firma. Aquí las ves por tema —salud, luz, trabajo— con su estado: si está aprobada, en votación o rechazada.</p>
       </div>
+      </header>
+      <div class="buscador">
+        <span class="buscador-icono ico ico-buscar" aria-hidden="true"></span>
+        <input id="buscarLey" class="buscador-input" type="search" placeholder="Busca: salud, luz, trabajo…" aria-label="Buscar un tema o una ley" autocomplete="off" />
+      </div>
+      <p id="leyNoResultado" class="hint hidden">No encontramos nada con esa palabra. Prueba otra.</p>
+
       <!-- Source/honesty note + how-to + state legend, grouped into one tight
            intro box so the law sectors aren't pushed down by three stacked boxes. -->
       <div class="como leyes-intro">
         <p class="leyes-intro-comofunciona"><b>¿Cómo funciona?</b> Las leyes están ordenadas por <b>tema</b>, no por números. Toca un tema, luego una ley, y verás <b>qué dice</b> y <b>en qué estado va</b>.</p>
         <div class="leyenda">
-          <span class="leyenda-item"><span class="ley-estado estado-aprobada">✅ Aprobada</span> ya es ley o el Senado la aprobó.</span>
-          <span class="leyenda-item"><span class="ley-estado estado-votando">🗳️ En votación</span> todavía se está decidiendo.</span>
-          <span class="leyenda-item"><span class="ley-estado estado-rechazada">❌ Rechazada</span> se cayó o fue archivada.</span>
+          <span class="leyenda-item"><span class="ley-estado estado-aprobada"><span class="ico ico-check" aria-hidden="true"></span> Aprobada</span><span>ya es ley o el Senado la aprobó.</span></span>
+          <span class="leyenda-item"><span class="ley-estado estado-votando"><span class="ico ico-hourglass" aria-hidden="true"></span> En votación</span><span>todavía se está decidiendo.</span></span>
+          <span class="leyenda-item"><span class="ley-estado estado-rechazada"><span class="ico ico-x" aria-hidden="true"></span> Rechazada</span><span>se cayó o fue archivada.</span></span>
         </div>
-        <p id="fuenteBanner" class="leyes-intro-fuente">ℹ️ Datos reales del <b>Senado de la República Dominicana</b> (recogidos en junio de 2026). El Senado solo publica los totales de cada votación, no cómo votó cada senador. La Cámara de Diputados sí publica el voto de cada diputado.</p>
+        <p id="fuenteBanner" class="leyes-intro-fuente"><span class="ico ico-info" aria-hidden="true"></span> Datos reales del <b>Senado de la República Dominicana</b> (recogidos en junio de 2026). El Senado solo publica los totales de cada votación, no cómo votó cada senador. La Cámara de Diputados sí publica el voto de cada diputado.</p>
       </div>
+      <div id="sectores"></div>
 
       <!-- Leyes que entran en vigencia (4ª sugerencia de un usuario real).
            Se rellena desde data/vigencia.json en src/app.ts (renderVigencia). -->
       <div id="vigencia" class="vigencia"></div>
 
       <details class="transp">
-        <summary>🗳️ ¿Por qué no veo quién votó?</summary>
+        <summary><span class="ico ico-voto" aria-hidden="true"></span> ¿Por qué no veo quién votó?</summary>
         <div class="transp-body">
           <p>Buena pregunta. Esto es lo que pasa:</p>
           <ul>
             <li><b>El voto sí se registra.</b> El reglamento de la Cámara de Diputados permite votar de dos formas: por <b>sistema electrónico</b> o <b>por nombre</b> (votación nominal). El <b>voto secreto está prohibido</b>.</li>
-            <li><b>La Cámara de Diputados sí lo publica.</b> En su sistema oficial puedes ver cómo votó cada diputado, con su nombre: <a class="enlace-doc" href="https://www.diputadosrd.gob.do/sil" target="_blank" rel="noopener">📄 SIL de la Cámara</a>.</li>
+            <li><b>La Cámara de Diputados sí lo publica.</b> En su sistema oficial puedes ver cómo votó cada diputado, con su nombre: <a class="enlace-doc" href="https://www.diputadosrd.gob.do/sil" target="_blank" rel="noopener">SIL de la Cámara</a>.</li>
             <li><b>El Senado no lo publica.</b> En sus actas oficiales solo pone los <b>totales</b>: cuántos votaron a favor. Esos totales los ves en Sesiones.</li>
             <li><b>Nuestra lista de senadores está en pausa.</b> La armamos nosotros, no viene del Senado. Al compararla con las actas oficiales encontramos diferencias. Por eso no la mostramos hasta revisarla contra cada acta.</li>
             <li><b>Tú puedes pedirlo.</b> La <b>Ley 200-04</b> de Libre Acceso a la Información te deja pedirle al Senado ese registro, gratis, por el portal <b>SAIP</b> (saip.gob.do). Deben responder en unos 15 días hábiles.</li>
@@ -297,7 +307,7 @@
       </details>
 
       <details class="transp">
-        <summary>📝 ¿Cómo se hace una ley?</summary>
+        <summary><span class="ico ico-pencil" aria-hidden="true"></span> ¿Cómo se hace una ley?</summary>
         <div class="transp-body">
           <p>El camino de una idea hasta convertirse en ley:</p>
           <ol class="flujo">
@@ -312,13 +322,6 @@
         </div>
       </details>
 
-      <div class="buscador">
-        <span class="buscador-icono" aria-hidden="true">🔎</span>
-        <input id="buscarLey" class="buscador-input" type="search" placeholder="Busca un tema o una ley (salud, luz…)" aria-label="Buscar un tema o una ley" autocomplete="off" />
-      </div>
-      <p id="leyNoResultado" class="hint hidden">No encontramos nada con esa palabra. Prueba otra.</p>
-      <div id="sectores"></div>
-
       <div class="siguiente va-sesiones">
         <span class="siguiente-cab">¿Y ahora qué?</span>
         <p class="siguiente-porque">Ya viste qué leyes hay. Ahora mira el día en que el Senado se junta a votarlas.</p>
@@ -327,16 +330,18 @@
     </section>
 
     <section id="view-mapa" class="view hidden sec-mapa">
-      <h2 class="seccion-titulo">🗺️ Las Provincias</h2>
+      <header class="vista-cab">
+      <h2 class="seccion-titulo">Las Provincias</h2>
       <p class="seccion-desc">Quién representa a cada provincia: el senador y los diputados (hacen las leyes) y el gobernador y los alcaldes (gobiernan lo local).</p>
 
       <div class="en30">
-        <span class="en30-cab">⏱️ En 30 segundos</span>
+        <span class="en30-cab"><span class="ico ico-reloj" aria-hidden="true"></span>En 30 segundos</span>
         <p>El país tiene 32 provincias y cada una tiene su gente que manda: un senador y varios diputados que hacen las leyes, un gobernador y los alcaldes que cuidan lo local. Toca tu provincia y mira quiénes son, qué hacen y cuánto ganan.</p>
       </div>
+      </header>
       <p class="hint">Toca una provincia para ver a su gente.</p>
       <div class="buscador">
-        <span class="buscador-icono" aria-hidden="true">🔎</span>
+        <span class="buscador-icono ico ico-buscar" aria-hidden="true"></span>
         <input id="buscarProvincia" class="buscador-input" type="search" placeholder="Busca tu provincia…" aria-label="Buscar tu provincia" autocomplete="off" />
       </div>
       <p id="provNoResultado" class="hint hidden">No encontramos esa provincia. Revisa cómo se escribe.</p>
@@ -351,13 +356,15 @@
     </section>
 
     <section id="view-sesiones" class="view hidden sec-sesiones">
-      <h2 class="seccion-titulo">🏛️ Las Sesiones</h2>
+      <header class="vista-cab">
+      <h2 class="seccion-titulo">Las Sesiones</h2>
       <p class="seccion-desc">Las reuniones del Senado: qué votaron ese día, cuántos dijeron que sí, y quién asistió.</p>
 
       <div class="en30">
-        <span class="en30-cab">⏱️ En 30 segundos</span>
+        <span class="en30-cab"><span class="ico ico-reloj" aria-hidden="true"></span>En 30 segundos</span>
         <p>Una sesión es el día en que los 32 senadores se juntan a votar. Aquí ves qué votaron, cuántos dijeron que sí y quién faltó. Así sabes si quien te representa va a trabajar y qué decide cuando llega.</p>
       </div>
+      </header>
       <div class="como">
         <b>¿Qué es una sesión y por qué te importa?</b>
         Una sesión es una reunión donde los senadores <b>votan leyes</b>. Y las leyes que se votan ahí
@@ -377,13 +384,15 @@
     </section>
 
     <section id="view-dinero" class="view hidden sec-dinero">
-      <h2 class="seccion-titulo">💰 El Dinero</h2>
-      <p class="seccion-desc">Cómo viaja el dinero público, paso a paso — y dónde se suele perder.</p>
+      <header class="vista-cab">
+      <h2 class="seccion-titulo">El Dinero</h2>
+      <p class="seccion-desc">Cómo viaja el dinero público, paso a paso, y dónde se suele perder.</p>
 
       <div class="en30">
-        <span class="en30-cab">⏱️ En 30 segundos</span>
+        <span class="en30-cab"><span class="ico ico-reloj" aria-hidden="true"></span>En 30 segundos</span>
         <p>El dinero del país sale de los impuestos de todos. El Congreso decide en qué se gasta, y luego viaja por varias manos hasta llegar a una obra o un servicio. En ese camino, a veces, se pierde. Aquí lo sigues paso a paso, con un caso real.</p>
       </div>
+      </header>
 
       <!-- ===== GRUPO 1 — El bolsillo del país (plegado por defecto) =====
            Envuelve el bloque .salud-pais existente (PIB, deuda, etc.) verbatim
@@ -392,7 +401,7 @@
       <details class="grupo-cargo grupo-pagina">
         <summary class="grupo-cab">
           <span class="grupo-cab-txt">
-            <span class="grupo-nombre">🪙 El bolsillo del país</span>
+            <span class="grupo-nombre"><span class="ico ico-coin" aria-hidden="true"></span> El bolsillo del país</span>
             <span class="grupo-sub">Cuánto produce, gana, gasta y debe el país.</span>
           </span>
           <span class="grupo-chev" aria-hidden="true">▸</span>
@@ -401,103 +410,103 @@
 
       <div class="salud-pais">
         <div class="salud-head">
-          <h3>🩺 ¿Cómo está el bolsillo del país?</h3>
-          <p class="salud-leer">👉 ¿Cómo leer esto? Mira al país como a una familia: cuánto produce, cuánto gana, cuánto gasta y cuánto debe. Toca las <span class="palabra" data-def="palabras difíciles que se explican al tocarlas">palabras con puntitos</span> para entenderlas.</p>
+          <h3><span class="ico ico-pulso" aria-hidden="true"></span> ¿Cómo está el bolsillo del país?</h3>
+          <p class="salud-leer"><b>¿Cómo leer esto?</b> Mira al país como a una familia: cuánto produce, cuánto gana, cuánto gasta y cuánto debe. Toca las <span class="palabra" data-def="palabras difíciles que se explican al tocarlas">palabras con puntitos</span> para entenderlas.</p>
         </div>
 
         <div class="salud-grid">
           <div class="salud-card">
-            <span class="salud-emoji">🏭</span>
+            <span class="salud-emoji"><span class="ico ico-fabrica" aria-hidden="true"></span></span>
             <span class="salud-label">Lo que produce el país en un año (<span class="palabra" data-def="PIB: el valor de TODO lo que el país produce en un año — toda la comida, las casas, los servicios, todo junto.">PIB</span>)</span>
             <span class="salud-cifra">Cerca de RD$8 billones</span>
             <span class="salud-nota">Eso es casi US$128 mil millones de dólares.</span>
             <span class="nota-fuente">Banco Central RD y Ministerio de Hacienda, cierre 2025.</span>
-            <a class="enlace-doc" href="https://www.hacienda.gob.do/gobierno-dominicano-cierra-2025-con-un-gasto-de-capital-de-2-6-del-pib/" target="_blank" rel="noopener">📄 Ver la fuente oficial</a>
+            <a class="enlace-doc" href="https://www.hacienda.gob.do/gobierno-dominicano-cierra-2025-con-un-gasto-de-capital-de-2-6-del-pib/" target="_blank" rel="noopener">Ver la fuente oficial</a>
           </div>
 
           <div class="salud-card">
-            <span class="salud-emoji">📈</span>
+            <span class="salud-emoji"><span class="ico ico-tendencia" aria-hidden="true"></span></span>
             <span class="salud-label">Cuánto creció la economía</span>
             <span class="salud-cifra">2.1%</span>
             <span class="salud-nota">Creció, pero poquito: de cada RD$100 que producía, este año produjo como RD$102.</span>
-            <span class="salud-trend baja"><span class="trend-chip">⬇️</span>El año pasado creció <b>5.0%</b> → este año <b>2.1%</b>. Creció más lento que el año pasado.</span>
+            <span class="salud-trend baja"><span class="trend-chip ico ico-abajo" aria-hidden="true"></span>El año pasado creció <b>5.0%</b> → este año <b>2.1%</b>. Creció más lento que el año pasado.</span>
             <span class="nota-fuente">Banco Central RD, enero-diciembre 2025 (preliminar). Comparado con el año completo 2024 (BCRD).</span>
-            <a class="enlace-doc" href="https://cdn.bancentral.gov.do/documents/publicaciones-economicas/resultados-preliminares-de-la-economia-dominicana/documents/infeco_preliminar2025-12.pdf" target="_blank" rel="noopener">📄 Ver la fuente oficial</a>
+            <a class="enlace-doc" href="https://cdn.bancentral.gov.do/documents/publicaciones-economicas/resultados-preliminares-de-la-economia-dominicana/documents/infeco_preliminar2025-12.pdf" target="_blank" rel="noopener">Ver la fuente oficial</a>
           </div>
 
           <div class="salud-card">
-            <span class="salud-emoji">💵</span>
+            <span class="salud-emoji"><span class="ico ico-cash" aria-hidden="true"></span></span>
             <span class="salud-label">Lo que el gobierno espera ganar (ingresos)</span>
             <span class="salud-cifra">RD$1,342,258.2 millones</span>
             <span class="salud-nota">Repartido entre toda la gente, son unos RD$124,583 por cada dominicano al año.</span>
-            <span class="salud-trend sube"><span class="trend-chip">⬆️</span>El presupuesto pasado pensaba ganar <b>RD$1,241,364.7 millones</b> → este año <b>RD$1,342,258.2 millones</b>. Más que el año pasado.</span>
+            <span class="salud-trend sube"><span class="trend-chip ico ico-arriba" aria-hidden="true"></span>El presupuesto pasado pensaba ganar <b>RD$1,241,364.7 millones</b> → este año <b>RD$1,342,258.2 millones</b>. Más que el año pasado.</span>
             <span class="nota-fuente">Presupuesto 2026, DIGEPRES. Comparado con el proyecto de presupuesto 2025 (Hacienda).</span>
-            <a class="enlace-doc" href="https://www.digepres.gob.do/poder-ejecutivo-deposita-en-el-congreso-nacional-proyecto-de-ley-de-presupuesto-general-del-estado-2026/" target="_blank" rel="noopener">📄 Ver la fuente oficial</a>
+            <a class="enlace-doc" href="https://www.digepres.gob.do/poder-ejecutivo-deposita-en-el-congreso-nacional-proyecto-de-ley-de-presupuesto-general-del-estado-2026/" target="_blank" rel="noopener">Ver la fuente oficial</a>
           </div>
 
           <div class="salud-card">
-            <span class="salud-emoji">🛒</span>
+            <span class="salud-emoji"><span class="ico ico-carrito" aria-hidden="true"></span></span>
             <span class="salud-label">Lo que el gobierno planea gastar (gastos)</span>
             <span class="salud-cifra">RD$1,622,833.4 millones</span>
             <span class="salud-nota">Son unos RD$150,625 gastados por cada dominicano al año.</span>
-            <span class="salud-trend sube"><span class="trend-chip">⬆️</span>El presupuesto pasado pensaba gastar <b>RD$1,484,234.6 millones</b> → este año <b>RD$1,622,833.4 millones</b>. Más que el año pasado.</span>
+            <span class="salud-trend sube"><span class="trend-chip ico ico-arriba" aria-hidden="true"></span>El presupuesto pasado pensaba gastar <b>RD$1,484,234.6 millones</b> → este año <b>RD$1,622,833.4 millones</b>. Más que el año pasado.</span>
             <span class="nota-fuente">Presupuesto 2026, DIGEPRES. Comparado con el proyecto de presupuesto 2025 (Hacienda).</span>
-            <a class="enlace-doc" href="https://www.digepres.gob.do/poder-ejecutivo-deposita-en-el-congreso-nacional-proyecto-de-ley-de-presupuesto-general-del-estado-2026/" target="_blank" rel="noopener">📄 Ver la fuente oficial</a>
+            <a class="enlace-doc" href="https://www.digepres.gob.do/poder-ejecutivo-deposita-en-el-congreso-nacional-proyecto-de-ley-de-presupuesto-general-del-estado-2026/" target="_blank" rel="noopener">Ver la fuente oficial</a>
           </div>
 
           <div class="salud-card alerta">
-            <span class="salud-emoji">⚠️</span>
+            <span class="salud-emoji"><span class="ico ico-alerta" aria-hidden="true"></span></span>
             <span class="salud-label">El hueco: gasta más de lo que gana (<span class="palabra" data-def="Déficit: cuando gastas más de lo que ganas. La diferencia hay que pedirla prestada.">déficit</span>)</span>
             <span class="salud-cifra">RD$280,575.3 millones</span>
             <span class="salud-nota">Por cada RD$100 que el Estado piensa ganar, piensa gastar como RD$121. Ese hueco se tapa pidiendo dinero prestado.</span>
-            <span class="salud-trend sube"><span class="trend-chip">⬆️</span>El hueco del presupuesto pasado era de <b>RD$242,869.9 millones</b> → este año <b>RD$280,575.3 millones</b>. El hueco creció.</span>
+            <span class="salud-trend sube"><span class="trend-chip ico ico-arriba" aria-hidden="true"></span>El hueco del presupuesto pasado era de <b>RD$242,869.9 millones</b> → este año <b>RD$280,575.3 millones</b>. El hueco creció.</span>
             <span class="nota-fuente">Presupuesto 2026, DIGEPRES (déficit = 3.2% del PIB). El hueco 2025 es del proyecto de presupuesto (gastos menos ingresos), mismo cálculo que el 2026.</span>
-            <a class="enlace-doc" href="https://www.digepres.gob.do/poder-ejecutivo-deposita-en-el-congreso-nacional-proyecto-de-ley-de-presupuesto-general-del-estado-2026/" target="_blank" rel="noopener">📄 Ver la fuente oficial</a>
+            <a class="enlace-doc" href="https://www.digepres.gob.do/poder-ejecutivo-deposita-en-el-congreso-nacional-proyecto-de-ley-de-presupuesto-general-del-estado-2026/" target="_blank" rel="noopener">Ver la fuente oficial</a>
           </div>
 
           <div class="salud-card alerta">
-            <span class="salud-emoji">🏦</span>
+            <span class="salud-emoji"><span class="ico ico-tarjeta" aria-hidden="true"></span></span>
             <span class="salud-label">Lo que el país debe (<span class="palabra" data-def="Deuda pública: todo el dinero que el país ha pedido prestado y todavía no ha pagado.">deuda pública</span>)</span>
             <span class="salud-cifra">47.9% del PIB</span>
             <span class="salud-nota">Es casi medio año de TODO lo que el país produce. Son como US$5,713 de deuda por cada dominicano.</span>
-            <span class="salud-trend sube"><span class="trend-chip">⬆️</span>El año pasado debía <b>46.3% del PIB</b> → este año <b>47.9%</b>. Subió un poco.</span>
+            <span class="salud-trend sube"><span class="trend-chip ico ico-arriba" aria-hidden="true"></span>El año pasado debía <b>46.3% del PIB</b> → este año <b>47.9%</b>. Subió un poco.</span>
             <span class="nota-fuente">Hacienda / Crédito Público, cierre 2025 (US$61,549.9 millones, deuda del sector público no financiero). Comparado con el cierre de 2024 (46.3% del PIB, Crédito Público).</span>
-            <a class="enlace-doc" href="https://www.hacienda.gob.do/gobierno-dominicano-cierra-2025-con-un-gasto-de-capital-de-2-6-del-pib/" target="_blank" rel="noopener">📄 Ver la fuente oficial</a>
+            <a class="enlace-doc" href="https://www.hacienda.gob.do/gobierno-dominicano-cierra-2025-con-un-gasto-de-capital-de-2-6-del-pib/" target="_blank" rel="noopener">Ver la fuente oficial</a>
           </div>
 
           <div class="salud-card">
-            <span class="salud-emoji">💼</span>
+            <span class="salud-emoji"><span class="ico ico-briefcase" aria-hidden="true"></span></span>
             <span class="salud-label">El sueldo promedio del trabajador formal</span>
             <span class="salud-cifra">RD$37,572.82 al mes</span>
             <span class="salud-nota">Es el sueldo promedio de quien tiene trabajo "con papeles" y cotiza a la seguridad social. Muchos ganan menos.</span>
-            <span class="salud-trend sube"><span class="trend-chip">⬆️</span>Subió <b>6.7%</b> frente al año pasado (junio 2024). El sueldo formal promedio subió.</span>
+            <span class="salud-trend sube"><span class="trend-chip ico ico-arriba" aria-hidden="true"></span>Subió <b>6.7%</b> frente al año pasado (junio 2024). El sueldo formal promedio subió.</span>
             <span class="nota-fuente">Tesorería de la Seguridad Social (TSS), salario promedio cotizable, junio 2025. La TSS reportó este sueldo con un alza oficial de 6.7% frente a junio 2024.</span>
-            <a class="enlace-doc" href="https://presidencia.gob.do/noticias/salario-promedio-de-cotizantes-en-la-seguridad-social-supera-los-rd-38000" target="_blank" rel="noopener">📄 Ver la fuente oficial</a>
+            <a class="enlace-doc" href="https://presidencia.gob.do/noticias/salario-promedio-de-cotizantes-en-la-seguridad-social-supera-los-rd-38000" target="_blank" rel="noopener">Ver la fuente oficial</a>
           </div>
 
           <div class="salud-card">
-            <span class="salud-emoji">🛍️</span>
+            <span class="salud-emoji"><span class="ico ico-etiqueta" aria-hidden="true"></span></span>
             <span class="salud-label">Cuánto subieron los precios (<span class="palabra" data-def="Inflación: cuando las cosas suben de precio. Con el mismo dinero compras menos que antes.">inflación</span>)</span>
             <span class="salud-cifra">5.35% en un año</span>
             <span class="salud-nota">Lo que costaba RD$100 hace un año, hoy cuesta como RD$105.</span>
-            <span class="salud-trend sube"><span class="trend-chip">⬆️</span>El año pasado fue <b>3.84%</b> → este año <b>5.35%</b>. Los precios están subiendo más rápido que el año pasado.</span>
+            <span class="salud-trend sube"><span class="trend-chip ico ico-arriba" aria-hidden="true"></span>El año pasado fue <b>3.84%</b> → este año <b>5.35%</b>. Los precios están subiendo más rápido que el año pasado.</span>
             <span class="nota-fuente">Banco Central RD, IPC a mayo 2026 (interanual). Comparado con la inflación interanual a mayo 2025 (3.84%, BCRD).</span>
-            <a class="enlace-doc" href="https://www.bancentral.gov.do/a/d/2541-inflacion" target="_blank" rel="noopener">📄 Ver la fuente oficial (Banco Central)</a>
+            <a class="enlace-doc" href="https://www.bancentral.gov.do/a/d/2541-inflacion" target="_blank" rel="noopener">Ver la fuente oficial (Banco Central)</a>
           </div>
 
           <div class="salud-card">
-            <span class="salud-emoji">🧑‍🔧</span>
+            <span class="salud-emoji"><span class="ico ico-users" aria-hidden="true"></span></span>
             <span class="salud-label">Gente que busca trabajo y no encuentra (desempleo)</span>
             <span class="salud-cifra">5.0%</span>
             <span class="salud-nota">De cada 100 personas que buscan empleo, unas 5 no lo consiguen.</span>
-            <span class="salud-trend sube"><span class="trend-chip">⬆️</span>El año pasado fue <b>4.8%</b> → este año <b>5.0%</b>. Subió un poquito.</span>
+            <span class="salud-trend sube"><span class="trend-chip ico ico-arriba" aria-hidden="true"></span>El año pasado fue <b>4.8%</b> → este año <b>5.0%</b>. Subió un poquito.</span>
             <span class="nota-fuente">Banco Central RD, encuesta de empleo (ENCFT), octubre-diciembre 2025. Comparado con el mismo trimestre de 2024 (4.8%, mínimo histórico).</span>
-            <a class="enlace-doc" href="https://www.bancentral.gov.do/a/d/2542-mercado-de-trabajo" target="_blank" rel="noopener">📄 Ver la fuente oficial (Banco Central)</a>
+            <a class="enlace-doc" href="https://www.bancentral.gov.do/a/d/2542-mercado-de-trabajo" target="_blank" rel="noopener">Ver la fuente oficial (Banco Central)</a>
           </div>
         </div>
 
         <details class="cuanto-es">
-          <summary>🤔 En cristiano: ¿el país está bien o mal de plata?</summary>
+          <summary><span class="ico ico-bulb" aria-hidden="true"></span> En cristiano: ¿el país está bien o mal de plata?</summary>
           <ul>
             <li>Produce muchísimo (cerca de RD$8 billones al año) y casi no hay desempleo (5%).</li>
             <li>Pero gasta más de lo que gana: por cada RD$100 que entra, salen como RD$121.</li>
@@ -507,7 +516,7 @@
         </details>
 
         <details class="fuente-fold">
-          <summary>📚 Ver fuentes oficiales</summary>
+          <summary><span class="ico ico-libros" aria-hidden="true"></span> Ver fuentes oficiales</summary>
           <p class="nota-fuente">Cifras oficiales verificadas el 10 de junio de 2026: Banco Central RD (bancentral.gov.do), DIGEPRES (digepres.gob.do), Ministerio de Hacienda y Crédito Público (hacienda.gob.do), TSS (tss.gob.do) y ONE (one.gob.do, censo 2022 para los cálculos por persona). Las cifras del presupuesto son del proyecto 2026; las de producción, deuda, empleo e inflación son los últimos datos publicados.</p>
         </details>
       </div>
@@ -516,57 +525,37 @@
       </details>
       <!-- ===== fin GRUPO 1 ===== -->
 
-      <!-- ===== GRUPO 2 — El rastro del dinero público (plegado por defecto) =====
-           Reúne las dos mitades de "seguir el dinero". Por la REGLA de agrupar
-           (un nivel más abajo), cada mitad es su PROPIO sub-grupo Nivel-2,
-           plegado por defecto:
-             (a) "Cómo debería viajar el dinero" — el camino sano paso a paso
-                 (intro + flujo de 6 pasos + punto débil), estático aquí.
-             (b) "El rastro real de los fondos" — #fondos-publicos, que src/app.ts
-                 (renderFondos) rellena con UN sub-grupo plegado por cada fondo
-                 del JSON (hoy: el barrilito). Añadir un fondo crea su sub-grupo
-                 solo, sin tocar el HTML.
-           Al abrir el grupo se ven dos encabezados de sub-grupo cortos; cada uno
-           se toca para abrirse. Mismo plegable Nivel-1 por fuera, Nivel-2 dentro. -->
-      <details class="grupo-cargo grupo-pagina">
-        <summary class="grupo-cab">
-          <span class="grupo-cab-txt">
-            <span class="grupo-nombre">🔎 El rastro del dinero público</span>
-            <span class="grupo-sub">Sigue un peso hasta donde se puede ver — y donde se pierde.</span>
-          </span>
-          <span class="grupo-chev" aria-hidden="true">▸</span>
-        </summary>
-        <div class="grupo-pagina-body">
-
+      <!-- ===== GRUPOS 2 y 3: el rastro del dinero público, en dos grupos de primer nivel
+           (antes iban anidados dentro de otro plegable; ahora hay un nivel menos). ===== -->
       <!-- (a) Sub-grupo Nivel-2 — cómo DEBERÍA viajar el dinero (camino sano). -->
       <details class="grupo-cargo grupo-pagina">
         <summary class="grupo-cab">
           <span class="grupo-cab-txt">
-            <span class="grupo-nombre">🛣️ Cómo debería viajar el dinero</span>
-            <span class="grupo-sub">El camino sano, paso a paso — y dónde se suele perder.</span>
+            <span class="grupo-nombre"><span class="ico ico-road" aria-hidden="true"></span> Cómo debería viajar el dinero</span>
+            <span class="grupo-sub">El camino sano, paso a paso, y dónde se suele perder.</span>
           </span>
           <span class="grupo-chev" aria-hidden="true">▸</span>
         </summary>
         <div class="grupo-pagina-body">
 
-      <p class="ej-intro">🍞 Para que se entienda, sigamos un peso: el que paga el desayuno escolar.</p>
+      <p class="ej-intro">Para que se entienda, sigamos un peso: el que paga el desayuno escolar.</p>
 
       <div class="flujo-graf">
-        <div class="paso"><span class="paso-num">1</span><span class="paso-emoji">🏛️</span><div class="paso-txt"><b>El Congreso aprueba el <span class="palabra" data-def="el plan de cuánto dinero se gasta y en qué">presupuesto</span></b><span>Decide cuánto recibe cada institución cada año.</span><span class="paso-ej">🍞 Deciden cuánto va para los desayunos escolares.</span></div></div>
+        <div class="paso"><span class="paso-num">1</span><span class="paso-emoji"><span class="ico ico-sesiones" aria-hidden="true"></span></span><div class="paso-txt"><b>El Congreso aprueba el <span class="palabra" data-def="el plan de cuánto dinero se gasta y en qué">presupuesto</span></b><span>Decide cuánto recibe cada institución cada año.</span><span class="paso-ej">🍞 Deciden cuánto va para los desayunos escolares.</span></div></div>
         <div class="flecha">↓</div>
-        <div class="paso"><span class="paso-num">2</span><span class="paso-emoji">🏦</span><div class="paso-txt"><b>El dinero entra a la <span class="palabra" data-def="la cuenta de banco del país">Tesorería Nacional</span></b><span>La cuenta única del Estado.</span><span class="paso-ej">🍞 El peso del desayuno espera en la cuenta del país.</span></div></div>
+        <div class="paso"><span class="paso-num">2</span><span class="paso-emoji"><span class="ico ico-coin" aria-hidden="true"></span></span><div class="paso-txt"><b>El dinero entra a la <span class="palabra" data-def="la cuenta de banco del país">Tesorería Nacional</span></b><span>La cuenta única del Estado.</span><span class="paso-ej">🍞 El peso del desayuno espera en la cuenta del país.</span></div></div>
         <div class="flecha">↓</div>
-        <div class="paso"><span class="paso-num">3</span><span class="paso-emoji">🧾</span><div class="paso-txt"><b>La institución ordena el pago</b><span>Por el sistema de finanzas del gobierno (SIGEF).</span><span class="paso-ej">🍞 La oficina de los desayunos ordena pagarle a la panadería.</span></div></div>
+        <div class="paso"><span class="paso-num">3</span><span class="paso-emoji"><span class="ico ico-recibo" aria-hidden="true"></span></span><div class="paso-txt"><b>La institución ordena el pago</b><span>Por el sistema de finanzas del gobierno (SIGEF).</span><span class="paso-ej">🍞 La oficina de los desayunos ordena pagarle a la panadería.</span></div></div>
         <div class="flecha">↓</div>
-        <div class="paso"><span class="paso-num">4</span><span class="paso-emoji">💸</span><div class="paso-txt"><b>La Tesorería paga al <span class="palabra" data-def="la persona o empresa que le vende algo al gobierno">proveedor</span></b><span>El dinero llega a su cuenta de banco.</span><span class="paso-ej">🍞 La panadería recibe su dinero en el banco.</span></div></div>
+        <div class="paso"><span class="paso-num">4</span><span class="paso-emoji"><span class="ico ico-cash" aria-hidden="true"></span></span><div class="paso-txt"><b>La Tesorería paga al <span class="palabra" data-def="la persona o empresa que le vende algo al gobierno">proveedor</span></b><span>El dinero llega a su cuenta de banco.</span><span class="paso-ej">🍞 La panadería recibe su dinero en el banco.</span></div></div>
         <div class="flecha">↓</div>
-        <div class="paso"><span class="paso-num">5</span><span class="paso-emoji">🛒</span><div class="paso-txt"><b>Las compras pasan por Compras Dominicanas</b><span>Ahí se ve quién ganó el contrato.</span><span class="paso-ej">🍞 Cualquiera puede ver quién ganó el contrato del pan.</span></div></div>
+        <div class="paso"><span class="paso-num">5</span><span class="paso-emoji"><span class="ico ico-carrito" aria-hidden="true"></span></span><div class="paso-txt"><b>Las compras pasan por Compras Dominicanas</b><span>Ahí se ve quién ganó el contrato.</span><span class="paso-ej">🍞 Cualquiera puede ver quién ganó el contrato del pan.</span></div></div>
         <div class="flecha">↓</div>
-        <div class="paso"><span class="paso-num">6</span><span class="paso-emoji">🔎</span><div class="paso-txt"><b>Dos vigilantes revisan</b><span>La <span class="palabra" data-def="la oficina que revisa los pagos antes de hacerlos">Contraloría</span> aprueba los pagos; la <span class="palabra" data-def="la oficina que revisa las cuentas después, para ver si todo cuadra">Cámara de Cuentas</span> audita después.</span><span class="paso-ej">🍞 Revisan que el pan de verdad llegó a la escuela.</span></div></div>
+        <div class="paso"><span class="paso-num">6</span><span class="paso-emoji"><span class="ico ico-buscar" aria-hidden="true"></span></span><div class="paso-txt"><b>Dos vigilantes revisan</b><span>La <span class="palabra" data-def="la oficina que revisa los pagos antes de hacerlos">Contraloría</span> aprueba los pagos; la <span class="palabra" data-def="la oficina que revisa las cuentas después, para ver si todo cuadra">Cámara de Cuentas</span> audita después.</span><span class="paso-ej">🍞 Revisan que el pan de verdad llegó a la escuela.</span></div></div>
       </div>
 
       <div class="punto-debil">
-        <b>⚠️ El punto débil</b>
+        <b><span class="ico ico-alerta" aria-hidden="true"></span> El punto débil</b>
         <p>Entre "se ordenó el pago" y "el servicio de verdad se dio". Ahí se esconden los fraudes: <span class="palabra" data-def="empresas inventadas que cobran sin vender nada de verdad">proveedores falsos</span>, o pagos por servicios que nunca se dieron.</p>
       </div>
 
@@ -586,7 +575,7 @@
       <details class="grupo-cargo grupo-pagina">
         <summary class="grupo-cab">
           <span class="grupo-cab-txt">
-            <span class="grupo-nombre">🔦 El rastro real de los fondos</span>
+            <span class="grupo-nombre"><span class="ico ico-rastro" aria-hidden="true"></span> El rastro real de los fondos</span>
             <span class="grupo-sub">Fondos de verdad: hasta dónde se puede seguir cada uno.</span>
           </span>
           <span class="grupo-chev" aria-hidden="true">▸</span>
@@ -597,10 +586,6 @@
       </details>
       <!-- fin sub-grupo (b) -->
 
-        </div>
-      </details>
-      <!-- ===== fin GRUPO 2 ===== -->
-
       <!-- ===== GRUPO 3 — Cuando el rastro se rompe, y lo que te cuesta =====
            Plegado por defecto. Encabeza con el COSTO HUMANO en lenguaje sencillo
            (qué le pasó a personas reales cuando el rastro del dinero se rompió),
@@ -609,10 +594,10 @@
            "Ver fuentes y por qué este caso" más abajo. Construido para crecer:
            se pueden añadir más casos reales como nuevas tarjetas/plegables
            dentro de este grupo (ver el comentario CASOS-FUTUROS al final). -->
-      <details class="grupo-cargo grupo-pagina">
+      <details class="grupo-cargo grupo-pagina grupo-destacado">
         <summary class="grupo-cab">
           <span class="grupo-cab-txt">
-            <span class="grupo-nombre">💔 Cuando el rastro se rompe — y lo que te cuesta</span>
+            <span class="grupo-nombre"><span class="ico ico-heart-broken" aria-hidden="true"></span> Cuando el rastro se rompe, y lo que te cuesta</span>
             <span class="grupo-sub">Un caso real: el SENASA. Lo que le pasó a la gente.</span>
           </span>
           <span class="grupo-chev" aria-hidden="true">▸</span>
@@ -622,7 +607,7 @@
       <!-- Costo humano: lo primero que ve la persona al abrir el grupo. Lenguaje
            de 12 años, honesto. Lo que sigue es lo que ALEGA la Fiscalía. -->
       <div class="costo-humano leer-voz">
-        <b>👥 Lo que esto le costó a la gente</b>
+        <b><span class="ico ico-users" aria-hidden="true"></span> Lo que esto le costó a la gente</b>
         <p>Cuando el rastro del dinero se rompe, no es solo plata: son personas. Esto es lo que, según la Fiscalía, pasó con el SENASA, el seguro de salud de 7.5 millones de personas, muchas pobres y enfermas:</p>
         <ul>
           <li>Mientras se pagaba a clínicas falsas, a las clínicas y hospitales de verdad se les dejó de pagar: las deudas con proveedores reales pasaron de casi nada en 2020 a cerca de la mitad de lo que se debía en 2023. Cuando no le pagan a tu hospital, el que se queda sin atención eres tú.</li>
@@ -635,11 +620,11 @@
 
       <div class="caso" id="caso-senasa">
         <div class="caso-head">
-          <h3>🔎 Caso real: el <span class="palabra" data-def="robo de dinero que te confiaron cuidar">desfalco</span> del SENASA</h3>
+          <h3><span class="ico ico-buscar" aria-hidden="true"></span><span>Caso real: el <span class="palabra" data-def="robo de dinero que te confiaron cuidar">desfalco</span> del SENASA</span></h3>
           <p>SENASA es el seguro de salud del Estado, para 7.5 millones de personas, muchas pobres y enfermas. Mira, paso a paso, lo que la Fiscalía dice que pasó con el dinero.</p>
           <span class="caso-cifra">Más de RD$15,900 millones, según la acusación del Ministerio Público</span>
           <details class="cuanto-es">
-            <summary>🤔 ¿Cuánto es RD$15,900 millones?</summary>
+            <summary><span class="ico ico-bulb" aria-hidden="true"></span> ¿Cuánto es RD$15,900 millones?</summary>
             <ul>
               <li>Son más de RD$2,100 por cada una de las 7.5 millones de personas afiliadas.</li>
               <li>Si contaras un peso por segundo, sin parar ni para dormir, tardarías más de 500 años en contarlo todo.</li>
@@ -649,31 +634,31 @@
         </div>
 
         <div class="aviso-legal">
-          <b>⚖️ Importante: es una acusación, no una condena.</b>
+          <b><span class="ico ico-scale" aria-hidden="true"></span> Importante: es una acusación, no una condena.</b>
           Esto es lo que el Ministerio Público (la Fiscalía) ACUSA. Nadie está condenado todavía; el caso sigue en los tribunales. Aquí lo contamos como lo que se alega, no como hecho probado.
         </div>
 
         <div class="flujo-graf">
-          <div class="paso ok"><span class="paso-num">1</span><span class="paso-emoji">🏦</span><div class="paso-txt"><b>El Estado pone el dinero en SENASA</b><span>Para pagar la salud de los <span class="palabra" data-def="las personas que tienen ese seguro">afiliados</span>.</span></div></div>
+          <div class="paso ok"><span class="paso-num">1</span><span class="paso-emoji"><span class="ico ico-banco" aria-hidden="true"></span></span><div class="paso-txt"><b>El Estado pone el dinero en SENASA</b><span>Para pagar la salud de los <span class="palabra" data-def="las personas que tienen ese seguro">afiliados</span>.</span></div></div>
           <div class="flecha">↓</div>
-          <div class="paso roto"><span class="paso-num">2</span><span class="paso-emoji">🤝</span><div class="paso-txt"><b>SENASA contrata clínicas, farmacias y laboratorios</b><span>Según la acusación, se aprobaban proveedores a cambio de <span class="palabra" data-def="pagos escondidos para que alguien haga trampa">sobornos</span>.</span><span class="roto-tag">⚠️ Aquí se habría roto</span></div></div>
+          <div class="paso roto"><span class="paso-num">2</span><span class="paso-emoji"><span class="ico ico-trato" aria-hidden="true"></span></span><div class="paso-txt"><b>SENASA contrata clínicas, farmacias y laboratorios</b><span>Según la acusación, se aprobaban proveedores a cambio de <span class="palabra" data-def="pagos escondidos para que alguien haga trampa">sobornos</span>.</span><span class="roto-tag"><span class="ico ico-alerta" aria-hidden="true"></span> Aquí se habría roto</span></div></div>
           <div class="flecha">↓</div>
-          <div class="paso roto"><span class="paso-num">3</span><span class="paso-emoji">🏥</span><div class="paso-txt"><b>El paciente debía recibir la atención</b><span>La Fiscalía dice que muchas veces nunca pasó, y que había clínicas fantasma que la gente ni conocía.</span><span class="roto-tag">⚠️ Aquí se habría roto</span></div></div>
+          <div class="paso roto"><span class="paso-num">3</span><span class="paso-emoji"><span class="ico ico-hospital" aria-hidden="true"></span></span><div class="paso-txt"><b>El paciente debía recibir la atención</b><span>La Fiscalía dice que muchas veces nunca pasó, y que había clínicas fantasma que la gente ni conocía.</span><span class="roto-tag"><span class="ico ico-alerta" aria-hidden="true"></span> Aquí se habría roto</span></div></div>
           <div class="flecha">↓</div>
-          <div class="paso roto"><span class="paso-num">4</span><span class="paso-emoji">📞</span><div class="paso-txt"><b>Se pedía la autorización</b><span>Según la acusación, un "call center" paralelo hizo más de 4,000 autorizaciones falsas.</span><span class="roto-tag">⚠️ Aquí se habría roto</span></div></div>
+          <div class="paso roto"><span class="paso-num">4</span><span class="paso-emoji"><span class="ico ico-telefono" aria-hidden="true"></span></span><div class="paso-txt"><b>Se pedía la autorización</b><span>Según la acusación, un "call center" paralelo hizo más de 4,000 autorizaciones falsas.</span><span class="roto-tag"><span class="ico ico-alerta" aria-hidden="true"></span> Aquí se habría roto</span></div></div>
           <div class="flecha">↓</div>
-          <div class="paso roto"><span class="paso-num">5</span><span class="paso-emoji">💸</span><div class="paso-txt"><b>La clínica <span class="palabra" data-def="pasaba la cuenta de cobro">facturaba</span> y SENASA pagaba</b><span>La Fiscalía alega pagos por servicios que nunca se dieron y tratamientos caros inflados: sesiones de quimioterapia de más, diálisis a pacientes ya fallecidos.</span><span class="roto-tag">⚠️ Aquí se habría roto</span></div></div>
+          <div class="paso roto"><span class="paso-num">5</span><span class="paso-emoji"><span class="ico ico-cash" aria-hidden="true"></span></span><div class="paso-txt"><b>La clínica <span class="palabra" data-def="pasaba la cuenta de cobro">facturaba</span> y SENASA pagaba</b><span>La Fiscalía alega pagos por servicios que nunca se dieron y tratamientos caros inflados: sesiones de quimioterapia de más, diálisis a pacientes ya fallecidos.</span><span class="roto-tag"><span class="ico ico-alerta" aria-hidden="true"></span> Aquí se habría roto</span></div></div>
           <div class="flecha">↓</div>
-          <div class="paso roto"><span class="paso-num">6</span><span class="paso-emoji">🛡️</span><div class="paso-txt"><b>Alguien debía vigilar</b><span>Según la investigación, los que debían vigilar no avisaron por años y se maquillaron las cuentas para tapar el hueco.</span><span class="roto-tag">⚠️ Aquí se habría roto</span></div></div>
+          <div class="paso roto"><span class="paso-num">6</span><span class="paso-emoji"><span class="ico ico-escudo" aria-hidden="true"></span></span><div class="paso-txt"><b>Alguien debía vigilar</b><span>Según la investigación, los que debían vigilar no avisaron por años y se maquillaron las cuentas para tapar el hueco.</span><span class="roto-tag"><span class="ico ico-alerta" aria-hidden="true"></span> Aquí se habría roto</span></div></div>
         </div>
 
         <div class="punto-debil leer-voz">
-          <b>⚠️ La grieta de fondo</b>
+          <b><span class="ico ico-alerta" aria-hidden="true"></span> La grieta de fondo</b>
           <p>El sistema pagaba por papeles —una factura y una autorización— pero nunca comprobaba que el paciente de verdad recibió el servicio. Ahí, dice la Fiscalía, vivió el robo.</p>
         </div>
 
         <div class="arreglo">
-          <b>✅ ¿Cómo se evita?</b>
+          <b><span class="ico ico-check" aria-hidden="true"></span> ¿Cómo se evita?</b>
           <ul>
             <li>Pagar solo con prueba de que el servicio se dio.</li>
             <li>Separar a quien aprueba proveedores de quien aprueba pagos.</li>
@@ -683,7 +668,7 @@
         </div>
 
         <div class="tu-parte">
-          <b>💪 ¿Y tú qué puedes hacer?</b>
+          <b><span class="ico ico-user-check" aria-hidden="true"></span> ¿Y tú qué puedes hacer?</b>
           <ul>
             <li>Entra a <a href="https://www.dgcp.gob.do" target="_blank" rel="noopener">Compras Dominicanas (dgcp.gob.do)</a> y mira quién gana los contratos en tu pueblo. Es público y gratis.</li>
             <li>Si en tu escuela o tu hospital prometieron algo, pregunta si llegó. Preguntar también es vigilar.</li>
@@ -693,7 +678,7 @@
         </div>
 
         <div class="tu-parte ayuda-senasa leer-voz">
-          <b>🆘 ¿Y si te pasa a ti? Qué hacer</b>
+          <b><span class="ico ico-ayuda" aria-hidden="true"></span> ¿Y si te pasa a ti? Qué hacer</b>
           <p>Si tienes SeNaSa y te niegan un servicio, o crees que cobraron en tu nombre algo que nunca te dieron, tienes a dónde acudir. Todo es gratis.</p>
           <ul>
             <li><b>1. Reclama a SeNaSa.</b> Usa la <a href="https://www.311.gob.do" target="_blank" rel="noopener">Línea 311</a> (la línea de quejas del Estado) o escribe a <a href="https://www.arssenasa.gob.do/index.php/contactos/" target="_blank" rel="noopener">SeNaSa (arssenasa.gob.do)</a>. Deja tu queja por escrito.</li>
@@ -705,7 +690,7 @@
         </div>
 
         <details class="fuente-fold">
-          <summary>📚 Ver fuentes y por qué este caso</summary>
+          <summary><span class="ico ico-libros" aria-hidden="true"></span> Ver fuentes y por qué este caso</summary>
           <p class="nota-fuente">Usamos este caso porque es público y está bien documentado, no para señalar a un partido: la corrupción ha ocurrido bajo gobiernos de todos los colores. Caso "Operación Cobra", investigado por la <a href="https://pgr.gob.do" target="_blank" rel="noopener">PEPCA, la procuraduría anticorrupción (pgr.gob.do)</a>. Varios exfuncionarios están acusados; el proceso sigue en los tribunales. Cifras y hechos según el Ministerio Público, la <a href="https://www.sisalril.gob.do" target="_blank" rel="noopener">SISALRIL (sisalril.gob.do)</a> y prensa dominicana (Diario Libre, El Nacional, El Día), 2025. Toca un enlace para ir al sitio oficial y comprobarlo tú mismo.</p>
         </details>
       </div>
@@ -720,7 +705,7 @@
       <!-- ===== fin GRUPO 3 ===== -->
 
       <div class="siguiente va-pais">
-        <span class="siguiente-cab">🎉 ¡Diste la vuelta completa!</span>
+        <span class="siguiente-cab"><span class="ico ico-confeti" aria-hidden="true"></span> ¡Diste la vuelta completa!</span>
         <p class="siguiente-porque">Ya entiendes quién manda, qué leyes hay, cómo vota el Senado, quién te representa y a dónde va el dinero. Lo más importante: tu voto elige a quienes cuidan todo esto. Repasa cuando quieras.</p>
         <button class="siguiente-btn" type="button" data-goto="pais">Volver al principio: El país ▸</button>
       </div>
@@ -728,20 +713,20 @@
 
     <!-- 📖 Sobre este proyecto — vista propia, fuera del flujo de Inicio. No
          tiene pestaña en la barra de arriba: solo se llega tocando el botón
-         "📖 Conoce el proyecto" del hero. Botón "← Volver al inicio" arriba y
-         abajo. El contenido es el mismo de antes, movido verbatim. -->
+         "Conoce el proyecto" del hero. Un solo enlace "← Volver al inicio" arriba. El contenido es el mismo de antes, movido verbatim. -->
     <section id="view-proyecto" class="view hidden sec-proyecto">
       <button class="volver-btn" type="button" data-goto="home">← Volver al inicio</button>
 
-      <h2 class="seccion-titulo">📖 Sobre este proyecto</h2>
+      <header class="vista-cab">
+      <h2 class="seccion-titulo">Sobre este proyecto</h2>
       <p class="seccion-desc">La historia, la meta y el estado honesto del sitio.</p>
+      </header>
 
       <section class="proyecto">
-        <h3 class="proyecto-titulo">📖 Sobre este proyecto</h3>
         <p class="proyecto-intro">Aquí la política dominicana se cuenta fácil: quién manda, qué leyes hacen y a dónde va el dinero. Todo junto y explicado para que cualquiera lo entienda.</p>
 
         <details class="proyecto-fold">
-          <summary>🌱 Cómo nació y por qué</summary>
+          <summary><span class="ico ico-plant" aria-hidden="true"></span> Cómo nació y por qué</summary>
           <div class="proyecto-fold-body">
             <p>Esto lo construyó alguien que creció viendo cómo la falta de información sencilla deja a la gente fuera de las decisiones. Sin saber qué pasa, no puedes opinar ni reclamar.</p>
             <p>La información oficial existe, pero está regada y escrita difícil. Aquí se junta toda en un solo lugar y se explica fácil, para que cualquiera —hasta un niño— entienda quién manda, qué leyes hacen y a dónde va el dinero de todos.</p>
@@ -749,7 +734,7 @@
         </details>
 
         <details class="proyecto-fold">
-          <summary>🎯 La meta</summary>
+          <summary><span class="ico ico-meta" aria-hidden="true"></span> La meta</summary>
           <div class="proyecto-fold-body">
             <p>Ciudadanos informados que preguntan y vigilan. No fanáticos que solo aplauden.</p>
             <p>Saber cómo funciona tu país es tu derecho. Cuando entiendes, puedes pedir cuentas. Y mientras más gente mira, más difícil es hacer las cosas mal.</p>
@@ -757,7 +742,7 @@
         </details>
 
         <details class="proyecto-fold">
-          <summary>🙋 El estado honesto, sin adornos</summary>
+          <summary><span class="ico ico-honesto" aria-hidden="true"></span> El estado honesto, sin adornos</summary>
           <div class="proyecto-fold-body">
             <ul>
               <li>Lo mantiene <b>una sola persona independiente</b>, en su tiempo libre.</li>
@@ -771,26 +756,27 @@
         <p class="proyecto-tuyo">Y lo mejor: este proyecto es de <span class="palabra" data-def="Código abierto quiere decir que la receta completa del sitio es pública. Cualquiera puede copiarla, revisarla y volver a publicarla, para siempre. Nada está escondido.">código abierto</span>. La receta completa es pública y es tuya también.</p>
 
         <div class="proyecto-botones">
-          <a class="btn-part btn-codigo" href="https://github.com/politica-sencilla-rd/leyes-rd" target="_blank" rel="noopener">💻 Ver el código</a>
-          <a class="btn-part btn-aportar" href="https://github.com/politica-sencilla-rd/leyes-rd/issues/new/choose" target="_blank" rel="noopener">✍️ Reportar o aportar</a>
+          <a class="btn-part btn-codigo" href="https://github.com/politica-sencilla-rd/leyes-rd" target="_blank" rel="noopener">Ver el código</a>
+          <a class="btn-part btn-aportar" href="https://github.com/politica-sencilla-rd/leyes-rd/issues/new/choose" target="_blank" rel="noopener">Reportar o aportar</a>
         </div>
 
         <p class="proyecto-ayuda">¿Quieres ayudar? Compártelo, reporta errores y aporta datos. Y pronto: maneras de apoyar su mantenimiento.</p>
 
       </section>
-
-      <button class="volver-btn volver-btn-pie" type="button" data-goto="home">← Volver al inicio</button>
     </section>
   </main>
 
   <footer class="foot">
-    <p class="foot-acciones">
-      <button id="footShare" class="foot-link" type="button">📤 Compartir</button>
-      <a class="foot-link" href="https://github.com/politica-sencilla-rd/leyes-rd/issues/new/choose" target="_blank" rel="noopener">✍️ Reportar o aportar</a>
-    </p>
-    <p>Información pública, explicada para que cualquiera la entienda. Gratis.</p>
-    <p class="foot-fuente">Fuentes: Senado y Cámara de Diputados de la República Dominicana.</p>
-    <p class="foot-fuente">Retratos oficiales: senadores del Senado de la República Dominicana (senadord.gob.do) y diputados de la Cámara de Diputados (diputadosrd.gob.do).</p>
+    <div class="foot-in">
+      <p class="foot-marca"><span class="marca-sello" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Política Sencilla RD</p>
+      <p class="foot-lema">Información pública, explicada para que cualquiera la&nbsp;entienda.&nbsp;Gratis.</p>
+      <p class="foot-acciones">
+        <button id="footShare" class="foot-link" type="button">Compartir</button>
+        <a class="foot-link" href="https://github.com/politica-sencilla-rd/leyes-rd/issues/new/choose" target="_blank" rel="noopener">Reportar un error o aportar</a>
+      </p>
+      <p class="foot-fuente">Fuentes: Senado y Cámara de Diputados de la República Dominicana.</p>
+      <p class="foot-fuente">Retratos oficiales: senadores del Senado de la República Dominicana (senadord.gob.do) y diputados de la Cámara de Diputados (diputadosrd.gob.do).</p>
+    </div>
   </footer>
 
   <!-- Aviso antes de salir a un buscador oficial. Solo aparece cuando el enlace
@@ -798,13 +784,13 @@
        buscar el documento por su número. Lo controla setupAvisoBusqueda() en app.js. -->
   <dialog id="avisoBuscador" class="aviso-buscador sec-leyes" aria-labelledby="avisoTitulo">
     <div class="aviso-card">
-      <h2 id="avisoTitulo" class="aviso-titulo">🔎 Vas al buscador oficial</h2>
+      <h2 id="avisoTitulo" class="aviso-titulo"><span class="ico ico-buscar" aria-hidden="true"></span> Vas al buscador oficial</h2>
       <p id="avisoCuerpo" class="aviso-cuerpo"></p>
       <div id="avisoNumeroWrap" class="aviso-numero-wrap hidden" role="button" tabindex="0"
            aria-label="Tocar para copiar el número">
         <span id="avisoNumero" class="aviso-numero"></span>
         <span class="aviso-copiar-hint">toca para copiar</span>
-        <span id="avisoCopiado" class="aviso-copiado hidden">✅ ¡Copiado!</span>
+        <span id="avisoCopiado" class="aviso-copiado hidden"><span class="ico ico-check" aria-hidden="true"></span> ¡Copiado!</span>
       </div>
       <p id="avisoSinNumero" class="aviso-sin-numero hidden">Este documento no tiene un número fijo. Búscalo por su nombre.</p>
       <div class="aviso-botones">
@@ -814,7 +800,7 @@
     </div>
   </dialog>
 
-  <script src="app.js?v=20260924a"></script>
+  <script src="app.js?v=20260924b"></script>
   <!-- Contador de visitas, privado y sin cookies (GoatCounter) -->
   <script data-goatcounter="https://politicasencillard.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
