@@ -240,8 +240,10 @@ def patrones_nombres(nombres) -> set[str]:
 
 def nombra_persona(texto: str, patrones: set[str]) -> str | None:
     """-> what was found, or None. `patrones` from patrones_nombres(roster).
-    Catches a job title followed by a capitalised word ('el ministro Juan'), and
-    any two-word form of a roster name (particles ignored on both sides)."""
+    Catches a job title followed by a capitalised word ('el ministro Juan'), any
+    two-word form of a roster name (particles ignored on both sides), and any
+    other run of 2+ capitalised words that is not a known institution or place
+    ('Evangelina Rodríguez propone…', a person on no list)."""
     m = CARGO_NOMBRE.search(texto or "")
     if m:
         return m.group(0)
@@ -249,6 +251,82 @@ def nombra_persona(texto: str, patrones: set[str]) -> str | None:
     for a, b in zip(t, t[1:]):
         if f"{a} {b}" in patrones:
             return f"{a} {b}"
+    return nombre_suelto(texto or "")
+
+
+# --- bare names: 2+ capitalised words in a row that are not an institution or a place.
+# Fails closed: an unknown proper noun blocks the text (the item then shows
+# "Resumen en preparación" and the official link). Add real institutions/places here.
+_MAY = r"[A-ZÁÉÍÓÚÑ][a-záéíóúñü]+"
+_RACHA = re.compile(rf"(?<![\wÁÉÍÓÚÑáéíóúñü]){_MAY}(?:\s+(?:(?:de|del|la|las|los)\s+)*{_MAY})+")
+# A capitalised first word of a sentence that is not a name ("La Cámara…", "En Santo Domingo…").
+INICIO_FRASE = set(
+    "el la los las lo un una unos unas este esta estos estas ese esa esos esas aquel aquella su sus cada todo toda "
+    "todos todas otro otra si se en con por para al del de desde hasta hacia segun sobre ante bajo entre tras "
+    "durante sin como cuando donde que y o pero tambien ademas asi hoy ahora ya no solo antes despues luego "
+    "aqui alli cual quien crea crear declara declarar modifica modificar aprueba aprobar regula regular "
+    "establece establecer reconoce reconocer autoriza autorizar dispone disponer designa designar deroga derogar "
+    "prohibe prohibir obliga obligar amplia ampliar protege proteger cambia cambiar sube subir baja bajar pide "
+    "pedir busca buscar permite permitir elimina eliminar otorga otorgar concede conceder aumenta aumentar "
+    "reduce reducir fija fijar extiende extender ordena ordenar honra honrar dedica dedicar ratifica ratificar "
+    "familias personas ninos nuevo nueva nuevos nuevas".split())
+# First word of an institution, office, law or geographic feature (normalised: no accents, lower case).
+CABEZAS = set(
+    "camara senado congreso poder banco ministerio viceministerio consejo instituto direccion oficina comision "
+    "tribunal suprema corte junta fondo sistema programa plan registro superintendencia procuraduria procurador "
+    "contraloria contralor defensor defensoria policia ejercito armada fuerza fuerzas universidad hospital "
+    "provincia municipio distrito ayuntamiento gaceta ley leyes codigo constitucion reglamento decreto "
+    "resolucion presupuesto republica gobierno estado estados asamblea parque reserva monumento area rio lago "
+    "laguna loma pico cordillera sierra bahia playa isla cabo presa puerto aeropuerto autopista carretera "
+    "avenida calle plaza escuela liceo colegio centro servicio seguro seguridad tesoreria tesoro autoridad "
+    "agencia administradora empresa corporacion consultoria archivo biblioteca museo teatro palacio dia mes "
+    "semana premio orden medalla organizacion naciones union mercado zona region valle peninsula oceano mar "
+    "golfo canal ciudad villa metro salud educacion hacienda economia trabajo agricultura medio obras interior "
+    "relaciones industria turismo cultura deporte deportes juventud mujer vivienda energia minas transporte "
+    "transito aduanas impuestos loteria defensa cruz presidente presidencia vicepresidente vicepresidencia "
+    "secretaria secretario comite pleno bufete mesa sala partido cuerpo cuerpos bomberos punta cruce paraje "
+    "seccion barrio academia fideicomiso patrimonio batalla procesion hermandad virgen regulacion poderes club "
+    "federacion asociacion fundacion cooperativa sindicato iglesia catedral basilica santuario fortaleza faro "
+    "puente acueducto parroquia".split())
+# Multi-word places (provinces and municipalities whose names look like people's names too).
+LUGARES = {norm(x) for x in (
+    "Distrito Nacional", "El Seibo", "Elías Piña", "Hato Mayor", "Hermanas Mirabal", "La Altagracia", "La Romana",
+    "La Vega", "María Trinidad Sánchez", "Monseñor Nouel", "Monte Cristi", "Monte Plata", "Puerto Plata",
+    "San Cristóbal", "San José de Ocoa", "San Juan", "San Pedro de Macorís", "Sánchez Ramírez",
+    "Santiago Rodríguez", "Santo Domingo", "Santo Domingo Este", "Santo Domingo Norte", "Santo Domingo Oeste",
+    "Santiago de los Caballeros", "República Dominicana", "Boca Chica", "Los Alcarrizos", "Pedro Brand",
+    "San Antonio de Guerra", "Bajos de Haina", "San Gregorio de Nigua", "Las Matas de Farfán", "Pedro Santana",
+    "Villa Tapia", "San Francisco de Macorís", "Las Guáranas", "Villa Bisonó", "Villa González", "Licey al Medio",
+    "Sabana Iglesia", "San José de las Matas", "Gaspar Hernández", "Cayetano Germosén", "Río San Juan",
+    "El Factor", "Las Terrenas", "La Mata", "Piedra Blanca", "Los Almácigos", "San Ignacio de Sabaneta",
+    "Laguna Salada", "Pepillo Salcedo", "Las Matas de Santa Cruz", "Loma de Cabrera", "El Pino", "Jima Abajo",
+    "San Rafael del Yuma", "Hato Mayor del Rey", "Sabana de la Mar", "El Valle", "Santa Cruz del Seibo",
+    "Ramón Santana", "San José de los Llanos", "Los Llanos", "Sabana Grande de Boyá", "Sabana Larga",
+    "Rancho Arriba", "Azua de Compostela", "Padre Las Casas", "Las Charcas", "Tábara Arriba", "Pueblo Viejo",
+    "Sabana Yegua", "Las Yayas de Viajama", "Villa Jaragua", "Los Ríos", "Vicente Noble", "La Ciénaga",
+    "El Peñón", "Las Salinas", "La Descubierta", "Postrer Río", "General Luperón", "Don Juan", "Villa Montellano",
+    "Los Hidalgos", "Villa Isabela", "Villa Hermosa", "Villa Altagracia", "Villa Riva", "Villa Vásquez",
+    "Santa Bárbara de Samaná", "Las Galeras", "Hondo Valle", "Juan Santiago", "El Llano", "Pedro Corto",
+    "Juan de Herrera", "Juan Barón", "Arroyo Salado", "Estados Unidos", "Puerto Rico", "América Latina",
+    "Unión Europea", "Semana Santa", "Año Nuevo", "Santo Domingo de Guzmán", "San Juan de la Maguana",
+    "San Francisco", "San Fernando de Montecristi", "El Placer", "Yásica Arriba")}
+
+
+def nombre_suelto(texto: str) -> str | None:
+    """A run of 2+ capitalised words ('Evangelina Rodríguez') that is not a
+    sentence-start article + noun, a known institution/office/law, or a place."""
+    for m in _RACHA.finditer(texto or ""):
+        racha = m.group(0)
+        antes = re.sub(r"[\s«“\"'(¿¡—-]+$", "", texto[: m.start()])
+        if antes == "" or antes[-1] in ".!?:;":
+            primera, _, resto = racha.partition(" ")
+            if norm(primera) in INICIO_FRASE:
+                racha = re.sub(r"^(?:(?:de|del|la|las|los)\s+)*", "", resto.strip())
+                if len(re.findall(_MAY, racha)) < 2:
+                    continue
+        if norm(racha.split()[0]) in CABEZAS or norm(racha) in LUGARES:
+            continue
+        return racha
     return None
 
 
@@ -258,7 +336,11 @@ NUM_PALABRAS = re.compile(
     r"doscientos|trescientos|cuatrocientos|quinientos|seiscientos|setecientos|ochocientos|novecientos|"
     r"mil|millón|millon|millones|billón|billon|billones)\b", re.I)
 # "1500 millones" / "RD$2 mil" are fine: the digits carry the number, the word is the unit.
-PARECE_LEY = re.compile(r"\b(es ley|ya es|ya|entró en vigencia|entra en vigencia|está vigente|se aprobó la ley)\b", re.I)
+# A bill described as law already. Checked by CODE in escribir.py and gate G8, not only by AI question Q6/Q7.
+PARECE_LEY = re.compile(
+    r"\b(es ley|ya es|ya|entró en vigencia|entra en vigencia|está vigente|se aprobó la ley|rigen?|"
+    r"entró en vigor|está en vigor|se convirtió en ley|ahora es|ahora (?:obliga|manda|prohíbe|castiga|exige)|"
+    r"(?:fue|ha sido|quedó) promulgad[oa]|se promulgó|promulgó|aprobó la ley)\b", re.I)
 
 
 def numero_en_letras(texto: str) -> str | None:

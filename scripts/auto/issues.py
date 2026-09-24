@@ -13,7 +13,8 @@ CLI (used by the workflows):
   python3 scripts/auto/issues.py cerrar --clave K --etiqueta L [--comentario C]
   python3 scripts/auto/issues.py ia --archivo .psrd-run/ia-fallos.json
   python3 scripts/auto/issues.py run --dir . --workflow camara   (items from the run summary)
-Without GITHUB_TOKEN/GH_TOKEN (local dry runs) it prints what it would do.
+Dry run (prints what it would do, touches no issue): no GITHUB_TOKEN/GH_TOKEN, or
+the repo variable PSRD_AUTOPUBLICAR is not "si" (the same kill switch as publishing).
 """
 from __future__ import annotations
 
@@ -36,7 +37,8 @@ def _gh(args: list[str], entrada: str | None = None) -> str:
 
 
 def en_seco() -> bool:
-    return not (os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")) or os.environ.get("PSRD_ISSUES_SECO") == "1"
+    return (not (os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN"))
+            or os.environ.get("PSRD_AUTOPUBLICAR") != "si" or os.environ.get("PSRD_ISSUES_SECO") == "1")
 
 
 def buscar(clave: str, etiqueta: str) -> int | None:
@@ -95,7 +97,14 @@ def issues_de_run(d: Path, workflow: str) -> list[str]:
         problemas = r.get("fallos") or r.get("sin_actualizar") or []
         extra = r.get("cargo_terminado") or []
         clave = f"fuente-{fuente}"
-        if problemas or extra:
+        if r.get("estado") in ("sin_respuesta", "roto"):
+            # the whole source failed (e.g. consultoria.gov.do answers 403 to GitHub runners):
+            # nothing from it was published, the other sources still were
+            cuerpo = (f"Corrida de `{workflow}`. La fuente `{fuente}` no respondió bien ({r.get('estado')}): "
+                      f"{str(r.get('error', ''))[:300]}\n\nNo se publicó nada de esta fuente; el sitio conserva su "
+                      "último dato bueno y las demás fuentes de la corrida se publicaron normalmente.")
+            hechos.append(abrir(clave, f"[auto] Fuente sin respuesta: {fuente}", cuerpo, "auto-fuente"))
+        elif problemas or extra:
             cuerpo = f"Corrida de `{workflow}`. Estos elementos no se pudieron actualizar y conservan su último dato bueno:\n\n"
             cuerpo += "\n".join(f"- `{json.dumps(p, ensure_ascii=False)}`" for p in problemas)
             if extra:

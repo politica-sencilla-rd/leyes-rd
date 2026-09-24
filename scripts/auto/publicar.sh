@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Shared publish step for every data workflow:
-#   rebase -> Novedad (templates) -> "Datos al" -> gates G1-G10 -> commit -> push.
+#   rebase -> Novedad (templates) -> "Datos al" -> gates G0-G10 -> commit -> push.
 # No human approves anything: the gates decide. Any gate failure = nothing is
 # pushed, the job goes red (GitHub's failure email) and one issue is updated.
 #

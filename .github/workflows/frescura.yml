@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
+      # issues are only opened for real when publishing is switched on (same kill switch)
+      PSRD_AUTOPUBLICAR: ${{ vars.PSRD_AUTOPUBLICAR }}
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7

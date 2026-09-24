@@ -43,22 +43,27 @@ jobs:
         run: python -m pytest -q tests/test_gates.py tests/test_publicar.py tests/test_red.py tests/test_leyes.py
       - name: Leer las fuentes oficiales (SIL y Consultoría)
         id: fuente
-        continue-on-error: true
+        # Each reader writes nothing when its source fails, so one failing source
+        # (the Consultoría answers 403 to GitHub runners) never blocks the other.
         run: |
           set +e
-          python scripts/auto/leyes.py; a=$?
-          python scripts/auto/vigencia.py; b=$?
-          # one source failing does not block the other; the job still goes red
-          [ $a -eq 0 ] && [ $b -eq 0 ]
+          python scripts/auto/leyes.py; echo "leyes=$?" >> "$GITHUB_OUTPUT"
+          python scripts/auto/vigencia.py; echo "vigencia=$?" >> "$GITHUB_OUTPUT"
+          exit 0
       - name: Avisos por elemento (un issue por fuente, sin duplicados)
         if: always()
         run: python scripts/auto/issues.py run --dir . --workflow leyes
-      - name: Publicar (controles G1-G10, luego commit a main)
-        if: steps.fuente.outcome == 'success'
+      - name: Publicar lo que sí llegó (controles G0-G10, luego commit a main)
+        if: steps.fuente.outputs.leyes == '0' || steps.fuente.outputs.vigencia == '0'
         run: bash scripts/auto/publicar.sh leyes
-      - name: "La fuente falló, publicar solo su estado y dejar el job en rojo"
-        if: steps.fuente.outcome == 'failure'
+      - name: "Ninguna fuente respondió: publicar solo su estado"
+        if: steps.fuente.outputs.leyes != '0' && steps.fuente.outputs.vigencia != '0'
         run: bash scripts/auto/publicar.sh leyes --fallo
+      - name: Dejar el job en rojo si una fuente falló
+        if: always() && (steps.fuente.outputs.leyes != '0' || steps.fuente.outputs.vigencia != '0')
+        run: |
+          echo "Fuente con fallo: SIL=${{ steps.fuente.outputs.leyes }} Consultoría=${{ steps.fuente.outputs.vigencia }}"
+          exit 1
       - name: Guardar el registro de la corrida
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7

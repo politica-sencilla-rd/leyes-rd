@@ -59,7 +59,7 @@ async function main() {
   const ctx = await browser.newContext({ ignoreHTTPSErrors: true });
   const page = await ctx.newPage();
   // Establish origin/referer so the API serves JSON, not the SPA shell.
-  await page.goto("https://www.diputadosrd.gob.do/sil/legislador", { waitUntil: "domcontentloaded" });
+  await page.goto("https://www.diputadosrd.gob.do/sil/legislador", { waitUntil: "load" });
   await sleep(2500);
 
   const get = async (url) => {

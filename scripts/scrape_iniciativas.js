@@ -24,7 +24,7 @@ async function main() {
 
   // ---- Phase 1: collect all ficha IDs by paging ----
   // Start at the entry URL so the SIL establishes the 2024-2028 session.
-  await page.goto(ENTRY, { waitUntil: "domcontentloaded" });
+  await page.goto(ENTRY, { waitUntil: "load" });
   await sleep(4500);
   const total = await page.evaluate(() => {
     const t = document.body.innerText.replace(/\s+/g, " ");
@@ -69,7 +69,7 @@ async function main() {
   for (const id of idList) {
     const url = `http://www.senado.gov.do/wfilemaster/Ficha.aspx?IdExpediente=${id}&numeropagina=1&ContExpedientes=1&Coleccion=53`;
     try {
-      await page.goto(url, { waitUntil: "domcontentloaded" });
+      await page.goto(url, { waitUntil: "load" });
       await sleep(900);
       const rec = await page.evaluate(() => {
         const prop = document.getElementsByName("campos_nota_644")[0];

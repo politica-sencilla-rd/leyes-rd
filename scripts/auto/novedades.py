@@ -21,7 +21,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from comun import ROOT, Arbol, fecha_larga, hoy_et  # noqa: E402
+from comun import MESES, ROOT, Arbol, fecha_larga, hoy_et  # noqa: E402
 
 SITIO = "https://politica-sencilla-rd.github.io/leyes-rd/"
 APORTE = "🔄 Actualización automática"
@@ -80,6 +80,32 @@ def frases_de(fuentes: dict, antes: dict) -> tuple[str, list[str]]:
                    f"{'resumen automático nuevo' if r['verificados'] == 1 else 'resúmenes automáticos nuevos'}, "
                    f"revisados contra el documento oficial.")
     return fam, out
+
+
+# Every sentence frases_de() can write, as a pattern. Gate G8 blocks any new Novedad
+# that is not made only of these (free prose, opinions or made-up numbers).
+_PERIODO = r"\([\wáéíóúñ .\-]{1,40}\)"
+_METRICA = rf"(?:{'|'.join(map(re.escape, NOMBRE_METRICA.values()))}|[a-z_]+) {_PERIODO}"
+_LEY = r"\d+-\d+"
+PLANTILLAS = [
+    r"Agregamos \d+ (?:sesión|sesiones) del Senado \((?:acta \d+|actas \d+ a \d+)\), leídas de las actas oficiales\.",
+    r"Corregimos los totales de (?:el acta \d+|las actas \d+(?:, \d+)*) con el acta oficial\.",
+    r"Actualizamos la asistencia, las comisiones y las iniciativas de los diputados, con datos de la Cámara al "
+    rf"\d{{1,2}} de (?:{'|'.join(MESES)}) de \d{{4}}\.",
+    rf"Nueva ley en «¿Ya está vigente\?»: {_LEY}\.",
+    rf"Agregamos \d+ leyes nuevas a «¿Ya está vigente\?»: {_LEY}(?:, {_LEY})*\.",
+    r"Agregamos \d+ proyectos de ley que pasaron una votación en el Congreso\.",
+    r"Actualizamos en qué va \d+ (?:proyecto|proyectos) de ley\.",
+    rf"Actualizamos las cifras del país: {_METRICA}(?:, {_METRICA})*\.",
+    r"Publicamos \d+ (?:resumen automático nuevo|resúmenes automáticos nuevos), revisados contra el documento oficial\.",
+]
+_UNA = "(?:" + "|".join(PLANTILLAS) + ")"
+_NOVEDAD = re.compile(rf"{_UNA}(?: {_UNA})*")
+
+
+def es_plantilla(texto: str) -> bool:
+    """True when a Novedad is made only of frases_de() sentences."""
+    return bool(_NOVEDAD.fullmatch(texto or ""))
 
 
 def rfc822(iso: str) -> str:

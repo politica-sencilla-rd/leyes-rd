@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mechanical publish gates G1-G10 (design section 3).
+"""Mechanical publish gates G0-G10 (design section 3).
 
 Compares the NEW tree (the working tree, or a dry-run copy) against the BASE
 (origin/main after the rebase, or a directory). Any failure exits 1: nothing is
@@ -11,11 +11,17 @@ script is the reviewer.
 
 G7 repairs as it checks: an emptied field gets its old value back in the new
 tree (written in place). More than 5 repairs = broken source = fail.
+
+The rulebook (config/ia.json, neutralidad.json, personas_publicas.json,
+dominios_oficiales.json, senado.json) is read from the BASE, never from the
+tree being checked, and G0 blocks any change to config/ other than
+config/diputados_ids.json: a commit can't loosen the rules it is judged by.
 """
 from __future__ import annotations
 
 import argparse
 import fnmatch
+import hashlib
 import json
 import re
 import subprocess
@@ -31,13 +37,22 @@ sys.path.insert(0, str(ROOT / "scripts" / "auto"))
 # Shared with escribir.py / dinero.py so the writer and the gate never disagree.
 from comun import (PARECE_LEY, nombra_persona, numero_en_letras, numeros_ausentes,  # noqa: E402
                    patrones_nombres, problema_metrica, valor_previo)
+from novedades import es_plantilla  # noqa: E402
 PROSA = {"que_es", "por_que", "te_afecta", "titulo_facil", "en_30_segundos", "resumen", "resumen_corto"}
 CLAVES_LISTA = ("acta", "numero", "id", "iniciativa", "nombre", "legisladorId", "fecha", "titulo")
 VOTO_SENADO_OK = {"iniciativa", "titulo", "titulo_facil", "a_favor", "presentes", "resultado",
                   "votacion_num", "fuente", "nota"}
 LIMITES = {"sesiones_actas": 30, "sesiones_votos": 250, "leyes_cambiadas": 60, "leyes_nuevas": 40,
-           "vigencia_nuevas": 10, "finanzas_metricas": 9, "novedades_nuevas": 1}
+           "vigencia_nuevas": 10, "finanzas_metricas": 9, "novedades_nuevas": 1, "resumenes_nuevos": 20}
 MAX_REPARACIONES_G7 = 5
+# The only config file a robot may change (camara.py adds SIL IDs of new deputies).
+CONFIG_ROBOT = {"config/diputados_ids.json"}
+# A summary's stored source text must be at least this long. A Senate/SIL vote
+# title is one official line (the shortest real one is 40 characters); a bill or
+# law text is much longer.
+MIN_FUENTE = {"titulo_voto": 30}
+MIN_FUENTE_DEFECTO = 100
+CHECKS_POR_CAMPO = 5  # escribir.py asks Q1-Q5 (Q6 too when not law) about every sentence
 
 
 # ------------------------------------------------------------------ trees
@@ -106,11 +121,11 @@ def norm(s: str) -> str:
 
 # ------------------------------------------------------------------ gates
 class Gates:
-    def __init__(self, base: Lado, nuevo_dir: Path, conf_dir: Path, schemas_dir: Path, recibos: list[dict]):
+    def __init__(self, base: Lado, nuevo_dir: Path, conf_dir: Path | None, schemas_dir: Path, recibos: list[dict]):
+        # conf_dir is ignored (kept so old callers still work): the rulebook comes from the BASE.
         self.base = base
         self.nd = nuevo_dir
         self.nuevo = Lado(dir=nuevo_dir)
-        self.conf = conf_dir
         self.schemas = schemas_dir
         self.recibos = recibos
         self.fallos: list[str] = []
@@ -119,14 +134,27 @@ class Gates:
         self.dominios = set(self._conf("dominios_oficiales.json", {"dominios": []})["dominios"])
 
     def _conf(self, name, defecto):
-        f = self.conf / name
-        return json.loads(f.read_text(encoding="utf-8")) if f.exists() else defecto
+        """Rulebook from the BASE (main), never from the tree under review. Missing = fail closed."""
+        t = self.base.texto(f"config/{name}")
+        if t is None:
+            self.fallo("G0", f"config/{name} no existe en la base: sin reglas no se publica")
+            return defecto
+        return json.loads(t)
 
     def fallo(self, g: str, msg: str):
         self.fallos.append(f"{g}: {msg}")
 
     def datos(self) -> list[str]:
         return sorted({p for p in self.nuevo.archivos("docs/data") if p.endswith(".json")})
+
+    # G0 ---------------------------------------------------------------
+    def g0_config(self):
+        """No config file may change in a robot commit, except config/diputados_ids.json."""
+        for rel in sorted(set(self.base.archivos("config")) | set(self.nuevo.archivos("config"))):
+            if rel in CONFIG_ROBOT:
+                continue
+            if self.base.texto(rel) != self.nuevo.texto(rel):
+                self.fallo("G0", f"{rel} es distinto de la base: las reglas solo se cambian a mano, en un PR")
 
     # G1 ---------------------------------------------------------------
     def g1_esquemas(self):
@@ -314,6 +342,11 @@ class Gates:
         cn, _ = self.cambiados("docs/data/novedades.json", "novedades", "texto")
         if sum(1 for t, _ in cn if t == "nuevo") > LIMITES["novedades_nuevas"]:
             self.fallo("G5", "más de 1 novedad nueva en una corrida")
+        rb = (self.base.json("docs/data/resumenes.json") or {}).get("resumenes", {})
+        rn = (self.nuevo.json("docs/data/resumenes.json") or {}).get("resumenes", {})
+        nr = sum(1 for k, r in rn.items() if rb.get(k) != r)
+        if nr > LIMITES["resumenes_nuevos"]:
+            self.fallo("G5", f"{nr} resúmenes nuevos o cambiados (máximo {LIMITES['resumenes_nuevos']})")
         for rel in self.datos():
             bt, nt = self.base.texto(rel), self.nuevo.texto(rel)
             if bt is None or nt is None:
@@ -428,13 +461,38 @@ class Gates:
             if not re.fullmatch(r"[0-9a-f]{64}", sha) or not ftxt.exists():
                 self.fallo("G8", f"resumen {k}: falta el texto fuente pipeline-state/textos/{sha}.txt")
                 continue
+            # The stored text must BE the text that was checked: its sha256 must match its name.
+            crudo = ftxt.read_bytes()
+            if hashlib.sha256(crudo).hexdigest() != sha:
+                self.fallo("G8", f"resumen {k}: pipeline-state/textos/{sha}.txt no corresponde a su sha256")
+                continue
+            fuente = crudo.decode("utf-8")
+            minimo = MIN_FUENTE.get(r.get("tipo"), MIN_FUENTE_DEFECTO)
+            if len(fuente.strip()) < minimo:
+                self.fallo("G8", f"resumen {k}: el texto fuente tiene {len(fuente.strip())} caracteres "
+                                 f"(mínimo {minimo}): no hay contra qué revisar")
+                continue
             # Same source + different text = someone edited a checked summary without a new review.
             if k in rb and rb[k].get("fuente_sha256") == sha:
                 self.fallo("G8", f"resumen {k}: el texto cambió sin un texto fuente nuevo (no pasó por la revisión)")
-            # Re-run the code checks against the stored source (defence in depth; the writer ran them too).
-            fuente = ftxt.read_text(encoding="utf-8")
+            # Re-run the code checks against the stored source on EVERY prose field present
+            # (defence in depth; the writer ran them too).
+            pedidos = ia.get("campos_por_tipo", {}).get(r.get("tipo"))
+            if pedidos is None:
+                self.fallo("G8", f"resumen {k}: tipo {r.get('tipo')!r} desconocido")
+                continue
+            presentes = sorted(c for c in PROSA if c in r)
+            for campo in pedidos:
+                if campo not in presentes:
+                    self.fallo("G8", f"resumen {k}: falta el campo {campo}")
+            for campo in presentes:
+                if campo not in pedidos:
+                    self.fallo("G8", f"resumen {k}: el campo {campo} no se pide para el tipo {r.get('tipo')}")
+            if (r.get("checks_total") or 0) < CHECKS_POR_CAMPO * len(presentes):
+                self.fallo("G8", f"resumen {k}: {r.get('checks_total')} revisiones para {len(presentes)} campos "
+                                 f"(mínimo {CHECKS_POR_CAMPO} por campo)")
             no_aprobado = r.get("estado_ley") not in ("aprobada", "promulgada")
-            for campo in ia.get("campos_por_tipo", {}).get(r.get("tipo"), []):
+            for campo in presentes:
                 t = r.get(campo)
                 if not isinstance(t, str) or not t.strip():
                     self.fallo("G8", f"resumen {k}: el campo {campo} está vacío")
@@ -446,6 +504,46 @@ class Gates:
                 if no_aprobado and PARECE_LEY.search(t):
                     self.fallo("G8", f"resumen {k}.{campo}: presenta como ley algo no aprobado "
                                      f"({PARECE_LEY.search(t).group(0)!r})")
+        self._g8_notas_y_novedades()
+
+    def _g8_notas_y_novedades(self):
+        # A money card's hand-written part never changes in a robot commit (dinero.py writes only 'auto').
+        fin_b = {m.get("id"): m for m in (self.base.json("docs/data/finanzas.json") or {}).get("metricas", [])}
+        for m in (self.nuevo.json("docs/data/finanzas.json") or {}).get("metricas", []):
+            b = fin_b.get(m.get("id"))
+            if b is not None and {k: v for k, v in m.items() if k != "auto"} != {k: v for k, v in b.items() if k != "auto"}:
+                self.fallo("G8", f"finanzas {m.get('id')}: cambió la parte escrita a mano de la tarjeta (solo 'auto' puede cambiar)")
+
+        # A vote note may only repeat numbers the vote itself carries.
+        for donde, nota, v, s in self.notas_nuevas():
+            propio = " ".join(str(x) for kk, x in v.items() if kk != "nota") + f" {s.get('acta')} {s.get('fecha')}"
+            for num in numeros_ausentes(nota, propio):
+                self.fallo("G8", f"{donde}: el número {num} no está en los datos de esa votación")
+        # A robot Novedad is built from fixed templates (novedades.py); anything else is free prose.
+        ses = {str(s.get("acta")) for s in (self.nuevo.json("docs/data/sesiones.json") or {}).get("sesiones", [])}
+        vig = {str(l.get("numero")) for l in (self.nuevo.json("docs/data/vigencia.json") or {}).get("leyes", [])}
+        for t, n in self.cambiados("docs/data/novedades.json", "novedades", "texto")[0]:
+            texto = n.get("texto", "")
+            if not es_plantilla(texto):
+                self.fallo("G8", f"novedad: no sale de las plantillas de novedades.py: {texto[:80]!r}")
+                continue
+            for acta in re.findall(r"\bactas? ((?:\d+(?:, | a )?)+)", texto):
+                for a in re.findall(r"\d+", acta):
+                    if a not in ses:
+                        self.fallo("G8", f"novedad: el acta {a} no está en sesiones.json")
+            for lista in re.findall(r"vigente\?»: ([\d\-, ]+)", texto):
+                for num in re.findall(r"\d+-\d+", lista):
+                    if num not in vig:
+                        self.fallo("G8", f"novedad: la ley {num} no está en vigencia.json")
+
+    def notas_nuevas(self) -> list[tuple[str, str, dict, dict]]:
+        """(where, note, vote, session) for every vote 'nota' not already on main."""
+        def todas(d):
+            return [(f"acta {s.get('acta')} votación {v.get('votacion_num') or v.get('iniciativa')} nota", v["nota"], v, s)
+                    for s in (d or {}).get("sesiones", []) for v in s.get("votaciones", [])
+                    if isinstance(v.get("nota"), str) and v["nota"]]
+        viejas = {(x[0], x[1]) for x in todas(self.base.json("docs/data/sesiones.json"))}
+        return [x for x in todas(self.nuevo.json("docs/data/sesiones.json")) if (x[0], x[1]) not in viejas]
 
     def _prosa(self, o) -> set:
         out = set()
@@ -476,6 +574,11 @@ class Gates:
         for _, s in self.cambiados("docs/data/sesiones.json", "sesiones", "acta")[0]:
             for nota in s.get("notas_fuente", []):
                 out.append((f"acta {s['acta']} nota", nota, s))
+            nota_asis = (s.get("asistencia") or {}).get("nota")
+            if isinstance(nota_asis, str) and nota_asis:
+                out.append((f"acta {s['acta']} asistencia.nota", nota_asis, s))
+        for donde, nota, v, _s in self.notas_nuevas():
+            out.append((donde, nota, v))
         for _, m in self.cambiados("docs/data/finanzas.json", "metricas", "id")[0]:
             for campo in ("texto", "comparacion"):
                 if (m.get("auto") or {}).get(campo):
@@ -537,7 +640,7 @@ class Gates:
 
     def correr(self) -> bool:
         # G7 first: it repairs emptied fields in place, then every other gate sees the repaired tree.
-        for g in (self.g7_no_vaciar, self.g1_esquemas, self.g2_sin_votos_por_senador, self.g3_totales,
+        for g in (self.g0_config, self.g7_no_vaciar, self.g1_esquemas, self.g2_sin_votos_por_senador, self.g3_totales,
                   self.g4_fuentes, self.g5_tamano, self.g6_borrados, self.g8_prosa, self.g9_neutral,
                   self.g10_avanzar):
             try:

@@ -48,7 +48,7 @@ jobs:
       - name: Avisos por elemento (un issue por fuente, sin duplicados)
         if: always()
         run: python scripts/auto/issues.py run --dir . --workflow camara
-      - name: Publicar (controles G1-G10, luego commit a main)
+      - name: Publicar (controles G0-G10, luego commit a main)
         if: steps.fuente.outcome == 'success'
         run: bash scripts/auto/publicar.sh camara
       - name: "La fuente falló, publicar solo su estado y dejar el job en rojo"

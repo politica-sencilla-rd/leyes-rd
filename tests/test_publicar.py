@@ -65,3 +65,55 @@ def test_bot_blocks_are_not_broken_links():
                             "unable to get local issuer certificate (_ssl.c:1000)>")
     assert not F.no_comprobable("HTTP 404")
     assert not F.no_comprobable("URLError: certificate has expired")
+
+
+def test_r3_issues_are_dry_unless_publishing_is_on(monkeypatch, capsys):
+    llamadas = []
+    monkeypatch.setattr(I, "_gh", lambda args, entrada=None: llamadas.append(args) or "[]")
+    monkeypatch.setenv("GITHUB_TOKEN", "x")
+    monkeypatch.delenv("PSRD_ISSUES_SECO", raising=False)
+    for valor in (None, "no", "SI "):
+        if valor is None:
+            monkeypatch.delenv("PSRD_AUTOPUBLICAR", raising=False)
+        else:
+            monkeypatch.setenv("PSRD_AUTOPUBLICAR", valor)
+        assert I.abrir("k", "t", "c", "datos-viejos") == "seco"
+        assert I.cerrar("k", "datos-viejos") == "seco"
+    assert llamadas == [] and "[seco]" in capsys.readouterr().out
+    monkeypatch.setenv("PSRD_AUTOPUBLICAR", "si")
+    assert I.abrir("k", "t", "c", "datos-viejos") == "creado" and llamadas
+
+
+def test_r3_a_dead_source_opens_one_issue(monkeypatch, tmp_path):
+    """consultoria.gov.do answers 403 to GitHub runners: the run must open (or update) ONE issue for it."""
+    abiertos = []
+    monkeypatch.setattr(I, "abrir", lambda clave, titulo, cuerpo, etiqueta: abiertos.append((clave, etiqueta, cuerpo)) or "ok")
+    monkeypatch.setattr(I, "cerrar", lambda clave, etiqueta, comentario="": "cerrado")
+    (tmp_path / ".psrd-run").mkdir()
+    (tmp_path / ".psrd-run" / "resumen.json").write_text(json.dumps({"fuentes": {
+        "vigencia_consultoria": {"estado": "sin_respuesta", "error": "HTTP 403"},
+        "leyes_sil": {"estado": "ok"}}}))
+    hechos = I.issues_de_run(tmp_path, "leyes")
+    assert [a[0] for a in abiertos] == ["fuente-vigencia_consultoria"] and "403" in abiertos[0][2]
+    assert "cerrado" in hechos  # the SIL, which answered, closes its own issue
+
+
+def test_r3_leyes_workflow_publishes_the_source_that_answered():
+    # plain text on purpose: PyYAML is not installed on the runner
+    wf = (ROOT / ".github/workflows/leyes.yml").read_text()
+    pasos = {b.split("\n", 1)[0].strip().strip('"'): b for b in wf.split("      - name: ")[1:]}
+    leer = next(b for n, b in pasos.items() if n.startswith("Leer las fuentes"))
+    assert "continue-on-error" not in leer and "exit 0" in leer
+    publicar = next(b for n, b in pasos.items() if n.startswith("Publicar"))
+    assert "steps.fuente.outputs.leyes == '0' || steps.fuente.outputs.vigencia == '0'" in publicar  # one source is enough
+    assert "--fallo" not in publicar
+    rojo = next(b for n, b in pasos.items() if n.startswith("Dejar el job en rojo"))
+    assert "always()" in rojo and "exit 1" in rojo                                                   # ...and the job goes red
+    assert "PSRD_AUTOPUBLICAR: ${{ vars.PSRD_AUTOPUBLICAR }}" in (ROOT / ".github/workflows/frescura.yml").read_text()
+
+
+def test_r3_browser_scripts_wait_for_the_full_load():
+    import re
+    for js in sorted((ROOT / "scripts").glob("*.js")):
+        for valor in re.findall(r"waitUntil:\s*\"(\w+)\"", js.read_text()):
+            assert valor == "load", js.name
