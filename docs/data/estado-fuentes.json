@@ -6,10 +6,14 @@
       "seccion": "sesiones",
       "url_fuente": "https://www.senadord.gob.do/elaboracion-de-actas/actas-de-sesiones/",
       "retraso": "El Senado publica sus actas unas 7 semanas después de cada sesión.",
-      "datos_al": "2026-04-15",
-      "ultimo_leido": "Acta 0106",
-      "estado": "sin_revisar",
-      "fallos_seguidos": 0
+      "datos_al": "2026-07-22",
+      "ultimo_leido": "Acta 0127",
+      "estado": "ok",
+      "fallos_seguidos": 0,
+      "revisado_el": "2026-09-24",
+      "ultimo_documento": "Acta 0127",
+      "subido_por_la_fuente": "2026-09-17",
+      "pendientes_en_fuente": 0
     },
     "camara_diputados": {
       "nombre": "Cámara de Diputados (SIL)",

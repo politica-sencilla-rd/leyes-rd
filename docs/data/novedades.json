@@ -3,6 +3,13 @@
   "novedades": [
     {
       "fecha": "2026-09-24",
+      "texto": "Agregamos 21 sesiones del Senado (actas 0107 a 0127), leídas de las actas oficiales. Corregimos los totales de las actas 0104, 0105, 0106 con el acta oficial.",
+      "aporte": "🔄 Actualización automática",
+      "guid": "psrd-auto-senado-2026-09-24-ddd0bc85",
+      "auto": true
+    },
+    {
+      "fecha": "2026-09-24",
       "texto": "Actualizamos la asistencia, las comisiones y las iniciativas de los diputados, con datos de la Cámara al 9 de septiembre de 2026.",
       "aporte": "🔄 Actualización automática",
       "guid": "psrd-auto-camara-2026-09-24-337400b9",
