@@ -46,6 +46,10 @@ STATS = "scripts/diputados_stats.json"
 PINS = "config/diputados_ids.json"
 GUARD_FLOOR = 0.8
 PERIODO_ACTUAL = "2024-2028"
+# The only note camara.py ever writes on a card (gate G8 accepts no other).
+NOTA_SIN_ACTUALIZAR = "No pudimos actualizar este dato esta semana; es el último que obtuvimos."
+# Every field camara.py may change on a leader card. Anything else is hand-written (gate G8).
+CAMPOS_ROBOT = ("asistencia", "comisiones", "iniciativas_propuestas", "cargo_hasta")
 ASIST_FUENTE = ("registro oficial de asistencia al Pleno de la Cámara de Diputados "
                 "(SIL Ciudadano, diputadosrd.gob.do)")
 
@@ -229,7 +233,7 @@ def fusionar(prov: dict, stats: dict) -> dict:
                 cuenta["sin_actualizar"] += 1
                 if isinstance(l.get("asistencia"), dict) and row.get("datos_al"):
                     l["asistencia"]["datos_al"] = row["datos_al"]
-                    l["asistencia"]["nota"] = "No pudimos actualizar este dato esta semana; es el último que obtuvimos."
+                    l["asistencia"]["nota"] = NOTA_SIN_ACTUALIZAR
                 continue
             if row.get("comisiones"):
                 l["comisiones"] = row["comisiones"]

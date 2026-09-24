@@ -39,7 +39,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from comun import (PARECE_LEY, ROOT, Arbol, hoy_et, nombra_persona, norm, numero_en_letras,  # noqa: E402
+from comun import (PARECE_LEY, ROOT, Arbol, estado_ley_de, hoy_et, nombra_persona, norm, numero_en_letras,  # noqa: E402
                    numeros_ausentes, patrones_nombres)
 
 RES = "docs/data/resumenes.json"
@@ -433,9 +433,17 @@ def main(argv=None) -> int:
     inicio = time.monotonic()
     fallos_issue, hechos = [], 0
 
+    # Whether an item is law yet comes from the published data, not from the queue
+    # (a bill can pass after it was queued; gate G8 checks the same thing).
+    leyes, vig = arbol.leer("docs/data/leyes.json", {}), arbol.leer("docs/data/vigencia.json", {})
+
     def uno(it):
         if (time.monotonic() - inicio) / 60 > conf["max_minutos_por_corrida"]:
             return it, None
+        estado = estado_ley_de(it["id"], leyes, vig)
+        if estado is None:
+            return it, {"estado": "rechazado", "motivo": "no corresponde a ningún proyecto, ley o votación del sitio"}
+        it["estado_ley"] = estado
         f = arbol.p(f"pipeline-state/textos/{it['fuente_sha256']}.txt")
         if not f.exists():
             return it, {"estado": "rechazado", "motivo": "falta el texto fuente guardado"}

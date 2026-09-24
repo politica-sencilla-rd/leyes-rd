@@ -100,14 +100,31 @@ def clausula(texto: str) -> tuple[str | None, str | None]:
     return m.group(1), txt.strip()
 
 
+# Every vigencia_texto vigencia.py can write. Gate G8 accepts no other on a new law.
+TXT_DEFECTO = ("No fija un plazo propio, así que manda el Código Civil: empieza a regir el día siguiente "
+               "de salir en la Gaceta Oficial.")
+TXT_PUBLICACION = ("Su propio texto dice que empieza a regir al promulgarse y publicarse; en la práctica, "
+                   "el día siguiente de salir en la Gaceta Oficial.")
+TXT_SIN_FECHA = "El robot no pudo calcular la fecha: lee el artículo de la ley (abajo)."
+TXT_OJO = " Ojo: la ley dice que algunas partes empiezan más tarde; lee su texto."
+_TEXTOS_VIG = re.compile(
+    "(?:" + "|".join([re.escape(TXT_DEFECTO), re.escape(TXT_PUBLICACION), re.escape(TXT_SIN_FECHA),
+                      r"Su propio texto dice que empieza a regir al mismo tiempo que la Ley \d+-\d+\.",
+                      r"Su propio texto dice que empieza a regir \d+ (?:días|meses|años) después de su "
+                      r"(?:promulgaci[óo]n|publicaci[óo]n)\."]) + ")(?:" + re.escape(TXT_OJO) + ")?")
+
+
+def es_texto_vigencia(texto: str) -> bool:
+    return bool(_TEXTOS_VIG.fullmatch(texto or ""))
+
+
 def calcular(cl: str | None, promulgada: str, publicada: str, vigencia: dict) -> tuple[str | None, str, str]:
     """-> (vigencia_fecha, regla, texto para la gente)."""
     pub = date.fromisoformat(publicada)
     prom = date.fromisoformat(promulgada)
     dia_siguiente = (pub + timedelta(days=1)).isoformat()
     if cl is None:
-        return dia_siguiente, "regla_por_defecto", \
-            "No fija un plazo propio, así que manda el Código Civil: empieza a regir el día siguiente de salir en la Gaceta Oficial."
+        return dia_siguiente, "regla_por_defecto", TXT_DEFECTO
     c = cl.lower()
     m = re.search(r"concomitantemente con la (?:ley[^,]*?)n[úu]m\.\s*(\d+)\s*-\s*(\d+)", c)
     if m:
@@ -135,8 +152,7 @@ def calcular(cl: str | None, promulgada: str, publicada: str, vigencia: dict) ->
         return f.isoformat(), "plazo", f"Su propio texto dice que empieza a regir {n} {palabra} después de su {m.group(3)}."
     if re.search(r"(?:a partir|despu[ée]s) de (?:la fecha de )?su (?:promulgaci[óo]n y )?publicaci[óo]n", c) \
             and not re.search(r"\d{4}|excepto|salvo|diferid|\d+\s*(?:d[íi]as|mes)", c):
-        return dia_siguiente, "publicacion", \
-            "Su propio texto dice que empieza a regir al promulgarse y publicarse; en la práctica, el día siguiente de salir en la Gaceta Oficial."
+        return dia_siguiente, "publicacion", TXT_PUBLICACION
     return None, "ver_articulo", ""
 
 
@@ -204,14 +220,14 @@ def main(argv=None) -> int:
                "promulgada": r["FechaPromulgacion"], "publicada": r["FechaPublicacion"], "gaceta": r["Gaceta"],
                "estado": "ver_articulo" if fecha is None else ("vigencia" if date.fromisoformat(fecha) <= hoy else "pronto"),
                "vigencia_fecha": fecha,
-               "vigencia_texto": explica or "El robot no pudo calcular la fecha: lee el artículo de la ley (abajo).",
+               "vigencia_texto": explica or TXT_SIN_FECHA,
                "regla": regla,
                "fuente": f"Ley {num}{', art. ' + art if art else ''} — Consultoría Jurídica del Poder Ejecutivo (consultoria.gov.do)",
                "url_documento": url_doc, "url_busqueda": URL_BUSQUEDA, "auto": True, "datos_al": hoy.isoformat()}
         if cl:
             ley["vigencia_cita"] = cl[:400]
         if fecha and re.search(r"vigencia diferida|entrar[áa]n en vigencia en un plazo", texto, re.I):
-            ley["vigencia_texto"] += " Ojo: la ley dice que algunas partes empiezan más tarde; lee su texto."
+            ley["vigencia_texto"] += TXT_OJO
         agregadas.append(ley)
         tenemos[num] = ley
         sha = guardar_texto_fuente(arbol, texto[:12000])

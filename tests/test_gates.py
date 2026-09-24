@@ -245,11 +245,27 @@ def test_g1_schema_rejects_unknown_estado(par):
 
 
 # ---------------------------------------------------------------- review round 1 regressions
-def _con_resumen(n, fuente=FUENTE, **k):
+K = "senado-00636-2025"   # a Senate vote title: never law yet
+K_LEY = "ley-74-25"       # a law in vigencia.json: promulgated
+
+
+def _con_resumen(n, fuente=FUENTE, clave=None, **k):
+    clave = clave or (K_LEY if k.get("estado_ley") == "promulgada" else K)
     sha = _texto(n, fuente)
     res = leer(n, "docs/data/resumenes.json")
-    res["resumenes"]["x"] = _resumen(sha, **k)
+    res["resumenes"] = {clave: _resumen(sha, **k)}
     escribir(n, "docs/data/resumenes.json", res)
+    return clave
+
+
+def _auto_dinero(mid="inflacion", **k):
+    import dinero
+    d = {"valor_num": 5.13, "anterior_num": 3.71, "periodo": "agosto 2026", "periodo_iso": "2026-08",
+         "anterior_periodo": "agosto 2025", "url": "https://cdn.bancentral.gov.do/x.xls",
+         "url_pagina": "https://www.bancentral.gov.do/a/d/2534-precios", "datos_al": "2026-08"}
+    d.update(k)
+    d.update(dinero.textos(mid, d, None))
+    return d
 
 
 def test_b1_g9_partial_roster_and_title_plus_name(par):
@@ -270,19 +286,18 @@ def test_b2_g3_money_jump_and_salary_range(par):
     rec = [{"url": "https://cdn.bancentral.gov.do/x.xls", "status": 200, "error": None}]
     f = leer(n, "docs/data/finanzas.json")
     m = next(m for m in f["metricas"] if m["id"] == "inflacion")  # card on main says 5.35%
-    m["auto"] = {"valor_num": 5.13, "anterior_num": 3.71, "valor_texto": "5.13%", "periodo": "agosto 2026",
-                 "periodo_iso": "2026-08", "url": rec[0]["url"], "fuente": "BCRD", "texto": "t", "comparacion": "c"}
+    m["auto"] = _auto_dinero()
     escribir(n, "docs/data/finanzas.json", f)
     ok, g = correr(base, n, rec)
     assert ok, g.fallos                                   # the real August number publishes
-    m["auto"]["valor_num"] = 28.0                          # in range, absurd jump
+    m["auto"] = _auto_dinero(valor_num=28.0)               # in range, absurd jump
     escribir(n, "docs/data/finanzas.json", f)
     ok, g = correr(base, n, rec)
     assert not ok and any("G3" in x and "inflacion" in x for x in g.fallos)
-    m["auto"]["valor_num"] = 5.13
+    m["auto"] = _auto_dinero()
     s = next(m for m in f["metricas"] if m["id"] == "salario")
-    s["auto"] = {"valor_num": 3.0, "anterior_num": 2.9, "var_pct": 3.45, "valor_texto": "RD$3.00", "periodo": "junio 2026",
-                 "periodo_iso": "2026-06", "url": rec[0]["url"], "fuente": "TSS", "texto": "t", "comparacion": "c"}
+    s["auto"] = _auto_dinero("salario", valor_num=3.0, anterior_num=2.9, var_pct=3.45, periodo="junio 2026",
+                             periodo_iso="2026-06", anterior_periodo="junio 2025")
     escribir(n, "docs/data/finanzas.json", f)
     ok, g = correr(base, n, rec)
     assert not ok and any("G3" in x and "salario" in x for x in g.fallos)
@@ -299,7 +314,7 @@ def test_n1_g8_rechecks_the_record_against_the_stored_source(par, campos, pista)
     base, n = par
     _con_resumen(n, **campos)
     res = leer(n, "docs/data/resumenes.json")
-    res["resumenes"]["x"] = {k: v for k, v in res["resumenes"]["x"].items() if v is not None}
+    res["resumenes"] = {c: {k: v for k, v in r.items() if v is not None} for c, r in res["resumenes"].items()}
     escribir(n, "docs/data/resumenes.json", res)
     ok, g = correr(base, n)
     assert not ok and any(pista in x for x in g.fallos), g.fallos
@@ -356,7 +371,7 @@ def test_r3_g8_source_must_hash_to_its_name_and_not_be_empty(par):
         campos = {"tipo": tipo, "titulo_facil": None, "que_es": "Crea un sistema de cuidados."} if tipo == "ley" else {}
         _con_resumen(n, fuente, **campos)
         res = leer(n, "docs/data/resumenes.json")
-        res["resumenes"]["x"] = {k: v for k, v in res["resumenes"]["x"].items() if v is not None}
+        res["resumenes"] = {c: {k: v for k, v in r.items() if v is not None} for c, r in res["resumenes"].items()}
         escribir(n, "docs/data/resumenes.json", res)
         ok, g = correr(base, n)
         assert not ok and any("caracteres" in f for f in g.fallos), (fuente, g.fallos)
@@ -407,22 +422,22 @@ def test_r3_g8_checks_every_prose_field_and_enough_checks(par):
     _con_resumen(n, tipo="ley", estado_ley="promulgada", titulo_facil=None, que_es="Crea un sistema de cuidados.",
                  te_afecta="Pagarás 999 pesos más.")
     res = leer(n, "docs/data/resumenes.json")
-    res["resumenes"]["x"] = {k: v for k, v in res["resumenes"]["x"].items() if v is not None}
+    res["resumenes"] = {c: {k: v for k, v in r.items() if v is not None} for c, r in res["resumenes"].items()}
     escribir(n, "docs/data/resumenes.json", res)
     ok, g = correr(base, n)
     assert not ok
     assert any("te_afecta no se pide" in f for f in g.fallos), g.fallos
-    assert any("x.te_afecta: el número 999" in f for f in g.fallos)
+    assert any(f"{K_LEY}.te_afecta: el número 999" in f for f in g.fallos)
     # 4 prose fields but 1/1 checks
     _con_resumen(n, tipo="proyecto", checks_pasados=1, checks_total=1, titulo_facil=None,
                  que_es="Crea un sistema de cuidados.", por_que="Para cuidar a niños.",
                  te_afecta="La propuesta busca cuidar a niños.", en_30_segundos="Un sistema de cuidados.")
     res = leer(n, "docs/data/resumenes.json")
-    res["resumenes"]["x"] = {k: v for k, v in res["resumenes"]["x"].items() if v is not None}
+    res["resumenes"] = {c: {k: v for k, v in r.items() if v is not None} for c, r in res["resumenes"].items()}
     escribir(n, "docs/data/resumenes.json", res)
     ok, g = correr(base, n)
     assert not ok and any("1 revisiones para 4 campos" in f for f in g.fallos), g.fallos
-    res["resumenes"]["x"].update(checks_pasados=25, checks_total=25)
+    res["resumenes"][K].update(checks_pasados=25, checks_total=25)
     escribir(n, "docs/data/resumenes.json", res)
     ok, g = correr(base, n)
     assert ok, g.fallos
@@ -476,13 +491,27 @@ def test_r3_novedad_must_come_from_the_templates(par, texto):
 def test_r3_novedad_from_templates_passes_and_ids_must_exist(par):
     import novedades as N
     base, n = par
+    # this commit really adds the 2 newest actas, 1 summary and the August inflation number
+    ses = leer(base, SES)
+    ses["sesiones"] = sorted(ses["sesiones"], key=lambda s: s["acta"])[:-2]
+    escribir(base, SES, ses)
     actas = sorted(s["acta"] for s in leer(n, SES)["sesiones"])[-2:]
-    ley = leer(n, "docs/data/vigencia.json")["leyes"][0]["numero"]
-    _, fr = N.frases_de({"senado_actas": {"nuevas": actas}, "vigencia_consultoria": {"nuevas": [ley]},
-                         "leyes_sil": {"actualizadas": ["1"]}, "dinero": {"cambiados": ["inflacion (agosto 2026)"]},
-                         "resumenes_ia": {"verificados": 2}}, {})
+    ses = leer(n, SES)
+    for s in ses["sesiones"]:
+        if s["acta"] in actas:   # a robot-read acta has no hand-written plain titles
+            for v in s.get("votaciones", []):
+                v.pop("titulo_facil", None)
+    escribir(n, SES, ses)
+    rec = [{"url": s["url_acta"], "status": 200, "error": None} for s in leer(n, SES)["sesiones"] if s["acta"] in actas]
+    rec.append({"url": _auto_dinero()["url"], "status": 200, "error": None})
+    _con_resumen(n)
+    f = leer(n, "docs/data/finanzas.json")
+    next(m for m in f["metricas"] if m["id"] == "inflacion")["auto"] = _auto_dinero()
+    escribir(n, "docs/data/finanzas.json", f)
+    _, fr = N.frases_de({"senado_actas": {"nuevas": actas}, "dinero": {"cambiados": ["inflacion (agosto 2026)"]},
+                         "resumenes_ia": {"verificados": 1}}, {})
     _novedad(n, " ".join(fr))
-    ok, g = correr(base, n)
+    ok, g = correr(base, n, rec)
     assert ok, g.fallos
     _novedad(n, "Nueva ley en «¿Ya está vigente?»: 999-26.")
     ok, g = correr(base, n)
@@ -534,3 +563,279 @@ def test_r3_hand_written_money_card_cannot_change(par):
     escribir(n, "docs/data/finanzas.json", fin)
     ok, g = correr(base, n)
     assert not ok and any(f.startswith("G8") and "inflacion" in f for f in g.fallos), g.fallos
+
+
+# ---------------------------------------------------------------- review round 4 (2026-09-24)
+@pytest.mark.parametrize("texto,bloquea", [
+    ("EVANGELINA RODRÍGUEZ propone cuidar a niños.", True),
+    ("Evangelina RODRÍGUEZ propone cuidar a niños.", True),
+    ("Lo aprobó la CÁMARA DE DIPUTADOS para cuidar a niños.", False),
+    ("Crea un sistema de cuidados en SANTO DOMINGO.", False),
+])
+def test_r4_bare_names_in_capitals_are_blocked(par, texto, bloquea):
+    from comun import nombre_suelto
+    assert (nombre_suelto(texto) is not None) is bloquea
+    base, n = par
+    _con_resumen(n, fuente=FUENTE + " CÁMARA DE DIPUTADOS, SANTO DOMINGO.", titulo_facil=texto)
+    ok, g = correr(base, n)
+    assert (any(f.startswith("G9") and "persona" in f for f in g.fallos)) is bloquea, g.fallos
+
+
+def test_r4_bare_ya_is_not_law_but_ya_es_ley_is():
+    from comun import PARECE_LEY
+    assert not PARECE_LEY.search("Crear un sistema para que los niños ya no queden solos.")
+    assert PARECE_LEY.search("Ya es ley: crear un sistema de cuidados.")
+
+
+def _bill_auto(estado="votando"):
+    return {"id": "01234-2026", "sil_id": 91234, "titulo": "Proyecto de ley de cuidados",
+            "titulo_oficial": "PROYECTO DE LEY DE CUIDADOS", "estado": estado, "estado_sil": "Aprobado en 1ra. lectura",
+            "votos": [], "camara": True, "origen": "Cámara de Diputados", "materia": "SALUD",
+            "url_oficial": "https://www.diputadosrd.gob.do/sil", "datos_al": "2026-09-24", "auto": True}
+
+
+def test_r4_law_or_not_comes_from_the_data_not_the_record(par):
+    from comun import estado_ley_de
+    base, n = par
+    # a Senate vote title that calls itself 'promulgada' to skip the "not law yet" checks (craft4 H7b)
+    _con_resumen(n, clave=K, estado_ley="promulgada", titulo_facil="Ya es ley: crear un sistema para cuidar a niños.")
+    ok, g = correr(base, n)
+    assert not ok and any("los datos dicen 'votando'" in f for f in g.fallos), g.fallos
+    assert any("presenta como ley" in f for f in g.fallos)
+    # a key that points at nothing on the site
+    for clave in ("x", "ley-999-99", "sil-01234-2026"):
+        _con_resumen(n, clave=clave)
+        ok, g = correr(base, n)
+        assert not ok and any("no corresponde a ningún" in f for f in g.fallos), (clave, g.fallos)
+    # a SIL bill: the record must carry the bill's own estado from leyes.json
+    for d in (base, n):
+        ly = leer(d, "docs/data/leyes.json")
+        ly["sectores"][0]["leyes"].insert(0, _bill_auto())
+        escribir(d, "docs/data/leyes.json", ly)
+    _con_resumen(n, clave="sil-01234-2026", estado_ley="aprobada", titulo_facil="Ahora rige un sistema de cuidados.")
+    ok, g = correr(base, n)
+    assert not ok and any("los datos dicen 'votando'" in f for f in g.fallos), g.fallos
+    _con_resumen(n, clave="sil-01234-2026", titulo_facil="Crear un sistema para cuidar a niños.")
+    ok, g = correr(base, n)
+    assert ok, g.fallos
+    assert estado_ley_de("sil-01234-2026", leer(n, "docs/data/leyes.json"), None) == "votando"
+    assert estado_ley_de("ley-74-25", None, leer(n, "docs/data/vigencia.json")) == "promulgada"
+
+
+def test_r4_escribir_takes_law_state_from_the_data(arbol_copia, monkeypatch):
+    import escribir as E
+    from comun import Arbol, sha256_texto
+    monkeypatch.setattr(E, "Arbol", lambda nombre, dry_run=False: Arbol(nombre, base=arbol_copia))
+    t = ("Proyecto de ley que autoriza el pago a contratistas del Estado y crea una comisión para la revisión "
+         "de reclamaciones derivadas de obras ejecutadas con o sin contrato formal")
+    sha = sha256_texto(t)
+    (arbol_copia / "pipeline-state" / "textos" / f"{sha}.txt").write_text(t)
+    items = [{"id": k, "tipo": "titulo_voto", "estado_ley": "promulgada", "fuente_url": "https://www.senadord.gob.do/x",
+              "fuente_sha256": sha, "intentos": 0} for k in ("senado-01531-2026", "raro-1")]
+    (arbol_copia / "pipeline-state" / "cola_resumenes.json").write_text(json.dumps({"items": items}))
+    assert E.main(["--stub"]) == 0
+    res = json.loads((arbol_copia / "docs/data/resumenes.json").read_text())["resumenes"]
+    assert res["senado-01531-2026"]["estado_ley"] == "votando"
+    assert "raro-1" not in res
+
+
+def test_r4_money_card_text_must_be_what_the_numbers_say(par):
+    base, n = par
+    rec = [{"url": "https://cdn.bancentral.gov.do/x.xls", "status": 200, "error": None}]
+    f = leer(n, "docs/data/finanzas.json")
+    m = next(m for m in f["metricas"] if m["id"] == "inflacion")
+    # craft4 N6: valor_num is fine, the headline and sentences the page shows are not
+    m["auto"] = dict(_auto_dinero(), valor_texto="99%", texto="Lo que costaba RD$100 hace un año, hoy cuesta como RD$199.",
+                     comparacion="Hace un año (agosto 2025) fue 3.71%; ahora (agosto 2026) es 99%. Los precios suben más rápido que hace un año.")
+    escribir(n, "docs/data/finanzas.json", f)
+    ok, g = correr(base, n, rec)
+    assert not ok
+    for campo in ("valor_texto", "texto", "comparacion"):
+        assert any(x.startswith("G3") and f"inflacion.{campo}" in x for x in g.fallos), (campo, g.fallos)
+    # free words hidden in a period are not a period
+    m["auto"] = _auto_dinero(periodo="agosto 2026 (el gobierno mintió)")
+    escribir(n, "docs/data/finanzas.json", f)
+    ok, g = correr(base, n, rec)
+    assert not ok and any("no es un período" in x for x in g.fallos), g.fallos
+    m["auto"] = _auto_dinero()
+    escribir(n, "docs/data/finanzas.json", f)
+    ok, g = correr(base, n, rec)
+    assert ok, g.fallos
+
+
+def _diputado(d):
+    return next(l for p in d["provincias"] for l in p["lideres"] if l["cargo"] == "Diputado/a" and l.get("asistencia"))
+
+
+def _mut_vig(campo, valor, extra=None):
+    def f(n):
+        v = leer(n, "docs/data/vigencia.json")
+        v["leyes"][0][campo] = valor
+        v["leyes"][0].update(extra or {})
+        escribir(n, "docs/data/vigencia.json", v)
+    return f
+
+
+def _mut_ley(campo, valor):
+    def f(n):
+        ly = leer(n, "docs/data/leyes.json")
+        ly["sectores"][0]["leyes"][0][campo] = valor
+        escribir(n, "docs/data/leyes.json", ly)
+    return f
+
+
+def _mut_lider(fn):
+    def f(n):
+        p = leer(n, "docs/data/provincias.json")
+        fn(_diputado(p))
+        escribir(n, "docs/data/provincias.json", p)
+    return f
+
+
+@pytest.mark.parametrize("mutar", [
+    _mut_vig("titulo", "Código Penal del corrupto Luis Abinader"),                       # N3a
+    _mut_vig("url_documento", "https://evil.example/ley.pdf"),                           # N3b
+    _mut_vig("vigencia_texto", "<img src=x onerror=alert(1)> Rige desde 2099."),        # N3c (innerHTML)
+    _mut_vig("estado", "vigencia", {"vigencia_fecha": "2025-01-01"}),                   # estado-only flip
+    _mut_vig("auto", True),                                                              # re-labelled as robot's
+    _mut_ley("estado", "aprobada"),                                                      # N4 estado only
+    _mut_ley("url_oficial", "https://evil.example/x"),                                   # N4b
+    _mut_lider(lambda l: l.update(partido="PLD")),                                       # N5a
+    _mut_lider(lambda l: l.update(registro="otro")),
+    _mut_lider(lambda l: l["asistencia"].update(nota="Este diputado nunca va.", presentes=1)),  # N5b
+    _mut_lider(lambda l: l["asistencia"].update(fuente="me lo dijeron")),
+    _mut_lider(lambda l: l["asistencia"].update(periodo="siempre falta")),
+    _mut_lider(lambda l: l.update(comisiones=["<img src=x onerror=alert(1)>"])),
+    lambda n: escribir(n, "docs/data/finanzas.json", dict(leer(n, "docs/data/finanzas.json"), metricas=leer(
+        n, "docs/data/finanzas.json")["metricas"] + [{"id": "nueva", "valor": "99%"}])),
+], ids=["vig-titulo", "vig-url", "vig-texto", "vig-estado", "vig-auto", "ley-estado", "ley-url", "partido",
+        "registro", "asis-nota", "asis-fuente", "asis-periodo", "comisiones-html", "tarjeta-nueva"])
+def test_r4_hand_written_records_are_frozen(par, mutar):
+    base, n = par
+    mutar(n)
+    ok, g = correr(base, n)
+    assert not ok and any(f.startswith("G8") for f in g.fallos), g.fallos
+
+
+def test_r4_normal_camara_update_still_passes(par):
+    import camara
+    base, n = par
+    p = leer(n, "docs/data/provincias.json")
+    dips = [l for pr in p["provincias"] for l in pr["lideres"] if l["cargo"] == "Diputado/a" and l.get("asistencia")]
+    uno, dos = dips[0], dips[1]
+    stats = {"diputados": {
+        uno["nombre"]: {"comisiones": ["Comisión Permanente de Justicia"], "iniciativas_cd": 7, "cargo_hasta": None,
+                        "asistencia": {"presentes": 90, "total": 100, "desde": "2024-08-16", "hasta": "2026-07-24"}},
+        dos["nombre"]: {"_sin_actualizar": True, "datos_al": "2026-06-30"}}}
+    camara.fusionar(p, stats)
+    escribir(n, "docs/data/provincias.json", p)
+    assert _diputado(leer(n, "docs/data/provincias.json"))["asistencia"]["periodo"] == "agosto 2024 a julio 2026"
+    ok, g = correr(base, n)
+    assert ok, g.fallos
+
+
+def test_r4_novedad_aporte_is_fixed_and_old_ones_never_change(par):
+    base, n = par
+    for aporte in ("El PRM es corrupto y Luis Abinader también", "<img src=x onerror=alert(1)>"):
+        nov = leer(base, "docs/data/novedades.json")
+        nov["novedades"].insert(0, {"fecha": "2026-09-30", "texto": "Actualizamos en qué va 1 proyecto de ley.",
+                                    "aporte": aporte, "guid": "psrd-auto-c", "auto": True})
+        escribir(n, "docs/data/novedades.json", nov)
+        ok, g = correr(base, n)
+        assert not ok and any(f.startswith("G8") and "aporte" in f for f in g.fallos), g.fallos
+    nov = leer(base, "docs/data/novedades.json")
+    nov["novedades"][0]["aporte"] = "Texto nuevo sin revisar."
+    escribir(n, "docs/data/novedades.json", nov)
+    ok, g = correr(base, n)
+    assert not ok and any("ya publicada cambió" in f for f in g.fallos), g.fallos
+
+
+def test_r4_sin_resumen_link_must_be_official(par):
+    base, n = par
+    res = leer(n, "docs/data/resumenes.json")
+    res["sin_resumen"]["senado-00636-2025"] = {"intentos": 3, "fuente_url": "https://evil.example/phish.pdf"}
+    escribir(n, "docs/data/resumenes.json", res)
+    ok, g = correr(base, n)
+    assert not ok and any(f.startswith("G4") and "sin_resumen" in f for f in g.fallos), g.fallos
+    res["sin_resumen"]["senado-00636-2025"]["fuente_url"] = "https://www.senadord.gob.do/x.pdf"
+    escribir(n, "docs/data/resumenes.json", res)
+    ok, g = correr(base, n)
+    assert ok, g.fallos
+
+
+def test_r4_stray_file_in_docs_data_and_edited_feed_are_blocked(par):
+    base, n = par
+    (n / "docs" / "data" / "aviso.html").write_text("<h1>aviso</h1>")
+    ok, g = correr(base, n)
+    assert not ok and any(f.startswith("G1") and "aviso.html" in f for f in g.fallos), g.fallos
+    (n / "docs" / "data" / "aviso.html").unlink()
+    xml = (n / "docs" / "novedades.xml").read_text(encoding="utf-8")
+    (n / "docs" / "novedades.xml").write_text(xml.replace("</channel>", "<item><title>x</title></item></channel>"),
+                                              encoding="utf-8")
+    ok, g = correr(base, n)
+    assert not ok and any("novedades.xml" in f for f in g.fallos), g.fallos
+
+
+def test_r4_no_procesada_motivo_is_a_fixed_form(par):
+    base, n = par
+    url = "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/99999/acta-num-0199"
+    rec = [{"url": url, "status": 200, "error": None}]
+    for motivo, pasa in (("El senador Omar Fernández es corrupto, dice el PRM.", False),
+                         ("votaciones sin leer: 004, 007", True)):
+        ses = leer(base, SES)
+        ses["sesiones"].insert(0, {"acta": "0199", "fecha": "2026-09-01", "estado": "no_procesada", "url_acta": url,
+                                   "auto": True, "motivo": motivo})
+        escribir(n, SES, ses)
+        ok, g = correr(base, n, rec)
+        assert ok is pasa, (motivo, g.fallos)
+
+
+@pytest.mark.parametrize("texto,pista", [
+    ("Agregamos 999 proyectos de ley que pasaron una votación en el Congreso.", "999 proyectos"),       # craft4 H4d
+    ("Actualizamos las cifras del país: inflación (subio a 40 en agosto 2026).", "plantillas"),          # craft4 H4e
+    ("Actualizamos las cifras del país: inflación (agosto 2026).", "no es una cifra que cambió"),
+])
+def test_r4_novedad_counts_and_periods_must_match_the_commit(par, texto, pista):
+    base, n = par
+    _novedad(n, texto)
+    ok, g = correr(base, n)
+    assert not ok and any(pista in f for f in g.fallos), g.fallos
+
+
+def test_r4_new_law_vigencia_texto_is_a_fixed_form(par):
+    import vigencia as V
+    base, n = par
+    url = "https://www.consultoria.gov.do/api/document/1"
+    ley = {"numero": "9-26", "titulo": "Ley de cuidados", "titulo_oficial": "LEY DE CUIDADOS", "promulgada": "2026-09-01",
+           "publicada": "2026-09-02", "gaceta": "11200", "estado": "vigencia", "vigencia_fecha": "2026-09-03",
+           "vigencia_texto": V.TXT_DEFECTO, "regla": "regla_por_defecto", "fuente": "Ley 9-26",
+           "url_documento": url, "url_busqueda": "https://www.consultoria.gov.do/consultas", "auto": True,
+           "datos_al": "2026-09-24"}
+    rec = [{"url": url, "status": 200, "error": None}]
+    for texto, pasa in (("Rige desde hoy gracias al senador Omar Fernández.", False), (V.TXT_DEFECTO, True)):
+        v = leer(base, "docs/data/vigencia.json")
+        v["leyes"].insert(0, dict(ley, vigencia_texto=texto))
+        escribir(n, "docs/data/vigencia.json", v)
+        ok, g = correr(base, n, rec)
+        assert ok is pasa, (texto, g.fallos)
+
+
+def test_r4_normal_leyes_update_still_passes(par):
+    import leyes as L
+    base, n = par
+    conf = leer(n, "config/sil.json")
+    for d in (base, n):
+        ly = leer(d, "docs/data/leyes.json")
+        ly["sectores"][0]["leyes"].insert(0, _bill_auto())
+        escribir(d, "docs/data/leyes.json", ly)
+    fila = lambda i, num, estado, tipo="Proyecto de Ley": {  # noqa: E731
+        "id": i, "numero": num, "estado": estado, "numPromulgacion": None, "tipo": tipo, "descripcion": "PROYECTO DE LEY X",
+        "materia": "SALUD PÚBLICA Y ASISTENCIA SOCIAL", "camaraInicio": "Cámara de Diputados",
+        "fechaUltimoCambioPrincipal": "2026-09-20"}
+    snap = {"91234": ["Aprobado en 1ra. lectura", None], "95555": ["Depositado", None]}
+    filas = [fila(91234, "01234-2026", "Promulgado"), fila(95555, "05555-2026", "Aprobado en 1ra. lectura")]
+    data, _, rep = L.aplicar(filas, snap, leer(n, "docs/data/leyes.json"), conf, "2026-09-30", 40)
+    assert rep["actualizadas"] == ["01234-2026"] and len(rep["nuevas"]) == 1
+    escribir(n, "docs/data/leyes.json", data)
+    ok, g = correr(base, n)
+    assert ok, g.fallos

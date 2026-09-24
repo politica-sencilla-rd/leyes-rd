@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mechanical publish gates G0-G10 (design section 3).
+"""Mechanical publish gates G0-G10 (design section 3). G8 also freezes hand-written records.
 
 Compares the NEW tree (the working tree, or a dry-run copy) against the BASE
 (origin/main after the rebase, or a directory). Any failure exits 1: nothing is
@@ -35,9 +35,13 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "auto"))
 # Shared with escribir.py / dinero.py so the writer and the gate never disagree.
-from comun import (PARECE_LEY, nombra_persona, numero_en_letras, numeros_ausentes,  # noqa: E402
-                   patrones_nombres, problema_metrica, valor_previo)
-from novedades import es_plantilla  # noqa: E402
+from comun import (MESES, PARECE_LEY, PERIODO, estado_ley_de, nombra_persona, numero_en_letras,  # noqa: E402
+                   numeros_ausentes, patrones_nombres, problema_metrica, valor_previo)
+from camara import ASIST_FUENTE, CAMPOS_ROBOT, NOTA_SIN_ACTUALIZAR  # noqa: E402
+from dinero import textos as textos_dinero  # noqa: E402
+from novedades import APORTE, NOMBRE_METRICA, construir_xml, es_plantilla  # noqa: E402
+from senado_actas import es_motivo  # noqa: E402
+from vigencia import es_texto_vigencia  # noqa: E402
 PROSA = {"que_es", "por_que", "te_afecta", "titulo_facil", "en_30_segundos", "resumen", "resumen_corto"}
 CLAVES_LISTA = ("acta", "numero", "id", "iniciativa", "nombre", "legisladorId", "fecha", "titulo")
 VOTO_SENADO_OK = {"iniciativa", "titulo", "titulo_facil", "a_favor", "presentes", "resultado",
@@ -53,6 +57,14 @@ CONFIG_ROBOT = {"config/diputados_ids.json"}
 MIN_FUENTE = {"titulo_voto": 30}
 MIN_FUENTE_DEFECTO = 100
 CHECKS_POR_CAMPO = 5  # escribir.py asks Q1-Q5 (Q6 too when not law) about every sentence
+APROBADO = ("aprobada", "promulgada")
+# Fields leyes.py writes on an auto bill: all of them on a new one, only these on an existing one.
+LEY_AUTO_CAMPOS = {"id", "sil_id", "titulo", "titulo_oficial", "estado", "estado_sil", "votos", "camara", "origen",
+                   "materia", "url_oficial", "datos_al", "auto"}
+LEY_AUTO_CAMBIAN = {"estado", "estado_sil", "datos_al"}
+FECHA = re.compile(r"\d{4}-\d{2}-\d{2}")
+_MES_ANIO = rf"(?:{'|'.join(MESES)}) \d{{4}}"
+PERIODO_ASIS = re.compile(rf"{_MES_ANIO}(?: a {_MES_ANIO})?")  # camara.etiqueta_periodo()
 
 
 # ------------------------------------------------------------------ trees
@@ -174,6 +186,11 @@ class Gates:
             errs = sorted(v.iter_errors(data), key=lambda e: list(e.path))
             for e in errs[:5]:
                 self.fallo("G1", f"{rel} {'/'.join(map(str, e.path))}: {e.message[:200]}")
+        # Only the known JSON files may appear or change under docs/data (publicar.sh adds the whole
+        # folder and Pages serves it): a stray .html/.js would pass every other gate.
+        for rel in sorted(set(self.nuevo.archivos("docs/data")) | set(self.base.archivos("docs/data"))):
+            if not rel.endswith(".json") and self.nuevo.texto(rel) != self.base.texto(rel):
+                self.fallo("G1", f"{rel}: en docs/data solo pueden cambiar archivos .json con esquema")
         xml = self.nuevo.texto("docs/novedades.xml")
         if xml is not None:
             try:
@@ -258,6 +275,24 @@ class Gates:
             prob = problema_metrica(m.get("id"), auto, previo)
             if prob:
                 self.fallo("G3", f"finanzas {prob}")
+        # The site shows valor_texto and the sentences, not valor_num: they must be exactly what
+        # dinero.textos() writes from the numbers, and every period must be a real period.
+        pob = ((self.base.json("docs/data/finanzas.json") or {}).get("poblacion") or {}).get("habitantes")
+        for _, m in self.cambiados("docs/data/finanzas.json", "metricas", "id")[0]:
+            auto = m.get("auto")
+            if not auto:
+                continue
+            for k in ("periodo", "anterior_periodo", "parcial_periodo"):
+                if k in auto and not re.fullmatch(PERIODO, str(auto[k])):
+                    self.fallo("G3", f"finanzas {m.get('id')}.{k}: {str(auto[k])[:60]!r} no es un período")
+            try:
+                esperado = textos_dinero(m.get("id"), auto, pob)
+            except (KeyError, TypeError, ValueError) as e:
+                self.fallo("G3", f"finanzas {m.get('id')}: no se puede rehacer el texto de la tarjeta ({type(e).__name__}: {e})")
+                continue
+            for k, v in esperado.items():
+                if auto.get(k) != v:
+                    self.fallo("G3", f"finanzas {m.get('id')}.{k}: dice {str(auto.get(k))[:60]!r} y los números dan {v[:60]!r}")
         pre = fin.get("presupuesto_auto")
         if isinstance(pre, dict) and all(isinstance(pre.get(k), (int, float)) for k in ("ingresos", "gastos", "resultado")):
             calc = pre["ingresos"] - pre["gastos"]
@@ -318,6 +353,11 @@ class Gates:
         for k, r in ((self.nuevo.json("docs/data/resumenes.json") or {}).get("resumenes", {})).items():
             if res_b.get(k) != r:
                 self._url_ok(r.get("fuente_url", ""), f"resumen {k}", exigir_recibo=False)
+        # "Resumen automático no disponible" shows sin_resumen[*].fuente_url as "Documento oficial".
+        sin_b = (self.base.json("docs/data/resumenes.json") or {}).get("sin_resumen", {})
+        for k, x in ((self.nuevo.json("docs/data/resumenes.json") or {}).get("sin_resumen", {})).items():
+            if sin_b.get(k) != x and isinstance(x, dict) and "fuente_url" in x:
+                self._url_ok(str(x["fuente_url"]), f"sin_resumen {k}", exigir_recibo=False)
 
     # G5 ---------------------------------------------------------------
     def g5_tamano(self):
@@ -443,9 +483,16 @@ class Gates:
         rb = (self.base.json("docs/data/resumenes.json") or {}).get("resumenes", {})
         rn = (self.nuevo.json("docs/data/resumenes.json") or {}).get("resumenes", {})
         ia = self._conf("ia.json", {"escritores": [], "revisores": []})
+        leyes_n, vig_n = self.nuevo.json("docs/data/leyes.json"), self.nuevo.json("docs/data/vigencia.json")
         for k, r in rn.items():
             if rb.get(k) == r:
                 continue
+            # Law or not comes from the data (leyes.json / vigencia.json / a Senate vote), never from the record.
+            real = estado_ley_de(k, leyes_n, vig_n)
+            if real is None:
+                self.fallo("G8", f"resumen {k}: no corresponde a ningún proyecto, ley o votación del sitio")
+            elif r.get("estado_ley") != real:
+                self.fallo("G8", f"resumen {k}: dice estado_ley {r.get('estado_ley')!r} y los datos dicen {real!r}")
             # only real configured models publish (a --stub run can never reach the site)
             if r.get("modelo_escritor") not in ia["escritores"] or r.get("modelo_revisor") not in ia["revisores"]:
                 self.fallo("G8", f"resumen {k}: modelos {r.get('modelo_escritor')}/{r.get('modelo_revisor')} "
@@ -491,7 +538,7 @@ class Gates:
             if (r.get("checks_total") or 0) < CHECKS_POR_CAMPO * len(presentes):
                 self.fallo("G8", f"resumen {k}: {r.get('checks_total')} revisiones para {len(presentes)} campos "
                                  f"(mínimo {CHECKS_POR_CAMPO} por campo)")
-            no_aprobado = r.get("estado_ley") not in ("aprobada", "promulgada")
+            no_aprobado = real not in APROBADO
             for campo in presentes:
                 t = r.get(campo)
                 if not isinstance(t, str) or not t.strip():
@@ -519,14 +566,60 @@ class Gates:
             propio = " ".join(str(x) for kk, x in v.items() if kk != "nota") + f" {s.get('acta')} {s.get('fecha')}"
             for num in numeros_ausentes(nota, propio):
                 self.fallo("G8", f"{donde}: el número {num} no está en los datos de esa votación")
+        # A no_procesada acta's 'motivo' is one of senado_actas.py's fixed forms.
+        for _, s in self.cambiados("docs/data/sesiones.json", "sesiones", "acta")[0]:
+            if "motivo" in s and not es_motivo(str(s["motivo"])):
+                self.fallo("G8", f"acta {s.get('acta')}: 'motivo' no es uno de los de senado_actas.py: {str(s['motivo'])[:60]!r}")
+        self._g8_novedades()
+        self._g8_escrito_a_mano()
+
+    def _g8_novedades(self):
         # A robot Novedad is built from fixed templates (novedades.py); anything else is free prose.
         ses = {str(s.get("acta")) for s in (self.nuevo.json("docs/data/sesiones.json") or {}).get("sesiones", [])}
         vig = {str(l.get("numero")) for l in (self.nuevo.json("docs/data/vigencia.json") or {}).get("leyes", [])}
+        # What this commit really did, to check the counts a Novedad claims.
+        todas = lambda d: [x for s in d.get("sectores", []) for x in s.get("leyes", []) if x.get("id")]  # noqa: E731
+        cl = self.cambiados("docs/data/leyes.json", None, "id", sub=todas)[0]
+        hecho = {
+            # an acta stored as no_procesada and now read is "new" to the robot but "changed" here
+            "sesiones": len(self.cambiados("docs/data/sesiones.json", "sesiones", "acta")[0]),
+            "proyectos": sum(1 for t, x in cl if t == "nuevo" and x.get("auto")),
+            "actualizados": sum(1 for t, x in cl if t == "cambiado" and x.get("auto")),
+            "leyes": sum(1 for t, _ in self.cambiados("docs/data/vigencia.json", "leyes", "numero")[0] if t == "nuevo"),
+        }
+        rb = (self.base.json("docs/data/resumenes.json") or {}).get("resumenes", {})
+        hecho["resumenes"] = sum(1 for k, r in ((self.nuevo.json("docs/data/resumenes.json") or {}).get("resumenes", {})).items()
+                                 if rb.get(k) != r)
+        metricas = {m.get("id"): m.get("auto") or {} for _, m in self.cambiados("docs/data/finanzas.json", "metricas", "id")[0]}
+        por_nombre = {v: k for k, v in NOMBRE_METRICA.items()}
         for t, n in self.cambiados("docs/data/novedades.json", "novedades", "texto")[0]:
             texto = n.get("texto", "")
+            if t == "cambiado":
+                self.fallo("G8", f"novedad ya publicada cambió: {texto[:60]!r} (un robot solo agrega novedades)")
+                continue
+            # aporte is rendered as HTML: it may only be the fixed robot label.
+            if n.get("auto") is not True or n.get("aporte") != APORTE:
+                self.fallo("G8", f"novedad: una novedad del robot lleva auto: true y aporte {APORTE!r}, "
+                                 f"no {str(n.get('aporte'))[:60]!r}")
             if not es_plantilla(texto):
                 self.fallo("G8", f"novedad: no sale de las plantillas de novedades.py: {texto[:80]!r}")
                 continue
+            for rx, que in ((r"Agregamos (\d+) (?:sesión|sesiones) del Senado", "sesiones"),
+                            (r"Agregamos (\d+) proyectos de ley", "proyectos"),
+                            (r"Actualizamos en qué va (\d+)", "actualizados"),
+                            (r"Agregamos (\d+) leyes nuevas", "leyes"),
+                            (r"Publicamos (\d+) resúmen", "resumenes")):
+                for num in re.findall(rx, texto):
+                    if int(num) > hecho[que]:
+                        self.fallo("G8", f"novedad: dice {num} {que} y este cambio trae {hecho[que]}")
+            for lista in re.findall(r"Agregamos (\d+) leyes nuevas a «¿Ya está vigente\?»: ([\d\-, ]+)", texto):
+                if int(lista[0]) != len(re.findall(r"\d+-\d+", lista[1])):
+                    self.fallo("G8", f"novedad: dice {lista[0]} leyes y nombra {len(re.findall(r'[0-9]+-[0-9]+', lista[1]))}")
+            for cifras in re.findall(r"Actualizamos las cifras del país: (.*)\.", texto):
+                for nombre, periodo in re.findall(r"([^,()]+?) \(([^)]*)\)", cifras):
+                    mid = por_nombre.get(nombre.strip(), nombre.strip())
+                    if mid not in metricas or metricas[mid].get("periodo") != periodo:
+                        self.fallo("G8", f"novedad: '{nombre.strip()} ({periodo})' no es una cifra que cambió en este commit")
             for acta in re.findall(r"\bactas? ((?:\d+(?:, | a )?)+)", texto):
                 for a in re.findall(r"\d+", acta):
                     if a not in ses:
@@ -535,6 +628,142 @@ class Gates:
                 for num in re.findall(r"\d+-\d+", lista):
                     if num not in vig:
                         self.fallo("G8", f"novedad: la ley {num} no está en vigencia.json")
+        # The feed is rebuilt from novedades.json by code: it can't carry anything else.
+        xml = self.nuevo.texto("docs/novedades.xml")
+        nov = self.nuevo.json("docs/data/novedades.json")
+        if xml is not None and nov is not None and xml != self.base.texto("docs/novedades.xml") and xml != construir_xml(nov):
+            self.fallo("G8", "docs/novedades.xml no es el que novedades.py arma desde docs/data/novedades.json")
+
+    def _g8_escrito_a_mano(self):
+        """Hand-written records never change in a robot commit: only the exact fields each robot writes."""
+        def sin(d, quitar):
+            return {k: v for k, v in (d or {}).items() if k not in quitar}
+
+        # leyes.json: hand-written bills identical (same sector, same order); auto bills only change
+        # estado/estado_sil/datos_al; new ones carry only the fields leyes.py writes.
+        lb, ln = self.base.json("docs/data/leyes.json"), self.nuevo.json("docs/data/leyes.json")
+        if lb is not None and ln is not None:
+            if sin(lb, {"sectores"}) != sin(ln, {"sectores"}):
+                self.fallo("G8", "leyes.json: cambió una parte escrita a mano (fuera de 'sectores')")
+            mano = lambda d: [(s.get("id"), l) for s in d.get("sectores", []) for l in s.get("leyes", [])  # noqa: E731
+                              if not l.get("auto")]
+            if mano(lb) != mano(ln):
+                self.fallo("G8", "leyes.json: cambió, se agregó o se movió un proyecto escrito a mano")
+            sec_b = {s.get("id"): sin(s, {"leyes"}) for s in lb.get("sectores", [])}
+            otros = self._conf("sil.json", {}).get("sector_otros", {})
+            for s in ln.get("sectores", []):
+                if sec_b.get(s.get("id"), {"id": s.get("id"), **otros}) != sin(s, {"leyes"}):
+                    self.fallo("G8", f"leyes.json: el sector {s.get('id')} cambió o no es el que leyes.py crea")
+            auto_b = {str(l.get("id")): l for s in lb.get("sectores", []) for l in s.get("leyes", []) if l.get("auto")}
+            for s in ln.get("sectores", []):
+                for l in s.get("leyes", []):
+                    if not l.get("auto"):
+                        continue
+                    viejo = auto_b.get(str(l.get("id")))
+                    if viejo is None:
+                        if set(l) - LEY_AUTO_CAMPOS or not l.get("id") or not l.get("sil_id") or l.get("votos"):
+                            self.fallo("G8", f"leyes.json: el proyecto nuevo {l.get('id')} trae campos que leyes.py no escribe: "
+                                             f"{sorted(set(l) - LEY_AUTO_CAMPOS)}")
+                    elif sin(viejo, LEY_AUTO_CAMBIAN) != sin(l, LEY_AUTO_CAMBIAN):
+                        self.fallo("G8", f"leyes.json: en el proyecto {l.get('id')} solo pueden cambiar {sorted(LEY_AUTO_CAMBIAN)}")
+
+        # vigencia.json: a law already on main never changes; a new one is the robot's, with a fixed text.
+        vb, vn = self.base.json("docs/data/vigencia.json"), self.nuevo.json("docs/data/vigencia.json")
+        if vb is not None and vn is not None:
+            if sin(vb, {"leyes"}) != sin(vn, {"leyes"}):
+                self.fallo("G8", "vigencia.json: cambió una parte escrita a mano (fuera de 'leyes')")
+            por_num = {str(l.get("numero")): l for l in vb.get("leyes", [])}
+            for l in vn.get("leyes", []):
+                viejo = por_num.get(str(l.get("numero")))
+                if viejo is not None:
+                    if viejo != l:
+                        self.fallo("G8", f"vigencia.json: la ley {l.get('numero')} ya publicada cambió")
+                elif l.get("auto") is not True:
+                    self.fallo("G8", f"vigencia.json: ley nueva {l.get('numero')} sin auto: true (a mano solo por PR)")
+                elif not es_texto_vigencia(str(l.get("vigencia_texto", ""))):
+                    self.fallo("G8", f"vigencia.json: ley {l.get('numero')}: vigencia_texto no es uno de los de vigencia.py")
+
+        # provincias.json: everything identical except the fields camara.py writes on a leader.
+        pb, pn = self.base.json("docs/data/provincias.json"), self.nuevo.json("docs/data/provincias.json")
+        if pb is not None and pn is not None:
+            def mascara(d):
+                d = json.loads(json.dumps(d))
+                for p in d.get("provincias", []):
+                    for l in p.get("lideres", []):
+                        for k in CAMPOS_ROBOT:
+                            l.pop(k, None)
+                return d
+            if mascara(pb) != mascara(pn):
+                self.fallo("G8", "provincias.json: cambió algo escrito a mano (solo cambian asistencia, comisiones, "
+                                 "iniciativas_propuestas y cargo_hasta)")
+            else:
+                viejos = [l for p in pb.get("provincias", []) for l in p.get("lideres", [])]
+                nuevos = [l for p in pn.get("provincias", []) for l in p.get("lideres", [])]
+                for b, l in zip(viejos, nuevos):
+                    self._lider_robot(b, l)
+
+        # finanzas.json: only each card's 'auto', actualizado_auto and the derived debt per person.
+        fb, fn = self.base.json("docs/data/finanzas.json"), self.nuevo.json("docs/data/finanzas.json")
+        if fb is not None and fn is not None:
+            def mascara_f(d):
+                d = json.loads(json.dumps(d))
+                d.pop("actualizado_auto", None)
+                (d.get("comparaciones_derivadas") or {}).pop("deuda_por_persona_usd", None)
+                d.pop("metricas", None)
+                return d
+            if mascara_f(fb) != mascara_f(fn):
+                self.fallo("G8", "finanzas.json: cambió una parte escrita a mano (fuera de las tarjetas 'auto')")
+            extra = {m.get("id") for m in fn.get("metricas", [])} - {m.get("id") for m in fb.get("metricas", [])}
+            if extra:
+                self.fallo("G8", f"finanzas.json: tarjetas nuevas {sorted(map(str, extra))} (solo a mano, por PR)")
+            dpp = (fn.get("comparaciones_derivadas") or {}).get("deuda_por_persona_usd")
+            if dpp != (fb.get("comparaciones_derivadas") or {}).get("deuda_por_persona_usd"):
+                deuda = next((m.get("auto") or {} for m in fn.get("metricas", []) if m.get("id") == "deuda"), {})
+                pob = (fb.get("poblacion") or {}).get("habitantes")
+                try:
+                    ok = dpp == round(deuda["usd_millones"] * 1e6 / pob)
+                except (KeyError, TypeError, ZeroDivisionError):
+                    ok = False
+                if not ok:
+                    self.fallo("G8", f"finanzas.json: deuda_por_persona_usd {dpp} no sale de la deuda y la población")
+
+    def _lider_robot(self, b: dict, l: dict):
+        quien = l.get("nombre")
+        c = l.get("comisiones")
+        if c != b.get("comisiones") and (not isinstance(c, list) or
+                                         not all(isinstance(x, str) and x and len(x) <= 200 and not re.search(r"[<>]", x)
+                                                 for x in c)):
+            self.fallo("G8", f"{quien}: comisiones no es una lista de nombres")
+        i = l.get("iniciativas_propuestas")
+        if i != b.get("iniciativas_propuestas") and not (isinstance(i, int) and not isinstance(i, bool) and i >= 0):
+            self.fallo("G8", f"{quien}: iniciativas_propuestas {i!r} no es un número")
+        h = l.get("cargo_hasta")
+        if h != b.get("cargo_hasta") and h is not None and not (isinstance(h, str) and FECHA.fullmatch(h)):
+            self.fallo("G8", f"{quien}: cargo_hasta {h!r} no es una fecha")
+        a, ab = l.get("asistencia"), b.get("asistencia")
+        if a == ab:
+            return
+        if not isinstance(a, dict):
+            self.fallo("G8", f"{quien}: asistencia no es un objeto")
+            return
+        ab = ab if isinstance(ab, dict) else {}
+        for k, v in a.items():
+            if v == ab.get(k):
+                continue
+            if k in ("presentes", "total"):
+                bien = isinstance(v, int) and not isinstance(v, bool) and v >= 0
+            elif k == "datos_al":
+                bien = isinstance(v, str) and bool(FECHA.fullmatch(v))
+            elif k == "nota":
+                bien = v == NOTA_SIN_ACTUALIZAR
+            elif k == "fuente":
+                bien = v == ASIST_FUENTE
+            elif k == "periodo":
+                bien = isinstance(v, str) and bool(PERIODO_ASIS.fullmatch(v))
+            else:
+                bien = False
+            if not bien:
+                self.fallo("G8", f"{quien}: asistencia.{k} = {str(v)[:60]!r} no es algo que escribe camara.py")
 
     def notas_nuevas(self) -> list[tuple[str, str, dict, dict]]:
         """(where, note, vote, session) for every vote 'nota' not already on main."""
@@ -571,9 +800,13 @@ class Gates:
                     out.append((f"resumen {k}.{campo}", r[campo], r))
         for _, n in self.cambiados("docs/data/novedades.json", "novedades", "texto")[0]:
             out.append(("novedad", n["texto"], n))
+            if isinstance(n.get("aporte"), str) and n["aporte"]:
+                out.append(("novedad aporte", n["aporte"], n))
         for _, s in self.cambiados("docs/data/sesiones.json", "sesiones", "acta")[0]:
             for nota in s.get("notas_fuente", []):
                 out.append((f"acta {s['acta']} nota", nota, s))
+            if isinstance(s.get("motivo"), str) and s["motivo"]:
+                out.append((f"acta {s['acta']} motivo", s["motivo"], s))
             nota_asis = (s.get("asistencia") or {}).get("nota")
             if isinstance(nota_asis, str) and nota_asis:
                 out.append((f"acta {s['acta']} asistencia.nota", nota_asis, s))
@@ -586,6 +819,7 @@ class Gates:
         return out
 
     def g9_neutral(self):
+        leyes_n, vig_n = self.nuevo.json("docs/data/leyes.json"), self.nuevo.json("docs/data/vigencia.json")
         neu = self._conf("neutralidad.json", {"prohibidas_exactas": [], "prohibidas": []})
         exact = re.compile(r"\b(" + "|".join(map(re.escape, neu["prohibidas_exactas"])) + r")\b") \
             if neu["prohibidas_exactas"] else None
@@ -606,7 +840,8 @@ class Gates:
             persona = nombra_persona(txt, patrones)
             if persona:
                 self.fallo("G9", f"{donde}: nombra a una persona ({persona})")
-            if donde.endswith(".te_afecta") and ctx.get("estado_ley") not in ("aprobada", "promulgada"):
+            clave = donde[len("resumen "):].rsplit(".", 1)[0] if donde.startswith("resumen ") else ""
+            if donde.endswith(".te_afecta") and estado_ley_de(clave, leyes_n, vig_n) not in APROBADO:
                 for frase in re.split(r"(?<=[.!?])\s+", txt.strip()):
                     if frase and not (frase.startswith("La propuesta busca") or frase.startswith("Si se aprueba,")):
                         self.fallo("G9", f"{donde}: en un proyecto no aprobado cada frase debe empezar con "

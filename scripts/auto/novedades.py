@@ -21,7 +21,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from comun import MESES, ROOT, Arbol, fecha_larga, hoy_et  # noqa: E402
+from comun import MESES, PERIODO, ROOT, Arbol, fecha_larga, hoy_et  # noqa: E402
 
 SITIO = "https://politica-sencilla-rd.github.io/leyes-rd/"
 APORTE = "🔄 Actualización automática"
@@ -84,7 +84,7 @@ def frases_de(fuentes: dict, antes: dict) -> tuple[str, list[str]]:
 
 # Every sentence frases_de() can write, as a pattern. Gate G8 blocks any new Novedad
 # that is not made only of these (free prose, opinions or made-up numbers).
-_PERIODO = r"\([\wáéíóúñ .\-]{1,40}\)"
+_PERIODO = rf"\((?:{PERIODO})\)"  # only a real period, no free words
 _METRICA = rf"(?:{'|'.join(map(re.escape, NOMBRE_METRICA.values()))}|[a-z_]+) {_PERIODO}"
 _LEY = r"\d+-\d+"
 PLANTILLAS = [

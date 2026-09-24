@@ -46,20 +46,51 @@ rebase on `main`, write the news item, write "Datos al", run gates G0 to G10, co
   for blocks it. There must be at least 5 AI checks per field. Numbers must come
   from the source. A bill described as already law ("ya es ley", "ahora rige",
   "entró en vigor", "se promulgó") is blocked by code, not only by the AI
-  checker. At most 20 new summaries per commit (gate G5).
+  checker. Whether an item is law yet comes from the data, never from the
+  summary itself: `senado-…` is never law, `sil-…` takes its bill's `estado`
+  from `leyes.json`, `ley-…` must be a law in `vigencia.json`. A summary that
+  points at nothing, or claims another state, is blocked. At most 20 new
+  summaries per commit (gate G5).
+- **Hand-written data is frozen (gate G8).** A robot commit can't touch a
+  hand-written bill in `leyes.json`, any law already in `vigencia.json`, or
+  anything on a leader card in `provincias.json` except what `camara.py` writes
+  (attendance numbers, period, source and its one fixed note; committees;
+  bills proposed; end of term). On a robot bill only `estado`, `estado_sil`
+  and `datos_al` may change. A new law's "when it applies" text must be one of
+  the sentences `vigencia.py` writes. On a money card only `auto` may change.
+- **Money cards say exactly what the numbers say (gate G3).** The big number,
+  its sentences and its source line are rebuilt from the numbers with
+  `dinero.py`'s own templates and must match word for word. Periods must be
+  real periods ("agosto 2026", "cierre de 2025").
+- **Only known files publish.** Nothing but the known `.json` files may appear
+  or change under `docs/data`, and `docs/novedades.xml` must be exactly what
+  `novedades.py` builds from `novedades.json`. Every "Documento oficial" link,
+  including the one shown when a summary failed, must be an official domain.
 - **News items only come from fixed sentences.** A new Novedad must be made
   only of the sentences `novedades.py` writes, and any acta or law number in it
-  must exist in the data. Free text, even neutral text, is blocked. A note on a
-  vote is checked for names, opinion words and numbers the vote doesn't carry.
+  must exist in the data. Free text, even neutral text, is blocked. Its label
+  must be the fixed "🔄 Actualización automática", and a Novedad already
+  published never changes. Counts can't be more than the commit really adds,
+  and a money figure named in it must be one that changed, with its real
+  period. A note on a vote is checked for names, opinion words and numbers the
+  vote doesn't carry. The reason shown for an unreadable acta must be one of
+  `senado_actas.py`'s fixed reasons.
 - **No names of people in robot text.** The writer's code checks and gate G9
   use one shared check (`scripts/auto/comun.py`): any two-word form of a
   deputy's, senator's or official's name ("Omar Fernández" for "Omar Leonel
   Fernández Domínguez"), or a job title followed by a name ("el ministro Juan"),
   blocks the text, even for people not on any list. So do two or more
-  capitalised words in a row ("Evangelina Rodríguez propone…") unless they are a
+  capitalised words in a row ("Evangelina Rodríguez propone…", also in capitals:
+  "EVANGELINA RODRÍGUEZ") unless they are a
   known institution, office or place ("Cámara de Diputados", "Banco Central",
   "Santo Domingo"). The lists live in `comun.py`. An unknown proper noun blocks the text
   on purpose: that item shows "Resumen en preparación" until the list is extended.
+  Known limits (the AI checker's question Q5 is the second line here): a name
+  glued after an institution word ("Ley Evangelina Rodríguez"), initials
+  ("E. Rodríguez") and a surname alone are not caught by code. The official
+  title of a Senate vote is published as the acta prints it and is not
+  scanned: real titles contain words on the opinion list (an honoree's
+  "valiosa contribución"), so scanning them would block real actas.
 - **Money numbers must be believable.** A new money number must stay in a sane
   range and can't jump too far from the last published one (inflation 5
   points, unemployment 3, growth 8, debt 10, salary 15% or RD$15,000 to

@@ -27,6 +27,8 @@ COPIAR = ["docs/data", "docs/novedades.xml", "pipeline-state", "config", "src/ap
 
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
          "septiembre", "octubre", "noviembre", "diciembre"]
+# A money period as dinero.py writes it: "agosto 2026", "enero-marzo 2026", "cierre de 2025".
+PERIODO = rf"(?:(?:{'|'.join(MESES)})(?:-(?:{'|'.join(MESES)}))?|cierre de) \d{{4}}"
 
 
 def hoy_et() -> date:
@@ -257,7 +259,10 @@ def nombra_persona(texto: str, patrones: set[str]) -> str | None:
 # --- bare names: 2+ capitalised words in a row that are not an institution or a place.
 # Fails closed: an unknown proper noun blocks the text (the item then shows
 # "Resumen en preparación" and the official link). Add real institutions/places here.
-_MAY = r"[A-ZÁÉÍÓÚÑ][a-záéíóúñü]+"
+# The tail may be upper case too: "EVANGELINA RODRÍGUEZ" / "Evangelina RODRÍGUEZ" (SIL titles are
+# ALL CAPS and the writer may copy from them). CABEZAS/LUGARES compare via norm(), so
+# "CÁMARA DE DIPUTADOS" is still an institution.
+_MAY = r"[A-ZÁÉÍÓÚÑ][A-Za-záéíóúñüÁÉÍÓÚÑÜ]+"
 _RACHA = re.compile(rf"(?<![\wÁÉÍÓÚÑáéíóúñü]){_MAY}(?:\s+(?:(?:de|del|la|las|los)\s+)*{_MAY})+")
 # A capitalised first word of a sentence that is not a name ("La Cámara…", "En Santo Domingo…").
 INICIO_FRASE = set(
@@ -337,10 +342,33 @@ NUM_PALABRAS = re.compile(
     r"mil|millón|millon|millones|billón|billon|billones)\b", re.I)
 # "1500 millones" / "RD$2 mil" are fine: the digits carry the number, the word is the unit.
 # A bill described as law already. Checked by CODE in escribir.py and gate G8, not only by AI question Q6/Q7.
+# No bare "ya": "para que los niños ya no queden solos" is fine.
 PARECE_LEY = re.compile(
-    r"\b(es ley|ya es|ya|entró en vigencia|entra en vigencia|está vigente|se aprobó la ley|rigen?|"
+    r"\b(es ley|ya es|ya rige|entró en vigencia|entra en vigencia|está vigente|se aprobó la ley|rigen?|"
     r"entró en vigor|está en vigor|se convirtió en ley|ahora es|ahora (?:obliga|manda|prohíbe|castiga|exige)|"
     r"(?:fue|ha sido|quedó) promulgad[oa]|se promulgó|promulgó|aprobó la ley)\b", re.I)
+
+
+def estado_ley_de(clave: str, leyes: dict | None, vigencia: dict | None) -> str | None:
+    """Where a summary's item stands, taken from the DATA, never from the summary
+    record itself (a record could say 'promulgada' to dodge the "not law yet"
+    checks). None = the key points at nothing we publish.
+      senado-<iniciativa>  a Senate vote title: never law yet -> 'votando'
+      sil-<numero>         the auto bill with that id in leyes.json -> its 'estado'
+      ley-<numero>         a law in vigencia.json -> 'promulgada'"""
+    if clave.startswith("senado-") and len(clave) > len("senado-"):
+        return "votando"
+    if clave.startswith("sil-"):
+        for s in (leyes or {}).get("sectores", []):
+            for l in s.get("leyes", []):
+                if l.get("auto") and str(l.get("id")) == clave[4:]:
+                    return l.get("estado")
+        return None
+    if clave.startswith("ley-"):
+        if any(str(l.get("numero")) == clave[4:] for l in (vigencia or {}).get("leyes", [])):
+            return "promulgada"
+        return None
+    return None
 
 
 def numero_en_letras(texto: str) -> str | None:

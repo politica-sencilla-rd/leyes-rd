@@ -179,6 +179,15 @@ def a_sesion(p: dict, url_acta: str) -> dict:
     return ses
 
 
+# Every 'motivo' a no_procesada acta can carry (a_sesion / sesion_valida). Gate G8 accepts no other.
+_ERR_ACTA = r"(?:presentes fuera de 0\.\.32|presentes \+ ausentes > 32|votación \d{3}: totales imposibles)"
+_MOTIVO = re.compile(rf"votaciones sin leer: \d{{3}}(?:, \d{{3}})*|{_ERR_ACTA}(?:; {_ERR_ACTA})*")
+
+
+def es_motivo(texto: str) -> bool:
+    return bool(_MOTIVO.fullmatch(texto or ""))
+
+
 def sesion_valida(ses: dict) -> list[str]:
     """Item-level sanity (same numbers as gate G3) so one bad acta is dropped
     before the gate would block the whole batch."""
