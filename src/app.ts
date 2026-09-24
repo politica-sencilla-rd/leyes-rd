@@ -555,10 +555,16 @@ function renderLeyes(data: LeyesData): void {
   data.sectores.forEach((sec) => {
     const card = el("div", "sector");
     const head = el("div", "sector-head");
+    // Title + count in one column: on phones the count sits under the title,
+    // so every topic reads as one clean line.
+    const txt = el("div", "sector-txt");
+    txt.append(
+      el("h3", "sector-title", sec.nombre),
+      el("span", "sector-count", sec.leyes.length + (sec.leyes.length === 1 ? " ley" : " leyes"))
+    );
     head.append(
       el("span", "sector-emoji", SECTOR_ICO[sec.emoji] ? ico(SECTOR_ICO[sec.emoji]) : sec.emoji),
-      el("h3", "sector-title", sec.nombre),
-      el("span", "sector-count", sec.leyes.length + (sec.leyes.length === 1 ? " ley" : " leyes")),
+      txt,
       el("span", "sector-chev", "▸")
     );
     const body = el("div", "sector-body");
@@ -741,7 +747,7 @@ function renderVigencia(data: VigenciaData): void {
   // Intro: aprobada vs en vigencia, with tap-to-define words.
   const intro = el("div", "como vig-intro");
   intro.innerHTML =
-    "<b>" + ico("calendar") + "¿Cuáles leyes están por empezar?</b><br>" +
+    "<b>" + ico("calendar") + "¿Cuáles leyes están por empezar?</b>" +
     "Que el Congreso apruebe una ley no quiere decir que ya te aplique. " +
     "Primero el Presidente la firma (la " +
     "<span class=\"palabra\" data-def=\"Promulgar es el acto en que el Presidente firma una ley ya aprobada por el Congreso para ordenar que se cumpla y se publique.\">promulga</span>) " +
@@ -834,9 +840,17 @@ function renderNovedades(data: NovedadesData): void {
     );
     // Credit / origin label on every entry (Kelvin): who contributed the idea,
     // or a "🔧 Mejora interna" marker for team changes.
-    if (n.aporte) li.append(el("span", "novedad-aporte", n.aporte));
+    if (n.aporte) li.append(el("span", "novedad-aporte", aporteHtml(n.aporte)));
     host.append(li);
   });
+}
+
+// The data keeps its emoji ("💡 Idea de…", "🔧 Mejora interna"); the page
+// draws the matching line icon instead, like every other label.
+function aporteHtml(a: string): string {
+  if (a.indexOf("💡") === 0) return ico("bulb") + a.slice(2).trim();
+  if (a.indexOf("🔧") === 0) return ico("tool") + a.slice(2).trim();
+  return a;
 }
 
 /* ---------- Provincias ---------- */
