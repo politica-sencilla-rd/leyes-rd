@@ -13,9 +13,9 @@
       "que_es": "Es dinero público que cada senador recibe todos los meses para repartir como ayuda social en su provincia. Lo entrega el Senado. No es el sueldo del senador: es otra plata, aparte, que él decide cómo usar.",
       "para_quien": "Para gente de la provincia que pide ayuda en la oficina del senador: ayudas en efectivo, útiles escolares, gastos de salud, apoyos pequeños. El senador decide a quién y en qué.",
       "monto_total": {
-        "anual": "Cerca de RD$252.8 millones al año",
-        "mensual": "Cerca de RD$21 millones al mes",
-        "nota": "Es lo que sale del presupuesto para todos los senadores juntos. En 2023 se gastaron más: RD$368.8 millones, contando partidas extra (Día de las Madres, útiles, Navidad)."
+        "anual": "Cerca de RD$252.8 millones al año (en 2024)",
+        "mensual": "Cerca de RD$21 millones al mes (en 2024)",
+        "nota": "Es lo que salía del presupuesto en 2024 para todos los senadores juntos. En 2023 se gastaron más: RD$368.8 millones, contando partidas extra (Día de las Madres, útiles, Navidad)."
       },
       "formula": {
         "regla": "RD$400,000 fijos para cada senador, más RD$1 por cada habitante de su provincia.",
@@ -62,9 +62,9 @@
         ]
       },
       "quien_lo_rechaza": {
-        "titulo": "No todos lo aceptan",
-        "nombres": ["Antonio Taveras"],
-        "nota": "Hoy (período 2024–2028) sólo un senador no lo cobra: Antonio Taveras, de Santo Domingo. En el período pasado (2020–2024) lo rechazaban tres: Eduardo Estrella, Antonio Taveras y Faride Raful. Pero Raful pasó a ser ministra y Estrella no volvió al Senado; los senadores que llegaron en su lugar (Omar Fernández y Daniel Rivera) volvieron a cobrarlo. Por eso el total va en subida, hacia unos RD$278 millones al año."
+        "titulo": "¿Quién lo cobra hoy?",
+        "nombres": [],
+        "nota": "No hay una lista pública de quién lo cobra hoy. El Senado no publica cuánto recibe cada senador."
       },
       "base_legal": "Ninguna. El Tribunal Constitucional dijo en 2022 que no es ley, ni decreto, ni reglamento, ni resolución: sólo es un fondo del presupuesto que maneja el Senado. Ojo: el Tribunal no dijo si es legal o ilegal — dejó el caso sin juzgar por la forma. Nació en 2006 por decisión interna del Senado.",
       "legal": {
@@ -129,7 +129,7 @@
         {
           "paso": "Reportado",
           "subtitulo": "rendición de cuentas",
-          "que_pasa": "El senador debe entregar un reporte de gastos al Senado. Sólo se consigue pidiéndolo de forma formal (Ley 200-04), y la mayoría de senadores no lo cumple. Una excepción: el senador Omar Fernández publica por su cuenta en qué usa el suyo — la prensa lo llamó histórico, justo porque es la excepción, no la regla.",
+          "que_pasa": "El senador debe entregar un reporte de gastos al Senado. Sólo se consigue pidiéndolo de forma formal (Ley 200-04), y la mayoría de senadores no lo cumple.",
           "estado": "dificil"
         },
         {

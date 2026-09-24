@@ -2,6 +2,11 @@
   "_nota": "Las mejoras más recientes del sitio, escritas fácil. Una línea por mejora. Cada entrada sale de docs/CHANGELOG-improvements.md, reescrita en español sencillo. Las más nuevas van primero. El campo 'aporte' (obligatorio) etiqueta cada mejora: '💡 Idea de NOMBRE' cuando la sugirió un usuario (solo el primer nombre, por privacidad), o '🔧 Mejora interna' cuando es un cambio del propio equipo.",
   "novedades": [
     {
+      "fecha": "2026-09-24",
+      "texto": "Pausamos las listas de cómo votó cada senador. Al compararlas con las actas oficiales del Senado encontramos errores, así que las estamos revisando una por una antes de volver a mostrarlas. Los totales de cada votación siguen ahí, sacados del acta oficial.",
+      "aporte": "🔧 Mejora interna"
+    },
+    {
       "fecha": "2026-06-14",
       "texto": "Ahora puedes tocar las fuentes para comprobarlas tú mismo: en el caso del SENASA y en las cifras del país, como la inflación y el desempleo, el enlace te lleva directo al sitio oficial.",
       "aporte": "🔧 Mejora interna"
