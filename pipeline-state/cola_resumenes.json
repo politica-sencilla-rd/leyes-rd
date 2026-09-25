@@ -1,54 +1,6 @@
 {
  "items": [
   {
-   "id": "senado-00636-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56401/acta-num-0106-de-fecha-15-de-abril-2026",
-   "fuente_nombre": "Acta 0106, votación electrónica 010",
-   "fuente_sha256": "aaef55ce2a1a8e53cf1d43c66aae77a30e34f3f289b82a71cb8c6ce24d62096d",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01182-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60668/acta-num-0107-de-fecha-21-de-abril-2026",
-   "fuente_nombre": "Acta 0107, votación electrónica 013",
-   "fuente_sha256": "c32aafb6840d09942a4c75f90e9bb22ba940fce0b599e8e1a361c2f5996a2042",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01417-2026",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60668/acta-num-0107-de-fecha-21-de-abril-2026",
-   "fuente_nombre": "Acta 0107, votación electrónica 014",
-   "fuente_sha256": "3b9e44f6dc264edaaabe477e65aea7408c13035291986013472600a0c668790c",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01280-2026",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/61983/acta-num-0121-de-fecha-30-de-junio-2026",
-   "fuente_nombre": "Acta 0121, votación electrónica 016",
-   "fuente_sha256": "5c0e6571ab4fe228e7c922068f057c465c5e528d2992559fde9f98da1803cca8",
-   "intentos": 0
-  },
-  {
    "id": "senado-01450-2026",
    "tipo": "titulo_voto",
    "campos": [
@@ -58,19 +10,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56401/acta-num-0106-de-fecha-15-de-abril-2026",
    "fuente_nombre": "Acta 0106, votación electrónica 016",
    "fuente_sha256": "f692b7bdaf54da69e7ae4bc96318a398c88c404c5826e8f83cf1879164cc6e3c",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01438-2026",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56401/acta-num-0106-de-fecha-15-de-abril-2026",
-   "fuente_nombre": "Acta 0106, votación electrónica 017",
-   "fuente_sha256": "1345eacadc0000de72c197f147a0da015f3434d825ff7436feda2e9ae1827420",
-   "intentos": 0
+   "intentos": 1,
+   "ultimo_fallo": {
+    "campo": "titulo_facil",
+    "pregunta": "Q2 ¿La FRASE contiene algún dato que NO aparece en el TEXTO FUENTE?"
+   }
   },
   {
    "id": "senado-01449-2026",
@@ -82,7 +26,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56401/acta-num-0106-de-fecha-15-de-abril-2026",
    "fuente_nombre": "Acta 0106, votación electrónica 019",
    "fuente_sha256": "56ed0601301325c7f26f901b5fcfbf1f6586b36de20c20666b13c339bb7dc046",
-   "intentos": 0
+   "intentos": 1,
+   "ultimo_fallo": {
+    "campo": "",
+    "pregunta": "codigo (5) titulo_facil de más de 14 palabras"
+   }
   },
   {
    "id": "senado-01045-2025",
@@ -94,55 +42,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56401/acta-num-0106-de-fecha-15-de-abril-2026",
    "fuente_nombre": "Acta 0106, votación electrónica 021",
    "fuente_sha256": "500a8619f286662aa76c041e3102ff3a5698f703771610cb01ef91e7be2c319e",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01080-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56401/acta-num-0106-de-fecha-15-de-abril-2026",
-   "fuente_nombre": "Acta 0106, votación electrónica 022",
-   "fuente_sha256": "9602f055356b48f6883a13b81e93e97ccd2408f9674c5d1e6cb5edd4782163ba",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01108-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56401/acta-num-0106-de-fecha-15-de-abril-2026",
-   "fuente_nombre": "Acta 0106, votación electrónica 023",
-   "fuente_sha256": "e25ab327408818dae402e91e250d7b8bf2d74d8a03934cecf882b0e49cefe2ad",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01165-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56401/acta-num-0106-de-fecha-15-de-abril-2026",
-   "fuente_nombre": "Acta 0106, votación electrónica 024",
-   "fuente_sha256": "8f01e862a1d6800c647bc8f4a68fedda8480837a3b4be4361b3a2d74a956ac5a",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01494-2026",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56401/acta-num-0106-de-fecha-15-de-abril-2026",
-   "fuente_nombre": "Acta 0106, votación electrónica 025",
-   "fuente_sha256": "3abf6d8b561b59f4371f6fb4c99bb2143d8aca0616bb2c768705015c4a7f1e52",
-   "intentos": 0
+   "intentos": 1,
+   "ultimo_fallo": {
+    "campo": "",
+    "pregunta": "codigo (3) nombra a una persona: Camboy Estévez"
+   }
   },
   {
    "id": "senado-01499-2026",
@@ -154,19 +58,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56401/acta-num-0106-de-fecha-15-de-abril-2026",
    "fuente_nombre": "Acta 0106, votación electrónica 026",
    "fuente_sha256": "9cf96d6706f06b416326b87f9fa4e798c643ec12d7f041ecc54dfb1537929bd4",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01460-2026",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56401/acta-num-0106-de-fecha-15-de-abril-2026",
-   "fuente_nombre": "Acta 0106, votación electrónica 027",
-   "fuente_sha256": "d916f49f13ba74143db2ebabf32d0d91c46a877554969cf52b56537a5eed1937",
-   "intentos": 0
+   "intentos": 1,
+   "ultimo_fallo": {
+    "campo": "",
+    "pregunta": "codigo (3) nombra a una persona: juan jose"
+   }
   },
   {
    "id": "senado-01461-2026",
@@ -178,7 +74,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56401/acta-num-0106-de-fecha-15-de-abril-2026",
    "fuente_nombre": "Acta 0106, votación electrónica 028",
    "fuente_sha256": "c8d933783f371e32a792eac5dc897f202636168ac88c10f48e48d57f8fb82de2",
-   "intentos": 0
+   "intentos": 1,
+   "ultimo_fallo": {
+    "campo": "",
+    "pregunta": "todos los modelos fallaron: gemma-4-31b-it: TimeoutError; gemma-4-26b-a4b-it: TimeoutError"
+   }
   },
   {
    "id": "senado-01465-2026",

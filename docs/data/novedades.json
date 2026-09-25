@@ -3,6 +3,13 @@
   "novedades": [
     {
       "fecha": "2026-09-24",
+      "texto": "Publicamos 10 resúmenes automáticos nuevos, revisados contra el documento oficial.",
+      "aporte": "🔄 Actualización automática",
+      "guid": "psrd-auto-resumenes-2026-09-24-b384db1c",
+      "auto": true
+    },
+    {
+      "fecha": "2026-09-24",
       "texto": "Actualizamos las cifras del país: inflación (agosto 2026), desempleo (abril-junio 2026), crecimiento de la economía (enero-diciembre 2025), deuda del país (cierre de 2025), sueldo promedio (junio 2026).",
       "aporte": "🔄 Actualización automática",
       "guid": "psrd-auto-dinero-2026-09-24-d44361bd",
