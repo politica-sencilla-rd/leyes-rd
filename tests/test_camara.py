@@ -48,7 +48,7 @@ def test_frias_by_pinned_id_and_term_end():
     assert row["cargo_hasta"] == "2026-08-07"
     assert row["asistencia"]["total"] == 10 and row["asistencia"]["hasta"] == "2026-07-24"
     pins = json.loads((ROOT / "config" / "diputados_ids.json").read_text())["ids"]
-    assert pins["Jorge Frías"] == 1466 and len(pins) == 178
+    assert pins["Jorge Frías"] == 1466 and len(pins) >= 178  # the robot may add pins
 
 
 def test_old_period_profile_is_not_a_term_end():

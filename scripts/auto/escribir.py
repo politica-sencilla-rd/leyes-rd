@@ -76,7 +76,7 @@ class Gemini:
         if schema:
             body["generationConfig"].update(responseMimeType="application/json", responseSchema=schema)
         url = self.conf["api"].format(modelo=modelo)
-        for intento in range(2):
+        for intento in range(4):  # Gemma on the free tier answers HTTP 500 now and then
             self._turno()
             req = urllib.request.Request(url, data=json.dumps(body).encode(),
                                          headers={"Content-Type": "application/json", "x-goog-api-key": self.key})
@@ -86,12 +86,12 @@ class Gemini:
                     ctype, raw = r.headers.get("Content-Type", ""), r.read().decode()
                 return interpretar_respuesta(modelo, ctype, raw)
             except urllib.error.HTTPError as e:
-                if e.code in (429, 500, 503) and intento == 0:
-                    time.sleep(15)
+                if e.code in (429, 500, 503) and intento < 3:
+                    time.sleep(10 * (intento + 1))
                     continue
                 raise Rechazo(f"{modelo}: HTTP {e.code}") from e
             except (urllib.error.URLError, TimeoutError, OSError) as e:
-                if intento == 0:
+                if intento == 0:  # a timeout costs up to timeout_segundos: retry once only
                     time.sleep(5)
                     continue
                 raise Rechazo(f"{modelo}: {type(e).__name__}") from e
