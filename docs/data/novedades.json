@@ -2,6 +2,13 @@
   "_nota": "Las mejoras más recientes del sitio, escritas fácil. Una línea por mejora. Cada entrada sale de docs/CHANGELOG-improvements.md, reescrita en español sencillo. Las más nuevas van primero. El campo 'aporte' (obligatorio) etiqueta cada mejora: '💡 Idea de NOMBRE' cuando la sugirió un usuario (solo el primer nombre, por privacidad), o '🔧 Mejora interna' cuando es un cambio del propio equipo.",
   "novedades": [
     {
+      "fecha": "2026-09-25",
+      "texto": "Publicamos 12 resúmenes automáticos nuevos, revisados contra el documento oficial.",
+      "aporte": "🔄 Actualización automática",
+      "guid": "psrd-auto-resumenes-2026-09-25-70f21b87",
+      "auto": true
+    },
+    {
       "fecha": "2026-09-24",
       "texto": "Publicamos 10 resúmenes automáticos nuevos, revisados contra el documento oficial.",
       "aporte": "🔄 Actualización automática",

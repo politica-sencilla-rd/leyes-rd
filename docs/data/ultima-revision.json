@@ -1,5 +1,5 @@
 {
- "fecha": "2026-09-24",
+ "fecha": "2026-09-25",
  "fuente": "Robots automáticos del sitio (GitHub Actions) sobre las fuentes oficiales",
  "detalle": "Comisiones, iniciativas propuestas y asistencia al pleno de los diputados. Desde septiembre de 2026 el sitio se actualiza solo: robots leen las fuentes oficiales y publican solo lo que pasa controles automáticos. Los resúmenes en español fácil los escribe una IA y los revisa otra IA contra el documento oficial; si no pasan, no se publican. La fecha real de cada sección está en 'Datos al'."
 }
