@@ -1,10 +1,10 @@
 {
- "_nota": "Canario del revisor IA (escribir.py). Antes de cada corrida, la frase buena debe salir 'verificado' y las 3 malas 'rechazado'. Si no, el revisor se degradó y la corrida no publica nada. Fuente y frases tomadas de las pruebas B, D y E del 2026-09-24 (votación 22345 de la Cámara, 10 de junio de 2026).",
+ "_nota": "Canario del revisor IA (escribir.py). Antes de cada corrida, la frase buena debe salir 'verificado' y las 3 malas 'rechazado'. Si no, el revisor se degradó y la corrida no publica nada. Fuente y frases tomadas de las pruebas B, D y E del 2026-09-24 (votación 22345 de la Cámara, 10 de junio de 2026). La frase buena dice 'sometió a votación' y no 'votó para': la fuente no dice el resultado, y los revisores (bien) rechazan 'votó para' (2026-09-24).",
  "fuente": "Cámara de Diputados, votación 22345 del 10 de junio de 2026.\nMoción: Sometido a votación el desapoderamiento de la Comisión Permanente de Deportes y Recreación del estudio de la iniciativa número: 03737-2024-2028-CD, para que fuese apoderada la Comisión Permanente de Cultura y el desapoderamiento de la Comisión Permanente de Asuntos Municipales del estudio de las iniciativas números: 05863-2024-2028-CD y 05844-2024-2028-CD, para que fuese apoderada la Comisión Especial que estudia el tema de los Cuerpos de Bomberos.\n",
  "estado_ley": "votando",
  "casos": [
   {"nombre": "buena", "esperado": "verificado",
-   "frase": "La Cámara de Diputados votó para pasar la iniciativa 03737-2024-2028-CD a la Comisión Permanente de Cultura.",
+   "frase": "La Cámara de Diputados sometió a votación pasar la iniciativa 03737-2024-2028-CD a la Comisión Permanente de Cultura.",
    "cita": "para que fuese apoderada la Comisión Permanente de Cultura"},
   {"nombre": "dato_inventado", "esperado": "rechazado",
    "frase": "La Cámara de Diputados aprobó una ley nueva para los bomberos.",

@@ -41,16 +41,21 @@ def _tarjetas():
     return {m["id"]: m for m in json.loads((FIX.parents[1] / "docs/data/finanzas.json").read_text())["metricas"]}
 
 
+# Hand-written card values before the robot's first update (commit 4f6a9a3).
+# Frozen here because the live cards change with every robot run.
+PREVIOS = {"inflacion": 5.35, "desempleo": 5.0, "crecimiento": 2.1, "deuda": 47.9, "salario": 37572.82}
+
+
 def test_b2_real_numbers_pass_against_the_cards_on_main():
     t = _tarjetas()
-    assert valor_previo(t["salario"]) == 37572.82 and valor_previo(t["inflacion"]) == 5.35
+    assert all(valor_previo(t[m]) for m in PREVIOS)
     reales = {"inflacion": D.parse_ipc((FIX / "dinero" / "ipc_base_2019-2020.xls").read_bytes()),
               "desempleo": D.parse_encft((FIX / "dinero" / "00_Indicadores.xlsx").read_bytes()),
               "crecimiento": D.parse_pib((FIX / "dinero" / "pib_origen_2018.xlsx").read_bytes()),
               "deuda": D.parse_deuda((FIX / "dinero" / "deuda_historico.xlsx").read_bytes()),
               "salario": D.parse_tss((FIX / "dinero" / "tss_boletin_jun2026.xlsx").read_bytes(), 2026)}
     for mid, d in reales.items():
-        assert problema_metrica(mid, d, valor_previo(t[mid])) is None, mid
+        assert problema_metrica(mid, d, PREVIOS[mid]) is None, mid
 
 
 @pytest.mark.parametrize("mid,d,previo", [
