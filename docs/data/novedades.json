@@ -3,6 +3,13 @@
   "novedades": [
     {
       "fecha": "2026-09-27",
+      "texto": "Actualizamos las cifras del país: sueldo promedio (julio 2026).",
+      "aporte": "🔄 Actualización automática",
+      "guid": "psrd-auto-dinero-2026-09-27-eb227942",
+      "auto": true
+    },
+    {
+      "fecha": "2026-09-27",
       "texto": "Publicamos 13 resúmenes automáticos nuevos, revisados contra el documento oficial.",
       "aporte": "🔄 Actualización automática",
       "guid": "psrd-auto-resumenes-2026-09-27-35c4f85e",
