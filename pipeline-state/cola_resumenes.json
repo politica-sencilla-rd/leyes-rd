@@ -10,26 +10,10 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56401/acta-num-0106-de-fecha-15-de-abril-2026",
    "fuente_nombre": "Acta 0106, votación electrónica 026",
    "fuente_sha256": "9cf96d6706f06b416326b87f9fa4e798c643ec12d7f041ecc54dfb1537929bd4",
-   "intentos": 2,
+   "intentos": 3,
    "ultimo_fallo": {
     "campo": "",
-    "pregunta": "codigo (3) nombra a una persona: juan jose"
-   }
-  },
-  {
-   "id": "senado-01326-2026",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56401/acta-num-0106-de-fecha-15-de-abril-2026",
-   "fuente_nombre": "Acta 0106, votación electrónica 031",
-   "fuente_sha256": "0a03ba5a6cfeb7cfc7da1c7bd70423dd1973aa926440ee305163d424d8a86f04",
-   "intentos": 1,
-   "ultimo_fallo": {
-    "campo": "titulo_facil",
-    "pregunta": "Q2 ¿La FRASE contiene algún dato que NO aparece en el TEXTO FUENTE?"
+    "pregunta": "codigo (3) nombra a una persona: Juan Colón"
    }
   },
   {
@@ -42,155 +26,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56400/acta-num-0105-de-fecha-24-de-marzo-2026",
    "fuente_nombre": "Acta 0105, votación electrónica 022",
    "fuente_sha256": "bb4c3444320112b5c17f7537015a67e9c7672a9f765e750e483030c486d78c48",
-   "intentos": 1,
+   "intentos": 2,
    "ultimo_fallo": {
     "campo": "",
     "pregunta": "codigo (3) nombra a una persona: Iván Ruiz"
    }
-  },
-  {
-   "id": "senado-00913-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56400/acta-num-0105-de-fecha-24-de-marzo-2026",
-   "fuente_nombre": "Acta 0105, votación electrónica 023",
-   "fuente_sha256": "f6aa011900e490faa0515d1ebfc4e51be7aff61ddc3b99ac1b481eb68ca208c2",
-   "intentos": 0
-  },
-  {
-   "id": "senado-00928-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56400/acta-num-0105-de-fecha-24-de-marzo-2026",
-   "fuente_nombre": "Acta 0105, votación electrónica 024",
-   "fuente_sha256": "2a58db5c6e37a6c57a4005d04e48619989d5c671a14184a9233d75ba1bd7af7f",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01088-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56400/acta-num-0105-de-fecha-24-de-marzo-2026",
-   "fuente_nombre": "Acta 0105, votación electrónica 025",
-   "fuente_sha256": "8e464e19c1564f295bf39ba30457c9d70eed4f7171c68e9a04ad6021904ac079",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01150-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56400/acta-num-0105-de-fecha-24-de-marzo-2026",
-   "fuente_nombre": "Acta 0105, votación electrónica 026",
-   "fuente_sha256": "e66c7a524ed4d0e91fe6a259ba4fc0350fd61049de613c7ac2d19be57bb96cf1",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01199-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56400/acta-num-0105-de-fecha-24-de-marzo-2026",
-   "fuente_nombre": "Acta 0105, votación electrónica 027",
-   "fuente_sha256": "2182248ac0643bc87ef06936f0fe1b37cf19ef006e185c5dd4c0da87d0090e5a",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01211-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56400/acta-num-0105-de-fecha-24-de-marzo-2026",
-   "fuente_nombre": "Acta 0105, votación electrónica 028",
-   "fuente_sha256": "bf1bca8f80be5e11b8f880c67899d718b7701d036013ddc1529352a2b0353af5",
-   "intentos": 0
-  },
-  {
-   "id": "senado-00117-2024",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56400/acta-num-0105-de-fecha-24-de-marzo-2026",
-   "fuente_nombre": "Acta 0105, votación electrónica 029",
-   "fuente_sha256": "5edb9d9cf743a835b82053326df7cc39a5415b80d195be8f39c41be8871e6413",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01260-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56400/acta-num-0105-de-fecha-24-de-marzo-2026",
-   "fuente_nombre": "Acta 0105, votación electrónica 030",
-   "fuente_sha256": "c8a61965513742f185cf2d2e216a6c2aba25c9056c56272a6edcb9c88d55dd22",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01462-2026",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56400/acta-num-0105-de-fecha-24-de-marzo-2026",
-   "fuente_nombre": "Acta 0105, votación electrónica 031",
-   "fuente_sha256": "ba285b3424e341abe0661aa8f47f77506ec744b7a39d74f4b8b66b85492d3d12",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01463-2026",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56400/acta-num-0105-de-fecha-24-de-marzo-2026",
-   "fuente_nombre": "Acta 0105, votación electrónica 032",
-   "fuente_sha256": "7c3007d0f83c527bb06fb6e0d4974218c7c66cc5510dbb1e92b992b2f201053d",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01464-2026",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56400/acta-num-0105-de-fecha-24-de-marzo-2026",
-   "fuente_nombre": "Acta 0105, votación electrónica 033",
-   "fuente_sha256": "839c5611d0ca33a83cbac1491e0345f52fe5cacfe91163b1bedc831fc7b99955",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01459-2026",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/56400/acta-num-0105-de-fecha-24-de-marzo-2026",
-   "fuente_nombre": "Acta 0105, votación electrónica 034",
-   "fuente_sha256": "96f498cfeb506bfc0014add318fe5b114411ad20087972e8282c519635c80f13",
-   "intentos": 0
   },
   {
    "id": "senado-01468-2026",
