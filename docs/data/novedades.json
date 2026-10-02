@@ -2,6 +2,13 @@
   "_nota": "Las mejoras más recientes del sitio, escritas fácil. Una línea por mejora. Cada entrada sale de docs/CHANGELOG-improvements.md, reescrita en español sencillo. Las más nuevas van primero. El campo 'aporte' (obligatorio) etiqueta cada mejora: '💡 Idea de NOMBRE' cuando la sugirió un usuario (solo el primer nombre, por privacidad), o '🔧 Mejora interna' cuando es un cambio del propio equipo.",
   "novedades": [
     {
+      "fecha": "2026-10-02",
+      "texto": "Actualizamos las cifras del país: crecimiento de la economía (enero-diciembre 2025).",
+      "aporte": "🔄 Actualización automática",
+      "guid": "psrd-auto-dinero-2026-10-02-a923e745",
+      "auto": true
+    },
+    {
       "fecha": "2026-09-28",
       "texto": "Publicamos 15 resúmenes automáticos nuevos, revisados contra el documento oficial.",
       "aporte": "🔄 Actualización automática",

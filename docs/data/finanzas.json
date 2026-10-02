@@ -40,17 +40,17 @@
         "preliminar": true,
         "anterior_num": 4.95,
         "anterior_periodo": "enero-diciembre 2024",
-        "parcial_num": 4.14,
-        "parcial_periodo": "enero-marzo 2026",
+        "parcial_num": 4.55,
+        "parcial_periodo": "enero-junio 2026",
         "valor_texto": "2.12%",
         "unidad": "",
         "texto": "De cada RD$100 que producía, el país pasó a producir como RD$102.",
-        "comparacion": "El año anterior creció 4.95%; en enero-diciembre 2025 creció 2.12%. Creció más lento. En lo que va del año (enero-marzo 2026) va 4.14%.",
+        "comparacion": "El año anterior creció 4.95%; en enero-diciembre 2025 creció 2.12%. Creció más lento. En lo que va del año (enero-junio 2026) va 4.55%.",
         "fuente": "Banco Central RD, producto interno bruto real, enero-diciembre 2025 (preliminar).",
         "url": "https://cdn.bancentral.gov.do/documents/estadisticas/sector-real/documents/pib_origen_2018.xlsx",
         "url_pagina": "https://www.bancentral.gov.do/a/d/2533-sector-real",
         "datos_al": "2025-12",
-        "revisado_el": "2026-09-27"
+        "revisado_el": "2026-10-02"
       }
     },
     {
@@ -135,7 +135,7 @@
         "url": "https://www.creditopublico.gob.do/Content/estadisticas/historico/saldo/01Saldo%20Deuda%20Hist%C3%B3rico%20%281970-2025%29.xlsx",
         "url_pagina": "https://www.creditopublico.gob.do/inicio/estadisticas",
         "datos_al": "2025-12",
-        "revisado_el": "2026-09-27"
+        "revisado_el": "2026-10-02"
       }
     },
     {
@@ -169,7 +169,7 @@
         "url": "https://tss.gob.do/descargar/2205/2026/19167/boletin-estadistico-del-regimen-contributivo-del-sdss-julio-2026-2.xlsx",
         "url_pagina": "https://www.tss.gob.do/",
         "datos_al": "2026-07",
-        "revisado_el": "2026-09-27"
+        "revisado_el": "2026-10-02"
       }
     },
     {
@@ -202,7 +202,7 @@
         "url": "https://cdn.bancentral.gov.do/documents/estadisticas/precios/documents/ipc_base_2019-2020.xls",
         "url_pagina": "https://www.bancentral.gov.do/a/d/2534-precios",
         "datos_al": "2026-08",
-        "revisado_el": "2026-09-27"
+        "revisado_el": "2026-10-02"
       }
     },
     {
@@ -235,7 +235,7 @@
         "url": "https://cdn.bancentral.gov.do/documents/estadisticas/mercado-de-trabajo/documents/00_Indicadores.xlsx",
         "url_pagina": "https://www.bancentral.gov.do/a/d/2541-encuesta-continua-encft",
         "datos_al": "2026-06",
-        "revisado_el": "2026-09-27"
+        "revisado_el": "2026-10-02"
       }
     }
   ],
@@ -247,5 +247,5 @@
     "deuda_por_persona_usd": 5713,
     "gasta_por_cada_100_que_gana_rd": 121
   },
-  "actualizado_auto": "2026-09-27"
+  "actualizado_auto": "2026-10-02"
 }

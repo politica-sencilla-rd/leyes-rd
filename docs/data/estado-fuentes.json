@@ -56,7 +56,7 @@
       "fallos_seguidos": 0,
       "datos_al": "2026-08",
       "periodo": "agosto 2026",
-      "revisado_el": "2026-09-27"
+      "revisado_el": "2026-10-02"
     },
     "dinero_desempleo": {
       "nombre": "Desempleo (Banco Central)",
@@ -67,7 +67,7 @@
       "fallos_seguidos": 0,
       "datos_al": "2026-06",
       "periodo": "abril-junio 2026",
-      "revisado_el": "2026-09-27"
+      "revisado_el": "2026-10-02"
     },
     "dinero_crecimiento": {
       "nombre": "Crecimiento (Banco Central)",
@@ -78,7 +78,7 @@
       "fallos_seguidos": 0,
       "datos_al": "2025-12",
       "periodo": "enero-diciembre 2025",
-      "revisado_el": "2026-09-27"
+      "revisado_el": "2026-10-02"
     },
     "dinero_deuda": {
       "nombre": "Deuda (Crédito Público)",
@@ -89,7 +89,7 @@
       "fallos_seguidos": 0,
       "datos_al": "2025-12",
       "periodo": "cierre de 2025",
-      "revisado_el": "2026-09-27"
+      "revisado_el": "2026-10-02"
     },
     "dinero_salario": {
       "nombre": "Sueldo promedio (TSS)",
@@ -100,7 +100,7 @@
       "fallos_seguidos": 0,
       "datos_al": "2026-07",
       "periodo": "julio 2026",
-      "revisado_el": "2026-09-27"
+      "revisado_el": "2026-10-02"
     },
     "resumenes_ia": {
       "nombre": "Resúmenes automáticos",
