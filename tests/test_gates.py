@@ -768,6 +768,34 @@ def test_r4_novedad_aporte_is_fixed_and_old_ones_never_change(par):
     assert not ok and any("ya publicada cambió" in f for f in g.fallos), g.fallos
 
 
+def test_r4_novedad_same_texto_new_day_and_guid_is_new_not_changed(par):
+    base, n = par
+    nov = leer(base, "docs/data/novedades.json")
+    viejo = nov["novedades"][0]
+    nov["novedades"].insert(0, {**viejo, "fecha": "2026-10-03", "guid": "psrd-auto-repetida-2026-10-03-00000000"})
+    escribir(n, "docs/data/novedades.json", nov)
+    ok, g = correr(base, n)
+    assert not any("ya publicada cambió" in f for f in g.fallos), g.fallos
+    assert not any(f.startswith("G6") for f in g.fallos), g.fallos
+
+
+def test_r4_novedad_same_guid_changed_texto_or_removed_is_blocked(par):
+    base, n = par
+    nov = leer(base, "docs/data/novedades.json")
+    nov["novedades"][0]["texto"] = "Texto distinto con el mismo guid."
+    escribir(n, "docs/data/novedades.json", nov)
+    ok, g = correr(base, n)
+    assert not ok and any("ya publicada cambió" in f for f in g.fallos), g.fallos
+    # a duplicate-texto item removed (its twin stays) is still a deletion
+    nov = leer(base, "docs/data/novedades.json")
+    nov["novedades"].insert(0, {**nov["novedades"][0], "fecha": "2026-10-03", "guid": "psrd-auto-repetida-2026-10-03-00000000"})
+    escribir(base, "docs/data/novedades.json", nov)
+    nov["novedades"].pop(1)
+    escribir(n, "docs/data/novedades.json", nov)
+    ok, g = correr(base, n)
+    assert not ok and any(f.startswith("G6") and "novedades" in f for f in g.fallos), g.fallos
+
+
 def test_r4_sin_resumen_link_must_be_official(par):
     base, n = par
     res = leer(n, "docs/data/resumenes.json")

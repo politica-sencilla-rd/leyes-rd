@@ -347,16 +347,22 @@ class Gates:
                                      for r in self.recibos):
             self.fallo("G4", f"{donde}: {url} no tiene un recibo HTTP 200 de esta corrida")
 
+    @staticmethod
+    def clave_novedad(n):
+        # a robot may repeat a sentence on a later day: identity is the guid, the texto only if there is none
+        return n.get("guid") or n.get("texto")
+
     def cambiados(self, rel: str, lista: str, clave: str, sub=None):
         b = self.base.json(rel) or {}
         n = self.nuevo.json(rel) or {}
         get = sub or (lambda d: d.get(lista, []))
-        bi = {str(x.get(clave)): x for x in get(b) if isinstance(x, dict)}
+        key = clave if callable(clave) else (lambda x: x.get(clave))
+        bi = {str(key(x)): x for x in get(b) if isinstance(x, dict)}
         out = []
         for x in get(n):
             if not isinstance(x, dict):
                 continue
-            k = str(x.get(clave))
+            k = str(key(x))
             if k not in bi:
                 out.append(("nuevo", x))
             elif bi[k] != x:
@@ -417,7 +423,7 @@ class Gates:
         cf, _ = self.cambiados("docs/data/finanzas.json", "metricas", "id")
         if len(cf) > LIMITES["finanzas_metricas"]:
             self.fallo("G5", "demasiadas métricas cambiadas en finanzas.json")
-        cn, _ = self.cambiados("docs/data/novedades.json", "novedades", "texto")
+        cn, _ = self.cambiados("docs/data/novedades.json", "novedades", self.clave_novedad)
         if sum(1 for t, _ in cn if t == "nuevo") > LIMITES["novedades_nuevas"]:
             self.fallo("G5", "más de 1 novedad nueva en una corrida")
         rb = (self.base.json("docs/data/resumenes.json") or {}).get("resumenes", {})
@@ -445,7 +451,7 @@ class Gates:
             ("docs/data/provincias.json",
              lambda d: [f"{p['nombre']}|{l['cargo']}|{l['nombre']}" for p in d["provincias"] for l in p["lideres"]],
              "líderes"),
-            ("docs/data/novedades.json", lambda d: [n["texto"] for n in d["novedades"]], "novedades"),
+            ("docs/data/novedades.json", lambda d: [self.clave_novedad(n) for n in d["novedades"]], "novedades"),
         ]
         for rel, f, que in chk:
             b, n = ids(self.base, rel, f), ids(self.nuevo, rel, f)
@@ -630,7 +636,7 @@ class Gates:
                                  if rb.get(k) != r)
         metricas = {m.get("id"): m.get("auto") or {} for _, m in self.cambiados("docs/data/finanzas.json", "metricas", "id")[0]}
         por_nombre = {v: k for k, v in NOMBRE_METRICA.items()}
-        for t, n in self.cambiados("docs/data/novedades.json", "novedades", "texto")[0]:
+        for t, n in self.cambiados("docs/data/novedades.json", "novedades", self.clave_novedad)[0]:
             texto = n.get("texto", "")
             if t == "cambiado":
                 self.fallo("G8", f"novedad ya publicada cambió: {texto[:60]!r} (un robot solo agrega novedades)")
@@ -858,7 +864,7 @@ class Gates:
                     out.append((f"resumen {k}.{campo}", r[campo], r))
             if isinstance(r.get("fuente_nombre"), str) and r["fuente_nombre"]:
                 out.append((f"resumen {k}.fuente_nombre", r["fuente_nombre"], r))
-        for _, n in self.cambiados("docs/data/novedades.json", "novedades", "texto")[0]:
+        for _, n in self.cambiados("docs/data/novedades.json", "novedades", self.clave_novedad)[0]:
             out.append(("novedad", n["texto"], n))
             if isinstance(n.get("aporte"), str) and n["aporte"]:
                 out.append(("novedad aporte", n["aporte"], n))
