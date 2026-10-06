@@ -26,43 +26,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60669/acta-num-0108-de-fecha-23-de-abril-2026",
    "fuente_nombre": "Acta 0108, votación electrónica 011",
    "fuente_sha256": "1d6c173e226b1d354e139876535c7f112f8ff145b032d5687b284cb12c564c7d",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01227-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60669/acta-num-0108-de-fecha-23-de-abril-2026",
-   "fuente_nombre": "Acta 0108, votación electrónica 013",
-   "fuente_sha256": "878c0307264583d9351717569f9758be56cf39c022adc8c4f7bfab88e45b6c66",
-   "intentos": 0
-  },
-  {
-   "id": "senado-00215-2024",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60668/acta-num-0107-de-fecha-21-de-abril-2026",
-   "fuente_nombre": "Acta 0107, votación electrónica 019",
-   "fuente_sha256": "5ffa5a3747b76a1a0ac52e9580a26d6869c6bdd47a83c2fd1a86fe2be9521c09",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01411-2026",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60668/acta-num-0107-de-fecha-21-de-abril-2026",
-   "fuente_nombre": "Acta 0107, votación electrónica 020",
-   "fuente_sha256": "670f6792f9295be01760fb722853210dbbbb22cafd7a34377ddca9ed61c64281",
-   "intentos": 0
+   "intentos": 1,
+   "ultimo_fallo": {
+    "campo": "titulo_facil",
+    "pregunta": "Q4 ¿La FRASE afirma dos hechos distintos o más?"
+   }
   },
   {
    "id": "senado-01334-2026",
@@ -74,19 +42,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60801/acta-num-0109-de-fecha-29-de-abril-2026",
    "fuente_nombre": "Acta 0109, votación electrónica 016",
    "fuente_sha256": "201d50110d3c9dafd22a4f3c75eba3697fae3f31d194e850ec336eef8e5830af",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01242-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60801/acta-num-0109-de-fecha-29-de-abril-2026",
-   "fuente_nombre": "Acta 0109, votación electrónica 018",
-   "fuente_sha256": "2f773560d8d75fccea7b6e0ee04f1bfdd1be96aa84141da9ee86964167af7b04",
-   "intentos": 0
+   "intentos": 1,
+   "ultimo_fallo": {
+    "campo": "titulo_facil",
+    "pregunta": "Q4 ¿La FRASE afirma dos hechos distintos o más?"
+   }
   },
   {
    "id": "senado-01210-2026",
@@ -98,67 +58,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60669/acta-num-0108-de-fecha-23-de-abril-2026",
    "fuente_nombre": "Acta 0108, votación electrónica 012",
    "fuente_sha256": "c5b6ae9638b5df5f754ef1631025e66d4cf488e5975909ec33f695d96cceed00",
-   "intentos": 0
-  },
-  {
-   "id": "senado-00163-2020",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60669/acta-num-0108-de-fecha-23-de-abril-2026",
-   "fuente_nombre": "Acta 0108, votación electrónica 015",
-   "fuente_sha256": "3f02c9660ea68519edc890900d82d8d0afb2cf072418cb4a6d5a8dcf265d48ca",
-   "intentos": 0
-  },
-  {
-   "id": "senado-00678-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60669/acta-num-0108-de-fecha-23-de-abril-2026",
-   "fuente_nombre": "Acta 0108, votación electrónica 016",
-   "fuente_sha256": "ccce5077d88dc0652658c7f3053ef59a2371c9a33349ae7420fde16f945382a2",
-   "intentos": 0
-  },
-  {
-   "id": "senado-00176-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60669/acta-num-0108-de-fecha-23-de-abril-2026",
-   "fuente_nombre": "Acta 0108, votación electrónica 017",
-   "fuente_sha256": "bdb4c2ab2be72e9c572d0a926120622b5a7c2dc9fb9e83ccb68634b3513c4244",
-   "intentos": 0
-  },
-  {
-   "id": "senado-00819-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60669/acta-num-0108-de-fecha-23-de-abril-2026",
-   "fuente_nombre": "Acta 0108, votación electrónica 018",
-   "fuente_sha256": "246e4b9a746c8e23c889a2b0f17eda08586916e8d9a42a1d64035574a4c6c9c9",
-   "intentos": 0
-  },
-  {
-   "id": "senado-00917-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60669/acta-num-0108-de-fecha-23-de-abril-2026",
-   "fuente_nombre": "Acta 0108, votación electrónica 019",
-   "fuente_sha256": "a500c9590ae3afae897e7b2761ebf3e5bb4ea27111e9c4e2b83fe3624953237e",
-   "intentos": 0
+   "intentos": 1,
+   "ultimo_fallo": {
+    "campo": "",
+    "pregunta": "codigo (3) nombra a una persona: Mario Mignolio Pujols Colón"
+   }
   },
   {
    "id": "senado-01200-2025",
@@ -170,31 +74,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60669/acta-num-0108-de-fecha-23-de-abril-2026",
    "fuente_nombre": "Acta 0108, votación electrónica 020",
    "fuente_sha256": "8f01d7d8a7ead1e4d1a0aea39bafc616e6161edad2fc9b23d727ee825bcb16e1",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01279-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60669/acta-num-0108-de-fecha-23-de-abril-2026",
-   "fuente_nombre": "Acta 0108, votación electrónica 021",
-   "fuente_sha256": "c406da672e3a093be080cec07b20e1683128b4ea025796f703a8c7bfc448bf33",
-   "intentos": 0
-  },
-  {
-   "id": "senado-00970-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60801/acta-num-0109-de-fecha-29-de-abril-2026",
-   "fuente_nombre": "Acta 0109, votación electrónica 011",
-   "fuente_sha256": "e22d970fdf6a544e9016e10774b0518511629a07f30ff36c4d539dd0899edcf8",
-   "intentos": 0
+   "intentos": 1,
+   "ultimo_fallo": {
+    "campo": "",
+    "pregunta": "codigo (5) titulo_facil de más de 14 palabras"
+   }
   },
   {
    "id": "senado-01019-2025",
