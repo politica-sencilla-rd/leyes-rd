@@ -139,6 +139,36 @@
    "nombre": "Transporte y Carreteras",
    "leyes": [
     {
+     "id": "05563-2024-2028-CD",
+     "sil_id": 158025,
+     "titulo": "Proyecto de ley que designa con el nombre \"Dr. Noel Suberví Espinosa\" el tramo carretero comprendido desde la entrada del aeropuerto internacional María Montez hasta la intersección de la avenida Casandra Damirón con calle Américo Melo Andújar, ciudad Santa Cruz de Barahona, provincia Barahona. TÍTULO APROBADO: Ley que designa con el nombre “Dr. Noel Suberví Espinosa” el tramo carretero comprendido desde la entrada del Aeropuerto Internacional María Montez hasta la intersección de la avenida Casandra Damirón con calle Américo Meló Andújar, en la ciudad Santa Cruz de Barahona, provincia Barahona",
+     "titulo_oficial": "Proyecto de ley que designa con el nombre \"Dr. Noel Suberví Espinosa\" el tramo carretero comprendido desde la entrada del aeropuerto internacional María Montez hasta la intersección de la avenida Casandra Damirón con calle Américo Melo Andújar, ciudad Santa Cruz de Barahona, provincia Barahona. TÍTULO APROBADO: Ley que designa con el nombre “Dr. Noel Suberví Espinosa” el tramo carretero comprendido desde la entrada del Aeropuerto Internacional María Montez hasta la intersección de la avenida Casandra Damirón con calle Américo Meló Andújar, en la ciudad Santa Cruz de Barahona, provincia Barahona.",
+     "estado": "votando",
+     "estado_sil": "Aprobado en 2da. lectura",
+     "votos": [],
+     "camara": true,
+     "origen": "Cámara de Diputados",
+     "materia": "OBRAS PÚBLICAS Y COMUNICACIONES",
+     "url_oficial": "https://www.diputadosrd.gob.do/sil",
+     "datos_al": "2026-10-07",
+     "auto": true
+    },
+    {
+     "id": "05129-2024-2028-CD",
+     "sil_id": 157591,
+     "titulo": "Proyecto de ley que designa con el nombre \"Dr. Agripino Núñez Collado\", la estación del monorriel de Santiago ubicada próxima a la Pontificia Universidad Católica Madre y Maestra (PUCMM). TÍTULO MODIFICADO: Ley que designa con el nombre “Monseñor Agripino Núñez Collado” la estación del monorriel de Santiago ubicada próximo a la Pontificia Universidad Católica Madre y Maestra (PUCMM), de la ciudad de Santiago de los Caballeros, provincia Santiago",
+     "titulo_oficial": "Proyecto de ley que designa con el nombre \"Dr. Agripino Núñez Collado\", la estación del monorriel de Santiago ubicada próxima a la Pontificia Universidad Católica Madre y Maestra (PUCMM). TÍTULO MODIFICADO: Ley que designa con el nombre “Monseñor Agripino Núñez Collado” la estación del monorriel de Santiago ubicada próximo a la Pontificia Universidad Católica Madre y Maestra (PUCMM), de la ciudad de Santiago de los Caballeros, provincia Santiago.",
+     "estado": "votando",
+     "estado_sil": "Aprobado en 2da. lectura",
+     "votos": [],
+     "camara": true,
+     "origen": "Cámara de Diputados",
+     "materia": "OBRAS PÚBLICAS Y COMUNICACIONES",
+     "url_oficial": "https://www.diputadosrd.gob.do/sil",
+     "datos_al": "2026-10-07",
+     "auto": true
+    },
+    {
      "titulo": "Arreglar la carretera entre Cruce de Guayacanes y Estero Hondo",
      "estado": "votando",
      "que_es": "Pide reparar la carretera que une un pueblo de Valverde con uno de Puerto Plata.",
@@ -326,6 +356,58 @@
      "por_que": "Razón no indicada en la fuente.",
      "votos": [],
      "te_afecta": "No pasó: por ahora no hay nuevo embajador confirmado para Bahamas."
+    }
+   ]
+  },
+  {
+   "id": "otros",
+   "emoji": "📄",
+   "nombre": "Otros temas",
+   "leyes": [
+    {
+     "id": "06055-2024-2028-CD",
+     "sil_id": 158517,
+     "titulo": "Proyecto de ley que regula los juegos de azar en la República Dominicana",
+     "titulo_oficial": "Proyecto de ley que regula los juegos de azar en la República Dominicana.",
+     "estado": "aprobada",
+     "estado_sil": "Promulgado",
+     "votos": [],
+     "camara": false,
+     "origen": "Senado",
+     "materia": "FINANZAS",
+     "url_oficial": "https://www.diputadosrd.gob.do/sil",
+     "datos_al": "2026-10-07",
+     "auto": true
+    },
+    {
+     "id": "05565-2024-2028-CD",
+     "sil_id": 158027,
+     "titulo": "Proyecto de ley de Protección Fitosanitaria",
+     "titulo_oficial": "Proyecto de ley de Protección Fitosanitaria.",
+     "estado": "votando",
+     "estado_sil": "Aprobado en 2da. lectura",
+     "votos": [],
+     "camara": true,
+     "origen": "Cámara de Diputados",
+     "materia": "AGRICULTURA",
+     "url_oficial": "https://www.diputadosrd.gob.do/sil",
+     "datos_al": "2026-10-07",
+     "auto": true
+    },
+    {
+     "id": "05830-2024-2028-CD",
+     "sil_id": 158292,
+     "titulo": "Proyecto de ley que reorganiza el Sistema Dominicano para la Calidad (Sidocal). TÍTULO MODIFICADO: Ley que reorganiza el Sistema Dominicano para la Calidad (SIDOCAL)",
+     "titulo_oficial": "Proyecto de ley que reorganiza el Sistema Dominicano para la Calidad (Sidocal). TÍTULO MODIFICADO: Ley que reorganiza el Sistema Dominicano para la Calidad (SIDOCAL).",
+     "estado": "votando",
+     "estado_sil": "Aprobado en 2da. lectura",
+     "votos": [],
+     "camara": false,
+     "origen": "Senado",
+     "materia": "INDUSTRIA Y COMERCIO",
+     "url_oficial": "https://www.diputadosrd.gob.do/sil",
+     "datos_al": "2026-10-07",
+     "auto": true
     }
    ]
   }

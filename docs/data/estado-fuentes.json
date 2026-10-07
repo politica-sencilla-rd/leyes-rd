@@ -32,10 +32,10 @@
       "retraso": "",
       "estado": "ok",
       "fallos_seguidos": 0,
-      "datos_al": "2026-09-30",
-      "revisado_el": "2026-09-30",
-      "ultimo_documento": "6357 iniciativas en el SIL",
-      "subido_por_la_fuente": "2026-09-17"
+      "datos_al": "2026-10-07",
+      "revisado_el": "2026-10-07",
+      "ultimo_documento": "6424 iniciativas en el SIL",
+      "subido_por_la_fuente": "2026-10-06"
     },
     "vigencia_consultoria": {
       "nombre": "Leyes promulgadas (Consultoría Jurídica)",
@@ -44,8 +44,8 @@
       "retraso": "La Gaceta Oficial sale unos días después de firmada la ley.",
       "datos_al": "2026-05-01",
       "estado": "sin_respuesta",
-      "fallos_seguidos": 2,
-      "revisado_el": "2026-09-30"
+      "fallos_seguidos": 3,
+      "revisado_el": "2026-10-07"
     },
     "dinero_inflacion": {
       "nombre": "Inflación (Banco Central)",

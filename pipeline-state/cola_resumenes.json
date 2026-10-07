@@ -1567,6 +1567,66 @@
    "fuente_nombre": "Acta 0126, votación electrónica 024",
    "fuente_sha256": "9556bd8482cff725e6fc34cb8be3b928513aa0c535aebd832aa0f4db8d4d71e6",
    "intentos": 0
+  },
+  {
+   "id": "sil-05129-2024-2028-CD",
+   "tipo": "titulo_voto",
+   "campos": [
+    "titulo_facil"
+   ],
+   "estado_ley": "votando",
+   "fuente_url": "https://www.diputadosrd.gob.do/sil",
+   "fuente_nombre": "SIL de la Cámara, iniciativa 05129-2024-2028-CD",
+   "fuente_sha256": "ca4b0c2fb38c63e745a2a2d7953a8f2c5f6a31f211a676921b1981e67c117476",
+   "intentos": 0
+  },
+  {
+   "id": "sil-05830-2024-2028-CD",
+   "tipo": "titulo_voto",
+   "campos": [
+    "titulo_facil"
+   ],
+   "estado_ley": "votando",
+   "fuente_url": "https://www.diputadosrd.gob.do/sil",
+   "fuente_nombre": "SIL de la Cámara, iniciativa 05830-2024-2028-CD",
+   "fuente_sha256": "3289eb7f1f3881ce261e5af0771b840f710287a2a944159fd23ae6cf68e18cc3",
+   "intentos": 0
+  },
+  {
+   "id": "sil-05565-2024-2028-CD",
+   "tipo": "titulo_voto",
+   "campos": [
+    "titulo_facil"
+   ],
+   "estado_ley": "votando",
+   "fuente_url": "https://www.diputadosrd.gob.do/sil",
+   "fuente_nombre": "SIL de la Cámara, iniciativa 05565-2024-2028-CD",
+   "fuente_sha256": "f145a6f97aa0af68f5ac1481de9372643901e5b497dc3da0b5befa14e63313bc",
+   "intentos": 0
+  },
+  {
+   "id": "sil-05563-2024-2028-CD",
+   "tipo": "titulo_voto",
+   "campos": [
+    "titulo_facil"
+   ],
+   "estado_ley": "votando",
+   "fuente_url": "https://www.diputadosrd.gob.do/sil",
+   "fuente_nombre": "SIL de la Cámara, iniciativa 05563-2024-2028-CD",
+   "fuente_sha256": "db826f9eda18c5f9f84d14ac6b6ca0484fa00519e3f9fc804b9cfd6f40dee3c0",
+   "intentos": 0
+  },
+  {
+   "id": "sil-06055-2024-2028-CD",
+   "tipo": "titulo_voto",
+   "campos": [
+    "titulo_facil"
+   ],
+   "estado_ley": "aprobada",
+   "fuente_url": "https://www.diputadosrd.gob.do/sil",
+   "fuente_nombre": "SIL de la Cámara, iniciativa 06055-2024-2028-CD",
+   "fuente_sha256": "703f50c056daf2948ed0ccdb96378712f71bd8be375de4732d41881992ddde77",
+   "intentos": 0
   }
  ]
 }
