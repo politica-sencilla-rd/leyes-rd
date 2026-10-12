@@ -1,5 +1,5 @@
 {
- "_generated": "2026-10-05T17:51:11.492781+00:00",
+ "_generated": "2026-10-12T18:39:16.927979+00:00",
  "_unmatched": [],
  "diputados": {
   "Alfredo Pacheco Osoria": {
@@ -10,18 +10,18 @@
     "Administración Interior",
     "Comisión Coordinadora 2026-2027"
    ],
-   "iniciativas_cd": 25,
-   "iniciativas_total_sil": 25,
+   "iniciativas_cd": 26,
+   "iniciativas_total_sil": 26,
    "asistencia": {
-    "presentes": 193,
-    "total": 198,
+    "presentes": 198,
+    "total": 203,
     "breakdown": {
-     "Presente": 180,
-     "Presente Incorporado": 13,
+     "Presente": 184,
+     "Presente Incorporado": 14,
      "Excusa": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -32,25 +32,25 @@
    "comisiones": [
     "00674-2025-PLO-SE Comisión bicameral designada para estudiar el proyecto de ley general de salud.",
     "04691-2024-2028-CD proyecto de resolución de interpelación al señor Celso Marranzini",
-    "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
     "Administración Pública",
+    "Comisión bicameral designada para estudiar el proyecto de ley orgánica de la Policía Nacional.",
     "Defensa",
     "Interior y Policía",
     "Medios de Comunicación",
     "Ministerio Público"
    ],
-   "iniciativas_cd": 34,
-   "iniciativas_total_sil": 34,
+   "iniciativas_cd": 36,
+   "iniciativas_total_sil": 36,
    "asistencia": {
-    "presentes": 183,
-    "total": 198,
+    "presentes": 188,
+    "total": 203,
     "breakdown": {
-     "Presente": 178,
+     "Presente": 183,
      "Presente Incorporado": 5,
      "Excusa": 15
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -59,10 +59,9 @@
    "sil_nombre": "Charles Noel Mariotti Paz",
    "cargo_hasta": null,
    "comisiones": [
-    "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
-    "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
     "05368-2024-2028-CD Comisión especial designada para estudiar el Proyecto de ley que modifica la Ley núm.5-13 sobre Discapacidad en la República Dominicana.",
     "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
+    "Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "Industria y Comercio",
     "Inteligencia Artificial",
     "Juventud",
@@ -72,16 +71,16 @@
    "iniciativas_cd": 51,
    "iniciativas_total_sil": 51,
    "asistencia": {
-    "presentes": 183,
-    "total": 198,
+    "presentes": 188,
+    "total": 203,
     "breakdown": {
-     "Presente": 171,
+     "Presente": 176,
      "Excusa": 13,
      "Ausente": 2,
      "Presente Incorporado": 12
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -91,26 +90,25 @@
    "cargo_hasta": null,
    "comisiones": [
     "05137-2024-2028-CD y 05138-2024-2028-CD Comisión Especial designada para el estudio de los proyectos de ley para la superación y reinserción de los adolescentes.",
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
     "Cultura",
     "Juventud",
     "Medios de Comunicación",
     "Relaciones Exteriores y Cooperación Internacional"
    ],
-   "iniciativas_cd": 51,
-   "iniciativas_total_sil": 51,
+   "iniciativas_cd": 52,
+   "iniciativas_total_sil": 52,
    "asistencia": {
-    "presentes": 172,
-    "total": 198,
+    "presentes": 177,
+    "total": 203,
     "breakdown": {
+     "Presente": 165,
      "Presente Incorporado": 12,
-     "Presente": 160,
      "Excusa": 13,
      "Licencia": 12,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -126,17 +124,17 @@
    "iniciativas_cd": 31,
    "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 175,
-    "total": 198,
+    "presentes": 178,
+    "total": 203,
     "breakdown": {
-     "Excusa": 21,
-     "Presente Incorporado": 52,
-     "Presente": 123,
+     "Excusa": 23,
+     "Presente": 125,
+     "Presente Incorporado": 53,
      "Ausente": 1,
      "Representación de la Cámara": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -152,19 +150,20 @@
     "Modernización y Reforma",
     "Turismo"
    ],
-   "iniciativas_cd": 66,
-   "iniciativas_total_sil": 66,
+   "iniciativas_cd": 69,
+   "iniciativas_total_sil": 69,
    "asistencia": {
-    "presentes": 175,
-    "total": 198,
+    "presentes": 178,
+    "total": 203,
     "breakdown": {
+     "Presente": 158,
+     "Representación de la Cámara": 1,
+     "Excusa": 20,
      "Presente Incorporado": 20,
-     "Presente": 155,
-     "Excusa": 19,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -173,9 +172,9 @@
    "sil_nombre": "Francisca Trinidad Jaque Aponte",
    "cargo_hasta": null,
    "comisiones": [
-    "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "05405-2024-2028-CD Comisión especial designada para el estudio del Proyecto de ley de los cuerpos de bomberos de la República Dominicana.",
     "Asuntos Municipales",
+    "Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "Educación Superior, Ciencia y Tecnología",
     "Junta Central Electoral",
     "Seguridad Social",
@@ -184,14 +183,14 @@
    "iniciativas_cd": 44,
    "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 182,
-    "total": 198,
+    "presentes": 187,
+    "total": 203,
     "breakdown": {
-     "Excusa": 16,
-     "Presente": 182
+     "Presente": 187,
+     "Excusa": 16
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -200,24 +199,22 @@
    "sil_nombre": "Gustavo Antonio Sánchez García",
    "cargo_hasta": null,
    "comisiones": [
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
     "Administración Interior",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
     "Modernización y Reforma"
    ],
    "iniciativas_cd": 25,
    "iniciativas_total_sil": 25,
    "asistencia": {
-    "presentes": 170,
-    "total": 198,
+    "presentes": 175,
+    "total": 203,
     "breakdown": {
-     "Presente": 157,
+     "Presente": 160,
+     "Presente Incorporado": 15,
      "Excusa": 25,
-     "Presente Incorporado": 13,
      "Ausente": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -228,6 +225,7 @@
    "comisiones": [
     "00674-2025-PLO-SE Comisión bicameral designada para estudiar el proyecto de ley general de salud.",
     "05137-2024-2028-CD y 05138-2024-2028-CD Comisión Especial designada para el estudio de los proyectos de ley para la superación y reinserción de los adolescentes.",
+    "06381-2024-2028-CD Comisión bicameral designada para el estudio del proyecto de ley Presupuesto General del Estado para el año 2027.",
     "Contratos",
     "Desarrollo Humano",
     "Inteligencia Artificial",
@@ -237,15 +235,15 @@
    "iniciativas_cd": 31,
    "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 185,
-    "total": 198,
+    "presentes": 190,
+    "total": 203,
     "breakdown": {
-     "Presente": 184,
+     "Presente": 189,
      "Excusa": 13,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -260,19 +258,19 @@
     "Medio Ambiente y Recursos Naturales",
     "Relaciones Exteriores y Cooperación Internacional"
    ],
-   "iniciativas_cd": 39,
-   "iniciativas_total_sil": 39,
+   "iniciativas_cd": 40,
+   "iniciativas_total_sil": 40,
    "asistencia": {
-    "presentes": 179,
-    "total": 198,
+    "presentes": 183,
+    "total": 203,
     "breakdown": {
-     "Presente": 175,
-     "Excusa": 14,
+     "Presente": 179,
+     "Excusa": 15,
      "Presente Incorporado": 4,
      "Ausente": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -282,7 +280,7 @@
    "cargo_hasta": null,
    "comisiones": [
     "Asuntos Municipales",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
+    "Comisión bicameral designada para estudiar el proyecto de ley orgánica de la Policía Nacional.",
     "Contratos",
     "Desarrollo Humano",
     "Interior y Policía",
@@ -293,16 +291,16 @@
    "iniciativas_cd": 27,
    "iniciativas_total_sil": 27,
    "asistencia": {
-    "presentes": 185,
-    "total": 198,
+    "presentes": 190,
+    "total": 203,
     "breakdown": {
+     "Presente": 177,
      "Presente Incorporado": 13,
-     "Presente": 172,
      "Excusa": 12,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -311,27 +309,25 @@
    "sil_nombre": "Maribel Altagracia Almánzar de Ogando",
    "cargo_hasta": null,
    "comisiones": [
-    "04711-2024-2028-CD Comisión especial que estudia el proyecto de ley que regula la libertad religiosa de conciencia y de cultos",
     "05368-2024-2028-CD Comisión especial designada para estudiar el Proyecto de ley que modifica la Ley núm.5-13 sobre Discapacidad en la República Dominicana.",
     "Asuntos de Equidad de Género",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Cultura",
     "Derechos Humanos",
     "Educación Superior, Ciencia y Tecnología",
     "Familia"
    ],
-   "iniciativas_cd": 48,
-   "iniciativas_total_sil": 48,
+   "iniciativas_cd": 52,
+   "iniciativas_total_sil": 52,
    "asistencia": {
-    "presentes": 193,
-    "total": 198,
+    "presentes": 197,
+    "total": 203,
     "breakdown": {
-     "Presente": 191,
-     "Presente Incorporado": 2,
-     "Excusa": 5
+     "Presente": 195,
+     "Excusa": 6,
+     "Presente Incorporado": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -347,16 +343,16 @@
    "iniciativas_cd": 37,
    "iniciativas_total_sil": 37,
    "asistencia": {
-    "presentes": 186,
-    "total": 198,
+    "presentes": 189,
+    "total": 203,
     "breakdown": {
-     "Presente Incorporado": 51,
-     "Presente": 135,
-     "Excusa": 7,
-     "Ausente": 5
+     "Presente": 137,
+     "Presente Incorporado": 52,
+     "Excusa": 8,
+     "Ausente": 6
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -366,24 +362,24 @@
    "cargo_hasta": null,
    "comisiones": [
     "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
+    "06381-2024-2028-CD Comisión bicameral designada para el estudio del proyecto de ley Presupuesto General del Estado para el año 2027.",
     "Contratos",
     "Movilidad y Transporte",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 75,
-   "iniciativas_total_sil": 75,
+   "iniciativas_cd": 76,
+   "iniciativas_total_sil": 76,
    "asistencia": {
-    "presentes": 185,
-    "total": 198,
+    "presentes": 190,
+    "total": 203,
     "breakdown": {
-     "Presente Incorporado": 37,
-     "Presente": 148,
+     "Presente": 152,
+     "Presente Incorporado": 38,
      "Excusa": 11,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -395,25 +391,25 @@
     "00674-2025-PLO-SE Comisión bicameral designada para estudiar el proyecto de ley general de salud.",
     "04691-2024-2028-CD proyecto de resolución de interpelación al señor Celso Marranzini",
     "05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza el pago de deuda por obras ejecutadas sin contrato formal.",
-    "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
+    "Comisión bicameral designada para estudiar el proyecto de ley orgánica de la Policía Nacional.",
     "Defensa",
     "Defensor del Pueblo",
     "Interior y Policía",
     "Modernización y Reforma",
     "Salud"
    ],
-   "iniciativas_cd": 33,
-   "iniciativas_total_sil": 33,
+   "iniciativas_cd": 34,
+   "iniciativas_total_sil": 34,
    "asistencia": {
-    "presentes": 186,
-    "total": 198,
+    "presentes": 191,
+    "total": 203,
     "breakdown": {
-     "Presente": 182,
+     "Presente": 187,
      "Presente Incorporado": 4,
      "Excusa": 12
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -422,7 +418,6 @@
    "sil_nombre": "Sergio Moya de la Cruz",
    "cargo_hasta": null,
    "comisiones": [
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
     "Hacienda",
     "Industria y Comercio",
     "Modernización y Reforma"
@@ -430,16 +425,16 @@
    "iniciativas_cd": 11,
    "iniciativas_total_sil": 11,
    "asistencia": {
-    "presentes": 149,
-    "total": 198,
+    "presentes": 152,
+    "total": 203,
     "breakdown": {
-     "Presente": 123,
-     "Excusa": 36,
-     "Presente Incorporado": 26,
+     "Presente": 125,
+     "Excusa": 38,
+     "Presente Incorporado": 27,
      "Ausente": 13
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -448,7 +443,6 @@
    "sil_nombre": "Vicente Arturo Sánchez Henríquez",
    "cargo_hasta": null,
    "comisiones": [
-    "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
     "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
     "Inteligencia Artificial",
     "Juventud",
@@ -458,16 +452,16 @@
    "iniciativas_cd": 41,
    "iniciativas_total_sil": 41,
    "asistencia": {
-    "presentes": 181,
-    "total": 198,
+    "presentes": 184,
+    "total": 203,
     "breakdown": {
-     "Presente": 161,
+     "Presente": 164,
+     "Excusa": 12,
      "Presente Incorporado": 20,
-     "Excusa": 10,
      "Ausente": 7
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -487,16 +481,16 @@
    "iniciativas_cd": 37,
    "iniciativas_total_sil": 37,
    "asistencia": {
-    "presentes": 181,
-    "total": 198,
+    "presentes": 186,
+    "total": 203,
     "breakdown": {
-     "Presente": 131,
+     "Presente": 136,
      "Presente Incorporado": 50,
      "Excusa": 14,
      "Ausente": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Distrito Nacional"
   },
@@ -506,25 +500,24 @@
    "cargo_hasta": null,
    "comisiones": [
     "05405-2024-2028-CD Comisión especial designada para el estudio del Proyecto de ley de los cuerpos de bomberos de la República Dominicana.",
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
     "Administración de Deuda Pública y Activos Financieros",
     "Cultura",
     "Medios de Comunicación",
     "Presupuesto, Patrimonio y Contabilidad",
     "Reconocimientos"
    ],
-   "iniciativas_cd": 69,
-   "iniciativas_total_sil": 69,
+   "iniciativas_cd": 72,
+   "iniciativas_total_sil": 72,
    "asistencia": {
-    "presentes": 179,
-    "total": 198,
+    "presentes": 184,
+    "total": 203,
     "breakdown": {
-     "Excusa": 19,
-     "Presente": 173,
-     "Presente Incorporado": 6
+     "Presente": 177,
+     "Presente Incorporado": 7,
+     "Excusa": 19
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Azua"
   },
@@ -533,7 +526,7 @@
    "sil_nombre": "Brenda Mercedes Ogando Campos",
    "cargo_hasta": null,
    "comisiones": [
-    "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
+    "06381-2024-2028-CD Comisión bicameral designada para el estudio del proyecto de ley Presupuesto General del Estado para el año 2027.",
     "Asuntos de Equidad de Género",
     "Defensor del Pueblo",
     "Educación Superior, Ciencia y Tecnología",
@@ -544,17 +537,17 @@
    "iniciativas_cd": 67,
    "iniciativas_total_sil": 67,
    "asistencia": {
-    "presentes": 177,
-    "total": 198,
+    "presentes": 182,
+    "total": 203,
     "breakdown": {
-     "Presente": 176,
+     "Presente": 181,
      "Ausente": 1,
      "Excusa": 19,
      "Representación de la Cámara": 1,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Azua"
   },
@@ -563,27 +556,26 @@
    "sil_nombre": "Julio César Beltré Méndez",
    "cargo_hasta": null,
    "comisiones": [
-    "04711-2024-2028-CD Comisión especial que estudia el proyecto de ley que regula la libertad religiosa de conciencia y de cultos",
     "Administración Pública",
     "Administración de Deuda Pública y Activos Financieros",
     "Contratos",
     "Dominicanos en el Exterior",
     "Reconocimientos"
    ],
-   "iniciativas_cd": 72,
-   "iniciativas_total_sil": 72,
+   "iniciativas_cd": 73,
+   "iniciativas_total_sil": 73,
    "asistencia": {
-    "presentes": 178,
-    "total": 198,
+    "presentes": 181,
+    "total": 203,
     "breakdown": {
-     "Presente": 171,
+     "Excusa": 14,
+     "Presente": 174,
      "Presente Incorporado": 7,
-     "Excusa": 12,
      "Ausente": 4,
      "Licencia": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Azua"
   },
@@ -597,19 +589,19 @@
     "Energía",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 59,
-   "iniciativas_total_sil": 59,
+   "iniciativas_cd": 62,
+   "iniciativas_total_sil": 62,
    "asistencia": {
-    "presentes": 193,
-    "total": 198,
+    "presentes": 197,
+    "total": 203,
     "breakdown": {
+     "Presente": 185,
+     "Excusa": 5,
      "Presente Incorporado": 12,
-     "Presente": 181,
-     "Excusa": 4,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Azua"
   },
@@ -618,10 +610,10 @@
    "sil_nombre": "Juan Bolívar Cuevas Davis",
    "cargo_hasta": null,
    "comisiones": [
-    "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "05368-2024-2028-CD Comisión especial designada para estudiar el Proyecto de ley que modifica la Ley núm.5-13 sobre Discapacidad en la República Dominicana.",
     "Asuntos Cooperativos",
     "Asuntos Fronterizos",
+    "Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "Defensor del Pueblo",
     "Salud",
     "Seguridad Social"
@@ -629,16 +621,16 @@
    "iniciativas_cd": 77,
    "iniciativas_total_sil": 77,
    "asistencia": {
-    "presentes": 191,
-    "total": 198,
+    "presentes": 196,
+    "total": 203,
     "breakdown": {
-     "Presente": 190,
+     "Presente": 195,
      "Excusa": 5,
      "Representación de la Cámara": 2,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Bahoruco"
   },
@@ -647,7 +639,7 @@
    "sil_nombre": "Olfanny Yuverka Méndez Matos",
    "cargo_hasta": null,
    "comisiones": [
-    "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
+    "Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "Defensa",
     "Deportes y Recreación",
     "Desarrollo Humano",
@@ -657,15 +649,15 @@
    "iniciativas_cd": 55,
    "iniciativas_total_sil": 55,
    "asistencia": {
-    "presentes": 158,
-    "total": 198,
+    "presentes": 161,
+    "total": 203,
     "breakdown": {
-     "Presente Incorporado": 26,
-     "Excusa": 40,
-     "Presente": 132
+     "Presente": 134,
+     "Presente Incorporado": 27,
+     "Excusa": 42
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Bahoruco"
   },
@@ -683,15 +675,15 @@
    "iniciativas_total_sil": 9,
    "asistencia": {
     "presentes": 137,
-    "total": 198,
+    "total": 203,
     "breakdown": {
-     "Excusa": 56,
+     "Excusa": 61,
      "Ausente": 5,
      "Presente": 130,
      "Presente Incorporado": 7
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Barahona"
   },
@@ -702,24 +694,23 @@
    "comisiones": [
     "05405-2024-2028-CD Comisión especial designada para el estudio del Proyecto de ley de los cuerpos de bomberos de la República Dominicana.",
     "Asuntos Mineros",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Obras Públicas y Comunicaciones",
     "Presidencia de la República",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 39,
-   "iniciativas_total_sil": 39,
+   "iniciativas_cd": 40,
+   "iniciativas_total_sil": 40,
    "asistencia": {
-    "presentes": 188,
-    "total": 198,
+    "presentes": 193,
+    "total": 203,
     "breakdown": {
+     "Presente": 182,
      "Excusa": 9,
-     "Presente": 177,
      "Presente Incorporado": 11,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Barahona"
   },
@@ -734,19 +725,19 @@
     "Mipymes",
     "Turismo"
    ],
-   "iniciativas_cd": 54,
-   "iniciativas_total_sil": 54,
+   "iniciativas_cd": 55,
+   "iniciativas_total_sil": 55,
    "asistencia": {
-    "presentes": 178,
-    "total": 198,
+    "presentes": 182,
+    "total": 203,
     "breakdown": {
+     "Presente": 174,
+     "Ausente": 6,
      "Presente Incorporado": 8,
-     "Presente": 170,
-     "Excusa": 15,
-     "Ausente": 5
+     "Excusa": 15
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Barahona"
   },
@@ -762,19 +753,19 @@
     "Educación Superior, Ciencia y Tecnología",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 54,
-   "iniciativas_total_sil": 54,
+   "iniciativas_cd": 56,
+   "iniciativas_total_sil": 56,
    "asistencia": {
-    "presentes": 171,
-    "total": 198,
+    "presentes": 174,
+    "total": 203,
     "breakdown": {
-     "Presente": 152,
-     "Excusa": 24,
+     "Excusa": 26,
+     "Presente": 155,
      "Presente Incorporado": 19,
      "Ausente": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Dajabón"
   },
@@ -784,27 +775,26 @@
    "cargo_hasta": null,
    "comisiones": [
     "05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza el pago de deuda por obras ejecutadas sin contrato formal.",
-    "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
     "Asuntos Fronterizos",
     "Asuntos Migratorios",
     "Industria y Comercio",
     "Juventud",
     "Obras Públicas y Comunicaciones"
    ],
-   "iniciativas_cd": 46,
-   "iniciativas_total_sil": 46,
+   "iniciativas_cd": 48,
+   "iniciativas_total_sil": 48,
    "asistencia": {
-    "presentes": 158,
-    "total": 198,
+    "presentes": 162,
+    "total": 203,
     "breakdown": {
+     "Presente": 132,
+     "Excusa": 16,
      "Presente Incorporado": 30,
-     "Presente": 128,
-     "Excusa": 15,
      "Ausente": 4,
      "Licencia": 21
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Dajabón"
   },
@@ -813,12 +803,10 @@
    "sil_nombre": "Dorina Yajaira Rodríguez Salazar",
    "cargo_hasta": null,
    "comisiones": [
-    "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
     "05405-2024-2028-CD Comisión especial designada para el estudio del Proyecto de ley de los cuerpos de bomberos de la República Dominicana.",
     "Asuntos Cooperativos",
     "Asuntos Mineros",
     "Ciberseguridad",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
     "Defensor del Pueblo",
     "Desarrollo Humano",
     "Hacienda"
@@ -826,16 +814,16 @@
    "iniciativas_cd": 41,
    "iniciativas_total_sil": 41,
    "asistencia": {
-    "presentes": 193,
-    "total": 198,
+    "presentes": 197,
+    "total": 203,
     "breakdown": {
-     "Presente": 179,
-     "Presente Incorporado": 14,
-     "Excusa": 4,
-     "Ausente": 1
+     "Presente": 182,
+     "Ausente": 2,
+     "Presente Incorporado": 15,
+     "Excusa": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Duarte"
   },
@@ -850,18 +838,18 @@
     "Asuntos de Equidad de Género",
     "Dominicanos en el Exterior"
    ],
-   "iniciativas_cd": 57,
-   "iniciativas_total_sil": 57,
+   "iniciativas_cd": 59,
+   "iniciativas_total_sil": 59,
    "asistencia": {
-    "presentes": 191,
-    "total": 198,
+    "presentes": 196,
+    "total": 203,
     "breakdown": {
-     "Presente": 188,
+     "Presente": 193,
      "Presente Incorporado": 3,
      "Excusa": 7
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Duarte"
   },
@@ -873,19 +861,19 @@
     "Defensor del Pueblo",
     "Economía, Planificación y Desarrollo"
    ],
-   "iniciativas_cd": 31,
-   "iniciativas_total_sil": 31,
+   "iniciativas_cd": 32,
+   "iniciativas_total_sil": 32,
    "asistencia": {
-    "presentes": 189,
-    "total": 198,
+    "presentes": 194,
+    "total": 203,
     "breakdown": {
+     "Presente": 153,
      "Presente Incorporado": 41,
-     "Presente": 148,
      "Excusa": 5,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Duarte"
   },
@@ -902,16 +890,16 @@
    "iniciativas_cd": 20,
    "iniciativas_total_sil": 20,
    "asistencia": {
-    "presentes": 193,
-    "total": 198,
+    "presentes": 198,
+    "total": 203,
     "breakdown": {
-     "Presente": 187,
-     "Presente Incorporado": 6,
+     "Presente": 191,
+     "Presente Incorporado": 7,
      "Excusa": 2,
      "Ausente": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Duarte"
   },
@@ -926,19 +914,19 @@
     "Junta Central Electoral",
     "Mipymes"
    ],
-   "iniciativas_cd": 41,
-   "iniciativas_total_sil": 41,
+   "iniciativas_cd": 43,
+   "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 179,
-    "total": 198,
+    "presentes": 184,
+    "total": 203,
     "breakdown": {
+     "Presente": 181,
      "Excusa": 17,
-     "Presente": 176,
      "Presente Incorporado": 3,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Duarte"
   },
@@ -947,9 +935,9 @@
    "sil_nombre": "Faustina Guerrero Cabrera",
    "cargo_hasta": null,
    "comisiones": [
-    "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "Asuntos Cooperativos",
     "Asuntos Marítimos",
+    "Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "Defensa",
     "Obras Públicas y Comunicaciones",
     "Seguridad Social"
@@ -957,15 +945,15 @@
    "iniciativas_cd": 46,
    "iniciativas_total_sil": 46,
    "asistencia": {
-    "presentes": 193,
-    "total": 198,
+    "presentes": 196,
+    "total": 203,
     "breakdown": {
-     "Presente": 188,
-     "Presente Incorporado": 5,
-     "Excusa": 5
+     "Presente Incorporado": 6,
+     "Excusa": 7,
+     "Presente": 190
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "El Seibo"
   },
@@ -979,19 +967,19 @@
     "Movilidad y Transporte",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 48,
-   "iniciativas_total_sil": 48,
+   "iniciativas_cd": 51,
+   "iniciativas_total_sil": 51,
    "asistencia": {
-    "presentes": 183,
-    "total": 198,
+    "presentes": 188,
+    "total": 203,
     "breakdown": {
-     "Presente": 181,
+     "Presente": 186,
      "Excusa": 13,
      "Ausente": 2,
      "Presente Incorporado": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "El Seibo"
   },
@@ -1000,7 +988,6 @@
    "sil_nombre": "Luis Enrique Castillo Ogando",
    "cargo_hasta": null,
    "comisiones": [
-    "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
     "Asuntos Fronterizos",
     "Asuntos Mineros",
     "Obras Públicas y Comunicaciones",
@@ -1010,16 +997,16 @@
    "iniciativas_cd": 43,
    "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 185,
-    "total": 198,
+    "presentes": 190,
+    "total": 203,
     "breakdown": {
-     "Presente": 176,
+     "Presente": 180,
+     "Presente Incorporado": 10,
      "Excusa": 9,
-     "Presente Incorporado": 9,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Elías Piña"
   },
@@ -1029,25 +1016,24 @@
    "cargo_hasta": null,
    "comisiones": [
     "00674-2025-PLO-SE Comisión bicameral designada para estudiar el proyecto de ley general de salud.",
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
     "Asuntos Fronterizos",
     "Asuntos Migratorios",
     "Asuntos de Equidad de Género",
     "Salud",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 63,
-   "iniciativas_total_sil": 63,
+   "iniciativas_cd": 65,
+   "iniciativas_total_sil": 65,
    "asistencia": {
-    "presentes": 190,
-    "total": 198,
+    "presentes": 195,
+    "total": 203,
     "breakdown": {
+     "Presente": 193,
      "Excusa": 8,
-     "Presente": 188,
      "Presente Incorporado": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Elías Piña"
   },
@@ -1056,7 +1042,6 @@
    "sil_nombre": "José Miguel Ferreiras Torres",
    "cargo_hasta": null,
    "comisiones": [
-    "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
     "Cámara de Cuentas",
     "Economía, Planificación y Desarrollo",
     "Industria y Comercio",
@@ -1065,15 +1050,15 @@
    "iniciativas_cd": 41,
    "iniciativas_total_sil": 41,
    "asistencia": {
-    "presentes": 192,
-    "total": 198,
+    "presentes": 197,
+    "total": 203,
     "breakdown": {
-     "Presente": 187,
+     "Presente": 192,
      "Presente Incorporado": 5,
      "Excusa": 6
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Espaillat"
   },
@@ -1088,18 +1073,18 @@
     "Energía",
     "Familia"
    ],
-   "iniciativas_cd": 41,
-   "iniciativas_total_sil": 41,
+   "iniciativas_cd": 42,
+   "iniciativas_total_sil": 42,
    "asistencia": {
-    "presentes": 189,
-    "total": 198,
+    "presentes": 193,
+    "total": 203,
     "breakdown": {
-     "Presente": 183,
-     "Presente Incorporado": 6,
-     "Excusa": 9
+     "Presente": 187,
+     "Excusa": 10,
+     "Presente Incorporado": 6
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Espaillat"
   },
@@ -1116,15 +1101,15 @@
    "iniciativas_cd": 31,
    "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 151,
-    "total": 198,
+    "presentes": 154,
+    "total": 203,
     "breakdown": {
-     "Presente Incorporado": 31,
-     "Presente": 120,
-     "Excusa": 47
+     "Excusa": 49,
+     "Presente Incorporado": 33,
+     "Presente": 121
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Espaillat"
   },
@@ -1133,24 +1118,23 @@
    "sil_nombre": "Shirley Antonia López Féliz",
    "cargo_hasta": null,
    "comisiones": [
-    "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
     "Administración Pública",
     "Educación",
     "Energía",
     "Medio Ambiente y Recursos Naturales"
    ],
-   "iniciativas_cd": 62,
-   "iniciativas_total_sil": 62,
+   "iniciativas_cd": 65,
+   "iniciativas_total_sil": 65,
    "asistencia": {
-    "presentes": 189,
-    "total": 198,
+    "presentes": 194,
+    "total": 203,
     "breakdown": {
-     "Presente": 188,
+     "Presente": 193,
      "Excusa": 9,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Espaillat"
   },
@@ -1161,7 +1145,6 @@
    "comisiones": [
     "00674-2025-PLO-SE Comisión bicameral designada para estudiar el proyecto de ley general de salud.",
     "05405-2024-2028-CD Comisión especial designada para el estudio del Proyecto de ley de los cuerpos de bomberos de la República Dominicana.",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
     "Hacienda",
     "Presidencia de la República",
     "Trabajo",
@@ -1170,15 +1153,16 @@
    "iniciativas_cd": 92,
    "iniciativas_total_sil": 92,
    "asistencia": {
-    "presentes": 168,
-    "total": 198,
+    "presentes": 172,
+    "total": 203,
     "breakdown": {
-     "Presente": 160,
-     "Excusa": 30,
-     "Presente Incorporado": 8
+     "Presente": 162,
+     "Presente Incorporado": 10,
+     "Ausente": 1,
+     "Excusa": 30
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Hato Mayor"
   },
@@ -1187,24 +1171,24 @@
    "sil_nombre": "Héctor Fodil Rosa Mercedes",
    "cargo_hasta": null,
    "comisiones": [
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
+    "06381-2024-2028-CD Comisión bicameral designada para el estudio del proyecto de ley Presupuesto General del Estado para el año 2027.",
     "Asuntos Marítimos",
     "Desarrollo Humano",
     "Medio Ambiente y Recursos Naturales",
     "Presupuesto, Patrimonio y Contabilidad"
    ],
-   "iniciativas_cd": 28,
-   "iniciativas_total_sil": 28,
+   "iniciativas_cd": 31,
+   "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 195,
-    "total": 198,
+    "presentes": 200,
+    "total": 203,
     "breakdown": {
-     "Presente": 193,
+     "Presente": 198,
      "Presente Incorporado": 2,
      "Excusa": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Hato Mayor"
   },
@@ -1213,25 +1197,25 @@
    "sil_nombre": "Félix Santiago Hiciano Almánzar",
    "cargo_hasta": null,
    "comisiones": [
+    "06381-2024-2028-CD Comisión bicameral designada para el estudio del proyecto de ley Presupuesto General del Estado para el año 2027.",
     "Administración Interior",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
     "Cámara de Cuentas",
     "Hacienda",
     "Mipymes",
     "Presidencia de la República"
    ],
-   "iniciativas_cd": 117,
-   "iniciativas_total_sil": 117,
+   "iniciativas_cd": 118,
+   "iniciativas_total_sil": 118,
    "asistencia": {
-    "presentes": 193,
-    "total": 198,
+    "presentes": 198,
+    "total": 203,
     "breakdown": {
-     "Excusa": 5,
-     "Presente": 191,
-     "Presente Incorporado": 2
+     "Presente": 195,
+     "Presente Incorporado": 3,
+     "Excusa": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Hermanas Mirabal"
   },
@@ -1246,18 +1230,18 @@
     "Modernización y Reforma",
     "Presupuesto, Patrimonio y Contabilidad"
    ],
-   "iniciativas_cd": 51,
-   "iniciativas_total_sil": 51,
+   "iniciativas_cd": 52,
+   "iniciativas_total_sil": 52,
    "asistencia": {
-    "presentes": 195,
-    "total": 198,
+    "presentes": 200,
+    "total": 203,
     "breakdown": {
-     "Presente": 190,
+     "Presente": 195,
      "Presente Incorporado": 5,
      "Excusa": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Hermanas Mirabal"
   },
@@ -1266,26 +1250,25 @@
    "sil_nombre": "Hermes Evangelina José Méndez de Méndez",
    "cargo_hasta": null,
    "comisiones": [
-    "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
     "Asuntos Fronterizos",
     "Asuntos Marítimos",
     "Asuntos Migratorios",
     "Economía, Planificación y Desarrollo",
     "Mipymes"
    ],
-   "iniciativas_cd": 45,
-   "iniciativas_total_sil": 45,
+   "iniciativas_cd": 46,
+   "iniciativas_total_sil": 46,
    "asistencia": {
-    "presentes": 187,
-    "total": 198,
+    "presentes": 191,
+    "total": 203,
     "breakdown": {
-     "Excusa": 10,
-     "Presente": 185,
+     "Presente": 189,
+     "Excusa": 11,
      "Presente Incorporado": 2,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Independencia"
   },
@@ -1302,16 +1285,16 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 181,
-    "total": 198,
+    "presentes": 183,
+    "total": 203,
     "breakdown": {
-     "Presente": 166,
-     "Excusa": 8,
+     "Excusa": 11,
+     "Presente": 168,
      "Presente Incorporado": 15,
      "Ausente": 9
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Independencia"
   },
@@ -1321,25 +1304,24 @@
    "cargo_hasta": null,
    "comisiones": [
     "04691-2024-2028-CD proyecto de resolución de interpelación al señor Celso Marranzini",
-    "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
     "Ciberseguridad",
     "Junta Central Electoral",
     "Ministerio Público",
     "Obras Públicas y Comunicaciones",
     "Trabajo"
    ],
-   "iniciativas_cd": 46,
-   "iniciativas_total_sil": 46,
+   "iniciativas_cd": 50,
+   "iniciativas_total_sil": 50,
    "asistencia": {
-    "presentes": 184,
-    "total": 198,
+    "presentes": 188,
+    "total": 203,
     "breakdown": {
-     "Presente": 183,
-     "Presente Incorporado": 1,
-     "Excusa": 14
+     "Presente": 187,
+     "Excusa": 15,
+     "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "La Altagracia"
   },
@@ -1354,19 +1336,19 @@
     "Relaciones Exteriores y Cooperación Internacional",
     "Turismo"
    ],
-   "iniciativas_cd": 124,
-   "iniciativas_total_sil": 124,
+   "iniciativas_cd": 130,
+   "iniciativas_total_sil": 130,
    "asistencia": {
-    "presentes": 184,
-    "total": 198,
+    "presentes": 189,
+    "total": 203,
     "breakdown": {
-     "Presente": 182,
+     "Presente": 187,
      "Excusa": 12,
      "Presente Incorporado": 2,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "La Altagracia"
   },
@@ -1379,19 +1361,19 @@
     "Asuntos Migratorios",
     "Turismo"
    ],
-   "iniciativas_cd": 34,
-   "iniciativas_total_sil": 34,
+   "iniciativas_cd": 35,
+   "iniciativas_total_sil": 35,
    "asistencia": {
-    "presentes": 169,
-    "total": 198,
+    "presentes": 173,
+    "total": 203,
     "breakdown": {
-     "Excusa": 25,
-     "Presente": 154,
-     "Ausente": 4,
-     "Presente Incorporado": 15
+     "Presente": 157,
+     "Presente Incorporado": 16,
+     "Excusa": 26,
+     "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "La Altagracia"
   },
@@ -1400,27 +1382,26 @@
    "sil_nombre": "Jorge Leonardo Tavárez Valdez",
    "cargo_hasta": null,
    "comisiones": [
-    "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
-    "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
+    "06384-2024-2028-CD Comisión bicameral para el estudio del proyecto de ley del Código Civil de la República Dominicana.",
     "Cultura",
     "Deportes y Recreación",
     "Industria y Comercio",
     "Justicia",
     "Turismo"
    ],
-   "iniciativas_cd": 98,
-   "iniciativas_total_sil": 98,
+   "iniciativas_cd": 106,
+   "iniciativas_total_sil": 106,
    "asistencia": {
-    "presentes": 180,
-    "total": 198,
+    "presentes": 185,
+    "total": 203,
     "breakdown": {
-     "Presente": 176,
+     "Presente": 181,
      "Excusa": 17,
      "Presente Incorporado": 4,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "La Altagracia"
   },
@@ -1431,24 +1412,23 @@
    "comisiones": [
     "05137-2024-2028-CD y 05138-2024-2028-CD Comisión Especial designada para el estudio de los proyectos de ley para la superación y reinserción de los adolescentes.",
     "Comisión Coordinadora 2026-2027",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Cultura",
     "Deportes y Recreación",
     "Juventud",
     "Mipymes"
    ],
-   "iniciativas_cd": 70,
-   "iniciativas_total_sil": 70,
+   "iniciativas_cd": 73,
+   "iniciativas_total_sil": 73,
    "asistencia": {
-    "presentes": 192,
-    "total": 198,
+    "presentes": 197,
+    "total": 203,
     "breakdown": {
-     "Presente": 191,
+     "Presente": 196,
      "Excusa": 6,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "La Altagracia"
   },
@@ -1459,7 +1439,7 @@
    "comisiones": [
     "03313-2024-2028-CD Comisión especial PR investigación abandono La Cruz de Manzanillo.",
     "05405-2024-2028-CD Comisión especial designada para el estudio del Proyecto de ley de los cuerpos de bomberos de la República Dominicana.",
-    "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
+    "06384-2024-2028-CD Comisión bicameral para el estudio del proyecto de ley del Código Civil de la República Dominicana.",
     "Asuntos Municipales",
     "Defensor del Pueblo",
     "Derechos Humanos",
@@ -1469,17 +1449,17 @@
    "iniciativas_cd": 55,
    "iniciativas_total_sil": 55,
    "asistencia": {
-    "presentes": 170,
-    "total": 198,
+    "presentes": 175,
+    "total": 203,
     "breakdown": {
-     "Presente": 142,
+     "Presente": 145,
+     "Presente Incorporado": 30,
      "Excusa": 26,
-     "Presente Incorporado": 28,
      "Representación de la Cámara": 1,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "La Romana"
   },
@@ -1488,26 +1468,26 @@
    "sil_nombre": "Eugenio Cedeño Areché",
    "cargo_hasta": null,
    "comisiones": [
-    "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
+    "06384-2024-2028-CD Comisión bicameral para el estudio del proyecto de ley del Código Civil de la República Dominicana.",
     "Asuntos Marítimos",
     "Justicia",
     "Ministerio Público",
     "Turismo"
    ],
-   "iniciativas_cd": 44,
-   "iniciativas_total_sil": 44,
+   "iniciativas_cd": 45,
+   "iniciativas_total_sil": 45,
    "asistencia": {
-    "presentes": 174,
-    "total": 198,
+    "presentes": 179,
+    "total": 203,
     "breakdown": {
-     "Presente": 164,
+     "Presente": 168,
+     "Presente Incorporado": 11,
      "Excusa": 18,
-     "Presente Incorporado": 10,
      "Ausente": 5,
      "Representación de la Cámara": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "La Romana"
   },
@@ -1520,19 +1500,19 @@
     "Presidencia de la República",
     "Turismo"
    ],
-   "iniciativas_cd": 48,
-   "iniciativas_total_sil": 48,
+   "iniciativas_cd": 51,
+   "iniciativas_total_sil": 51,
    "asistencia": {
-    "presentes": 189,
-    "total": 198,
+    "presentes": 194,
+    "total": 203,
     "breakdown": {
-     "Presente": 180,
+     "Presente": 185,
      "Presente Incorporado": 9,
      "Excusa": 7,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "La Romana"
   },
@@ -1541,8 +1521,8 @@
    "sil_nombre": "Wandy Modesto Batista Gómez",
    "cargo_hasta": null,
    "comisiones": [
-    "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
     "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
+    "06384-2024-2028-CD Comisión bicameral para el estudio del proyecto de ley del Código Civil de la República Dominicana.",
     "Defensor del Pueblo",
     "Justicia",
     "Ministerio Público",
@@ -1551,17 +1531,17 @@
    "iniciativas_cd": 21,
    "iniciativas_total_sil": 21,
    "asistencia": {
-    "presentes": 169,
-    "total": 198,
+    "presentes": 174,
+    "total": 203,
     "breakdown": {
-     "Presente": 145,
-     "Presente Incorporado": 24,
+     "Presente": 149,
+     "Presente Incorporado": 25,
      "Excusa": 21,
      "Ausente": 7,
      "Representación de la Cámara": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "La Romana"
   },
@@ -1571,8 +1551,8 @@
    "cargo_hasta": null,
    "comisiones": [
     "05137-2024-2028-CD y 05138-2024-2028-CD Comisión Especial designada para el estudio de los proyectos de ley para la superación y reinserción de los adolescentes.",
-    "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
     "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
+    "06384-2024-2028-CD Comisión bicameral para el estudio del proyecto de ley del Código Civil de la República Dominicana.",
     "Cámara de Cuentas",
     "Justicia",
     "Juventud",
@@ -1582,10 +1562,10 @@
    "iniciativas_cd": 31,
    "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 173,
-    "total": 198,
+    "presentes": 178,
+    "total": 203,
     "breakdown": {
-     "Presente": 166,
+     "Presente": 171,
      "Presente Incorporado": 7,
      "Excusa": 18,
      "Representación de la Cámara": 1,
@@ -1593,7 +1573,7 @@
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "La Vega"
   },
@@ -1610,16 +1590,16 @@
    "iniciativas_cd": 20,
    "iniciativas_total_sil": 20,
    "asistencia": {
-    "presentes": 173,
-    "total": 198,
+    "presentes": 178,
+    "total": 203,
     "breakdown": {
+     "Presente": 172,
      "Excusa": 23,
-     "Presente": 167,
      "Presente Incorporado": 6,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "La Vega"
   },
@@ -1635,19 +1615,19 @@
     "Presidencia de la República",
     "Presupuesto, Patrimonio y Contabilidad"
    ],
-   "iniciativas_cd": 76,
-   "iniciativas_total_sil": 76,
+   "iniciativas_cd": 88,
+   "iniciativas_total_sil": 88,
    "asistencia": {
-    "presentes": 185,
-    "total": 198,
+    "presentes": 190,
+    "total": 203,
     "breakdown": {
-     "Presente": 180,
+     "Presente": 185,
      "Presente Incorporado": 5,
      "Excusa": 12,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "La Vega"
   },
@@ -1667,16 +1647,16 @@
    "iniciativas_cd": 24,
    "iniciativas_total_sil": 24,
    "asistencia": {
-    "presentes": 171,
-    "total": 198,
+    "presentes": 176,
+    "total": 203,
     "breakdown": {
-     "Presente": 162,
+     "Presente": 166,
+     "Presente Incorporado": 10,
      "Ausente": 2,
-     "Presente Incorporado": 9,
      "Excusa": 25
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "La Vega"
   },
@@ -1692,18 +1672,18 @@
     "Deportes y Recreación",
     "Industria y Comercio"
    ],
-   "iniciativas_cd": 32,
-   "iniciativas_total_sil": 32,
+   "iniciativas_cd": 33,
+   "iniciativas_total_sil": 33,
    "asistencia": {
-    "presentes": 192,
-    "total": 198,
+    "presentes": 197,
+    "total": 203,
     "breakdown": {
-     "Presente": 184,
-     "Presente Incorporado": 8,
+     "Presente": 187,
+     "Presente Incorporado": 10,
      "Excusa": 6
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "La Vega"
   },
@@ -1712,12 +1692,10 @@
    "sil_nombre": "Rogelio Alfonso Genao Lanza",
    "cargo_hasta": null,
    "comisiones": [
-    "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "05137-2024-2028-CD y 05138-2024-2028-CD Comisión Especial designada para el estudio de los proyectos de ley para la superación y reinserción de los adolescentes.",
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
     "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
     "Comisión Coordinadora 2026-2027",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
+    "Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "Cámara de Cuentas",
     "Industria y Comercio",
     "Relaciones Exteriores y Cooperación Internacional",
@@ -1726,15 +1704,15 @@
    "iniciativas_cd": 35,
    "iniciativas_total_sil": 35,
    "asistencia": {
-    "presentes": 177,
-    "total": 198,
+    "presentes": 181,
+    "total": 203,
     "breakdown": {
-     "Presente": 160,
-     "Presente Incorporado": 17,
-     "Excusa": 21
+     "Presente": 162,
+     "Presente Incorporado": 19,
+     "Excusa": 22
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "La Vega"
   },
@@ -1743,25 +1721,24 @@
    "sil_nombre": "Vilma Hortencia Morillo Vásquez",
    "cargo_hasta": null,
    "comisiones": [
-    "04711-2024-2028-CD Comisión especial que estudia el proyecto de ley que regula la libertad religiosa de conciencia y de cultos",
     "Defensor del Pueblo",
     "Derechos Humanos",
     "Economía, Planificación y Desarrollo",
     "Junta Central Electoral",
     "Presidencia de la República"
    ],
-   "iniciativas_cd": 11,
-   "iniciativas_total_sil": 11,
+   "iniciativas_cd": 12,
+   "iniciativas_total_sil": 12,
    "asistencia": {
-    "presentes": 74,
-    "total": 88,
+    "presentes": 78,
+    "total": 93,
     "breakdown": {
-     "Presente": 73,
-     "Excusa": 14,
+     "Presente": 77,
+     "Excusa": 15,
      "Presente Incorporado": 1
     },
     "desde": "2025-09-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "La Vega"
   },
@@ -1770,25 +1747,25 @@
    "sil_nombre": "Jesús Stalin Vásquez Marte",
    "cargo_hasta": null,
    "comisiones": [
-    "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
     "Administración Pública",
+    "Comisión bicameral designada para estudiar el proyecto de ley orgánica de la Policía Nacional.",
     "Defensa",
     "Inteligencia Artificial",
     "Interior y Policía",
     "Juventud"
    ],
-   "iniciativas_cd": 56,
-   "iniciativas_total_sil": 56,
+   "iniciativas_cd": 58,
+   "iniciativas_total_sil": 58,
    "asistencia": {
-    "presentes": 193,
-    "total": 198,
+    "presentes": 198,
+    "total": 203,
     "breakdown": {
-     "Presente": 186,
-     "Presente Incorporado": 7,
+     "Presente": 189,
+     "Presente Incorporado": 9,
      "Excusa": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "María Trinidad Sánchez"
   },
@@ -1806,16 +1783,16 @@
    "iniciativas_cd": 57,
    "iniciativas_total_sil": 57,
    "asistencia": {
-    "presentes": 181,
-    "total": 198,
+    "presentes": 186,
+    "total": 203,
     "breakdown": {
+     "Presente": 165,
+     "Presente Incorporado": 21,
      "Excusa": 16,
-     "Presente": 161,
-     "Presente Incorporado": 20,
      "Representación de la Cámara": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "María Trinidad Sánchez"
   },
@@ -1833,16 +1810,16 @@
    "iniciativas_cd": 49,
    "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 191,
-    "total": 198,
+    "presentes": 196,
+    "total": 203,
     "breakdown": {
-     "Presente": 188,
+     "Presente": 193,
      "Excusa": 6,
      "Presente Incorporado": 3,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "María Trinidad Sánchez"
   },
@@ -1852,26 +1829,25 @@
    "cargo_hasta": null,
    "comisiones": [
     "00674-2025-PLO-SE Comisión bicameral designada para estudiar el proyecto de ley general de salud.",
-    "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
     "Asuntos Mineros",
     "Derechos Humanos",
     "Familia",
     "Medio Ambiente y Recursos Naturales",
     "Salud"
    ],
-   "iniciativas_cd": 44,
-   "iniciativas_total_sil": 44,
+   "iniciativas_cd": 50,
+   "iniciativas_total_sil": 50,
    "asistencia": {
-    "presentes": 184,
-    "total": 198,
+    "presentes": 189,
+    "total": 203,
     "breakdown": {
-     "Presente": 181,
-     "Presente Incorporado": 3,
+     "Presente": 185,
+     "Presente Incorporado": 4,
      "Excusa": 10,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Monseñor Nouel"
   },
@@ -1885,19 +1861,19 @@
     "Economía, Planificación y Desarrollo",
     "Educación"
    ],
-   "iniciativas_cd": 94,
-   "iniciativas_total_sil": 94,
+   "iniciativas_cd": 96,
+   "iniciativas_total_sil": 96,
    "asistencia": {
-    "presentes": 185,
-    "total": 198,
+    "presentes": 190,
+    "total": 203,
     "breakdown": {
-     "Presente": 156,
+     "Presente": 161,
      "Presente Incorporado": 29,
      "Excusa": 9,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Monseñor Nouel"
   },
@@ -1915,17 +1891,17 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 124,
-    "total": 197,
+    "presentes": 125,
+    "total": 202,
     "breakdown": {
-     "Presente": 74,
+     "Ausente": 42,
+     "Presente": 75,
+     "Excusa": 30,
      "Presente Incorporado": 50,
-     "Excusa": 29,
-     "Ausente": 39,
      "Licencia": 5
     },
     "desde": "2024-08-20",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Monseñor Nouel"
   },
@@ -1939,19 +1915,19 @@
     "Defensor del Pueblo",
     "Deportes y Recreación"
    ],
-   "iniciativas_cd": 58,
-   "iniciativas_total_sil": 58,
+   "iniciativas_cd": 60,
+   "iniciativas_total_sil": 60,
    "asistencia": {
-    "presentes": 189,
-    "total": 198,
+    "presentes": 194,
+    "total": 203,
     "breakdown": {
-     "Presente": 182,
+     "Presente": 187,
      "Presente Incorporado": 7,
      "Excusa": 4,
      "Licencia": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Monte Cristi"
   },
@@ -1961,27 +1937,27 @@
    "cargo_hasta": null,
    "comisiones": [
     "03313-2024-2028-CD Comisión especial PR investigación abandono La Cruz de Manzanillo.",
-    "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
     "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
+    "06384-2024-2028-CD Comisión bicameral para el estudio del proyecto de ley del Código Civil de la República Dominicana.",
     "Agricultura",
     "Asuntos Fronterizos",
     "Asuntos Migratorios",
     "Defensor del Pueblo",
     "Justicia"
    ],
-   "iniciativas_cd": 45,
-   "iniciativas_total_sil": 45,
+   "iniciativas_cd": 46,
+   "iniciativas_total_sil": 46,
    "asistencia": {
-    "presentes": 187,
-    "total": 198,
+    "presentes": 192,
+    "total": 203,
     "breakdown": {
-     "Presente": 180,
+     "Presente": 184,
+     "Presente Incorporado": 8,
      "Excusa": 8,
-     "Presente Incorporado": 7,
      "Ausente": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Monte Cristi"
   },
@@ -1990,26 +1966,25 @@
    "sil_nombre": "Jhonatan Rabel Contreras del Orbe",
    "cargo_hasta": null,
    "comisiones": [
-    "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
     "05137-2024-2028-CD y 05138-2024-2028-CD Comisión Especial designada para el estudio de los proyectos de ley para la superación y reinserción de los adolescentes.",
     "Ciberseguridad",
     "Defensor del Pueblo",
     "Deportes y Recreación",
     "Educación"
    ],
-   "iniciativas_cd": 31,
-   "iniciativas_total_sil": 31,
+   "iniciativas_cd": 33,
+   "iniciativas_total_sil": 33,
    "asistencia": {
-    "presentes": 194,
-    "total": 198,
+    "presentes": 199,
+    "total": 203,
     "breakdown": {
-     "Presente": 187,
+     "Presente": 192,
      "Presente Incorporado": 7,
      "Excusa": 3,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Monte Plata"
   },
@@ -2020,26 +1995,25 @@
    "comisiones": [
     "04691-2024-2028-CD proyecto de resolución de interpelación al señor Celso Marranzini",
     "05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza el pago de deuda por obras ejecutadas sin contrato formal.",
-    "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
     "Asuntos Mineros",
     "Ciberseguridad",
     "Energía",
     "Inteligencia Artificial",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 53,
-   "iniciativas_total_sil": 53,
+   "iniciativas_cd": 54,
+   "iniciativas_total_sil": 54,
    "asistencia": {
-    "presentes": 187,
-    "total": 198,
+    "presentes": 192,
+    "total": 203,
     "breakdown": {
-     "Presente": 173,
+     "Presente": 178,
      "Presente Incorporado": 14,
      "Excusa": 7,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Monte Plata"
   },
@@ -2055,15 +2029,15 @@
    "iniciativas_cd": 74,
    "iniciativas_total_sil": 74,
    "asistencia": {
-    "presentes": 183,
-    "total": 198,
+    "presentes": 188,
+    "total": 203,
     "breakdown": {
-     "Presente": 162,
+     "Presente": 167,
      "Presente Incorporado": 21,
      "Excusa": 15
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Monte Plata"
   },
@@ -2082,16 +2056,16 @@
    "iniciativas_cd": 49,
    "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 164,
-    "total": 198,
+    "presentes": 168,
+    "total": 203,
     "breakdown": {
-     "Presente": 163,
-     "Excusa": 25,
+     "Presente": 167,
+     "Excusa": 26,
      "Presente Incorporado": 1,
      "Licencia": 9
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Pedernales"
   },
@@ -2100,24 +2074,23 @@
    "sil_nombre": "Rafael Antonio Pérez Gómez",
    "cargo_hasta": null,
    "comisiones": [
-    "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
     "Asuntos Fronterizos",
     "Asuntos Marítimos",
     "Reconocimientos"
    ],
-   "iniciativas_cd": 60,
-   "iniciativas_total_sil": 60,
+   "iniciativas_cd": 61,
+   "iniciativas_total_sil": 61,
    "asistencia": {
-    "presentes": 183,
-    "total": 198,
+    "presentes": 187,
+    "total": 203,
     "breakdown": {
-     "Presente": 181,
-     "Excusa": 13,
+     "Presente": 185,
+     "Excusa": 14,
      "Presente Incorporado": 2,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Pedernales"
   },
@@ -2135,16 +2108,16 @@
    "iniciativas_cd": 47,
    "iniciativas_total_sil": 47,
    "asistencia": {
-    "presentes": 185,
-    "total": 198,
+    "presentes": 190,
+    "total": 203,
     "breakdown": {
-     "Presente": 184,
+     "Presente": 189,
      "Excusa": 11,
      "Ausente": 2,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Peravia"
   },
@@ -2153,8 +2126,9 @@
    "sil_nombre": "Luis Alcides Báez",
    "cargo_hasta": null,
    "comisiones": [
-    "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
+    "06384-2024-2028-CD Comisión bicameral para el estudio del proyecto de ley del Código Civil de la República Dominicana.",
     "Administración Interior",
+    "Comisión bicameral designada para estudiar el proyecto de ley orgánica de la Policía Nacional.",
     "Inteligencia Artificial",
     "Interior y Policía",
     "Justicia",
@@ -2163,16 +2137,16 @@
    "iniciativas_cd": 37,
    "iniciativas_total_sil": 37,
    "asistencia": {
-    "presentes": 176,
-    "total": 198,
+    "presentes": 181,
+    "total": 203,
     "breakdown": {
-     "Presente": 161,
+     "Presente": 165,
+     "Presente Incorporado": 16,
      "Excusa": 21,
-     "Presente Incorporado": 15,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Peravia"
   },
@@ -2182,24 +2156,23 @@
    "cargo_hasta": null,
    "comisiones": [
     "05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza el pago de deuda por obras ejecutadas sin contrato formal.",
-    "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
     "Cámara de Cuentas",
     "Obras Públicas y Comunicaciones",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 31,
-   "iniciativas_total_sil": 31,
+   "iniciativas_cd": 33,
+   "iniciativas_total_sil": 33,
    "asistencia": {
-    "presentes": 175,
-    "total": 198,
+    "presentes": 180,
+    "total": 203,
     "breakdown": {
+     "Presente": 161,
      "Excusa": 22,
-     "Presente": 156,
      "Presente Incorporado": 19,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Peravia"
   },
@@ -2208,29 +2181,27 @@
    "sil_nombre": "Fiordaliza Estévez Castillo",
    "cargo_hasta": null,
    "comisiones": [
-    "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
     "04691-2024-2028-CD proyecto de resolución de interpelación al señor Celso Marranzini",
     "05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza el pago de deuda por obras ejecutadas sin contrato formal.",
-    "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
     "Contratos",
     "Deportes y Recreación",
     "Energía",
     "Medio Ambiente y Recursos Naturales",
     "Modernización y Reforma"
    ],
-   "iniciativas_cd": 41,
-   "iniciativas_total_sil": 41,
+   "iniciativas_cd": 43,
+   "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 181,
-    "total": 198,
+    "presentes": 186,
+    "total": 203,
     "breakdown": {
-     "Presente Incorporado": 14,
-     "Presente": 167,
+     "Presente": 171,
+     "Presente Incorporado": 15,
      "Excusa": 16,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Puerto Plata"
   },
@@ -2240,7 +2211,6 @@
    "cargo_hasta": null,
    "comisiones": [
     "05368-2024-2028-CD Comisión especial designada para estudiar el Proyecto de ley que modifica la Ley núm.5-13 sobre Discapacidad en la República Dominicana.",
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
     "Dominicanos en el Exterior",
     "Juventud",
     "Reconocimientos",
@@ -2249,16 +2219,16 @@
    "iniciativas_cd": 31,
    "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 172,
-    "total": 198,
+    "presentes": 177,
+    "total": 203,
     "breakdown": {
-     "Presente": 153,
-     "Presente Incorporado": 19,
+     "Presente": 155,
+     "Presente Incorporado": 22,
      "Excusa": 21,
      "Ausente": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Puerto Plata"
   },
@@ -2275,15 +2245,15 @@
    "iniciativas_cd": 44,
    "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 182,
-    "total": 198,
+    "presentes": 186,
+    "total": 203,
     "breakdown": {
-     "Presente": 171,
-     "Excusa": 16,
+     "Presente": 175,
+     "Excusa": 17,
      "Presente Incorporado": 11
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Puerto Plata"
   },
@@ -2296,18 +2266,18 @@
     "Defensor del Pueblo",
     "Medio Ambiente y Recursos Naturales"
    ],
-   "iniciativas_cd": 97,
-   "iniciativas_total_sil": 97,
+   "iniciativas_cd": 98,
+   "iniciativas_total_sil": 98,
    "asistencia": {
-    "presentes": 188,
-    "total": 198,
+    "presentes": 193,
+    "total": 203,
     "breakdown": {
-     "Presente": 186,
+     "Presente": 191,
      "Excusa": 10,
      "Presente Incorporado": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Puerto Plata"
   },
@@ -2322,18 +2292,18 @@
     "Presupuesto, Patrimonio y Contabilidad",
     "Turismo"
    ],
-   "iniciativas_cd": 25,
-   "iniciativas_total_sil": 25,
+   "iniciativas_cd": 26,
+   "iniciativas_total_sil": 26,
    "asistencia": {
-    "presentes": 189,
-    "total": 198,
+    "presentes": 194,
+    "total": 203,
     "breakdown": {
-     "Presente": 185,
+     "Presente": 190,
      "Presente Incorporado": 4,
      "Excusa": 9
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Puerto Plata"
   },
@@ -2342,26 +2312,25 @@
    "sil_nombre": "Lidia Esther Pérez de Taveras",
    "cargo_hasta": null,
    "comisiones": [
-    "04711-2024-2028-CD Comisión especial que estudia el proyecto de ley que regula la libertad religiosa de conciencia y de cultos",
     "Derechos Humanos",
     "Desarrollo Humano",
     "Familia",
     "Salud",
     "Ética"
    ],
-   "iniciativas_cd": 68,
-   "iniciativas_total_sil": 68,
+   "iniciativas_cd": 69,
+   "iniciativas_total_sil": 69,
    "asistencia": {
-    "presentes": 175,
-    "total": 198,
+    "presentes": 177,
+    "total": 203,
     "breakdown": {
-     "Presente": 168,
-     "Excusa": 22,
+     "Excusa": 25,
+     "Presente": 170,
      "Presente Incorporado": 7,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Puerto Plata"
   },
@@ -2371,9 +2340,9 @@
    "cargo_hasta": null,
    "comisiones": [
     "03313-2024-2028-CD Comisión especial PR investigación abandono La Cruz de Manzanillo.",
-    "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
-    "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
+    "06384-2024-2028-CD Comisión bicameral para el estudio del proyecto de ley del Código Civil de la República Dominicana.",
     "Administración de Deuda Pública y Activos Financieros",
+    "Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "Justicia",
     "Ministerio Público",
     "Seguridad Social",
@@ -2382,17 +2351,17 @@
    "iniciativas_cd": 39,
    "iniciativas_total_sil": 39,
    "asistencia": {
-    "presentes": 176,
-    "total": 198,
+    "presentes": 181,
+    "total": 203,
     "breakdown": {
-     "Presente Incorporado": 24,
-     "Presente": 152,
+     "Presente": 156,
+     "Presente Incorporado": 25,
      "Ausente": 8,
      "Excusa": 11,
      "Licencia": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Samaná"
   },
@@ -2409,16 +2378,16 @@
    "iniciativas_cd": 20,
    "iniciativas_total_sil": 20,
    "asistencia": {
-    "presentes": 189,
-    "total": 198,
+    "presentes": 194,
+    "total": 203,
     "breakdown": {
-     "Presente Incorporado": 12,
-     "Presente": 177,
+     "Presente": 181,
+     "Presente Incorporado": 13,
      "Excusa": 7,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Samaná"
   },
@@ -2427,7 +2396,6 @@
    "sil_nombre": "Ana Miledy Cuevas",
    "cargo_hasta": null,
    "comisiones": [
-    "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
     "Administración de Deuda Pública y Activos Financieros",
     "Derechos Humanos",
     "Salud",
@@ -2436,15 +2404,15 @@
    "iniciativas_cd": 34,
    "iniciativas_total_sil": 34,
    "asistencia": {
-    "presentes": 150,
-    "total": 198,
+    "presentes": 154,
+    "total": 203,
     "breakdown": {
-     "Excusa": 48,
-     "Presente": 138,
+     "Presente": 142,
+     "Excusa": 49,
      "Presente Incorporado": 12
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Cristóbal"
   },
@@ -2453,26 +2421,24 @@
    "sil_nombre": "Antonio Brito Rodríguez",
    "cargo_hasta": null,
    "comisiones": [
-    "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Industria y Comercio",
     "Medios de Comunicación",
     "Movilidad y Transporte",
     "Obras Públicas y Comunicaciones"
    ],
-   "iniciativas_cd": 64,
-   "iniciativas_total_sil": 64,
+   "iniciativas_cd": 67,
+   "iniciativas_total_sil": 67,
    "asistencia": {
-    "presentes": 186,
-    "total": 198,
+    "presentes": 191,
+    "total": 203,
     "breakdown": {
-     "Presente": 184,
+     "Presente": 189,
      "Excusa": 11,
      "Presente Incorporado": 2,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Cristóbal"
   },
@@ -2481,7 +2447,7 @@
    "sil_nombre": "Francisco Javier Paulino",
    "cargo_hasta": null,
    "comisiones": [
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
+    "06381-2024-2028-CD Comisión bicameral designada para el estudio del proyecto de ley Presupuesto General del Estado para el año 2027.",
     "Deportes y Recreación",
     "Educación Superior, Ciencia y Tecnología",
     "Hacienda"
@@ -2489,17 +2455,17 @@
    "iniciativas_cd": 23,
    "iniciativas_total_sil": 23,
    "asistencia": {
-    "presentes": 184,
-    "total": 198,
+    "presentes": 189,
+    "total": 203,
     "breakdown": {
-     "Presente": 182,
+     "Presente": 187,
      "Presente Incorporado": 2,
      "Excusa": 6,
      "Ausente": 1,
      "Licencia": 7
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Cristóbal"
   },
@@ -2508,25 +2474,24 @@
    "sil_nombre": "German Martínez Araujo",
    "cargo_hasta": null,
    "comisiones": [
-    "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
     "Asuntos Cooperativos",
     "Ciberseguridad",
     "Desarrollo Humano",
     "Educación"
    ],
-   "iniciativas_cd": 53,
-   "iniciativas_total_sil": 53,
+   "iniciativas_cd": 55,
+   "iniciativas_total_sil": 55,
    "asistencia": {
-    "presentes": 187,
-    "total": 198,
+    "presentes": 192,
+    "total": 203,
     "breakdown": {
-     "Presente": 184,
+     "Presente": 189,
      "Ausente": 2,
      "Presente Incorporado": 3,
      "Excusa": 9
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Cristóbal"
   },
@@ -2536,25 +2501,24 @@
    "cargo_hasta": null,
    "comisiones": [
     "00674-2025-PLO-SE Comisión bicameral designada para estudiar el proyecto de ley general de salud.",
-    "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
     "Asuntos de Equidad de Género",
     "Educación",
     "Familia",
     "Inteligencia Artificial",
     "Salud"
    ],
-   "iniciativas_cd": 38,
-   "iniciativas_total_sil": 38,
+   "iniciativas_cd": 39,
+   "iniciativas_total_sil": 39,
    "asistencia": {
-    "presentes": 184,
-    "total": 198,
+    "presentes": 189,
+    "total": 203,
     "breakdown": {
-     "Presente": 178,
+     "Presente": 183,
      "Presente Incorporado": 6,
      "Excusa": 14
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Cristóbal"
   },
@@ -2563,25 +2527,24 @@
    "sil_nombre": "Jacqueline Montero",
    "cargo_hasta": null,
    "comisiones": [
-    "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
     "Asuntos de Equidad de Género",
     "Derechos Humanos",
     "Presupuesto, Patrimonio y Contabilidad",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 57,
-   "iniciativas_total_sil": 57,
+   "iniciativas_cd": 59,
+   "iniciativas_total_sil": 59,
    "asistencia": {
-    "presentes": 163,
-    "total": 198,
+    "presentes": 168,
+    "total": 203,
     "breakdown": {
-     "Presente": 159,
+     "Presente": 164,
      "Excusa": 33,
      "Presente Incorporado": 4,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Cristóbal"
   },
@@ -2591,28 +2554,27 @@
    "cargo_hasta": null,
    "comisiones": [
     "00674-2025-PLO-SE Comisión bicameral designada para estudiar el proyecto de ley general de salud.",
-    "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
-    "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "05368-2024-2028-CD Comisión especial designada para estudiar el Proyecto de ley que modifica la Ley núm.5-13 sobre Discapacidad en la República Dominicana.",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
+    "06381-2024-2028-CD Comisión bicameral designada para el estudio del proyecto de ley Presupuesto General del Estado para el año 2027.",
+    "Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "Familia",
     "Hacienda",
     "Junta Central Electoral",
     "Salud",
     "Seguridad Social"
    ],
-   "iniciativas_cd": 161,
-   "iniciativas_total_sil": 161,
+   "iniciativas_cd": 167,
+   "iniciativas_total_sil": 167,
    "asistencia": {
-    "presentes": 194,
-    "total": 198,
+    "presentes": 199,
+    "total": 203,
     "breakdown": {
+     "Presente": 198,
      "Excusa": 4,
-     "Presente": 193,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Cristóbal"
   },
@@ -2628,20 +2590,20 @@
     "Mipymes",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 39,
-   "iniciativas_total_sil": 39,
+   "iniciativas_cd": 40,
+   "iniciativas_total_sil": 40,
    "asistencia": {
-    "presentes": 168,
-    "total": 198,
+    "presentes": 173,
+    "total": 203,
     "breakdown": {
+     "Presente": 170,
      "Presente Incorporado": 3,
      "Excusa": 21,
-     "Presente": 165,
      "Licencia": 7,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Cristóbal"
   },
@@ -2650,27 +2612,24 @@
    "sil_nombre": "Otoniel Tejeda Martínez",
    "cargo_hasta": null,
    "comisiones": [
-    "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
-    "04711-2024-2028-CD Comisión especial que estudia el proyecto de ley que regula la libertad religiosa de conciencia y de cultos",
-    "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
     "Inteligencia Artificial",
     "Juventud",
     "Modernización y Reforma",
     "Presupuesto, Patrimonio y Contabilidad"
    ],
-   "iniciativas_cd": 49,
-   "iniciativas_total_sil": 49,
+   "iniciativas_cd": 52,
+   "iniciativas_total_sil": 52,
    "asistencia": {
-    "presentes": 181,
-    "total": 198,
+    "presentes": 186,
+    "total": 203,
     "breakdown": {
-     "Presente Incorporado": 34,
-     "Presente": 147,
+     "Presente": 149,
+     "Presente Incorporado": 37,
      "Excusa": 11,
      "Ausente": 6
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Cristóbal"
   },
@@ -2679,31 +2638,28 @@
    "sil_nombre": "Ydenia Doñé Tiburcio",
    "cargo_hasta": null,
    "comisiones": [
-    "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
-    "04711-2024-2028-CD Comisión especial que estudia el proyecto de ley que regula la libertad religiosa de conciencia y de cultos",
     "05137-2024-2028-CD y 05138-2024-2028-CD Comisión Especial designada para el estudio de los proyectos de ley para la superación y reinserción de los adolescentes.",
     "05368-2024-2028-CD Comisión especial designada para estudiar el Proyecto de ley que modifica la Ley núm.5-13 sobre Discapacidad en la República Dominicana.",
     "Asuntos Marítimos",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
     "Comisión Coordinadora 2026-2027",
     "Cámara de Cuentas",
     "Derechos Humanos",
     "Educación",
     "Hacienda"
    ],
-   "iniciativas_cd": 98,
-   "iniciativas_total_sil": 98,
+   "iniciativas_cd": 101,
+   "iniciativas_total_sil": 101,
    "asistencia": {
-    "presentes": 192,
-    "total": 198,
+    "presentes": 197,
+    "total": 203,
     "breakdown": {
-     "Presente": 189,
+     "Presente": 194,
      "Excusa": 5,
      "Presente Incorporado": 3,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Cristóbal"
   },
@@ -2715,20 +2671,21 @@
     "05405-2024-2028-CD Comisión especial designada para el estudio del Proyecto de ley de los cuerpos de bomberos de la República Dominicana.",
     "Agricultura",
     "Ciberseguridad",
+    "Comisión bicameral designada para estudiar el proyecto de ley orgánica de la Policía Nacional.",
     "Interior y Policía"
    ],
-   "iniciativas_cd": 26,
-   "iniciativas_total_sil": 26,
+   "iniciativas_cd": 27,
+   "iniciativas_total_sil": 27,
    "asistencia": {
-    "presentes": 186,
-    "total": 198,
+    "presentes": 191,
+    "total": 203,
     "breakdown": {
-     "Presente": 182,
+     "Presente": 187,
      "Excusa": 12,
      "Presente Incorporado": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San José de Ocoa"
   },
@@ -2744,18 +2701,18 @@
     "Derechos Humanos",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 55,
-   "iniciativas_total_sil": 55,
+   "iniciativas_cd": 56,
+   "iniciativas_total_sil": 56,
    "asistencia": {
-    "presentes": 186,
-    "total": 198,
+    "presentes": 191,
+    "total": 203,
     "breakdown": {
+     "Presente": 183,
      "Presente Incorporado": 8,
-     "Presente": 178,
      "Excusa": 12
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San José de Ocoa"
   },
@@ -2765,25 +2722,24 @@
    "cargo_hasta": null,
    "comisiones": [
     "05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza el pago de deuda por obras ejecutadas sin contrato formal.",
-    "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
     "Asuntos Fronterizos",
     "Ciberseguridad",
     "Mipymes",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 28,
-   "iniciativas_total_sil": 28,
+   "iniciativas_cd": 29,
+   "iniciativas_total_sil": 29,
    "asistencia": {
-    "presentes": 181,
-    "total": 198,
+    "presentes": 183,
+    "total": 203,
     "breakdown": {
-     "Excusa": 10,
-     "Presente": 177,
-     "Ausente": 7,
+     "Excusa": 12,
+     "Presente": 179,
+     "Ausente": 8,
      "Presente Incorporado": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Juan"
   },
@@ -2800,16 +2756,16 @@
    "iniciativas_cd": 68,
    "iniciativas_total_sil": 68,
    "asistencia": {
-    "presentes": 190,
-    "total": 198,
+    "presentes": 195,
+    "total": 203,
     "breakdown": {
-     "Presente": 187,
+     "Presente": 192,
      "Presente Incorporado": 3,
      "Excusa": 7,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Juan"
   },
@@ -2823,19 +2779,19 @@
     "Industria y Comercio",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 58,
-   "iniciativas_total_sil": 58,
+   "iniciativas_cd": 60,
+   "iniciativas_total_sil": 60,
    "asistencia": {
-    "presentes": 180,
-    "total": 198,
+    "presentes": 183,
+    "total": 203,
     "breakdown": {
-     "Presente": 164,
+     "Excusa": 16,
+     "Presente": 167,
      "Presente Incorporado": 16,
-     "Excusa": 14,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Juan"
   },
@@ -2851,19 +2807,19 @@
     "Ministerio Público",
     "Trabajo"
    ],
-   "iniciativas_cd": 122,
-   "iniciativas_total_sil": 122,
+   "iniciativas_cd": 123,
+   "iniciativas_total_sil": 123,
    "asistencia": {
-    "presentes": 192,
-    "total": 198,
+    "presentes": 197,
+    "total": 203,
     "breakdown": {
-     "Presente": 187,
+     "Presente": 192,
      "Presente Incorporado": 5,
      "Excusa": 5,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Juan"
   },
@@ -2872,26 +2828,26 @@
    "sil_nombre": "Alcibíades Tavárez de la Cruz",
    "cargo_hasta": null,
    "comisiones": [
-    "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
+    "Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "Dominicanos en el Exterior",
     "Economía, Planificación y Desarrollo",
     "Junta Central Electoral",
     "Presupuesto, Patrimonio y Contabilidad",
     "Seguridad Social"
    ],
-   "iniciativas_cd": 48,
-   "iniciativas_total_sil": 48,
+   "iniciativas_cd": 50,
+   "iniciativas_total_sil": 50,
    "asistencia": {
-    "presentes": 190,
-    "total": 198,
+    "presentes": 195,
+    "total": 203,
     "breakdown": {
-     "Presente": 189,
+     "Presente": 194,
      "Excusa": 7,
      "Presente Incorporado": 1,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Pedro de Macorís"
   },
@@ -2908,16 +2864,16 @@
    "iniciativas_cd": 31,
    "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 72,
-    "total": 198,
+    "presentes": 76,
+    "total": 203,
     "breakdown": {
-     "Excusa": 123,
-     "Presente": 58,
+     "Presente": 62,
+     "Excusa": 124,
      "Ausente": 3,
      "Presente Incorporado": 14
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Pedro de Macorís"
   },
@@ -2934,16 +2890,16 @@
    "iniciativas_cd": 45,
    "iniciativas_total_sil": 45,
    "asistencia": {
-    "presentes": 125,
-    "total": 198,
+    "presentes": 126,
+    "total": 203,
     "breakdown": {
-     "Presente": 124,
-     "Excusa": 72,
+     "Excusa": 76,
+     "Presente": 125,
      "Presente Incorporado": 1,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Pedro de Macorís"
   },
@@ -2953,27 +2909,27 @@
    "cargo_hasta": null,
    "comisiones": [
     "05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza el pago de deuda por obras ejecutadas sin contrato formal.",
-    "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
-    "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
+    "06381-2024-2028-CD Comisión bicameral designada para el estudio del proyecto de ley Presupuesto General del Estado para el año 2027.",
+    "06384-2024-2028-CD Comisión bicameral para el estudio del proyecto de ley del Código Civil de la República Dominicana.",
     "Ciberseguridad",
     "Justicia",
     "Obras Públicas y Comunicaciones",
     "Presupuesto, Patrimonio y Contabilidad"
    ],
-   "iniciativas_cd": 83,
-   "iniciativas_total_sil": 83,
+   "iniciativas_cd": 87,
+   "iniciativas_total_sil": 87,
    "asistencia": {
-    "presentes": 184,
-    "total": 198,
+    "presentes": 188,
+    "total": 203,
     "breakdown": {
+     "Presente": 174,
+     "Excusa": 10,
      "Presente Incorporado": 14,
-     "Presente": 170,
-     "Excusa": 9,
      "Ausente": 1,
      "Licencia": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Pedro de Macorís"
   },
@@ -2983,24 +2939,24 @@
    "cargo_hasta": null,
    "comisiones": [
     "00674-2025-PLO-SE Comisión bicameral designada para estudiar el proyecto de ley general de salud.",
-    "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
+    "06384-2024-2028-CD Comisión bicameral para el estudio del proyecto de ley del Código Civil de la República Dominicana.",
     "Junta Central Electoral",
     "Justicia",
     "Ministerio Público",
     "Movilidad y Transporte"
    ],
-   "iniciativas_cd": 166,
-   "iniciativas_total_sil": 166,
+   "iniciativas_cd": 171,
+   "iniciativas_total_sil": 171,
    "asistencia": {
-    "presentes": 181,
-    "total": 198,
+    "presentes": 186,
+    "total": 203,
     "breakdown": {
+     "Presente": 167,
      "Presente Incorporado": 19,
-     "Presente": 162,
      "Excusa": 17
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "San Pedro de Macorís"
   },
@@ -3016,19 +2972,19 @@
     "Medio Ambiente y Recursos Naturales",
     "Reconocimientos"
    ],
-   "iniciativas_cd": 58,
-   "iniciativas_total_sil": 58,
+   "iniciativas_cd": 61,
+   "iniciativas_total_sil": 61,
    "asistencia": {
-    "presentes": 186,
-    "total": 198,
+    "presentes": 190,
+    "total": 203,
     "breakdown": {
-     "Presente": 180,
+     "Presente": 184,
+     "Excusa": 10,
      "Presente Incorporado": 6,
-     "Excusa": 9,
      "Ausente": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Sánchez Ramírez"
   },
@@ -3037,26 +2993,25 @@
    "sil_nombre": "José Alberto Jiménez Santos",
    "cargo_hasta": null,
    "comisiones": [
-    "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
+    "06384-2024-2028-CD Comisión bicameral para el estudio del proyecto de ley del Código Civil de la República Dominicana.",
     "Asuntos Mineros",
     "Junta Central Electoral",
     "Justicia",
     "Ministerio Público"
    ],
-   "iniciativas_cd": 41,
-   "iniciativas_total_sil": 41,
+   "iniciativas_cd": 42,
+   "iniciativas_total_sil": 42,
    "asistencia": {
-    "presentes": 195,
-    "total": 198,
+    "presentes": 198,
+    "total": 203,
     "breakdown": {
-     "Presente": 192,
+     "Excusa": 3,
+     "Presente": 195,
      "Presente Incorporado": 3,
-     "Excusa": 1,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Sánchez Ramírez"
   },
@@ -3066,28 +3021,29 @@
    "cargo_hasta": null,
    "comisiones": [
     "05405-2024-2028-CD Comisión especial designada para el estudio del Proyecto de ley de los cuerpos de bomberos de la República Dominicana.",
-    "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
     "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
+    "06384-2024-2028-CD Comisión bicameral para el estudio del proyecto de ley del Código Civil de la República Dominicana.",
     "Asuntos Migratorios",
     "Asuntos Mineros",
     "Ciberseguridad",
+    "Comisión bicameral designada para estudiar el proyecto de ley orgánica de la Policía Nacional.",
     "Interior y Policía",
     "Justicia",
     "Ministerio Público"
    ],
-   "iniciativas_cd": 69,
-   "iniciativas_total_sil": 69,
+   "iniciativas_cd": 72,
+   "iniciativas_total_sil": 72,
    "asistencia": {
-    "presentes": 191,
-    "total": 198,
+    "presentes": 196,
+    "total": 203,
     "breakdown": {
-     "Presente": 158,
-     "Presente Incorporado": 33,
+     "Presente": 162,
+     "Presente Incorporado": 34,
      "Ausente": 4,
      "Excusa": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Sánchez Ramírez"
   },
@@ -3105,16 +3061,16 @@
    "iniciativas_cd": 77,
    "iniciativas_total_sil": 77,
    "asistencia": {
-    "presentes": 183,
-    "total": 198,
+    "presentes": 185,
+    "total": 203,
     "breakdown": {
-     "Presente": 178,
-     "Excusa": 14,
+     "Excusa": 17,
+     "Presente": 180,
      "Presente Incorporado": 5,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3125,27 +3081,24 @@
    "comisiones": [
     "03313-2024-2028-CD Comisión especial PR investigación abandono La Cruz de Manzanillo.",
     "04691-2024-2028-CD proyecto de resolución de interpelación al señor Celso Marranzini",
-    "04711-2024-2028-CD Comisión especial que estudia el proyecto de ley que regula la libertad religiosa de conciencia y de cultos",
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
     "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
     "Administración de Deuda Pública y Activos Financieros",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
     "Defensa",
     "Inteligencia Artificial",
     "Presidencia de la República"
    ],
-   "iniciativas_cd": 68,
-   "iniciativas_total_sil": 68,
+   "iniciativas_cd": 69,
+   "iniciativas_total_sil": 69,
    "asistencia": {
-    "presentes": 190,
-    "total": 198,
+    "presentes": 195,
+    "total": 203,
     "breakdown": {
-     "Presente": 186,
-     "Presente Incorporado": 4,
+     "Presente": 190,
+     "Presente Incorporado": 5,
      "Excusa": 8
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3162,17 +3115,17 @@
     "Educación Superior, Ciencia y Tecnología",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 52,
-   "iniciativas_total_sil": 52,
+   "iniciativas_cd": 54,
+   "iniciativas_total_sil": 54,
    "asistencia": {
-    "presentes": 190,
-    "total": 198,
+    "presentes": 195,
+    "total": 203,
     "breakdown": {
-     "Presente": 190,
+     "Presente": 195,
      "Excusa": 8
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3182,25 +3135,24 @@
    "cargo_hasta": null,
    "comisiones": [
     "05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza el pago de deuda por obras ejecutadas sin contrato formal.",
-    "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
     "Administración Interior",
     "Comisión Coordinadora 2026-2027",
     "Juventud",
     "Presidencia de la República",
     "Relaciones Exteriores y Cooperación Internacional"
    ],
-   "iniciativas_cd": 71,
-   "iniciativas_total_sil": 71,
+   "iniciativas_cd": 72,
+   "iniciativas_total_sil": 72,
    "asistencia": {
-    "presentes": 187,
-    "total": 198,
+    "presentes": 192,
+    "total": 203,
     "breakdown": {
-     "Presente": 185,
+     "Presente": 190,
      "Excusa": 11,
      "Presente Incorporado": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3211,25 +3163,24 @@
    "comisiones": [
     "05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza el pago de deuda por obras ejecutadas sin contrato formal.",
     "05368-2024-2028-CD Comisión especial designada para estudiar el Proyecto de ley que modifica la Ley núm.5-13 sobre Discapacidad en la República Dominicana.",
-    "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
+    "06381-2024-2028-CD Comisión bicameral designada para el estudio del proyecto de ley Presupuesto General del Estado para el año 2027.",
     "Ciberseguridad",
     "Industria y Comercio",
     "Presupuesto, Patrimonio y Contabilidad",
     "Reconocimientos",
     "Relaciones Exteriores y Cooperación Internacional"
    ],
-   "iniciativas_cd": 94,
-   "iniciativas_total_sil": 94,
+   "iniciativas_cd": 98,
+   "iniciativas_total_sil": 98,
    "asistencia": {
-    "presentes": 193,
-    "total": 198,
+    "presentes": 198,
+    "total": 203,
     "breakdown": {
-     "Presente": 193,
+     "Presente": 198,
      "Excusa": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3239,26 +3190,25 @@
    "cargo_hasta": null,
    "comisiones": [
     "04691-2024-2028-CD proyecto de resolución de interpelación al señor Celso Marranzini",
-    "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
     "Asuntos de Equidad de Género",
     "Presidencia de la República",
     "Reconocimientos",
     "Relaciones Exteriores y Cooperación Internacional",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 57,
-   "iniciativas_total_sil": 57,
+   "iniciativas_cd": 58,
+   "iniciativas_total_sil": 58,
    "asistencia": {
-    "presentes": 187,
-    "total": 198,
+    "presentes": 192,
+    "total": 203,
     "breakdown": {
-     "Presente": 186,
+     "Presente": 191,
      "Excusa": 10,
      "Presente Incorporado": 1,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3267,24 +3217,24 @@
    "sil_nombre": "Félix Michell Rodríguez Morel",
    "cargo_hasta": null,
    "comisiones": [
+    "06381-2024-2028-CD Comisión bicameral designada para el estudio del proyecto de ley Presupuesto General del Estado para el año 2027.",
     "Asuntos Cooperativos",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
     "Contratos",
     "Hacienda"
    ],
    "iniciativas_cd": 34,
    "iniciativas_total_sil": 34,
    "asistencia": {
-    "presentes": 189,
-    "total": 198,
+    "presentes": 194,
+    "total": 203,
     "breakdown": {
-     "Presente": 177,
-     "Presente Incorporado": 12,
+     "Presente": 181,
+     "Presente Incorporado": 13,
      "Excusa": 6,
      "Ausente": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3298,15 +3248,15 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 144,
-    "total": 198,
+    "presentes": 149,
+    "total": 203,
     "breakdown": {
-     "Presente": 144,
+     "Presente": 149,
      "Excusa": 52,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3316,8 +3266,8 @@
    "cargo_hasta": null,
    "comisiones": [
     "04691-2024-2028-CD proyecto de resolución de interpelación al señor Celso Marranzini",
+    "06381-2024-2028-CD Comisión bicameral designada para el estudio del proyecto de ley Presupuesto General del Estado para el año 2027.",
     "Asuntos Mineros",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
     "Hacienda",
     "Recursos Hídricos",
     "Trabajo"
@@ -3325,16 +3275,16 @@
    "iniciativas_cd": 63,
    "iniciativas_total_sil": 63,
    "asistencia": {
-    "presentes": 192,
-    "total": 198,
+    "presentes": 197,
+    "total": 203,
     "breakdown": {
-     "Presente": 186,
+     "Presente": 191,
      "Presente Incorporado": 6,
      "Excusa": 4,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3344,28 +3294,26 @@
    "cargo_hasta": null,
    "comisiones": [
     "04691-2024-2028-CD proyecto de resolución de interpelación al señor Celso Marranzini",
-    "04711-2024-2028-CD Comisión especial que estudia el proyecto de ley que regula la libertad religiosa de conciencia y de cultos",
     "Asuntos Fronterizos",
     "Comisión Coordinadora 2026-2027",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Educación",
     "Educación Superior, Ciencia y Tecnología",
     "Energía",
     "Mipymes"
    ],
-   "iniciativas_cd": 62,
-   "iniciativas_total_sil": 62,
+   "iniciativas_cd": 63,
+   "iniciativas_total_sil": 63,
    "asistencia": {
-    "presentes": 191,
-    "total": 198,
+    "presentes": 196,
+    "total": 203,
     "breakdown": {
-     "Presente": 185,
-     "Presente Incorporado": 6,
+     "Presente": 189,
+     "Presente Incorporado": 7,
      "Excusa": 5,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3384,16 +3332,16 @@
    "iniciativas_cd": 100,
    "iniciativas_total_sil": 100,
    "asistencia": {
-    "presentes": 189,
-    "total": 198,
+    "presentes": 194,
+    "total": 203,
     "breakdown": {
-     "Presente": 180,
+     "Presente": 185,
      "Presente Incorporado": 9,
      "Excusa": 6,
      "Ausente": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3410,16 +3358,16 @@
    "iniciativas_cd": 31,
    "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 169,
-    "total": 198,
+    "presentes": 174,
+    "total": 203,
     "breakdown": {
+     "Presente": 142,
      "Presente Incorporado": 32,
-     "Presente": 137,
      "Excusa": 20,
      "Ausente": 9
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3429,27 +3377,26 @@
    "cargo_hasta": null,
    "comisiones": [
     "05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza el pago de deuda por obras ejecutadas sin contrato formal.",
-    "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
+    "06381-2024-2028-CD Comisión bicameral designada para el estudio del proyecto de ley Presupuesto General del Estado para el año 2027.",
     "Administración Interior",
     "Administración de Deuda Pública y Activos Financieros",
     "Asuntos Marítimos",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Derechos Humanos",
     "Recursos Hídricos"
    ],
    "iniciativas_cd": 64,
    "iniciativas_total_sil": 64,
    "asistencia": {
-    "presentes": 191,
-    "total": 198,
+    "presentes": 196,
+    "total": 203,
     "breakdown": {
+     "Presente": 184,
      "Presente Incorporado": 12,
-     "Presente": 179,
      "Licencia": 6,
      "Excusa": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3459,26 +3406,25 @@
    "cargo_hasta": null,
    "comisiones": [
     "00674-2025-PLO-SE Comisión bicameral designada para estudiar el proyecto de ley general de salud.",
-    "04711-2024-2028-CD Comisión especial que estudia el proyecto de ley que regula la libertad religiosa de conciencia y de cultos",
     "05368-2024-2028-CD Comisión especial designada para estudiar el Proyecto de ley que modifica la Ley núm.5-13 sobre Discapacidad en la República Dominicana.",
     "Economía, Planificación y Desarrollo",
     "Educación Superior, Ciencia y Tecnología",
     "Familia",
     "Salud"
    ],
-   "iniciativas_cd": 108,
-   "iniciativas_total_sil": 108,
+   "iniciativas_cd": 110,
+   "iniciativas_total_sil": 110,
    "asistencia": {
-    "presentes": 172,
-    "total": 198,
+    "presentes": 176,
+    "total": 203,
     "breakdown": {
-     "Presente": 171,
-     "Excusa": 24,
+     "Presente": 175,
+     "Excusa": 25,
      "Presente Incorporado": 1,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3495,18 +3441,18 @@
     "Familia",
     "Junta Central Electoral"
    ],
-   "iniciativas_cd": 123,
-   "iniciativas_total_sil": 123,
+   "iniciativas_cd": 125,
+   "iniciativas_total_sil": 125,
    "asistencia": {
-    "presentes": 160,
-    "total": 198,
+    "presentes": 163,
+    "total": 203,
     "breakdown": {
-     "Presente Incorporado": 24,
-     "Presente": 136,
-     "Excusa": 38
+     "Excusa": 40,
+     "Presente": 139,
+     "Presente Incorporado": 24
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3522,18 +3468,18 @@
     "Interior y Policía",
     "Relaciones Exteriores y Cooperación Internacional"
    ],
-   "iniciativas_cd": 61,
-   "iniciativas_total_sil": 61,
+   "iniciativas_cd": 63,
+   "iniciativas_total_sil": 63,
    "asistencia": {
-    "presentes": 193,
-    "total": 198,
+    "presentes": 198,
+    "total": 203,
     "breakdown": {
-     "Presente": 186,
+     "Presente": 191,
      "Presente Incorporado": 7,
      "Excusa": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3545,9 +3491,8 @@
     "03313-2024-2028-CD Comisión especial PR investigación abandono La Cruz de Manzanillo.",
     "05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza el pago de deuda por obras ejecutadas sin contrato formal.",
     "05368-2024-2028-CD Comisión especial designada para estudiar el Proyecto de ley que modifica la Ley núm.5-13 sobre Discapacidad en la República Dominicana.",
-    "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
-    "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
     "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
+    "06384-2024-2028-CD Comisión bicameral para el estudio del proyecto de ley del Código Civil de la República Dominicana.",
     "Desarrollo Humano",
     "Dominicanos en el Exterior",
     "Justicia",
@@ -3557,17 +3502,17 @@
    "iniciativas_cd": 50,
    "iniciativas_total_sil": 50,
    "asistencia": {
-    "presentes": 169,
-    "total": 198,
+    "presentes": 174,
+    "total": 203,
     "breakdown": {
-     "Presente": 151,
+     "Presente": 155,
+     "Presente Incorporado": 19,
      "Excusa": 24,
-     "Presente Incorporado": 18,
      "Ausente": 4,
      "Representación de la Cámara": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3584,16 +3529,16 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 185,
-    "total": 198,
+    "presentes": 190,
+    "total": 203,
     "breakdown": {
+     "Presente": 178,
      "Presente Incorporado": 12,
-     "Presente": 173,
      "Ausente": 4,
      "Excusa": 9
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago"
   },
@@ -3607,18 +3552,18 @@
     "Educación",
     "Ética"
    ],
-   "iniciativas_cd": 62,
-   "iniciativas_total_sil": 62,
+   "iniciativas_cd": 63,
+   "iniciativas_total_sil": 63,
    "asistencia": {
-    "presentes": 185,
-    "total": 198,
+    "presentes": 190,
+    "total": 203,
     "breakdown": {
-     "Presente": 177,
+     "Presente": 182,
      "Presente Incorporado": 8,
      "Excusa": 13
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago Rodríguez"
   },
@@ -3628,7 +3573,6 @@
    "cargo_hasta": null,
    "comisiones": [
     "03313-2024-2028-CD Comisión especial PR investigación abandono La Cruz de Manzanillo.",
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
     "Defensa",
     "Mipymes",
     "Ética"
@@ -3636,15 +3580,15 @@
    "iniciativas_cd": 44,
    "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 196,
-    "total": 198,
+    "presentes": 201,
+    "total": 203,
     "breakdown": {
-     "Presente": 193,
+     "Presente": 198,
      "Presente Incorporado": 3,
      "Excusa": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santiago Rodríguez"
   },
@@ -3654,26 +3598,25 @@
    "cargo_hasta": null,
    "comisiones": [
     "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
+    "06381-2024-2028-CD Comisión bicameral designada para el estudio del proyecto de ley Presupuesto General del Estado para el año 2027.",
     "Deportes y Recreación",
     "Energía",
     "Hacienda",
     "Inteligencia Artificial",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 27,
-   "iniciativas_total_sil": 27,
+   "iniciativas_cd": 28,
+   "iniciativas_total_sil": 28,
    "asistencia": {
-    "presentes": 193,
-    "total": 198,
+    "presentes": 196,
+    "total": 203,
     "breakdown": {
-     "Presente": 181,
-     "Presente Incorporado": 12,
-     "Excusa": 5
+     "Excusa": 7,
+     "Presente": 183,
+     "Presente Incorporado": 13
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -3687,18 +3630,18 @@
     "Mipymes",
     "Relaciones Exteriores y Cooperación Internacional"
    ],
-   "iniciativas_cd": 27,
-   "iniciativas_total_sil": 27,
+   "iniciativas_cd": 28,
+   "iniciativas_total_sil": 28,
    "asistencia": {
-    "presentes": 184,
-    "total": 198,
+    "presentes": 189,
+    "total": 203,
     "breakdown": {
-     "Presente Incorporado": 30,
-     "Presente": 154,
+     "Presente": 157,
+     "Presente Incorporado": 32,
      "Excusa": 14
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -3713,17 +3656,17 @@
     "Mipymes",
     "Movilidad y Transporte"
    ],
-   "iniciativas_cd": 48,
-   "iniciativas_total_sil": 48,
+   "iniciativas_cd": 50,
+   "iniciativas_total_sil": 50,
    "asistencia": {
-    "presentes": 198,
-    "total": 198,
+    "presentes": 203,
+    "total": 203,
     "breakdown": {
-     "Presente": 189,
+     "Presente": 194,
      "Presente Incorporado": 9
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -3732,24 +3675,23 @@
    "sil_nombre": "Altagracia de los Santos",
    "cargo_hasta": null,
    "comisiones": [
-    "04711-2024-2028-CD Comisión especial que estudia el proyecto de ley que regula la libertad religiosa de conciencia y de cultos",
     "Educación Superior, Ciencia y Tecnología",
     "Energía",
     "Familia",
     "Reconocimientos"
    ],
-   "iniciativas_cd": 52,
-   "iniciativas_total_sil": 52,
+   "iniciativas_cd": 53,
+   "iniciativas_total_sil": 53,
    "asistencia": {
-    "presentes": 186,
-    "total": 198,
+    "presentes": 191,
+    "total": 203,
     "breakdown": {
+     "Presente": 188,
      "Excusa": 12,
-     "Presente": 183,
      "Presente Incorporado": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -3758,23 +3700,21 @@
    "sil_nombre": "Amado Antonio Díaz Jiménez",
    "cargo_hasta": null,
    "comisiones": [
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
     "Administración Interior",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
     "Comisión Coordinadora 2026-2027",
     "Modernización y Reforma"
    ],
    "iniciativas_cd": 57,
    "iniciativas_total_sil": 57,
    "asistencia": {
-    "presentes": 197,
-    "total": 198,
+    "presentes": 202,
+    "total": 203,
     "breakdown": {
-     "Presente": 197,
+     "Presente": 202,
      "Excusa": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -3783,24 +3723,24 @@
    "sil_nombre": "Ana Adalgiza del Carmen Abreu Polanco",
    "cargo_hasta": null,
    "comisiones": [
-    "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
+    "Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "Familia",
     "Reconocimientos",
     "Salud",
     "Seguridad Social"
    ],
-   "iniciativas_cd": 46,
-   "iniciativas_total_sil": 46,
+   "iniciativas_cd": 48,
+   "iniciativas_total_sil": 48,
    "asistencia": {
-    "presentes": 189,
-    "total": 198,
+    "presentes": 194,
+    "total": 203,
     "breakdown": {
-     "Presente": 177,
+     "Presente": 182,
      "Excusa": 9,
      "Presente Incorporado": 12
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -3819,15 +3759,15 @@
    "iniciativas_cd": 43,
    "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 190,
-    "total": 198,
+    "presentes": 195,
+    "total": 203,
     "breakdown": {
-     "Presente": 183,
+     "Presente": 188,
      "Excusa": 8,
      "Presente Incorporado": 7
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -3841,19 +3781,19 @@
     "Familia",
     "Medios de Comunicación"
    ],
-   "iniciativas_cd": 44,
-   "iniciativas_total_sil": 44,
+   "iniciativas_cd": 45,
+   "iniciativas_total_sil": 45,
    "asistencia": {
-    "presentes": 141,
-    "total": 198,
+    "presentes": 146,
+    "total": 203,
     "breakdown": {
-     "Presente Incorporado": 21,
-     "Presente": 120,
+     "Presente": 124,
+     "Presente Incorporado": 22,
      "Excusa": 51,
      "Ausente": 6
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -3866,19 +3806,19 @@
     "Recursos Hídricos",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 81,
-   "iniciativas_total_sil": 81,
+   "iniciativas_cd": 82,
+   "iniciativas_total_sil": 82,
    "asistencia": {
-    "presentes": 188,
-    "total": 198,
+    "presentes": 193,
+    "total": 203,
     "breakdown": {
-     "Presente": 185,
+     "Presente": 190,
      "Excusa": 8,
      "Presente Incorporado": 3,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -3895,17 +3835,17 @@
    "iniciativas_cd": 24,
    "iniciativas_total_sil": 24,
    "asistencia": {
-    "presentes": 124,
-    "total": 198,
+    "presentes": 127,
+    "total": 203,
     "breakdown": {
-     "Presente": 94,
+     "Presente": 95,
+     "Presente Incorporado": 32,
+     "Excusa": 34,
      "Ausente": 34,
-     "Excusa": 32,
-     "Presente Incorporado": 30,
      "Licencia": 8
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -3926,16 +3866,16 @@
    "iniciativas_cd": 57,
    "iniciativas_total_sil": 57,
    "asistencia": {
-    "presentes": 195,
-    "total": 198,
+    "presentes": 200,
+    "total": 203,
     "breakdown": {
-     "Presente": 192,
+     "Presente": 197,
      "Ausente": 2,
      "Presente Incorporado": 3,
      "Representación de la Cámara": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -3944,10 +3884,8 @@
    "sil_nombre": "Dellys Dumidia Féliz Rodríguez",
    "cargo_hasta": null,
    "comisiones": [
-    "03465-2024-2028-CD Comisión Especial para estudiar el proyecto de resolución que solicita investigar la construcción de un acueducto para Haina dentro de un polideportivo.",
-    "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
+    "06381-2024-2028-CD Comisión bicameral designada para el estudio del proyecto de ley Presupuesto General del Estado para el año 2027.",
     "Administración de Deuda Pública y Activos Financieros",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
     "Derechos Humanos",
     "Desarrollo Humano",
     "Hacienda",
@@ -3956,16 +3894,16 @@
    "iniciativas_cd": 38,
    "iniciativas_total_sil": 38,
    "asistencia": {
-    "presentes": 166,
-    "total": 198,
+    "presentes": 171,
+    "total": 203,
     "breakdown": {
-     "Presente": 147,
-     "Presente Incorporado": 19,
+     "Presente": 151,
+     "Presente Incorporado": 20,
      "Excusa": 25,
      "Ausente": 7
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -3980,19 +3918,19 @@
     "Desarrollo Humano",
     "Salud"
    ],
-   "iniciativas_cd": 58,
-   "iniciativas_total_sil": 58,
+   "iniciativas_cd": 59,
+   "iniciativas_total_sil": 59,
    "asistencia": {
-    "presentes": 189,
-    "total": 198,
+    "presentes": 194,
+    "total": 203,
     "breakdown": {
-     "Presente": 188,
+     "Presente": 193,
      "Excusa": 8,
      "Representación de la Cámara": 1,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4002,22 +3940,23 @@
    "cargo_hasta": null,
    "comisiones": [
     "Administración Pública",
+    "Comisión bicameral designada para estudiar el proyecto de ley orgánica de la Policía Nacional.",
     "Defensa",
     "Interior y Policía"
    ],
    "iniciativas_cd": 20,
    "iniciativas_total_sil": 20,
    "asistencia": {
-    "presentes": 129,
-    "total": 198,
+    "presentes": 131,
+    "total": 203,
     "breakdown": {
+     "Excusa": 64,
+     "Presente": 112,
      "Presente Incorporado": 19,
-     "Presente": 110,
-     "Excusa": 61,
      "Ausente": 8
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4029,22 +3968,21 @@
     "Administración Interior",
     "Asuntos de Equidad de Género",
     "Comisión Coordinadora 2026-2027",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Industria y Comercio",
     "Medio Ambiente y Recursos Naturales"
    ],
    "iniciativas_cd": 54,
    "iniciativas_total_sil": 54,
    "asistencia": {
-    "presentes": 189,
-    "total": 198,
+    "presentes": 194,
+    "total": 203,
     "breakdown": {
-     "Presente": 184,
+     "Presente": 189,
      "Presente Incorporado": 5,
      "Excusa": 9
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4054,25 +3992,24 @@
    "cargo_hasta": null,
    "comisiones": [
     "Asuntos Marítimos",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
     "Contratos",
     "Desarrollo Humano",
     "Hacienda",
     "Presupuesto, Patrimonio y Contabilidad"
    ],
-   "iniciativas_cd": 41,
-   "iniciativas_total_sil": 41,
+   "iniciativas_cd": 42,
+   "iniciativas_total_sil": 42,
    "asistencia": {
-    "presentes": 168,
-    "total": 198,
+    "presentes": 170,
+    "total": 203,
     "breakdown": {
-     "Presente": 139,
-     "Ausente": 8,
-     "Presente Incorporado": 29,
-     "Excusa": 22
+     "Presente": 140,
+     "Presente Incorporado": 30,
+     "Excusa": 25,
+     "Ausente": 8
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4081,7 +4018,6 @@
    "sil_nombre": "Eudy Maldonado de la Cruz",
    "cargo_hasta": null,
    "comisiones": [
-    "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
     "Ciberseguridad",
     "Defensa",
     "Juventud",
@@ -4091,16 +4027,16 @@
    "iniciativas_cd": 23,
    "iniciativas_total_sil": 23,
    "asistencia": {
-    "presentes": 176,
-    "total": 198,
+    "presentes": 181,
+    "total": 203,
     "breakdown": {
-     "Presente": 169,
+     "Presente": 174,
      "Presente Incorporado": 7,
      "Excusa": 12,
      "Ausente": 10
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4114,19 +4050,19 @@
     "Movilidad y Transporte",
     "Obras Públicas y Comunicaciones"
    ],
-   "iniciativas_cd": 21,
-   "iniciativas_total_sil": 21,
+   "iniciativas_cd": 22,
+   "iniciativas_total_sil": 22,
    "asistencia": {
-    "presentes": 195,
-    "total": 198,
+    "presentes": 200,
+    "total": 203,
     "breakdown": {
-     "Presente": 183,
-     "Presente Incorporado": 12,
+     "Presente": 187,
+     "Presente Incorporado": 13,
      "Excusa": 1,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4135,10 +4071,10 @@
    "sil_nombre": "Franklin Martínez",
    "cargo_hasta": null,
    "comisiones": [
-    "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
     "Administración de Deuda Pública y Activos Financieros",
     "Asuntos Cooperativos",
     "Asuntos Municipales",
+    "Comisión bicameral designada para estudiar el proyecto de ley orgánica de la Policía Nacional.",
     "Deportes y Recreación",
     "Interior y Policía",
     "Relaciones Exteriores y Cooperación Internacional"
@@ -4146,16 +4082,16 @@
    "iniciativas_cd": 31,
    "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 180,
-    "total": 198,
+    "presentes": 185,
+    "total": 203,
     "breakdown": {
-     "Presente": 165,
+     "Presente": 170,
      "Presente Incorporado": 15,
      "Excusa": 2,
      "Ausente": 16
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4164,26 +4100,26 @@
    "sil_nombre": "Heriberto Aracena Montilla",
    "cargo_hasta": null,
    "comisiones": [
-    "05218-2024-2028-CD Comisión especial designada para estudiar el proyecto de ley de amnistía para el registro de armas de fuego.",
+    "Comisión bicameral designada para estudiar el proyecto de ley orgánica de la Policía Nacional.",
     "Defensa",
     "Deportes y Recreación",
     "Interior y Policía",
     "Modernización y Reforma",
     "Movilidad y Transporte"
    ],
-   "iniciativas_cd": 40,
-   "iniciativas_total_sil": 40,
+   "iniciativas_cd": 41,
+   "iniciativas_total_sil": 41,
    "asistencia": {
-    "presentes": 196,
-    "total": 198,
+    "presentes": 201,
+    "total": 203,
     "breakdown": {
-     "Presente": 180,
+     "Presente": 185,
      "Presente Incorporado": 16,
      "Excusa": 1,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4192,24 +4128,25 @@
    "sil_nombre": "Ignacio Aracena",
    "cargo_hasta": null,
    "comisiones": [
+    "Comisión bicameral designada para estudiar el proyecto de ley orgánica de la Policía Nacional.",
     "Interior y Policía",
     "Medios de Comunicación",
     "Relaciones Exteriores y Cooperación Internacional",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 65,
-   "iniciativas_total_sil": 65,
+   "iniciativas_cd": 66,
+   "iniciativas_total_sil": 66,
    "asistencia": {
-    "presentes": 178,
-    "total": 198,
+    "presentes": 183,
+    "total": 203,
     "breakdown": {
-     "Presente": 171,
+     "Presente": 176,
      "Presente Incorporado": 7,
      "Excusa": 16,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4224,18 +4161,18 @@
     "Trabajo",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 35,
-   "iniciativas_total_sil": 35,
+   "iniciativas_cd": 36,
+   "iniciativas_total_sil": 36,
    "asistencia": {
-    "presentes": 190,
-    "total": 198,
+    "presentes": 195,
+    "total": 203,
     "breakdown": {
-     "Presente": 173,
-     "Presente Incorporado": 17,
+     "Presente": 176,
+     "Presente Incorporado": 19,
      "Excusa": 8
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4244,27 +4181,28 @@
    "sil_nombre": "Jesús Manuel Sánchez Martínez",
    "cargo_hasta": null,
    "comisiones": [
-    "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
     "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
+    "06384-2024-2028-CD Comisión bicameral para el estudio del proyecto de ley del Código Civil de la República Dominicana.",
     "Asuntos Municipales",
+    "Comisión bicameral designada para estudiar el proyecto de ley orgánica de la Policía Nacional.",
     "Interior y Policía",
     "Justicia",
     "Medios de Comunicación",
     "Ministerio Público"
    ],
-   "iniciativas_cd": 41,
-   "iniciativas_total_sil": 41,
+   "iniciativas_cd": 43,
+   "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 194,
-    "total": 198,
+    "presentes": 199,
+    "total": 203,
     "breakdown": {
-     "Presente": 186,
-     "Presente Incorporado": 8,
+     "Presente": 190,
+     "Presente Incorporado": 9,
      "Representación de la Cámara": 1,
      "Excusa": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4279,19 +4217,19 @@
     "Obras Públicas y Comunicaciones",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 51,
-   "iniciativas_total_sil": 51,
+   "iniciativas_cd": 59,
+   "iniciativas_total_sil": 59,
    "asistencia": {
-    "presentes": 153,
-    "total": 198,
+    "presentes": 157,
+    "total": 203,
     "breakdown": {
-     "Excusa": 33,
-     "Presente Incorporado": 32,
-     "Presente": 121,
-     "Ausente": 12
+     "Presente": 124,
+     "Presente Incorporado": 33,
+     "Ausente": 13,
+     "Excusa": 33
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4300,9 +4238,6 @@
    "sil_nombre": "Jorge Frías",
    "cargo_hasta": "2026-08-07",
    "comisiones": [
-    "04711-2024-2028-CD Comisión especial que estudia el proyecto de ley que regula la libertad religiosa de conciencia y de cultos",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Contratos",
     "Hacienda"
    ],
@@ -4326,26 +4261,25 @@
    "sil_nombre": "José Moisés Ortiz López",
    "cargo_hasta": null,
    "comisiones": [
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
     "Cámara de Cuentas",
     "Medio Ambiente y Recursos Naturales",
     "Movilidad y Transporte",
     "Obras Públicas y Comunicaciones",
     "Recursos Hídricos"
    ],
-   "iniciativas_cd": 47,
-   "iniciativas_total_sil": 47,
+   "iniciativas_cd": 49,
+   "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 194,
-    "total": 198,
+    "presentes": 199,
+    "total": 203,
     "breakdown": {
-     "Presente": 193,
+     "Presente": 198,
      "Presente Incorporado": 1,
      "Ausente": 3,
      "Excusa": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4358,19 +4292,19 @@
     "Defensa",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 30,
-   "iniciativas_total_sil": 30,
+   "iniciativas_cd": 31,
+   "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 167,
-    "total": 198,
+    "presentes": 171,
+    "total": 203,
     "breakdown": {
-     "Presente": 147,
-     "Excusa": 29,
-     "Presente Incorporado": 20,
+     "Presente": 149,
+     "Excusa": 30,
+     "Presente Incorporado": 22,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4379,7 +4313,6 @@
    "sil_nombre": "Juan José Rojas Franco",
    "cargo_hasta": null,
    "comisiones": [
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Cámara de Cuentas",
     "Defensa",
     "Deportes y Recreación",
@@ -4389,15 +4322,15 @@
    "iniciativas_cd": 115,
    "iniciativas_total_sil": 115,
    "asistencia": {
-    "presentes": 183,
-    "total": 198,
+    "presentes": 188,
+    "total": 203,
     "breakdown": {
-     "Presente": 178,
+     "Presente": 183,
      "Presente Incorporado": 5,
      "Excusa": 15
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4411,18 +4344,18 @@
     "Presidencia de la República",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 49,
-   "iniciativas_total_sil": 49,
+   "iniciativas_cd": 51,
+   "iniciativas_total_sil": 51,
    "asistencia": {
-    "presentes": 197,
-    "total": 198,
+    "presentes": 202,
+    "total": 203,
     "breakdown": {
+     "Presente": 191,
      "Ausente": 1,
-     "Presente": 186,
      "Presente Incorporado": 11
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4438,19 +4371,19 @@
     "Hacienda",
     "Relaciones Exteriores y Cooperación Internacional"
    ],
-   "iniciativas_cd": 50,
-   "iniciativas_total_sil": 50,
+   "iniciativas_cd": 58,
+   "iniciativas_total_sil": 58,
    "asistencia": {
-    "presentes": 151,
-    "total": 198,
+    "presentes": 155,
+    "total": 203,
     "breakdown": {
-     "Excusa": 38,
-     "Presente": 116,
-     "Presente Incorporado": 35,
-     "Ausente": 9
+     "Presente": 119,
+     "Presente Incorporado": 36,
+     "Ausente": 10,
+     "Excusa": 38
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4459,8 +4392,6 @@
    "sil_nombre": "Lucila Leonarda de León Martínez",
    "cargo_hasta": null,
    "comisiones": [
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Contratos",
     "Derechos Humanos",
     "Dominicanos en el Exterior",
@@ -4469,15 +4400,15 @@
    "iniciativas_cd": 46,
    "iniciativas_total_sil": 46,
    "asistencia": {
-    "presentes": 196,
-    "total": 198,
+    "presentes": 199,
+    "total": 203,
     "breakdown": {
-     "Presente": 193,
-     "Presente Incorporado": 3,
-     "Excusa": 2
+     "Excusa": 4,
+     "Presente": 196,
+     "Presente Incorporado": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4494,16 +4425,16 @@
    "iniciativas_cd": 60,
    "iniciativas_total_sil": 60,
    "asistencia": {
-    "presentes": 169,
-    "total": 198,
+    "presentes": 174,
+    "total": 203,
     "breakdown": {
+     "Presente": 166,
      "Ausente": 8,
-     "Presente": 161,
      "Presente Incorporado": 8,
      "Excusa": 21
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4520,16 +4451,16 @@
    "iniciativas_cd": 49,
    "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 196,
-    "total": 198,
+    "presentes": 201,
+    "total": 203,
     "breakdown": {
-     "Presente Incorporado": 57,
+     "Presente": 143,
+     "Presente Incorporado": 58,
      "Excusa": 1,
-     "Presente": 139,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4543,19 +4474,19 @@
     "Obras Públicas y Comunicaciones",
     "Reconocimientos"
    ],
-   "iniciativas_cd": 40,
-   "iniciativas_total_sil": 40,
+   "iniciativas_cd": 41,
+   "iniciativas_total_sil": 41,
    "asistencia": {
-    "presentes": 178,
-    "total": 198,
+    "presentes": 181,
+    "total": 203,
     "breakdown": {
-     "Presente": 173,
-     "Excusa": 12,
+     "Excusa": 14,
+     "Presente": 176,
      "Presente Incorporado": 5,
      "Ausente": 8
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4566,26 +4497,24 @@
    "comisiones": [
     "04691-2024-2028-CD proyecto de resolución de interpelación al señor Celso Marranzini",
     "05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza el pago de deuda por obras ejecutadas sin contrato formal.",
-    "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
     "Administración de Deuda Pública y Activos Financieros",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Cámara de Cuentas",
     "Derechos Humanos",
     "Obras Públicas y Comunicaciones"
    ],
-   "iniciativas_cd": 13,
-   "iniciativas_total_sil": 13,
+   "iniciativas_cd": 15,
+   "iniciativas_total_sil": 15,
    "asistencia": {
-    "presentes": 182,
-    "total": 198,
+    "presentes": 187,
+    "total": 203,
     "breakdown": {
-     "Presente Incorporado": 20,
-     "Presente": 162,
+     "Presente": 165,
+     "Presente Incorporado": 22,
      "Excusa": 15,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4594,27 +4523,26 @@
    "sil_nombre": "Patricia Alexandra Núñez Rivera",
    "cargo_hasta": null,
    "comisiones": [
-    "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "05137-2024-2028-CD y 05138-2024-2028-CD Comisión Especial designada para el estudio de los proyectos de ley para la superación y reinserción de los adolescentes.",
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
     "Asuntos Mineros",
+    "Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "Familia",
     "Seguridad Social",
     "Trabajo"
    ],
-   "iniciativas_cd": 87,
-   "iniciativas_total_sil": 87,
+   "iniciativas_cd": 88,
+   "iniciativas_total_sil": 88,
    "asistencia": {
-    "presentes": 188,
-    "total": 198,
+    "presentes": 193,
+    "total": 203,
     "breakdown": {
+     "Presente": 183,
      "Presente Incorporado": 10,
-     "Presente": 178,
      "Excusa": 9,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4623,7 +4551,7 @@
    "sil_nombre": "Pedro Julio Alcántara",
    "cargo_hasta": null,
    "comisiones": [
-    "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
+    "Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "Cámara de Cuentas",
     "Seguridad Social",
     "Trabajo",
@@ -4632,16 +4560,16 @@
    "iniciativas_cd": 27,
    "iniciativas_total_sil": 27,
    "asistencia": {
-    "presentes": 155,
-    "total": 198,
+    "presentes": 157,
+    "total": 203,
     "breakdown": {
-     "Presente": 152,
-     "Excusa": 39,
+     "Excusa": 42,
+     "Presente": 154,
      "Ausente": 4,
      "Presente Incorporado": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4650,28 +4578,26 @@
    "sil_nombre": "Rafael Augusto Castillo Casado",
    "cargo_hasta": null,
    "comisiones": [
-    "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "05199-2024-2028-CD Comisión Especial designada para el estudio del proyecto de ley que autoriza el pago de deuda por obras ejecutadas sin contrato formal.",
-    "05650-2024-2028-CD Comisión Especial proyecto de ley que modifica el artículo 13 de la Ley núm. 118-21, del 31 de mayo de 2021, sobre terminación de obras viales, escuelas, hospitales y presas que se encuentran suspendidas.",
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
+    "06381-2024-2028-CD Comisión bicameral designada para el estudio del proyecto de ley Presupuesto General del Estado para el año 2027.",
     "Administración Interior",
-    "Comisión Bicameral para el estudio del proyecto de ley de medidas pro-crecimiento económico, simplificación fiscal y mitigación de la crisis internacional, solicitada por el Senado de la República.",
+    "Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "Hacienda",
     "Seguridad Social"
    ],
    "iniciativas_cd": 57,
    "iniciativas_total_sil": 57,
    "asistencia": {
-    "presentes": 180,
-    "total": 198,
+    "presentes": 185,
+    "total": 203,
     "breakdown": {
-     "Presente": 171,
+     "Presente": 176,
      "Excusa": 17,
      "Presente Incorporado": 9,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4680,28 +4606,26 @@
    "sil_nombre": "Rafaela González González",
    "cargo_hasta": null,
    "comisiones": [
-    "04711-2024-2028-CD Comisión especial que estudia el proyecto de ley que regula la libertad religiosa de conciencia y de cultos",
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
     "Administración Pública",
     "Asuntos Migratorios",
     "Educación Superior, Ciencia y Tecnología",
     "Presidencia de la República",
     "Trabajo"
    ],
-   "iniciativas_cd": 69,
-   "iniciativas_total_sil": 69,
+   "iniciativas_cd": 71,
+   "iniciativas_total_sil": 71,
    "asistencia": {
-    "presentes": 188,
-    "total": 198,
+    "presentes": 193,
+    "total": 203,
     "breakdown": {
-     "Presente": 186,
+     "Presente": 191,
      "Presente Incorporado": 2,
      "Excusa": 6,
      "Licencia": 3,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4710,27 +4634,27 @@
    "sil_nombre": "Tayluma Monserrat Calderón Fortuna",
    "cargo_hasta": null,
    "comisiones": [
-    "03800-2024-2028-CD Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "05405-2024-2028-CD Comisión especial designada para el estudio del Proyecto de ley de los cuerpos de bomberos de la República Dominicana.",
     "Asuntos Municipales",
+    "Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "Inteligencia Artificial",
     "Juventud",
     "Relaciones Exteriores y Cooperación Internacional",
     "Seguridad Social"
    ],
-   "iniciativas_cd": 93,
-   "iniciativas_total_sil": 93,
+   "iniciativas_cd": 95,
+   "iniciativas_total_sil": 95,
    "asistencia": {
-    "presentes": 186,
-    "total": 198,
+    "presentes": 190,
+    "total": 203,
     "breakdown": {
-     "Presente": 158,
-     "Presente Incorporado": 28,
-     "Ausente": 4,
-     "Excusa": 8
+     "Presente": 161,
+     "Presente Incorporado": 29,
+     "Excusa": 9,
+     "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4745,16 +4669,16 @@
    "iniciativas_cd": 12,
    "iniciativas_total_sil": 12,
    "asistencia": {
-    "presentes": 176,
-    "total": 198,
+    "presentes": 180,
+    "total": 203,
     "breakdown": {
-     "Presente": 164,
-     "Excusa": 18,
-     "Presente Incorporado": 12,
+     "Presente": 167,
+     "Presente Incorporado": 13,
+     "Excusa": 19,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4763,8 +4687,6 @@
    "sil_nombre": "Yancarlos Simanca Ferreras",
    "cargo_hasta": null,
    "comisiones": [
-    "06055-2024-2028-CD Comisión especial proyecto de ley que regula los juegos de azar en la República Dominicana.",
-    "Comisión bicameral designada para estudiar los Actos del Poder Ejecutivo",
     "Cultura",
     "Energía",
     "Medio Ambiente y Recursos Naturales",
@@ -4773,16 +4695,16 @@
    "iniciativas_cd": 42,
    "iniciativas_total_sil": 42,
    "asistencia": {
-    "presentes": 193,
-    "total": 198,
+    "presentes": 196,
+    "total": 203,
     "breakdown": {
-     "Presente": 185,
+     "Excusa": 6,
+     "Presente": 188,
      "Presente Incorporado": 8,
-     "Excusa": 4,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4800,16 +4722,16 @@
    "iniciativas_cd": 67,
    "iniciativas_total_sil": 67,
    "asistencia": {
-    "presentes": 185,
-    "total": 198,
+    "presentes": 188,
+    "total": 203,
     "breakdown": {
-     "Presente": 149,
-     "Excusa": 12,
-     "Presente Incorporado": 36,
+     "Presente": 150,
+     "Presente Incorporado": 38,
+     "Excusa": 14,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Santo Domingo"
   },
@@ -4820,23 +4742,24 @@
    "comisiones": [
     "03313-2024-2028-CD Comisión especial PR investigación abandono La Cruz de Manzanillo.",
     "Asuntos Fronterizos",
+    "Comisión bicameral designada para estudiar el proyecto de ley orgánica de la Policía Nacional.",
     "Interior y Policía",
     "Medios de Comunicación",
     "Ministerio Público"
    ],
-   "iniciativas_cd": 32,
-   "iniciativas_total_sil": 32,
+   "iniciativas_cd": 33,
+   "iniciativas_total_sil": 33,
    "asistencia": {
-    "presentes": 188,
-    "total": 198,
+    "presentes": 192,
+    "total": 203,
     "breakdown": {
-     "Presente": 186,
+     "Presente": 190,
+     "Excusa": 10,
      "Presente Incorporado": 2,
-     "Ausente": 1,
-     "Excusa": 9
+     "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Valverde"
   },
@@ -4852,20 +4775,20 @@
     "Mipymes",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 57,
-   "iniciativas_total_sil": 57,
+   "iniciativas_cd": 58,
+   "iniciativas_total_sil": 58,
    "asistencia": {
-    "presentes": 189,
-    "total": 198,
+    "presentes": 193,
+    "total": 203,
     "breakdown": {
-     "Presente": 187,
-     "Excusa": 6,
+     "Presente": 191,
+     "Excusa": 7,
      "Presente Incorporado": 2,
      "Ausente": 2,
      "Representación de la Cámara": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Valverde"
   },
@@ -4875,7 +4798,7 @@
    "cargo_hasta": null,
    "comisiones": [
     "03313-2024-2028-CD Comisión especial PR investigación abandono La Cruz de Manzanillo.",
-    "06015/06026/06038-2024-2028-CD Comisión bicameral designada para el estudio de los proyectos de ley que modifican la Ley núm.74-25, Código Penal.",
+    "06384-2024-2028-CD Comisión bicameral para el estudio del proyecto de ley del Código Civil de la República Dominicana.",
     "Agricultura",
     "Asuntos Fronterizos",
     "Justicia",
@@ -4885,14 +4808,15 @@
    "iniciativas_cd": 24,
    "iniciativas_total_sil": 24,
    "asistencia": {
-    "presentes": 198,
-    "total": 198,
+    "presentes": 202,
+    "total": 203,
     "breakdown": {
-     "Presente": 195,
+     "Presente": 199,
+     "Excusa": 1,
      "Presente Incorporado": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-09-09"
+    "hasta": "2026-10-07"
    },
    "provincia": "Valverde"
   }
