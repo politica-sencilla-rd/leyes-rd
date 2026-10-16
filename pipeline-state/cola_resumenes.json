@@ -26,23 +26,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/61039/acta-num-0110-de-fecha-06-de-mayo-2026",
    "fuente_nombre": "Acta 0110, votación electrónica 010",
    "fuente_sha256": "ca59d5682714913e909179e48308ba46b22156fd66412dfc60eac3036c2ab0fb",
-   "intentos": 1,
+   "intentos": 2,
    "ultimo_fallo": {
     "campo": "",
-    "pregunta": "codigo (3) nombra a una persona: Genealogista Dominicano"
+    "pregunta": "codigo (5) titulo_facil de más de 14 palabras"
    }
-  },
-  {
-   "id": "senado-00864-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60801/acta-num-0109-de-fecha-29-de-abril-2026",
-   "fuente_nombre": "Acta 0109, votación electrónica 028",
-   "fuente_sha256": "8f2b6e4ad613468e1c320856bcf97e2ad3fa6f41d3987d6ded1f0297d7161df9",
-   "intentos": 0
   },
   {
    "id": "senado-01559-2026",
@@ -54,31 +42,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/60801/acta-num-0109-de-fecha-29-de-abril-2026",
    "fuente_nombre": "Acta 0109, votación electrónica 029",
    "fuente_sha256": "8f2b6e4ad613468e1c320856bcf97e2ad3fa6f41d3987d6ded1f0297d7161df9",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01309-2026",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/61239/acta-num-0111-de-fecha-13-de-mayo-2026",
-   "fuente_nombre": "Acta 0111, votación electrónica 007",
-   "fuente_sha256": "acf11f16fc5942ff44e0a3689fa7f8c6257999131dab8f61ee85cc2dbb1cdda3",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01520-2026",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/61039/acta-num-0110-de-fecha-06-de-mayo-2026",
-   "fuente_nombre": "Acta 0110, votación electrónica 014",
-   "fuente_sha256": "c20aff91910e26d46812f9b2b93210a7c85aee159bb8ac774fbbdf7223bd931c",
-   "intentos": 0
+   "intentos": 1,
+   "ultimo_fallo": {
+    "campo": "",
+    "pregunta": "todos los modelos fallaron: gemini-3.5-flash-lite: HTTP 503; gemini-3.1-flash-lite: HTTP 503"
+   }
   },
   {
    "id": "senado-00305-2024",
@@ -90,7 +58,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/61039/acta-num-0110-de-fecha-06-de-mayo-2026",
    "fuente_nombre": "Acta 0110, votación electrónica 015",
    "fuente_sha256": "664f5aa674be517541668fcb927aa51cbd44dd9113f7d297b47fba393b403014",
-   "intentos": 0
+   "intentos": 1,
+   "ultimo_fallo": {
+    "campo": "",
+    "pregunta": "codigo (3) nombra a una persona: Las Canas"
+   }
   },
   {
    "id": "senado-01098-2025",
@@ -102,19 +74,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/61039/acta-num-0110-de-fecha-06-de-mayo-2026",
    "fuente_nombre": "Acta 0110, votación electrónica 016",
    "fuente_sha256": "43aabaf0b6e05b0e5e486adbb748c4bdc43a2078b199aef539af607b567dbb7d",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01247-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/61039/acta-num-0110-de-fecha-06-de-mayo-2026",
-   "fuente_nombre": "Acta 0110, votación electrónica 017",
-   "fuente_sha256": "d046aa9a08149f60b0b34201336bd70b2ffa23fb32f0902ef553b00e773e056d",
-   "intentos": 0
+   "intentos": 1,
+   "ultimo_fallo": {
+    "campo": "",
+    "pregunta": "codigo (3) nombra a una persona: Las Cañitas"
+   }
   },
   {
    "id": "senado-01383-2026",
@@ -126,7 +90,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/61039/acta-num-0110-de-fecha-06-de-mayo-2026",
    "fuente_nombre": "Acta 0110, votación electrónica 018",
    "fuente_sha256": "79ac6b80eb529425dc5c169cce17455189df672584e2184b44afa4fd071817eb",
-   "intentos": 0
+   "intentos": 1,
+   "ultimo_fallo": {
+    "campo": "",
+    "pregunta": "todos los modelos fallaron: gemma-4-31b-it: TimeoutError; gemma-4-26b-a4b-it: HTTP 500"
+   }
   },
   {
    "id": "senado-01500-2026",
@@ -138,55 +106,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/61039/acta-num-0110-de-fecha-06-de-mayo-2026",
    "fuente_nombre": "Acta 0110, votación electrónica 019",
    "fuente_sha256": "c93be7b2acdc5bd06d0cc080682ee59c4a14f3056545c9f946b881343dec413f",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01486-2026",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/61039/acta-num-0110-de-fecha-06-de-mayo-2026",
-   "fuente_nombre": "Acta 0110, votación electrónica 020",
-   "fuente_sha256": "5849a3d2ad39556ed3ef67123790490f37c22312c360e638552a97aace2ac8ea",
-   "intentos": 0
-  },
-  {
-   "id": "senado-00855-2025",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/61039/acta-num-0110-de-fecha-06-de-mayo-2026",
-   "fuente_nombre": "Acta 0110, votación electrónica 021",
-   "fuente_sha256": "67ea45feeeb8e04a8b1f46641380c09c227e6b97251e388d3f875fdbd8d7179e",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01373-2026",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/61240/acta-num-0112-de-fecha-18-de-mayo-2026",
-   "fuente_nombre": "Acta 0112, votación electrónica 013",
-   "fuente_sha256": "3eb14575028e98c27b90f9584f19aad69a3d7228f4fd785e3686029b24706b4f",
-   "intentos": 0
-  },
-  {
-   "id": "senado-01456-2026",
-   "tipo": "titulo_voto",
-   "campos": [
-    "titulo_facil"
-   ],
-   "estado_ley": "votando",
-   "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/61239/acta-num-0111-de-fecha-13-de-mayo-2026",
-   "fuente_nombre": "Acta 0111, votación electrónica 006",
-   "fuente_sha256": "e24423a77709bba502c07c671db13139970ac3da28fe2dd27b685e1b7009c5ed",
-   "intentos": 0
+   "intentos": 1,
+   "ultimo_fallo": {
+    "campo": "titulo_facil",
+    "pregunta": "Q4 ¿La FRASE afirma dos hechos distintos o más?"
+   }
   },
   {
    "id": "senado-01197-2025",
@@ -198,7 +122,11 @@
    "fuente_url": "https://www.senadord.gob.do/Descargas/1387/actas-de-sesiones/61239/acta-num-0111-de-fecha-13-de-mayo-2026",
    "fuente_nombre": "Acta 0111, votación electrónica 009",
    "fuente_sha256": "c7fe65d4f8b423cb5b0dc3c7b6ac0c8b670e9a1a22a87693e1b33b94c9857408",
-   "intentos": 0
+   "intentos": 1,
+   "ultimo_fallo": {
+    "campo": "titulo_facil",
+    "pregunta": "Q4 ¿La FRASE afirma dos hechos distintos o más?"
+   }
   },
   {
    "id": "senado-01216-2025",
