@@ -1,9 +1,157 @@
 {
   "_nota": "Estado de cada iniciativa del SIL la semana pasada: {id: [estado, numPromulgacion]}. leyes.py compara contra esto para ver qué cambió.",
-  "fecha": "2026-10-14",
+  "fecha": "2026-10-21",
   "filas": {
-    "159933": [
+    "160967": [
       "Depositado",
+      null
+    ],
+    "160966": [
+      "Depositado",
+      null
+    ],
+    "160965": [
+      "Depositado",
+      null
+    ],
+    "160964": [
+      "Depositado",
+      null
+    ],
+    "160963": [
+      "Depositado",
+      null
+    ],
+    "160962": [
+      "Depositado",
+      null
+    ],
+    "160961": [
+      "Depositado",
+      null
+    ],
+    "160960": [
+      "Depositado",
+      null
+    ],
+    "160959": [
+      "Depositado",
+      null
+    ],
+    "160958": [
+      "Depositado",
+      null
+    ],
+    "160957": [
+      "Depositado",
+      null
+    ],
+    "160956": [
+      "Depositado",
+      null
+    ],
+    "160955": [
+      "Depositado",
+      null
+    ],
+    "160954": [
+      "Depositado",
+      null
+    ],
+    "160953": [
+      "Depositado",
+      null
+    ],
+    "160952": [
+      "Depositado",
+      null
+    ],
+    "160951": [
+      "Depositado",
+      null
+    ],
+    "160950": [
+      "Depositado",
+      null
+    ],
+    "160949": [
+      "Depositado",
+      null
+    ],
+    "160948": [
+      "Depositado",
+      null
+    ],
+    "160947": [
+      "Depositado",
+      null
+    ],
+    "160946": [
+      "Depositado",
+      null
+    ],
+    "160945": [
+      "Depositado",
+      null
+    ],
+    "160944": [
+      "Depositado",
+      null
+    ],
+    "159946": [
+      "Depositado",
+      null
+    ],
+    "159945": [
+      "Enviado a Comisión",
+      null
+    ],
+    "159944": [
+      "Depositado",
+      null
+    ],
+    "159943": [
+      "Depositado",
+      null
+    ],
+    "159942": [
+      "Depositado",
+      null
+    ],
+    "159941": [
+      "Enviado a Comisión",
+      null
+    ],
+    "159940": [
+      "Depositado",
+      null
+    ],
+    "159939": [
+      "Enviado a Comisión",
+      null
+    ],
+    "159938": [
+      "Depositado",
+      null
+    ],
+    "159937": [
+      "Enviado a Comisión",
+      null
+    ],
+    "159936": [
+      "Depositado",
+      null
+    ],
+    "159935": [
+      "Depositado",
+      null
+    ],
+    "159934": [
+      "Depositado",
+      null
+    ],
+    "159933": [
+      "Enviado a Comisión",
       null
     ],
     "159932": [
@@ -15,7 +163,7 @@
       null
     ],
     "159930": [
-      "Depositado",
+      "Enviado a Comisión",
       null
     ],
     "159929": [
@@ -43,7 +191,7 @@
       null
     ],
     "159923": [
-      "Depositado",
+      "Enviado a Comisión",
       null
     ],
     "159922": [
@@ -51,7 +199,7 @@
       null
     ],
     "159921": [
-      "En Orden del Día",
+      "Con informe de comisión",
       null
     ],
     "159919": [
@@ -79,7 +227,7 @@
       null
     ],
     "159913": [
-      "Depositado",
+      "Enviado a Comisión",
       null
     ],
     "159912": [
@@ -107,7 +255,7 @@
       null
     ],
     "159906": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159905": [
@@ -147,7 +295,7 @@
       null
     ],
     "159896": [
-      "Depositado",
+      "Enviado a Comisión",
       null
     ],
     "159895": [
@@ -159,7 +307,7 @@
       null
     ],
     "159893": [
-      "Depositado",
+      "Enviado a Comisión",
       null
     ],
     "159892": [
@@ -167,7 +315,7 @@
       null
     ],
     "159891": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159890": [
@@ -175,7 +323,7 @@
       null
     ],
     "159889": [
-      "Depositado",
+      "Enviado a Comisión",
       null
     ],
     "159888": [
@@ -183,15 +331,15 @@
       null
     ],
     "159887": [
-      "Depositado",
+      "Enviado a Comisión",
       null
     ],
     "159886": [
-      "Depositado",
+      "Enviado a Comisión",
       null
     ],
     "159885": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159884": [
@@ -199,27 +347,27 @@
       null
     ],
     "159883": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159882": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159881": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159880": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159879": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159878": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159877": [
@@ -247,7 +395,7 @@
       null
     ],
     "159871": [
-      "Depositado",
+      "Enviado a Comisión",
       null
     ],
     "159870": [
@@ -255,7 +403,7 @@
       null
     ],
     "159869": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159868": [
@@ -283,11 +431,11 @@
       null
     ],
     "159862": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159861": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159860": [
@@ -315,7 +463,7 @@
       null
     ],
     "159854": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159853": [
@@ -343,7 +491,7 @@
       null
     ],
     "159847": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159846": [
@@ -387,7 +535,7 @@
       null
     ],
     "159836": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159835": [
@@ -399,7 +547,7 @@
       null
     ],
     "159833": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159832": [
@@ -415,7 +563,7 @@
       null
     ],
     "159829": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159828": [
@@ -447,7 +595,7 @@
       null
     ],
     "159821": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159820": [
@@ -459,7 +607,7 @@
       null
     ],
     "159818": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159817": [
@@ -467,7 +615,7 @@
       null
     ],
     "159816": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159815": [
@@ -495,7 +643,7 @@
       null
     ],
     "159809": [
-      "Depositado",
+      "Enviado a Comisión",
       null
     ],
     "159808": [
@@ -531,7 +679,7 @@
       null
     ],
     "159800": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159799": [
@@ -579,7 +727,7 @@
       null
     ],
     "159788": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159787": [
@@ -647,7 +795,7 @@
       null
     ],
     "159771": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159770": [
@@ -655,7 +803,7 @@
       null
     ],
     "159769": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159768": [
@@ -675,7 +823,7 @@
       null
     ],
     "159764": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159763": [
@@ -687,7 +835,7 @@
       null
     ],
     "159761": [
-      "Depositado",
+      "Enviado a Comisión",
       null
     ],
     "159760": [
@@ -695,11 +843,11 @@
       null
     ],
     "159759": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159758": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159757": [
@@ -711,7 +859,7 @@
       null
     ],
     "159755": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159754": [
@@ -719,7 +867,7 @@
       null
     ],
     "159753": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159752": [
@@ -747,7 +895,7 @@
       null
     ],
     "159746": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159745": [
@@ -763,7 +911,7 @@
       null
     ],
     "159742": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159741": [
@@ -771,27 +919,27 @@
       null
     ],
     "159740": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159739": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159738": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159737": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159736": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159735": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159734": [
@@ -807,35 +955,35 @@
       null
     ],
     "159731": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159730": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159729": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159728": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159727": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159726": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159725": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159724": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159723": [
@@ -851,11 +999,11 @@
       null
     ],
     "159720": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159719": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159718": [
@@ -871,7 +1019,7 @@
       null
     ],
     "159715": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "159714": [
@@ -883,7 +1031,7 @@
       null
     ],
     "159712": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159711": [
@@ -903,11 +1051,11 @@
       null
     ],
     "159707": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159706": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159705": [
@@ -943,7 +1091,7 @@
       null
     ],
     "159697": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159696": [
@@ -967,7 +1115,7 @@
       null
     ],
     "159691": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159690": [
@@ -983,7 +1131,7 @@
       null
     ],
     "159687": [
-      "En Orden del Día para 1era. discusión",
+      "Aprobado en 1ra. lectura",
       null
     ],
     "159686": [
@@ -995,7 +1143,7 @@
       null
     ],
     "159684": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159683": [
@@ -1003,7 +1151,7 @@
       null
     ],
     "159682": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159681": [
@@ -1027,7 +1175,7 @@
       null
     ],
     "159676": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159675": [
@@ -1051,11 +1199,11 @@
       null
     ],
     "159670": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159669": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "159668": [
@@ -1091,7 +1239,7 @@
       null
     ],
     "158668": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "158667": [
@@ -1119,7 +1267,7 @@
       null
     ],
     "158661": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "158660": [
@@ -1151,11 +1299,11 @@
       null
     ],
     "158653": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "158652": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "158651": [
@@ -1259,7 +1407,7 @@
       null
     ],
     "158626": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "158625": [
@@ -1351,7 +1499,7 @@
       null
     ],
     "158603": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "158602": [
@@ -1375,7 +1523,7 @@
       null
     ],
     "158597": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "158596": [
@@ -1415,7 +1563,7 @@
       null
     ],
     "158587": [
-      "En Orden del Día para única discusión",
+      "Sobre la mesa para única discusión",
       null
     ],
     "158586": [
@@ -1435,7 +1583,7 @@
       null
     ],
     "158582": [
-      "En Orden del Día para 1era. discusión",
+      "Sobre la mesa 1era discusión",
       null
     ],
     "158581": [
@@ -1635,7 +1783,7 @@
       null
     ],
     "158532": [
-      "En Orden del Día para 1era. discusión",
+      "Aprobado en 1ra. lectura",
       null
     ],
     "158531": [
@@ -2007,7 +2155,7 @@
       null
     ],
     "158439": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "158438": [
@@ -2059,7 +2207,7 @@
       null
     ],
     "158426": [
-      "Plazo vencido",
+      "Sobre la mesa para única discusión",
       null
     ],
     "158425": [
@@ -2075,7 +2223,7 @@
       null
     ],
     "158422": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "158421": [
@@ -2227,7 +2375,7 @@
       null
     ],
     "158384": [
-      "Plazo vencido",
+      "Enviado a Comisión",
       null
     ],
     "158383": [
@@ -2307,7 +2455,7 @@
       null
     ],
     "158364": [
-      "En Orden del Día para única discusión",
+      "Aprobado en única lectura",
       null
     ],
     "158363": [
@@ -2407,7 +2555,7 @@
       null
     ],
     "158339": [
-      "Con informe de comisión",
+      "Sobre la mesa para única discusión",
       null
     ],
     "158338": [
@@ -2575,7 +2723,7 @@
       null
     ],
     "158297": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "158296": [
@@ -2587,11 +2735,11 @@
       null
     ],
     "158294": [
-      "Con informe de comisión",
+      "Sobre la mesa para única discusión",
       null
     ],
     "158293": [
-      "En Orden del Día para única discusión",
+      "Aprobado en única lectura",
       null
     ],
     "158292": [
@@ -2627,11 +2775,11 @@
       null
     ],
     "158284": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "158283": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "158282": [
@@ -2755,7 +2903,7 @@
       null
     ],
     "158252": [
-      "En Orden del Día para única discusión",
+      "Aprobado en única lectura",
       null
     ],
     "158251": [
@@ -2807,7 +2955,7 @@
       null
     ],
     "158239": [
-      "En Orden del Día para única discusión",
+      "Aprobado en única lectura",
       null
     ],
     "158238": [
@@ -3023,7 +3171,7 @@
       null
     ],
     "158185": [
-      "En Orden del Día para única discusión",
+      "Aprobado en única lectura",
       null
     ],
     "158184": [
@@ -3279,7 +3427,7 @@
       null
     ],
     "158121": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "158120": [
@@ -3327,7 +3475,7 @@
       null
     ],
     "158109": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "158108": [
@@ -3335,7 +3483,7 @@
       null
     ],
     "158107": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "158106": [
@@ -3463,7 +3611,7 @@
       null
     ],
     "158075": [
-      "En Orden del Día para única discusión",
+      "Aprobado en única lectura",
       null
     ],
     "158074": [
@@ -3475,7 +3623,7 @@
       null
     ],
     "158072": [
-      "Plazo vencido",
+      "Sobre la mesa 1era discusión",
       null
     ],
     "158071": [
@@ -3607,7 +3755,7 @@
       null
     ],
     "158039": [
-      "Con informe de comisión",
+      "Sobre la mesa para única discusión",
       null
     ],
     "158038": [
@@ -4403,7 +4551,7 @@
       null
     ],
     "157840": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "157839": [
@@ -4571,7 +4719,7 @@
       null
     ],
     "157798": [
-      "En Orden del Día para 1era. discusión",
+      "Sobre la mesa 1era discusión",
       null
     ],
     "157797": [
@@ -4587,7 +4735,7 @@
       null
     ],
     "157794": [
-      "En Orden del Día para 2da. discusión",
+      "Aprobado en 2da. lectura",
       null
     ],
     "157793": [
@@ -4639,7 +4787,7 @@
       null
     ],
     "157781": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "157780": [
@@ -4771,7 +4919,7 @@
       null
     ],
     "157748": [
-      "En Orden del Día para 1era. discusión",
+      "Sobre la mesa 1era discusión",
       null
     ],
     "157747": [
@@ -4803,7 +4951,7 @@
       null
     ],
     "157740": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "157739": [
@@ -4987,7 +5135,7 @@
       null
     ],
     "157694": [
-      "En Orden del Día",
+      "Enviado a Comisión",
       null
     ],
     "157693": [
@@ -5303,7 +5451,7 @@
       null
     ],
     "157615": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "157614": [
@@ -5331,7 +5479,7 @@
       null
     ],
     "157608": [
-      "En Orden del Día para única discusión",
+      "Aprobado en única lectura",
       null
     ],
     "157607": [
@@ -5379,7 +5527,7 @@
       "Ley núm.7-26"
     ],
     "157596": [
-      "Aprobado en única lectura",
+      "Despachado única lectura",
       null
     ],
     "157595": [
@@ -5403,7 +5551,7 @@
       null
     ],
     "157590": [
-      "En Orden del Día para 1era. discusión",
+      "Aprobado en 1ra. lectura",
       null
     ],
     "157589": [
@@ -6103,7 +6251,7 @@
       null
     ],
     "157415": [
-      "Aprobado en única lectura",
+      "Despachado única lectura",
       null
     ],
     "157414": [
@@ -6155,7 +6303,7 @@
       null
     ],
     "157402": [
-      "Aprobado en única lectura",
+      "Despachado única lectura",
       null
     ],
     "157401": [
@@ -6271,7 +6419,7 @@
       "Ley núm. 10-26"
     ],
     "157373": [
-      "En Orden del Día para única discusión",
+      "Aprobado en única lectura",
       null
     ],
     "157372": [
@@ -6427,7 +6575,7 @@
       null
     ],
     "157334": [
-      "Con informe de comisión",
+      "Sobre la mesa para única discusión",
       null
     ],
     "157333": [
@@ -6443,7 +6591,7 @@
       null
     ],
     "157330": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "157329": [
@@ -6507,7 +6655,7 @@
       null
     ],
     "157314": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "157313": [
@@ -6767,7 +6915,7 @@
       null
     ],
     "157249": [
-      "Con informe de comisión",
+      "Sobre la mesa para única discusión",
       null
     ],
     "157248": [
@@ -6839,7 +6987,7 @@
       null
     ],
     "157231": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "157230": [
@@ -6991,7 +7139,7 @@
       null
     ],
     "157193": [
-      "Con informe de comisión",
+      "Sobre la mesa para única discusión",
       null
     ],
     "157192": [
@@ -7199,7 +7347,7 @@
       null
     ],
     "157141": [
-      "Sobre la mesa 1era discusión",
+      "Enviado a Comisión",
       null
     ],
     "157140": [
@@ -7443,7 +7591,7 @@
       null
     ],
     "157080": [
-      "Depositado",
+      "Enviado a Comisión",
       null
     ],
     "157079": [
@@ -7699,7 +7847,7 @@
       null
     ],
     "157016": [
-      "Con informe de comisión",
+      "Sobre la mesa para única discusión",
       null
     ],
     "157015": [
@@ -7911,7 +8059,7 @@
       null
     ],
     "156963": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "156962": [
@@ -7991,11 +8139,11 @@
       null
     ],
     "156943": [
-      "Con informe de comisión",
+      "Sobre la mesa para única discusión",
       null
     ],
     "156942": [
-      "En Orden del Día para única discusión",
+      "Aprobado en única lectura",
       null
     ],
     "156941": [
@@ -8079,7 +8227,7 @@
       null
     ],
     "156921": [
-      "Con informe de comisión",
+      "Sobre la mesa para única discusión",
       null
     ],
     "156920": [
@@ -8183,7 +8331,7 @@
       null
     ],
     "156895": [
-      "Aprobado en única lectura",
+      "Despachado única lectura",
       null
     ],
     "156894": [
@@ -8211,7 +8359,7 @@
       null
     ],
     "156888": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "156887": [
@@ -8307,7 +8455,7 @@
       null
     ],
     "156864": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "156863": [
@@ -8435,7 +8583,7 @@
       null
     ],
     "156832": [
-      "Aprobado en única lectura",
+      "Despachado única lectura",
       null
     ],
     "156831": [
@@ -8855,7 +9003,7 @@
       null
     ],
     "156726": [
-      "Aprobado en única lectura",
+      "Despachado única lectura",
       null
     ],
     "156725": [
@@ -9167,7 +9315,7 @@
       null
     ],
     "156648": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "156647": [
@@ -9627,7 +9775,7 @@
       null
     ],
     "156533": [
-      "Aprobado en única lectura",
+      "Despachado única lectura",
       null
     ],
     "156532": [
@@ -9779,7 +9927,7 @@
       null
     ],
     "156495": [
-      "En Orden del Día para única discusión",
+      "Aprobado en única lectura",
       null
     ],
     "156494": [
@@ -10043,7 +10191,7 @@
       null
     ],
     "156429": [
-      "En Orden del Día para única discusión",
+      "Aprobado en única lectura",
       null
     ],
     "156428": [
@@ -10255,7 +10403,7 @@
       null
     ],
     "156376": [
-      "En Orden del Día para única discusión",
+      "Aprobado en única lectura",
       null
     ],
     "156375": [
@@ -10335,7 +10483,7 @@
       null
     ],
     "156356": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "156355": [
@@ -10395,7 +10543,7 @@
       null
     ],
     "156341": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "156340": [
@@ -10447,7 +10595,7 @@
       null
     ],
     "156328": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "156327": [
@@ -10527,7 +10675,7 @@
       null
     ],
     "156308": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "156307": [
@@ -10799,7 +10947,7 @@
       null
     ],
     "156240": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "156239": [
@@ -10823,7 +10971,7 @@
       null
     ],
     "156234": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "156233": [
@@ -10835,7 +10983,7 @@
       null
     ],
     "156231": [
-      "En Orden del Día para única discusión",
+      "Aprobado en única lectura",
       null
     ],
     "156230": [
@@ -11103,7 +11251,7 @@
       null
     ],
     "156164": [
-      "Con informe de comisión",
+      "Sobre la mesa para única discusión",
       null
     ],
     "156163": [
@@ -11511,7 +11659,7 @@
       null
     ],
     "156061": [
-      "Aprobado en única lectura",
+      "Despachado única lectura",
       null
     ],
     "156060": [
@@ -11531,7 +11679,7 @@
       null
     ],
     "156056": [
-      "Con informe de comisión",
+      "Sobre la mesa para única discusión",
       null
     ],
     "156055": [
@@ -11831,7 +11979,7 @@
       null
     ],
     "155980": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "155979": [
@@ -11851,7 +11999,7 @@
       null
     ],
     "155975": [
-      "Aprobado en única lectura",
+      "Despachado única lectura",
       null
     ],
     "155974": [
@@ -12315,7 +12463,7 @@
       null
     ],
     "155859": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "155858": [
@@ -12439,7 +12587,7 @@
       null
     ],
     "155828": [
-      "Aprobado en única lectura",
+      "Despachado única lectura",
       null
     ],
     "155827": [
@@ -12687,7 +12835,7 @@
       null
     ],
     "155766": [
-      "En Orden del Día para única discusión",
+      "Aprobado en única lectura",
       null
     ],
     "155765": [
@@ -13055,7 +13203,7 @@
       null
     ],
     "155674": [
-      "En Orden del Día para única discusión",
+      "Aprobado en única lectura",
       null
     ],
     "155673": [
@@ -13871,7 +14019,7 @@
       null
     ],
     "155470": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "155469": [
@@ -19279,7 +19427,7 @@
       null
     ],
     "154118": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "154117": [
@@ -19867,7 +20015,7 @@
       null
     ],
     "153971": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "153970": [
@@ -20247,7 +20395,7 @@
       null
     ],
     "153876": [
-      "Plazo vencido",
+      "Con informe de comisión",
       null
     ],
     "153875": [
@@ -23331,7 +23479,7 @@
       null
     ],
     "153105": [
-      "Enviado a Comisión",
+      "Plazo vencido",
       null
     ],
     "153104": [

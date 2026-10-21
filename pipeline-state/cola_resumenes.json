@@ -1375,6 +1375,54 @@
    "fuente_nombre": "SIL de la Cámara, iniciativa 06055-2024-2028-CD",
    "fuente_sha256": "703f50c056daf2948ed0ccdb96378712f71bd8be375de4732d41881992ddde77",
    "intentos": 0
+  },
+  {
+   "id": "sil-05332-2024-2028-CD",
+   "tipo": "titulo_voto",
+   "campos": [
+    "titulo_facil"
+   ],
+   "estado_ley": "votando",
+   "fuente_url": "https://www.diputadosrd.gob.do/sil",
+   "fuente_nombre": "SIL de la Cámara, iniciativa 05332-2024-2028-CD",
+   "fuente_sha256": "00a6a4f2906e0feb76c9772049eaa7ed65c9c14366283b05e4958b87b561c012",
+   "intentos": 0
+  },
+  {
+   "id": "sil-05128-2024-2028-CD",
+   "tipo": "titulo_voto",
+   "campos": [
+    "titulo_facil"
+   ],
+   "estado_ley": "votando",
+   "fuente_url": "https://www.diputadosrd.gob.do/sil",
+   "fuente_nombre": "SIL de la Cámara, iniciativa 05128-2024-2028-CD",
+   "fuente_sha256": "e04ba21943cc8f65906c27b4ab9cfa8cb3a13f1740c966138df8e5c53e3d90bc",
+   "intentos": 0
+  },
+  {
+   "id": "sil-06070-2024-2028-CD",
+   "tipo": "titulo_voto",
+   "campos": [
+    "titulo_facil"
+   ],
+   "estado_ley": "votando",
+   "fuente_url": "https://www.diputadosrd.gob.do/sil",
+   "fuente_nombre": "SIL de la Cámara, iniciativa 06070-2024-2028-CD",
+   "fuente_sha256": "a7e1081782c7fa649a4116a18853e2d137033cd309f86325ae71c84ac093a14d",
+   "intentos": 0
+  },
+  {
+   "id": "sil-06233-2024-2028-CD",
+   "tipo": "titulo_voto",
+   "campos": [
+    "titulo_facil"
+   ],
+   "estado_ley": "votando",
+   "fuente_url": "https://www.diputadosrd.gob.do/sil",
+   "fuente_nombre": "SIL de la Cámara, iniciativa 06233-2024-2028-CD",
+   "fuente_sha256": "ea849daab04b36ffe48070cd13eaa9055f0e98d54ab8053b228b1b3f4f1d80a2",
+   "intentos": 0
   }
  ]
 }

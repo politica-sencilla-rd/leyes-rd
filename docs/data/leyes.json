@@ -139,6 +139,36 @@
    "nombre": "Transporte y Carreteras",
    "leyes": [
     {
+     "id": "05128-2024-2028-CD",
+     "sil_id": 157590,
+     "titulo": "Proyecto de ley que designa oficialmente con el nombre \"Estación Johnny Pacheco\", la estación del monorriel de Santiago ubicada en el entorno de la avenida Las Carreras",
+     "titulo_oficial": "Proyecto de ley que designa oficialmente con el nombre \"Estación Johnny Pacheco\", la estación del monorriel de Santiago ubicada en el entorno de la avenida Las Carreras.",
+     "estado": "votando",
+     "estado_sil": "Aprobado en 1ra. lectura",
+     "votos": [],
+     "camara": true,
+     "origen": "Cámara de Diputados",
+     "materia": "OBRAS PÚBLICAS Y COMUNICACIONES",
+     "url_oficial": "https://www.diputadosrd.gob.do/sil",
+     "datos_al": "2026-10-21",
+     "auto": true
+    },
+    {
+     "id": "05332-2024-2028-CD",
+     "sil_id": 157794,
+     "titulo": "Proyecto de ley que designa con el nombre \"Estación Enerolisa Núñez\", la estación del Metro de Santo Domingo hacia Punta Villa Mella, municipio Santo Domingo Norte, provincia Santo Domingo. TÍTULO MODIFICADO: Ley que designa con el nombre de “Enerolisa Núñez” la Estación de la Línea 1B del Metro Santo Domingo, ubicada en el paraje Punta, sección Licey, municipio Santo Domingo Norte, provincia Santo Domingo",
+     "titulo_oficial": "Proyecto de ley que designa con el nombre \"Estación Enerolisa Núñez\", la estación del Metro de Santo Domingo hacia Punta Villa Mella, municipio Santo Domingo Norte, provincia Santo Domingo. TÍTULO MODIFICADO: Ley que designa con el nombre de “Enerolisa Núñez” la Estación de la Línea 1B del Metro Santo Domingo, ubicada en el paraje Punta, sección Licey, municipio Santo Domingo Norte, provincia Santo Domingo.",
+     "estado": "votando",
+     "estado_sil": "Aprobado en 2da. lectura",
+     "votos": [],
+     "camara": true,
+     "origen": "Cámara de Diputados",
+     "materia": "OBRAS PÚBLICAS Y COMUNICACIONES",
+     "url_oficial": "https://www.diputadosrd.gob.do/sil",
+     "datos_al": "2026-10-21",
+     "auto": true
+    },
+    {
      "id": "05563-2024-2028-CD",
      "sil_id": 158025,
      "titulo": "Proyecto de ley que designa con el nombre \"Dr. Noel Suberví Espinosa\" el tramo carretero comprendido desde la entrada del aeropuerto internacional María Montez hasta la intersección de la avenida Casandra Damirón con calle Américo Melo Andújar, ciudad Santa Cruz de Barahona, provincia Barahona. TÍTULO APROBADO: Ley que designa con el nombre “Dr. Noel Suberví Espinosa” el tramo carretero comprendido desde la entrada del Aeropuerto Internacional María Montez hasta la intersección de la avenida Casandra Damirón con calle Américo Meló Andújar, en la ciudad Santa Cruz de Barahona, provincia Barahona",
@@ -286,6 +316,36 @@
    "emoji": "🎭",
    "nombre": "Cultura y Deporte",
    "leyes": [
+    {
+     "id": "06233-2024-2028-CD",
+     "sil_id": 159687,
+     "titulo": "Proyecto de ley que declara el 6 de junio de cada año como “Día Nacional de los Defensores del Medio Ambiente” y crea el Reconocimiento Nacional al Defensor del Medio Ambiente en la República Dominicana",
+     "titulo_oficial": "Proyecto de ley que declara el 6 de junio de cada año como “Día Nacional de los Defensores del Medio Ambiente” y crea el Reconocimiento Nacional al Defensor del Medio Ambiente en la República Dominicana.",
+     "estado": "votando",
+     "estado_sil": "Aprobado en 1ra. lectura",
+     "votos": [],
+     "camara": true,
+     "origen": "Cámara de Diputados",
+     "materia": "CONMEMORATIVAS",
+     "url_oficial": "https://www.diputadosrd.gob.do/sil",
+     "datos_al": "2026-10-21",
+     "auto": true
+    },
+    {
+     "id": "06070-2024-2028-CD",
+     "sil_id": 158532,
+     "titulo": "Proyecto de ley que declara la Reserva Antropológica Cuevas de Borbón o del Pomier como Capital Rupestre de la República Dominicana",
+     "titulo_oficial": "Proyecto de ley que declara la Reserva Antropológica Cuevas de Borbón o del Pomier como Capital Rupestre de la República Dominicana.",
+     "estado": "votando",
+     "estado_sil": "Aprobado en 1ra. lectura",
+     "votos": [],
+     "camara": false,
+     "origen": "Senado",
+     "materia": "CULTURA",
+     "url_oficial": "https://www.diputadosrd.gob.do/sil",
+     "datos_al": "2026-10-21",
+     "auto": true
+    },
     {
      "titulo": "Ponerle el nombre 'Vladimir Guerrero' a un estadio de béisbol",
      "estado": "votando",
