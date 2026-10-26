@@ -1,5 +1,5 @@
 {
- "_generated": "2026-10-19T16:26:50.852435+00:00",
+ "_generated": "2026-10-26T16:08:08.847168+00:00",
  "_unmatched": [],
  "diputados": {
   "Alfredo Pacheco Osoria": {
@@ -13,15 +13,15 @@
    "iniciativas_cd": 26,
    "iniciativas_total_sil": 26,
    "asistencia": {
-    "presentes": 200,
-    "total": 205,
+    "presentes": 202,
+    "total": 207,
     "breakdown": {
-     "Presente": 185,
-     "Presente Incorporado": 15,
+     "Presente": 186,
+     "Presente Incorporado": 16,
      "Excusa": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -42,15 +42,15 @@
    "iniciativas_cd": 36,
    "iniciativas_total_sil": 36,
    "asistencia": {
-    "presentes": 190,
-    "total": 205,
+    "presentes": 192,
+    "total": 207,
     "breakdown": {
-     "Presente": 185,
+     "Presente": 187,
      "Presente Incorporado": 5,
      "Excusa": 15
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -68,19 +68,19 @@
     "Medios de Comunicación",
     "Seguridad Social"
    ],
-   "iniciativas_cd": 52,
-   "iniciativas_total_sil": 52,
+   "iniciativas_cd": 53,
+   "iniciativas_total_sil": 53,
    "asistencia": {
-    "presentes": 190,
-    "total": 205,
+    "presentes": 192,
+    "total": 207,
     "breakdown": {
-     "Presente": 178,
+     "Presente": 180,
      "Excusa": 13,
      "Ausente": 2,
      "Presente Incorporado": 12
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -99,16 +99,16 @@
    "iniciativas_total_sil": 54,
    "asistencia": {
     "presentes": 179,
-    "total": 205,
+    "total": 207,
     "breakdown": {
+     "Excusa": 15,
      "Presente Incorporado": 13,
      "Presente": 166,
-     "Excusa": 13,
      "Licencia": 12,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -125,16 +125,16 @@
    "iniciativas_total_sil": 31,
    "asistencia": {
     "presentes": 180,
-    "total": 205,
+    "total": 207,
     "breakdown": {
+     "Excusa": 25,
      "Presente Incorporado": 54,
      "Presente": 126,
-     "Excusa": 23,
      "Ausente": 1,
      "Representación de la Cámara": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -153,17 +153,17 @@
    "iniciativas_cd": 69,
    "iniciativas_total_sil": 69,
    "asistencia": {
-    "presentes": 180,
-    "total": 205,
+    "presentes": 182,
+    "total": 207,
     "breakdown": {
+     "Presente": 161,
      "Presente Incorporado": 21,
-     "Presente": 159,
      "Representación de la Cámara": 1,
      "Excusa": 20,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -183,14 +183,15 @@
    "iniciativas_cd": 46,
    "iniciativas_total_sil": 46,
    "asistencia": {
-    "presentes": 189,
-    "total": 205,
+    "presentes": 191,
+    "total": 207,
     "breakdown": {
-     "Presente": 189,
+     "Presente Incorporado": 1,
+     "Presente": 190,
      "Excusa": 16
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -205,16 +206,16 @@
    "iniciativas_cd": 25,
    "iniciativas_total_sil": 25,
    "asistencia": {
-    "presentes": 176,
-    "total": 205,
+    "presentes": 178,
+    "total": 207,
     "breakdown": {
+     "Presente": 163,
      "Ausente": 4,
-     "Presente": 161,
      "Presente Incorporado": 15,
      "Excusa": 25
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -235,15 +236,15 @@
    "iniciativas_cd": 32,
    "iniciativas_total_sil": 32,
    "asistencia": {
-    "presentes": 192,
-    "total": 205,
+    "presentes": 194,
+    "total": 207,
     "breakdown": {
-     "Presente": 191,
+     "Presente": 193,
      "Excusa": 13,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -261,16 +262,16 @@
    "iniciativas_cd": 41,
    "iniciativas_total_sil": 41,
    "asistencia": {
-    "presentes": 185,
-    "total": 205,
+    "presentes": 187,
+    "total": 207,
     "breakdown": {
-     "Presente Incorporado": 5,
-     "Presente": 180,
+     "Presente": 181,
+     "Presente Incorporado": 6,
      "Excusa": 15,
      "Ausente": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -291,16 +292,16 @@
    "iniciativas_cd": 29,
    "iniciativas_total_sil": 29,
    "asistencia": {
-    "presentes": 192,
-    "total": 205,
+    "presentes": 194,
+    "total": 207,
     "breakdown": {
-     "Presente Incorporado": 14,
-     "Presente": 178,
+     "Presente Incorporado": 15,
+     "Presente": 179,
      "Excusa": 12,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -319,15 +320,15 @@
    "iniciativas_cd": 52,
    "iniciativas_total_sil": 52,
    "asistencia": {
-    "presentes": 199,
-    "total": 205,
+    "presentes": 201,
+    "total": 207,
     "breakdown": {
-     "Presente": 197,
+     "Presente": 199,
      "Excusa": 6,
      "Presente Incorporado": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -343,16 +344,16 @@
    "iniciativas_cd": 37,
    "iniciativas_total_sil": 37,
    "asistencia": {
-    "presentes": 191,
-    "total": 205,
+    "presentes": 193,
+    "total": 207,
     "breakdown": {
+     "Presente": 140,
      "Presente Incorporado": 53,
-     "Presente": 138,
      "Excusa": 8,
      "Ausente": 6
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -370,16 +371,16 @@
    "iniciativas_cd": 76,
    "iniciativas_total_sil": 76,
    "asistencia": {
-    "presentes": 191,
-    "total": 205,
+    "presentes": 193,
+    "total": 207,
     "breakdown": {
+     "Presente": 154,
      "Presente Incorporado": 39,
      "Excusa": 12,
-     "Presente": 152,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -401,15 +402,15 @@
    "iniciativas_cd": 34,
    "iniciativas_total_sil": 34,
    "asistencia": {
-    "presentes": 193,
-    "total": 205,
+    "presentes": 195,
+    "total": 207,
     "breakdown": {
-     "Presente": 189,
+     "Presente": 191,
      "Presente Incorporado": 4,
      "Excusa": 12
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -425,16 +426,16 @@
    "iniciativas_cd": 11,
    "iniciativas_total_sil": 11,
    "asistencia": {
-    "presentes": 154,
-    "total": 205,
+    "presentes": 156,
+    "total": 207,
     "breakdown": {
-     "Presente Incorporado": 28,
-     "Presente": 126,
+     "Presente Incorporado": 29,
+     "Presente": 127,
      "Excusa": 38,
      "Ausente": 13
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -452,16 +453,16 @@
    "iniciativas_cd": 41,
    "iniciativas_total_sil": 41,
    "asistencia": {
-    "presentes": 184,
-    "total": 205,
+    "presentes": 186,
+    "total": 207,
     "breakdown": {
+     "Presente": 166,
      "Excusa": 14,
-     "Presente": 164,
      "Presente Incorporado": 20,
      "Ausente": 7
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -481,16 +482,16 @@
    "iniciativas_cd": 37,
    "iniciativas_total_sil": 37,
    "asistencia": {
-    "presentes": 187,
-    "total": 205,
+    "presentes": 189,
+    "total": 207,
     "breakdown": {
-     "Presente Incorporado": 51,
+     "Presente Incorporado": 53,
      "Ausente": 4,
      "Presente": 136,
      "Excusa": 14
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Distrito Nacional"
   },
@@ -509,15 +510,15 @@
    "iniciativas_cd": 72,
    "iniciativas_total_sil": 72,
    "asistencia": {
-    "presentes": 185,
-    "total": 205,
+    "presentes": 187,
+    "total": 207,
     "breakdown": {
+     "Presente": 180,
      "Excusa": 20,
-     "Presente": 178,
      "Presente Incorporado": 7
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Azua"
   },
@@ -537,17 +538,17 @@
    "iniciativas_cd": 68,
    "iniciativas_total_sil": 68,
    "asistencia": {
-    "presentes": 184,
-    "total": 205,
+    "presentes": 186,
+    "total": 207,
     "breakdown": {
-     "Presente": 183,
+     "Presente": 185,
      "Ausente": 1,
      "Excusa": 19,
      "Representación de la Cámara": 1,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Azua"
   },
@@ -565,17 +566,17 @@
    "iniciativas_cd": 73,
    "iniciativas_total_sil": 73,
    "asistencia": {
-    "presentes": 183,
-    "total": 205,
+    "presentes": 185,
+    "total": 207,
     "breakdown": {
-     "Presente": 176,
+     "Presente": 177,
+     "Presente Incorporado": 8,
      "Excusa": 14,
-     "Presente Incorporado": 7,
      "Ausente": 4,
      "Licencia": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Azua"
   },
@@ -592,16 +593,16 @@
    "iniciativas_cd": 63,
    "iniciativas_total_sil": 63,
    "asistencia": {
-    "presentes": 199,
-    "total": 205,
+    "presentes": 201,
+    "total": 207,
     "breakdown": {
-     "Presente": 187,
+     "Presente": 189,
      "Excusa": 5,
      "Presente Incorporado": 12,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Azua"
   },
@@ -621,16 +622,16 @@
    "iniciativas_cd": 77,
    "iniciativas_total_sil": 77,
    "asistencia": {
-    "presentes": 198,
-    "total": 205,
+    "presentes": 200,
+    "total": 207,
     "breakdown": {
-     "Presente": 197,
+     "Presente": 199,
      "Excusa": 5,
      "Representación de la Cámara": 2,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Bahoruco"
   },
@@ -649,15 +650,15 @@
    "iniciativas_cd": 57,
    "iniciativas_total_sil": 57,
    "asistencia": {
-    "presentes": 162,
-    "total": 205,
+    "presentes": 164,
+    "total": 207,
     "breakdown": {
-     "Excusa": 43,
-     "Presente": 135,
-     "Presente Incorporado": 27
+     "Presente": 136,
+     "Presente Incorporado": 28,
+     "Excusa": 43
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Bahoruco"
   },
@@ -675,15 +676,15 @@
    "iniciativas_total_sil": 9,
    "asistencia": {
     "presentes": 138,
-    "total": 205,
+    "total": 207,
     "breakdown": {
+     "Excusa": 64,
      "Presente": 131,
-     "Excusa": 62,
      "Ausente": 5,
      "Presente Incorporado": 7
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Barahona"
   },
@@ -701,16 +702,16 @@
    "iniciativas_cd": 40,
    "iniciativas_total_sil": 40,
    "asistencia": {
-    "presentes": 195,
-    "total": 205,
+    "presentes": 196,
+    "total": 207,
     "breakdown": {
-     "Presente": 184,
-     "Excusa": 9,
+     "Excusa": 10,
+     "Presente": 185,
      "Presente Incorporado": 11,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Barahona"
   },
@@ -728,16 +729,16 @@
    "iniciativas_cd": 55,
    "iniciativas_total_sil": 55,
    "asistencia": {
-    "presentes": 184,
-    "total": 205,
+    "presentes": 186,
+    "total": 207,
     "breakdown": {
-     "Presente": 176,
+     "Presente Incorporado": 9,
+     "Presente": 177,
      "Ausente": 6,
-     "Presente Incorporado": 8,
      "Excusa": 15
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Barahona"
   },
@@ -756,16 +757,16 @@
    "iniciativas_cd": 57,
    "iniciativas_total_sil": 57,
    "asistencia": {
-    "presentes": 175,
-    "total": 205,
+    "presentes": 177,
+    "total": 207,
     "breakdown": {
-     "Presente": 156,
+     "Presente": 158,
      "Excusa": 27,
      "Presente Incorporado": 19,
      "Ausente": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Dajabón"
   },
@@ -784,17 +785,17 @@
    "iniciativas_cd": 49,
    "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 163,
-    "total": 205,
+    "presentes": 165,
+    "total": 207,
     "breakdown": {
-     "Presente Incorporado": 31,
+     "Presente Incorporado": 32,
+     "Presente": 133,
      "Ausente": 5,
-     "Presente": 132,
      "Excusa": 16,
      "Licencia": 21
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Dajabón"
   },
@@ -814,16 +815,16 @@
    "iniciativas_cd": 42,
    "iniciativas_total_sil": 42,
    "asistencia": {
-    "presentes": 199,
-    "total": 205,
+    "presentes": 201,
+    "total": 207,
     "breakdown": {
-     "Presente": 184,
+     "Presente": 186,
      "Ausente": 2,
      "Presente Incorporado": 15,
      "Excusa": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Duarte"
   },
@@ -841,15 +842,15 @@
    "iniciativas_cd": 60,
    "iniciativas_total_sil": 60,
    "asistencia": {
-    "presentes": 198,
-    "total": 205,
+    "presentes": 200,
+    "total": 207,
     "breakdown": {
-     "Presente": 195,
+     "Presente": 197,
      "Presente Incorporado": 3,
      "Excusa": 7
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Duarte"
   },
@@ -864,16 +865,16 @@
    "iniciativas_cd": 32,
    "iniciativas_total_sil": 32,
    "asistencia": {
-    "presentes": 195,
-    "total": 205,
+    "presentes": 197,
+    "total": 207,
     "breakdown": {
+     "Presente": 156,
      "Excusa": 6,
-     "Presente": 154,
      "Presente Incorporado": 41,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Duarte"
   },
@@ -890,16 +891,16 @@
    "iniciativas_cd": 22,
    "iniciativas_total_sil": 22,
    "asistencia": {
-    "presentes": 200,
-    "total": 205,
+    "presentes": 202,
+    "total": 207,
     "breakdown": {
-     "Presente Incorporado": 8,
-     "Presente": 192,
+     "Presente Incorporado": 9,
+     "Presente": 193,
      "Excusa": 2,
      "Ausente": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Duarte"
   },
@@ -917,16 +918,16 @@
    "iniciativas_cd": 43,
    "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 186,
-    "total": 205,
+    "presentes": 188,
+    "total": 207,
     "breakdown": {
-     "Presente": 183,
+     "Presente": 185,
      "Excusa": 17,
      "Presente Incorporado": 3,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Duarte"
   },
@@ -946,14 +947,14 @@
    "iniciativas_total_sil": 47,
    "asistencia": {
     "presentes": 198,
-    "total": 205,
+    "total": 207,
     "breakdown": {
+     "Excusa": 9,
      "Presente Incorporado": 7,
-     "Presente": 191,
-     "Excusa": 7
+     "Presente": 191
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "El Seibo"
   },
@@ -970,16 +971,16 @@
    "iniciativas_cd": 51,
    "iniciativas_total_sil": 51,
    "asistencia": {
-    "presentes": 190,
-    "total": 205,
+    "presentes": 192,
+    "total": 207,
     "breakdown": {
-     "Presente": 188,
+     "Presente": 190,
      "Excusa": 13,
      "Ausente": 2,
      "Presente Incorporado": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "El Seibo"
   },
@@ -998,15 +999,15 @@
    "iniciativas_total_sil": 43,
    "asistencia": {
     "presentes": 191,
-    "total": 205,
+    "total": 207,
     "breakdown": {
+     "Excusa": 11,
      "Presente": 181,
      "Ausente": 5,
-     "Presente Incorporado": 10,
-     "Excusa": 9
+     "Presente Incorporado": 10
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Elías Piña"
   },
@@ -1022,18 +1023,18 @@
     "Salud",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 65,
-   "iniciativas_total_sil": 65,
+   "iniciativas_cd": 66,
+   "iniciativas_total_sil": 66,
    "asistencia": {
-    "presentes": 197,
-    "total": 205,
+    "presentes": 198,
+    "total": 207,
     "breakdown": {
-     "Presente": 195,
-     "Excusa": 8,
+     "Presente": 196,
+     "Excusa": 9,
      "Presente Incorporado": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Elías Piña"
   },
@@ -1050,15 +1051,15 @@
    "iniciativas_cd": 42,
    "iniciativas_total_sil": 42,
    "asistencia": {
-    "presentes": 199,
-    "total": 205,
+    "presentes": 201,
+    "total": 207,
     "breakdown": {
-     "Presente": 194,
+     "Presente": 196,
      "Presente Incorporado": 5,
      "Excusa": 6
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Espaillat"
   },
@@ -1076,15 +1077,15 @@
    "iniciativas_cd": 43,
    "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 195,
-    "total": 205,
+    "presentes": 197,
+    "total": 207,
     "breakdown": {
-     "Presente": 189,
+     "Presente": 191,
      "Excusa": 10,
      "Presente Incorporado": 6
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Espaillat"
   },
@@ -1101,15 +1102,15 @@
    "iniciativas_cd": 31,
    "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 156,
-    "total": 205,
+    "presentes": 158,
+    "total": 207,
     "breakdown": {
-     "Presente": 123,
-     "Excusa": 49,
-     "Presente Incorporado": 33
+     "Presente Incorporado": 34,
+     "Presente": 124,
+     "Excusa": 49
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Espaillat"
   },
@@ -1126,15 +1127,15 @@
    "iniciativas_cd": 66,
    "iniciativas_total_sil": 66,
    "asistencia": {
-    "presentes": 196,
-    "total": 205,
+    "presentes": 198,
+    "total": 207,
     "breakdown": {
-     "Presente": 195,
+     "Presente": 197,
      "Excusa": 9,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Espaillat"
   },
@@ -1153,16 +1154,16 @@
    "iniciativas_cd": 95,
    "iniciativas_total_sil": 95,
    "asistencia": {
-    "presentes": 174,
-    "total": 205,
+    "presentes": 176,
+    "total": 207,
     "breakdown": {
+     "Presente": 165,
      "Presente Incorporado": 11,
-     "Presente": 163,
      "Ausente": 1,
      "Excusa": 30
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Hato Mayor"
   },
@@ -1180,15 +1181,15 @@
    "iniciativas_cd": 32,
    "iniciativas_total_sil": 32,
    "asistencia": {
-    "presentes": 202,
-    "total": 205,
+    "presentes": 204,
+    "total": 207,
     "breakdown": {
-     "Presente": 200,
+     "Presente": 202,
      "Presente Incorporado": 2,
      "Excusa": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Hato Mayor"
   },
@@ -1207,15 +1208,15 @@
    "iniciativas_cd": 119,
    "iniciativas_total_sil": 119,
    "asistencia": {
-    "presentes": 200,
-    "total": 205,
+    "presentes": 202,
+    "total": 207,
     "breakdown": {
-     "Presente": 197,
+     "Presente": 199,
      "Presente Incorporado": 3,
      "Excusa": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Hermanas Mirabal"
   },
@@ -1233,15 +1234,15 @@
    "iniciativas_cd": 53,
    "iniciativas_total_sil": 53,
    "asistencia": {
-    "presentes": 202,
-    "total": 205,
+    "presentes": 204,
+    "total": 207,
     "breakdown": {
-     "Presente": 197,
-     "Presente Incorporado": 5,
+     "Presente Incorporado": 6,
+     "Presente": 198,
      "Excusa": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Hermanas Mirabal"
   },
@@ -1259,16 +1260,16 @@
    "iniciativas_cd": 47,
    "iniciativas_total_sil": 47,
    "asistencia": {
-    "presentes": 193,
-    "total": 205,
+    "presentes": 195,
+    "total": 207,
     "breakdown": {
-     "Presente": 191,
+     "Presente": 193,
      "Excusa": 11,
      "Presente Incorporado": 2,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Independencia"
   },
@@ -1285,16 +1286,16 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 185,
-    "total": 205,
+    "presentes": 187,
+    "total": 207,
     "breakdown": {
+     "Presente": 171,
      "Presente Incorporado": 16,
-     "Presente": 169,
      "Excusa": 11,
      "Ausente": 9
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Independencia"
   },
@@ -1313,15 +1314,15 @@
    "iniciativas_cd": 51,
    "iniciativas_total_sil": 51,
    "asistencia": {
-    "presentes": 190,
-    "total": 205,
+    "presentes": 192,
+    "total": 207,
     "breakdown": {
-     "Presente": 189,
+     "Presente": 191,
      "Excusa": 15,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "La Altagracia"
   },
@@ -1336,19 +1337,19 @@
     "Relaciones Exteriores y Cooperación Internacional",
     "Turismo"
    ],
-   "iniciativas_cd": 131,
-   "iniciativas_total_sil": 131,
+   "iniciativas_cd": 144,
+   "iniciativas_total_sil": 144,
    "asistencia": {
-    "presentes": 191,
-    "total": 205,
+    "presentes": 193,
+    "total": 207,
     "breakdown": {
-     "Presente": 189,
+     "Presente": 191,
      "Excusa": 12,
      "Presente Incorporado": 2,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "La Altagracia"
   },
@@ -1364,16 +1365,16 @@
    "iniciativas_cd": 36,
    "iniciativas_total_sil": 36,
    "asistencia": {
-    "presentes": 175,
-    "total": 205,
+    "presentes": 177,
+    "total": 207,
     "breakdown": {
-     "Presente Incorporado": 17,
-     "Presente": 158,
+     "Presente Incorporado": 18,
+     "Presente": 159,
      "Excusa": 26,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "La Altagracia"
   },
@@ -1392,16 +1393,16 @@
    "iniciativas_cd": 106,
    "iniciativas_total_sil": 106,
    "asistencia": {
-    "presentes": 185,
-    "total": 205,
+    "presentes": 187,
+    "total": 207,
     "breakdown": {
+     "Presente": 183,
      "Excusa": 19,
-     "Presente": 181,
      "Presente Incorporado": 4,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "La Altagracia"
   },
@@ -1411,6 +1412,7 @@
    "cargo_hasta": null,
    "comisiones": [
     "05137-2024-2028-CD y 05138-2024-2028-CD Comisión Especial designada para el estudio de los proyectos de ley para la superación y reinserción de los adolescentes.",
+    "Administración Interior",
     "Comisión Coordinadora 2026-2027",
     "Cultura",
     "Deportes y Recreación",
@@ -1420,15 +1422,15 @@
    "iniciativas_cd": 73,
    "iniciativas_total_sil": 73,
    "asistencia": {
-    "presentes": 199,
-    "total": 205,
+    "presentes": 201,
+    "total": 207,
     "breakdown": {
-     "Presente": 198,
+     "Presente": 200,
      "Excusa": 6,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "La Altagracia"
   },
@@ -1449,17 +1451,17 @@
    "iniciativas_cd": 55,
    "iniciativas_total_sil": 55,
    "asistencia": {
-    "presentes": 177,
-    "total": 205,
+    "presentes": 178,
+    "total": 207,
     "breakdown": {
+     "Excusa": 27,
+     "Presente Incorporado": 32,
      "Presente": 146,
-     "Presente Incorporado": 31,
-     "Excusa": 26,
      "Representación de la Cámara": 1,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "La Romana"
   },
@@ -1477,17 +1479,17 @@
    "iniciativas_cd": 45,
    "iniciativas_total_sil": 45,
    "asistencia": {
-    "presentes": 181,
-    "total": 205,
+    "presentes": 183,
+    "total": 207,
     "breakdown": {
-     "Presente": 170,
+     "Presente": 172,
      "Presente Incorporado": 11,
      "Excusa": 18,
      "Ausente": 5,
      "Representación de la Cámara": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "La Romana"
   },
@@ -1503,16 +1505,16 @@
    "iniciativas_cd": 53,
    "iniciativas_total_sil": 53,
    "asistencia": {
-    "presentes": 196,
-    "total": 205,
+    "presentes": 198,
+    "total": 207,
     "breakdown": {
-     "Presente Incorporado": 10,
-     "Presente": 186,
+     "Presente Incorporado": 11,
+     "Presente": 187,
      "Excusa": 7,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "La Romana"
   },
@@ -1531,17 +1533,17 @@
    "iniciativas_cd": 22,
    "iniciativas_total_sil": 22,
    "asistencia": {
-    "presentes": 175,
-    "total": 205,
+    "presentes": 177,
+    "total": 207,
     "breakdown": {
+     "Presente Incorporado": 26,
+     "Presente": 151,
      "Excusa": 22,
-     "Presente": 150,
-     "Presente Incorporado": 25,
      "Ausente": 7,
      "Representación de la Cámara": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "La Romana"
   },
@@ -1559,21 +1561,21 @@
     "Medios de Comunicación",
     "Trabajo"
    ],
-   "iniciativas_cd": 31,
-   "iniciativas_total_sil": 31,
+   "iniciativas_cd": 32,
+   "iniciativas_total_sil": 32,
    "asistencia": {
-    "presentes": 180,
-    "total": 205,
+    "presentes": 181,
+    "total": 207,
     "breakdown": {
-     "Presente": 173,
+     "Excusa": 19,
+     "Presente": 174,
      "Presente Incorporado": 7,
-     "Excusa": 18,
      "Representación de la Cámara": 1,
      "Licencia": 4,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "La Vega"
   },
@@ -1591,15 +1593,15 @@
    "iniciativas_total_sil": 20,
    "asistencia": {
     "presentes": 180,
-    "total": 205,
+    "total": 207,
     "breakdown": {
+     "Excusa": 25,
      "Presente": 174,
-     "Excusa": 23,
      "Presente Incorporado": 6,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "La Vega"
   },
@@ -1615,19 +1617,19 @@
     "Presidencia de la República",
     "Presupuesto, Patrimonio y Contabilidad"
    ],
-   "iniciativas_cd": 89,
-   "iniciativas_total_sil": 89,
+   "iniciativas_cd": 90,
+   "iniciativas_total_sil": 90,
    "asistencia": {
-    "presentes": 192,
-    "total": 205,
+    "presentes": 194,
+    "total": 207,
     "breakdown": {
-     "Presente": 187,
+     "Presente": 189,
      "Presente Incorporado": 5,
      "Excusa": 12,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "La Vega"
   },
@@ -1647,16 +1649,16 @@
    "iniciativas_cd": 25,
    "iniciativas_total_sil": 25,
    "asistencia": {
-    "presentes": 178,
-    "total": 205,
+    "presentes": 180,
+    "total": 207,
     "breakdown": {
-     "Presente": 168,
+     "Presente": 170,
      "Presente Incorporado": 10,
      "Ausente": 2,
      "Excusa": 25
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "La Vega"
   },
@@ -1675,15 +1677,15 @@
    "iniciativas_cd": 36,
    "iniciativas_total_sil": 36,
    "asistencia": {
-    "presentes": 199,
-    "total": 205,
+    "presentes": 201,
+    "total": 207,
     "breakdown": {
-     "Presente": 189,
+     "Presente": 191,
      "Presente Incorporado": 10,
      "Excusa": 6
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "La Vega"
   },
@@ -1694,6 +1696,7 @@
    "comisiones": [
     "05137-2024-2028-CD y 05138-2024-2028-CD Comisión Especial designada para el estudio de los proyectos de ley para la superación y reinserción de los adolescentes.",
     "06129-2024-2028-CD Comisión Especial para estudiar el proyecto de ley que modifica la Ley núm. 339-22, sobre el uso de medios digitales en el Poder Judicial.",
+    "Administración Interior",
     "Comisión Coordinadora 2026-2027",
     "Comisión bicameral para el estudio de los proyectos de ley de Seguridad Social.",
     "Cámara de Cuentas",
@@ -1701,18 +1704,18 @@
     "Relaciones Exteriores y Cooperación Internacional",
     "Seguridad Social"
    ],
-   "iniciativas_cd": 36,
-   "iniciativas_total_sil": 36,
+   "iniciativas_cd": 37,
+   "iniciativas_total_sil": 37,
    "asistencia": {
-    "presentes": 183,
-    "total": 205,
+    "presentes": 185,
+    "total": 207,
     "breakdown": {
-     "Presente": 164,
+     "Presente": 166,
      "Presente Incorporado": 19,
      "Excusa": 22
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "La Vega"
   },
@@ -1730,15 +1733,15 @@
    "iniciativas_cd": 12,
    "iniciativas_total_sil": 12,
    "asistencia": {
-    "presentes": 80,
-    "total": 95,
+    "presentes": 82,
+    "total": 97,
     "breakdown": {
-     "Presente": 79,
+     "Presente": 81,
      "Excusa": 15,
      "Presente Incorporado": 1
     },
     "desde": "2025-09-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "La Vega"
   },
@@ -1757,15 +1760,15 @@
    "iniciativas_cd": 58,
    "iniciativas_total_sil": 58,
    "asistencia": {
-    "presentes": 200,
-    "total": 205,
+    "presentes": 202,
+    "total": 207,
     "breakdown": {
-     "Presente": 191,
+     "Presente": 193,
      "Presente Incorporado": 9,
      "Excusa": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "María Trinidad Sánchez"
   },
@@ -1780,19 +1783,19 @@
     "Recursos Hídricos",
     "Turismo"
    ],
-   "iniciativas_cd": 57,
-   "iniciativas_total_sil": 57,
+   "iniciativas_cd": 58,
+   "iniciativas_total_sil": 58,
    "asistencia": {
-    "presentes": 188,
-    "total": 205,
+    "presentes": 190,
+    "total": 207,
     "breakdown": {
-     "Presente": 167,
-     "Presente Incorporado": 21,
+     "Presente": 168,
+     "Presente Incorporado": 22,
      "Excusa": 16,
      "Representación de la Cámara": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "María Trinidad Sánchez"
   },
@@ -1807,19 +1810,19 @@
     "Obras Públicas y Comunicaciones",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 49,
-   "iniciativas_total_sil": 49,
+   "iniciativas_cd": 50,
+   "iniciativas_total_sil": 50,
    "asistencia": {
-    "presentes": 198,
-    "total": 205,
+    "presentes": 200,
+    "total": 207,
     "breakdown": {
-     "Presente": 195,
+     "Presente": 197,
      "Excusa": 6,
      "Presente Incorporado": 3,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "María Trinidad Sánchez"
   },
@@ -1838,16 +1841,16 @@
    "iniciativas_cd": 50,
    "iniciativas_total_sil": 50,
    "asistencia": {
-    "presentes": 191,
-    "total": 205,
+    "presentes": 193,
+    "total": 207,
     "breakdown": {
-     "Presente": 187,
+     "Presente": 189,
      "Presente Incorporado": 4,
      "Excusa": 10,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Monseñor Nouel"
   },
@@ -1861,19 +1864,19 @@
     "Economía, Planificación y Desarrollo",
     "Educación"
    ],
-   "iniciativas_cd": 96,
-   "iniciativas_total_sil": 96,
+   "iniciativas_cd": 98,
+   "iniciativas_total_sil": 98,
    "asistencia": {
-    "presentes": 192,
-    "total": 205,
+    "presentes": 194,
+    "total": 207,
     "breakdown": {
-     "Presente": 163,
+     "Presente": 165,
      "Presente Incorporado": 29,
      "Excusa": 9,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Monseñor Nouel"
   },
@@ -1891,17 +1894,17 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 126,
-    "total": 204,
+    "presentes": 128,
+    "total": 206,
     "breakdown": {
+     "Presente Incorporado": 52,
      "Ausente": 43,
      "Presente": 76,
      "Excusa": 30,
-     "Presente Incorporado": 50,
      "Licencia": 5
     },
     "desde": "2024-08-20",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Monseñor Nouel"
   },
@@ -1918,16 +1921,16 @@
    "iniciativas_cd": 61,
    "iniciativas_total_sil": 61,
    "asistencia": {
-    "presentes": 196,
-    "total": 205,
+    "presentes": 198,
+    "total": 207,
     "breakdown": {
-     "Presente": 189,
+     "Presente": 191,
      "Presente Incorporado": 7,
      "Excusa": 4,
      "Licencia": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Monte Cristi"
   },
@@ -1948,16 +1951,16 @@
    "iniciativas_cd": 47,
    "iniciativas_total_sil": 47,
    "asistencia": {
-    "presentes": 194,
-    "total": 205,
+    "presentes": 196,
+    "total": 207,
     "breakdown": {
-     "Presente": 186,
+     "Presente": 188,
      "Presente Incorporado": 8,
      "Excusa": 8,
      "Ausente": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Monte Cristi"
   },
@@ -1975,16 +1978,16 @@
    "iniciativas_cd": 33,
    "iniciativas_total_sil": 33,
    "asistencia": {
-    "presentes": 201,
-    "total": 205,
+    "presentes": 203,
+    "total": 207,
     "breakdown": {
-     "Presente": 194,
+     "Presente": 196,
      "Presente Incorporado": 7,
      "Excusa": 3,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Monte Plata"
   },
@@ -2004,16 +2007,16 @@
    "iniciativas_cd": 55,
    "iniciativas_total_sil": 55,
    "asistencia": {
-    "presentes": 194,
-    "total": 205,
+    "presentes": 196,
+    "total": 207,
     "breakdown": {
-     "Presente": 180,
+     "Presente": 182,
      "Presente Incorporado": 14,
      "Excusa": 7,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Monte Plata"
   },
@@ -2029,15 +2032,15 @@
    "iniciativas_cd": 75,
    "iniciativas_total_sil": 75,
    "asistencia": {
-    "presentes": 190,
-    "total": 205,
+    "presentes": 192,
+    "total": 207,
     "breakdown": {
-     "Presente": 169,
-     "Presente Incorporado": 21,
+     "Presente Incorporado": 22,
+     "Presente": 170,
      "Excusa": 15
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Monte Plata"
   },
@@ -2056,16 +2059,16 @@
    "iniciativas_cd": 49,
    "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 168,
-    "total": 205,
+    "presentes": 170,
+    "total": 207,
     "breakdown": {
+     "Presente": 169,
      "Excusa": 28,
-     "Presente": 167,
      "Presente Incorporado": 1,
      "Licencia": 9
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Pedernales"
   },
@@ -2078,19 +2081,19 @@
     "Asuntos Marítimos",
     "Reconocimientos"
    ],
-   "iniciativas_cd": 61,
-   "iniciativas_total_sil": 61,
+   "iniciativas_cd": 62,
+   "iniciativas_total_sil": 62,
    "asistencia": {
-    "presentes": 189,
-    "total": 205,
+    "presentes": 191,
+    "total": 207,
     "breakdown": {
-     "Presente": 187,
+     "Presente": 189,
      "Excusa": 14,
      "Presente Incorporado": 2,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Pedernales"
   },
@@ -2108,16 +2111,16 @@
    "iniciativas_cd": 48,
    "iniciativas_total_sil": 48,
    "asistencia": {
-    "presentes": 192,
-    "total": 205,
+    "presentes": 194,
+    "total": 207,
     "breakdown": {
-     "Presente": 191,
+     "Presente": 193,
      "Excusa": 11,
      "Ausente": 2,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Peravia"
   },
@@ -2138,15 +2141,15 @@
    "iniciativas_total_sil": 37,
    "asistencia": {
     "presentes": 181,
-    "total": 205,
+    "total": 207,
     "breakdown": {
-     "Excusa": 23,
+     "Excusa": 25,
      "Presente": 165,
      "Presente Incorporado": 16,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Peravia"
   },
@@ -2163,16 +2166,16 @@
    "iniciativas_cd": 34,
    "iniciativas_total_sil": 34,
    "asistencia": {
-    "presentes": 182,
-    "total": 205,
+    "presentes": 184,
+    "total": 207,
     "breakdown": {
-     "Presente": 163,
+     "Presente": 165,
      "Excusa": 22,
      "Presente Incorporado": 19,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Peravia"
   },
@@ -2192,16 +2195,16 @@
    "iniciativas_cd": 44,
    "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 188,
-    "total": 205,
+    "presentes": 190,
+    "total": 207,
     "breakdown": {
-     "Presente": 173,
+     "Presente": 175,
      "Presente Incorporado": 15,
      "Excusa": 16,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Puerto Plata"
   },
@@ -2219,16 +2222,16 @@
    "iniciativas_cd": 31,
    "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 178,
-    "total": 205,
+    "presentes": 180,
+    "total": 207,
     "breakdown": {
+     "Presente": 158,
      "Excusa": 22,
-     "Presente": 156,
      "Presente Incorporado": 22,
      "Ausente": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Puerto Plata"
   },
@@ -2245,15 +2248,15 @@
    "iniciativas_cd": 44,
    "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 187,
-    "total": 205,
+    "presentes": 189,
+    "total": 207,
     "breakdown": {
+     "Presente": 178,
      "Excusa": 18,
-     "Presente": 176,
      "Presente Incorporado": 11
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Puerto Plata"
   },
@@ -2269,15 +2272,15 @@
    "iniciativas_cd": 98,
    "iniciativas_total_sil": 98,
    "asistencia": {
-    "presentes": 195,
-    "total": 205,
+    "presentes": 197,
+    "total": 207,
     "breakdown": {
-     "Presente": 193,
+     "Presente": 195,
      "Excusa": 10,
      "Presente Incorporado": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Puerto Plata"
   },
@@ -2295,15 +2298,15 @@
    "iniciativas_cd": 27,
    "iniciativas_total_sil": 27,
    "asistencia": {
-    "presentes": 196,
-    "total": 205,
+    "presentes": 198,
+    "total": 207,
     "breakdown": {
-     "Presente": 192,
+     "Presente": 194,
      "Presente Incorporado": 4,
      "Excusa": 9
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Puerto Plata"
   },
@@ -2322,15 +2325,15 @@
    "iniciativas_total_sil": 69,
    "asistencia": {
     "presentes": 177,
-    "total": 205,
+    "total": 207,
     "breakdown": {
-     "Excusa": 27,
+     "Excusa": 29,
      "Presente": 170,
      "Presente Incorporado": 7,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Puerto Plata"
   },
@@ -2351,17 +2354,17 @@
    "iniciativas_cd": 40,
    "iniciativas_total_sil": 40,
    "asistencia": {
-    "presentes": 183,
-    "total": 205,
+    "presentes": 185,
+    "total": 207,
     "breakdown": {
-     "Presente": 158,
+     "Presente": 160,
      "Presente Incorporado": 25,
      "Ausente": 8,
      "Excusa": 11,
      "Licencia": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Samaná"
   },
@@ -2378,16 +2381,16 @@
    "iniciativas_cd": 21,
    "iniciativas_total_sil": 21,
    "asistencia": {
-    "presentes": 196,
-    "total": 205,
+    "presentes": 198,
+    "total": 207,
     "breakdown": {
-     "Presente Incorporado": 14,
-     "Presente": 182,
+     "Presente Incorporado": 15,
+     "Presente": 183,
      "Excusa": 7,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Samaná"
   },
@@ -2405,14 +2408,14 @@
    "iniciativas_total_sil": 37,
    "asistencia": {
     "presentes": 155,
-    "total": 205,
+    "total": 207,
     "breakdown": {
-     "Excusa": 50,
+     "Excusa": 52,
      "Presente": 143,
      "Presente Incorporado": 12
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Cristóbal"
   },
@@ -2429,16 +2432,16 @@
    "iniciativas_cd": 69,
    "iniciativas_total_sil": 69,
    "asistencia": {
-    "presentes": 193,
-    "total": 205,
+    "presentes": 195,
+    "total": 207,
     "breakdown": {
-     "Presente": 191,
+     "Presente": 193,
      "Excusa": 11,
      "Presente Incorporado": 2,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Cristóbal"
   },
@@ -2455,17 +2458,17 @@
    "iniciativas_cd": 23,
    "iniciativas_total_sil": 23,
    "asistencia": {
-    "presentes": 191,
-    "total": 205,
+    "presentes": 193,
+    "total": 207,
     "breakdown": {
-     "Presente": 189,
+     "Presente": 191,
      "Presente Incorporado": 2,
      "Excusa": 6,
      "Ausente": 1,
      "Licencia": 7
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Cristóbal"
   },
@@ -2482,16 +2485,16 @@
    "iniciativas_cd": 56,
    "iniciativas_total_sil": 56,
    "asistencia": {
-    "presentes": 194,
-    "total": 205,
+    "presentes": 196,
+    "total": 207,
     "breakdown": {
-     "Presente": 191,
+     "Presente": 193,
      "Ausente": 2,
      "Presente Incorporado": 3,
      "Excusa": 9
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Cristóbal"
   },
@@ -2510,15 +2513,15 @@
    "iniciativas_cd": 41,
    "iniciativas_total_sil": 41,
    "asistencia": {
-    "presentes": 191,
-    "total": 205,
+    "presentes": 193,
+    "total": 207,
     "breakdown": {
-     "Presente": 185,
+     "Presente": 187,
      "Presente Incorporado": 6,
      "Excusa": 14
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Cristóbal"
   },
@@ -2535,16 +2538,16 @@
    "iniciativas_cd": 60,
    "iniciativas_total_sil": 60,
    "asistencia": {
-    "presentes": 170,
-    "total": 205,
+    "presentes": 171,
+    "total": 207,
     "breakdown": {
-     "Presente": 166,
+     "Ausente": 3,
+     "Presente": 167,
      "Excusa": 33,
-     "Presente Incorporado": 4,
-     "Ausente": 2
+     "Presente Incorporado": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Cristóbal"
   },
@@ -2563,18 +2566,18 @@
     "Salud",
     "Seguridad Social"
    ],
-   "iniciativas_cd": 170,
-   "iniciativas_total_sil": 170,
+   "iniciativas_cd": 172,
+   "iniciativas_total_sil": 172,
    "asistencia": {
-    "presentes": 201,
-    "total": 205,
+    "presentes": 203,
+    "total": 207,
     "breakdown": {
-     "Presente": 200,
+     "Presente": 202,
      "Excusa": 4,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Cristóbal"
   },
@@ -2590,20 +2593,20 @@
     "Mipymes",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 40,
-   "iniciativas_total_sil": 40,
+   "iniciativas_cd": 44,
+   "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 175,
-    "total": 205,
+    "presentes": 177,
+    "total": 207,
     "breakdown": {
+     "Presente": 173,
      "Presente Incorporado": 4,
-     "Presente": 171,
      "Excusa": 21,
      "Licencia": 7,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Cristóbal"
   },
@@ -2620,16 +2623,16 @@
    "iniciativas_cd": 52,
    "iniciativas_total_sil": 52,
    "asistencia": {
-    "presentes": 186,
-    "total": 205,
+    "presentes": 188,
+    "total": 207,
     "breakdown": {
+     "Presente Incorporado": 39,
      "Excusa": 13,
      "Presente": 149,
-     "Presente Incorporado": 37,
      "Ausente": 6
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Cristóbal"
   },
@@ -2640,6 +2643,7 @@
    "comisiones": [
     "05137-2024-2028-CD y 05138-2024-2028-CD Comisión Especial designada para el estudio de los proyectos de ley para la superación y reinserción de los adolescentes.",
     "05368-2024-2028-CD Comisión especial designada para estudiar el Proyecto de ley que modifica la Ley núm.5-13 sobre Discapacidad en la República Dominicana.",
+    "Administración Interior",
     "Asuntos Marítimos",
     "Comisión Coordinadora 2026-2027",
     "Cámara de Cuentas",
@@ -2650,16 +2654,16 @@
    "iniciativas_cd": 104,
    "iniciativas_total_sil": 104,
    "asistencia": {
-    "presentes": 199,
-    "total": 205,
+    "presentes": 201,
+    "total": 207,
     "breakdown": {
-     "Presente": 196,
+     "Presente": 198,
      "Excusa": 5,
      "Presente Incorporado": 3,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Cristóbal"
   },
@@ -2677,15 +2681,15 @@
    "iniciativas_cd": 28,
    "iniciativas_total_sil": 28,
    "asistencia": {
-    "presentes": 192,
-    "total": 205,
+    "presentes": 194,
+    "total": 207,
     "breakdown": {
+     "Presente": 190,
      "Excusa": 13,
-     "Presente": 188,
      "Presente Incorporado": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San José de Ocoa"
   },
@@ -2704,15 +2708,15 @@
    "iniciativas_cd": 58,
    "iniciativas_total_sil": 58,
    "asistencia": {
-    "presentes": 193,
-    "total": 205,
+    "presentes": 195,
+    "total": 207,
     "breakdown": {
-     "Presente": 185,
+     "Presente": 187,
      "Presente Incorporado": 8,
      "Excusa": 12
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San José de Ocoa"
   },
@@ -2730,16 +2734,16 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 184,
-    "total": 205,
+    "presentes": 186,
+    "total": 207,
     "breakdown": {
+     "Presente": 182,
      "Ausente": 9,
-     "Presente": 180,
      "Excusa": 12,
      "Presente Incorporado": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Juan"
   },
@@ -2756,16 +2760,16 @@
    "iniciativas_cd": 68,
    "iniciativas_total_sil": 68,
    "asistencia": {
-    "presentes": 197,
-    "total": 205,
+    "presentes": 199,
+    "total": 207,
     "breakdown": {
-     "Presente": 194,
+     "Presente": 196,
      "Presente Incorporado": 3,
      "Excusa": 7,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Juan"
   },
@@ -2782,16 +2786,16 @@
    "iniciativas_cd": 61,
    "iniciativas_total_sil": 61,
    "asistencia": {
-    "presentes": 185,
-    "total": 205,
+    "presentes": 187,
+    "total": 207,
     "breakdown": {
-     "Presente": 169,
+     "Presente": 170,
+     "Presente Incorporado": 17,
      "Excusa": 16,
-     "Presente Incorporado": 16,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Juan"
   },
@@ -2811,15 +2815,16 @@
    "iniciativas_total_sil": 123,
    "asistencia": {
     "presentes": 199,
-    "total": 205,
+    "total": 207,
     "breakdown": {
+     "Representación de la Cámara": 1,
+     "Excusa": 6,
      "Presente": 194,
      "Presente Incorporado": 5,
-     "Excusa": 5,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Juan"
   },
@@ -2835,19 +2840,19 @@
     "Presupuesto, Patrimonio y Contabilidad",
     "Seguridad Social"
    ],
-   "iniciativas_cd": 50,
-   "iniciativas_total_sil": 50,
+   "iniciativas_cd": 51,
+   "iniciativas_total_sil": 51,
    "asistencia": {
-    "presentes": 197,
-    "total": 205,
+    "presentes": 199,
+    "total": 207,
     "breakdown": {
-     "Presente": 196,
+     "Presente": 198,
      "Excusa": 7,
      "Presente Incorporado": 1,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Pedro de Macorís"
   },
@@ -2864,16 +2869,16 @@
    "iniciativas_cd": 31,
    "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 78,
-    "total": 205,
+    "presentes": 80,
+    "total": 207,
     "breakdown": {
-     "Presente": 64,
+     "Presente": 66,
      "Excusa": 124,
      "Ausente": 3,
      "Presente Incorporado": 14
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Pedro de Macorís"
   },
@@ -2887,19 +2892,19 @@
     "Movilidad y Transporte",
     "Trabajo"
    ],
-   "iniciativas_cd": 45,
-   "iniciativas_total_sil": 45,
+   "iniciativas_cd": 47,
+   "iniciativas_total_sil": 47,
    "asistencia": {
     "presentes": 128,
-    "total": 205,
+    "total": 207,
     "breakdown": {
+     "Excusa": 78,
      "Presente": 127,
-     "Excusa": 76,
      "Presente Incorporado": 1,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Pedro de Macorís"
   },
@@ -2916,20 +2921,20 @@
     "Obras Públicas y Comunicaciones",
     "Presupuesto, Patrimonio y Contabilidad"
    ],
-   "iniciativas_cd": 87,
-   "iniciativas_total_sil": 87,
+   "iniciativas_cd": 90,
+   "iniciativas_total_sil": 90,
    "asistencia": {
-    "presentes": 188,
-    "total": 205,
+    "presentes": 190,
+    "total": 207,
     "breakdown": {
+     "Presente": 176,
      "Excusa": 12,
-     "Presente": 174,
      "Presente Incorporado": 14,
      "Ausente": 1,
      "Licencia": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Pedro de Macorís"
   },
@@ -2945,18 +2950,18 @@
     "Ministerio Público",
     "Movilidad y Transporte"
    ],
-   "iniciativas_cd": 173,
-   "iniciativas_total_sil": 173,
+   "iniciativas_cd": 175,
+   "iniciativas_total_sil": 175,
    "asistencia": {
-    "presentes": 188,
-    "total": 205,
+    "presentes": 190,
+    "total": 207,
     "breakdown": {
-     "Presente": 169,
+     "Presente": 171,
      "Presente Incorporado": 19,
      "Excusa": 17
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "San Pedro de Macorís"
   },
@@ -2975,16 +2980,16 @@
    "iniciativas_cd": 62,
    "iniciativas_total_sil": 62,
    "asistencia": {
-    "presentes": 192,
-    "total": 205,
+    "presentes": 194,
+    "total": 207,
     "breakdown": {
-     "Presente": 186,
+     "Presente": 188,
      "Excusa": 10,
      "Presente Incorporado": 6,
      "Ausente": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Sánchez Ramírez"
   },
@@ -3002,16 +3007,16 @@
    "iniciativas_cd": 42,
    "iniciativas_total_sil": 42,
    "asistencia": {
-    "presentes": 200,
-    "total": 205,
+    "presentes": 202,
+    "total": 207,
     "breakdown": {
-     "Presente": 197,
+     "Presente": 199,
      "Excusa": 3,
      "Presente Incorporado": 3,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Sánchez Ramírez"
   },
@@ -3034,16 +3039,16 @@
    "iniciativas_cd": 73,
    "iniciativas_total_sil": 73,
    "asistencia": {
-    "presentes": 198,
-    "total": 205,
+    "presentes": 200,
+    "total": 207,
     "breakdown": {
-     "Presente": 164,
-     "Presente Incorporado": 34,
+     "Presente Incorporado": 35,
+     "Presente": 165,
      "Ausente": 4,
      "Excusa": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Sánchez Ramírez"
   },
@@ -3061,16 +3066,16 @@
    "iniciativas_cd": 77,
    "iniciativas_total_sil": 77,
    "asistencia": {
-    "presentes": 185,
-    "total": 205,
+    "presentes": 187,
+    "total": 207,
     "breakdown": {
+     "Presente": 182,
      "Excusa": 19,
-     "Presente": 180,
      "Presente Incorporado": 5,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3090,15 +3095,15 @@
    "iniciativas_cd": 70,
    "iniciativas_total_sil": 70,
    "asistencia": {
-    "presentes": 197,
-    "total": 205,
+    "presentes": 199,
+    "total": 207,
     "breakdown": {
-     "Presente": 192,
+     "Presente": 194,
      "Presente Incorporado": 5,
      "Excusa": 8
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3118,14 +3123,14 @@
    "iniciativas_cd": 54,
    "iniciativas_total_sil": 54,
    "asistencia": {
-    "presentes": 197,
-    "total": 205,
+    "presentes": 199,
+    "total": 207,
     "breakdown": {
-     "Presente": 197,
+     "Presente": 199,
      "Excusa": 8
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3144,15 +3149,15 @@
    "iniciativas_cd": 73,
    "iniciativas_total_sil": 73,
    "asistencia": {
-    "presentes": 194,
-    "total": 205,
+    "presentes": 196,
+    "total": 207,
     "breakdown": {
-     "Presente": 192,
+     "Presente": 194,
      "Excusa": 11,
      "Presente Incorporado": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3170,17 +3175,17 @@
     "Reconocimientos",
     "Relaciones Exteriores y Cooperación Internacional"
    ],
-   "iniciativas_cd": 100,
-   "iniciativas_total_sil": 100,
+   "iniciativas_cd": 101,
+   "iniciativas_total_sil": 101,
    "asistencia": {
-    "presentes": 200,
-    "total": 205,
+    "presentes": 202,
+    "total": 207,
     "breakdown": {
-     "Presente": 200,
+     "Presente": 202,
      "Excusa": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3199,16 +3204,16 @@
    "iniciativas_cd": 59,
    "iniciativas_total_sil": 59,
    "asistencia": {
-    "presentes": 194,
-    "total": 205,
+    "presentes": 195,
+    "total": 207,
     "breakdown": {
-     "Presente": 193,
-     "Excusa": 10,
+     "Excusa": 11,
+     "Presente": 194,
      "Presente Incorporado": 1,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3225,16 +3230,16 @@
    "iniciativas_cd": 34,
    "iniciativas_total_sil": 34,
    "asistencia": {
-    "presentes": 196,
-    "total": 205,
+    "presentes": 198,
+    "total": 207,
     "breakdown": {
-     "Presente": 183,
+     "Presente": 185,
      "Presente Incorporado": 13,
      "Excusa": 6,
      "Ausente": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3248,15 +3253,15 @@
    "iniciativas_cd": 30,
    "iniciativas_total_sil": 30,
    "asistencia": {
-    "presentes": 151,
-    "total": 205,
+    "presentes": 153,
+    "total": 207,
     "breakdown": {
-     "Presente": 151,
+     "Presente": 153,
      "Excusa": 52,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3276,15 +3281,15 @@
    "iniciativas_total_sil": 64,
    "asistencia": {
     "presentes": 199,
-    "total": 205,
+    "total": 207,
     "breakdown": {
+     "Ausente": 4,
      "Presente": 193,
      "Presente Incorporado": 6,
-     "Excusa": 4,
-     "Ausente": 2
+     "Excusa": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3294,6 +3299,7 @@
    "cargo_hasta": null,
    "comisiones": [
     "04691-2024-2028-CD proyecto de resolución de interpelación al señor Celso Marranzini",
+    "Administración Interior",
     "Asuntos Fronterizos",
     "Comisión Coordinadora 2026-2027",
     "Educación",
@@ -3304,16 +3310,16 @@
    "iniciativas_cd": 63,
    "iniciativas_total_sil": 63,
    "asistencia": {
-    "presentes": 198,
-    "total": 205,
+    "presentes": 200,
+    "total": 207,
     "breakdown": {
-     "Presente": 191,
-     "Presente Incorporado": 7,
+     "Presente": 192,
+     "Presente Incorporado": 8,
      "Excusa": 5,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3332,16 +3338,16 @@
    "iniciativas_cd": 101,
    "iniciativas_total_sil": 101,
    "asistencia": {
-    "presentes": 196,
-    "total": 205,
+    "presentes": 198,
+    "total": 207,
     "breakdown": {
-     "Presente": 187,
+     "Presente": 189,
      "Presente Incorporado": 9,
      "Excusa": 6,
      "Ausente": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3358,16 +3364,16 @@
    "iniciativas_cd": 32,
    "iniciativas_total_sil": 32,
    "asistencia": {
-    "presentes": 174,
-    "total": 205,
+    "presentes": 176,
+    "total": 207,
     "breakdown": {
+     "Presente": 144,
      "Excusa": 22,
-     "Presente": 142,
      "Presente Incorporado": 32,
      "Ausente": 9
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3387,16 +3393,16 @@
    "iniciativas_cd": 64,
    "iniciativas_total_sil": 64,
    "asistencia": {
-    "presentes": 198,
-    "total": 205,
+    "presentes": 200,
+    "total": 207,
     "breakdown": {
+     "Presente": 187,
      "Presente Incorporado": 13,
-     "Presente": 185,
      "Licencia": 6,
      "Excusa": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3415,16 +3421,16 @@
    "iniciativas_cd": 110,
    "iniciativas_total_sil": 110,
    "asistencia": {
-    "presentes": 178,
-    "total": 205,
+    "presentes": 180,
+    "total": 207,
     "breakdown": {
-     "Presente": 177,
+     "Presente": 179,
      "Excusa": 25,
      "Presente Incorporado": 1,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3444,15 +3450,15 @@
    "iniciativas_cd": 125,
    "iniciativas_total_sil": 125,
    "asistencia": {
-    "presentes": 163,
-    "total": 205,
+    "presentes": 165,
+    "total": 207,
     "breakdown": {
+     "Presente": 141,
      "Excusa": 42,
-     "Presente": 139,
      "Presente Incorporado": 24
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3468,18 +3474,18 @@
     "Interior y Policía",
     "Relaciones Exteriores y Cooperación Internacional"
    ],
-   "iniciativas_cd": 63,
-   "iniciativas_total_sil": 63,
+   "iniciativas_cd": 64,
+   "iniciativas_total_sil": 64,
    "asistencia": {
-    "presentes": 200,
-    "total": 205,
+    "presentes": 202,
+    "total": 207,
     "breakdown": {
-     "Presente": 193,
+     "Presente": 195,
      "Presente Incorporado": 7,
      "Excusa": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3502,17 +3508,17 @@
    "iniciativas_cd": 50,
    "iniciativas_total_sil": 50,
    "asistencia": {
-    "presentes": 176,
-    "total": 205,
+    "presentes": 178,
+    "total": 207,
     "breakdown": {
-     "Presente": 157,
+     "Presente": 159,
      "Presente Incorporado": 19,
      "Excusa": 24,
      "Ausente": 4,
      "Representación de la Cámara": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3529,16 +3535,16 @@
    "iniciativas_cd": 31,
    "iniciativas_total_sil": 31,
    "asistencia": {
-    "presentes": 192,
-    "total": 205,
+    "presentes": 194,
+    "total": 207,
     "breakdown": {
-     "Presente": 180,
+     "Presente": 182,
      "Presente Incorporado": 12,
      "Ausente": 4,
      "Excusa": 9
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago"
   },
@@ -3552,18 +3558,18 @@
     "Educación",
     "Ética"
    ],
-   "iniciativas_cd": 64,
-   "iniciativas_total_sil": 64,
+   "iniciativas_cd": 66,
+   "iniciativas_total_sil": 66,
    "asistencia": {
-    "presentes": 192,
-    "total": 205,
+    "presentes": 194,
+    "total": 207,
     "breakdown": {
-     "Presente": 184,
+     "Presente": 186,
      "Presente Incorporado": 8,
      "Excusa": 13
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago Rodríguez"
   },
@@ -3580,15 +3586,15 @@
    "iniciativas_cd": 44,
    "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 203,
-    "total": 205,
+    "presentes": 205,
+    "total": 207,
     "breakdown": {
+     "Presente": 201,
      "Presente Incorporado": 4,
-     "Presente": 199,
      "Excusa": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santiago Rodríguez"
   },
@@ -3605,18 +3611,18 @@
     "Inteligencia Artificial",
     "Tecnología de la Información y Comunicación"
    ],
-   "iniciativas_cd": 28,
-   "iniciativas_total_sil": 28,
+   "iniciativas_cd": 29,
+   "iniciativas_total_sil": 29,
    "asistencia": {
-    "presentes": 197,
-    "total": 205,
+    "presentes": 199,
+    "total": 207,
     "breakdown": {
-     "Presente": 184,
+     "Presente": 186,
      "Excusa": 8,
      "Presente Incorporado": 13
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -3633,15 +3639,15 @@
    "iniciativas_cd": 28,
    "iniciativas_total_sil": 28,
    "asistencia": {
-    "presentes": 191,
-    "total": 205,
+    "presentes": 193,
+    "total": 207,
     "breakdown": {
-     "Presente Incorporado": 33,
-     "Presente": 158,
+     "Presente Incorporado": 34,
+     "Presente": 159,
      "Excusa": 14
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -3659,14 +3665,14 @@
    "iniciativas_cd": 51,
    "iniciativas_total_sil": 51,
    "asistencia": {
-    "presentes": 205,
-    "total": 205,
+    "presentes": 207,
+    "total": 207,
     "breakdown": {
-     "Presente": 196,
-     "Presente Incorporado": 9
+     "Presente Incorporado": 10,
+     "Presente": 197
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -3683,15 +3689,15 @@
    "iniciativas_cd": 54,
    "iniciativas_total_sil": 54,
    "asistencia": {
-    "presentes": 193,
-    "total": 205,
+    "presentes": 195,
+    "total": 207,
     "breakdown": {
-     "Presente": 190,
+     "Presente": 192,
      "Excusa": 12,
      "Presente Incorporado": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -3707,15 +3713,15 @@
    "iniciativas_cd": 58,
    "iniciativas_total_sil": 58,
    "asistencia": {
-    "presentes": 204,
-    "total": 205,
+    "presentes": 206,
+    "total": 207,
     "breakdown": {
+     "Presente": 205,
      "Presente Incorporado": 1,
-     "Presente": 203,
      "Excusa": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -3733,15 +3739,15 @@
    "iniciativas_cd": 49,
    "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 196,
-    "total": 205,
+    "presentes": 198,
+    "total": 207,
     "breakdown": {
+     "Presente": 185,
      "Presente Incorporado": 13,
-     "Presente": 183,
      "Excusa": 9
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -3760,15 +3766,15 @@
    "iniciativas_cd": 44,
    "iniciativas_total_sil": 44,
    "asistencia": {
-    "presentes": 197,
-    "total": 205,
+    "presentes": 199,
+    "total": 207,
     "breakdown": {
-     "Presente": 190,
-     "Excusa": 8,
-     "Presente Incorporado": 7
+     "Presente": 191,
+     "Presente Incorporado": 8,
+     "Excusa": 8
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -3786,15 +3792,15 @@
    "iniciativas_total_sil": 45,
    "asistencia": {
     "presentes": 148,
-    "total": 205,
+    "total": 207,
     "breakdown": {
+     "Excusa": 53,
      "Presente Incorporado": 23,
      "Presente": 125,
-     "Excusa": 51,
      "Ausente": 6
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -3807,19 +3813,19 @@
     "Recursos Hídricos",
     "Vivienda, Hábitat y Edificaciones"
    ],
-   "iniciativas_cd": 82,
-   "iniciativas_total_sil": 82,
+   "iniciativas_cd": 85,
+   "iniciativas_total_sil": 85,
    "asistencia": {
-    "presentes": 194,
-    "total": 205,
+    "presentes": 196,
+    "total": 207,
     "breakdown": {
+     "Presente": 193,
      "Ausente": 3,
-     "Presente": 191,
      "Excusa": 8,
      "Presente Incorporado": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -3836,17 +3842,17 @@
    "iniciativas_cd": 24,
    "iniciativas_total_sil": 24,
    "asistencia": {
-    "presentes": 129,
-    "total": 205,
+    "presentes": 130,
+    "total": 207,
     "breakdown": {
-     "Presente": 97,
+     "Presente": 98,
+     "Ausente": 35,
      "Presente Incorporado": 32,
      "Excusa": 34,
-     "Ausente": 34,
      "Licencia": 8
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -3867,16 +3873,17 @@
    "iniciativas_cd": 57,
    "iniciativas_total_sil": 57,
    "asistencia": {
-    "presentes": 202,
-    "total": 205,
+    "presentes": 203,
+    "total": 207,
     "breakdown": {
-     "Presente": 199,
+     "Presente": 200,
+     "Excusa": 1,
      "Ausente": 2,
      "Presente Incorporado": 3,
      "Representación de la Cámara": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -3895,16 +3902,16 @@
    "iniciativas_cd": 39,
    "iniciativas_total_sil": 39,
    "asistencia": {
-    "presentes": 173,
-    "total": 205,
+    "presentes": 175,
+    "total": 207,
     "breakdown": {
-     "Presente": 153,
+     "Presente": 155,
      "Presente Incorporado": 20,
      "Excusa": 25,
      "Ausente": 7
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -3923,15 +3930,15 @@
    "iniciativas_total_sil": 60,
    "asistencia": {
     "presentes": 196,
-    "total": 205,
+    "total": 207,
     "breakdown": {
+     "Excusa": 10,
      "Presente": 195,
-     "Excusa": 8,
      "Representación de la Cámara": 1,
      "Presente Incorporado": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -3948,16 +3955,16 @@
    "iniciativas_cd": 20,
    "iniciativas_total_sil": 20,
    "asistencia": {
-    "presentes": 132,
-    "total": 205,
+    "presentes": 133,
+    "total": 207,
     "breakdown": {
+     "Ausente": 9,
+     "Presente": 114,
      "Excusa": 65,
-     "Presente": 113,
-     "Presente Incorporado": 19,
-     "Ausente": 8
+     "Presente Incorporado": 19
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -3975,15 +3982,15 @@
    "iniciativas_cd": 55,
    "iniciativas_total_sil": 55,
    "asistencia": {
-    "presentes": 196,
-    "total": 205,
+    "presentes": 198,
+    "total": 207,
     "breakdown": {
-     "Presente": 190,
+     "Presente": 192,
      "Presente Incorporado": 6,
      "Excusa": 9
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4001,16 +4008,16 @@
    "iniciativas_cd": 42,
    "iniciativas_total_sil": 42,
    "asistencia": {
-    "presentes": 171,
-    "total": 205,
+    "presentes": 173,
+    "total": 207,
     "breakdown": {
+     "Presente": 143,
      "Excusa": 26,
-     "Presente": 141,
      "Presente Incorporado": 30,
      "Ausente": 8
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4029,15 +4036,15 @@
    "iniciativas_total_sil": 23,
    "asistencia": {
     "presentes": 182,
-    "total": 205,
+    "total": 207,
     "breakdown": {
-     "Ausente": 11,
+     "Ausente": 13,
      "Presente": 175,
      "Presente Incorporado": 7,
      "Excusa": 12
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4054,16 +4061,16 @@
    "iniciativas_cd": 22,
    "iniciativas_total_sil": 22,
    "asistencia": {
-    "presentes": 202,
-    "total": 205,
+    "presentes": 204,
+    "total": 207,
     "breakdown": {
-     "Presente": 189,
-     "Presente Incorporado": 13,
+     "Presente Incorporado": 14,
+     "Presente": 190,
      "Excusa": 1,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4083,16 +4090,16 @@
    "iniciativas_cd": 32,
    "iniciativas_total_sil": 32,
    "asistencia": {
-    "presentes": 187,
-    "total": 205,
+    "presentes": 188,
+    "total": 207,
     "breakdown": {
-     "Presente": 172,
+     "Presente": 173,
+     "Ausente": 17,
      "Presente Incorporado": 15,
-     "Excusa": 2,
-     "Ausente": 16
+     "Excusa": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4111,16 +4118,16 @@
    "iniciativas_cd": 41,
    "iniciativas_total_sil": 41,
    "asistencia": {
-    "presentes": 203,
-    "total": 205,
+    "presentes": 205,
+    "total": 207,
     "breakdown": {
-     "Presente": 187,
+     "Presente": 189,
      "Presente Incorporado": 16,
      "Excusa": 1,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4139,15 +4146,15 @@
    "iniciativas_total_sil": 67,
    "asistencia": {
     "presentes": 185,
-    "total": 205,
+    "total": 207,
     "breakdown": {
+     "Excusa": 18,
      "Presente": 177,
      "Presente Incorporado": 8,
-     "Excusa": 16,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4165,15 +4172,15 @@
    "iniciativas_cd": 37,
    "iniciativas_total_sil": 37,
    "asistencia": {
-    "presentes": 197,
-    "total": 205,
+    "presentes": 199,
+    "total": 207,
     "breakdown": {
-     "Presente": 178,
-     "Presente Incorporado": 19,
+     "Presente Incorporado": 20,
+     "Presente": 179,
      "Excusa": 8
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4194,16 +4201,16 @@
    "iniciativas_cd": 43,
    "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 201,
-    "total": 205,
+    "presentes": 203,
+    "total": 207,
     "breakdown": {
-     "Presente": 192,
+     "Presente": 194,
      "Presente Incorporado": 9,
      "Representación de la Cámara": 1,
      "Excusa": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4222,15 +4229,15 @@
    "iniciativas_total_sil": 60,
    "asistencia": {
     "presentes": 158,
-    "total": 205,
+    "total": 207,
     "breakdown": {
+     "Excusa": 35,
      "Ausente": 14,
      "Presente": 125,
-     "Presente Incorporado": 33,
-     "Excusa": 33
+     "Presente Incorporado": 33
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4271,16 +4278,16 @@
    "iniciativas_cd": 49,
    "iniciativas_total_sil": 49,
    "asistencia": {
-    "presentes": 201,
-    "total": 205,
+    "presentes": 203,
+    "total": 207,
     "breakdown": {
-     "Presente": 200,
+     "Presente": 202,
      "Presente Incorporado": 1,
      "Ausente": 3,
      "Excusa": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4297,15 +4304,15 @@
    "iniciativas_total_sil": 32,
    "asistencia": {
     "presentes": 172,
-    "total": 205,
+    "total": 207,
     "breakdown": {
+     "Excusa": 33,
      "Presente": 150,
-     "Excusa": 31,
      "Presente Incorporado": 22,
      "Ausente": 2
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4324,14 +4331,14 @@
    "iniciativas_total_sil": 115,
    "asistencia": {
     "presentes": 190,
-    "total": 205,
+    "total": 207,
     "breakdown": {
+     "Excusa": 17,
      "Presente": 185,
-     "Presente Incorporado": 5,
-     "Excusa": 15
+     "Presente Incorporado": 5
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4348,15 +4355,15 @@
    "iniciativas_cd": 52,
    "iniciativas_total_sil": 52,
    "asistencia": {
-    "presentes": 204,
-    "total": 205,
+    "presentes": 206,
+    "total": 207,
     "breakdown": {
-     "Presente": 193,
-     "Ausente": 1,
-     "Presente Incorporado": 11
+     "Presente Incorporado": 12,
+     "Presente": 194,
+     "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4376,15 +4383,15 @@
    "iniciativas_total_sil": 59,
    "asistencia": {
     "presentes": 157,
-    "total": 205,
+    "total": 207,
     "breakdown": {
+     "Excusa": 40,
      "Presente": 121,
      "Presente Incorporado": 36,
-     "Ausente": 10,
-     "Excusa": 38
+     "Ausente": 10
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4401,15 +4408,15 @@
    "iniciativas_cd": 47,
    "iniciativas_total_sil": 47,
    "asistencia": {
-    "presentes": 201,
-    "total": 205,
+    "presentes": 203,
+    "total": 207,
     "breakdown": {
-     "Presente": 198,
+     "Presente": 200,
      "Excusa": 4,
      "Presente Incorporado": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4426,16 +4433,16 @@
    "iniciativas_cd": 61,
    "iniciativas_total_sil": 61,
    "asistencia": {
-    "presentes": 176,
-    "total": 205,
+    "presentes": 178,
+    "total": 207,
     "breakdown": {
-     "Presente": 168,
+     "Presente": 170,
      "Ausente": 8,
      "Presente Incorporado": 8,
      "Excusa": 21
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4449,19 +4456,19 @@
     "Movilidad y Transporte",
     "Ética"
    ],
-   "iniciativas_cd": 50,
-   "iniciativas_total_sil": 50,
+   "iniciativas_cd": 52,
+   "iniciativas_total_sil": 52,
    "asistencia": {
-    "presentes": 203,
-    "total": 205,
+    "presentes": 205,
+    "total": 207,
     "breakdown": {
-     "Presente Incorporado": 59,
-     "Presente": 144,
+     "Presente Incorporado": 60,
+     "Presente": 145,
      "Excusa": 1,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4478,16 +4485,16 @@
    "iniciativas_cd": 41,
    "iniciativas_total_sil": 41,
    "asistencia": {
-    "presentes": 183,
-    "total": 205,
+    "presentes": 185,
+    "total": 207,
     "breakdown": {
+     "Presente": 179,
      "Presente Incorporado": 6,
-     "Presente": 177,
      "Excusa": 14,
      "Ausente": 8
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4506,16 +4513,16 @@
    "iniciativas_cd": 15,
    "iniciativas_total_sil": 15,
    "asistencia": {
-    "presentes": 189,
-    "total": 205,
+    "presentes": 191,
+    "total": 207,
     "breakdown": {
+     "Presente": 168,
      "Presente Incorporado": 23,
-     "Presente": 166,
      "Excusa": 15,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4534,16 +4541,16 @@
    "iniciativas_cd": 89,
    "iniciativas_total_sil": 89,
    "asistencia": {
-    "presentes": 195,
-    "total": 205,
+    "presentes": 197,
+    "total": 207,
     "breakdown": {
-     "Presente": 185,
+     "Presente": 187,
      "Presente Incorporado": 10,
      "Excusa": 9,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4561,16 +4568,16 @@
    "iniciativas_cd": 27,
    "iniciativas_total_sil": 27,
    "asistencia": {
-    "presentes": 158,
-    "total": 205,
+    "presentes": 160,
+    "total": 207,
     "breakdown": {
+     "Presente": 157,
      "Excusa": 43,
-     "Presente": 155,
      "Ausente": 4,
      "Presente Incorporado": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4589,16 +4596,16 @@
    "iniciativas_cd": 57,
    "iniciativas_total_sil": 57,
    "asistencia": {
-    "presentes": 187,
-    "total": 205,
+    "presentes": 189,
+    "total": 207,
     "breakdown": {
-     "Presente": 178,
+     "Presente": 180,
      "Excusa": 17,
      "Presente Incorporado": 9,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4616,17 +4623,17 @@
    "iniciativas_cd": 71,
    "iniciativas_total_sil": 71,
    "asistencia": {
-    "presentes": 195,
-    "total": 205,
+    "presentes": 197,
+    "total": 207,
     "breakdown": {
-     "Presente": 193,
+     "Presente": 195,
      "Presente Incorporado": 2,
      "Excusa": 6,
      "Licencia": 3,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4646,16 +4653,16 @@
    "iniciativas_cd": 95,
    "iniciativas_total_sil": 95,
    "asistencia": {
-    "presentes": 190,
-    "total": 205,
+    "presentes": 191,
+    "total": 207,
     "breakdown": {
-     "Excusa": 11,
+     "Excusa": 12,
+     "Presente Incorporado": 30,
      "Presente": 161,
-     "Presente Incorporado": 29,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4670,16 +4677,16 @@
    "iniciativas_cd": 12,
    "iniciativas_total_sil": 12,
    "asistencia": {
-    "presentes": 182,
-    "total": 205,
+    "presentes": 184,
+    "total": 207,
     "breakdown": {
-     "Presente Incorporado": 14,
-     "Presente": 168,
+     "Presente": 169,
+     "Presente Incorporado": 15,
      "Excusa": 19,
      "Ausente": 4
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4696,16 +4703,16 @@
    "iniciativas_cd": 43,
    "iniciativas_total_sil": 43,
    "asistencia": {
-    "presentes": 198,
-    "total": 205,
+    "presentes": 200,
+    "total": 207,
     "breakdown": {
-     "Presente": 190,
+     "Presente": 192,
      "Excusa": 6,
      "Presente Incorporado": 8,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4720,19 +4727,19 @@
     "Relaciones Exteriores y Cooperación Internacional",
     "Turismo"
    ],
-   "iniciativas_cd": 68,
-   "iniciativas_total_sil": 68,
+   "iniciativas_cd": 69,
+   "iniciativas_total_sil": 69,
    "asistencia": {
-    "presentes": 190,
-    "total": 205,
+    "presentes": 192,
+    "total": 207,
     "breakdown": {
-     "Presente Incorporado": 40,
+     "Presente Incorporado": 42,
      "Presente": 150,
      "Excusa": 14,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Santo Domingo"
   },
@@ -4751,16 +4758,16 @@
    "iniciativas_cd": 33,
    "iniciativas_total_sil": 33,
    "asistencia": {
-    "presentes": 194,
-    "total": 205,
+    "presentes": 196,
+    "total": 207,
     "breakdown": {
-     "Presente": 192,
+     "Presente": 194,
      "Excusa": 10,
      "Presente Incorporado": 2,
      "Ausente": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Valverde"
   },
@@ -4779,17 +4786,17 @@
    "iniciativas_cd": 60,
    "iniciativas_total_sil": 60,
    "asistencia": {
-    "presentes": 195,
-    "total": 205,
+    "presentes": 197,
+    "total": 207,
     "breakdown": {
-     "Presente": 193,
+     "Presente": 195,
      "Excusa": 7,
      "Presente Incorporado": 2,
      "Ausente": 2,
      "Representación de la Cámara": 1
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Valverde"
   },
@@ -4809,15 +4816,15 @@
    "iniciativas_cd": 24,
    "iniciativas_total_sil": 24,
    "asistencia": {
-    "presentes": 204,
-    "total": 205,
+    "presentes": 206,
+    "total": 207,
     "breakdown": {
-     "Presente": 201,
+     "Presente": 203,
      "Excusa": 1,
      "Presente Incorporado": 3
     },
     "desde": "2024-08-16",
-    "hasta": "2026-10-14"
+    "hasta": "2026-10-21"
    },
    "provincia": "Valverde"
   }
